@@ -454,6 +454,8 @@ export function initGlobalTooltips() {
   let hideTimeout = null;
 
   document.addEventListener('mouseover', (e) => {
+    if (window.innerWidth < 768) return;
+
     const target = e.target.closest('.nav-item[data-chapter-id]');
     if (!target) {
       if (activeTarget) {
@@ -490,6 +492,8 @@ export function initGlobalTooltips() {
   });
 
   document.addEventListener('mouseout', (e) => {
+    if (window.innerWidth < 768) return;
+
     const target = e.target.closest('.nav-item[data-chapter-id]');
     if (!target) return;
 

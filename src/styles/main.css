@@ -1126,6 +1126,11 @@ body {
   color: var(--text-muted);
   letter-spacing: 0;
 }
+@media (max-width: 767px) {
+  .chapter-nav-btn .kbd-hint {
+    display: none !important;
+  }
+}
 
 /* Chapter picker (select) */
 .chapter-picker {
