@@ -1072,7 +1072,8 @@ body {
   letter-spacing: 0;
 }
 @media (max-width: 767px) {
-  .chapter-nav-btn .kbd-hint {
+  .chapter-nav-btn .kbd-hint,
+  .tab-btn kbd {
     display: none !important;
   }
 }
