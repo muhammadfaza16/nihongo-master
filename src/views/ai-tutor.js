@@ -33,14 +33,14 @@ export function AiTutorView(container) {
       .chat-wrapper {
         display: flex;
         flex-direction: column;
-        height: calc(100vh - var(--topbar-h) - 48px - var(--safe-bottom));
+        height: calc(100vh - var(--topbar-height) - 48px - var(--safe-bottom));
         max-width: 800px;
         margin: 0 auto;
         gap: 16px;
       }
       @media (max-width: 768px) {
         .chat-wrapper {
-          height: calc(100vh - var(--topbar-h) - var(--bottom-nav-h) - 32px - var(--safe-bottom));
+          height: calc(100vh - var(--topbar-height) - 32px - var(--safe-bottom));
         }
       }
       .chat-messages {
@@ -80,7 +80,7 @@ export function AiTutorView(container) {
       .chat-bubble.user {
         align-self: flex-end;
         background: var(--accent);
-        color: white;
+        color: var(--bg-main);
         border-bottom-right-radius: 4px;
       }
       .chat-bubble.error {
@@ -113,7 +113,7 @@ export function AiTutorView(container) {
       }
       .chat-send-btn {
         background: var(--accent);
-        color: white;
+        color: var(--bg-main);
         border: none;
         border-radius: var(--radius-md);
         padding: 8px 16px;

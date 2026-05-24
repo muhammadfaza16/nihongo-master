@@ -152,15 +152,15 @@ export function ChapterView(container, params) {
 
       const renderGrid = (title, grid, cols = 5) => `
         <div style="margin-bottom: 16px;">
-          <h4 style="font-size: 1rem; font-weight: 700; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase;">${title}</h4>
-          <div style="display: grid; grid-template-columns: repeat(${cols}, 1fr); gap: 4px;">
+          <h4 style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">${title}</h4>
+          <div style="display: grid; grid-template-columns: repeat(${cols}, 1fr); gap: 6px;">
             ${grid.flat().map(cell => {
               if (!cell) return `<div style="background: transparent;"></div>`;
               const [jp, rom] = cell.split(' ');
               return `
-                <div onclick="window.playAudio('${jp}')" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 4px 8px; text-align: center; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--primary)'" onmouseout="this.style.borderColor='var(--border)'">
-                  <div style="font-family: var(--font-jp); font-size: 1.2rem; font-weight: 700; color: var(--text-main); line-height: 1.2;">${jp}</div>
-                  <div style="font-size: 0.7rem; color: var(--text-muted); font-weight: 600;">${rom}</div>
+                <div onclick="window.playAudio('${jp}')" class="kana-cell">
+                  <div class="kana-char">${jp}</div>
+                  <div class="kana-rom">${rom}</div>
                 </div>
               `;
             }).join('')}
@@ -174,7 +174,7 @@ export function ChapterView(container, params) {
           <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Klik pada huruf untuk mendengarkan pelafalannya.</p>
           
           <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--text-main); border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: 16px;">Hiragana (ひらがな)</h3>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start;">
+          <div class="kana-layout-grid">
             <div>
               ${renderGrid('Dasar (Gojuon)', hira, 5)}
               ${renderGrid('Turunan (Dakuon/Handakuon)', hiraDaku, 5)}
@@ -185,7 +185,7 @@ export function ChapterView(container, params) {
           </div>
 
           <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--text-main); border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: 16px; margin-top: 24px;">Katakana (カタカナ)</h3>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start;">
+          <div class="kana-layout-grid">
             <div>
               ${renderGrid('Dasar (Gojuon)', kata, 5)}
               ${renderGrid('Turunan (Dakuon/Handakuon)', kataDaku, 5)}
@@ -258,6 +258,17 @@ export function ChapterView(container, params) {
         @media (max-width: 768px) {
           .resource-card-grid {
             grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        .kana-layout-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 16px;
+          align-items: start;
+        }
+        @media (min-width: 768px) {
+          .kana-layout-grid {
+            grid-template-columns: 1fr 1fr;
           }
         }
       </style>
@@ -399,7 +410,7 @@ export function ChapterView(container, params) {
                     <div style="font-size: var(--text-xs); color: var(--text-muted); font-family: var(--font-mono);">${p.rom}</div>
                     <div style="font-size: var(--text-sm); color: var(--text-secondary); margin-top: 4px;">${p.en}</div>
                   </div>
-                  <button onclick="window.playAudio('${p.jp}')" style="width: 36px; height: 36px; border-radius: 50%; background: var(--bg-hover); color: var(--accent-bright); display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: none; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='var(--accent)'; this.style.color='white';" onmouseout="this.style.background='var(--bg-hover)'; this.style.color='var(--accent-bright)';">
+                  <button onclick="window.playAudio('${p.jp}')" style="width: 36px; height: 36px; border-radius: 50%; background: var(--bg-hover); color: var(--accent-bright); display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: none; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='var(--accent)'; this.style.color='var(--bg-main)';" onmouseout="this.style.background='var(--bg-hover)'; this.style.color='var(--accent-bright)';">
                     <i data-lucide="volume-2" style="width: 16px; height: 16px;"></i>
                   </button>
                 </div>
@@ -428,7 +439,7 @@ export function ChapterView(container, params) {
                     <div style="font-size: var(--text-xs); color: var(--text-muted); font-family: var(--font-mono);">${v.rom}</div>
                     <div style="font-size: var(--text-sm); color: var(--text-main); font-weight: 600; margin-top: 4px;">${v.en}</div>
                   </div>
-                  <button onclick="window.playAudio('${v.kana}')" style="width: 36px; height: 36px; border-radius: 50%; background: var(--bg-hover); color: var(--accent-bright); display: flex; align-items: center; justify-content: center; border: none; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='var(--accent)'; this.style.color='white';" onmouseout="this.style.background='var(--bg-hover)'; this.style.color='var(--accent-bright)';">
+                  <button onclick="window.playAudio('${v.kana}')" style="width: 36px; height: 36px; border-radius: 50%; background: var(--bg-hover); color: var(--accent-bright); display: flex; align-items: center; justify-content: center; border: none; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='var(--accent)'; this.style.color='var(--bg-main)';" onmouseout="this.style.background='var(--bg-hover)'; this.style.color='var(--accent-bright)';">
                     <i data-lucide="volume-2" style="width: 16px; height: 16px;"></i>
                   </button>
                 </div>
@@ -604,7 +615,7 @@ export function ChapterView(container, params) {
               <!-- ANSWER (A) -->
               ${aJp ? `
               <div style="display: flex; gap: 12px; align-items: flex-start; padding-left: 20px; border-left: 2px dashed var(--border-bright);">
-                <div style="width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #5B50E0); color: white; display: flex; align-items: center; justify-content: center; font-size: var(--text-sm); font-weight: 800; flex-shrink: 0; margin-top: 2px; box-shadow: 0 2px 8px var(--accent-glow);">
+                <div style="width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: var(--bg-main); display: flex; align-items: center; justify-content: center; font-size: var(--text-sm); font-weight: 800; flex-shrink: 0; margin-top: 2px; box-shadow: 0 2px 8px var(--accent-glow);">
                   A
                 </div>
                 <div style="flex: 1;">
@@ -662,16 +673,16 @@ export function ChapterView(container, params) {
             <div style="display: flex; flex-direction: column; align-items: ${isSelf ? 'flex-end' : 'flex-start'}; min-width: 0;">
               ${showAvatar ? `<span style="font-size: 0.7rem; color: var(--text-muted); font-weight: 700; margin-bottom: 4px; padding: 0 4px;">${line.speaker}</span>` : ''}
               
-              <div style="padding: 12px 16px; border-radius: 18px; ${isSelf ? 'background: linear-gradient(135deg, var(--accent), #5B50E0); color: white; border-bottom-right-radius: 4px; box-shadow: 0 4px 12px rgba(91,82,224,0.2);' : 'background: var(--bg-card); border: 1px solid var(--border); color: var(--text-main); border-bottom-left-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);'} position: relative;">
+              <div style="padding: 12px 16px; border-radius: 18px; ${isSelf ? 'background: var(--accent); color: var(--bg-main); border-bottom-right-radius: 4px; box-shadow: 0 4px 12px var(--accent-glow);' : 'background: var(--bg-card); border: 1px solid var(--border); color: var(--text-main); border-bottom-left-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);'} position: relative;">
                 
                 <div style="font-family: var(--font-jp); font-weight: 700; font-size: 1.05rem; margin-bottom: 6px; display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; line-height: 1.4;">
                   <span>${getDisplayMode() === 'romaji' ? line.rom : line.jp}</span>
-                  <button onclick="window.playAudio('${line.jp || line.rom}')" style="background: ${isSelf ? 'rgba(255,255,255,0.2)' : 'var(--bg-hover)'}; border: none; color: ${isSelf ? 'white' : 'var(--accent-bright)'}; cursor: pointer; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: -2px; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                  <button onclick="window.playAudio('${line.jp || line.rom}')" style="background: ${isSelf ? 'var(--bg-main)' : 'var(--bg-hover)'}; border: none; color: ${isSelf ? 'var(--text-main)' : 'var(--accent-bright)'}; cursor: pointer; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: -2px; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
                     <i data-lucide="play" style="width: 12px; height: 12px; margin-left: 2px;"></i>
                   </button>
                 </div>
-                ${getDisplayMode() !== 'romaji' && line.rom ? `<div style="font-size: 0.75rem; color: ${isSelf ? 'rgba(255,255,255,0.7)' : 'var(--text-muted)'}; font-family: var(--font-mono); margin-bottom: 4px;">${line.rom}</div>` : ''}
-                <div style="font-size: 0.85rem; color: ${isSelf ? 'rgba(255,255,255,0.9)' : 'var(--text-secondary)'}; line-height: 1.4;">${line.en}</div>
+                ${getDisplayMode() !== 'romaji' && line.rom ? `<div style="font-size: 0.75rem; color: var(--bg-main); opacity: 0.7; font-family: var(--font-mono); margin-bottom: 4px;">${line.rom}</div>` : ''}
+                <div style="font-size: 0.85rem; color: var(--bg-main); opacity: 0.9; line-height: 1.4;">${line.en}</div>
               </div>
             </div>
           </div>
@@ -723,15 +734,15 @@ export function ChapterView(container, params) {
                 </div>
                 <div style="display: flex; flex-direction: column; align-items: ${isSelf ? 'flex-end' : 'flex-start'}; min-width: 0;">
                   <span style="font-size: 0.65rem; color: var(--text-muted); font-weight: 700; margin-bottom: 2px; padding: 0 4px;">${line.speaker}</span>
-                  <div style="padding: 10px 14px; border-radius: 16px; ${isSelf ? 'background: linear-gradient(135deg, var(--accent), #5B50E0); color: white; border-bottom-right-radius: 4px;' : 'background: var(--bg-main); border: 1px solid var(--border); color: var(--text-main); border-bottom-left-radius: 4px;'}">
+                  <div style="padding: 10px 14px; border-radius: 16px; ${isSelf ? 'background: var(--accent); color: var(--bg-main); border-bottom-right-radius: 4px;' : 'background: var(--bg-main); border: 1px solid var(--border); color: var(--text-main); border-bottom-left-radius: 4px;'}">
                     <div style="font-family: var(--font-jp); font-weight: 700; font-size: 1rem; margin-bottom: 4px; display: flex; align-items: flex-start; justify-content: space-between; gap: 8px;">
                       <span>${getDisplayMode() === 'romaji' ? line.rom : line.jp}</span>
-                      <button onclick="window.playAudio('${line.jp || line.rom}')" style="background: transparent; border: none; color: ${isSelf ? 'rgba(255,255,255,0.7)' : 'var(--text-muted)'}; cursor: pointer; padding: 0; margin-top: 2px;" onmouseover="this.style.color='${isSelf ? 'white' : 'var(--accent)'}'" onmouseout="this.style.color='${isSelf ? 'rgba(255,255,255,0.7)' : 'var(--text-muted)'}'">
+                      <button onclick="window.playAudio('${line.jp || line.rom}')" style="background: transparent; border: none; color: ${isSelf ? 'var(--bg-main)' : 'var(--text-muted)'}; opacity: ${isSelf ? '0.7' : '1'}; cursor: pointer; padding: 0; margin-top: 2px;" onmouseover="this.style.color='${isSelf ? 'var(--bg-main)' : 'var(--accent)'}'; this.style.opacity='1';" onmouseout="this.style.color='${isSelf ? 'var(--bg-main)' : 'var(--text-muted)'}'; this.style.opacity='${isSelf ? '0.7' : '1'}';">
                         <i data-lucide="volume-2" style="width: 14px; height: 14px;"></i>
                       </button>
                     </div>
-                    ${getDisplayMode() !== 'romaji' && line.rom ? `<div style="font-size: 0.7rem; color: ${isSelf ? 'rgba(255,255,255,0.7)' : 'var(--text-muted)'}; font-family: var(--font-mono); margin-bottom: 2px;">${line.rom}</div>` : ''}
-                    <div style="font-size: 0.8rem; color: ${isSelf ? 'rgba(255,255,255,0.9)' : 'var(--text-secondary)'};">${line.en}</div>
+                    ${getDisplayMode() !== 'romaji' && line.rom ? `<div style="font-size: 0.7rem; color: var(--bg-main); opacity: 0.7; font-family: var(--font-mono); margin-bottom: 2px;">${line.rom}</div>` : ''}
+                    <div style="font-size: 0.8rem; color: ${isSelf ? 'var(--bg-main)' : 'var(--text-secondary)'}; opacity: ${isSelf ? '0.9' : '1'};">${line.en}</div>
                   </div>
                 </div>
               </div>

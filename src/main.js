@@ -1,4 +1,4 @@
-import { renderSidebar, initBottomNav, initTheme, initGlobalTooltips } from './components/layout.js';
+import { renderSidebar, initTheme, initGlobalTooltips } from './components/layout.js';
 import { initRouter, registerRoute } from './router.js';
 
 import { DashboardView }  from './views/dashboard.js';
@@ -31,7 +31,6 @@ function initApp() {
 
   // Render static layout
   renderSidebar();
-  initBottomNav();
   initGlobalTooltips();
 
   // Start router (default to dashboard)

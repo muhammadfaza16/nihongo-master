@@ -154,11 +154,11 @@ export function GlossaryView(container) {
   container.innerHTML = `
     <!-- HEADER -->
     <div style="margin-bottom: 24px; display: flex; gap: 16px; align-items: flex-start;">
-      <div style="width: 52px; height: 52px; border-radius: var(--radius-lg); background: linear-gradient(135deg, var(--accent), #5B50E0); color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px var(--accent-glow); flex-shrink: 0;">
+      <div style="width: 52px; height: 52px; border-radius: var(--radius-lg); background: var(--accent); color: var(--bg-main); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px var(--accent-glow); flex-shrink: 0;">
         <i data-lucide="help-circle" style="width: 24px; height: 24px;"></i>
       </div>
       <div>
-        <h2 style="font-size: var(--text-2xl); font-weight: 800; color: var(--text-main); margin-bottom: 4px; letter-spacing: var(--tracking-tight); line-height: var(--leading-tight);">Glosarium Istilah 📚</h2>
+        <h2 style="font-size: var(--text-2xl); font-weight: 800; color: var(--text-main); margin-bottom: 4px; letter-spacing: var(--tracking-tight); line-height: var(--leading-tight);">Glosarium Istilah ✦</h2>
         <p style="color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-normal);">Panduan lengkap istilah dasar bahasa Jepang dan sistem aplikasi untuk memudahkan langkah awal belajar pemula.</p>
       </div>
     </div>

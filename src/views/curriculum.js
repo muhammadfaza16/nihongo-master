@@ -3,15 +3,15 @@ import { CURRICULUM } from '../data/curriculum.js';
 import { isUnitCompleted } from '../store.js';
 
 const phaseEmojis = {
-  'fase-aksara': '✍️',
-  'mnn1-fase1': '🏡',
-  'mnn1-fase2': '🌟',
-  'mnn1-fase3': '⚙️',
-  'mnn1-fase4': '💬',
-  'mnn2-fase1': '🧠',
-  'mnn2-fase2': '📢',
-  'mnn2-fase3': '🗣️',
-  'mnn2-fase4': '🎓'
+  'fase-aksara': '✦',
+  'mnn1-fase1': '❖',
+  'mnn1-fase2': '◈',
+  'mnn1-fase3': '◆',
+  'mnn1-fase4': '◇',
+  'mnn2-fase1': '✦',
+  'mnn2-fase2': '❖',
+  'mnn2-fase3': '◈',
+  'mnn2-fase4': '◆'
 };
 
 export function CurriculumView(container) {
@@ -138,7 +138,7 @@ export function CurriculumView(container) {
               Minna no Nihongo II
             </div>
             <h2 style="font-size: 2rem; font-weight: 900; letter-spacing: var(--tracking-tight); margin-bottom: 12px; color: var(--text-main);">
-              JALUR MENENGAH (N4) 🧠
+              JALUR MENENGAH (N4) ✦
             </h2>
             <p style="color: var(--text-secondary); font-size: 0.95rem; max-width: 580px; margin: 0 auto; line-height: 1.6; font-weight: 500;">
               Selamat datang di Bagian Kedua (Bab 26 - 50). Di sini Anda akan menguasai tata bahasa tingkat menengah-ke bawah (N4) untuk percakapan sehari-hari dan bisnis yang lebih natural, sopan (keigo), dan ekspresif.

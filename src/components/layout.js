@@ -122,26 +122,6 @@ export function updateSidebarActive() {
       el.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
     }
   }
-
-  // Bottom nav active state
-  updateBottomNav(hash);
-}
-
-function updateBottomNav(hash) {
-  document.querySelectorAll('.bottom-nav-btn').forEach(btn => btn.classList.remove('active'));
-  const bhash = btn => btn.dataset.hash;
-
-  if (hash === '#/' || hash === '' || hash === '#/dashboard') {
-    document.getElementById('bnav-home')?.classList.add('active');
-  } else if (hash === '#/minna') {
-    document.getElementById('bnav-minna')?.classList.add('active');
-  } else if (hash === '#/review') {
-    document.getElementById('bnav-review')?.classList.add('active');
-  } else if (hash === '#/ai-tutor') {
-    document.getElementById('bnav-ai')?.classList.add('active');
-  } else if (hash.startsWith('#/chapter/')) {
-    document.getElementById('bnav-menu')?.classList.add('active');
-  }
 }
 
 // ── Theme ────────────────────────────────────────────
@@ -282,20 +262,7 @@ export function renderTopbar(title = 'Minna no Nihongo') {
   if (window.lucide) lucide.createIcons({ root: topbar });
 }
 
-// ── Bottom nav wiring ────────────────────────────────
-export function initBottomNav() {
-  const nav = document.getElementById('bottom-nav');
-  if (!nav) return;
 
-  nav.querySelectorAll('.bottom-nav-btn[data-hash]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      window.location.hash = btn.dataset.hash;
-    });
-  });
-
-  // "Bab" button opens sidebar on mobile
-  document.getElementById('bnav-menu')?.addEventListener('click', openSidebar);
-}
 
 // ── Chapter keyboard navigation ──────────────────────
 const _sorted = [...MNN_DATA].sort((a, b) => a.id - b.id);
