@@ -275,8 +275,7 @@ export function ChapterView(container, params) {
       <!-- Chapter Nav Bar -->
       <div class="chapter-nav-bar">
         <button class="chapter-nav-btn" id="ch-prev-btn" ${!prevCh ? 'disabled' : ''}
-          aria-label="${prevCh ? 'Bab ' + prevCh.id : 'Sudah bab pertama'}"
-          data-tooltip="${prevCh ? 'Bab ' + prevCh.id : 'Sudah bab pertama'}">
+          aria-label="${prevCh ? 'Bab ' + prevCh.id : 'Sudah bab pertama'}">
           <i data-lucide="chevron-left" style="width:15px;height:15px;"></i>
           <span class="kbd-hint">[</span>
         </button>
@@ -289,8 +288,7 @@ export function ChapterView(container, params) {
         </select>
 
         <button class="chapter-nav-btn" id="ch-next-btn" ${!nextCh ? 'disabled' : ''}
-          aria-label="${nextCh ? 'Bab ' + nextCh.id : 'Sudah bab terakhir'}"
-          data-tooltip="${nextCh ? 'Bab ' + nextCh.id : 'Sudah bab terakhir'}">
+          aria-label="${nextCh ? 'Bab ' + nextCh.id : 'Sudah bab terakhir'}">
           <span class="kbd-hint">]</span>
           <i data-lucide="chevron-right" style="width:15px;height:15px;"></i>
         </button>
@@ -595,7 +593,7 @@ export function ChapterView(container, params) {
                 <div style="flex: 1;">
                   <div style="font-family: var(--font-jp); font-weight: 700; font-size: var(--text-base); color: var(--text-main); display: flex; align-items: center; gap: 6px;">
                     <span>${getDisplayMode() === 'romaji' ? qRom : qJp}</span>
-                    <button onclick="window.playAudio('${qJp || qRom}')" style="background: transparent; border: none; color: var(--text-muted); cursor: pointer; padding: 2px; display: inline-flex; align-items: center; justify-content: center; transition: color 0.15s;" onmouseover="this.style.color='var(--green)'" onmouseout="this.style.color='var(--text-muted)'" aria-label="Putar Suara (TTS)" data-tooltip="Putar Suara (TTS)">
+                    <button onclick="window.playAudio('${qJp || qRom}')" style="background: transparent; border: none; color: var(--text-muted); cursor: pointer; padding: 2px; display: inline-flex; align-items: center; justify-content: center; transition: color 0.15s;" onmouseover="this.style.color='var(--green)'" onmouseout="this.style.color='var(--text-muted)'" aria-label="Putar Suara (TTS)">
                       <i data-lucide="volume-2" style="width: 15px; height: 15px;"></i>
                     </button>
                   </div>
@@ -612,7 +610,7 @@ export function ChapterView(container, params) {
                 <div style="flex: 1;">
                   <div style="font-family: var(--font-jp); font-weight: 700; font-size: var(--text-base); color: var(--accent-bright); display: flex; align-items: center; gap: 6px;">
                     <span>${getDisplayMode() === 'romaji' ? aRom : aJp}</span>
-                    <button onclick="window.playAudio('${aJp || aRom}')" style="background: transparent; border: none; color: var(--text-muted); cursor: pointer; padding: 2px; display: inline-flex; align-items: center; justify-content: center; transition: color 0.15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'" aria-label="Putar Suara (TTS)" data-tooltip="Putar Suara (TTS)">
+                    <button onclick="window.playAudio('${aJp || aRom}')" style="background: transparent; border: none; color: var(--text-muted); cursor: pointer; padding: 2px; display: inline-flex; align-items: center; justify-content: center; transition: color 0.15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'" aria-label="Putar Suara (TTS)">
                       <i data-lucide="volume-2" style="width: 15px; height: 15px;"></i>
                     </button>
                   </div>

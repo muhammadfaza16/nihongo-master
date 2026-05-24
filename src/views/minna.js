@@ -1,9 +1,35 @@
 import { renderTopbar } from '../components/layout.js';
-import { MINNA_LESSONS } from '../data/minnaData.js';
+import { MNN_DATA } from '../data/chapter_data.js';
 import { createAudioButton } from '../audio.js';
 
 export function MinnaView(container) {
   renderTopbar('Grammar Digest (Minna)');
+
+  // Dynamically map and build complete MINNA_LESSONS from unified MNN_DATA (DRY & covers all 51 chapters!)
+  const labelMap = { romaji: 'Rom', furigana: 'Furi', kana: 'Kana' };
+  const MINNA_LESSONS = MNN_DATA.map(ch => {
+    return {
+      id: ch.id,
+      title: ch.title,
+      intro: ch.desc,
+      points: (ch.grammar || []).map(g => {
+        const patternMatch = g.title.match(/^\d+\.\s*(.*)/);
+        const patternClean = patternMatch ? patternMatch[1] : g.title;
+        return {
+          pattern: patternClean,
+          formula: g.formula || '—',
+          explanation: g.desc,
+          points: g.points || [],
+          nuance: g.native_note || null,
+          examples: (ch.patterns || []).map(p => ({
+            jp: p.jp,
+            rom: p.rom,
+            id: p.en
+          }))
+        };
+      })
+    };
+  }).filter(l => l.points.length > 0);
 
   // Shell HTML
   let html = `
@@ -15,7 +41,7 @@ export function MinnaView(container) {
           </div>
           <h2 style="font-size: 2rem; font-weight: 800; color: var(--text-main); margin-bottom: 8px; letter-spacing: var(--tracking-tight);">Minna no Nihongo: Deep Digest</h2>
           <p style="color: var(--text-secondary); font-size: 0.95rem; max-width: 650px; line-height: var(--leading-relaxed); margin: 0;">
-            Ekstraksi komprehensif dari buku <i>Grammatical Notes</i>. Format ringkas ini dirancang agar Anda dapat memahami pola kalimat, rumus, dan nuansa secara cepat dan mendalam.
+            Ekstraksi komprehensif tata bahasa lengkap dari Bab 0 sampai 50. Format ringkas ini dirancang agar Anda dapat memahami pola kalimat, rumus, dan nuansa secara cepat dan mendalam.
           </p>
         </div>
         <button class="btn btn-secondary no-print" onclick="window.print()" style="padding: 10px 18px; height: fit-content; flex-shrink: 0; margin-left: 16px;">
@@ -48,14 +74,19 @@ export function MinnaView(container) {
   MINNA_LESSONS.forEach(lesson => {
     html += `
         <div style="margin-bottom: 40px; page-break-inside: avoid;">
-          <h2 style="font-size: 1.8rem; background: #eee; padding: 10px 15px; border-left: 5px solid #000; margin-bottom: 15px;">Bab ${lesson.id}: ${lesson.title.split(': ')[1]}</h2>
+          <h2 style="font-size: 1.8rem; background: #eee; padding: 10px 15px; border-left: 5px solid #000; margin-bottom: 15px;">Bab ${lesson.id}: ${lesson.title.includes(':') ? lesson.title.split(':').slice(1).join(':').trim() : lesson.title}</h2>
           <p style="font-style: italic; color: #444; margin-bottom: 20px; font-size: 1.1rem;">${lesson.intro}</p>
           
           ${lesson.points.map((pt, idx) => `
             <div style="margin-bottom: 25px; padding-left: 20px; border-left: 2px dashed #ccc;">
               <h3 style="font-size: 1.4rem; font-family: var(--font-jp); margin-bottom: 8px; color: #000;">${idx+1}. ${pt.pattern}</h3>
               <div style="font-family: monospace; background: #f9f9f9; padding: 5px 10px; display: inline-block; margin-bottom: 10px; border: 1px solid #ddd;">Rumus: ${pt.formula}</div>
-              <p style="font-size: 1rem; color: #222; margin-bottom: 10px; line-height: 1.5;"><strong>Penjelasan:</strong> ${pt.explanation}</p>
+              <p style="font-size: 1rem; color: #222; margin-bottom: 6px; line-height: 1.5;"><strong>Penjelasan:</strong> ${pt.explanation}</p>
+              ${pt.points && pt.points.length > 0 ? `
+              <ul style="padding-left: 20px; color: #222; margin-bottom: 12px; font-size: 0.95rem;">
+                ${pt.points.map(bullet => `<li style="line-height: 1.4; margin-bottom: 4px;">${bullet}</li>`).join('')}
+              </ul>
+              ` : ''}
               ${pt.nuance ? `<p style="font-size: 0.95rem; color: #555; margin-bottom: 10px; line-height: 1.5;"><em>Catatan Nuansa: ${pt.nuance}</em></p>` : ''}
               
               <div style="margin-top: 15px;">
@@ -124,6 +155,7 @@ export function MinnaView(container) {
                pt.explanation.toLowerCase().includes(normQuery) || 
                (pt.nuance && pt.nuance.toLowerCase().includes(normQuery)) ||
                lesson.title.toLowerCase().includes(normQuery) ||
+               pt.points.some(bullet => bullet.toLowerCase().includes(normQuery)) ||
                pt.examples.some(ex => 
                  ex.jp.toLowerCase().includes(normQuery) || 
                  ex.rom.toLowerCase().includes(normQuery) || 
@@ -157,7 +189,7 @@ export function MinnaView(container) {
         <div class="card fade-in" style="border-left: 4px solid var(--accent); padding: 0; overflow: hidden; background: var(--bg-card);">
           <div style="padding: 20px 24px; background: var(--bg-elevated); border-bottom: 1px solid var(--border);">
             <div style="font-size: var(--text-2xs); color: var(--text-muted); font-weight: 700; margin-bottom: 4px; letter-spacing: var(--tracking-wider); text-transform: uppercase;">BAB ${lesson.id}</div>
-            <h3 style="font-size: var(--text-lg); font-weight: 800; margin-bottom: 8px; color: var(--text-main);">${lesson.title.split(': ')[1] || lesson.title}</h3>
+            <h3 style="font-size: var(--text-lg); font-weight: 800; margin-bottom: 8px; color: var(--text-main);">${lesson.title.includes(':') ? lesson.title.split(':').slice(1).join(':').trim() : lesson.title}</h3>
             <p style="color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-relaxed); margin: 0;">${lesson.intro}</p>
           </div>
           
@@ -179,7 +211,12 @@ export function MinnaView(container) {
                   
                   <div style="margin-bottom: 16px;">
                     <div style="font-size: var(--text-2xs); font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: var(--tracking-wide);">Penjelasan Logika</div>
-                    <p style="font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-relaxed); margin: 0;">${pt.explanation}</p>
+                    <p style="font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-relaxed); margin: 0; font-weight: 700;">${pt.explanation}</p>
+                    ${pt.points && pt.points.length > 0 ? `
+                    <ul style="padding-left: 20px; color: var(--text-secondary); display: flex; flex-direction: column; gap: 6px; font-size: var(--text-sm); margin-top: 8px;">
+                      ${pt.points.map(bullet => `<li style="line-height: 1.5;">${bullet}</li>`).join('')}
+                    </ul>
+                    ` : ''}
                   </div>
                   
                   ${pt.nuance ? `

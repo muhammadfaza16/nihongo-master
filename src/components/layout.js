@@ -206,7 +206,7 @@ export function renderTopbar(title = 'Minna no Nihongo') {
         </button>
       </div>
     </div>
-    <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Ganti tema (Alt+T)" data-tooltip="Ganti tema (Alt+T)">
+    <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Ganti tema (Alt+T)">
       <i data-lucide="${isDark ? 'sun' : 'moon'}" style="width:16px;height:16px;"></i>
     </button>
   `;
@@ -442,20 +442,22 @@ export function showToast(message, type = 'info', duration = 3000) {
 
 // ── initGlobalTooltips ────────────────────────────────
 export function initGlobalTooltips() {
-  let tooltipEl = document.getElementById('global-tooltip');
+  let tooltipEl = document.getElementById('chapter-overflow-tooltip');
   if (!tooltipEl) {
     tooltipEl = document.createElement('div');
-    tooltipEl.id = 'global-tooltip';
-    tooltipEl.className = 'custom-tooltip';
+    tooltipEl.id = 'chapter-overflow-tooltip';
+    tooltipEl.className = 'chapter-tooltip';
     document.body.appendChild(tooltipEl);
   }
 
   let activeTarget = null;
+  let hideTimeout = null;
 
   document.addEventListener('mouseover', (e) => {
-    const target = e.target.closest('[data-tooltip]');
+    const target = e.target.closest('.nav-item[data-chapter-id]');
     if (!target) {
       if (activeTarget) {
+        clearTimeout(hideTimeout);
         hideTooltip();
       }
       return;
@@ -463,43 +465,46 @@ export function initGlobalTooltips() {
 
     if (activeTarget === target) return;
 
-    // For sidebar chapter items, only show tooltip when nav-label is actually truncated
-    if (target.hasAttribute('data-chapter-id')) {
-      const label = target.querySelector('.nav-label');
-      if (label && label.scrollWidth <= label.clientWidth) return;
+    // Only show tooltip if the chapter nav-label is truncated
+    const label = target.querySelector('.nav-label');
+    if (!label) return;
+
+    const isOverflowing = label.scrollWidth > label.clientWidth;
+    if (!isOverflowing) {
+      if (activeTarget) {
+        clearTimeout(hideTimeout);
+        hideTooltip();
+      }
+      return;
     }
 
     activeTarget = target;
-
-    // Suppress native title if any remains
-    if (target.hasAttribute('title')) {
-      target.setAttribute('data-original-title', target.getAttribute('title'));
-      target.removeAttribute('title');
-    }
+    clearTimeout(hideTimeout);
 
     showTooltip(target);
+
+    // Auto-hidden time based: Automatically hide the tooltip after 2.5 seconds
+    hideTimeout = setTimeout(() => {
+      hideTooltip();
+    }, 2500);
   });
 
   document.addEventListener('mouseout', (e) => {
-    const target = e.target.closest('[data-tooltip]');
+    const target = e.target.closest('.nav-item[data-chapter-id]');
     if (!target) return;
 
-    if (target.hasAttribute('data-original-title')) {
-      target.setAttribute('title', target.getAttribute('data-original-title'));
-      target.removeAttribute('data-original-title');
-    }
-
     if (activeTarget === target) {
+      clearTimeout(hideTimeout);
       hideTooltip();
     }
   });
 
   function showTooltip(target) {
-    const text = target.getAttribute('data-tooltip');
+    const text = target.getAttribute('data-tooltip') || target.getAttribute('aria-label');
     if (!text) return;
 
     tooltipEl.textContent = text;
-    
+
     // Position calculation
     const rect = target.getBoundingClientRect();
     const tooltipWidth = tooltipEl.offsetWidth;
@@ -508,25 +513,23 @@ export function initGlobalTooltips() {
     let left = 0;
     let top = 0;
 
-    const isSidebarItem = target.closest('.sidebar') !== null;
     const isMobile = window.innerWidth < 768;
 
-    if (isSidebarItem && !isMobile) {
+    if (!isMobile) {
       // Position to the right of the sidebar item
       left = rect.right + 10;
       top = rect.top + (rect.height - tooltipHeight) / 2;
       
-      // Clamp vertical bounds
+      // Clamp within viewport bounds
       top = Math.max(8, Math.min(window.innerHeight - tooltipHeight - 8, top));
     } else {
       // Position above the hovered element
       left = rect.left + (rect.width - tooltipWidth) / 2;
       top = rect.top - tooltipHeight - 8;
       
-      // Clamp horizontal bounds
+      // Clamp within viewport bounds
       left = Math.max(8, Math.min(window.innerWidth - tooltipWidth - 8, left));
       
-      // Flip below if it overflows the top of viewport
       if (top < 8) {
         top = rect.bottom + 8;
       }
@@ -535,18 +538,15 @@ export function initGlobalTooltips() {
     tooltipEl.style.left = `${left}px`;
     tooltipEl.style.top = `${top}px`;
     
-    // Add visible class in the next frame to trigger transition
     requestAnimationFrame(() => {
       if (activeTarget === target) {
         tooltipEl.classList.add('visible');
-        tooltipEl.style.transform = 'scale(1)';
       }
     });
   }
 
   function hideTooltip() {
     tooltipEl.classList.remove('visible');
-    tooltipEl.style.transform = 'scale(0.92)';
     activeTarget = null;
   }
 }
