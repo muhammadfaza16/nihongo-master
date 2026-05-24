@@ -681,8 +681,8 @@ export function ChapterView(container, params) {
                     <i data-lucide="play" style="width: 12px; height: 12px; margin-left: 2px;"></i>
                   </button>
                 </div>
-                ${getDisplayMode() !== 'romaji' && line.rom ? `<div style="font-size: 0.75rem; color: var(--bg-main); opacity: 0.7; font-family: var(--font-mono); margin-bottom: 4px;">${line.rom}</div>` : ''}
-                <div style="font-size: 0.85rem; color: var(--bg-main); opacity: 0.9; line-height: 1.4;">${line.en}</div>
+                ${getDisplayMode() !== 'romaji' && line.rom ? `<div style="font-size: 0.75rem; color: ${isSelf ? 'var(--bg-main)' : 'var(--text-muted)'}; opacity: ${isSelf ? '0.7' : '1'}; font-family: var(--font-mono); margin-bottom: 4px;">${line.rom}</div>` : ''}
+                <div style="font-size: 0.85rem; color: ${isSelf ? 'var(--bg-main)' : 'var(--text-secondary)'}; opacity: ${isSelf ? '0.9' : '1'}; line-height: 1.4;">${line.en}</div>
               </div>
             </div>
           </div>
@@ -741,7 +741,7 @@ export function ChapterView(container, params) {
                         <i data-lucide="volume-2" style="width: 14px; height: 14px;"></i>
                       </button>
                     </div>
-                    ${getDisplayMode() !== 'romaji' && line.rom ? `<div style="font-size: 0.7rem; color: var(--bg-main); opacity: 0.7; font-family: var(--font-mono); margin-bottom: 2px;">${line.rom}</div>` : ''}
+                    ${getDisplayMode() !== 'romaji' && line.rom ? `<div style="font-size: 0.7rem; color: ${isSelf ? 'var(--bg-main)' : 'var(--text-muted)'}; opacity: ${isSelf ? '0.7' : '1'}; font-family: var(--font-mono); margin-bottom: 2px;">${line.rom}</div>` : ''}
                     <div style="font-size: 0.8rem; color: ${isSelf ? 'var(--bg-main)' : 'var(--text-secondary)'}; opacity: ${isSelf ? '0.9' : '1'};">${line.en}</div>
                   </div>
                 </div>
