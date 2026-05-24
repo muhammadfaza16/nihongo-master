@@ -1,0 +1,751 @@
+{
+  "id": 7,
+  "title": "Lesson 7: Alat (De) & Transaksi Memberi/Menerima",
+  "desc": "Membedah Bab 7. Anda akan belajar menggunakan partikel 'DE' sebagai alat/metode, dan fenomena memberi (Agemasu) serta menerima (Moraimasu) dalam budaya Jepang.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v7-1",
+      "rom": "Kirimasu",
+      "kana": "きります",
+      "kanji": "切ります",
+      "en": "Memotong",
+      "audio": ""
+    },
+    {
+      "id": "v7-2",
+      "rom": "Okurimasu",
+      "kana": "おくります",
+      "kanji": "送ります",
+      "en": "Mengirim",
+      "audio": ""
+    },
+    {
+      "id": "v7-3",
+      "rom": "Agemasu",
+      "kana": "あげます",
+      "kanji": "",
+      "en": "Memberi / Memberikan",
+      "audio": ""
+    },
+    {
+      "id": "v7-4",
+      "rom": "Moraimasu",
+      "kana": "もらいます",
+      "kanji": "",
+      "en": "Menerima / Mendapatkan",
+      "audio": ""
+    },
+    {
+      "id": "v7-5",
+      "rom": "Kashimasu",
+      "kana": "かします",
+      "kanji": "貸します",
+      "en": "Meminjamkan",
+      "audio": ""
+    },
+    {
+      "id": "v7-6",
+      "rom": "Karimasu",
+      "kana": "かります",
+      "kanji": "借ります",
+      "en": "Meminjam",
+      "audio": ""
+    },
+    {
+      "id": "v7-7",
+      "rom": "Oshiemasu",
+      "kana": "おしえます",
+      "kanji": "教えます",
+      "en": "Mengajar / Memberitahu",
+      "audio": ""
+    },
+    {
+      "id": "v7-8",
+      "rom": "Naraimasu",
+      "kana": "ならいます",
+      "kanji": "習います",
+      "en": "Belajar (menerima ilmu dari orang lain)",
+      "audio": ""
+    },
+    {
+      "id": "v7-9",
+      "rom": "Kakemasu (denwa o)",
+      "kana": "かけます",
+      "kanji": "",
+      "en": "Menelepon",
+      "audio": ""
+    },
+    {
+      "id": "v7-10",
+      "rom": "Te",
+      "kana": "て",
+      "kanji": "手",
+      "en": "Tangan",
+      "audio": ""
+    },
+    {
+      "id": "v7-11",
+      "rom": "Hashi",
+      "kana": "はし",
+      "kanji": "",
+      "en": "Sumpit",
+      "audio": ""
+    },
+    {
+      "id": "v7-12",
+      "rom": "Supuun",
+      "kana": "スプーン",
+      "kanji": "",
+      "en": "Sendok",
+      "audio": ""
+    },
+    {
+      "id": "v7-13",
+      "rom": "Naifu",
+      "kana": "ナイフ",
+      "kanji": "",
+      "en": "Pisau",
+      "audio": ""
+    },
+    {
+      "id": "v7-14",
+      "rom": "Fooku",
+      "kana": "フォーク",
+      "kanji": "",
+      "en": "Garpu",
+      "audio": ""
+    },
+    {
+      "id": "v7-15",
+      "rom": "Hasami",
+      "kana": "はさみ",
+      "kanji": "",
+      "en": "Gunting",
+      "audio": ""
+    },
+    {
+      "id": "v7-16",
+      "rom": "Fakusu",
+      "kana": "ファクス",
+      "kanji": "",
+      "en": "Faks",
+      "audio": ""
+    },
+    {
+      "id": "v7-17",
+      "rom": "Waapuro",
+      "kana": "ワープロ",
+      "kanji": "",
+      "en": "Mesin ketik (Word Processor)",
+      "audio": ""
+    },
+    {
+      "id": "v7-18",
+      "rom": "Pasokon",
+      "kana": "パソコン",
+      "kanji": "",
+      "en": "PC / Laptop (Personal Computer)",
+      "audio": ""
+    },
+    {
+      "id": "v7-19",
+      "rom": "Panchi",
+      "kana": "パンチ",
+      "kanji": "",
+      "en": "Pembolong kertas",
+      "audio": ""
+    },
+    {
+      "id": "v7-20",
+      "rom": "Hotchikisu",
+      "kana": "ホッチキス",
+      "kanji": "",
+      "en": "Staples (Stapler)",
+      "audio": ""
+    },
+    {
+      "id": "v7-21",
+      "rom": "Seroteepu",
+      "kana": "セロテープ",
+      "kanji": "",
+      "en": "Selotip",
+      "audio": ""
+    },
+    {
+      "id": "v7-22",
+      "rom": "Keshigomu",
+      "kana": "けしゴム",
+      "kanji": "消しゴム",
+      "en": "Penghapus",
+      "audio": ""
+    },
+    {
+      "id": "v7-23",
+      "rom": "Kami",
+      "kana": "かみ",
+      "kanji": "紙",
+      "en": "Kertas",
+      "audio": ""
+    },
+    {
+      "id": "v7-24",
+      "rom": "Hana",
+      "kana": "はな",
+      "kanji": "花",
+      "en": "Bunga",
+      "audio": ""
+    },
+    {
+      "id": "v7-25",
+      "rom": "Shatsu",
+      "kana": "シャツ",
+      "kanji": "",
+      "en": "Kemeja",
+      "audio": ""
+    },
+    {
+      "id": "v7-26",
+      "rom": "Purezento",
+      "kana": "プレゼント",
+      "kanji": "",
+      "en": "Kado / Hadiah",
+      "audio": ""
+    },
+    {
+      "id": "v7-27",
+      "rom": "Nimotsu",
+      "kana": "にもつ",
+      "kanji": "荷物",
+      "en": "Barang bawaan / Paket",
+      "audio": ""
+    },
+    {
+      "id": "v7-28",
+      "rom": "Okane",
+      "kana": "おかね",
+      "kanji": "お金",
+      "en": "Uang",
+      "audio": ""
+    },
+    {
+      "id": "v7-29",
+      "rom": "Kippu",
+      "kana": "きっぷ",
+      "kanji": "切符",
+      "en": "Karcis / Tiket",
+      "audio": ""
+    },
+    {
+      "id": "v7-30",
+      "rom": "Kurisumasu",
+      "kana": "クリスマス",
+      "kanji": "",
+      "en": "Natal",
+      "audio": ""
+    },
+    {
+      "id": "v7-31",
+      "rom": "Chichi",
+      "kana": "ちち",
+      "kanji": "父",
+      "en": "Ayah (sendiri)",
+      "audio": ""
+    },
+    {
+      "id": "v7-32",
+      "rom": "Haha",
+      "kana": "はは",
+      "kanji": "母",
+      "en": "Ibu (sendiri)",
+      "audio": ""
+    },
+    {
+      "id": "v7-33",
+      "rom": "Otousan",
+      "kana": "おとうさん",
+      "kanji": "お父さん",
+      "en": "Ayah (orang lain / panggilan sopan)",
+      "audio": ""
+    },
+    {
+      "id": "v7-34",
+      "rom": "Okaasan",
+      "kana": "おかあさん",
+      "kanji": "お母さん",
+      "en": "Ibu (orang lain / panggilan sopan)",
+      "audio": ""
+    },
+    {
+      "id": "v7-35",
+      "rom": "Mou",
+      "kana": "もう",
+      "kanji": "",
+      "en": "Sudah",
+      "audio": ""
+    },
+    {
+      "id": "v7-36",
+      "rom": "Mada",
+      "kana": "まだ",
+      "kanji": "",
+      "en": "Belum",
+      "audio": ""
+    },
+    {
+      "id": "v7-37",
+      "rom": "Korekara",
+      "kana": "これからは",
+      "kanji": "",
+      "en": "Mulai sekarang / Sebentar lagi",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g7-1",
+      "title": "1. Alat / Metode で (Dengan Menggunakan)",
+      "desc": "Partikel DE berkembang lagi. Sekarang maknanya adalah sarana, alat, atau cara yang digunakan untuk menunaikan sebuah tindakan.",
+      "points": [
+        "Hashi DE gohan o tabemasu. (Makan nasi MENGGUNAKAN sumpit).",
+        "Pasokon DE eiga o mimasu. (Menonton film DI/MENGGUNAKAN laptop).",
+        "Nihongo DE hanashimasu. (Berbicara MENGGUNAKAN bahasa Jepang). Bahasa juga dihitung sebagai 'alat' komunikasi."
+      ],
+      "formula": "[Alat/Benda] で Kata Kerja",
+      "native_note": "Di kalangan anak muda, kata terima kasih 'Thank you' diserap menjadi kata gaul 'Sankyuu' (サンキュー). Kata 'Arigatou' adalah bentuk kasual standar, sedangkan 'Arigatou gozaimasu' ditujukan kepada atasan atau orang yang lebih tua."
+    },
+    {
+      "id": "g7-2",
+      "title": "2. 〜は 〜語で 何ですか (Menanyakan Kosakata Bahasa)",
+      "desc": "Pola paling wajib dihafal bagi pemula untuk menanyakan terjemahan bahasa.",
+      "points": [
+        "'Arigatou' wa Eigo de nan desu ka. ('Arigatou' dalam bahasa Inggris apa?) -> 'Thank you' desu.",
+        "'Thank you' wa Nihongo de nan desu ka. ('Thank you' dalam bahasa Jepang apa?) -> 'Arigatou' desu."
+      ],
+      "formula": "[Kata/Frasa] は [Nama Bahasa]語で 何ですか"
+    },
+    {
+      "id": "g7-3",
+      "title": "3. あげます (Memberikan ke Orang Lain)",
+      "desc": "Konsep memberi (barang/jasa) yang arah panahnya KELUAR menjauhi diri pembicara. Anda memberi kepada orang lain.",
+      "points": [
+        "Watashi wa Kimura-san NI hana o agemasu. (Saya memberi bunga KEPADA Bu Kimura).",
+        "Sama halnya dengan kata kerja aksi searah lain: Kashimasu (Meminjamkan), Oshiemasu (Mengajari).",
+        "Partikel NI digunakan sebagai penanda TARGET PENERIMA."
+      ],
+      "formula": "[Subjek] は [Penerima] に [Benda] を あげます"
+    },
+    {
+      "id": "g7-4",
+      "title": "4. もらいます (Menerima dari Orang Lain)",
+      "desc": "Konsep menerima sesuatu yang arah panahnya MASUK menuju diri pembicara.",
+      "points": [
+        "Watashi wa Karina-san NI (atau KARA) chokoreeto o moraimashita. (Saya menerima cokelat DARI Bu Karina).",
+        "Sama dengan: Karimasu (Meminjam dari orang), Naraimasu (Menerima ilmu/Belajar dari guru).",
+        "Partikel NI atau KARA digunakan untuk penanda SUMBER PEMBERI."
+      ],
+      "formula": "[Subjek] は [Sumber/Pemberi] に/から [Benda] を もらいます"
+    },
+    {
+      "id": "g7-5",
+      "title": "5. もう V-ました / まだです (Sudah & Belum)",
+      "desc": "Kata MOU (sudah) menandakan aksi tersebut telah rampung, jadi kata kerjanya wajib diakhiri dengan -mashita.",
+      "points": [
+        "A: Mou bangohan o tabemashita ka. (Apakah SUDAH makan malam?)",
+        "B (Sudah): Hai, mou tabemashita. (Ya, sudah makan).",
+        "B (Belum): Iie, mada desu. (Tidak, belum).",
+        "PENTING: Jangan dijawab dengan 'tabemasen deshita' (tidak makan tadinya). Harus 'mada desu' (belum) jika niatnya akan makan nanti."
+      ],
+      "formula": "もう V-ましたか -> はい、もう V-ました / いいえ、まだです"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "パソコンで 手紙を 書きます。",
+      "rom": "Pasokon de tegami o kakimasu.",
+      "en": "Saya menulis surat MENGGUNAKAN laptop/PC."
+    },
+    {
+      "jp": "「ありがとう」は 英語で 何ですか。",
+      "rom": "'Arigatou' wa Eigo de nan desu ka.",
+      "en": "'Arigatou' dalam bahasa Inggris apa?"
+    },
+    {
+      "jp": "わたしは 木村さんに 花を あげます。",
+      "rom": "Watashi wa Kimura-san ni hana o agemasu.",
+      "en": "Saya memberikan bunga KEPADA ibu Kimura."
+    },
+    {
+      "jp": "わたしは カリナさんに チョコレートを もらいました。",
+      "rom": "Watashi wa Karina-san ni chokoreeto o moraimashita.",
+      "en": "Saya (telah) menerima cokelat DARI sdr. Karina."
+    },
+    {
+      "jp": "もう 昼ごはんを 食べましたか。",
+      "rom": "Mou hirugohan o tabemashita ka.",
+      "en": "Apakah (kamu) SUDAH makan siang?"
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: ごめんください (Permisi - Bertamu ke Rumah)",
+    "dialogue": [
+      {
+        "speaker": "Yamada",
+        "jp": "ごめんください。",
+        "rom": "Gomen kudasai.",
+        "en": "Permisi (diucapkan tamu dari luar pintu rumah)."
+      },
+      {
+        "speaker": "Santos",
+        "jp": "いらっしゃい。どうぞ お上がり ください。",
+        "rom": "Irasshai. Douzo oagari kudasai.",
+        "en": "Selamat datang. Silakan naik/masuk."
+      },
+      {
+        "speaker": "Yamada",
+        "jp": "失礼します。",
+        "rom": "Shitsurei shimasu.",
+        "en": "Permisi (masuk ruangan orang)."
+      },
+      {
+        "speaker": "Santos",
+        "jp": "コーヒーは いかがですか。",
+        "rom": "Koohii wa ikaga desu ka.",
+        "en": "Bagaimana kalau (saya buatkan) kopi?"
+      },
+      {
+        "speaker": "Yamada",
+        "jp": "ありがとう ございます。",
+        "rom": "Arigatou gozaimasu.",
+        "en": "Terima kasih banyak."
+      },
+      {
+        "speaker": "Santos",
+        "jp": "どうぞ。",
+        "rom": "Douzo.",
+        "en": "Silakan (menyuguhkan kopi)."
+      },
+      {
+        "speaker": "Yamada",
+        "jp": "いただきます。…この スプーン、すてきですね。",
+        "rom": "Itadakimasu... Kono supuun, suteki desu ne.",
+        "en": "(Selamat makan/minum)... Sendok ini, bagus/indah ya."
+      },
+      {
+        "speaker": "Santos",
+        "jp": "ええ。会社の人に もらいました。ヨーロッパの お土産です。",
+        "rom": "Ee. Kaisha no hito ni moraimashita. Yooroppa no omiyage desu.",
+        "en": "Iya. Saya mendapatkannya (menerima) DARI orang kantor. Oleh-oleh dari Eropa."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] Jika Anda memotong kertas MENGGUNAKAN gunting, partikel apa yang dipakai setelah 'Hasami' (gunting)?",
+      "options": [
+        {
+          "text": "Ni",
+          "correct": false
+        },
+        {
+          "text": "De",
+          "correct": true
+        },
+        {
+          "text": "O",
+          "correct": false
+        },
+        {
+          "text": "To",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] Terjemahkan: 'Saya meminjam buku DARI guru (sensei)'.\nWatashi wa sensei [     ] hon o karimashita.",
+      "answer": "ni"
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu B] Pertanyaan: 'Mou tabemashita ka?' Jika Anda BELUM makan, jawaban yang paling pantas adalah:",
+      "options": [
+        {
+          "text": "Iie, tabemasen deshita.",
+          "correct": false
+        },
+        {
+          "text": "Iie, mada desu.",
+          "correct": true
+        },
+        {
+          "text": "Iie, tabemasen.",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu C] Anda ingin tahu bahasa Jepangnya kata 'Thank you'.\n'Thank you' wa Nihongo [     ] nan desu ka.",
+      "answer": "de"
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Menanyakan Terjemahan Kata",
+      "situation": "Bertanya cara mengucapkan suatu frasa asing dalam bahasa Jepang",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "「Thank you」は 日本語で 何ですか。",
+          "rom": "\"Thank you\" wa Nihongo de nan desu ka.",
+          "en": "Apa bahasa Jepangnya \"Thank you\"?"
+        },
+        {
+          "speaker": "B",
+          "jp": "「ありがとう」です。",
+          "rom": "\"Arigatou\" desu.",
+          "en": "\"Arigatou\"."
+        },
+        {
+          "speaker": "A",
+          "jp": "「ありがとう」ですか。わかりました。",
+          "rom": "\"Arigatou\" desu ka. Wakarimashita.",
+          "en": "\"Arigatou\" ya. Saya mengerti."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Menanyakan Pengirim Hadiah",
+      "situation": "Mengagumi barang indah milik teman dan menanyakan dari siapa ia memperolehnya",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "素敵な ネクタイですね。",
+          "rom": "Suteki na nekutai desu ne.",
+          "en": "Dasi yang sangat keren/indah ya."
+        },
+        {
+          "speaker": "B",
+          "jp": "ありがとうございます。誕生日に 彼女に もらいました。",
+          "rom": "Arigatou gozaimasu. Tanjoubi ni kanojo ni moraimashita.",
+          "en": "Terima kasih banyak. Saya mendapatkannya dari pacar saya saat ulang tahun."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。いいですね。",
+          "rom": "Sou desu ka. Ii desu ne.",
+          "en": "Oh begitu. Bagus sekali ya."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Menanyakan Progres Laporan",
+      "situation": "Bertanya apakah laporan kerja sudah selesai ditulis",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "もう レポートを 書きましたか。",
+          "rom": "Mou repooto o kakimashita ka.",
+          "en": "Apakah Anda sudah menulis laporan?"
+        },
+        {
+          "speaker": "B",
+          "jp": "いいえ、まだです。これから 書きます。",
+          "rom": "Iie, mada desu. Korekara kakimasu.",
+          "en": "Belum, masih belum. Mulai sekarang saya mau menulis."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r7-1",
+      "jp": "日本語を テレビで 勉強しましたか。... いいえ、ラジオで 勉強しました。",
+      "rom": "Nihongo o terebi de benkyou shimashita ka? ... Iie, rajio de benkyou shimashita.",
+      "en": "Apakah Anda belajar bahasa Jepang lewat TV? ... Bukan, saya belajar lewat radio."
+    },
+    {
+      "id": "r7-2",
+      "jp": "日本語で レポートを 書きますか。... いいえ、英語で 書きます。",
+      "rom": "Nihongo de repooto o kakimasu ka? ... Iie, eigo de kakimasu.",
+      "en": "Apakah Anda menulis laporan dalam bahasa Jepang? ... Tidak, saya menulis dalam bahasa Inggris."
+    },
+    {
+      "id": "r7-3",
+      "jp": "「Thank you」は 日本語で 何ですか。... 「ありがとう」です。",
+      "rom": "\"Thank you\" wa Nihongo de nan desu ka? ... \"Arigatou\" desu.",
+      "en": "Apa bahasa Jepangnya \"Thank you\"? ... \"Arigatou\"."
+    },
+    {
+      "id": "r7-4",
+      "jp": "だれに 年賀状を 書きますか。... 先生と 友達に 書きます。",
+      "rom": "Dare ni nengajou o kakimasu ka? ... Sensei to tomodachi ni kakimasu.",
+      "en": "Kepada siapa Anda menulis kartu tahun baru? ... Kepada guru dan teman."
+    },
+    {
+      "id": "r7-5",
+      "jp": "もう お昼ご飯を 食べましたか。... はい、もう 食べました。",
+      "rom": "Mou ohirugohan o tabemashita ka? ... Hai, mou tabemashita.",
+      "en": "Apakah Anda sudah makan siang? ... Ya, sudah makan."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb7-1",
+      "pattern": "N が あります / います",
+      "instruction": "Nyatakan keberadaan sesuatu: あります untuk benda mati, います untuk makhluk hidup.",
+      "question": "Neko / heya",
+      "correct": "へやに ねこが います。",
+      "romaji": "Heya ni neko ga imasu.",
+      "translation": "Di kamar ada kucing."
+    },
+    {
+      "id": "wb7-2",
+      "pattern": "N が ありません / いません",
+      "instruction": "Nyatakan ketiadaan sesuatu dengan bentuk negatif.",
+      "question": "Jimusho / denwa",
+      "correct": "じむしょに でんわが ありません。",
+      "romaji": "Jimusho ni denwa ga arimasen.",
+      "translation": "Di kantor tidak ada telepon."
+    },
+    {
+      "id": "wb7-3",
+      "pattern": "N は N に あります / います",
+      "instruction": "Sebutkan lokasi suatu benda atau orang.",
+      "question": "Inu / niwa",
+      "correct": "いぬは にわに います。",
+      "romaji": "Inu wa niwa ni imasu.",
+      "translation": "Anjing ada di kebun."
+    },
+    {
+      "id": "wb7-4",
+      "pattern": "Hitotsu, Futatsu... (Penghitung Umum)",
+      "instruction": "Hitung jumlah benda menggunakan penghitung umum Jepang.",
+      "question": "Ringo / san-ko / arimasu",
+      "correct": "りんごが ３つ あります。",
+      "romaji": "Ringo ga mittsu arimasu.",
+      "translation": "Ada 3 buah apel."
+    },
+    {
+      "id": "wb7-5",
+      "pattern": "N が N に あります / います か",
+      "instruction": "Buat pertanyaan menanyakan ada atau tidaknya sesuatu di suatu tempat.",
+      "question": "ATM / chikaku / arimasu ka",
+      "correct": "ちかくに ATMが ありますか。",
+      "romaji": "Chikaku ni ATM ga arimasu ka.",
+      "translation": "Apakah di dekat sini ada ATM?"
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex7-1",
+        "sentence": "へやに ねこが ３びき [ ]。",
+        "correct": "います",
+        "translation": "Di kamar ada 3 ekor kucing."
+      },
+      {
+        "id": "ex7-2",
+        "sentence": "つくえの うえに ほんが [ ]。",
+        "correct": "あります",
+        "translation": "Di atas meja ada buku."
+      },
+      {
+        "id": "ex7-3",
+        "sentence": "きのうは しゅくだいが [ ]。",
+        "correct": "ありませんでした",
+        "translation": "Kemarin tidak ada PR."
+      },
+      {
+        "id": "ex7-4",
+        "sentence": "やまださんは どこ [ ] いますか。",
+        "correct": "に",
+        "translation": "Pak Yamada ada di mana?"
+      },
+      {
+        "id": "ex7-5",
+        "sentence": "りんごが みっつ [ ]。",
+        "correct": "あります",
+        "translation": "Ada 3 buah apel."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex7-6",
+        "question": "Penggunaan 'imasu' yang tepat adalah untuk menggambarkan keberadaan...",
+        "options": [
+          {
+            "text": "Buku, meja, tas (benda mati)",
+            "correct": false
+          },
+          {
+            "text": "Orang, hewan (makhluk hidup)",
+            "correct": true
+          },
+          {
+            "text": "Semua benda dan makhluk hidup",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex7-7",
+        "question": "Cara menghitung '3 lembar kertas' dalam bahasa Jepang adalah:",
+        "options": [
+          {
+            "text": "かみが さんこ あります",
+            "correct": false
+          },
+          {
+            "text": "かみが さんまい あります",
+            "correct": true
+          },
+          {
+            "text": "かみが みっつ あります",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex7-8",
+        "question": "Kalimat yang SALAH dalam penggunaan あります/います:",
+        "options": [
+          {
+            "text": "へやに ねこが います。",
+            "correct": false
+          },
+          {
+            "text": "にわに きが あります。",
+            "correct": false
+          },
+          {
+            "text": "きょうしつに せんせいが あります。",
+            "correct": true
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "わたしの うちには ねこが ２ひき います。なまえは ミルクと チョコです。にわには きれいな はなが たくさん あります。へやの なかに ほんが ５さつ あります。",
+      "questions": [
+        {
+          "id": "ex7-9",
+          "question": "このうちには ねこが ３びき います。",
+          "correct": "F"
+        },
+        {
+          "id": "ex7-10",
+          "question": "にわに はなが あります。",
+          "correct": "T"
+        },
+        {
+          "id": "ex7-11",
+          "question": "へやに ほんが ５さつ あります。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

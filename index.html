@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Platform belajar bahasa Jepang dari nol sampai JLPT N3. Kurikulum lengkap Minna no Nihongo, SRS, AI Tutor, dan latihan interaktif." />
+  <meta name="theme-color" content="#0A0A0F" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>MinnaMaster — Belajar Bahasa Jepang JLPT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Plus Jakarta Sans: UI body -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet" />
+  <!-- BIZ UDPGothic: Japanese (screen-optimised strokes) -->
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Noto Sans JP: fallback Japanese -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <!-- JetBrains Mono: code / formula -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles/main.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <!-- Sidebar overlay backdrop (mobile) -->
+  <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
+
+  <div id="app">
+    <aside id="sidebar" class="sidebar"></aside>
+    <main id="main-content" class="main-content">
+      <header id="topbar" class="topbar"></header>
+      <div id="page-content" class="page-content"></div>
+    </main>
+  </div>
+
+  <!-- Mobile bottom nav -->
+  <nav id="bottom-nav" class="bottom-nav">
+    <button class="bottom-nav-btn active" data-hash="#/" id="bnav-home">
+      <i data-lucide="layout-dashboard" style="width:20px;height:20px;"></i>
+      <span>Home</span>
+    </button>
+    <button class="bottom-nav-btn" data-hash="#/minna" id="bnav-minna">
+      <i data-lucide="book-open" style="width:20px;height:20px;"></i>
+      <span>Grammar</span>
+    </button>
+    <button class="bottom-nav-btn" data-hash="#/review" id="bnav-review">
+      <i data-lucide="repeat-2" style="width:20px;height:20px;"></i>
+      <span>Review</span>
+    </button>
+    <button class="bottom-nav-btn" data-hash="#/ai-tutor" id="bnav-ai">
+      <i data-lucide="bot" style="width:20px;height:20px;"></i>
+      <span>AI Tutor</span>
+    </button>
+    <button class="bottom-nav-btn" id="bnav-menu">
+      <i data-lucide="menu" style="width:20px;height:20px;"></i>
+      <span>Bab</span>
+    </button>
+  </nav>
+
+  <div id="modal-root"></div>
+  <div id="toast-root"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

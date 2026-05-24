@@ -1,0 +1,457 @@
+{
+  "id": 38,
+  "title": "Lesson 38: Dua Bentuk Potensial (〜ことができます vs V-potential)",
+  "desc": "Menguasai perbedaan dua ekspresi untuk menyatakan 'bisa/kemampuan': bentuk panjang (〜ことができます) yang lebih formal dan tertulis, dan bentuk pendek (kata kerja potensial) yang lebih kasual dan lisan.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v38-1",
+      "rom": "Jiyuu (na)",
+      "kana": "じゆう（な）",
+      "kanji": "自由（な）",
+      "en": "Bebas",
+      "audio": ""
+    },
+    {
+      "id": "v38-2",
+      "rom": "Kanō (na)",
+      "kana": "かのう（な）",
+      "kanji": "可能（な）",
+      "en": "Mungkin / Memungkinkan",
+      "audio": ""
+    },
+    {
+      "id": "v38-3",
+      "rom": "Kikaiki",
+      "kana": "きかいき",
+      "kanji": "機械器",
+      "en": "Peralatan mesin",
+      "audio": ""
+    },
+    {
+      "id": "v38-4",
+      "rom": "Ginō",
+      "kana": "ぎのう",
+      "kanji": "技能",
+      "en": "Keterampilan / Skill",
+      "audio": ""
+    },
+    {
+      "id": "v38-5",
+      "rom": "Supiido",
+      "kana": "スピード",
+      "kanji": "",
+      "en": "Kecepatan (speed)",
+      "audio": ""
+    },
+    {
+      "id": "v38-6",
+      "rom": "Oyogeru",
+      "kana": "およげます",
+      "kanji": "泳げます",
+      "en": "Bisa berenang",
+      "audio": ""
+    },
+    {
+      "id": "v38-7",
+      "rom": "Taberareru",
+      "kana": "たべられます",
+      "kanji": "食べられます",
+      "en": "Bisa makan / Dapat dimakan",
+      "audio": ""
+    },
+    {
+      "id": "v38-8",
+      "rom": "Nihongo ga hanaseru",
+      "kana": "にほんごがはなせる",
+      "kanji": "日本語が話せる",
+      "en": "Bisa berbicara bahasa Jepang",
+      "audio": ""
+    },
+    {
+      "id": "v38-9",
+      "rom": "Kanji ga kakeru",
+      "kana": "かんじがかける",
+      "kanji": "漢字が書ける",
+      "en": "Bisa menulis kanji",
+      "audio": ""
+    },
+    {
+      "id": "v38-10",
+      "rom": "Koto ga dekiru",
+      "kana": "ことができる",
+      "kanji": "ことができる",
+      "en": "Bisa melakukan sesuatu",
+      "audio": ""
+    },
+    {
+      "id": "v38-11",
+      "rom": "Riyou (shimasu)",
+      "kana": "りよう（します）",
+      "kanji": "利用（します）",
+      "en": "Menggunakan / Memanfaatkan",
+      "audio": ""
+    },
+    {
+      "id": "v38-12",
+      "rom": "Unten ga dekiru",
+      "kana": "うんてんができる",
+      "kanji": "運転ができる",
+      "en": "Bisa menyetir",
+      "audio": ""
+    },
+    {
+      "id": "v38-13",
+      "rom": "Piano ga hakeru",
+      "kana": "ぴあのがひける",
+      "kanji": "ピアノが弾ける",
+      "en": "Bisa bermain piano",
+      "audio": ""
+    },
+    {
+      "id": "v38-14",
+      "rom": "Kokusai",
+      "kana": "こくさい",
+      "kanji": "国際",
+      "en": "Internasional",
+      "audio": ""
+    },
+    {
+      "id": "v38-15",
+      "rom": "Gengo",
+      "kana": "げんご",
+      "kanji": "言語",
+      "en": "Bahasa",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g38-1",
+      "title": "1. Bentuk Potensial Pendek (V-potential)",
+      "desc": "Cara mengonjugasikan kata kerja biasa menjadi bentuk potensial untuk menunjukkan kemampuan atau kemungkinan.",
+      "points": [
+        "Grup I (godan): akhiran u → e. Contoh: iku→ikeru, hanasu→hanaseru, yomu→yomeru.",
+        "Grup II (ichidan): akhiran ru → rareru. Contoh: taberu→taberareru, miru→mirareru.",
+        "Grup III (irregular): suru → dekiru, kuru → korareru.",
+        "Partikel: Partikel objek を (wo) berubah menjadi が (ga) saat menggunakan bentuk potensial."
+      ],
+      "formula": "Grup I: V-e + ます / Grup II: V-rare + ます",
+      "native_note": "Dalam percakapan kasual, bentuk 'rareru' dari Grup II sering disingkat menjadi 'reru' (ranuki-kotoba). Contoh: 'taberareru' menjadi 'tabereru'."
+    },
+    {
+      "id": "g38-2",
+      "title": "2. V-dictionary + ことができます",
+      "desc": "Bentuk formal panjang untuk menyatakan kemampuan. Paling sering digunakan dalam dokumen tertulis atau situasi formal bisnis.",
+      "points": [
+        "Pola: V-dictionary form + ことができます。",
+        "Contoh: Kono hoteru de wa kurejitto kaado wo tsukau koto ga dekimasu. (Di hotel ini Anda bisa menggunakan kartu kredit).",
+        "Nuansa: Lebih formal dibanding bentuk potensial pendek V-potential."
+      ],
+      "formula": "V-dict + ことができます"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "日本語を話すことができます。",
+      "rom": "Nihongo wo hanasu koto ga dekimasu.",
+      "en": "Saya bisa berbicara bahasa Jepang (formal)."
+    },
+    {
+      "jp": "漢字が書けます。",
+      "rom": "Kanji ga kakemasu.",
+      "en": "Saya bisa menulis kanji (potensial pendek)."
+    },
+    {
+      "jp": "刺身が食べられますか。",
+      "rom": "Sashimi ga taberareru ka.",
+      "en": "Apakah kamu bisa makan sashimi?"
+    },
+    {
+      "jp": "カードで払うことができます。",
+      "rom": "Kaado de harau koto ga dekimasu.",
+      "en": "Bisa membayar menggunakan kartu."
+    }
+  ],
+  "conversation": {
+    "title": "Pertanyaan Kemampuan saat Wawancara Kerja",
+    "dialogue": [
+      {
+        "speaker": "Interviewer",
+        "jp": "日本語でレポートを書くことができますか。",
+        "rom": "Nihongo de repooto wo kaku koto ga dekimasu ka.",
+        "en": "Apakah Anda bisa menulis laporan dalam bahasa Jepang?"
+      },
+      {
+        "speaker": "Candidate",
+        "jp": "はい、少し時間はかかりますが、書くことができます。",
+        "rom": "Hai, sukoshi jikan wa kakarimasu ga, kaku koto ga dekimasu.",
+        "en": "Ya, meskipun butuh waktu sedikit, saya bisa menulisnya."
+      },
+      {
+        "speaker": "Interviewer",
+        "jp": "英語はどうですか。話せますか。",
+        "rom": "Eigo wa dō desu ka. Hanasemasu ka.",
+        "en": "Bagaimana dengan bahasa Inggris? Bisa berbicara?"
+      },
+      {
+        "speaker": "Candidate",
+        "jp": "はい、日常会話なら話せます。",
+        "rom": "Hai, nichijou kaiwa nara hanasemasu.",
+        "en": "Ya, kalau percakapan sehari-hari saya bisa."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "Bentuk potensial pendek dari 'kaku' (menulis) adalah:",
+      "options": [
+        {
+          "text": "かける",
+          "correct": true
+        },
+        {
+          "text": "かかれる",
+          "correct": false
+        },
+        {
+          "text": "かくことができる",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "'Saya bisa berenang (oyogu)'.\nWatashi wa oyogu koto [   ] dekimasu.",
+      "answer": "ga"
+    },
+    {
+      "type": "mcq",
+      "question": "Partikel objek を (wo) pada kalimat potensial biasanya diganti dengan partikel apa?",
+      "options": [
+        {
+          "text": "が",
+          "correct": true
+        },
+        {
+          "text": "に",
+          "correct": false
+        },
+        {
+          "text": "で",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Bisa Bermain Musik",
+      "situation": "Dua mahasiswa membicarakan instrumen musik",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "ピアノが弾けますか。",
+          "rom": "Piano ga hikemasu ka.",
+          "en": "Bisa bermain piano?"
+        },
+        {
+          "speaker": "B",
+          "jp": "いいえ、弾けません。ギターなら弾くことができます。",
+          "rom": "Iie, hikemasen. Gitaa nara hiku koto ga dekimasu.",
+          "en": "Tidak, tidak bisa. Kalau gitar saya bisa memainkannya."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r38-1",
+      "jp": "一人で日本の病院に行けますか。",
+      "rom": "Hitori de Nihon no byōin ni ikemasu ka.",
+      "en": "Apakah kamu bisa pergi ke rumah sakit Jepang sendirian?"
+    },
+    {
+      "id": "r38-2",
+      "jp": "このお店ではインドネシアの通貨を使うことができません。",
+      "rom": "Kono omise de wa Indoneshia no tsūka wo tsau koto ga dekimasen.",
+      "en": "Di toko ini Anda tidak bisa menggunakan mata uang Indonesia."
+    },
+    {
+      "id": "r38-3",
+      "jp": "明日は早く来られます。",
+      "rom": "Ashita wa hayaku koraremasu.",
+      "en": "Besok saya bisa datang lebih awal."
+    },
+    {
+      "id": "r38-4",
+      "jp": "英語のニュースを理解することができます。",
+      "rom": "Eigo no nyūsu wo rikai suru koto ga dekimasu.",
+      "en": "Saya bisa memahami berita bahasa Inggris."
+    },
+    {
+      "id": "r38-5",
+      "jp": "辛い食べ物が食べられます。",
+      "rom": "Karai tabemono ga taberareru.",
+      "en": "Saya bisa makan makanan pedas."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb38-1",
+      "pattern": "V-potential (Grup I)",
+      "instruction": "Ubah kata kerja ke bentuk potensial pendek.",
+      "question": "Utamasu → potential",
+      "correct": "うたえます",
+      "romaji": "utamasu",
+      "translation": "Bisa menyanyi"
+    },
+    {
+      "id": "wb38-2",
+      "pattern": "V-potential (Grup II)",
+      "instruction": "Ubah kata kerja ke bentuk potensial pendek.",
+      "question": "Taberu → potential",
+      "correct": "たべられます",
+      "romaji": "taberareru",
+      "translation": "Bisa makan"
+    },
+    {
+      "id": "wb38-3",
+      "pattern": "V-potential (Grup III)",
+      "instruction": "Ubah kata kerja ke bentuk potensial pendek.",
+      "question": "Kuru → potential",
+      "correct": "こられます",
+      "romaji": "koraremasu",
+      "translation": "Bisa datang"
+    },
+    {
+      "id": "wb38-4",
+      "pattern": "V-dictionary + ことができます",
+      "instruction": "Buat kalimat dengan bentuk formal panjang: 'Bisa mengemudi mobil'.",
+      "question": "Kuruma / unten suru / koto / dekiru",
+      "correct": "くるまを うんてんすることができます。",
+      "romaji": "Kuruma wo unten suru koto ga dekimasu.",
+      "translation": "Bisa menyetir mobil."
+    },
+    {
+      "id": "wb38-5",
+      "pattern": "Partikel が dalam bentuk potensial",
+      "instruction": "Perbaiki partikel: 'Nihongo wo hanasemasu'.",
+      "question": "Nihongo / wo / hanasemasu",
+      "correct": "にほんごが はなせます。",
+      "romaji": "Nihongo ga hanasemasu.",
+      "translation": "Bisa berbahasa Jepang."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex38-1",
+        "sentence": "わたしは にほんご [ ] はなせます。",
+        "correct": "が",
+        "translation": "Saya bisa berbicara bahasa Jepang."
+      },
+      {
+        "id": "ex38-2",
+        "sentence": "ここから ふじさんが [ ] ます。",
+        "correct": "みえ",
+        "translation": "Gunung Fuji bisa terlihat dari sini."
+      },
+      {
+        "id": "ex38-3",
+        "sentence": "クレジットカードを つかう [ ] が できます。",
+        "correct": "こと",
+        "translation": "Bisa menggunakan kartu kredit."
+      },
+      {
+        "id": "ex38-4",
+        "sentence": "あしたは はやく こ [ ] ますか。",
+        "correct": "られ",
+        "translation": "Apakah besok bisa datang cepat?"
+      },
+      {
+        "id": "ex38-5",
+        "sentence": "かんじを 100こ かくことができます [ ]。",
+        "correct": "か",
+        "translation": "Apakah Anda bisa menulis 100 kanji?"
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex38-6",
+        "question": "Bentuk potensial pendek dari 'suru' adalah:",
+        "options": [
+          {
+            "text": "できる",
+            "correct": true
+          },
+          {
+            "text": "すれる",
+            "correct": false
+          },
+          {
+            "text": "される",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex38-7",
+        "question": "Mana yang merupakan ranuki-kotoba (singkatan) dari 'taberareru'?",
+        "options": [
+          {
+            "text": "たべれる",
+            "correct": true
+          },
+          {
+            "text": "たべられる",
+            "correct": false
+          },
+          {
+            "text": "たべできる",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex38-8",
+        "question": "'Koko de taberu koto ga dekimasen' artinya:",
+        "options": [
+          {
+            "text": "Dilarang makan di sini / Tidak bisa makan di sini",
+            "correct": true
+          },
+          {
+            "text": "Silakan makan di sini",
+            "correct": false
+          },
+          {
+            "text": "Makan di sini sangat sulit",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "わたしは ギターを ひくことができますが、ピアノは ひけません。あねは ピアノも ギターも ひくことができます。あねは とても じょうずで、うたも うたえます。わたしも あねのように にぎやかに えんそうしたいです。",
+      "questions": [
+        {
+          "id": "ex38-9",
+          "question": "わたしは ピアノが ひけます。",
+          "correct": "F"
+        },
+        {
+          "id": "ex38-10",
+          "question": "あねは ギターを ひくことができます。",
+          "correct": "T"
+        },
+        {
+          "id": "ex38-11",
+          "question": "あねは うたを うたうことも できます。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,456 @@
+{
+  "id": 28,
+  "title": "Lesson 28: Bentuk Pasif (受身形) — Pendalaman",
+  "desc": "Mendalami penggunaan bentuk pasif dalam konteks yang lebih luas: pasif yang menguntungkan, pasif yang merugikan, dan pasif impersonal dalam teks formal/berita.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v28-1",
+      "rom": "Hōkoku (shimasu)",
+      "kana": "ほうこく（します）",
+      "kanji": "報告（します）",
+      "en": "Melaporkan / Laporan",
+      "audio": ""
+    },
+    {
+      "id": "v28-2",
+      "rom": "Shijimasu",
+      "kana": "しじします",
+      "kanji": "指示します",
+      "en": "Memberi instruksi/arahan",
+      "audio": ""
+    },
+    {
+      "id": "v28-3",
+      "rom": "Hiroimasu",
+      "kana": "ひろいます",
+      "kanji": "拾います",
+      "en": "Memungut / Mengambil dari tanah",
+      "audio": ""
+    },
+    {
+      "id": "v28-4",
+      "rom": "Homemasu",
+      "kana": "ほめます",
+      "kanji": "褒めます",
+      "en": "Memuji / Menyanjung",
+      "audio": ""
+    },
+    {
+      "id": "v28-5",
+      "rom": "Shikararemasu",
+      "kana": "しかられます",
+      "kanji": "叱られます",
+      "en": "Dimarahi (bentuk pasif)",
+      "audio": ""
+    },
+    {
+      "id": "v28-6",
+      "rom": "Nusumaremasu",
+      "kana": "ぬすまれます",
+      "kanji": "盗まれます",
+      "en": "Dicuri (bentuk pasif)",
+      "audio": ""
+    },
+    {
+      "id": "v28-7",
+      "rom": "Kowaremasu",
+      "kana": "こわれます",
+      "kanji": "壊れます",
+      "en": "Rusak / Hancur (intransitif)",
+      "audio": ""
+    },
+    {
+      "id": "v28-8",
+      "rom": "Tsukuraremasu",
+      "kana": "つくられます",
+      "kanji": "作られます",
+      "en": "Dibuat (pasif dari tsukurimasu)",
+      "audio": ""
+    },
+    {
+      "id": "v28-9",
+      "rom": "Mitsukeraremasu",
+      "kana": "みつけられます",
+      "kanji": "見つけられます",
+      "en": "Ditemukan (pasif dari mitsukemasu)",
+      "audio": ""
+    },
+    {
+      "id": "v28-10",
+      "rom": "Eigo de kakaremasu",
+      "kana": "えいごでかかれます",
+      "kanji": "英語で書かれます",
+      "en": "Ditulis dalam bahasa Inggris",
+      "audio": ""
+    },
+    {
+      "id": "v28-11",
+      "rom": "Sekai-juu",
+      "kana": "せかいじゅう",
+      "kanji": "世界中",
+      "en": "Di seluruh dunia",
+      "audio": ""
+    },
+    {
+      "id": "v28-12",
+      "rom": "Hyaku-nen-mae",
+      "kana": "ひゃくねんまえ",
+      "kanji": "百年前",
+      "en": "Seratus tahun yang lalu",
+      "audio": ""
+    },
+    {
+      "id": "v28-13",
+      "rom": "Saigo",
+      "kana": "さいご",
+      "kanji": "最後",
+      "en": "Terakhir / Paling akhir",
+      "audio": ""
+    },
+    {
+      "id": "v28-14",
+      "rom": "Yūmei (na)",
+      "kana": "ゆうめい（な）",
+      "kanji": "有名（な）",
+      "en": "Terkenal / Terkemuka",
+      "audio": ""
+    },
+    {
+      "id": "v28-15",
+      "rom": "Tsutawarimasu",
+      "kana": "つたわります",
+      "kanji": "伝わります",
+      "en": "Tersebar / Tersampaikan",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g28-1",
+      "title": "1. Pasif Merugikan (Harmful Passive)",
+      "desc": "Bentuk pasif yang digunakan ketika subjek menderita atau terganggu oleh tindakan orang/sesuatu lain. Sangat umum dalam bahasa Jepang sehari-hari.",
+      "points": [
+        "Pola: [Subjek は] [Pelaku に] V-passive form。",
+        "Contoh: Watashi wa sensei NI shikararemashita. (Saya DIMARAHI oleh guru — tidak menyenangkan).",
+        "Bahkan benda mati bisa jadi pelaku: Ame NI furaremashita. (Kehujanan / hujan jatuh menimpa saya).",
+        "Kunci: subjek selalu MERASAKAN dampak (biasanya negatif) dari tindakan tersebut."
+      ],
+      "formula": "[Subjek は] [Pelaku に] V-られます (pasif)"
+    },
+    {
+      "id": "g28-2",
+      "title": "2. Pasif Impersonal (dalam teks resmi/sejarah)",
+      "desc": "Digunakan dalam tulisan formal, berita, dan penjelasan sejarah tanpa menyebutkan pelaku.",
+      "points": [
+        "Contoh: Kono shiro wa 400-nen mae ni tatERAREmashita. (Kastil ini DIBANGUN 400 tahun yang lalu).",
+        "Contoh: Nihongo wa sekaijuu de hanaSAREte imasu. (Bahasa Jepang DIGUNAKAN di seluruh dunia).",
+        "Pelaku tidak disebutkan karena tidak penting atau tidak diketahui."
+      ],
+      "formula": "N は V-られています (pasif impersonal, kondisi berlanjut)"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "子供の 時、よく 父に 叱られました。",
+      "rom": "Kodomo no toki, yoku chichi ni shikararemashita.",
+      "en": "Waktu kecil, saya sering dimarahi oleh ayah."
+    },
+    {
+      "jp": "この 映画は 世界中で 見られています。",
+      "rom": "Kono eiga wa sekaijuu de mirarete imasu.",
+      "en": "Film ini ditonton di seluruh dunia."
+    },
+    {
+      "jp": "財布を 盗まれて しまいました。",
+      "rom": "Saifu wo nusumarete shimaimashita.",
+      "en": "Dompet saya dicuri (saya menderita karenanya)."
+    },
+    {
+      "jp": "この 寺は 500年前に 建てられました。",
+      "rom": "Kono tera wa 500-nen mae ni tateraremashita.",
+      "en": "Kuil ini dibangun 500 tahun yang lalu."
+    }
+  ],
+  "conversation": {
+    "title": "Mengalami Hal Tidak Menyenangkan",
+    "dialogue": [
+      {
+        "speaker": "A",
+        "jp": "どうしたんですか。元気が ないですね。",
+        "rom": "Dō shitan desu ka. Genki ga nai desu ne.",
+        "en": "Ada apa? Kelihatan tidak bersemangat ya."
+      },
+      {
+        "speaker": "B",
+        "jp": "電車の 中で 足を 踏まれたんです。すごく 痛かった。",
+        "rom": "Densha no naka de ashi wo fumareta n desu. Sugoku itakatta.",
+        "en": "Di dalam kereta, kaki saya diinjak. Sakitnya luar biasa."
+      },
+      {
+        "speaker": "A",
+        "jp": "それは 大変でしたね。",
+        "rom": "Sore wa taihen deshita ne.",
+        "en": "Kasihan ya, itu berat sekali."
+      },
+      {
+        "speaker": "B",
+        "jp": "それだけじゃなくて、財布も 盗まれたんです。",
+        "rom": "Sore dake ja nakute, saifu mo nusumareta n desu.",
+        "en": "Tidak hanya itu, dompet saya juga dicuri."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "Bentuk pasif dari 'shikaru' (memarahi) adalah:",
+      "options": [
+        {
+          "text": "しからせます",
+          "correct": false
+        },
+        {
+          "text": "しかられます",
+          "correct": true
+        },
+        {
+          "text": "しかれます",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "Terjemahkan menggunakan pasif: 'Saya dipuji oleh guru'.\nWatashi wa sensei ni [   ].",
+      "answer": "homeraremashita"
+    },
+    {
+      "type": "mcq",
+      "question": "Dalam kalimat pasif, partikel yang menandai pelaku tindakan adalah:",
+      "options": [
+        {
+          "text": "を",
+          "correct": false
+        },
+        {
+          "text": "に",
+          "correct": true
+        },
+        {
+          "text": "が",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Membicarakan Sejarah Tempat Wisata",
+      "situation": "Wisatawan bertanya tentang sejarah kuil",
+      "dialogue": [
+        {
+          "speaker": "Guide",
+          "jp": "この お寺は 1200年前に 建てられました。",
+          "rom": "Kono otera wa 1200-nen mae ni tateraremashita.",
+          "en": "Kuil ini dibangun 1200 tahun yang lalu."
+        },
+        {
+          "speaker": "Wisatawan",
+          "jp": "へえ、すごいですね。誰に 建てられたんですか。",
+          "rom": "Hee, sugoi desu ne. Dare ni taterareta n desu ka.",
+          "en": "Wow, luar biasa. Dibangun oleh siapa?"
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r28-1",
+      "jp": "電車の 中で 知らない 人に 足を 踏まれました。",
+      "rom": "Densha no naka de shiranai hito ni ashi wo fumaremashita.",
+      "en": "Di dalam kereta, kaki saya diinjak orang tidak dikenal."
+    },
+    {
+      "id": "r28-2",
+      "jp": "日本語は アジアの 多くの 国で 話されています。",
+      "rom": "Nihongo wa Ajia no ooku no kuni de hanasarete imasu.",
+      "en": "Bahasa Jepang digunakan di banyak negara Asia."
+    },
+    {
+      "id": "r28-3",
+      "jp": "このケーキは 有名な シェフに 作られました。",
+      "rom": "Kono keeki wa yuumei na shefu ni tsukuraremashita.",
+      "en": "Kue ini dibuat oleh koki yang terkenal."
+    },
+    {
+      "id": "r28-4",
+      "jp": "先生に ほめられて、とても うれしかったです。",
+      "rom": "Sensei ni homerarete, totemo ureshikatta desu.",
+      "en": "Dipuji oleh guru, saya sangat senang."
+    },
+    {
+      "id": "r28-5",
+      "jp": "子供の 時、雨に 降られて 風邪を ひいてしまいました。",
+      "rom": "Kodomo no toki, ame ni furarete kaze wo hiite shimaimashita.",
+      "en": "Waktu kecil, kehujanan dan akhirnya masuk angin."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb28-1",
+      "pattern": "Bentuk pasif Grup I",
+      "instruction": "Ubah kata kerja berikut ke bentuk pasif.",
+      "question": "Yomimasu → Pasif",
+      "correct": "よまれます",
+      "romaji": "yomaremasu",
+      "translation": "Dibaca"
+    },
+    {
+      "id": "wb28-2",
+      "pattern": "Bentuk pasif Grup II",
+      "instruction": "Ubah kata kerja berikut ke bentuk pasif.",
+      "question": "Tabemasuu → Pasif",
+      "correct": "たべられます",
+      "romaji": "taberaremasu",
+      "translation": "Dimakan"
+    },
+    {
+      "id": "wb28-3",
+      "pattern": "Pasif merugikan",
+      "instruction": "Buat kalimat pasif merugikan: 'Kaki saya diinjak di kereta'.",
+      "question": "Densha / ashi / fumareru",
+      "correct": "でんしゃで あしを ふまれました。",
+      "romaji": "Densha de ashi wo fumaremashita.",
+      "translation": "Kaki saya diinjak di kereta."
+    },
+    {
+      "id": "wb28-4",
+      "pattern": "Pasif impersonal (sejarah)",
+      "instruction": "Buat kalimat pasif untuk menyatakan 'novel ini ditulis 100 tahun lalu'.",
+      "question": "Kono shousetsu / 100-nen mae / kakareru",
+      "correct": "この しょうせつは 100ねんまえに かかれました。",
+      "romaji": "Kono shousetsu wa 100-nen mae ni kakaremashita.",
+      "translation": "Novel ini ditulis 100 tahun yang lalu."
+    },
+    {
+      "id": "wb28-5",
+      "pattern": "Pasif + て + うれしい/かなしい",
+      "instruction": "Nyatakan perasaan setelah mendapat tindakan pasif.",
+      "question": "Sensei / homeru / ureshii",
+      "correct": "せんせいに ほめられて うれしかったです。",
+      "romaji": "Sensei ni homerarete ureshikatta desu.",
+      "translation": "Dipuji oleh guru, saya senang."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex28-1",
+        "sentence": "でんしゃの なかで あしを ふま [ ] ました。",
+        "correct": "れ",
+        "translation": "Kaki saya diinjak di dalam kereta."
+      },
+      {
+        "id": "ex28-2",
+        "sentence": "この えいがは せかいじゅうで み [ ] います。",
+        "correct": "られて",
+        "translation": "Film ini ditonton di seluruh dunia."
+      },
+      {
+        "id": "ex28-3",
+        "sentence": "せんせいに [ ] て、とても うれしかった。",
+        "correct": "ほめられ",
+        "translation": "Dipuji guru, saya sangat senang."
+      },
+      {
+        "id": "ex28-4",
+        "sentence": "この てらは 500ねんまえに たて [ ] ました。",
+        "correct": "られ",
+        "translation": "Kuil ini dibangun 500 tahun lalu."
+      },
+      {
+        "id": "ex28-5",
+        "sentence": "さいふを [ ] てしまいました。",
+        "correct": "ぬすまれ",
+        "translation": "Dompet saya dicuri."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex28-6",
+        "question": "Kalimat 'Ame ni furaremashita' mengandung makna:",
+        "options": [
+          {
+            "text": "Saya menyebabkan hujan turun",
+            "correct": false
+          },
+          {
+            "text": "Saya terganggu/dirugikan oleh hujan (kehujanan)",
+            "correct": true
+          },
+          {
+            "text": "Saya menyukai hujan",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex28-7",
+        "question": "Dalam pasif impersonal (sejarah/berita), pelaku biasanya:",
+        "options": [
+          {
+            "text": "Wajib disebutkan",
+            "correct": false
+          },
+          {
+            "text": "Tidak disebutkan karena tidak relevan/diketahui",
+            "correct": true
+          },
+          {
+            "text": "Digunakan dengan partikel を",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex28-8",
+        "question": "Bentuk pasif dari 'kaku' (menulis) adalah:",
+        "options": [
+          {
+            "text": "かかせます",
+            "correct": false
+          },
+          {
+            "text": "かかれます",
+            "correct": true
+          },
+          {
+            "text": "かけられます",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "きのう、でんしゃが おくれて こまりました。でんしゃの なかは とても こんでいて、しらないひとに あしを ふまれました。しかも、かいしゃに ついてから、ぶちょうに しごとの ほうこくが おそいと しかられました。さんざんな いちにちでした。",
+      "questions": [
+        {
+          "id": "ex28-9",
+          "question": "でんしゃは じかんどおりに きました。",
+          "correct": "F"
+        },
+        {
+          "id": "ex28-10",
+          "question": "でんしゃの なかで あしを ふまれました。",
+          "correct": "T"
+        },
+        {
+          "id": "ex28-11",
+          "question": "かいしゃで ぶちょうに ほめられました。",
+          "correct": "F"
+        }
+      ]
+    }
+  }
+}

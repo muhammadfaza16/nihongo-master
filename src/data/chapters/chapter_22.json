@@ -1,0 +1,670 @@
+{
+  "id": 22,
+  "title": "Lesson 22: Klausa Modifikasi (Menjelaskan Kata Benda)",
+  "desc": "Membedah Bab 22. Di sinilah grammar Jepang menjadi 'terbalik' dari bahasa Indonesia/Inggris. Anda belajar menjelaskan kata benda menggunakan KESELURUHAN KALIMAT (Relative Clauses).",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v22-1",
+      "rom": "Kimasu",
+      "kana": "きます",
+      "kanji": "着ます",
+      "en": "Memakai (pakaian atas/kemeja)"
+    },
+    {
+      "id": "v22-2",
+      "rom": "Hakimasu",
+      "kana": "はきます",
+      "kanji": "",
+      "en": "Memakai (pakaian bawah/sepatu)"
+    },
+    {
+      "id": "v22-3",
+      "rom": "Kaburimasu",
+      "kana": "かぶります",
+      "kanji": "",
+      "en": "Memakai (topi)"
+    },
+    {
+      "id": "v22-4",
+      "rom": "Kakemasu",
+      "kana": "かけます",
+      "kanji": "",
+      "en": "Memakai (kacamata)"
+    },
+    {
+      "id": "v22-5",
+      "rom": "Umaremasu",
+      "kana": "うまれます",
+      "kanji": "生まれます",
+      "en": "Lahir"
+    },
+    {
+      "id": "v22-6",
+      "rom": "Kooto",
+      "kana": "コート",
+      "kanji": "",
+      "en": "Mantel"
+    },
+    {
+      "id": "v22-7",
+      "rom": "Suutsu",
+      "kana": "スーツ",
+      "kanji": "",
+      "en": "Setelan jas"
+    },
+    {
+      "id": "v22-8",
+      "rom": "Seetaa",
+      "kana": "セーター",
+      "kanji": "",
+      "en": "Baju hangat / Sweater"
+    },
+    {
+      "id": "v22-9",
+      "rom": "Boushi",
+      "kana": "ぼうし",
+      "kanji": "帽子",
+      "en": "Topi"
+    },
+    {
+      "id": "v22-10",
+      "rom": "Megane",
+      "kana": "めがね",
+      "kanji": "眼鏡",
+      "en": "Kacamata"
+    },
+    {
+      "id": "v22-11",
+      "rom": "Yoku",
+      "kana": "よく",
+      "kanji": "",
+      "en": "Sering / Dengan baik"
+    },
+    {
+      "id": "v22-12",
+      "rom": "Yotei",
+      "kana": "よてい",
+      "kanji": "予定",
+      "en": "Rencana / Jadwal"
+    },
+    {
+      "id": "v22-13",
+      "rom": "Tsukurimasu",
+      "kana": "つくります",
+      "kanji": "作ります",
+      "en": "Membuat",
+      "audio": ""
+    },
+    {
+      "id": "v22-14",
+      "rom": "Sutemasu",
+      "kana": "すてます",
+      "kanji": "捨てます",
+      "en": "Membuang",
+      "audio": ""
+    },
+    {
+      "id": "v22-15",
+      "rom": "Nuremasu",
+      "kana": "ぬれます",
+      "kanji": "濡れます",
+      "en": "Basah / Menjadi basah",
+      "audio": ""
+    },
+    {
+      "id": "v22-16",
+      "rom": "Kawakimasu",
+      "kana": "かわきます",
+      "kanji": "乾きます",
+      "en": "Kering / Mengering",
+      "audio": ""
+    },
+    {
+      "id": "v22-17",
+      "rom": "Shimemasu",
+      "kana": "しめます",
+      "kanji": "締めます",
+      "en": "Memakai (dasi) / Mengencangkan",
+      "audio": ""
+    },
+    {
+      "id": "v22-18",
+      "rom": "Kutsushita",
+      "kana": "くつした",
+      "kanji": "靴下",
+      "en": "Kaus kaki",
+      "audio": ""
+    },
+    {
+      "id": "v22-19",
+      "rom": "Kutsu",
+      "kana": "くつ",
+      "kanji": "靴",
+      "en": "Sepatu",
+      "audio": ""
+    },
+    {
+      "id": "v22-20",
+      "rom": "Zubon",
+      "kana": "ズボン",
+      "kanji": "",
+      "en": "Celana panjang",
+      "audio": ""
+    },
+    {
+      "id": "v22-21",
+      "rom": "Sukaato",
+      "kana": "スカート",
+      "kanji": "",
+      "en": "Rok",
+      "audio": ""
+    },
+    {
+      "id": "v22-22",
+      "rom": "Waishatsu",
+      "kana": "ワイシャツ",
+      "kanji": "",
+      "en": "Kemeja putih / Dress shirt",
+      "audio": ""
+    },
+    {
+      "id": "v22-23",
+      "rom": "Nekutai",
+      "kana": "ネクタイ",
+      "kanji": "",
+      "en": "Dasi",
+      "audio": ""
+    },
+    {
+      "id": "v22-24",
+      "rom": "Tokei",
+      "kana": "とけい",
+      "kanji": "時計",
+      "en": "Jam tangan / Jam dinding",
+      "audio": ""
+    },
+    {
+      "id": "v22-25",
+      "rom": "Kasa",
+      "kana": "かさ",
+      "kanji": "傘",
+      "en": "Payung",
+      "audio": ""
+    },
+    {
+      "id": "v22-26",
+      "rom": "Saifu",
+      "kana": "さいふ",
+      "kanji": "財布",
+      "en": "Dompet",
+      "audio": ""
+    },
+    {
+      "id": "v22-27",
+      "rom": "Kagi",
+      "kana": "かぎ",
+      "kanji": "鍵",
+      "en": "Kunci",
+      "audio": ""
+    },
+    {
+      "id": "v22-28",
+      "rom": "Kami",
+      "kana": "かみ",
+      "kanji": "髪",
+      "en": "Rambut",
+      "audio": ""
+    },
+    {
+      "id": "v22-29",
+      "rom": "Nagai",
+      "kana": "ながい",
+      "kanji": "長い",
+      "en": "Panjang",
+      "audio": ""
+    },
+    {
+      "id": "v22-30",
+      "rom": "Mijikai",
+      "kana": "みじかい",
+      "kanji": "短い",
+      "en": "Pendek (ukuran, bukan tinggi badan)",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g22-1",
+      "title": "1. Klausa Relatif (Kalimat yang menjadi Kata Sifat)",
+      "desc": "Dalam bahasa Indonesia: 'Orang YANG membaca buku'. Dalam bahasa Jepang: '[Membaca buku] Orang'. Anak kalimat (klausa) ditaruh TEPAT DI DEPAN kata benda yang dijelaskan.",
+      "points": [
+        "Hon o yonde iru + Hito -> Hon o yonde iru HITO. (Orang yang sedang membaca buku).",
+        "Kinoo katta + Hon -> Kinoo katta HON. (Buku yang saya beli kemarin).",
+        "Klausa penjelas WAJIB dalam bentuk Plain Form (Futsukei)."
+      ],
+      "formula": "[Klausa Plain Form] + Noun",
+      "native_note": "Dalam obrolan santai yang spontan, susunan Klausa Relatif terkadang diucapkan terbalik untuk penekanan cepat. Misal: 'Kore, kinoo katta kaban' (Ini tas yang saya beli kemarin) atau 'Kore kaban, kinoo katta yatsu' (Ini tas, yang kemarin saya beli)."
+    },
+    {
+      "id": "g22-2",
+      "title": "2. Partikel GA dalam Anak Kalimat",
+      "desc": "Jika di dalam anak kalimat (klausa relatif) terdapat subjek, maka subjek tersebut TIDAK BOLEH ditandai dengan WA. Harus diganti menjadi GA.",
+      "points": [
+        "Watashi WA keki o tsukurimashita. (Kalimat normal: Saya membuat kue).",
+        "Klausa: [Watashi GA tsukutta] keeki. (Kue yang SAYA buat).",
+        "Miraa-san GA sunde iru uchi. (Rumah yang Pak Miller tinggali)."
+      ],
+      "formula": "Subjek dalam klausa pakai が (Bukan は)"
+    },
+    {
+      "id": "g22-3",
+      "title": "3. Kata Kerja 'Memakai' (Bervariasi)",
+      "desc": "Bahasa Jepang sangat spesifik untuk aksi 'memakai', tergantung di bagian tubuh mana benda itu dikenakan.",
+      "points": [
+        "Kimasu: Untuk badan atas (Kemeja, T-shirt, Jas).",
+        "Hakimasu: Untuk badan bawah/kaki (Celana, Rok, Sepatu, Kaus kaki).",
+        "Kaburimasu: Untuk kepala (Topi).",
+        "Kakemasu: Untuk mata (Kacamata)."
+      ],
+      "formula": "Hafalkan sesuai letak anatomis"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "これは ミラーさんが 作った ケーキです。",
+      "rom": "Kore wa Miraa-san ga tsukutta keeki desu.",
+      "en": "Ini adalah kue yang dibuat oleh Pak Miller."
+    },
+    {
+      "jp": "あそこで 本を 読んで いる 人は ミラーさんです。",
+      "rom": "Asoko de hon o yonde iru hito wa Miraa-san desu.",
+      "en": "Orang yang sedang membaca buku di sana itu adalah Pak Miller."
+    },
+    {
+      "jp": "きのう 買った 傘を なくしました。",
+      "rom": "Kinou katta kasa o nakushimashita.",
+      "en": "Saya menghilangkan payung yang saya beli kemarin."
+    },
+    {
+      "jp": "わたしが よく 行く 店は あの 店です。",
+      "rom": "Watashi ga yoku iku mise wa ano mise desu.",
+      "en": "Toko yang sering saya kunjungi adalah toko itu."
+    },
+    {
+      "jp": "髪が 長い 人は カリナさんです。",
+      "rom": "Kami ga nagai hito wa Karina-san desu.",
+      "en": "Orang yang rambutnya panjang itu Bu Karina."
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: Donna Hito Desu Ka (Orangnya Seperti Apa?)",
+    "dialogue": [
+      {
+        "speaker": "Sato",
+        "jp": "あの 人は 誰ですか。",
+        "rom": "Ano hito wa dare desu ka.",
+        "en": "Orang itu siapa?"
+      },
+      {
+        "speaker": "Miller",
+        "jp": "どの 人ですか。",
+        "rom": "Dono hito desu ka.",
+        "en": "Orang yang mana?"
+      },
+      {
+        "speaker": "Sato",
+        "jp": "あの、赤い セーターを 着て いる 人です。",
+        "rom": "Ano, akai seetaa o kite iru hito desu.",
+        "en": "Itu, orang yang sedang memakai sweater merah."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "ああ、木村さんです。わたしが よく 話す 人です。",
+        "rom": "Aa, Kimura-san desu. Watashi ga yoku hanasu hito desu.",
+        "en": "Ah, itu Bu Kimura. Orang yang sering (diajak) ngobrol oleh saya."
+      },
+      {
+        "speaker": "Sato",
+        "jp": "あの 眼鏡を かけて いる 人は 誰ですか。",
+        "rom": "Ano megane o kakete iru hito wa dare desu ka.",
+        "en": "Orang yang memakai kacamata itu siapa?"
+      },
+      {
+        "speaker": "Miller",
+        "jp": "ああ、きのう 日本に 来た 新しい 研究者ですよ。",
+        "rom": "Aa, kinou Nihon ni kita atarashii kenkyuusha desu yo.",
+        "en": "Ah, itu peneliti baru yang datang ke Jepang kemarin lho."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "Terjemahkan: 'Tas yang saya beli di Tokyo'.",
+      "options": [
+        {
+          "text": "Kaban wa Toukyou de katta",
+          "correct": false
+        },
+        {
+          "text": "Toukyou de katta kaban",
+          "correct": true
+        },
+        {
+          "text": "Katta kaban de Toukyou",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "Kata kerja untuk 'Memakai topi' adalah boushi o [     ].",
+      "answer": "kaburimasu"
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] 'Orang yang sedang memakai topi' dalam bahasa Jepang, urutan yang benar adalah:",
+      "options": [
+        {
+          "text": "Boushi o kabutte iru hito",
+          "correct": true
+        },
+        {
+          "text": "Hito ga boushi o kabutte iru",
+          "correct": false
+        },
+        {
+          "text": "Kabutte iru boushi no hito",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] 'Buku yang dipinjam dari perpustakaan'.\nToshokan de [         ] hon.",
+      "answer": "karita"
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu B] Dalam anak kalimat (klausa relatif), subjek menggunakan partikel apa?",
+      "options": [
+        {
+          "text": "が (Ga)",
+          "correct": true
+        },
+        {
+          "text": "は (Wa)",
+          "correct": false
+        },
+        {
+          "text": "を (O)",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Menanyakan Kepemilikan Kunci Mobil Baru",
+      "situation": "Menanyakan kunci apa yang diletakkan di atas meja, yang ternyata kunci mobil baru",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "これは 何の 鍵ですか。",
+          "rom": "Kore wa nan no kagi desu ka.",
+          "en": "Ini kunci apa?"
+        },
+        {
+          "speaker": "B",
+          "jp": "私が 先週 買った 車の 鍵ですよ。",
+          "rom": "Watashi ga senshuu katta kuruma no kagi desu yo.",
+          "en": "Ini kunci mobil yang saya beli minggu lalu lho."
+        },
+        {
+          "speaker": "A",
+          "jp": "わあ、いいですね。見せて ください。",
+          "rom": "Waa, ii desu ne. Misete kudasai.",
+          "en": "Wah, keren ya. Tolong perlihatkan ke saya."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Menanyakan Letak Rumah Baru Rekan Kerja",
+      "situation": "Mengobrol tentang rumah baru teman yang ternyata dekat dengan stasiun",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "ミラーさんが 住んで いる 家は どこに ありますか。",
+          "rom": "Miraa-san ga sunde iru uchi wa doko ni arimasu ka.",
+          "en": "Rumah tempat tinggal Mr. Miller ada di mana?"
+        },
+        {
+          "speaker": "B",
+          "jp": "駅の 近くの 静かな 町に あります。",
+          "rom": "Eki no chikaku no shizuka na machi ni arimasu.",
+          "en": "Ada di kota yang tenang dekat stasiun."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。一度 行きたいですね。",
+          "rom": "Sou desu ka. Ichido ikitai desu ne.",
+          "en": "Oh begitu. Sekali-kali ingin berkunjung ya."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Menanyakan Janji Kegiatan Hari Ini",
+      "situation": "Mengobrol tentang kesibukan hari ini yang terikat janji bertemu teman lama",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "今日 何か 予定が ありますか。",
+          "rom": "Kyou nani ka yotei ga arimasu ka.",
+          "en": "Apakah hari ini ada rencana/jadwal kegiatan?"
+        },
+        {
+          "speaker": "B",
+          "jp": "はい。高校の 友達と 晩ご飯を 食べる 約束が あります。",
+          "rom": "Hai. Koukou no tomodachi to bangohan o taberu yakusoku ga arimasu.",
+          "en": "Ya. Ada janji makan malam bersama teman masa SMA."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。楽しんで くださいね。",
+          "rom": "Sou desu ka. Tanoshinde kudasai ne.",
+          "en": "Oh begitu. Selamat bersenang-senang ya."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r22-1",
+      "jp": "これは わたしが 作った ケーキです。... わあ、おいしそうですね。",
+      "rom": "Kore wa watashi ga tsukutta keeki desu. ... Waa, oishisou desu ne.",
+      "en": "Ini kue yang telah saya buat. ... Wah, kelihatan enak ya."
+    },
+    {
+      "id": "r22-2",
+      "jp": "あそこにある 本は 誰のですか。... わたしが 図書館から 借りた 本です。",
+      "rom": "Asoko ni aru hon wa dare no desu ka? ... Watashi ga toshokan kara karita hon desu.",
+      "en": "Buku yang ada di sana milik siapa? ... Buku yang saya pinjam dari perpustakaan."
+    },
+    {
+      "id": "r22-3",
+      "jp": "どんな 人が 好きですか。... 髪が 長くて、やさしい 人が 好きです。",
+      "rom": "Donna hito ga suki desu ka? ... Kami ga nagakute, yasashii hito ga suki desu.",
+      "en": "Orang yang bagaimana yang Anda sukai? ... Saya suka orang yang berambut panjang dan baik hati."
+    },
+    {
+      "id": "r22-4",
+      "jp": "昨日 買った 傘を 忘れてしまいました。... ええっ、どこで？",
+      "rom": "Kinou katta kasa o wasurete shimaimashita. ... Ee, doko de?",
+      "en": "Payung yang saya beli kemarin sudah ketinggalan (hilang). ... Hah, di mana?"
+    },
+    {
+      "id": "r22-5",
+      "jp": "友達と 会う 約束が あります。... そうですか。楽しんでくださいね。",
+      "rom": "Tomodachi to au yakusoku ga arimasu. ... Sou desu ka. Tanoshinde kudasai ne.",
+      "en": "Saya ada janji bertemu teman. ... Oh ya? Selamat bersenang-senang ya."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb22-1",
+      "pattern": "V られます (Bentuk Pasif: Dikenai tindakan)",
+      "instruction": "Ubah kalimat aktif berikut menjadi bentuk pasif menggunakan られます.",
+      "question": "Sensei ga watashi wo shikaru → Passive",
+      "correct": "わたしは せんせいに しかられました。",
+      "romaji": "Watashi wa sensei ni shikararemashita.",
+      "translation": "Saya dimarahi oleh guru."
+    },
+    {
+      "id": "wb22-2",
+      "pattern": "N に V られます (Pasif: Dikenai oleh ~)",
+      "instruction": "Buat kalimat pasif menyebutkan pelaku dengan partikel に.",
+      "question": "Dorobou / ni / saifu / nusumareru",
+      "correct": "どろぼうに さいふを ぬすまれました。",
+      "romaji": "Dorobou ni saifu wo nusumaremashita.",
+      "translation": "Dompet dicuri oleh pencuri."
+    },
+    {
+      "id": "wb22-3",
+      "pattern": "Pasif yang menyatakan perasaan tidak menyenangkan",
+      "instruction": "Buat kalimat pasif yang menunjukkan ketidaknyamanan/dampak negatif.",
+      "question": "Tomodachi / ni / uwasa / sareru",
+      "correct": "ともだちに うわさを されました。",
+      "romaji": "Tomodachi ni uwasa wo saremashita.",
+      "translation": "Saya digosipkan oleh teman (tidak menyenangkan)."
+    },
+    {
+      "id": "wb22-4",
+      "pattern": "Pasif tanpa pelaku (Passive impersonal)",
+      "instruction": "Buat kalimat pasif tanpa menyebutkan pelaku spesifik.",
+      "question": "Kono hon / yomareru",
+      "correct": "この ほんは たくさん よまれています。",
+      "romaji": "Kono hon wa takusan yomarete imasu.",
+      "translation": "Buku ini banyak dibaca (oleh orang-orang)."
+    },
+    {
+      "id": "wb22-5",
+      "pattern": "Pasif kehormatan (Keigo—menghormati subjek)",
+      "instruction": "Gunakan bentuk pasif sebagai bentuk sopan untuk merujuk pada tindakan orang yang dihormati.",
+      "question": "Sensei / kare / ossharu / passive",
+      "correct": "せんせいは そう おっしゃいました。",
+      "romaji": "Sensei wa sou osshaima shita.",
+      "translation": "Guru berkata demikian (bentuk hormat)."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex22-1",
+        "sentence": "わたしは せんせいに しか [ ] ました。",
+        "correct": "られ",
+        "translation": "Saya dimarahi oleh guru."
+      },
+      {
+        "id": "ex22-2",
+        "sentence": "どろぼうに さいふを ぬす [ ] ました。",
+        "correct": "まれ",
+        "translation": "Dompet dicuri oleh pencuri."
+      },
+      {
+        "id": "ex22-3",
+        "sentence": "この えいがは せかいじゅうで み [ ] います。",
+        "correct": "られて",
+        "translation": "Film ini ditonton di seluruh dunia."
+      },
+      {
+        "id": "ex22-4",
+        "sentence": "にほんでは さくら [ ] とても あいされています。",
+        "correct": "が",
+        "translation": "Bunga sakura sangat dicintai di Jepang."
+      },
+      {
+        "id": "ex22-5",
+        "sentence": "けっこんしきで うた [ ] うたわれました。",
+        "correct": "が",
+        "translation": "Di pesta pernikahan, lagu dinyanyikan."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex22-6",
+        "question": "Bentuk pasif dari 'shikaru' (memarahi) adalah:",
+        "options": [
+          {
+            "text": "しかられます",
+            "correct": true
+          },
+          {
+            "text": "しかさせます",
+            "correct": false
+          },
+          {
+            "text": "しかてもらいます",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex22-7",
+        "question": "Dalam kalimat pasif, partikel yang menandai pelaku tindakan adalah:",
+        "options": [
+          {
+            "text": "を",
+            "correct": false
+          },
+          {
+            "text": "で",
+            "correct": false
+          },
+          {
+            "text": "に",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "id": "ex22-8",
+        "question": "Kalimat 'Ame ni furaremashita' (kehujanan) menggunakan pasif untuk:",
+        "options": [
+          {
+            "text": "Menyatakan hujan turun (fakta netral)",
+            "correct": false
+          },
+          {
+            "text": "Menyatakan ketidaknyamanan/terganggu oleh hujan",
+            "correct": true
+          },
+          {
+            "text": "Meminta izin keluar di hujan",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "きのう でんしゃの なかで たなかさんに あしを ふまれました。そして かばんを だれかに とられて しまいました。けいさつに れんらくしましたが、かばんは まだ みつかって いません。",
+      "questions": [
+        {
+          "id": "ex22-9",
+          "question": "でんしゃの なかで あしを ふまれました。",
+          "correct": "T"
+        },
+        {
+          "id": "ex22-10",
+          "question": "かばんは あとで みつかりました。",
+          "correct": "F"
+        },
+        {
+          "id": "ex22-11",
+          "question": "けいさつに れんらくしました。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,674 @@
+{
+  "id": 24,
+  "title": "Lesson 24: Memberi & Menerima (Kuremasu)",
+  "desc": "Membedah Bab 24. Fokus pada sistem transaksi kebaikan hati Jepang: Agemasu (Memberi keluar), Moraimasu (Menerima), dan Kuremasu (Orang lain memberi ke SAYA).",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v24-1",
+      "rom": "Kuremasu",
+      "kana": "くれます",
+      "kanji": "",
+      "en": "Memberi (ke saya / keluarga saya)",
+      "audio": ""
+    },
+    {
+      "id": "v24-2",
+      "rom": "Naoshimasu",
+      "kana": "なおします",
+      "kanji": "直します",
+      "en": "Memperbaiki",
+      "audio": ""
+    },
+    {
+      "id": "v24-3",
+      "rom": "Tsurete ikimasu",
+      "kana": "つれて いきます",
+      "kanji": "連れて 行きます",
+      "en": "Membawa pergi (orang)",
+      "audio": ""
+    },
+    {
+      "id": "v24-4",
+      "rom": "Tsurete kimasu",
+      "kana": "つれて きます",
+      "kanji": "連れて 来ます",
+      "en": "Membawa datang (orang)",
+      "audio": ""
+    },
+    {
+      "id": "v24-5",
+      "rom": "Okurimasu",
+      "kana": "おくります",
+      "kanji": "送ります",
+      "en": "Mengantar [Hito O]",
+      "audio": ""
+    },
+    {
+      "id": "v24-6",
+      "rom": "Shoukai-shimasu",
+      "kana": "しょうかいします",
+      "kanji": "紹介します",
+      "en": "Memperkenalkan",
+      "audio": ""
+    },
+    {
+      "id": "v24-7",
+      "rom": "Annai-shimasu",
+      "kana": "あんないします",
+      "kanji": "案内します",
+      "en": "Memandu / Memberi petunjuk",
+      "audio": ""
+    },
+    {
+      "id": "v24-8",
+      "rom": "Setsumei-shimasu",
+      "kana": "せつめいします",
+      "kanji": "説明します",
+      "en": "Menjelaskan",
+      "audio": ""
+    },
+    {
+      "id": "v24-9",
+      "rom": "Ojiisan / Ojisan",
+      "kana": "おじいさん / おじさん",
+      "kanji": "お祖父さん / 叔父さん",
+      "en": "Kakek (orang lain) / Paman",
+      "audio": ""
+    },
+    {
+      "id": "v24-10",
+      "rom": "Obaasan / Obasan",
+      "kana": "おばあさん / おばさん",
+      "kanji": "お祖母さん / 叔母さん",
+      "en": "Nenek (orang lain) / Bibi",
+      "audio": ""
+    },
+    {
+      "id": "v24-11",
+      "rom": "Junbi",
+      "kana": "じゅんび",
+      "kanji": "準備",
+      "en": "Persiapan",
+      "audio": ""
+    },
+    {
+      "id": "v24-12",
+      "rom": "Hikkoshi",
+      "kana": "ひっこし",
+      "kanji": "引っ越し",
+      "en": "Pindah rumah (Noun)",
+      "audio": ""
+    },
+    {
+      "id": "v24-13",
+      "rom": "Okashi",
+      "kana": "おかし",
+      "kanji": "お菓子",
+      "en": "Camilan / Kue manisan",
+      "audio": ""
+    },
+    {
+      "id": "v24-14",
+      "rom": "Houmu-sutei",
+      "kana": "ホームステイ",
+      "kanji": "",
+      "en": "Homestay (Tinggal dengan keluarga lokal)",
+      "audio": ""
+    },
+    {
+      "id": "v24-15",
+      "rom": "Zenbu",
+      "kana": "ぜんぶ",
+      "kanji": "全部",
+      "en": "Semuanya",
+      "audio": ""
+    },
+    {
+      "id": "v24-16",
+      "rom": "Jibun de",
+      "kana": "じぶんで",
+      "kanji": "自分で",
+      "en": "Oleh diri sendiri",
+      "audio": ""
+    },
+    {
+      "id": "v24-17",
+      "rom": "Agemasu",
+      "kana": "あげます",
+      "kanji": "",
+      "en": "Memberi (kepada orang lain)",
+      "audio": ""
+    },
+    {
+      "id": "v24-18",
+      "rom": "Moraimasu",
+      "kana": "もらいます",
+      "kanji": "",
+      "en": "Menerima / Dapat (dari seseorang)",
+      "audio": ""
+    },
+    {
+      "id": "v24-19",
+      "rom": "Kashimasu",
+      "kana": "かします",
+      "kanji": "貸します",
+      "en": "Meminjamkan",
+      "audio": ""
+    },
+    {
+      "id": "v24-20",
+      "rom": "Karimasu",
+      "kana": "かります",
+      "kanji": "借ります",
+      "en": "Meminjam",
+      "audio": ""
+    },
+    {
+      "id": "v24-21",
+      "rom": "Tetsudaimasu",
+      "kana": "てつだいます",
+      "kanji": "手伝います",
+      "en": "Membantu",
+      "audio": ""
+    },
+    {
+      "id": "v24-22",
+      "rom": "Todokemasu",
+      "kana": "とどけます",
+      "kanji": "届けます",
+      "en": "Mengantarkan / Menyerahkan",
+      "audio": ""
+    },
+    {
+      "id": "v24-23",
+      "rom": "Purezento",
+      "kana": "プレゼント",
+      "kanji": "",
+      "en": "Hadiah / Kado",
+      "audio": ""
+    },
+    {
+      "id": "v24-24",
+      "rom": "Kurisumasu",
+      "kana": "クリスマス",
+      "kanji": "",
+      "en": "Natal / Hari Natal",
+      "audio": ""
+    },
+    {
+      "id": "v24-25",
+      "rom": "Tanjoubi",
+      "kana": "たんじょうび",
+      "kanji": "誕生日",
+      "en": "Hari ulang tahun",
+      "audio": ""
+    },
+    {
+      "id": "v24-26",
+      "rom": "Orei",
+      "kana": "おれい",
+      "kanji": "お礼",
+      "en": "Ucapan terima kasih / Balasan budi",
+      "audio": ""
+    },
+    {
+      "id": "v24-27",
+      "rom": "Okaasan",
+      "kana": "おかあさん",
+      "kanji": "お母さん",
+      "en": "Ibu (orang lain) / Mama",
+      "audio": ""
+    },
+    {
+      "id": "v24-28",
+      "rom": "Otousan",
+      "kana": "おとうさん",
+      "kanji": "お父さん",
+      "en": "Ayah (orang lain) / Papa",
+      "audio": ""
+    },
+    {
+      "id": "v24-29",
+      "rom": "Musume",
+      "kana": "むすめ",
+      "kanji": "娘",
+      "en": "Anak perempuan (sendiri)",
+      "audio": ""
+    },
+    {
+      "id": "v24-30",
+      "rom": "Musuko",
+      "kana": "むすこ",
+      "kanji": "息子",
+      "en": "Anak laki-laki (sendiri)",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g24-1",
+      "title": "1. くれます (Seseorang memberi ke SAYA)",
+      "desc": "Di Bab 7 Anda belajar 'Agemasu' (Saya memberi ke orang) dan 'Moraimasu' (Saya menerima dari orang). 'Kuremasu' KHUSUS dipakai jika Subjeknya orang lain, dan Objeknya (yang menerima) adalah SAYA atau kelompok saya.",
+      "points": [
+        "Sato-san wa WATASHI NI tokei o kuremashita. (Pak Sato MENGHADIAHKAN jam tangan ke saya).",
+        "TIDAK BOLEH pakai agemasu jika penerimanya SAYA: Sato-san wa watashi ni tokei o agemashita (X SALAH!).",
+        "Partikel Watashi NI sering kali dihilangkan karena sudah jelas (pasti) kuremasu mengarah ke 'saya'."
+      ],
+      "formula": "Orang は (わたし に) Benda を くれます",
+      "native_note": "Sangat DILARANG menggunakan pola '~te ageru' (memberi bantuan) kepada atasan atau orang yang lebih tua karena pola ini menyiratkan sikap 'sok berjasa' dan merendahkan lawan bicara. Gunakan bentuk sopan yang formal."
+    },
+    {
+      "id": "g24-2",
+      "title": "2. V-て あげます (Melakukan jasa untuk orang lain)",
+      "desc": "Sama seperti barang, tindakan juga bisa 'diberikan' sebagai jasa.",
+      "points": [
+        "Watashi wa Yamada-san NI kasa o kashiTE AGEMASHITA. (Saya meminjamkan payung UNTUK Pak Yamada).",
+        "Watashi wa Kimura-san NI tetsudatTE AGEMASU. (Saya membantu Bu Kimura).",
+        "★Catatan Budaya: Pola ini bisa terdengar sombong ('Saya berjasa lho buat Anda') jika dipakai ke orang yang tidak dekat atau atasan. Lebih aman menawarkan dengan '~mashou ka?'."
+      ],
+      "formula": "V-て あげます"
+    },
+    {
+      "id": "g24-3",
+      "title": "3. V-て もらいます (Menerima jasa dari orang lain)",
+      "desc": "Sangat sering digunakan. Menunjukkan rasa syukur karena Anda 'menerima' kebaikan/jasa dari orang lain.",
+      "points": [
+        "Watashi wa Suzuki-san NI nihongo o oshiete moraimashita. (Saya DIBANTU diajari bahasa Jepang oleh Pak Suzuki / Saya menerima jasa pengajaran dari Pak Suzuki).",
+        "Subjek kalimatnya adalah SAYA (Watashi wa).",
+        "Pelaku jasanya ditandai dengan NI (bisa juga KARA)."
+      ],
+      "formula": "V-て もらいます (Subjek: Saya)"
+    },
+    {
+      "id": "g24-4",
+      "title": "4. V-て くれます (Orang lain melakukan jasa untuk SAYA)",
+      "desc": "Fokus kalimat ada pada kebaikan hati sang pelaku (Subjek).",
+      "points": [
+        "Suzuki-san WA (watashi ni) nihongo o oshiete kuremashita. (Pak Suzuki MENGAJARKAN bahasa Jepang untuk saya).",
+        "Perbedaan dengan Moraimasu: Moraimasu subjek utamanya SAYA (Watashi wa... moraimasu). Kuremasu subjek utamanya ORANG LAIN (Dia wa... kuremasu)."
+      ],
+      "formula": "Orang は V-て くれます (Subjek: Orang lain)"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "佐藤さんは わたしに クリスマスカードを くれました。",
+      "rom": "Satou-san wa watashi ni kurisumasu-kaado o kuremashita.",
+      "en": "Pak Sato memberikan saya kartu Natal."
+    },
+    {
+      "jp": "わたしは 木村さんに 本を 貸して あげました。",
+      "rom": "Watashi wa Kimura-san ni hon o kashite agemashita.",
+      "en": "Saya meminjamkan buku untuk Bu Kimura."
+    },
+    {
+      "jp": "わたしは 山田さんに 病院へ 連れて 行って もらいました。",
+      "rom": "Watashi wa Yamada-san ni byouin e tsurete itte moraimashita.",
+      "en": "Saya diantar (dibawa) ke rumah sakit oleh Pak Yamada."
+    },
+    {
+      "jp": "山田さんは わたしに 病院へ 連れて 行って くれました。",
+      "rom": "Yamada-san wa watashi ni byouin e tsurete itte kuremashita.",
+      "en": "Pak Yamada mengantarkan (membawa) saya ke rumah sakit."
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: 手伝って くれますか (Bisa bantu saya?)",
+    "dialogue": [
+      {
+        "speaker": "Miller",
+        "jp": "太郎君、お弁当は 誰が 作りましたか。",
+        "rom": "Tarou-kun, obentou wa dare ga tsukurimashita ka.",
+        "en": "Taro, bekalnya siapa yang buat?"
+      },
+      {
+        "speaker": "Taro",
+        "jp": "母が 作って くれました。",
+        "rom": "Haha ga tsukutte kuremashita.",
+        "en": "Ibu yang buatkan untuk saya."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "おいしいですね。…あ、太郎君、自転車が 壊れましたか。",
+        "rom": "Oishii desu ne. ...A, Tarou-kun, jitensha ga kowaremashita ka.",
+        "en": "Enak ya. ...Ah, Taro, sepedanya rusak kah?"
+      },
+      {
+        "speaker": "Taro",
+        "jp": "ええ。あとで 父に 修理して もらいます。",
+        "rom": "Ee. Ato de chichi ni shuuri-shite moraimasu.",
+        "en": "Iya. (Nanti) Saya minta tolong ayah untuk memperbaikinya."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "そうですか。お父さんは やさしいですね。",
+        "rom": "Sou desu ka. Otousan wa yasashii desu ne.",
+        "en": "Oh begitu. Ayahnya baik ya."
+      },
+      {
+        "speaker": "Taro",
+        "jp": "ええ。母も よく お弁当を 作って くれます。",
+        "rom": "Ee. Haha mo yoku obentou o tsukutte kuremasu.",
+        "en": "Iya. Ibu juga sering buatkan bekal untuk saya."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] Jika Subjeknya adalah 'Pak Tanaka' dan dia membelikan buku UNTUK SAYA, pola yang tepat adalah:",
+      "options": [
+        {
+          "text": "Tanaka-san wa hon o katte kuremashita.",
+          "correct": true
+        },
+        {
+          "text": "Tanaka-san wa hon o katte agemashita.",
+          "correct": false
+        },
+        {
+          "text": "Tanaka-san wa hon o katte moraimashita.",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] 'Saya meminjamkan payung (untuknya)'.\nWatashi wa kasa o kashite [           ].",
+      "answer": "agemashita"
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu B] 'Saya diantar ke bandara oleh Pak Miller'. (Saya sebagai Subjek)",
+      "options": [
+        {
+          "text": "Watashi wa Miraa-san ni okutte moraimashita.",
+          "correct": true
+        },
+        {
+          "text": "Watashi wa Miraa-san ni okutte kuremashita.",
+          "correct": false
+        },
+        {
+          "text": "Miraa-san wa watashi ni okutte moraimashita.",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu C] 'Buku ini, Bu Karina yang membelikannya (untuk saya)'. (Bu Karina sebagai Subjek).\nKono hon wa Karina-san ga katte [           ].",
+      "answer": "kuremashita"
+    },
+    {
+      "type": "mcq",
+      "question": "[Budaya] Kenapa orang Jepang lebih sering pakai '~te moraimashita' daripada '~te kuremashita' ketika dibantu orang?",
+      "options": [
+        {
+          "text": "Karena itu menempatkan diri sendiri di posisi lebih rendah/berterima kasih.",
+          "correct": true
+        },
+        {
+          "text": "Karena kuremasu tidak sopan.",
+          "correct": false
+        },
+        {
+          "text": "Hanya sekadar beda tata bahasa.",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Meminta Tolong Mengajarkan Software",
+      "situation": "Meminta tolong diajarkan cara mengoperasikan software baru oleh rekan kerja yang mahir",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "パソコンの 使い方を 教えて くれませんか。",
+          "rom": "Pasokon no tsukaikata o oshiete kuremasen ka.",
+          "en": "Maukah Anda mengajarkan saya cara menggunakan komputer/software?"
+        },
+        {
+          "speaker": "B",
+          "jp": "いいですよ。暇な 時、教えて あげます。",
+          "rom": "Ii desu yo. Hima na toki, oshiete agemasu.",
+          "en": "Boleh saja. Saat waktu senggang, saya akan ajarkan."
+        },
+        {
+          "speaker": "A",
+          "jp": "ありがとうございます。嬉しいです。",
+          "rom": "Arigatou gozaimasu. Ureshii desu.",
+          "en": "Terima kasih banyak. Senang sekali."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Menawarkan Pinjaman Payung Saat Hujan",
+      "situation": "Menawarkan payung miliknya untuk dipinjamkan kepada teman yang kehujanan",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "雨が 降って いますね。傘を 貸しましょうか。",
+          "rom": "Ame ga futte imasu ne. Kasa o kashimashou ka.",
+          "en": "Hujan turun ya. Boleh saya pinjamkan payung?"
+        },
+        {
+          "speaker": "B",
+          "jp": "すみません。貸して くれて ありがとうございます。",
+          "rom": "Sumimasen. Kashite kurete arigatou gozaimasu.",
+          "en": "Maaf merepotkan. Terima kasih banyak sudah meminjamkannya."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Menawarkan Tumpangan Mobil ke Stasiun",
+      "situation": "Menawarkan tumpangan mobil kepada teman yang terburu-buru pergi ke stasiun",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "駅まで 送りましょうか。車が ありますから。",
+          "rom": "Eki made okurimashou ka. Kuruma ga arimasu kara.",
+          "en": "Mau saya antarkan ke stasiun? Soalnya saya ada mobil."
+        },
+        {
+          "speaker": "B",
+          "jp": "すみません、お願いします。助かります。",
+          "rom": "Sumimasen, onegai shimasu. Tasukarimasu.",
+          "en": "Maaf merepotkan, tolong ya. Sangat membantu."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r24-1",
+      "jp": "佐藤さんは わたしに チョコレートを くれました。... わあ、いいですね。",
+      "rom": "Satou-san wa watashi ni chokoreeto o kuremashita. ... Waa, ii desu ne.",
+      "en": "Ibu Sato memberi cokelat kepada saya. ... Wah, enaknya."
+    },
+    {
+      "id": "r24-2",
+      "jp": "わたしは 木村さんに 本を 貸して あげました。... そうですか。親切ですね。",
+      "rom": "Watashi wa Kimura-san ni hon o kashite agemashita. ... Sou desu ka. Shinsetsu desu ne.",
+      "en": "Saya meminjamkan buku kepada Ibu Kimura. ... Oh ya? Baik sekali ya."
+    },
+    {
+      "id": "r24-3",
+      "jp": "お母さんが セーターを 送って くれました。... 暖かいですね。",
+      "rom": "Okaasan ga seetaa o okutte kuremashita. ... Atatakai desu ne.",
+      "en": "Ibu mengirimi saya sweater. ... Hangat ya."
+    },
+    {
+      "id": "r24-4",
+      "jp": "道が 分かりませんから、地図を 書いて あげましょうか。... はい、お願いします。",
+      "rom": "Michi ga wakarimasen kara, chizu o kaite agemashou ka? ... Hai, onegaishimasu.",
+      "en": "Karena tidak tahu jalannya, maukah saya gambarkan peta? ... Ya, tolong ya."
+    },
+    {
+      "id": "r24-5",
+      "jp": "だれが 日本語を 教えて くれましたか。... 田中先生が 教えて くれました。",
+      "rom": "Dare ga Nihongo o oshiete kuremashita ka? ... Tanaka-sensei ga oshiete kuremashita.",
+      "en": "Siapa yang telah mengajarkan bahasa Jepang kepada Anda? ... Ibu Guru Tanaka yang mengajarkannya."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb24-1",
+      "pattern": "V ても / adj くても (Meskipun ~ / Walaupun ~)",
+      "instruction": "Nyatakan kontras/perlawanan menggunakan te-form + も.",
+      "question": "Ame / demo / ikimasu",
+      "correct": "あめでも いきます。",
+      "romaji": "Ame demo ikimasu.",
+      "translation": "Walaupun hujan, tetap pergi."
+    },
+    {
+      "id": "wb24-2",
+      "pattern": "〜ても〜ても (Apapun yang terjadi ~)",
+      "instruction": "Nyatakan kondisi apapun tidak berpengaruh dengan mengulang pola ても.",
+      "question": "Nanndo / yonde / mo / oboeraremasen",
+      "correct": "なんどよんでも おぼえられません。",
+      "romaji": "Nandome yonde mo oboeraremasen.",
+      "translation": "Berkali-kali membaca pun tidak bisa ingat."
+    },
+    {
+      "id": "wb24-3",
+      "pattern": "〜のに (Padahal ~ tapi ~ / Menunjukkan kekecewaan)",
+      "instruction": "Nyatakan kekecewaan karena hasil yang tidak sesuai ekspektasi dengan のに.",
+      "question": "Isshookenmei / benkyoushita / noni / shiken / ochita",
+      "correct": "いっしょうけんめい べんきょうしたのに しけんに おちました。",
+      "romaji": "Isshoukenmei benkyoushita noni shiken ni ochimashita.",
+      "translation": "Padahal sudah belajar keras, tetap gagal ujian."
+    },
+    {
+      "id": "wb24-4",
+      "pattern": "Adj i + くても (Walaupun adj-i ~)",
+      "instruction": "Buat kalimat kontras dengan kata sifat-i yang diubah ke bentuk くても.",
+      "question": "Takaくても / kaimasu",
+      "correct": "たかくても かいます。",
+      "romaji": "Takakutemo kaimasu.",
+      "translation": "Walaupun mahal, tetap beli."
+    },
+    {
+      "id": "wb24-5",
+      "pattern": "Noun / na-adj + でも (Walaupun ~)",
+      "instruction": "Gunakan でも setelah kata benda atau kata sifat-na untuk menyatakan 'walaupun'.",
+      "question": "Heta / demo / tanoshii",
+      "correct": "へたでも たのしいです。",
+      "romaji": "Heta demo tanoshii desu.",
+      "translation": "Walaupun tidak pandai, tetap menyenangkan."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex24-1",
+        "sentence": "あめ [ ] いきます。",
+        "correct": "でも",
+        "translation": "Walaupun hujan, tetap pergi."
+      },
+      {
+        "id": "ex24-2",
+        "sentence": "たか [ ] かいます。",
+        "correct": "くても",
+        "translation": "Walaupun mahal, tetap beli."
+      },
+      {
+        "id": "ex24-3",
+        "sentence": "いっしょうけんめい べんきょうした [ ] しけんに おちました。",
+        "correct": "のに",
+        "translation": "Padahal belajar keras, gagal ujian."
+      },
+      {
+        "id": "ex24-4",
+        "sentence": "なんど よん [ ] おぼえられません。",
+        "correct": "でも",
+        "translation": "Berkali-kali baca pun tidak ingat."
+      },
+      {
+        "id": "ex24-5",
+        "sentence": "へた [ ] たのしいです。",
+        "correct": "でも",
+        "translation": "Walaupun tidak pandai, menyenangkan."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex24-6",
+        "question": "Cara membuat bentuk 'walaupun sakit (byouki)' menggunakan pola でも:",
+        "options": [
+          {
+            "text": "びょうきくても",
+            "correct": false
+          },
+          {
+            "text": "びょうきでも",
+            "correct": true
+          },
+          {
+            "text": "びょうきなくても",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex24-7",
+        "question": "'Noni' dan 'ga' sama-sama menyatakan kontras. Perbedaannya adalah:",
+        "options": [
+          {
+            "text": "Keduanya sama persis",
+            "correct": false
+          },
+          {
+            "text": "Noni menyiratkan kekecewaan/kejutan, ga lebih netral",
+            "correct": true
+          },
+          {
+            "text": "Ga lebih emosional dari noni",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex24-8",
+        "question": "'Dore demo ii' berarti:",
+        "options": [
+          {
+            "text": "Tidak ada yang baik",
+            "correct": false
+          },
+          {
+            "text": "Yang manapun boleh / semua oke",
+            "correct": true
+          },
+          {
+            "text": "Hanya satu yang baik",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "まいにち れんしゅうして いるのに、ピアノが うまく なりません。でも あきらめません。へたでも たのしいから つづけます。たかくても、あたらしい ピアノを かいたいです。いつか じょうずに なれると おもいます。",
+      "questions": [
+        {
+          "id": "ex24-9",
+          "question": "この人は まいにち ピアノを れんしゅうして います。",
+          "correct": "T"
+        },
+        {
+          "id": "ex24-10",
+          "question": "うまく ならないから あきらめます。",
+          "correct": "F"
+        },
+        {
+          "id": "ex24-11",
+          "question": "この人は ピアノが たのしいです。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

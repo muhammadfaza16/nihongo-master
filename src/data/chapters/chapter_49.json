@@ -1,0 +1,450 @@
+{
+  "id": 49,
+  "title": "Lesson 49: Kejadian Formal & Antisipasi (〜にあたって / 〜を前に)",
+  "desc": "Mempelajari ungkapan upacara formal: 〜にあたって (pada kesempatan penting/dalam rangka) dan 〜を前に (menjelang/di hadapan peristiwa besar).",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v49-1",
+      "rom": "Shiki",
+      "kana": "しき",
+      "kanji": "式",
+      "en": "Upacara / Seremoni",
+      "audio": ""
+    },
+    {
+      "id": "v49-2",
+      "rom": "Girei",
+      "kana": "ぎれい",
+      "kanji": "儀礼",
+      "en": "Etika / Tata cara ritual",
+      "audio": ""
+    },
+    {
+      "id": "v49-3",
+      "rom": "Kaimaku",
+      "kana": "かいまく",
+      "kanji": "開幕",
+      "en": "Pembukaan tirai / Kickoff",
+      "audio": ""
+    },
+    {
+      "id": "v49-4",
+      "rom": "Sanka (shimasu)",
+      "kana": "さんか（します）",
+      "kanji": "参加（します）",
+      "en": "Partisipasi / Ikut serta",
+      "audio": ""
+    },
+    {
+      "id": "v49-5",
+      "rom": "Ni atatte",
+      "kana": "にあたって",
+      "kanji": "",
+      "en": "Pada kesempatan / Dalam rangka",
+      "audio": ""
+    },
+    {
+      "id": "v49-6",
+      "rom": "Ni atari",
+      "kana": "にあたり",
+      "kanji": "",
+      "en": "Pada kesempatan (sangat formal)",
+      "audio": ""
+    },
+    {
+      "id": "v49-7",
+      "rom": "Wo mae ni",
+      "kana": "をまえに",
+      "kanji": "",
+      "en": "Menjelang / Di hadapan",
+      "audio": ""
+    },
+    {
+      "id": "v49-8",
+      "rom": "Kekkon",
+      "kana": "けっこん",
+      "kanji": "結婚",
+      "en": "Pernikahan",
+      "audio": ""
+    },
+    {
+      "id": "v49-9",
+      "rom": "Shuppatsu (shimasu)",
+      "kana": "しゅっぱつ（します）",
+      "kanji": "出発（します）",
+      "en": "Keberangkatan / Berangkat",
+      "audio": ""
+    },
+    {
+      "id": "v49-10",
+      "rom": "Kaishi (shimasu)",
+      "kana": "かいし（します）",
+      "kanji": "開始（します）",
+      "en": "Memulai / Permulaan",
+      "audio": ""
+    },
+    {
+      "id": "v49-11",
+      "rom": "Ketsudan (shimasu)",
+      "kana": "けつだん（します）",
+      "kanji": "決断（します）",
+      "en": "Keputusan / Mengambil keputusan",
+      "audio": ""
+    },
+    {
+      "id": "v49-12",
+      "rom": "Junbi",
+      "kana": "じゅんび",
+      "kanji": "準備",
+      "en": "Persiapan",
+      "audio": ""
+    },
+    {
+      "id": "v49-13",
+      "rom": "Shiai",
+      "kana": "しあい",
+      "kanji": "試合",
+      "en": "Pertandingan / Lomba",
+      "audio": ""
+    },
+    {
+      "id": "v49-14",
+      "rom": "Senshu",
+      "kana": "せんしゅ",
+      "kanji": "選手",
+      "en": "Atlet / Pemain",
+      "audio": ""
+    },
+    {
+      "id": "v49-15",
+      "rom": "Seijin",
+      "kana": "せいじん",
+      "kanji": "成人",
+      "en": "Orang dewasa / Akil balig",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g49-1",
+      "title": "1. 〜にあたって / 〜にあたり (Pada Kesempatan / Dalam Rangka)",
+      "desc": "Digunakan saat melakukan persiapan atau menyatakan sikap mental di awal suatu peristiwa penting, upacara formal, atau acara besar berskala sosial.",
+      "points": [
+        "Pola: V-dict / N + にあたって (atau formal: にあたり)",
+        "Artinya: Dalam rangka... / Pada kesempatan...",
+        "Contoh: Nihon-ryugaku ni atatte, shinpaigoto ga ooi desu (Dalam rangka kuliah di Jepang, banyak hal yang saya khawatirkan)."
+      ],
+      "formula": "V-dict / N + にあたって / にあたり",
+      "native_note": "Sering digunakan dalam pidato sambutan formal di pernikahan, upacara kelulusan, atau pembukaan kantor baru."
+    },
+    {
+      "id": "g49-2",
+      "title": "2. 〜を前にして / 〜を前に (Menjelang / Di Hadapan)",
+      "desc": "Menyatakan situasi psikologis atau fisik seseorang yang berada tepat sebelum/menghadapi peristiwa penting.",
+      "points": [
+        "Pola: N + を前にして / を前に",
+        "Artinya: Menjelang... / Di hadapan N...",
+        "Contoh: Shiken wo mae ni shite, minna kinchou shite imasu (Menjelang ujian, semuanya merasa gugup)."
+      ],
+      "formula": "N + を前に（して）"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "新規事業の開始にあたって、社長が挨拶します。",
+      "rom": "Shinki-jigyou no kaishi ni atatte, shachou ga aisatsu shimasu.",
+      "en": "Dalam rangka memulai bisnis baru, direktur memberikan sambutan."
+    },
+    {
+      "jp": "結婚式を前にして、彼女はとても嬉しそうです。",
+      "rom": "Kekkon-shiki wo mae ni shite, kanojo wa totemo ureshisou desu.",
+      "en": "Menjelang upacara pernikahan, dia terlihat sangat bahagia."
+    },
+    {
+      "jp": "出発にあたり、注意事項を説明します。",
+      "rom": "Shuppatsu ni atari, chuui-jikou wo setsumei shimasu.",
+      "en": "Pada kesempatan keberangkatan, saya akan menjelaskan hal-hal yang perlu diperhatikan."
+    },
+    {
+      "jp": "大先生を前にして、何も言えませんでした。",
+      "rom": "Dai-sensei wo mae ni shite, nani mo iemasen deshita.",
+      "en": "Di hadapan guru besar, saya tidak bisa berkata apa-apa."
+    }
+  ],
+  "conversation": {
+    "title": "Sambutan Pembukaan Toko",
+    "dialogue": [
+      {
+        "speaker": "A",
+        "jp": "社長の挨拶の準備はできましたか。",
+        "rom": "Shachou no aisatsu no junbi wa dekimashita ka?",
+        "en": "Apakah persiapan pidato sambutan direktur sudah selesai?"
+      },
+      {
+        "speaker": "B",
+        "jp": "ええ。新しい店のオープンにあたって、感謝の言葉を伝えます。",
+        "rom": "Ee. Atarashii mise no oopun ni atatte, kansha no kotoba wo tsutaemasu.",
+        "en": "Ya. Pada kesempatan pembukaan toko baru ini, beliau akan menyampaikan rasa terima kasih."
+      },
+      {
+        "speaker": "A",
+        "jp": "素晴らしいですね。新規事業がうまくいくといいですね。",
+        "rom": "Subarashii desu ne. Shinki-jigyou ga umaku iku to ii desu ne.",
+        "en": "Bagus sekali ya. Semoga bisnis barunya berjalan dengan lancar."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "Pilih konteks penggunaan 'ni atatte' yang paling tepat:",
+      "options": [
+        {
+          "text": "Pidato kelulusan sekolah",
+          "correct": true
+        },
+        {
+          "text": "Mengobrol santai dengan teman",
+          "correct": false
+        },
+        {
+          "text": "Membeli sayur di pasar",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "Terjemahkan: 'Menjelang pertandingan (shiai)'.\nShiai wo [   ] ni shite.",
+      "answer": "mae"
+    },
+    {
+      "type": "mcq",
+      "question": "Arti dari 'Kekkon ni atatte':",
+      "options": [
+        {
+          "text": "Dalam rangka/Pada kesempatan pernikahan",
+          "correct": true
+        },
+        {
+          "text": "Karena sudah menikah",
+          "correct": false
+        },
+        {
+          "text": "Jika ingin menikah",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Menjelang Keberangkatan",
+      "situation": "Mahasiswa bersiap pergi belajar ke luar negeri",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "荷物の準備はできましたか。",
+          "rom": "Nimotsu no junbi wa dekimashita ka?",
+          "en": "Apakah barang bawaanmu sudah siap?"
+        },
+        {
+          "speaker": "B",
+          "jp": "はい。明日の出発を前にして、パスポートをもう一度確認します。",
+          "rom": "Hai. Menjelang keberangkatan besok, saya memeriksa paspor sekali lagi.",
+          "en": "Sudah. Menjelang keberangkatan besok, saya akan memeriksa paspor sekali lagi."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r49-1",
+      "jp": "契約にあたって、条件をよく確認してください。",
+      "rom": "Keiyaku ni atatte, jouken wo yoku kakunin shite kudasai.",
+      "en": "Dalam rangka penandatanganan kontrak, tolong konfirmasi ketentuannya baik-baik."
+    },
+    {
+      "id": "r49-2",
+      "jp": "試験を前に、学生たちは一生懸命勉強しています。",
+      "rom": "Shiken wo mae ni, gakusei-tachi wa isshoukenmei benkyou shite imasu.",
+      "en": "Menjelang ujian, para siswa belajar dengan sungguh-sungguh."
+    },
+    {
+      "id": "r49-3",
+      "jp": "開幕にあたり、選手代表が宣誓します。",
+      "rom": "Kaimaku ni atari, senshu-daihyou ga sensei shimasu.",
+      "en": "Pada upacara pembukaan, perwakilan atlet mengucapkan sumpah."
+    },
+    {
+      "id": "r49-4",
+      "jp": "決勝戦を前に、選手たちは覚悟を決めました。",
+      "rom": "Kesshou-sen wo mae ni, senshu-tachi wa kakugo wo kimemashita.",
+      "en": "Menjelang babak final, para pemain telah memantapkan tekad mereka."
+    },
+    {
+      "id": "r49-5",
+      "jp": "この本を書くにあたって、多くの人に助けられました。",
+      "rom": "Kono hon wo kaku ni atatte, ooku no hito ni tasukeraremashita.",
+      "en": "Dalam rangka menulis buku ini, saya dibantu oleh banyak orang."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb49-1",
+      "pattern": "N + にあたって",
+      "instruction": "Terjemahkan: 'Dalam rangka memulai bisnis'.",
+      "question": "Jigyou no kaishi",
+      "correct": "じぎょうのかいしにあたって",
+      "romaji": "Jigyou no kaishi ni atatte.",
+      "translation": "Dalam rangka memulai bisnis."
+    },
+    {
+      "id": "wb49-2",
+      "pattern": "N + を前に",
+      "instruction": "Terjemahkan: 'Menjelang ujian'.",
+      "question": "Shiken",
+      "correct": "しけんをまえに",
+      "romaji": "Shiken wo mae ni.",
+      "translation": "Menjelang ujian."
+    },
+    {
+      "id": "wb49-3",
+      "pattern": "V-dict + にあたって",
+      "instruction": "Terjemahkan: 'Pada kesempatan membeli rumah'.",
+      "question": "Ie wo kau",
+      "correct": "いえをかうにあたって",
+      "romaji": "Ie wo kau ni atatte.",
+      "translation": "Pada kesempatan membeli rumah."
+    },
+    {
+      "id": "wb49-4",
+      "pattern": "N + を前にして",
+      "instruction": "Terjemahkan: 'Di depan direktur'.",
+      "question": "Shachou",
+      "correct": "しゃちょうをまえにして",
+      "romaji": "Shachou wo mae ni shite.",
+      "translation": "Di hadapan direktur."
+    },
+    {
+      "id": "wb49-5",
+      "pattern": "N + にあたり",
+      "instruction": "Terjemahkan: 'Pada kesempatan keberangkatan'.",
+      "question": "Shuppatsu",
+      "correct": "しゅっぱつにあたり",
+      "romaji": "Shuppatsu ni atari.",
+      "translation": "Pada kesempatan keberangkatan."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex49-1",
+        "sentence": "あたらしい 事業の 開始に [ ]、しきが おこなわれました。",
+        "correct": "あたって",
+        "translation": "Dalam rangka memulai bisnis baru, upacara diselenggarakan."
+      },
+      {
+        "id": "ex49-2",
+        "sentence": "しゅっぱつを [ ] にして、みんなで 写真を とりました。",
+        "correct": "まえ",
+        "translation": "Menjelang keberangkatan, kami semua berfoto bersama."
+      },
+      {
+        "id": "ex49-3",
+        "sentence": "けっこんに [ ]、あたらしく いえを かいました。",
+        "correct": "あたって",
+        "translation": "Dalam rangka pernikahan, kami membeli rumah baru."
+      },
+      {
+        "id": "ex49-4",
+        "sentence": "しあいを 前 [ ]、せんしゅたちは きんちょうしています。",
+        "correct": "に",
+        "translation": "Menjelang pertandingan, para pemain merasa gugup."
+      },
+      {
+        "id": "ex49-5",
+        "sentence": "かいまくに [ ]、ごあいさつ 申し上げます。",
+        "correct": "あたり",
+        "translation": "Pada kesempatan pembukaan, saya menyampaikan sambutan."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex49-6",
+        "question": "Pola 'ni atatte' paling tepat dipadukan dengan kata benda yang bermakna:",
+        "options": [
+          {
+            "text": "Aksi/Kejadian besar yang direncanakan",
+            "correct": true
+          },
+          {
+            "text": "Hal-hal sepele sehari-hari",
+            "correct": false
+          },
+          {
+            "text": "Kejadian tidak sengaja",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex49-7",
+        "question": "Apa arti 'Shachou wo mae ni shite'?",
+        "options": [
+          {
+            "text": "Di hadapan Direktur",
+            "correct": true
+          },
+          {
+            "text": "Sebelum menjadi Direktur",
+            "correct": false
+          },
+          {
+            "text": "Karena ada Direktur",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex49-8",
+        "question": "Bentuk formal dari 'ni atatte' adalah:",
+        "options": [
+          {
+            "text": "にあたり",
+            "correct": true
+          },
+          {
+            "text": "にとって",
+            "correct": false
+          },
+          {
+            "text": "にたいして",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "新しい 工場の 完成に あたって、記念式典が 行われました。社長は 式典を 前に 緊張していましたが、スピーチでは 感謝の 気持ちを 伝えました。工場の 開始に あたり、安全第一で がんばるつもりです。",
+      "questions": [
+        {
+          "id": "ex49-9",
+          "question": "工場の 完成に あたって 式典が ありました。",
+          "correct": "T"
+        },
+        {
+          "id": "ex49-10",
+          "question": "社長は 式典の 前、緊張していませんでした。",
+          "correct": "F"
+        },
+        {
+          "id": "ex49-11",
+          "question": "これからは 安全第一で 仕事を します。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,461 @@
+{
+  "id": 34,
+  "title": "Lesson 34: 〜ようになります / 〜ようにします",
+  "desc": "Menguasai dua pola perubahan penting: 〜ようになります (perubahan yang terjadi secara gradual — akhirnya bisa/tidak lagi) dan 〜ようにします (usaha aktif untuk membiasakan diri).",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v34-1",
+      "rom": "Nareru",
+      "kana": "なれます",
+      "kanji": "慣れます",
+      "en": "Terbiasa / Beradaptasi",
+      "audio": ""
+    },
+    {
+      "id": "v34-2",
+      "rom": "Tsuzukeru",
+      "kana": "つづけます",
+      "kanji": "続けます",
+      "en": "Melanjutkan / Meneruskan",
+      "audio": ""
+    },
+    {
+      "id": "v34-3",
+      "rom": "Yaめる",
+      "kana": "やめます",
+      "kanji": "やめます",
+      "en": "Berhenti / Meninggalkan",
+      "audio": ""
+    },
+    {
+      "id": "v34-4",
+      "rom": "Kawaru",
+      "kana": "かわります",
+      "kanji": "変わります",
+      "en": "Berubah",
+      "audio": ""
+    },
+    {
+      "id": "v34-5",
+      "rom": "Seichoo (shimasu)",
+      "kana": "せいちょう（します）",
+      "kanji": "成長（します）",
+      "en": "Berkembang / Tumbuh",
+      "audio": ""
+    },
+    {
+      "id": "v34-6",
+      "rom": "Shuukan",
+      "kana": "しゅうかん",
+      "kanji": "習慣",
+      "en": "Kebiasaan",
+      "audio": ""
+    },
+    {
+      "id": "v34-7",
+      "rom": "Mainichi",
+      "kana": "まいにち",
+      "kanji": "毎日",
+      "en": "Setiap hari",
+      "audio": ""
+    },
+    {
+      "id": "v34-8",
+      "rom": "Sukoshi zutsu",
+      "kana": "すこしずつ",
+      "kanji": "少しずつ",
+      "en": "Sedikit demi sedikit",
+      "audio": ""
+    },
+    {
+      "id": "v34-9",
+      "rom": "Jibun de",
+      "kana": "じぶんで",
+      "kanji": "自分で",
+      "en": "Sendiri / Oleh diri sendiri",
+      "audio": ""
+    },
+    {
+      "id": "v34-10",
+      "rom": "Ki wo tsukeru",
+      "kana": "きをつけます",
+      "kanji": "気をつけます",
+      "en": "Berhati-hati / Waspada",
+      "audio": ""
+    },
+    {
+      "id": "v34-11",
+      "rom": "Kirei ni naru",
+      "kana": "きれいになります",
+      "kanji": "きれいになります",
+      "en": "Menjadi cantik/bersih",
+      "audio": ""
+    },
+    {
+      "id": "v34-12",
+      "rom": "Taberaeru",
+      "kana": "たべられます",
+      "kanji": "食べられます",
+      "en": "Bisa dimakan / Dapat memakan",
+      "audio": ""
+    },
+    {
+      "id": "v34-13",
+      "rom": "Oyogeru",
+      "kana": "およげます",
+      "kanji": "泳げます",
+      "en": "Bisa berenang",
+      "audio": ""
+    },
+    {
+      "id": "v34-14",
+      "rom": "Hayakime",
+      "kana": "はやめに",
+      "kanji": "早めに",
+      "en": "Sedikit lebih awal / Sebelum terlambat",
+      "audio": ""
+    },
+    {
+      "id": "v34-15",
+      "rom": "Kotoba",
+      "kana": "ことば",
+      "kanji": "言葉",
+      "en": "Kata / Bahasa / Ungkapan",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g34-1",
+      "title": "1. 〜ようになります (Perubahan Gradual — Jadi Bisa / Tidak Lagi)",
+      "desc": "Menyatakan perubahan kemampuan atau kebiasaan yang terjadi secara bertahap dari waktu ke waktu.",
+      "points": [
+        "Pola positif: V-potential + ようになりました. Contoh: Nihongo ga hanaSERU you ni narimashita. (Akhirnya bisa berbicara bahasa Jepang).",
+        "Pola negatif: V-negative + ようになりました. Contoh: Sake wo noma NAKU naru you ni narimashita. (Tidak lagi minum sake).",
+        "Nuansa kunci: Ini bukan keputusan sadar, tapi perubahan alami yang terjadi seiring waktu.",
+        "Bandingkan: 〜ことができるようになりました = versi yang lebih formal.",
+        "Juga digunakan: Adj/Noun + に + なりました (perubahan yang lebih sederhana)."
+      ],
+      "formula": "V-potential/negative + ようになります",
+      "native_note": "Ketika orang Jepang ingin menunjukkan progress belajar, mereka sering berkata '〜できるようになりました' daripada sekedar '〜できます'. Ini menunjukkan proses perkembangan."
+    },
+    {
+      "id": "g34-2",
+      "title": "2. 〜ようにします (Usaha Aktif — Membiasakan Diri)",
+      "desc": "Menyatakan upaya aktif dan sadar untuk membiasakan diri melakukan atau tidak melakukan sesuatu. Ini adalah KEPUTUSAN, bukan perubahan alami.",
+      "points": [
+        "Pola: V-dict/negative + ようにします",
+        "Contoh positif: Mainichi undo suru YOO NI shite imasu. (Saya berusaha berolahraga setiap hari).",
+        "Contoh negatif: Osoku made OKINAI you ni shite imasu. (Saya berusaha tidak begadang).",
+        "Untuk saran/instruksi: ~you ni shite kudasai. (Tolong usahakan untuk ~).",
+        "Perbedaan dengan ようになります: します = usaha aktif; なります = perubahan alami."
+      ],
+      "formula": "V-dict/negative + ようにします / ようにしています",
+      "native_note": "Ketika dokter memberi nasihat, sering berkata: 'Tabako wo suwanai you ni shite kudasai' (Tolong berusaha tidak merokok). Ini adalah pola yang sangat umum dalam konteks medis dan kesehatan."
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "日本に来て、生魚が食べられるようになりました。",
+      "rom": "Nihon ni kite, namazakana ga taberareru you ni narimashita.",
+      "en": "Setelah datang ke Jepang, akhirnya bisa makan ikan mentah."
+    },
+    {
+      "jp": "毎日野菜を食べるようにしています。",
+      "rom": "Mainichi yasai wo taberu you ni shite imasu.",
+      "en": "Saya berusaha makan sayuran setiap hari."
+    },
+    {
+      "jp": "子供の頃は泳げませんでしたが、今は泳げるようになりました。",
+      "rom": "Kodomo no koro wa oyogemasen deshita ga, ima wa oyogeru you ni narimashita.",
+      "en": "Waktu kecil tidak bisa berenang, tapi sekarang sudah bisa."
+    },
+    {
+      "jp": "夜遅くまで起きないようにしています。",
+      "rom": "Yoru osoku made okinai you ni shite imasu.",
+      "en": "Saya berusaha tidak begadang sampai larut malam."
+    }
+  ],
+  "conversation": {
+    "title": "Progres Belajar Bahasa",
+    "dialogue": [
+      {
+        "speaker": "Sensei",
+        "jp": "最近、日本語の上達はどうですか。",
+        "rom": "Sakin, nihongo no joutatsu wa doo desu ka.",
+        "en": "Bagaimana kemajuan bahasa Jepang belakangan ini?"
+      },
+      {
+        "speaker": "Gakusei",
+        "jp": "だいぶ話せるようになりました。最初は全然話せませんでしたが…。",
+        "rom": "Daibu hanaseru you ni narimashita. Saisho wa zenzen hanasemasen deshita ga...",
+        "en": "Sudah bisa berbicara cukup banyak. Di awal sama sekali tidak bisa berbicara..."
+      },
+      {
+        "speaker": "Sensei",
+        "jp": "よく頑張りましたね。何か特別なことをしましたか。",
+        "rom": "Yoku ganbari mashita ne. Nanika tokubetsu na koto wo shimashita ka.",
+        "en": "Sungguh kerja keras ya. Ada yang dilakukan secara khusus?"
+      },
+      {
+        "speaker": "Gakusei",
+        "jp": "毎日日本語で日記を書くようにしました。それが効果的だったと思います。",
+        "rom": "Mainichi nihongo de nikki wo kaku you ni shimashita. Sore ga kookateki datta to omoimasu.",
+        "en": "Saya membiasakan diri menulis buku harian dalam bahasa Jepang setiap hari. Sepertinya itu efektif."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "'Oyogeru you ni narimashita' berarti:",
+      "options": [
+        {
+          "text": "Saya berusaha bisa berenang",
+          "correct": false
+        },
+        {
+          "text": "Akhirnya saya bisa berenang (perubahan gradual)",
+          "correct": true
+        },
+        {
+          "text": "Saya memutuskan untuk bisa berenang",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "'Saya berusaha tidak merokok'.\nTabako wo suwanai [   ] shite imasu.",
+      "answer": "you ni"
+    },
+    {
+      "type": "mcq",
+      "question": "Perbedaan ようになります dan ようにします:",
+      "options": [
+        {
+          "text": "Keduanya sama",
+          "correct": false
+        },
+        {
+          "text": "なります = perubahan alami; します = usaha/keputusan aktif",
+          "correct": true
+        },
+        {
+          "text": "します = perubahan alami; なります = usaha aktif",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Nasehat Kesehatan",
+      "situation": "Dokter memberi nasihat kepada pasien",
+      "dialogue": [
+        {
+          "speaker": "Dokter",
+          "jp": "毎日30分、歩くようにしてください。",
+          "rom": "Mainichi sanjuppun, aruku you ni shite kudasai.",
+          "en": "Tolong usahakan berjalan kaki 30 menit setiap hari."
+        },
+        {
+          "speaker": "Pasien",
+          "jp": "わかりました。脂っこいものも食べないようにします。",
+          "rom": "Wakarimashita. Abura kko i mono mo tabenai you ni shimasu.",
+          "en": "Baik. Saya juga akan berusaha tidak makan makanan berlemak."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r34-1",
+      "jp": "練習を続けて、ギターが弾けるようになりました。",
+      "rom": "Renshuu wo tsuzukete, gitaa ga hikeru you ni narimashita.",
+      "en": "Terus berlatih, akhirnya bisa bermain gitar."
+    },
+    {
+      "id": "r34-2",
+      "jp": "健康のために、毎朝ジョギングするようにしています。",
+      "rom": "Kenkou no tame ni, maiasa jogingu suru you ni shite imasu.",
+      "en": "Demi kesehatan, saya berusaha jogging setiap pagi."
+    },
+    {
+      "id": "r34-3",
+      "jp": "日本に来てから、生の魚が食べられるようになりました。",
+      "rom": "Nihon ni kite kara, nama no sakana ga taberareru you ni narimashita.",
+      "en": "Sejak datang ke Jepang, bisa makan ikan mentah."
+    },
+    {
+      "id": "r34-4",
+      "jp": "お酒を飲みすぎないようにしています。",
+      "rom": "Osake wo nomisuginai you ni shite imasu.",
+      "en": "Saya berusaha tidak minum alkohol berlebihan."
+    },
+    {
+      "id": "r34-5",
+      "jp": "最近、漢字が少し読めるようになりました。",
+      "rom": "Sakin, kanji ga sukoshi yomeru you ni narimashita.",
+      "en": "Belakangan ini, sudah bisa membaca sedikit kanji."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb34-1",
+      "pattern": "V-potential + ようになりました",
+      "instruction": "Nyatakan perubahan kemampuan: 'Sekarang bisa makan natto'.",
+      "question": "Ima / nattoo / taberareru / you ni narimashita",
+      "correct": "いまは なっとうが たべられるように なりました。",
+      "romaji": "Ima wa nattoo ga taberareru you ni narimashita.",
+      "translation": "Sekarang sudah bisa makan natto."
+    },
+    {
+      "id": "wb34-2",
+      "pattern": "V-negative + ようになりました",
+      "instruction": "Nyatakan berhentinya kebiasaan: 'Tidak lagi merokok'.",
+      "question": "Tabako / suwanaku / naru / you ni narimashita",
+      "correct": "たばこを すわなくなりました。",
+      "romaji": "Tabako wo suwanaku narimashita.",
+      "translation": "Tidak lagi merokok."
+    },
+    {
+      "id": "wb34-3",
+      "pattern": "V + ようにしています",
+      "instruction": "Nyatakan kebiasaan aktif: 'Berusaha tidur sebelum jam 11'.",
+      "question": "Juuichiji mae / neru / you ni shite imasu",
+      "correct": "じゅういちじまえに ねるように しています。",
+      "romaji": "Juuichiji mae ni neru you ni shite imasu.",
+      "translation": "Saya berusaha tidur sebelum jam 11."
+    },
+    {
+      "id": "wb34-4",
+      "pattern": "V-negative + ようにしています",
+      "instruction": "Nyatakan pencegahan aktif: 'Berusaha tidak makan manis terlalu banyak'.",
+      "question": "Amai mono / tabesuginai / you ni shite imasu",
+      "correct": "あまいものを たべすぎないように しています。",
+      "romaji": "Amai mono wo tabesuginai you ni shite imasu.",
+      "translation": "Saya berusaha tidak makan terlalu banyak manis."
+    },
+    {
+      "id": "wb34-5",
+      "pattern": "ようにしてください (instruksi)",
+      "instruction": "Beri instruksi sopan: 'Tolong usahakan datang tepat waktu'.",
+      "question": "Jikan doori / kuru / you ni shite kudasai",
+      "correct": "じかんどおりに くるように してください。",
+      "romaji": "Jikan doori ni kuru you ni shite kudasai.",
+      "translation": "Tolong usahakan untuk datang tepat waktu."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex34-1",
+        "sentence": "れんしゅうを つづけて、ギターが ひける [ ] なりました。",
+        "correct": "ように",
+        "translation": "Terus berlatih, akhirnya bisa bermain gitar."
+      },
+      {
+        "id": "ex34-2",
+        "sentence": "まいにち やさいを たべる [ ] しています。",
+        "correct": "ように",
+        "translation": "Berusaha makan sayuran setiap hari."
+      },
+      {
+        "id": "ex34-3",
+        "sentence": "にほんに きてから、なまの さかなが たべられる [ ] なりました。",
+        "correct": "ように",
+        "translation": "Sejak ke Jepang, bisa makan ikan mentah."
+      },
+      {
+        "id": "ex34-4",
+        "sentence": "おそく まで おきない [ ] しています。",
+        "correct": "ように",
+        "translation": "Berusaha tidak begadang."
+      },
+      {
+        "id": "ex34-5",
+        "sentence": "さいきん かんじが すこし よめる [ ] なりました。",
+        "correct": "ように",
+        "translation": "Belakangan bisa membaca sedikit kanji."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex34-6",
+        "question": "'Oyogeru you ni narimashita' vs 'Oyogu you ni shite imasu':",
+        "options": [
+          {
+            "text": "Keduanya sama maknanya",
+            "correct": false
+          },
+          {
+            "text": "narimashita = sudah bisa (perubahan terjadi); shite imasu = sedang berusaha (keputusan aktif)",
+            "correct": true
+          },
+          {
+            "text": "shite imasu = sudah bisa; narimashita = masih berusaha",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex34-7",
+        "question": "Dokter berkata 'Tabesuginai you ni shite kudasai'. Artinya:",
+        "options": [
+          {
+            "text": "Silakan makan banyak",
+            "correct": false
+          },
+          {
+            "text": "Tolong usahakan untuk tidak makan berlebihan",
+            "correct": true
+          },
+          {
+            "text": "Anda tidak boleh makan",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex34-8",
+        "question": "Kalimat yang menyatakan perubahan alami/gradual adalah:",
+        "options": [
+          {
+            "text": "毎日野菜を食べるようにしています。",
+            "correct": false
+          },
+          {
+            "text": "日本語が少し話せるようになりました。",
+            "correct": true
+          },
+          {
+            "text": "タバコを吸わないようにします。",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "わたしは こどもの ころ、にんじんが きらいでした。でも、おとなに なってから、たべられるように なりました。いまは けんこうの ために、まいにち やさいを たべるように しています。しょくじに きをつけるように なって、からだの ちょうしが よくなりました。",
+      "questions": [
+        {
+          "id": "ex34-9",
+          "question": "こどもの ころから にんじんが すきでした。",
+          "correct": "F"
+        },
+        {
+          "id": "ex34-10",
+          "question": "いまは まいにち やさいを たべるように しています。",
+          "correct": "T"
+        },
+        {
+          "id": "ex34-11",
+          "question": "しょくじに きをつけてから、けんこうに なりました。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

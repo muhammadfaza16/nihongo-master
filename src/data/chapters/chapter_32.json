@@ -1,0 +1,461 @@
+{
+  "id": 32,
+  "title": "Lesson 32: 〜ので vs 〜のに (Alasan vs Kontras)",
+  "desc": "Memahami perbedaan halus antara 〜ので (alasan/karena — lebih halus dari から) dan 〜のに (meskipun/padahal — mengekspresikan kejutan atau kekecewaan).",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v32-1",
+      "rom": "Jijoo",
+      "kana": "じじょう",
+      "kanji": "事情",
+      "en": "Keadaan / Situasi / Alasan",
+      "audio": ""
+    },
+    {
+      "id": "v32-2",
+      "rom": "Riyuu",
+      "kana": "りゆう",
+      "kanji": "理由",
+      "en": "Alasan / Sebab",
+      "audio": ""
+    },
+    {
+      "id": "v32-3",
+      "rom": "Wake",
+      "kana": "わけ",
+      "kanji": "訳",
+      "en": "Artinya / Alasannya / Maknanya",
+      "audio": ""
+    },
+    {
+      "id": "v32-4",
+      "rom": "Zannen (na)",
+      "kana": "ざんねん（な）",
+      "kanji": "残念（な）",
+      "en": "Sayang sekali / Mengecewakan",
+      "audio": ""
+    },
+    {
+      "id": "v32-5",
+      "rom": "Odoroku",
+      "kana": "おどろきます",
+      "kanji": "驚きます",
+      "en": "Terkejut / Kaget",
+      "audio": ""
+    },
+    {
+      "id": "v32-6",
+      "rom": "Fushigi (na)",
+      "kana": "ふしぎ（な）",
+      "kanji": "不思議（な）",
+      "en": "Aneh / Misterius / Tidak masuk akal",
+      "audio": ""
+    },
+    {
+      "id": "v32-7",
+      "rom": "Shinyuu",
+      "kana": "しんゆう",
+      "kanji": "親友",
+      "en": "Sahabat karib",
+      "audio": ""
+    },
+    {
+      "id": "v32-8",
+      "rom": "Yakusoku",
+      "kana": "やくそく",
+      "kanji": "約束",
+      "en": "Janji",
+      "audio": ""
+    },
+    {
+      "id": "v32-9",
+      "rom": "Okureru",
+      "kana": "おくれます",
+      "kanji": "遅れます",
+      "en": "Terlambat",
+      "audio": ""
+    },
+    {
+      "id": "v32-10",
+      "rom": "Majime (na)",
+      "kana": "まじめ（な）",
+      "kanji": "真面目（な）",
+      "en": "Serius / Rajin / Tekun",
+      "audio": ""
+    },
+    {
+      "id": "v32-11",
+      "rom": "Kyookasho",
+      "kana": "きょうかしょ",
+      "kanji": "教科書",
+      "en": "Buku pelajaran",
+      "audio": ""
+    },
+    {
+      "id": "v32-12",
+      "rom": "Tsukarete iru",
+      "kana": "つかれています",
+      "kanji": "疲れています",
+      "en": "Sedang kelelahan",
+      "audio": ""
+    },
+    {
+      "id": "v32-13",
+      "rom": "Gan'baru",
+      "kana": "がんばります",
+      "kanji": "頑張ります",
+      "en": "Berjuang keras / Berusaha maksimal",
+      "audio": ""
+    },
+    {
+      "id": "v32-14",
+      "rom": "Taishita",
+      "kana": "たいした",
+      "kanji": "大した",
+      "en": "Luar biasa / Signifikan (sering dipakai negatif: taishita koto nai)",
+      "audio": ""
+    },
+    {
+      "id": "v32-15",
+      "rom": "Toriaezu",
+      "kana": "とりあえず",
+      "kanji": "",
+      "en": "Pertama-tama / Untuk sementara",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g32-1",
+      "title": "1. 〜ので (Alasan — Lebih Halus dari から)",
+      "desc": "Digunakan untuk menyatakan alasan secara lebih sopan dan objektif dibanding から. Sering dipakai dalam situasi formal atau saat ingin terdengar tidak memaksa.",
+      "points": [
+        "Pola: Plain form + ので。(Verb/i-adj langsung; na-adj dan noun + な + ので)",
+        "Contoh V: Byooki na NODE, yasumimasu. (Karena sakit, saya istirahat).",
+        "Contoh na-adj: Shizuka NA NODE, benkyoo ga dekimasu. (Karena tenang, saya bisa belajar).",
+        "Dibanding から: から lebih langsung/subjektif; ので lebih halus/objektif dan sopan.",
+        "Penggunaan: penjelasan kepada atasan, permintaan maaf, situasi formal."
+      ],
+      "formula": "Plain form (na-adj/N: + な) + ので",
+      "native_note": "Dalam percakapan formal di Jepang, menggunakan ので daripada から terdengar lebih sopan dan dewasa. Ini perbedaan kecil yang sangat diperhatikan orang Jepang."
+    },
+    {
+      "id": "g32-2",
+      "title": "2. 〜のに (Padahal / Meskipun — Kontras + Kekecewaan)",
+      "desc": "Menyatakan kontras yang mengandung unsur kejutan, kekecewaan, atau komplain. Berbeda dari が/けど yang lebih netral.",
+      "points": [
+        "Pola: Plain form + のに (na-adj/N: + な + のに)",
+        "Contoh: Isshoukenmei benkyoo shita NONI, shiken ni ochimashita. (Padahal sudah belajar keras, gagal ujian).",
+        "Contoh: Ame na NONI, kasa wo motte imasen. (Padahal hujan, tidak membawa payung).",
+        "Kunci emosi: のに selalu mengandung nuansa negatif — kekecewaan, komplain, atau heran.",
+        "Bandingkan: が/けど = kontras netral; のに = kontras + kekecewaan/kejutan."
+      ],
+      "formula": "Plain form (na-adj/N: + な) + のに ← selalu ada nuansa negatif",
+      "native_note": "Hati-hati: のに dan ので mudah tertukar karena bentuknya mirip, tapi maknanya SANGAT berbeda! のに = kontras+kecewa; ので = alasan+sopan."
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "雨なので、出かけるのをやめました。",
+      "rom": "Ame na node, dekakeru no wo yamemashita.",
+      "en": "Karena hujan, saya membatalkan rencana keluar."
+    },
+    {
+      "jp": "一生懸命勉強したのに、試験に落ちました。",
+      "rom": "Isshoukenmei benkyoo shita noni, shiken ni ochimashita.",
+      "en": "Padahal sudah belajar keras, saya gagal ujian."
+    },
+    {
+      "jp": "頭が痛いので、早退させていただきます。",
+      "rom": "Atama ga itai node, sootai sasete itadakimasu.",
+      "en": "Karena kepala sakit, saya mohon izin pulang lebih awal."
+    },
+    {
+      "jp": "約束したのに、来ませんでした。",
+      "rom": "Yakusoku shita noni, kimasen deshita.",
+      "en": "Padahal sudah berjanji, dia tidak datang."
+    }
+  ],
+  "conversation": {
+    "title": "Komplain dan Penjelasan",
+    "dialogue": [
+      {
+        "speaker": "A",
+        "jp": "昨日、どうして来なかったんですか。",
+        "rom": "Kinou, dooshite konakatta n desu ka.",
+        "en": "Kemarin kenapa tidak datang?"
+      },
+      {
+        "speaker": "B",
+        "jp": "すみません。急に子供が熱を出したので…。",
+        "rom": "Sumimasen. Kyuu ni kodomo ga netsu wo dashita node...",
+        "en": "Maaf. Tiba-tiba anak saya demam, jadi..."
+      },
+      {
+        "speaker": "A",
+        "jp": "そうでしたか。でも、連絡してくれればよかったのに。",
+        "rom": "Soo deshita ka. Demo, renraku shite kurereba yokatta noni.",
+        "en": "Begitu ya. Tapi, padahal seharusnya beri kabar dulu."
+      },
+      {
+        "speaker": "B",
+        "jp": "本当に申し訳ありません。次回からは必ず連絡します。",
+        "rom": "Hontoo ni mooshiwake arimasen. Jikai kara wa kanarazu renraku shimasu.",
+        "en": "Sungguh saya minta maaf. Mulai sekarang pasti saya beri kabar."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "Pilih yang tepat: 'Karena sibuk (formal), saya tidak bisa hadir'.",
+      "options": [
+        {
+          "text": "忙しいから、出席できません。",
+          "correct": false
+        },
+        {
+          "text": "忙しいので、出席できません。",
+          "correct": true
+        },
+        {
+          "text": "忙しいのに、出席できません。",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "'Padahal sudah makan, masih lapar'.\nTabeta [   ], mada onaka ga sukimasu.",
+      "answer": "noni"
+    },
+    {
+      "type": "mcq",
+      "question": "Kalimat yang menggunakan のに dengan BENAR:",
+      "options": [
+        {
+          "text": "雨なので、外に出ません。",
+          "correct": false
+        },
+        {
+          "text": "雨なのに、外に出ます。(padahal hujan, tetap keluar)",
+          "correct": true
+        },
+        {
+          "text": "雨だから、外に出ます。",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Heran dengan Teman",
+      "situation": "Teman datang terlambat tanpa alasan jelas",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "もう10時なのに、まだ来ていないんですか。",
+          "rom": "Moo juuji na noni, mada kite inain desu ka.",
+          "en": "Padahal sudah jam 10, belum datang juga?"
+        },
+        {
+          "speaker": "B",
+          "jp": "電車が遅れたので…。すみません。",
+          "rom": "Densha ga okureta node... Sumimasen.",
+          "en": "Karena keretanya terlambat... Maaf."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r32-1",
+      "jp": "眠いので、コーヒーを飲みます。",
+      "rom": "Nemui node, koohii wo nomimasu.",
+      "en": "Karena mengantuk, saya minum kopi."
+    },
+    {
+      "id": "r32-2",
+      "jp": "毎日練習しているのに、うまくなりません。",
+      "rom": "Mainichi renshuu shite iru noni, umaku narimasen.",
+      "en": "Padahal berlatih setiap hari, tidak kunjung mahir."
+    },
+    {
+      "id": "r32-3",
+      "jp": "静かなので、ここで勉強できます。",
+      "rom": "Shizuka na node, koko de benkyoo dekimasu.",
+      "en": "Karena tenang, saya bisa belajar di sini."
+    },
+    {
+      "id": "r32-4",
+      "jp": "高いのに、すぐ壊れてしまいました。",
+      "rom": "Takai noni, sugu kowarete shimaimashita.",
+      "en": "Padahal mahal, cepat rusak."
+    },
+    {
+      "id": "r32-5",
+      "jp": "風邪を引いたので、今日は休みます。",
+      "rom": "Kaze wo hiita node, kyoo wa yasumimasu.",
+      "en": "Karena masuk angin, saya istirahat hari ini."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb32-1",
+      "pattern": "〜ので (alasan sopan)",
+      "instruction": "Buat kalimat dengan ので: 'Karena ada rapat, tidak bisa pergi'.",
+      "question": "Kaigi / aru / node / ikenai",
+      "correct": "かいぎが あるので、いけません。",
+      "romaji": "Kaigi ga aru node, ikemasen.",
+      "translation": "Karena ada rapat, saya tidak bisa pergi."
+    },
+    {
+      "id": "wb32-2",
+      "pattern": "〜のに (kekecewaan)",
+      "instruction": "Buat kalimat dengan のに: 'Padahal jauh-jauh datang, tutup'.",
+      "question": "Tooku / kita / noni / shimatte iru",
+      "correct": "とおくから きたのに、しまっています。",
+      "romaji": "Tooku kara kita noni, shimatte imasu.",
+      "translation": "Padahal jauh-jauh datang, tokonya tutup."
+    },
+    {
+      "id": "wb32-3",
+      "pattern": "〜ので vs 〜から",
+      "instruction": "Pilih ので atau から: situasi formal (minta izin atasan).",
+      "question": "Byooki / node or kara / yasumitai (formal)",
+      "correct": "びょうきなので、やすませてください。",
+      "romaji": "Byooki na node, yasumasete kudasai.",
+      "translation": "Karena sakit, tolong izinkan saya istirahat. (formal)"
+    },
+    {
+      "id": "wb32-4",
+      "pattern": "Na-adj + なのに",
+      "instruction": "Buat kalimat dengan na-adj + のに.",
+      "question": "Benri / na noni / tsukaiinikui",
+      "correct": "べんりなのに、つかいにくいです。",
+      "romaji": "Benri na noni, tsukaiinikui desu.",
+      "translation": "Padahal praktis, susah dipakai."
+    },
+    {
+      "id": "wb32-5",
+      "pattern": "N + なのに",
+      "instruction": "Buat kalimat dengan noun + のに.",
+      "question": "Yasumi / na noni / shigoto shite iru",
+      "correct": "やすみなのに、しごとを しています。",
+      "romaji": "Yasumi na noni, shigoto wo shite imasu.",
+      "translation": "Padahal hari libur, masih bekerja."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex32-1",
+        "sentence": "あたまが いたい [ ]、はやく かえります。",
+        "correct": "ので",
+        "translation": "Karena kepala sakit, saya pulang cepat."
+      },
+      {
+        "id": "ex32-2",
+        "sentence": "まいにち れんしゅうした [ ]、うまく なりません。",
+        "correct": "のに",
+        "translation": "Padahal berlatih setiap hari, tidak mahir juga."
+      },
+      {
+        "id": "ex32-3",
+        "sentence": "しずかな [ ]、べんきょうが できます。",
+        "correct": "ので",
+        "translation": "Karena tenang, bisa belajar."
+      },
+      {
+        "id": "ex32-4",
+        "sentence": "やくそくした [ ]、きませんでした。",
+        "correct": "のに",
+        "translation": "Padahal sudah berjanji, tidak datang."
+      },
+      {
+        "id": "ex32-5",
+        "sentence": "でんしゃが おくれた [ ]、ちこくしました。",
+        "correct": "ので",
+        "translation": "Karena kereta terlambat, saya terlambat."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex32-6",
+        "question": "のに digunakan untuk menyatakan:",
+        "options": [
+          {
+            "text": "Alasan yang sopan",
+            "correct": false
+          },
+          {
+            "text": "Kontras yang mengandung kekecewaan atau kejutan",
+            "correct": true
+          },
+          {
+            "text": "Kondisi jika-maka",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex32-7",
+        "question": "Perbedaan ので dan から:",
+        "options": [
+          {
+            "text": "Keduanya sama persis",
+            "correct": false
+          },
+          {
+            "text": "ので lebih sopan/objektif; から lebih langsung/subjektif",
+            "correct": true
+          },
+          {
+            "text": "から lebih sopan dari ので",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex32-8",
+        "question": "Kalimat yang benar untuk 'Padahal murah, kualitasnya bagus':",
+        "options": [
+          {
+            "text": "安いので、品質がいいです。",
+            "correct": false
+          },
+          {
+            "text": "安いのに、品質がいいです。",
+            "correct": true
+          },
+          {
+            "text": "安くて、品質がいいです。",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "きょうは やすみなのに、かいしゃから でんわが かかってきました。しごとの もんだいが あったので、でんわで たいおう しました。たいへんでしたが、もんだいは かいけつできました。やすみの ひに しごとを するのは、すこし かなしいです。",
+      "questions": [
+        {
+          "id": "ex32-9",
+          "question": "きょうは しごとの ひです。",
+          "correct": "F"
+        },
+        {
+          "id": "ex32-10",
+          "question": "かいしゃから れんらくが ありました。",
+          "correct": "T"
+        },
+        {
+          "id": "ex32-11",
+          "question": "もんだいは かいけつ できませんでした。",
+          "correct": "F"
+        }
+      ]
+    }
+  }
+}

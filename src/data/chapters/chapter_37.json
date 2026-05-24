@@ -1,0 +1,451 @@
+{
+  "id": 37,
+  "title": "Lesson 37: Aksi Bersamaan & Urutan (〜ながら / 〜てから vs あとで)",
+  "desc": "Mempelajari cara menyatakan dua aksi yang dilakukan bersamaan dengan 〜ながら, serta perbedaan antara 〜てから (segera setelah) dan 〜あとで (setelah beberapa waktu).",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v37-1",
+      "rom": "Dōjini",
+      "kana": "どうじに",
+      "kanji": "同時に",
+      "en": "Secara bersamaan / Sekaligus",
+      "audio": ""
+    },
+    {
+      "id": "v37-2",
+      "rom": "Ayumu",
+      "kana": "あゆみます",
+      "kanji": "歩みます",
+      "en": "Berjalan / Melangkah",
+      "audio": ""
+    },
+    {
+      "id": "v37-3",
+      "rom": "Heikō (shimasu)",
+      "kana": "へいこう（します）",
+      "kanji": "並行（します）",
+      "en": "Beriringan / Sejajar",
+      "audio": ""
+    },
+    {
+      "id": "v37-4",
+      "rom": "Onaji jikan",
+      "kana": "おなじじかん",
+      "kanji": "同じ時間",
+      "en": "Waktu yang sama",
+      "audio": ""
+    },
+    {
+      "id": "v37-5",
+      "rom": "Utau",
+      "kana": "うたいます",
+      "kanji": "歌います",
+      "en": "Bernyanyi",
+      "audio": ""
+    },
+    {
+      "id": "v37-6",
+      "rom": "Odoru",
+      "kana": "おどります",
+      "kanji": "踊ります",
+      "en": "Menari",
+      "audio": ""
+    },
+    {
+      "id": "v37-7",
+      "rom": "Bangohan",
+      "kana": "ばんごはん",
+      "kanji": "晩ご飯",
+      "en": "Makan malam",
+      "audio": ""
+    },
+    {
+      "id": "v37-8",
+      "rom": "Nagara",
+      "kana": "ながら",
+      "kanji": "",
+      "en": "Sambil",
+      "audio": ""
+    },
+    {
+      "id": "v37-9",
+      "rom": "Ato de",
+      "kana": "あとで",
+      "kanji": "後で",
+      "en": "Nanti / Setelah",
+      "audio": ""
+    },
+    {
+      "id": "v37-10",
+      "rom": "Shawaa",
+      "kana": "シャワー",
+      "kanji": "",
+      "en": "Shower / Mandi pancuran",
+      "audio": ""
+    },
+    {
+      "id": "v37-11",
+      "rom": "Unten (shimasu)",
+      "kana": "うんてん（します）",
+      "kanji": "運転（します）",
+      "en": "Menyetir / Mengemudi",
+      "audio": ""
+    },
+    {
+      "id": "v37-12",
+      "rom": "Kiku",
+      "kana": "ききます",
+      "kanji": "聞きます",
+      "en": "Mendengarkan",
+      "audio": ""
+    },
+    {
+      "id": "v37-13",
+      "rom": "Rajio",
+      "kana": "ラジオ",
+      "kanji": "",
+      "en": "Radio",
+      "audio": ""
+    },
+    {
+      "id": "v37-14",
+      "rom": "Omo na",
+      "kana": "おもな",
+      "kanji": "主な",
+      "en": "Utama",
+      "audio": ""
+    },
+    {
+      "id": "v37-15",
+      "rom": "Dousa",
+      "kana": "どうさ",
+      "kanji": "動作",
+      "en": "Gerakan / Tindakan",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g37-1",
+      "title": "1. 〜ながら (Sambil — Dua Aksi Bersamaan)",
+      "desc": "Menyatakan dua tindakan yang dilakukan secara bersamaan oleh subjek yang sama. Tindakan utama diletakkan di akhir.",
+      "points": [
+        "Pola: V1-stem + ながら, V2",
+        "Aturan penting: Subjek V1 dan V2 harus sama.",
+        "Tindakan utama: V2 adalah aksi yang lebih penting/utama.",
+        "Contoh: Ongaku wo KIKI-nagara benkyoo shimasu. (Saya belajar sambil mendengarkan musik — belajar adalah aksi utama)."
+      ],
+      "formula": "V-stem + ながら",
+      "native_note": "Saat berbicara dengan atasan, hindari melakukan sesuatu sambil lalu. Orang Jepang menganggap 'nagara-dousa' (melakukan dua hal sekaligus) dalam situasi formal kurang sopan."
+    },
+    {
+      "id": "g37-2",
+      "title": "2. 〜てから vs 〜あとで (Urutan Waktu)",
+      "desc": "Memahami perbedaan urutan waktu. 〜てから menandakan aksi kedua langsung dilakukan setelah aksi pertama. 〜あとで menunjukkan waktu setelah aksi pertama selesai (tidak harus langsung).",
+      "points": [
+        "〜てから: V1-te + から, V2. Urutan kronologis erat. (Contoh: Tangan dicuci baru makan).",
+        "〜あとで: V1-ta + あとで, V2 / N + のあとで. Hanya urutan umum di masa lalu atau masa depan.",
+        "Contoh: Shigoto ga owatta ato de, nomini ikimasu (Setelah kerja selesai, pergi minum — ada jeda)."
+      ],
+      "formula": "V-て + から (Kronologis langsung) / V-た + あとで / N + のあとで"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "音楽を聞きながらご飯を食べます。",
+      "rom": "Ongaku wo kiki-nagaraごはん wo tabemasu.",
+      "en": "Makan nasi sambil mendengarkan musik."
+    },
+    {
+      "jp": "手を洗ってから食事をします。",
+      "rom": "Te wo arautte kara shokuji wo shimasu.",
+      "en": "Setelah mencuci tangan, baru makan (seketika)."
+    },
+    {
+      "jp": "仕事が終わったあとで、映画を見に行きます。",
+      "rom": "Shigoto ga owatta ato de, eiga wo mi ni ikimasu.",
+      "en": "Setelah pekerjaan selesai, saya pergi menonton film (ada jeda waktu)."
+    },
+    {
+      "jp": "運転しながらスマホを使ってはいけません。",
+      "rom": "Unten shi-nagara sumaho wo tsukatte wa ikemasen.",
+      "en": "Tidak boleh menggunakan ponsel sambil menyetir."
+    }
+  ],
+  "conversation": {
+    "title": "Kebiasaan Belajar",
+    "dialogue": [
+      {
+        "speaker": "A",
+        "jp": "毎日どうやって勉強していますか。",
+        "rom": "Mainichi dō yatte benkyō shite imasu ka.",
+        "en": "Bagaimana kamu belajar setiap hari?"
+      },
+      {
+        "speaker": "B",
+        "jp": "ラジオを聞きながら日本語を書いています。",
+        "rom": "Rajio wo kiki-nagara Nihongo wo kaite imasu.",
+        "en": "Saya menulis bahasa Jepang sambil mendengarkan radio."
+      },
+      {
+        "speaker": "A",
+        "jp": "へえ、器用ですね。私は宿題が終わったあとで音楽を聞きます。",
+        "rom": "Hee, kiyō desu ne. Watashi wa syukudai ga owatta ato de ongaku wo kikimasu.",
+        "en": "Wah, terampil ya. Kalau saya mendengarkan musik setelah PR selesai."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "Aksi utama dalam pola 'A-nagara B' adalah aksi ke-____:",
+      "options": [
+        {
+          "text": "B (kedua)",
+          "correct": true
+        },
+        {
+          "text": "A (kesatu)",
+          "correct": false
+        },
+        {
+          "text": "Keduanya setara",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "'Setelah mandi shower (shawaa wo abiru), saya tidur'.\nShawaa wo abi[   ] kara nemasu.",
+      "answer": "te"
+    },
+    {
+      "type": "mcq",
+      "question": "Gunakan 'ato de' yang tepat: 'Setelah makan siang (lunch)':",
+      "options": [
+        {
+          "text": "ランチのあとで",
+          "correct": true
+        },
+        {
+          "text": "ランチしたあとで",
+          "correct": false
+        },
+        {
+          "text": "ランチながら",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Rencana Setelah Kelas",
+      "situation": "Teman sekelas mengobrol setelah kelas selesai",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "授業が終わったらどうしますか。",
+          "rom": "Jugyō ga owattara dō shimasu ka.",
+          "en": "Apa yang akan kamu lakukan jika kelas selesai?"
+        },
+        {
+          "speaker": "B",
+          "jp": "アルバイトのあとで、友達と晩ご飯を食べに行きます。",
+          "rom": "Arubaito no ato de, tomodachi to bangohan wo tabe ni ikimasu.",
+          "en": "Setelah kerja paruh waktu, saya akan pergi makan malam dengan teman."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r37-1",
+      "jp": "歩きながらスマホを見ないでください。",
+      "rom": "Aruki-nagara sumaho wo minaide kudasai.",
+      "en": "Tolong jangan melihat ponsel sambil berjalan."
+    },
+    {
+      "id": "r37-2",
+      "jp": "シャワーを浴びてから寝ます。",
+      "rom": "Shawaa wo abite kara nemasu.",
+      "en": "Saya tidur setelah mandi shower."
+    },
+    {
+      "id": "r37-3",
+      "jp": "ご飯を食べたあとで、薬を飲みます。",
+      "rom": "Gohan wo tabeta ato de, kusuri wo nomimasu.",
+      "en": "Saya minum obat setelah makan."
+    },
+    {
+      "id": "r37-4",
+      "jp": "お茶を飲みながら話をしましょう。",
+      "rom": "Ocha wo nomi-nagara hanashi wo shimashou.",
+      "en": "Mari kita mengobrol sambil minum teh."
+    },
+    {
+      "id": "r37-5",
+      "jp": "日本に来てから日本語の勉強を始めました。",
+      "rom": "Nihon ni kite kara Nihongo no benkyō wo hajimemashita.",
+      "en": "Saya mulai belajar bahasa Jepang setelah datang ke Jepang."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb37-1",
+      "pattern": "V-stem + ながら",
+      "instruction": "Buat kalimat: 'Membaca koran sambil minum kopi'.",
+      "question": "Koohii / nomu / shinbun / yomu",
+      "correct": "コーヒーをのみながらしんぶんをよみます。",
+      "romaji": "Koohii wo nomi-nagara shinbun wo yomimasu.",
+      "translation": "Membaca koran sambil minum kopi."
+    },
+    {
+      "id": "wb37-2",
+      "pattern": "V-て + から",
+      "instruction": "Nyatakan urutan kronologis langsung: 'Mengerjakan PR setelah pulang rumah'.",
+      "question": "Uchi / kaeru / syukudai / suru",
+      "correct": "うちに帰ってから宿題をします。",
+      "romaji": "Uchi ni kaette kara syukudai wo shimasu.",
+      "translation": "Saya mengerjakan PR setelah pulang ke rumah."
+    },
+    {
+      "id": "wb37-3",
+      "pattern": "V-た + あとで",
+      "instruction": "Nyatakan urutan waktu: 'Menonton TV setelah belajar'.",
+      "question": "Benkyō suru / terebi / miru",
+      "correct": "勉強したあとでテレビを見ます。",
+      "romaji": "Benkyō shita ato de terebi wo mimasu.",
+      "translation": "Saya menonton TV setelah belajar."
+    },
+    {
+      "id": "wb37-4",
+      "pattern": "N + のあとで",
+      "instruction": "Nyatakan urutan waktu dengan kata benda: 'Pergi belanja setelah rapat'.",
+      "question": "Kaigi / shoppingu / iku",
+      "correct": "会議のあとでショッピングに行きます。",
+      "romaji": "Kaigi no ato de shoppingu ni ikimasu.",
+      "translation": "Saya pergi belanja setelah rapat."
+    },
+    {
+      "id": "wb37-5",
+      "pattern": "Subjek sama pada ながら",
+      "instruction": "Perbaiki kesalahan kalimat ini jika subjeknya berbeda.",
+      "question": "Aksi A dan B harus dikerjakan oleh satu subjek saja.",
+      "correct": "はい、わかりました。",
+      "romaji": "Hai, wakarimashita.",
+      "translation": "Ya, saya paham."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex37-1",
+        "sentence": "こうひいを のみ [ ] しんぶんを よみます。",
+        "correct": "ながら",
+        "translation": "Membaca koran sambil minum kopi."
+      },
+      {
+        "id": "ex37-2",
+        "sentence": "てを あらっ [ ] から ごはんを たべます。",
+        "correct": "て",
+        "translation": "Setelah mencuci tangan, makan."
+      },
+      {
+        "id": "ex37-3",
+        "sentence": "しごとが おわった [ ] で、おさけを のみに行きます。",
+        "correct": "あと",
+        "translation": "Setelah pekerjaan selesai, pergi minum."
+      },
+      {
+        "id": "ex37-4",
+        "sentence": "うたい [ ] おどるのが すきです。",
+        "correct": "ながら",
+        "translation": "Suka menari sambil bernyanyi."
+      },
+      {
+        "id": "ex37-5",
+        "sentence": "かいぎ [ ] あとで れんらくします。",
+        "correct": "の",
+        "translation": "Akan saya hubungi setelah rapat."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex37-6",
+        "question": "Kalimat yang SALAH secara tata bahasa adalah:",
+        "options": [
+          {
+            "text": "テレビを見ながら勉強します。",
+            "correct": false
+          },
+          {
+            "text": "私が歌いながら彼がギターを弾きます。(subjek berbeda)",
+            "correct": true
+          },
+          {
+            "text": "晩ご飯を食べたあとで宿題をします。",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex37-7",
+        "question": "'Kitte kara kaerimasu' berarti:",
+        "options": [
+          {
+            "text": "Saya pulang langsung setelah memotong/datang",
+            "correct": true
+          },
+          {
+            "text": "Saya memotong sambil pulang",
+            "correct": false
+          },
+          {
+            "text": "Saya akan pulang setelah beberapa waktu",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex37-8",
+        "question": "Partikel setelah kata benda pada pola 'setelah N' adalah:",
+        "options": [
+          {
+            "text": "の",
+            "correct": true
+          },
+          {
+            "text": "を",
+            "correct": false
+          },
+          {
+            "text": "に",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "わたしは 毎朝 コーヒーを のみながら ニュースを よみます。ニュースを よんだあとで、シャワーを あびてから 会社へ いきます。会社へ いってからは、いそがしくて ニュースを よむ じかんが ありません。",
+      "questions": [
+        {
+          "id": "ex37-9",
+          "question": "この人は 朝コーヒーを のみます。",
+          "correct": "T"
+        },
+        {
+          "id": "ex37-10",
+          "question": "この人は シャワーを あびるまえに ニュースを よみます。",
+          "correct": "T"
+        },
+        {
+          "id": "ex37-11",
+          "question": "この人は 会社でも ニュースを よみます。",
+          "correct": "F"
+        }
+      ]
+    }
+  }
+}

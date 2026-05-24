@@ -1,0 +1,695 @@
+{
+  "id": 20,
+  "title": "Lesson 20: Plain Form (Bentuk Kasual)",
+  "desc": "Membedah Bab 20. TITIK BALIK BESAR. Anda membuang 'Desu/Masu' dan belajar cara orang Jepang berbicara santai (Futsukei). Juga FONDASI penting karena hampir semua tata bahasa N4/N3 membutuhkan Plain Form.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v20-1",
+      "rom": "Irimasu",
+      "kana": "いります",
+      "kanji": "要ります",
+      "en": "Membutuhkan [Benda + GA]",
+      "audio": ""
+    },
+    {
+      "id": "v20-2",
+      "rom": "Shirabemasu",
+      "kana": "しらべます",
+      "kanji": "調べます",
+      "en": "Memeriksa / Mencari info",
+      "audio": ""
+    },
+    {
+      "id": "v20-3",
+      "rom": "Naoshimasu",
+      "kana": "なおします",
+      "kanji": "直します",
+      "en": "Memperbaiki",
+      "audio": ""
+    },
+    {
+      "id": "v20-4",
+      "rom": "Shuuri-shimasu",
+      "kana": "しゅうりします",
+      "kanji": "修理します",
+      "en": "Reparasi",
+      "audio": ""
+    },
+    {
+      "id": "v20-5",
+      "rom": "Boku",
+      "kana": "ぼく",
+      "kanji": "僕",
+      "en": "Saya (maskulin informal)",
+      "audio": ""
+    },
+    {
+      "id": "v20-6",
+      "rom": "Kimi",
+      "kana": "きみ",
+      "kanji": "君",
+      "en": "Kamu (informal, ke bawahan/sebaya)",
+      "audio": ""
+    },
+    {
+      "id": "v20-7",
+      "rom": "~Kun",
+      "kana": "〜くん",
+      "kanji": "〜君",
+      "en": "~ saudara (panggilan akrab untuk pria)",
+      "audio": ""
+    },
+    {
+      "id": "v20-8",
+      "rom": "Un / Uun",
+      "kana": "うん / ううん",
+      "kanji": "",
+      "en": "Ya / Tidak (kasual dari Hai/Iie)",
+      "audio": ""
+    },
+    {
+      "id": "v20-9",
+      "rom": "Kotoba",
+      "kana": "ことば",
+      "kanji": "言葉",
+      "en": "Kata / Bahasa",
+      "audio": ""
+    },
+    {
+      "id": "v20-10",
+      "rom": "Bukka",
+      "kana": "ぶっか",
+      "kanji": "物価",
+      "en": "Harga barang (secara umum)",
+      "audio": ""
+    },
+    {
+      "id": "v20-11",
+      "rom": "Kimono",
+      "kana": "きもの",
+      "kanji": "着物",
+      "en": "Kimono",
+      "audio": ""
+    },
+    {
+      "id": "v20-12",
+      "rom": "Biza",
+      "kana": "ビザ",
+      "kanji": "",
+      "en": "Visa",
+      "audio": ""
+    },
+    {
+      "id": "v20-13",
+      "rom": "Hontou",
+      "kana": "ほんとう",
+      "kanji": "本当",
+      "en": "Sungguh / Benar",
+      "audio": ""
+    },
+    {
+      "id": "v20-14",
+      "rom": "Uso",
+      "kana": "うそ",
+      "kanji": "嘘",
+      "en": "Bohong",
+      "audio": ""
+    },
+    {
+      "id": "v20-15",
+      "rom": "Futsukei",
+      "kana": "ふつうけい",
+      "kanji": "普通形",
+      "en": "Bentuk Biasa / Plain Form",
+      "audio": ""
+    },
+    {
+      "id": "v20-16",
+      "rom": "Denwa-shimasu",
+      "kana": "でんわします",
+      "kanji": "電話します",
+      "en": "Menelepon",
+      "audio": ""
+    },
+    {
+      "id": "v20-17",
+      "rom": "Sarariiman",
+      "kana": "サラリーマン",
+      "kanji": "",
+      "en": "Pekerja kantoran / Karyawan gajian",
+      "audio": ""
+    },
+    {
+      "id": "v20-18",
+      "rom": "Hajime",
+      "kana": "はじめ",
+      "kanji": "初め",
+      "en": "Awal / Permulaan",
+      "audio": ""
+    },
+    {
+      "id": "v20-19",
+      "rom": "Owari",
+      "kana": "おわり",
+      "kanji": "終わり",
+      "en": "Akhir / Selesai",
+      "audio": ""
+    },
+    {
+      "id": "v20-20",
+      "rom": "Kocchi",
+      "kana": "こっち",
+      "kanji": "",
+      "en": "Sebelah sini (kasual dari Kochira)",
+      "audio": ""
+    },
+    {
+      "id": "v20-21",
+      "rom": "Socchi",
+      "kana": "そっち",
+      "kanji": "",
+      "en": "Sebelah situ (kasual dari Sochira)",
+      "audio": ""
+    },
+    {
+      "id": "v20-22",
+      "rom": "Acchi",
+      "kana": "あっち",
+      "kanji": "",
+      "en": "Sebelah sana (kasual dari Achira)",
+      "audio": ""
+    },
+    {
+      "id": "v20-23",
+      "rom": "Docchi",
+      "kana": "どっち",
+      "kanji": "",
+      "en": "Sebelah mana? (kasual dari Dochira)",
+      "audio": ""
+    },
+    {
+      "id": "v20-24",
+      "rom": "Kono aida",
+      "kana": "このあいだ",
+      "kanji": "この間",
+      "en": "Tempo hari / Beberapa waktu lalu",
+      "audio": ""
+    },
+    {
+      "id": "v20-25",
+      "rom": "Minna de",
+      "kana": "みんなで",
+      "kanji": "",
+      "en": "Bersama-sama (semua orang)",
+      "audio": ""
+    },
+    {
+      "id": "v20-26",
+      "rom": "~kedo",
+      "kana": "〜けど",
+      "kanji": "",
+      "en": "Tapi / Namun (kasual, penghubung kalimat)",
+      "audio": ""
+    },
+    {
+      "id": "v20-27",
+      "rom": "Yokattara",
+      "kana": "よかったら",
+      "kanji": "",
+      "en": "Kalau berkenan / Kalau tidak keberatan",
+      "audio": ""
+    },
+    {
+      "id": "v20-28",
+      "rom": "Iroiro",
+      "kana": "いろいろ",
+      "kanji": "色々",
+      "en": "Bermacam-macam / Berbagai hal",
+      "audio": ""
+    },
+    {
+      "id": "v20-29",
+      "rom": "Byouki",
+      "kana": "びょうき",
+      "kanji": "病気",
+      "en": "Sakit / Penyakit",
+      "audio": ""
+    },
+    {
+      "id": "v20-30",
+      "rom": "Nichiyoubi",
+      "kana": "にちようび",
+      "kanji": "日曜日",
+      "en": "Hari Minggu",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g20-1",
+      "title": "1. Konsep Futsukei (Plain Form / Bentuk Kasual)",
+      "desc": "Bahasa Jepang terbagi dua register: Teineigo (Sopan: Masu/Desu) dan Futsukei (Kasual: Plain Form). Bab ini adalah gerbang menuju bahasa Jepang sesungguhnya.",
+      "points": [
+        "Futsukei WAJIB dipakai saat berbicara dengan: keluarga, teman dekat, atau bawahan.",
+        "WAJIB dikuasai karena banyak pola tata bahasa N4/N3 membutuhkan klausa dalam Plain Form.",
+        "Contoh pola yang MEMBUTUHKAN Plain Form: ~to omoimasu (Bab 21), ~deshou (Bab 22), ~noni (Bab 25)."
+      ],
+      "formula": "Sopan (Masu/Desu) → Kasual (Plain/Futsukei)",
+      "native_note": "Di dunia nyata, intonasi suara memegang peranan vital dalam Futsukei. Pria sering menggunakan partikel tegas di akhir seperti 'yo' atau 'zo', sementara wanita lebih sering menggunakan partikel lembut 'ne' or 'wa' untuk mencegah kalimat kasual terdengar kasar."
+    },
+    {
+      "id": "g20-2",
+      "title": "2. Konversi Kata Kerja ke Plain Form",
+      "desc": "KABAR BAIK: Anda sudah hafal semua bentuk kasual kata kerja! Ini hanya merangkum 4 bentuk yang sudah dipelajari.",
+      "points": [
+        "Positif: Masu → Dictionary Form. Ikimasu → Iku. Tabemasu → Taberu.",
+        "Negatif: Masen → Nai Form. Ikimasen → Ikanai. Tabemasen → Tabenai.",
+        "Lampau: Mashita → Ta Form. Ikimashita → Itta. Tabemashita → Tabeta.",
+        "Lampau Negatif: Masen deshita → Nakatta Form. Ikimasen deshita → Ikanakatta."
+      ],
+      "formula": "Masu→Dict | Masen→Nai | Mashita→Ta | Masen deshita→Nakatta"
+    },
+    {
+      "id": "g20-3",
+      "title": "3. Konversi Kata Sifat & Benda ke Plain Form",
+      "desc": "Kata sifat dan kata benda juga membuang 'Desu' dalam percakapan kasual. Perhatikan perbedaan I-Adj vs Na-Adj.",
+      "points": [
+        "I-Adj Positif: Tinggal hapus 'desu'. Takai desu → Takai.",
+        "I-Adj Negatif: Hapus 'desu'. Takaku nai desu → Takaku nai.",
+        "I-Adj Lampau: Hapus 'desu'. Takakatta desu → Takakatta.",
+        "Na-Adj/N Positif: 'Desu' → 'DA'. Hima desu → Hima DA. Ame desu → Ame DA.",
+        "Na-Adj/N Negatif: 'Ja arimasen' → 'Ja nai'. Hima ja arimasen → Hima ja nai.",
+        "Na-Adj/N Lampau: 'Deshita' → 'Datta'. Ame deshita → Ame datta.",
+        "Na-Adj/N Lampau Neg: 'Ja arimasen deshita' → 'Ja nakatta'. Hima ja nakatta."
+      ],
+      "formula": "I-Adj: hapus desu | Na-Adj/N: desu→da / ja arimasen→ja nai / deshita→datta"
+    },
+    {
+      "id": "g20-4",
+      "title": "4. Ciri Khas Percakapan Kasual (Lisan)",
+      "desc": "Dalam Futsukei LISAN, banyak aturan sopan yang dilanggar demi kecepatan dan kedekatan.",
+      "points": [
+        "TANYA: Naikkan intonasi saja, TANPA 'ka'. Nomu? (Mau minum?). Jawab: Un, nomu. / Uun, nomanai.",
+        "PARTIKEL O, WA, E sering DIBUANG: Gohan [o] taberu? Asoko [e] iku?",
+        "KONTRAKSI '~te iru' → '~teru': Nani shite iru? → Nani shiteru? (Lagi ngapain?)",
+        "AWAS: JANGAN pakai kasual ke orang asing, atasan, atau orang lebih tua. Itu SANGAT tidak sopan!"
+      ],
+      "formula": "Naikkan intonasi = tanya | Buang partikel | ~teru = ~te iru"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "あした 東京へ 行く？ …うん、行く。",
+      "rom": "Ashita Toukyou e iku? ...Un, iku.",
+      "en": "(Kasual) Besok pergi ke Tokyo? ...Ya, pergi."
+    },
+    {
+      "jp": "毎日 忙しい？ …ううん、忙しくない。",
+      "rom": "Mainichi isogashii? ...Uun, isogashiku nai.",
+      "en": "(Kasual) Tiap hari sibuk? ...Tidak, gak sibuk."
+    },
+    {
+      "jp": "富士山に 登った こと ある？",
+      "rom": "Fuji-san ni nobotta koto aru?",
+      "en": "(Kasual) Pernah mendaki gunung Fuji?"
+    },
+    {
+      "jp": "何 してる？ …テレビ 見てる。",
+      "rom": "Nani shiteru? ...Terebi miteru.",
+      "en": "(Kasual) Lagi ngapain? ...Lagi nonton TV."
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: 夏休みはどうする？ (Libur Musim Panas Mau Ngapain?)",
+    "dialogue": [
+      {
+        "speaker": "Taro",
+        "jp": "夏休みは 国へ 帰る？",
+        "rom": "Natsu-yasumi wa kuni e kaeru?",
+        "en": "Libur musim panas mau pulang ke negara asal?"
+      },
+      {
+        "speaker": "Jose",
+        "jp": "ううん、帰らない。太郎君は？",
+        "rom": "Uun, kaeranai. Tarou-kun wa?",
+        "en": "Enggak, gak pulang. Kamu Taro?"
+      },
+      {
+        "speaker": "Taro",
+        "jp": "僕も 帰らない。富士山に 登りたいから。",
+        "rom": "Boku mo kaeranai. Fuji-san ni noboritai kara.",
+        "en": "Aku juga gak pulang. Soalnya pengen mendaki Gunung Fuji."
+      },
+      {
+        "speaker": "Jose",
+        "jp": "へえ、いいね。富士山に 登った こと ある？",
+        "rom": "Hee, ii ne. Fuji-san ni nobotta koto aru?",
+        "en": "Wah, bagus ya. Pernah daki Gunung Fuji?"
+      },
+      {
+        "speaker": "Taro",
+        "jp": "ううん、ない。じゃ、いっしょに 行かない？",
+        "rom": "Uun, nai. Ja, issho ni ikanai?",
+        "en": "Enggak, belum. Kalau gitu, gak mau pergi bareng?"
+      },
+      {
+        "speaker": "Jose",
+        "jp": "うん、いいね。",
+        "rom": "Un, ii ne.",
+        "en": "Ya, boleh tuh."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] Plain Form dari 'Ikimasen deshita' (tidak pergi - lampau) adalah:",
+      "options": [
+        {
+          "text": "Ikanakatta",
+          "correct": true
+        },
+        {
+          "text": "Ikanai",
+          "correct": false
+        },
+        {
+          "text": "Ikatta",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] Bentuk kasual dari 'Ame desu' (Hujan — kata benda).\nAme [     ].",
+      "answer": "da"
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu B] Plain Form LAMPAU dari Na-Adj 'Hima deshita' (senggang) adalah:",
+      "options": [
+        {
+          "text": "Hima da",
+          "correct": false
+        },
+        {
+          "text": "Hima datta",
+          "correct": true
+        },
+        {
+          "text": "Hima nakatta",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu C] Plain Form NEGATIF dari 'Hima ja arimasen' (tidak senggang).\nHima [          ].",
+      "answer": "ja nai"
+    },
+    {
+      "type": "mcq",
+      "question": "[Budaya] Anda menggunakan Plain Form ke dosen universitas. Ini adalah:",
+      "options": [
+        {
+          "text": "Normal dan diterima di Jepang.",
+          "correct": false
+        },
+        {
+          "text": "SANGAT tidak sopan. Dosen wajib Teineigo (Masu/Desu).",
+          "correct": true
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Percakapan Kasual tentang Makanan",
+      "situation": "Menawarkan makanan pencuci mulut kepada teman dekat menggunakan gaya bahasa santai",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "この ケーキ、食べる？",
+          "rom": "Kono keeki, taberu?",
+          "en": "Mau makan kue ini?"
+        },
+        {
+          "speaker": "B",
+          "jp": "うん、食べる。美味しそうだね。",
+          "rom": "Un, taberu. Oishisou dane.",
+          "en": "Iya, mau. Kelihatannya enak ya."
+        },
+        {
+          "speaker": "A",
+          "jp": "美味しい？",
+          "rom": "Oishii?",
+          "en": "Enak?"
+        },
+        {
+          "speaker": "B",
+          "jp": "うん、すごく 美味しいよ。ありがとう。",
+          "rom": "Un, sugoku oishii yo. Arigatou.",
+          "en": "Iya, enak banget lho. Makasih."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Percakapan Kasual Rencana Liburan",
+      "situation": "Menanyakan rencana jalan-jalan esok hari kepada sahabat menggunakan bentuk Plain",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "明日 どこか 行く？",
+          "rom": "Ashita doko ka iku?",
+          "en": "Besok mau pergi ke mana?"
+        },
+        {
+          "speaker": "B",
+          "jp": "ううん、どこも 行かない。家で ゆっくり 休むよ。",
+          "rom": "Uun, doko mo ikanai. Uchi de yukkuri yasumu yo.",
+          "en": "Nggak, nggak pergi ke mana-mana. Santai istirahat di rumah aja."
+        },
+        {
+          "speaker": "A",
+          "jp": "そう。じゃあ、またね。",
+          "rom": "Sou. Jaa, matane.",
+          "en": "Oh gitu. Ya udah, dah!"
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Percakapan Kasual tentang Kesulitan Kanji",
+      "situation": "Mengobrol santai dengan teman sekelas tentang sulitnya belajar karakter kanji",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "日本の 漢字、わかる？",
+          "rom": "Nihon no kanji, wakaru?",
+          "en": "Ngerti kanji Jepang nggak?"
+        },
+        {
+          "speaker": "B",
+          "jp": "ううん、あまり わからない。難しいね。",
+          "rom": "Uun, amari wakaranai. Muzukashii ne.",
+          "en": "Nggak, nggak begitu ngerti. Susah ya."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうだね。一緒に 勉強しようよ。",
+          "rom": "Sou dane. Issho ni benkyou shiyou yo.",
+          "en": "Iya ya. Belajar bareng yuk!"
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r20-1",
+      "jp": "辞書、持っている？... うん、持っているよ。",
+      "rom": "Jisho, motte iru? ... Un, motte iru yo.",
+      "en": "Punya kamus? (Kasual) ... Ya, punya kok."
+    },
+    {
+      "id": "r20-2",
+      "jp": "ご飯、食べる？... ううん、食べない。お腹が いっぱいだから。",
+      "rom": "Gohan, taberu? ... Uun, tabenai. Onaka ga ippai daka ra.",
+      "en": "Mau makan nasi? (Kasual) ... Nggak, nggak makan. Soalnya kenyang."
+    },
+    {
+      "id": "r20-3",
+      "jp": "昨日 暇だった？... うん、暇だったよ。",
+      "rom": "Kinou hima datta? ... Un, hima datta yo.",
+      "en": "Kemarin senggang? (Kasual) ... Ya, senggang kok."
+    },
+    {
+      "id": "r20-4",
+      "jp": "日本語、面白い？... うん、面白いけど、難しい。",
+      "rom": "Nihongo, omoshiroi? ... Un, omoshiroi kedo, muzukashii.",
+      "en": "Bahasa Jepang menarik? (Kasual) ... Ya, menarik tapi sulit."
+    },
+    {
+      "id": "r20-5",
+      "jp": "今日 暇？... うん、暇。どこか 行く？",
+      "rom": "Kyou hima? ... Un, hima. Dokoka iku?",
+      "en": "Hari ini luang? (Kasual) ... Ya, luang. Mau pergi ke suatu tempat?"
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb20-1",
+      "pattern": "V のに (Meski ~ / Padahal ~)",
+      "instruction": "Nyatakan kontradiksi atau kejutan menggunakan のに (padahal).",
+      "question": "Ame / noni / soto / deru",
+      "correct": "あめなのに そとへ でます。",
+      "romaji": "Ame na noni soto e demasu.",
+      "translation": "Padahal hujan, tetap keluar."
+    },
+    {
+      "id": "wb20-2",
+      "pattern": "V のは / N のは adj です",
+      "instruction": "Gunakan の sebagai nominalizer untuk menjadikan klausa sebagai subjek kalimat.",
+      "question": "Nihongo wo hanasu / no wa / muzukashii",
+      "correct": "にほんごを はなすのは むずかしいです。",
+      "romaji": "Nihongo wo hanasu no wa muzukashii desu.",
+      "translation": "Berbicara bahasa Jepang itu sulit."
+    },
+    {
+      "id": "wb20-3",
+      "pattern": "〜ことができます (Bisa / Mampu ~)",
+      "instruction": "Nyatakan kemampuan menggunakan koto ga dekimasu.",
+      "question": "Piano wo / hiku / koto ga / dekimasu",
+      "correct": "ピアノを ひくことが できます。",
+      "romaji": "Piano wo hiku koto ga dekimasu.",
+      "translation": "Saya bisa bermain piano."
+    },
+    {
+      "id": "wb20-4",
+      "pattern": "〜ことにします (Memutuskan untuk ~)",
+      "instruction": "Nyatakan keputusan personal menggunakan koto ni shimasu.",
+      "question": "Mainichi / undo suru / koto ni shimashita",
+      "correct": "まいにち うんどうする ことに しました。",
+      "romaji": "Mainichi undou suru koto ni shimashita.",
+      "translation": "Memutuskan untuk berolahraga setiap hari."
+    },
+    {
+      "id": "wb20-5",
+      "pattern": "〜ことになります (Sudah diputuskan / Akan terjadi)",
+      "instruction": "Nyatakan keputusan yang sudah ditetapkan (bukan oleh diri sendiri) menggunakan koto ni narimasu.",
+      "question": "Rainen / toukyou / tenkin suru / koto ni narimashita",
+      "correct": "らいねん とうきょうに てんきんする ことに なりました。",
+      "romaji": "Rainen Toukyou ni tenkin suru koto ni narimashita.",
+      "translation": "Sudah diputuskan akan pindah tugas ke Tokyo tahun depan."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex20-1",
+        "sentence": "にほんごを はなす [ ] は むずかしいです。",
+        "correct": "の",
+        "translation": "Berbicara bahasa Jepang itu sulit."
+      },
+      {
+        "id": "ex20-2",
+        "sentence": "あめな [ ] そとに でます。",
+        "correct": "のに",
+        "translation": "Padahal hujan, tetap keluar."
+      },
+      {
+        "id": "ex20-3",
+        "sentence": "ピアノを ひく こと [ ] できます。",
+        "correct": "が",
+        "translation": "Bisa bermain piano."
+      },
+      {
+        "id": "ex20-4",
+        "sentence": "まいにち うんどうする こと [ ] しました。",
+        "correct": "に",
+        "translation": "Memutuskan untuk olahraga setiap hari."
+      },
+      {
+        "id": "ex20-5",
+        "sentence": "らいねん にほんへ いく こと [ ] なりました。",
+        "correct": "に",
+        "translation": "Sudah diputuskan akan pergi ke Jepang tahun depan."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex20-6",
+        "question": "Cara menyatakan kemampuan 'bisa berenang' menggunakan koto ga dekimasu:",
+        "options": [
+          {
+            "text": "およぐ こと できます",
+            "correct": false
+          },
+          {
+            "text": "およぐ ことが できます",
+            "correct": true
+          },
+          {
+            "text": "およいで できます",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex20-7",
+        "question": "Perbedaan 'koto ni shimasu' dan 'koto ni narimasu':",
+        "options": [
+          {
+            "text": "Shimasu = keputusan diri sendiri; narimasu = keputusan/situasi dari luar",
+            "correct": true
+          },
+          {
+            "text": "Narimasu = keputusan diri sendiri; shimasu = dari luar",
+            "correct": false
+          },
+          {
+            "text": "Keduanya sama",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex20-8",
+        "question": "'Nihongo wo hanasu no wa muzukashii' menggunakan の sebagai:",
+        "options": [
+          {
+            "text": "Partikel kepemilikan",
+            "correct": false
+          },
+          {
+            "text": "Nominalizer (mengubah klausa menjadi kata benda)",
+            "correct": true
+          },
+          {
+            "text": "Penanda tujuan",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "わたしは ことし にほんごを もっと まじめに べんきょうする ことに しました。まいにち 1じかん べんきょうする ことに なりました。にほんごで はなす ことは むずかしいですが、たのしいです。もっと じょうずに なりたいです。",
+      "questions": [
+        {
+          "id": "ex20-9",
+          "question": "この人は まいにち にほんごを べんきょうする ことに しました。",
+          "correct": "T"
+        },
+        {
+          "id": "ex20-10",
+          "question": "この人は にほんごが むずかしくて きらいです。",
+          "correct": "F"
+        },
+        {
+          "id": "ex20-11",
+          "question": "この人は もっと にほんごが じょうずに なりたいです。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

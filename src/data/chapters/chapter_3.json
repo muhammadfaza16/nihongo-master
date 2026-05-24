@@ -1,0 +1,829 @@
+{
+  "id": 3,
+  "title": "Lesson 3: Kata Tunjuk Tempat (Koko, Soko, Asoko)",
+  "desc": "Membedah Bab 3 Minna No Nihongo. Anda akan belajar menanyakan letak suatu tempat, menanyakan harga barang, asal perusahaan pembuat barang, serta tingkatan kesopanan penunjuk arah.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v3-1",
+      "rom": "Koko",
+      "kana": "ここ",
+      "kanji": "",
+      "en": "Di sini (dekat pembicara)",
+      "audio": ""
+    },
+    {
+      "id": "v3-2",
+      "rom": "Soko",
+      "kana": "そこ",
+      "kanji": "",
+      "en": "Di situ (dekat lawan bicara)",
+      "audio": ""
+    },
+    {
+      "id": "v3-3",
+      "rom": "Asoko",
+      "kana": "あそこ",
+      "kanji": "",
+      "en": "Di sana (jauh dari keduanya)",
+      "audio": ""
+    },
+    {
+      "id": "v3-4",
+      "rom": "Doko",
+      "kana": "どこ",
+      "kanji": "",
+      "en": "Di mana?",
+      "audio": ""
+    },
+    {
+      "id": "v3-5",
+      "rom": "Kochira",
+      "kana": "こちら",
+      "kanji": "",
+      "en": "Sebelah sini (Bentuk sopan dari Koko)",
+      "audio": ""
+    },
+    {
+      "id": "v3-6",
+      "rom": "Sochira",
+      "kana": "そちら",
+      "kanji": "",
+      "en": "Sebelah situ (Bentuk sopan dari Soko)",
+      "audio": ""
+    },
+    {
+      "id": "v3-7",
+      "rom": "Achira",
+      "kana": "あちら",
+      "kanji": "",
+      "en": "Sebelah sana (Bentuk sopan dari Asoko)",
+      "audio": ""
+    },
+    {
+      "id": "v3-8",
+      "rom": "Dochira",
+      "kana": "どちら",
+      "kanji": "",
+      "en": "Ke arah mana? / Di mana? (Bentuk sopan dari Doko)",
+      "audio": ""
+    },
+    {
+      "id": "v3-9",
+      "rom": "Kyoushitsu",
+      "kana": "きょうしつ",
+      "kanji": "教室",
+      "en": "Ruang Kelas",
+      "audio": ""
+    },
+    {
+      "id": "v3-10",
+      "rom": "Shokudou",
+      "kana": "しょくどう",
+      "kanji": "食堂",
+      "en": "Kantin / Ruang makan",
+      "audio": ""
+    },
+    {
+      "id": "v3-11",
+      "rom": "Jimusho",
+      "kana": "じむしょ",
+      "kanji": "事務所",
+      "en": "Kantor",
+      "audio": ""
+    },
+    {
+      "id": "v3-12",
+      "rom": "Kaigishitsu",
+      "kana": "かいぎしつ",
+      "kanji": "会議室",
+      "en": "Ruang rapat",
+      "audio": ""
+    },
+    {
+      "id": "v3-13",
+      "rom": "Uketsuke",
+      "kana": "うけつけ",
+      "kanji": "受付",
+      "en": "Meja Resepsionis",
+      "audio": ""
+    },
+    {
+      "id": "v3-14",
+      "rom": "Robii",
+      "kana": "ロビー",
+      "kanji": "",
+      "en": "Lobi",
+      "audio": ""
+    },
+    {
+      "id": "v3-15",
+      "rom": "Heya",
+      "kana": "へや",
+      "kanji": "部屋",
+      "en": "Kamar / Ruangan",
+      "audio": ""
+    },
+    {
+      "id": "v3-16",
+      "rom": "Toire",
+      "kana": "トイレ",
+      "kanji": "",
+      "en": "Toilet / Kamar kecil",
+      "audio": ""
+    },
+    {
+      "id": "v3-17",
+      "rom": "Otearai",
+      "kana": "おてあらい",
+      "kanji": "お手洗い",
+      "en": "Toilet (Sangat sopan, harfiah: tempat cuci tangan)",
+      "audio": ""
+    },
+    {
+      "id": "v3-18",
+      "rom": "Kaidan",
+      "kana": "かいだん",
+      "kanji": "階段",
+      "en": "Tangga",
+      "audio": ""
+    },
+    {
+      "id": "v3-19",
+      "rom": "Erebeetaa",
+      "kana": "エレベーター",
+      "kanji": "",
+      "en": "Lift (Elevator)",
+      "audio": ""
+    },
+    {
+      "id": "v3-20",
+      "rom": "Esukareetaa",
+      "kana": "エスカレーター",
+      "kanji": "",
+      "en": "Eskalator",
+      "audio": ""
+    },
+    {
+      "id": "v3-21",
+      "rom": "O-kuni",
+      "kana": "おくに",
+      "kanji": "お国",
+      "en": "Negara (asal seseorang)",
+      "audio": ""
+    },
+    {
+      "id": "v3-22",
+      "rom": "Kaisha",
+      "kana": "かいしゃ",
+      "kanji": "会社",
+      "en": "Perusahaan",
+      "audio": ""
+    },
+    {
+      "id": "v3-23",
+      "rom": "Uchi",
+      "kana": "うち",
+      "kanji": "家",
+      "en": "Rumah",
+      "audio": ""
+    },
+    {
+      "id": "v3-24",
+      "rom": "Denwa",
+      "kana": "でんわ",
+      "kanji": "電話",
+      "en": "Telepon",
+      "audio": ""
+    },
+    {
+      "id": "v3-25",
+      "rom": "Kutsu",
+      "kana": "くつ",
+      "kanji": "靴",
+      "en": "Sepatu",
+      "audio": ""
+    },
+    {
+      "id": "v3-26",
+      "rom": "Nekutai",
+      "kana": "ネクタイ",
+      "kanji": "",
+      "en": "Dasi",
+      "audio": ""
+    },
+    {
+      "id": "v3-27",
+      "rom": "Wain",
+      "kana": "ワイン",
+      "kanji": "",
+      "en": "Anggur (Wine)",
+      "audio": ""
+    },
+    {
+      "id": "v3-28",
+      "rom": "Tabako",
+      "kana": "たばこ",
+      "kanji": "",
+      "en": "Rokok",
+      "audio": ""
+    },
+    {
+      "id": "v3-29",
+      "rom": "Uriba",
+      "kana": "うりば",
+      "kanji": "売り場",
+      "en": "Tempat penjualan / Konter",
+      "audio": ""
+    },
+    {
+      "id": "v3-30",
+      "rom": "Chika",
+      "kana": "ちか",
+      "kanji": "地下",
+      "en": "Bawah tanah (Basement)",
+      "audio": ""
+    },
+    {
+      "id": "v3-31",
+      "rom": "~kai / ~gai",
+      "kana": "〜かい / 〜がい",
+      "kanji": "〜階",
+      "en": "Lantai ke-~",
+      "audio": ""
+    },
+    {
+      "id": "v3-32",
+      "rom": "Nangai",
+      "kana": "なんがい",
+      "kanji": "何階",
+      "en": "Lantai berapa?",
+      "audio": ""
+    },
+    {
+      "id": "v3-33",
+      "rom": "~en",
+      "kana": "〜えん",
+      "kanji": "〜円",
+      "en": "Yen (Mata uang Jepang)",
+      "audio": ""
+    },
+    {
+      "id": "v3-34",
+      "rom": "Ikura",
+      "kana": "いくら",
+      "kanji": "",
+      "en": "Berapa harganya?",
+      "audio": ""
+    },
+    {
+      "id": "v3-35",
+      "rom": "Hyaku",
+      "kana": "ひゃく",
+      "kanji": "百",
+      "en": "Seratus",
+      "audio": ""
+    },
+    {
+      "id": "v3-36",
+      "rom": "Sen / Zen",
+      "kana": "せん / ぜん",
+      "kanji": "千",
+      "en": "Seribu",
+      "audio": ""
+    },
+    {
+      "id": "v3-37",
+      "rom": "Man",
+      "kana": "まん",
+      "kanji": "万",
+      "en": "Puluh Ribu (10.000)",
+      "audio": ""
+    },
+    {
+      "id": "v3-38",
+      "rom": "Sumimasen",
+      "kana": "すみません",
+      "kanji": "",
+      "en": "Permisi / Maaf",
+      "audio": ""
+    },
+    {
+      "id": "v3-39",
+      "rom": "Misete kudasai",
+      "kana": "みせて ください",
+      "kanji": "見せて ください",
+      "en": "Tolong perlihatkan",
+      "audio": ""
+    },
+    {
+      "id": "v3-40",
+      "rom": "Kudasai",
+      "kana": "ください",
+      "kanji": "",
+      "en": "Tolong beri saya ~",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g3-1",
+      "title": "1. ここ / そこ / あそこ は [Tempat] です",
+      "desc": "Sama seperti pola Kore/Sore/Are, pola ini menggunakan partikel WA untuk menjadikan TEMPAT (Koko/Soko/Asoko) sebagai topik kalimat.",
+      "points": [
+        "Koko wa shokudou desu. (Di sini adalah kantin).",
+        "Jika ingin menanyakan nama/jenis ruangan, gunakan 'Doko' (Di mana).",
+        "Koko wa doko desu ka. (Di sini itu di mana? - Cocok ditanyakan jika Anda tersesat dan bingung sedang berada di mana)."
+      ],
+      "formula": "ここ/そこ/あそこ は [Tempat] です",
+      "native_note": "Toilet di Jepang lebih umum disebut 'Toire' (トイレ) daripada 'Oterai' (お手洗い) dalam percakapan kasual. 'Oterai' terdengar sangat sopan/halus (biasanya digunakan di kafe atau mal untuk menjaga etiket), sedangkan 'Toire' adalah istilah sehari-hari yang santai."
+    },
+    {
+      "id": "g3-2",
+      "title": "2. [Benda / Orang] は 場所(Tempat) です",
+      "desc": "Untuk menjelaskan DIMANA seseorang atau suatu benda berada. Tidak perlu partikel rumit (seperti partikel 'ni' atau 'de' yang baru akan dipelajari di bab atas), cukup gunakan pola dasar N1 wa N2 desu.",
+      "points": [
+        "Menanyakan letak: Toire wa doko desu ka. (Toilet ada di mana?).",
+        "Sato-san wa jimusho desu (Ibu Sato [ada di] kantor).",
+        "Kamera no uriba wa 3-gai desu (Konter kamera [ada di] lantai 3)."
+      ],
+      "formula": "[Topik] は [Tempat] です"
+    },
+    {
+      "id": "g3-3",
+      "title": "3. Doko vs Dochira (Kesopanan Level Tinggi)",
+      "desc": "Di Jepang, bahasa yang digunakan saat bekerja/berbisnis (Keigo) sangat membedakan kata tunjuk.",
+      "points": [
+        "Bentuk Kasual: Koko, Soko, Asoko, Doko.",
+        "Bentuk Sopan: Kochira, Sochira, Achira, Dochira. Digunakan oleh pelayan toko, resepsionis, atau saat berbicara dengan klien.",
+        "Toire wa doko desu ka (Kasual). Otearai wa dochira desu ka (Sangat Sopan).",
+        "Bisa juga untuk bertanya ASAL NEGARA/PERUSAHAAN: O-kuni wa dochira desu ka? (Negara asal Anda dari mana?)"
+      ],
+      "formula": "どちら (Bentuk sopan dari どこ)"
+    },
+    {
+      "id": "g3-4",
+      "title": "4. N1 の N2 (Asal Pembuatan/Produksi)",
+      "desc": "Partikel 'NO' berkembang lagi fungsinya. Sekarang digunakan untuk menyatakan BUATAN MANA sebuah barang atau MEREK.",
+      "points": [
+        "Jika N1 adalah Perusahaan atau Negara, dan N2 adalah Produk.",
+        "Contoh: Kore wa Nihon NO kuruma desu. (Ini mobil buatan Jepang).",
+        "Contoh: Sore wa Apple NO konpyuutaa desu. (Itu komputer buatan/merek Apple).",
+        "Cara bertanya: Kore wa DOKO NO wain desu ka. (Ini anggur buatan mana?)"
+      ],
+      "formula": "[Negara/Perusahaan] の [Produk]"
+    },
+    {
+      "id": "g3-5",
+      "title": "5. Prefix O- (お) untuk Keshopanan",
+      "desc": "Prefix 'O' (お) sering ditambahkan di depan kata benda tertentu untuk menunjukkan rasa hormat kepada lawan bicara.",
+      "points": [
+        "O-kuni (Negara), O-namae (Nama).",
+        "PENTING: Jangan PERNAH menambahkan prefix 'O' untuk barang milik Anda sendiri atau saat Anda merujuk pada diri Anda sendiri. (Jangan bilang: Watashi no O-kuni wa Indonesia desu. Cukup: Kuni wa Indonesia desu)."
+      ],
+      "formula": "お + [Kata Benda lawan bicara]"
+    },
+    {
+      "id": "g3-6",
+      "title": "6. Membaca Harga (~Yen) dan Ikura",
+      "desc": "Ikura artinya 'Berapa harganya?'. Angka dalam bahasa Jepang dihitung berbasis 10.000 (Man).",
+      "points": [
+        "Kono tokei wa ikura desu ka. (Jam tangan ini harganya berapa?).",
+        "Hyaku (100), Sen (1.000), Ichi-man (10.000).",
+        "25.000 Yen dibaca: Ni-man go-sen en. (Dua 'puluh-ribu' dan lima 'ribu')."
+      ],
+      "formula": "[Benda] は いくら ですか"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "ここは 食堂です。",
+      "rom": "Koko wa shokudou desu.",
+      "en": "Di sini adalah kantin."
+    },
+    {
+      "jp": "電話は あそこです。",
+      "rom": "Denwa wa asoko desu.",
+      "en": "Telepon ada di sana."
+    },
+    {
+      "jp": "山田さんは 事務所です。",
+      "rom": "Yamada-san wa jimusho desu.",
+      "en": "Pak Yamada ada di kantor."
+    },
+    {
+      "jp": "これは どこの ワインですか。イタリアの ワインです。",
+      "rom": "Kore wa doko no wain desu ka. Itaria no wain desu.",
+      "en": "Ini anggur (wine) buatan mana? Anggur buatan Italia."
+    },
+    {
+      "jp": "この カメラは いくらですか。２万５千円です。",
+      "rom": "Kono kamera wa ikura desu ka. Ni-man go-sen en desu.",
+      "en": "Kamera ini harganya berapa? 25.000 yen."
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: Kore wo Kudasai (Tolong Beri Saya Ini)",
+    "dialogue": [
+      {
+        "speaker": "Miller",
+        "jp": "すみません。ワインの 売り場は どこですか。",
+        "rom": "Sumimasen. Wain no uriba wa doko desu ka.",
+        "en": "Permisi. Konter anggur (wine) ada di mana?"
+      },
+      {
+        "speaker": "Resepsionis",
+        "jp": "地下１階で ございます。",
+        "rom": "Chika ikkai de gozaimasu.",
+        "en": "Ada di lantai bawah tanah 1 (Sangat Sopan / Keigo)."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "どうも。",
+        "rom": "Doumo.",
+        "en": "Terima kasih."
+      },
+      {
+        "speaker": "(Di Konter)",
+        "jp": "...",
+        "rom": "...",
+        "en": "(Di konter wine lantai B1)"
+      },
+      {
+        "speaker": "Miller",
+        "jp": "すみません。その ワインを 見せて ください。",
+        "rom": "Sumimasen. Sono wain o misete kudasai.",
+        "en": "Permisi. Tolong perlihatkan anggur itu."
+      },
+      {
+        "speaker": "Pelayan",
+        "jp": "はい、どうぞ。",
+        "rom": "Hai, douzo.",
+        "en": "Baik, silakan."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "これは フランスの ワインですか。",
+        "rom": "Kore wa Furansu no wain desu ka.",
+        "en": "Apakah ini anggur Prancis?"
+      },
+      {
+        "speaker": "Pelayan",
+        "jp": "いいえ、イタリアの です。",
+        "rom": "Iie, Itaria no desu.",
+        "en": "Bukan, (ini) buatan Italia."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "いくらですか。",
+        "rom": "Ikura desu ka.",
+        "en": "Harganya berapa?"
+      },
+      {
+        "speaker": "Pelayan",
+        "jp": "２，５００円です。",
+        "rom": "Nisen-gohyaku en desu.",
+        "en": "2.500 Yen."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "じゃ、これを ください。",
+        "rom": "Ja, kore o kudasai.",
+        "en": "Kalau begitu, tolong beri saya yang ini."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] Jika Anda bertanya kepada klien di mana letak ruang rapat (Kaigishitsu) dengan BENTUK SOPAN, Anda harus bilang:",
+      "options": [
+        {
+          "text": "Kaigishitsu wa doko desu ka.",
+          "correct": false
+        },
+        {
+          "text": "Kaigishitsu wa dochira desu ka.",
+          "correct": true
+        },
+        {
+          "text": "Kaigishitsu wa asoko desu ka.",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu B] Bagaimana cara bertanya 'Sepatu ini buatan mana?'",
+      "options": [
+        {
+          "text": "Kono kutsu wa doko no desu ka.",
+          "correct": true
+        },
+        {
+          "text": "Kono kutsu wa doko desu ka.",
+          "correct": false
+        },
+        {
+          "text": "Kore wa doko kutsu desu ka.",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] Terjemahkan: 'Kamera ini harganya berapa?'\nKono kamera wa [     ] desu ka.",
+      "answer": "ikura"
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu C] Lengkapi kalimat: 'Saya berasal dari Amerika'.\nWatashi wa Amerika [     ] kimashita.",
+      "answer": "kara"
+    },
+    {
+      "type": "mcq",
+      "question": "[Grammar Check] Di manakah letak konter sepatu? (Lantai 3).",
+      "options": [
+        {
+          "text": "3-kai desu.",
+          "correct": false
+        },
+        {
+          "text": "3-gai desu.",
+          "correct": true
+        },
+        {
+          "text": "3-floor desu.",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Menanyakan Lokasi Tempat",
+      "situation": "Bertanya tentang letak suatu ruangan dalam gedung sekolah/kantor",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "ここは どこですか。",
+          "rom": "Koko wa doko desu ka.",
+          "en": "Di sini di mana?"
+        },
+        {
+          "speaker": "B",
+          "jp": "教室です。",
+          "rom": "Kyoushitsu desu.",
+          "en": "Ruang kelas."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。",
+          "rom": "Sou desu ka.",
+          "en": "Oh, begitu ya."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Menanyakan Asal Negara/Merek Benda",
+      "situation": "Menanyakan di mana suatu benda diproduksi dan harganya",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "それは どこの 時計ですか。",
+          "rom": "Sore wa doko no tokei desu ka.",
+          "en": "Itu jam buatan mana?"
+        },
+        {
+          "speaker": "B",
+          "jp": "日本のです。",
+          "rom": "Buatan Jepang."
+        },
+        {
+          "speaker": "A",
+          "jp": "いくらですか。",
+          "rom": "Ikura desu ka.",
+          "en": "Harganya berapa?"
+        },
+        {
+          "speaker": "B",
+          "jp": "15,000円です。",
+          "rom": "Ichiman go-sen en desu.",
+          "en": "15.000 Yen."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Menanyakan Letak Fasilitas (Elevator)",
+      "situation": "Bertanya kepada staf gedung di mana letak elevator berada",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "エレベーターは どちらですか。",
+          "rom": "Erebeetaa wa dochira desu ka.",
+          "en": "Elevator ada di sebelah mana?"
+        },
+        {
+          "speaker": "B",
+          "jp": "あちらです。",
+          "rom": "Achira desu.",
+          "en": "Ada di sebelah sana."
+        },
+        {
+          "speaker": "A",
+          "jp": "どうも ありがとう ございます。",
+          "rom": "Doumo arigatou gozaimasu.",
+          "en": "Terima kasih banyak."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r3-1",
+      "jp": "ここは 食堂ですか。... いいえ、会議室です。",
+      "rom": "Koko wa shokudou desu ka? ... Iie, kaigishitsu desu.",
+      "en": "Apakah di sini kantin? ... Bukan, di sini ruang rapat."
+    },
+    {
+      "id": "r3-2",
+      "jp": "お手洗いは どこですか。... あそこです。",
+      "rom": "Oterai wa doko desu ka? ... Asoko desu.",
+      "en": "Toiletnya di mana? ... Di sebelah sana."
+    },
+    {
+      "id": "r3-3",
+      "jp": "山田さんは どこですか。... 事務所です。",
+      "rom": "Yamada-san wa doko desu ka? ... Di kantor."
+    },
+    {
+      "id": "r3-4",
+      "jp": "エレベーターは どちらですか。... あちらです。",
+      "rom": "Erebeetaa wa dochira desu ka? ... Achira desu.",
+      "en": "Liftnya di sebelah mana? ... Di sebelah sana."
+    },
+    {
+      "id": "r3-5",
+      "jp": "それは どこの 国の ワインですか。... フランスの ワインです。",
+      "rom": "Sore wa doko no kuni no wain desu ka? ... Furanosu no wain desu.",
+      "en": "Itu anggur (wine) buatan negara mana? ... Anggur buatan Prancis."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb3-1",
+      "pattern": "ここ/そこ/あそこ は N です",
+      "instruction": "Nyatakan lokasi suatu tempat menggunakan kata tunjuk tempat yang tepat.",
+      "question": "Tempat di dekat A → jimusho",
+      "correct": "ここは 事務所です。",
+      "romaji": "Koko wa jimusho desu.",
+      "translation": "Di sini adalah kantor."
+    },
+    {
+      "id": "wb3-2",
+      "pattern": "N は どこですか",
+      "instruction": "Buat pertanyaan untuk menanyakan lokasi benda atau tempat.",
+      "question": "Denwa wa?",
+      "correct": "でんわは どこですか。",
+      "romaji": "Denwa wa doko desu ka.",
+      "translation": "Telepon ada di mana?"
+    },
+    {
+      "id": "wb3-3",
+      "pattern": "N は N の どこ/うえ/した…",
+      "instruction": "Jelaskan posisi suatu benda menggunakan kata posisi relatif.",
+      "question": "Hon → tsukue no ue",
+      "correct": "本は 机の 上です。",
+      "romaji": "Hon wa tsukue no ue desu.",
+      "translation": "Buku ada di atas meja."
+    },
+    {
+      "id": "wb3-4",
+      "pattern": "N は N の うしろ/まえ/よこ…",
+      "instruction": "Jelaskan posisi di belakang/depan/samping menggunakan kata posisi.",
+      "question": "Isu → tsukue no ushiro",
+      "correct": "いすは 机の うしろです。",
+      "romaji": "Isu wa tsukue no ushiro desu.",
+      "translation": "Kursi ada di belakang meja."
+    },
+    {
+      "id": "wb3-5",
+      "pattern": "N は N の となりです",
+      "instruction": "Nyatakan posisi bersebelahan menggunakan となり (tonari).",
+      "question": "Ginkou → yuubinkyoku no tonari",
+      "correct": "銀行は 郵便局の となりです。",
+      "romaji": "Ginkou wa yuubinkyoku no tonari desu.",
+      "translation": "Bank ada di sebelah kantor pos."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex3-1",
+        "sentence": "すみません、トイレは [ ] ですか。",
+        "correct": "どこ",
+        "translation": "Permisi, toilet ada di mana?"
+      },
+      {
+        "id": "ex3-2",
+        "sentence": "電話は 机の [ ] です。",
+        "correct": "上",
+        "translation": "Telepon ada di atas meja."
+      },
+      {
+        "id": "ex3-3",
+        "sentence": "コンビニは 駅の [ ] です。",
+        "correct": "近く",
+        "translation": "Konbini ada di dekat stasiun."
+      },
+      {
+        "id": "ex3-4",
+        "sentence": "あそこは [ ] ですか。",
+        "correct": "なん",
+        "translation": "Di sana itu apa?"
+      },
+      {
+        "id": "ex3-5",
+        "sentence": "かばんは いすの [ ] です。",
+        "correct": "下",
+        "translation": "Tas ada di bawah kursi."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex3-6",
+        "question": "Benda ada di tempat yang jauh dari A maupun B. Kata tunjuk tempat yang tepat adalah:\n[ ] は エレベーターです。",
+        "options": [
+          {
+            "text": "ここ",
+            "correct": false
+          },
+          {
+            "text": "そこ",
+            "correct": false
+          },
+          {
+            "text": "あそこ",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "id": "ex3-7",
+        "question": "Posisi yang menyatakan 'di dalam kotak (hako no naka)' adalah:",
+        "options": [
+          {
+            "text": "うえ",
+            "correct": false
+          },
+          {
+            "text": "なか",
+            "correct": true
+          },
+          {
+            "text": "そと",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex3-8",
+        "question": "A: 'Sumimasen, ginkou wa doko desu ka?' Jawaban yang tepat menurut posisi 'di sebelah konbini':",
+        "options": [
+          {
+            "text": "コンビニの となりです。",
+            "correct": true
+          },
+          {
+            "text": "コンビニは となりです。",
+            "correct": false
+          },
+          {
+            "text": "コンビニのです。",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "A: すみません、トイレは どこですか。\nB: あそこです。エレベーターの となりです。\nA: ありがとうございます。\nB: エレベーターは ２階に あります。",
+      "questions": [
+        {
+          "id": "ex3-9",
+          "question": "トイレは エレベーターの そばに あります。",
+          "correct": "T"
+        },
+        {
+          "id": "ex3-10",
+          "question": "エレベーターは ３階に あります。",
+          "correct": "F"
+        },
+        {
+          "id": "ex3-11",
+          "question": "A は トイレを さがしています。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

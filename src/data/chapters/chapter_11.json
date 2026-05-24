@@ -1,0 +1,760 @@
+{
+  "id": 11,
+  "title": "Lesson 11: Kata Bantu Bilangan (Counter/Satuan)",
+  "desc": "Membedah Bab 11. Anda belajar menghitung benda, orang, dan durasi dengan satuan khusus (counter) yang berbeda-beda tergantung bentuk objeknya. Juga belajar menanyakan durasi dan frekuensi.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v11-1",
+      "rom": "Hitotsu",
+      "kana": "ひとつ",
+      "kanji": "一つ",
+      "en": "1 buah (umum)",
+      "audio": ""
+    },
+    {
+      "id": "v11-2",
+      "rom": "Futatsu",
+      "kana": "ふたつ",
+      "kanji": "二つ",
+      "en": "2 buah (umum)",
+      "audio": ""
+    },
+    {
+      "id": "v11-3",
+      "rom": "Mittsu",
+      "kana": "みっつ",
+      "kanji": "三つ",
+      "en": "3 buah (umum)",
+      "audio": ""
+    },
+    {
+      "id": "v11-4",
+      "rom": "Yottsu",
+      "kana": "よっつ",
+      "kanji": "四つ",
+      "en": "4 buah (umum)",
+      "audio": ""
+    },
+    {
+      "id": "v11-5",
+      "rom": "Itsutsu",
+      "kana": "いつつ",
+      "kanji": "五つ",
+      "en": "5 buah (umum)",
+      "audio": ""
+    },
+    {
+      "id": "v11-6",
+      "rom": "Muttsu",
+      "kana": "むっつ",
+      "kanji": "六つ",
+      "en": "6 buah (umum)",
+      "audio": ""
+    },
+    {
+      "id": "v11-7",
+      "rom": "Nanatsu",
+      "kana": "ななつ",
+      "kanji": "七つ",
+      "en": "7 buah (umum)",
+      "audio": ""
+    },
+    {
+      "id": "v11-8",
+      "rom": "Yattsu",
+      "kana": "やっつ",
+      "kanji": "八つ",
+      "en": "8 buah (umum)",
+      "audio": ""
+    },
+    {
+      "id": "v11-9",
+      "rom": "Kokonotsu",
+      "kana": "ここのつ",
+      "kanji": "九つ",
+      "en": "9 buah (umum)",
+      "audio": ""
+    },
+    {
+      "id": "v11-10",
+      "rom": "Toou",
+      "kana": "とお",
+      "kanji": "十",
+      "en": "10 buah (umum)",
+      "audio": ""
+    },
+    {
+      "id": "v11-11",
+      "rom": "Ikutsu",
+      "kana": "いくつ",
+      "kanji": "",
+      "en": "Berapa buah? / Berapa umur?",
+      "audio": ""
+    },
+    {
+      "id": "v11-12",
+      "rom": "Hitori",
+      "kana": "ひとり",
+      "kanji": "一人",
+      "en": "1 orang (IRREGULIER)",
+      "audio": ""
+    },
+    {
+      "id": "v11-13",
+      "rom": "Futari",
+      "kana": "ふたり",
+      "kanji": "二人",
+      "en": "2 orang (IRREGULIER)",
+      "audio": ""
+    },
+    {
+      "id": "v11-14",
+      "rom": "~Nin",
+      "kana": "〜にん",
+      "kanji": "〜人",
+      "en": "~ orang (3 ke atas: san-nin, yo-nin...)",
+      "audio": ""
+    },
+    {
+      "id": "v11-15",
+      "rom": "~Dai",
+      "kana": "〜だい",
+      "kanji": "〜台",
+      "en": "~ buah (mesin/kendaraan)",
+      "audio": ""
+    },
+    {
+      "id": "v11-16",
+      "rom": "~Mai",
+      "kana": "〜まい",
+      "kanji": "〜枚",
+      "en": "~ lembar (benda tipis/datar)",
+      "audio": ""
+    },
+    {
+      "id": "v11-17",
+      "rom": "~Kai",
+      "kana": "〜かい",
+      "kanji": "〜回",
+      "en": "~ kali (frekuensi)",
+      "audio": ""
+    },
+    {
+      "id": "v11-18",
+      "rom": "~Hon/Pon/Bon",
+      "kana": "〜ほん/ぽん/ぼん",
+      "kanji": "〜本",
+      "en": "~ batang (benda silindris: pensil, payung, botol)",
+      "audio": ""
+    },
+    {
+      "id": "v11-19",
+      "rom": "~Hai/Pai/Bai",
+      "kana": "〜はい/ぱい/ばい",
+      "kanji": "〜杯",
+      "en": "~ gelas/cangkir (minuman, nasi mangkuk)",
+      "audio": ""
+    },
+    {
+      "id": "v11-20",
+      "rom": "~Satsu",
+      "kana": "〜さつ",
+      "kanji": "〜冊",
+      "en": "~ buah (buku, majalah)",
+      "audio": ""
+    },
+    {
+      "id": "v11-21",
+      "rom": "~Fun/Pun",
+      "kana": "〜ふん/ぷん",
+      "kanji": "〜分",
+      "en": "~ menit",
+      "audio": ""
+    },
+    {
+      "id": "v11-22",
+      "rom": "~Jikan",
+      "kana": "〜じかん",
+      "kanji": "〜時間",
+      "en": "~ jam (durasi)",
+      "audio": ""
+    },
+    {
+      "id": "v11-23",
+      "rom": "~Nichi",
+      "kana": "〜にち",
+      "kanji": "〜日",
+      "en": "~ hari (durasi)",
+      "audio": ""
+    },
+    {
+      "id": "v11-24",
+      "rom": "~Shuukan",
+      "kana": "〜しゅうかん",
+      "kanji": "〜週間",
+      "en": "~ minggu (durasi)",
+      "audio": ""
+    },
+    {
+      "id": "v11-25",
+      "rom": "~Kagetsu",
+      "kana": "〜かげつ",
+      "kanji": "〜か月",
+      "en": "~ bulan (durasi)",
+      "audio": ""
+    },
+    {
+      "id": "v11-26",
+      "rom": "~Nen",
+      "kana": "〜ねん",
+      "kanji": "〜年",
+      "en": "~ tahun (durasi)",
+      "audio": ""
+    },
+    {
+      "id": "v11-27",
+      "rom": "Ringo",
+      "kana": "りんご",
+      "kanji": "",
+      "en": "Apel",
+      "audio": ""
+    },
+    {
+      "id": "v11-28",
+      "rom": "Mikan",
+      "kana": "みかん",
+      "kanji": "",
+      "en": "Jeruk Mandarin",
+      "audio": ""
+    },
+    {
+      "id": "v11-29",
+      "rom": "Sandoicchi",
+      "kana": "サンドイッチ",
+      "kanji": "",
+      "en": "Sandwich",
+      "audio": ""
+    },
+    {
+      "id": "v11-30",
+      "rom": "Hagaki",
+      "kana": "はがき",
+      "kanji": "葉書",
+      "en": "Kartu Pos",
+      "audio": ""
+    },
+    {
+      "id": "v11-31",
+      "rom": "Kitte",
+      "kana": "きって",
+      "kanji": "切手",
+      "en": "Perangko",
+      "audio": ""
+    },
+    {
+      "id": "v11-32",
+      "rom": "Kazoku",
+      "kana": "かぞく",
+      "kanji": "家族",
+      "en": "Keluarga",
+      "audio": ""
+    },
+    {
+      "id": "v11-33",
+      "rom": "Gaikokujin",
+      "kana": "がいこくじん",
+      "kanji": "外国人",
+      "en": "Orang asing",
+      "audio": ""
+    },
+    {
+      "id": "v11-34",
+      "rom": "Kakarimasu",
+      "kana": "かかります",
+      "kanji": "",
+      "en": "Memakan (waktu/biaya)",
+      "audio": ""
+    },
+    {
+      "id": "v11-35",
+      "rom": "Dono kurai",
+      "kana": "どのくらい",
+      "kanji": "",
+      "en": "Berapa lama / Kira-kira berapa?",
+      "audio": ""
+    },
+    {
+      "id": "v11-36",
+      "rom": "Zenbu de",
+      "kana": "ぜんぶで",
+      "kanji": "全部で",
+      "en": "Semuanya / Totalnya",
+      "audio": ""
+    },
+    {
+      "id": "v11-37",
+      "rom": "Gurai",
+      "kana": "ぐらい",
+      "kanji": "",
+      "en": "Kira-kira / Sekitar (perkiraan)",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g11-1",
+      "title": "1. Sistem Satuan Bilangan (Counter)",
+      "desc": "Di bahasa Jepang, Anda TIDAK BISA menghitung benda dengan angka polos seperti 'ichi ringo' (1 apel). Setiap jenis benda memiliki 'counter' (satuan) sendiri.",
+      "points": [
+        "〜つ (Tsu): Counter UNIVERSAL untuk benda umum. Hanya berlaku 1-10. Hitotsu, futatsu, mittsu... toou. Jika bingung counter-nya, pakai ini.",
+        "〜人 (Nin): Menghitung ORANG. Pengecualian: 1 orang = hitori, 2 orang = futari. 3+ = san-nin, yo-nin, go-nin...",
+        "〜台 (Dai): Mesin dan kendaraan. Kuruma ga ni-dai arimasu (Ada 2 mobil).",
+        "〜枚 (Mai): Benda tipis/datar (kertas, kaos, piring, tiket). Hagaki o go-mai kudasai (Minta 5 lembar kartu pos).",
+        "〜本 (Hon/Pon/Bon): Benda silindris panjang (pensil, payung, botol, pisang). Perubahan bunyi: ip-pon, ni-hon, san-bon.",
+        "〜杯 (Hai/Pai/Bai): Gelas/cangkir/mangkuk berisi. Ip-pai, ni-hai, san-bai.",
+        "〜冊 (Satsu): Buku/majalah. Is-satsu, ni-satsu, san-satsu.",
+        "〜回 (Kai): Frekuensi/berapa kali. Ik-kai, ni-kai, san-kai."
+      ],
+      "formula": "Angka + Counter (sebelum kata kerja)",
+      "native_note": "Bila Anda makan di kedai ramen atau restoran Jepang dan bingung menentukan kata bantu bilangan (counter word) yang tepat, gunakan kata hitung universal 'hitotsu' (satu) atau 'futatsu' (dua) karena pelayan restoran akan langsung mengerti tanpa masalah."
+    },
+    {
+      "id": "g11-2",
+      "title": "2. Durasi Waktu (Berapa Lama?)",
+      "desc": "Durasi BERBEDA dari titik waktu. Durasi menyatakan BERAPA LAMA, bukan JAM BERAPA. Durasi TIDAK menggunakan partikel NI.",
+      "points": [
+        "〜時間 (Jikan): Durasi jam. Ni-jikan (2 jam). BUKAN 'ni-ji' (jam 2 = titik waktu).",
+        "〜日 (Nichi/Ka): Durasi hari. Futsuka (2 hari), mikka (3 hari). Bacaan irregulier di hari 1-10.",
+        "〜週間 (Shuukan): Durasi minggu. Is-shuukan (1 minggu).",
+        "〜か月 (Kagetsu): Durasi bulan. San-kagetsu (3 bulan).",
+        "〜年 (Nen): Durasi tahun. Ichi-nen (1 tahun).",
+        "PENTING: Durasi TIDAK pakai partikel NI. 'Ni-jikan benkyou shimasu' (Belajar SELAMA 2 jam). Bukan 'Ni-jikan NI'."
+      ],
+      "formula": "[Durasi] V (tanpa partikel NI)"
+    },
+    {
+      "id": "g11-3",
+      "title": "3. N を Quantifier V / N が Quantifier V",
+      "desc": "Posisi counter dalam kalimat. Counter ditempatkan SEBELUM kata kerja (tepat di depannya).",
+      "points": [
+        "Ringo o mittsu kudasai. (Minta 3 buah apel). Counter 'mittsu' tepat sebelum 'kudasai'.",
+        "Gakusei ga go-nin imasu. (Ada 5 orang pelajar). Counter 'go-nin' tepat sebelum 'imasu'.",
+        "Koohii o ni-hai nomimashita. (Minum 2 cangkir kopi)."
+      ],
+      "formula": "N を/が [Counter] V"
+    },
+    {
+      "id": "g11-4",
+      "title": "4. どのくらい かかりますか (Berapa Lama Dibutuhkan?)",
+      "desc": "Kata tanya untuk menanyakan durasi yang dibutuhkan. 'Kakarimasu' artinya 'memakan' (waktu/biaya).",
+      "points": [
+        "Osaka kara Toukyou made dono kurai kakarimasu ka. (Dari Osaka ke Tokyo berapa lama?)",
+        "San-jikan gurai kakarimasu. (Kira-kira 3 jam).",
+        "'Gurai' = kira-kira/sekitar (perkiraan, bukan angka pasti)."
+      ],
+      "formula": "どのくらい かかりますか -> [Durasi] ぐらい かかります"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "りんごを ４つ 買いました。",
+      "rom": "Ringo o yottsu kaimashita.",
+      "en": "Saya membeli 4 buah apel."
+    },
+    {
+      "jp": "外国人の 学生が ２人 います。",
+      "rom": "Gaikokujin no gakusei ga futari imasu.",
+      "en": "Ada 2 orang pelajar asing."
+    },
+    {
+      "jp": "１週間に ２回 テニスを します。",
+      "rom": "Is-shuukan ni ni-kai tenisu o shimasu.",
+      "en": "Saya bermain tenis 2 kali per minggu."
+    },
+    {
+      "jp": "大阪から 東京まで どのくらい かかりますか。",
+      "rom": "Osaka kara Toukyou made dono kurai kakarimasu ka.",
+      "en": "Dari Osaka ke Tokyo berapa lama?"
+    },
+    {
+      "jp": "コーヒーを ３杯 飲みました。",
+      "rom": "Koohii o san-bai nomimashita.",
+      "en": "Saya minum 3 cangkir kopi."
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: 郵便局で (Di Kantor Pos)",
+    "dialogue": [
+      {
+        "speaker": "Miller",
+        "jp": "80円の 切手を ５枚と はがきを ２枚 ください。",
+        "rom": "Hachijuu-en no kitte o go-mai to hagaki o ni-mai kudasai.",
+        "en": "Minta perangko 80 yen 5 lembar dan kartu pos 2 lembar."
+      },
+      {
+        "speaker": "Petugas",
+        "jp": "はい。全部で ５００円です。",
+        "rom": "Hai. Zenbu de gohyaku-en desu.",
+        "en": "Baik. Totalnya 500 yen."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "この 荷物を アメリカへ お願いします。",
+        "rom": "Kono nimotsu o Amerika e onegaishimasu.",
+        "en": "Tolong kirimkan paket ini ke Amerika."
+      },
+      {
+        "speaker": "Petugas",
+        "jp": "船便ですか、航空便ですか。",
+        "rom": "Funabin desu ka, koukuubin desu ka.",
+        "en": "Via laut atau via udara?"
+      },
+      {
+        "speaker": "Miller",
+        "jp": "航空便で お願いします。どのくらい かかりますか。",
+        "rom": "Koukuubin de onegaishimasu. Dono kurai kakarimasu ka.",
+        "en": "Via udara. Berapa lama (sampai)?"
+      },
+      {
+        "speaker": "Petugas",
+        "jp": "１週間ぐらいです。",
+        "rom": "Is-shuukan gurai desu.",
+        "en": "Kira-kira 1 minggu."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] Counter apa yang dipakai untuk menghitung 'lembar kertas'?",
+      "options": [
+        {
+          "text": "〜台 (Dai)",
+          "correct": false
+        },
+        {
+          "text": "〜枚 (Mai)",
+          "correct": true
+        },
+        {
+          "text": "〜回 (Kai)",
+          "correct": false
+        },
+        {
+          "text": "〜本 (Hon)",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] Terjemahkan: 'Ada 3 orang pelajar'.\nGakusei ga [     ] imasu.",
+      "answer": "san-nin"
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu B] Anda mau menghitung PENSIL (benda silindris). Counter yang tepat adalah:",
+      "options": [
+        {
+          "text": "〜枚 (Mai)",
+          "correct": false
+        },
+        {
+          "text": "〜本 (Hon/Pon/Bon)",
+          "correct": true
+        },
+        {
+          "text": "〜つ (Tsu)",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu C] 'Berapa lama dari Osaka ke Tokyo?' -> Kira-kira 3 jam.\nSan-jikan [       ] kakarimasu.",
+      "answer": "gurai"
+    },
+    {
+      "type": "mcq",
+      "question": "[Jebakan] '1 orang' dan '2 orang' di bahasa Jepang adalah IRREGULIER. Yang benar adalah:",
+      "options": [
+        {
+          "text": "Ichi-nin, ni-nin",
+          "correct": false
+        },
+        {
+          "text": "Hitori, futari",
+          "correct": true
+        },
+        {
+          "text": "Hitotsu, futatsu",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Menanyakan Jumlah Saudara",
+      "situation": "Mengobrol tentang jumlah saudara kandung keluarga teman",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "ご兄弟は 何人 いますか。",
+          "rom": "Go-kyoudai wa nani-nin imasu ka.",
+          "en": "Saudaranya ada berapa orang?"
+        },
+        {
+          "speaker": "B",
+          "jp": "姉が 一人と 弟が 二人 います。",
+          "rom": "Ane ga hitori to otouto ga futari imasu.",
+          "en": "Ada satu kakak perempuan dan dua adik laki-laki."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。",
+          "rom": "Sou desu ka.",
+          "en": "Oh, begitu ya."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Menanyakan Durasi Studi di Negara Asal",
+      "situation": "Bertanya berapa lama rekan kerja belajar bahasa Jepang sebelum ke Jepang",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "国で どのくらい 日本語を 勉強しましたか。",
+          "rom": "Kuni de dono-kurai Nihongo o benkyou shimashita ka.",
+          "en": "Di negara asal, berapa lama belajar bahasa Jepang?"
+        },
+        {
+          "speaker": "B",
+          "jp": "6ヶ月 勉強しました。",
+          "rom": "Rokkagetsu benkyou shimashita.",
+          "en": "Belajar selama 6 bulan."
+        },
+        {
+          "speaker": "A",
+          "jp": "6ヶ月ですか。上手ですね。",
+          "rom": "Rokkagetsu desu ka. Jouzu desu ne.",
+          "en": "6 bulan ya? Hebat/pintar sekali ya."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Menanyakan Durasi Perjalanan ke Stasiun",
+      "situation": "Bertanya berapa waktu tempuh dari posisi sekarang ke stasiun terdekat",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "ここから 駅まで どのくらい かかりますか。",
+          "rom": "Koko kara eki made dono-kurai kakarimasu ka.",
+          "en": "Dari sini ke stasiun butuh waktu berapa lama?"
+        },
+        {
+          "speaker": "B",
+          "jp": "歩いて 15分くらい かかります。",
+          "rom": "Aruite juu-go-fun kurai kakarimasu.",
+          "en": "Jalan kaki kira-kira memakan waktu 15 menit."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。ありがとうございます。",
+          "rom": "Sou desu ka. Arigatou gozaimasu.",
+          "en": "Oh begitu. Terima kasih banyak."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r11-1",
+      "jp": "りんごを いくつ 買いましたか。... ４つ 買いました。",
+      "rom": "Ringo o ikutsu kaimashita ka? ... Yotsu kaimashita.",
+      "en": "Membeli buah apel berapa buah? ... Membeli 4 buah."
+    },
+    {
+      "id": "r11-2",
+      "jp": "８０円の 切手を 何枚 買いましたか。... ５枚 買いました。",
+      "rom": "Hachijuyouen no kitte o nanmai kaimashita ka? ... Gomai kaimashita.",
+      "en": "Membeli perangko seharga 80 yen berapa lembar? ... Membeli 5 lembar."
+    },
+    {
+      "id": "r11-3",
+      "jp": "富士大学に 外国人の 先生が いますか。... はい、３人 います。みんな アメリカ人です。",
+      "rom": "Fuji daigaku ni gaikokujin no sensei ga imasu ka? ... Hai, sannin imasu. Minna Amerika-jin desu.",
+      "en": "Apakah di Universitas Fuji ada dosen asing? ... Ya, ada 3 orang. Semuanya orang Amerika."
+    },
+    {
+      "id": "r11-4",
+      "jp": "国で 何年 英語を 勉強しましたか。... ３年 勉強しました。",
+      "rom": "Kuni de nannen eigo o benkyou shimashita ka? ... Sannen benkyou shimashita.",
+      "en": "Belajar bahasa Inggris di negara asal berapa tahun? ... Belajar selama 3 tahun."
+    },
+    {
+      "id": "r11-5",
+      "jp": "どのくらい 日本語を 勉強しましたか。... ３か月 勉強しました。",
+      "rom": "Donokurai Nihongo o benkyou shimashita ka? ... Sankagetsu benkyou shimashita.",
+      "en": "Sudah belajar bahasa Jepang kira-kira berapa lama? ... Belajar selama 3 bulan."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb11-1",
+      "pattern": "V たいです (Ingin ~)",
+      "instruction": "Nyatakan keinginan melakukan sesuatu dengan pola: masu-stem + たいです.",
+      "question": "Nihon / ikitai",
+      "correct": "にほんへ いきたいです。",
+      "romaji": "Nihon e ikitai desu.",
+      "translation": "Saya ingin pergi ke Jepang."
+    },
+    {
+      "id": "wb11-2",
+      "pattern": "N が ほしいです (Ingin memiliki ~)",
+      "instruction": "Nyatakan keinginan memiliki benda menggunakan N + が + ほしいです.",
+      "question": "Atarashii kuruma / hoshii",
+      "correct": "あたらしい くるまが ほしいです。",
+      "romaji": "Atarashii kuruma ga hoshii desu.",
+      "translation": "Saya ingin punya mobil baru."
+    },
+    {
+      "id": "wb11-3",
+      "pattern": "どこか / なにか (Suatu tempat / sesuatu)",
+      "instruction": "Buat kalimat dengan pola 'ingin pergi ke suatu tempat / ingin makan sesuatu'.",
+      "question": "Natsuyasumi / dokoka / ikitai",
+      "correct": "なつやすみに どこかへ いきたいです。",
+      "romaji": "Natsuyasumi ni dokoka e ikitai desu.",
+      "translation": "Di liburan musim panas, ingin pergi ke suatu tempat."
+    },
+    {
+      "id": "wb11-4",
+      "pattern": "V たくないです (Tidak ingin ~)",
+      "instruction": "Nyatakan ketidakinginan melakukan sesuatu.",
+      "question": "Kyou / hatarakitaku nai",
+      "correct": "きょうは はたらきたく ないです。",
+      "romaji": "Kyou wa hatarakitaku nai desu.",
+      "translation": "Hari ini saya tidak ingin bekerja."
+    },
+    {
+      "id": "wb11-5",
+      "pattern": "V た / V ている ことが あります (Pengalaman)",
+      "instruction": "Buat kalimat menyatakan pengalaman yang pernah/belum pernah dilakukan.",
+      "question": "Fujisan / nobotta / koto ga arimasu",
+      "correct": "ふじさんに のぼった ことが あります。",
+      "romaji": "Fujisan ni nobotta koto ga arimasu.",
+      "translation": "Saya pernah mendaki Gunung Fuji."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex11-1",
+        "sentence": "にほんりょうりを [ ] たいです。",
+        "correct": "たべ",
+        "translation": "Ingin makan masakan Jepang."
+      },
+      {
+        "id": "ex11-2",
+        "sentence": "あたらしい パソコン [ ] ほしいです。",
+        "correct": "が",
+        "translation": "Ingin punya laptop baru."
+      },
+      {
+        "id": "ex11-3",
+        "sentence": "なつやすみに どこか [ ] いきたいです。",
+        "correct": "へ",
+        "translation": "Ingin pergi ke suatu tempat di liburan musim panas."
+      },
+      {
+        "id": "ex11-4",
+        "sentence": "きょうは はやく かえり [ ] です。",
+        "correct": "たい",
+        "translation": "Hari ini ingin cepat pulang."
+      },
+      {
+        "id": "ex11-5",
+        "sentence": "ふじさんに のぼった こと [ ] あります。",
+        "correct": "が",
+        "translation": "Pernah mendaki Gunung Fuji."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex11-6",
+        "question": "Pola yang tepat untuk menyatakan 'ingin makan sushi' adalah:",
+        "options": [
+          {
+            "text": "すしが たべたいです。",
+            "correct": true
+          },
+          {
+            "text": "すしを たべたいです。",
+            "correct": false
+          },
+          {
+            "text": "すしは ほしいです。",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex11-7",
+        "question": "Untuk menyatakan 'tidak pernah minum sake', polanya adalah:",
+        "options": [
+          {
+            "text": "さけを のんだ ことは ありません。",
+            "correct": true
+          },
+          {
+            "text": "さけを のみません でした。",
+            "correct": false
+          },
+          {
+            "text": "さけが きらいです。",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex11-8",
+        "question": "Perbedaan 'たいです' dan 'ほしいです' adalah:",
+        "options": [
+          {
+            "text": "たいです untuk keinginan (kata kerja), ほしいです untuk benda",
+            "correct": true
+          },
+          {
+            "text": "ほしいです lebih sopan dari たいです",
+            "correct": false
+          },
+          {
+            "text": "Keduanya sama saja",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "ミラーさんは こんど の なつやすみに きょうとへ いきたいです。きょうとで おてらや じんじゃを みたいです。にほんりょうりも たべたいです。きょうとには まだ いった ことが ありません。",
+      "questions": [
+        {
+          "id": "ex11-9",
+          "question": "ミラーさんは きょうとへ いきたいです。",
+          "correct": "T"
+        },
+        {
+          "id": "ex11-10",
+          "question": "ミラーさんは まえに きょうとへ いった ことが あります。",
+          "correct": "F"
+        },
+        {
+          "id": "ex11-11",
+          "question": "ミラーさんは きょうとで にほんりょうりを たべたいです。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

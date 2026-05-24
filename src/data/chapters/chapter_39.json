@@ -1,0 +1,450 @@
+{
+  "id": 39,
+  "title": "Lesson 39: Keputusan Pribadi & Sosial (〜ことにする / 〜ことになる)",
+  "desc": "Mempelajari perbedaan antara 〜ことにする (memutuskan sendiri untuk melakukan sesuatu) dan 〜ことになる (telah diputuskan oleh keadaan luar/orang lain).",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v39-1",
+      "rom": "Kimeru",
+      "kana": "きめます",
+      "kanji": "決めます",
+      "en": "Memutuskan",
+      "audio": ""
+    },
+    {
+      "id": "v39-2",
+      "rom": "Kettei (shimasu)",
+      "kana": "けってい（します）",
+      "kanji": "決定（します）",
+      "en": "Keputusan / Menetapkan",
+      "audio": ""
+    },
+    {
+      "id": "v39-3",
+      "rom": "Kisoku",
+      "kana": "きそく",
+      "kanji": "規則",
+      "en": "Peraturan",
+      "audio": ""
+    },
+    {
+      "id": "v39-4",
+      "rom": "Shuukan",
+      "kana": "しゅうかん",
+      "kanji": "習慣",
+      "en": "Kebiasaan",
+      "audio": ""
+    },
+    {
+      "id": "v39-5",
+      "rom": "Tenkin (shimasu)",
+      "kana": "てんきん（します）",
+      "kanji": "転勤（します）",
+      "en": "Pindah tugas / Mutasi kerja",
+      "audio": ""
+    },
+    {
+      "id": "v39-6",
+      "rom": "Koto ni suru",
+      "kana": "ことにする",
+      "kanji": "",
+      "en": "Memutuskan untuk",
+      "audio": ""
+    },
+    {
+      "id": "v39-7",
+      "rom": "Koto ni naru",
+      "kana": "ことになる",
+      "kanji": "",
+      "en": "Telah diputuskan (oleh keadaan)",
+      "audio": ""
+    },
+    {
+      "id": "v39-8",
+      "rom": "Sake wo yameru",
+      "kana": "さけをやめる",
+      "kanji": "酒をやめる",
+      "en": "Berhenti minum sake",
+      "audio": ""
+    },
+    {
+      "id": "v39-9",
+      "rom": "Kaisha no kisoku",
+      "kana": "かいしゃのきそく",
+      "kanji": "会社の規則",
+      "en": "Peraturan perusahaan",
+      "audio": ""
+    },
+    {
+      "id": "v39-10",
+      "rom": "Zangyou",
+      "kana": "ざんぎょう",
+      "kanji": "残業",
+      "en": "Lembur",
+      "audio": ""
+    },
+    {
+      "id": "v39-11",
+      "rom": "Kinyuu (shimasu)",
+      "kana": "きにゅう（します）",
+      "kanji": "記入（します）",
+      "en": "Mengisi (formulir)",
+      "audio": ""
+    },
+    {
+      "id": "v39-12",
+      "rom": "Hikkoshi (shimasu)",
+      "kana": "ひっこし（します）",
+      "kanji": "引っ越し（します）",
+      "en": "Pindah rumah",
+      "audio": ""
+    },
+    {
+      "id": "v39-13",
+      "rom": "Kaigai",
+      "kana": "かいがい",
+      "kanji": "海外",
+      "en": "Luar negeri",
+      "audio": ""
+    },
+    {
+      "id": "v39-14",
+      "rom": "Shutchou (shimasu)",
+      "kana": "しゅっちょう（します）",
+      "kanji": "出張（します）",
+      "en": "Perjalanan dinas",
+      "audio": ""
+    },
+    {
+      "id": "v39-15",
+      "rom": "Kimerareta",
+      "kana": "きめられた",
+      "kanji": "決められた",
+      "en": "Ditentukan / Diputuskan",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g39-1",
+      "title": "1. 〜ことにする (Keputusan Pribadi)",
+      "desc": "Menyatakan keputusan aktif yang dibuat oleh pembicara sendiri. Bentuk 〜ことにしています menunjukkan kebiasaan/aturan pribadi yang dijalankan secara konsisten.",
+      "points": [
+        "Pola: V-dictionary / V-nai + ことにする (Bentuk lampau: 〜ことにしました)",
+        "Contoh: Kenkoo no tame ni, mainichi jogingu suru koto ni shimashita. (Untuk kesehatan, saya memutuskan joging setiap hari).",
+        "V-ことにしています: Komitmen pribadi. Mainichi kanji wo 5-tsu oboyeru koto ni shite imasu."
+      ],
+      "formula": "V-dict/nai + ことにする / ことにしている",
+      "native_note": "Ketika diwawancarai, menyatakan komitmen pribadi dengan '〜ことにしています' menunjukkan Anda orang yang berdisiplin tinggi."
+    },
+    {
+      "id": "g39-2",
+      "title": "2. 〜ことになる (Keputusan Keadaan / Pihak Luar)",
+      "desc": "Menyatakan keputusan atau situasi yang telah ditetapkan oleh aturan, keadaan, keputusan kantor, atau kesepakatan bersama, bukan dari kehendak pribadi pembicara saja.",
+      "points": [
+        "Pola: V-dictionary / V-nai + ことにする → ことになる (Bentuk lampau: 〜ことになりました)",
+        "Contoh: Raigetsu, Osaka e tenkin suru koto ni narimashita. (Bulan depan telah diputuskan saya mutasi ke Osaka — keputusan kantor).",
+        "V-ことになっています: Menunjukkan peraturan atau adat masyarakat. Koko de wa tabako wo suwanai koto ni natte imasu."
+      ],
+      "formula": "V-dict/nai + ことになる / ことになっている"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "今日からお酒を飲まないことにしました。",
+      "rom": "Kyō kara osake wo nomanai koto ni shimashita.",
+      "en": "Saya memutuskan untuk tidak minum sake mulai hari ini."
+    },
+    {
+      "jp": "来月、日本へ出張することになりました。",
+      "rom": "Raigetsu, Nihon e shutchō suru koto ni narimashita.",
+      "en": "Bulan depan telah diputuskan saya dinas ke Jepang (keputusan kantor)."
+    },
+    {
+      "jp": "毎朝、水を一杯飲むことにしています。",
+      "rom": "Maiasa, mizu wo ippai nomu koto ni shite imasu.",
+      "en": "Saya membiasakan diri minum segelas air setiap pagi (komitmen diri)."
+    },
+    {
+      "jp": "この部屋では靴を脱ぐことになっています。",
+      "rom": "Kono heya de wa kutsu wo nugu koto ni natte imasu.",
+      "en": "Di kamar ini diatur untuk melepas sepatu (peraturan)."
+    }
+  ],
+  "conversation": {
+    "title": "Mutasi Tugas yang Mengejutkan",
+    "dialogue": [
+      {
+        "speaker": "A",
+        "jp": "来月から東京の支社へ行くことになりました。",
+        "rom": "Raigetsu kara Tōkyō no shisha e iku koto ni narimashita.",
+        "en": "Mulai bulan depan telah diputuskan saya pindah ke kantor cabang Tokyo."
+      },
+      {
+        "speaker": "B",
+        "jp": "えっ、そうなんですか。ご家族はどうしますか。",
+        "rom": "Ets, sō nan desu ka. Go-kazoku wa dō shimasu ka.",
+        "en": "Eh, benarkah? Bagaimana dengan keluarga Anda?"
+      },
+      {
+        "speaker": "A",
+        "jp": "家族はここに残して, 一人で行くことにしました。",
+        "rom": "Kazoku wa koko ni nokoshite, hitori de iku koto ni shimashita.",
+        "en": "Keluarga saya tinggal di sini, dan saya memutuskan pergi sendiri."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "Pilih arti dari 'koto ni shite imasu':",
+      "options": [
+        {
+          "text": "Membiasakan diri (keputusan pribadi rutin)",
+          "correct": true
+        },
+        {
+          "text": "Telah diatur oleh hukum luar",
+          "correct": false
+        },
+        {
+          "text": "Terpaksa melakukan",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "'Telah diputuskan saya akan menikah (kekkon suru)'.\nKekkon suru koto ni [   ]mashita.",
+      "answer": "nari"
+    },
+    {
+      "type": "mcq",
+      "question": "Manakah pola yang tepat untuk mengekspresikan peraturan sekolah?",
+      "options": [
+        {
+          "text": "ことになっている",
+          "correct": true
+        },
+        {
+          "text": "ことにしている",
+          "correct": false
+        },
+        {
+          "text": "ことにする",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Aturan Di Lapangan Olahraga",
+      "situation": "Pemain menanyakan aturan lapangan",
+      "dialogue": [
+        {
+          "speaker": "Pemain",
+          "jp": "ここでは夜10時まで練習できますか。",
+          "rom": "Koko de wa yoru juuji made renshū dekimasu ka.",
+          "en": "Apakah bisa latihan di sini sampai jam 10 malam?"
+        },
+        {
+          "speaker": "Petugas",
+          "jp": "いいえ、夜9時以降は音を出さないことになっています。",
+          "rom": "Iie, yoru kuji ikō wa oto wo dasanai koto ni natte imasu.",
+          "en": "Tidak, diatur untuk tidak membuat kebisingan setelah jam 9 malam."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r39-1",
+      "jp": "健康のために、エスカレーターを使わないことにしました。",
+      "rom": "Kenkoo no tame ni, esukareetaa wo tsukawanai koto ni shimashita.",
+      "en": "Demi kesehatan, saya memutuskan untuk tidak menggunakan eskalator."
+    },
+    {
+      "id": "r39-2",
+      "jp": "会社の規則で、制服を着ることになっています。",
+      "rom": "Kaisha no kisoku de, seifuku wo kiru koto ni natte imasu.",
+      "en": "Menurut peraturan perusahaan, diatur untuk memakai seragam."
+    },
+    {
+      "id": "r39-3",
+      "jp": "これから毎日日記を書くことにしています。",
+      "rom": "Korekara mainichi nikki wo kaku koto ni shite imasu.",
+      "en": "Saya berkomitmen menulis buku harian setiap hari mulai sekarang."
+    },
+    {
+      "id": "r39-4",
+      "jp": "ビザが取れたので、来週日本へ行くことになりました。",
+      "rom": "Biza ga toreta node, raishuu Nihon e iku koto ni narimashita.",
+      "en": "Karena visa sudah didapat, diputuskan saya pergi ke Jepang minggu depan."
+    },
+    {
+      "id": "r39-5",
+      "jp": "夜遅くには電話をかけないことにしています。",
+      "rom": "Yoru osoku ni wa denwa wo kakenai koto ni shite imasu.",
+      "en": "Saya membiasakan diri untuk tidak menelepon larut malam."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb39-1",
+      "pattern": "V-dict + ことにする",
+      "instruction": "Nyatakan keputusan pribadi: 'Saya memutuskan untuk membeli rumah'.",
+      "question": "Ie / kau / koto / suru",
+      "correct": "いえをかうことにしました。",
+      "romaji": "Ie wo kau koto ni shimashita.",
+      "translation": "Saya memutuskan membeli rumah."
+    },
+    {
+      "id": "wb39-2",
+      "pattern": "V-nai + ことにする",
+      "instruction": "Nyatakan keputusan pribadi: 'Memutuskan tidak makan gorengan'.",
+      "question": "Tenpura / tabenai / koto / suru",
+      "correct": "てんぷらをたべないことにしました。",
+      "romaji": "Tenpura wo tabenai koto ni shimashita.",
+      "translation": "Saya memutuskan tidak makan tempura."
+    },
+    {
+      "id": "wb39-3",
+      "pattern": "V-dict + ことになる",
+      "instruction": "Nyatakan keputusan dari luar: 'Diputuskan untuk pindah rumah'.",
+      "question": "Hikkoshi / suru / koto / naru",
+      "correct": "ひっこしすることになりました。",
+      "romaji": "Hikkoshi suru koto ni narimashita.",
+      "translation": "Telah diputuskan saya pindah rumah."
+    },
+    {
+      "id": "wb39-4",
+      "pattern": "V-dict + ことにしている",
+      "instruction": "Nyatakan komitmen kebiasaan pribadi: 'Berolahraga tiap sore'.",
+      "question": "Gogo / undoo / suru / koto / shite iru",
+      "correct": "ごごにうんどうすることにしています。",
+      "romaji": "Gogo ni undoo suru koto ni shite imasu.",
+      "translation": "Saya membiasakan diri berolahraga sore hari."
+    },
+    {
+      "id": "wb39-5",
+      "pattern": "V-dict + ことになっている",
+      "instruction": "Nyatakan aturan sosial: 'Memakai dasi saat jam kerja'.",
+      "question": "Dasi / tsukeru / koto / natte iru",
+      "correct": "ネクタイをつけることになっています。",
+      "romaji": "Nekutai wo tsukeru koto ni natte imasu.",
+      "translation": "Diatur untuk memakai dasi."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex39-1",
+        "sentence": "けんこうのために 毎日 はしる [ ] に しました。",
+        "correct": "こと",
+        "translation": "Demi kesehatan, memutuskan berlari setiap hari."
+      },
+      {
+        "id": "ex39-2",
+        "sentence": "かいしゃの きそくで 8じまでに くること [ ] います。",
+        "correct": "になって",
+        "translation": "Menurut aturan kantor, diatur untuk datang sebelum jam 8."
+      },
+      {
+        "id": "ex39-3",
+        "sentence": "らいげつ、おおさかへ てんきんすることに [ ] ました。",
+        "correct": "なり",
+        "translation": "Bulan depan diputuskan mutasi ke Osaka."
+      },
+      {
+        "id": "ex39-4",
+        "sentence": "よる おそく 食べない [ ] に しています。",
+        "correct": "こと",
+        "translation": "Membiasakan diri tidak makan larut malam."
+      },
+      {
+        "id": "ex39-5",
+        "sentence": "じぶんの へ局は じぶんで かたづける [ ] に しました。",
+        "correct": "こと",
+        "translation": "Memutuskan merapikan kamar sendiri."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex39-6",
+        "question": "'Koto ni shimashita' menunjukkan keputusan dari:",
+        "options": [
+          {
+            "text": "Diri sendiri",
+            "correct": true
+          },
+          {
+            "text": "Atasan/Perusahaan",
+            "correct": false
+          },
+          {
+            "text": "Hukum/Aturan luar",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex39-7",
+        "question": "'Koto ni narimashita' paling tepat digunakan saat:",
+        "options": [
+          {
+            "text": "Mengumumkan pernikahan atau mutasi resmi",
+            "correct": true
+          },
+          {
+            "text": "Menolak ajakan makan teman",
+            "correct": false
+          },
+          {
+            "text": "Menyatakan kebiasaan mencuci baju",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex39-8",
+        "question": "Bentuk negatif dari 'koto ni shite imasu' adalah:",
+        "options": [
+          {
+            "text": "〜ないことにしています",
+            "correct": true
+          },
+          {
+            "text": "〜ことにしていません",
+            "correct": false
+          },
+          {
+            "text": "〜ないことになっています",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "わたしは ことしから 毎日 タバコを すわないことに しました。さいしょは むずかしかったですが、いまも すわないことに しています。また、かいしゃでは 禁煙することに なっているので、すうことが できません。とても いい 習慣だと おもいます。",
+      "questions": [
+        {
+          "id": "ex39-9",
+          "question": "この人は 今年タバコを やめました。",
+          "correct": "T"
+        },
+        {
+          "id": "ex39-10",
+          "question": "会社では タバコを すっても いいです。",
+          "correct": "F"
+        },
+        {
+          "id": "ex39-11",
+          "question": "この人は 今も タバコを すっていません。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

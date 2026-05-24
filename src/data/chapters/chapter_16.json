@@ -1,0 +1,670 @@
+{
+  "id": 16,
+  "title": "Lesson 16: Setelah (Te-kara) & Deskripsi Fisik",
+  "desc": "Membedah Bab 16. Belajar menyatakan urutan mutlak ('setelah melakukan A, baru B'), mendeskripsikan ciri-ciri fisik seseorang dengan pola WA-GA, dan aturan partikel naik/turun kendaraan.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v16-1",
+      "rom": "Norimasu",
+      "kana": "のります",
+      "kanji": "乗ります",
+      "en": "Naik (kendaraan) [+NI]",
+      "audio": ""
+    },
+    {
+      "id": "v16-2",
+      "rom": "Orimasu",
+      "kana": "おります",
+      "kanji": "降ります",
+      "en": "Turun (kendaraan) [+O]",
+      "audio": ""
+    },
+    {
+      "id": "v16-3",
+      "rom": "Norikaemasu",
+      "kana": "のりかえます",
+      "kanji": "乗り換えます",
+      "en": "Transit / Pindah kendaraan",
+      "audio": ""
+    },
+    {
+      "id": "v16-4",
+      "rom": "Abimasu",
+      "kana": "あびます",
+      "kanji": "浴びます",
+      "en": "Mandi (diguyur air) / Shower",
+      "audio": ""
+    },
+    {
+      "id": "v16-5",
+      "rom": "Iremasu",
+      "kana": "いれます",
+      "kanji": "入れます",
+      "en": "Memasukkan",
+      "audio": ""
+    },
+    {
+      "id": "v16-6",
+      "rom": "Dashimasu",
+      "kana": "だします",
+      "kanji": "出します",
+      "en": "Mengeluarkan / Menyerahkan",
+      "audio": ""
+    },
+    {
+      "id": "v16-7",
+      "rom": "Hairimasu",
+      "kana": "はいります",
+      "kanji": "入ります",
+      "en": "Masuk [+NI]",
+      "audio": ""
+    },
+    {
+      "id": "v16-8",
+      "rom": "Demasu",
+      "kana": "でます",
+      "kanji": "出ます",
+      "en": "Keluar [+O]",
+      "audio": ""
+    },
+    {
+      "id": "v16-9",
+      "rom": "Yamemasu",
+      "kana": "やめます",
+      "kanji": "辞めます",
+      "en": "Berhenti (dari pekerjaan/kebiasaan)",
+      "audio": ""
+    },
+    {
+      "id": "v16-10",
+      "rom": "Oshimasu",
+      "kana": "おします",
+      "kanji": "押します",
+      "en": "Menekan (tombol)",
+      "audio": ""
+    },
+    {
+      "id": "v16-11",
+      "rom": "Karada",
+      "kana": "からだ",
+      "kanji": "体",
+      "en": "Badan / Tubuh",
+      "audio": ""
+    },
+    {
+      "id": "v16-12",
+      "rom": "Atama",
+      "kana": "あたま",
+      "kanji": "頭",
+      "en": "Kepala",
+      "audio": ""
+    },
+    {
+      "id": "v16-13",
+      "rom": "Kami",
+      "kana": "かみ",
+      "kanji": "髪",
+      "en": "Rambut",
+      "audio": ""
+    },
+    {
+      "id": "v16-14",
+      "rom": "Kao",
+      "kana": "かお",
+      "kanji": "顔",
+      "en": "Wajah",
+      "audio": ""
+    },
+    {
+      "id": "v16-15",
+      "rom": "Me",
+      "kana": "め",
+      "kanji": "目",
+      "en": "Mata",
+      "audio": ""
+    },
+    {
+      "id": "v16-16",
+      "rom": "Mimi",
+      "kana": "みみ",
+      "kanji": "耳",
+      "en": "Telinga",
+      "audio": ""
+    },
+    {
+      "id": "v16-17",
+      "rom": "Kuchi",
+      "kana": "くち",
+      "kanji": "口",
+      "en": "Mulut",
+      "audio": ""
+    },
+    {
+      "id": "v16-18",
+      "rom": "Ha",
+      "kana": "は",
+      "kanji": "歯",
+      "en": "Gigi",
+      "audio": ""
+    },
+    {
+      "id": "v16-19",
+      "rom": "Hana",
+      "kana": "はな",
+      "kanji": "鼻",
+      "en": "Hidung",
+      "audio": ""
+    },
+    {
+      "id": "v16-20",
+      "rom": "Te / Ashi",
+      "kana": "て / あし",
+      "kanji": "手 / 足",
+      "en": "Tangan / Kaki",
+      "audio": ""
+    },
+    {
+      "id": "v16-21",
+      "rom": "Onaka",
+      "kana": "おなか",
+      "kanji": "",
+      "en": "Perut",
+      "audio": ""
+    },
+    {
+      "id": "v16-22",
+      "rom": "Se",
+      "kana": "せ",
+      "kanji": "背",
+      "en": "Punggung / Tinggi Badan",
+      "audio": ""
+    },
+    {
+      "id": "v16-23",
+      "rom": "Kikai",
+      "kana": "きかい",
+      "kanji": "機械",
+      "en": "Mesin / Alat",
+      "audio": ""
+    },
+    {
+      "id": "v16-24",
+      "rom": "Tsukaikata",
+      "kana": "つかいかた",
+      "kanji": "使い方",
+      "en": "Cara menggunakan",
+      "audio": ""
+    },
+    {
+      "id": "v16-25",
+      "rom": "Anshoubangou",
+      "kana": "あんしょうばんごう",
+      "kanji": "暗証番号",
+      "en": "PIN / Nomor Rahasia",
+      "audio": ""
+    },
+    {
+      "id": "v16-26",
+      "rom": "Kingaku",
+      "kana": "きんがく",
+      "kanji": "金額",
+      "en": "Jumlah Uang / Nominal",
+      "audio": ""
+    },
+    {
+      "id": "v16-27",
+      "rom": "Kakunin",
+      "kana": "かくにん",
+      "kanji": "確認",
+      "en": "Konfirmasi",
+      "audio": ""
+    },
+    {
+      "id": "v16-28",
+      "rom": "Botan",
+      "kana": "ボタン",
+      "kanji": "",
+      "en": "Tombol",
+      "audio": ""
+    },
+    {
+      "id": "v16-29",
+      "rom": "Mazu",
+      "kana": "まず",
+      "kanji": "",
+      "en": "Pertama-tama / Pertama",
+      "audio": ""
+    },
+    {
+      "id": "v16-30",
+      "rom": "Tsugi ni",
+      "kana": "つぎに",
+      "kanji": "次に",
+      "en": "Selanjutnya / Berikutnya",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g16-1",
+      "title": "1. V1-てから、V2 (Setelah Melakukan V1, Baru V2)",
+      "desc": "KARA di sini bukan 'karena' atau 'dari', tapi 'SETELAH'. Menempel pada TE-FORM. Menyatakan urutan MUTLAK — V2 tidak terjadi sebelum V1 selesai.",
+      "points": [
+        "Shigoto ga owatte KARA, nomi ni ikimasu. (SETELAH pekerjaan selesai, pergi minum).",
+        "Kaimono o shite KARA, kaerimasu. (SETELAH belanja, pulang).",
+        "Okane o irete kara, botan o oshite kudasai. (SETELAH memasukkan uang, tekan tombolnya).",
+        "Perbedaan V-te, V vs V-te kara, V: Te-kara menekankan bahwa V1 WAJIB selesai dulu."
+      ],
+      "formula": "V1-て から、V2",
+      "native_note": "Meskipun tata bahasa membolehkan Anda menyambungkan banyak kata kerja menggunakan bentuk '~te', usahakan batasi maksimal 3 tindakan saja. Menyambung terlalu banyak aksi dalam satu nafas akan terdengar kaku dan melelahkan bagi pendengar Jepang."
+    },
+    {
+      "id": "g16-2",
+      "title": "2. N1 は N2 が [Kata Sifat] (Deskripsi Ciri Fisik)",
+      "desc": "Pola UNIK bahasa Jepang untuk mendeskripsikan atribut spesifik dari sebuah subjek. Topik (WA) dan Bagian (GA) harus tepat.",
+      "points": [
+        "Zou WA hana GA nagai desu. (Gajah ITU hidungnya panjang).",
+        "Maria-san WA kami GA nagai desu. (Maria ITU rambutnya panjang).",
+        "Miraa-san WA se GA takai desu. (Miller ITU badannya tinggi).",
+        "Topik utama ditandai WA. Bagian spesifik yang dideskripsikan ditandai GA."
+      ],
+      "formula": "[Topik] は [Bagian Tubuh] が Adj です"
+    },
+    {
+      "id": "g16-3",
+      "title": "3. Partikel Kendaraan: Naik (NI) vs Turun (O)",
+      "desc": "Aturan KETAT untuk partikel saat naik/turun kendaraan atau masuk/keluar tempat.",
+      "points": [
+        "NAIK/MASUK = Partikel NI (に). Basu NI norimasu. Daigaku NI hairimasu.",
+        "TURUN/KELUAR = Partikel O (を). Densha O orimasu. Daigaku O demasu.",
+        "Logika: NI = tujuan masuk (ke dalam), O = titik yang ditinggalkan (menjauh dari)."
+      ],
+      "formula": "Naik/Masuk → NI に | Turun/Keluar → O を"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "コンサートが 終わってから、レストランで 食事を しました。",
+      "rom": "Konsaato ga owatte kara, resutoran de shokuji o shimashita.",
+      "en": "Setelah konser selesai, kami makan di restoran."
+    },
+    {
+      "jp": "ミラーさんは 背が 高くて、髪が 黒いです。",
+      "rom": "Miraa-san wa se ga takakute, kami ga kuroi desu.",
+      "en": "Pak Miller badannya tinggi, dan rambutnya hitam."
+    },
+    {
+      "jp": "どの 人ですか。…あの 髪が 長くて、きれいな 人です。",
+      "rom": "Dono hito desu ka. ...Ano kami ga nagakute, kirei na hito desu.",
+      "en": "Orang yang mana? ...Orang yang rambutnya panjang dan cantik itu."
+    },
+    {
+      "jp": "東京駅で 中央線に 乗って、新宿で 降ります。",
+      "rom": "Toukyou-eki de Chuuou-sen ni notte, Shinjuku de orimasu.",
+      "en": "Naik Jalur Chuo di Stasiun Tokyo, lalu turun di Shinjuku."
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: 使い方を教えてください (Ajari Cara Pakainya)",
+    "dialogue": [
+      {
+        "speaker": "Miller",
+        "jp": "すみません。この 機械の 使い方を 教えて ください。",
+        "rom": "Sumimasen. Kono kikai no tsukaikata o oshiete kudasai.",
+        "en": "Permisi. Tolong ajari cara menggunakan mesin ini."
+      },
+      {
+        "speaker": "Petugas",
+        "jp": "はい。まず ここに キャッシュカードを 入れて ください。",
+        "rom": "Hai. Mazu koko ni kyasshukaado o irete kudasai.",
+        "en": "Baik. Pertama-tama, masukkan kartu ATM ke sini."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "はい。それから？",
+        "rom": "Hai. Sorekara?",
+        "en": "Baik. Setelah itu?"
+      },
+      {
+        "speaker": "Petugas",
+        "jp": "暗証番号を 押して ください。",
+        "rom": "Anshoubangou o oshite kudasai.",
+        "en": "Tolong tekan PIN."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "はい。押しました。",
+        "rom": "Hai. Oshimashita.",
+        "en": "Baik. Sudah ditekan."
+      },
+      {
+        "speaker": "Petugas",
+        "jp": "次に 金額を 押して、この「確認」ボタンを 押して ください。",
+        "rom": "Tsugi ni kingaku o oshite, kono 'kakunin' botan o oshite kudasai.",
+        "en": "Selanjutnya tekan nominal, lalu tekan tombol 'Konfirmasi'."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] 'Densha [ ? ] orimasu' (Turun kereta). Partikel yang tepat:",
+      "options": [
+        {
+          "text": "に (NI)",
+          "correct": false
+        },
+        {
+          "text": "を (O)",
+          "correct": true
+        },
+        {
+          "text": "で (DE)",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] 'Gajah belalainya panjang'.\nZou wa hana [     ] nagai desu.",
+      "answer": "ga"
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu B] 'SETELAH belanja, pulang.' Pola yang tepat:",
+      "options": [
+        {
+          "text": "Kaimono o shite, kaerimasu. (Sambung biasa)",
+          "correct": false
+        },
+        {
+          "text": "Kaimono o shite KARA, kaerimasu. (Setelah selesai baru pulang)",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu C] 'Naik bus.' Partikel yang dipakai:\nBasu [     ] norimasu.",
+      "answer": "ni"
+    },
+    {
+      "type": "mcq",
+      "question": "[Pola Kalimat] Mendeskripsikan orang: 'Orang yang rambutnya panjang dan cantik'. Struktur kalimat:",
+      "options": [
+        {
+          "text": "Kami ga nagakute, kirei na hito.",
+          "correct": true
+        },
+        {
+          "text": "Nagakute kami ga kirei na hito.",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Menanyakan Rencana Urutan Perjalanan",
+      "situation": "Menanyakan rencana urutan kegiatan saat berkunjung ke wilayah Asakusa",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "浅草へ 行って、何を しますか。",
+          "rom": "Asakusa e itte, nani o shimasu ka.",
+          "en": "Setelah sampai di Asakusa, apa yang akan dilakukan?"
+        },
+        {
+          "speaker": "B",
+          "jp": "古い お寺を 見て、それから 買い物します。",
+          "rom": "Furui o-tera o mite, sorekara kaimonoshimasu.",
+          "en": "Melihat kuil kuno, lalu berbelanja."
+        },
+        {
+          "speaker": "A",
+          "jp": "いいですね。私も 行きたいです。",
+          "rom": "Ii desu ne. Watashi mo ikitai desu.",
+          "en": "Asyik ya. Saya juga ingin ikut pergi."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Menanyakan Rute Transportasi ke Kampus",
+      "situation": "Bertanya bagaimana cara menuju ke Universitas Fuji menggunakan kendaraan umum",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "富士大学まで どうやって 行きますか。",
+          "rom": "Fuji Daigaku made douyatte ikimasu ka.",
+          "en": "Bagaimana cara pergi ke Universitas Fuji?"
+        },
+        {
+          "speaker": "B",
+          "jp": "駅から 2番の バスに 乗って、大学前で 降ります。",
+          "rom": "Eki kara ni-ban no basu ni notte, daigaku-mae de orimasu.",
+          "en": "Naik bus nomor 2 dari stasiun, lalu turun di halte depan universitas."
+        },
+        {
+          "speaker": "A",
+          "jp": "簡単ですね。ありがとうございます。",
+          "rom": "Kantan desu ne. Arigatou gozaimasu.",
+          "en": "Mudah sekali ya. Terima kasih banyak."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Menanyakan Ciri Fisik Teman yang Dicari",
+      "situation": "Bertanya ciri-ciri fisik seseorang yang ingin ditemui di tengah pesta",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "サントスさんは どの 人ですか。",
+          "rom": "Santosu-san wa dono hito desu ka.",
+          "en": "Sdr. Santos yang sebelah mana?"
+        },
+        {
+          "speaker": "B",
+          "jp": "あの 背が 高くて、髪が 短い 人ですよ。",
+          "rom": "Ano se ga takakute, kami ga mijikai hito desu yo.",
+          "en": "Orang yang badannya tinggi dan rambutnya pendek di sebelah sana itu lho."
+        },
+        {
+          "speaker": "A",
+          "jp": "あ、わかりました。ありがとうございます。",
+          "rom": "A, wakarimashita. Arigatou gozaimasu.",
+          "en": "Ah, saya tahu. Terima kasih banyak."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r16-1",
+      "jp": "朝 何を しますか。... ジョギングをして、シャワーを 浴びて、会社へ 行きます。",
+      "rom": "Asa nani o shimasu ka? ... Jogingu o shite, shawaa o abite, kaisha e ikimasu.",
+      "en": "Pagi hari melakukan apa saja? ... Jogging, mandi shower, lalu pergi ke kantor."
+    },
+    {
+      "id": "r16-2",
+      "jp": "神戸へ 行って、何を しましたか。... 映画を 見て、おいしい 肉を 食べました。",
+      "rom": "Koube e itte, nani o shimashita ka? ... Eiga o mite, oishii niku o tabemashita.",
+      "en": "Pergi ke Kobe dan melakukan apa? ... Menonton film, lalu makan daging yang lezat."
+    },
+    {
+      "id": "r16-3",
+      "jp": "大学まで どうやって 行きますか。... 京都駅から バスに 乗って、大学前で 降ります。",
+      "rom": "Daigaku made douyatte ikimasu ka? ... Kyo-to eki kara basu ni notte, daigakumae de orimasu.",
+      "en": "Bagaimana caranya pergi sampai ke universitas? ... Naik bus dari stasiun Kyoto, lalu turun di depan universitas."
+    },
+    {
+      "id": "r16-4",
+      "jp": "サントスさんは どの 人ですか。... あの 背が 高くて、髪が 黒い 人です。",
+      "rom": "Santosu-san wa dono hito desu ka? ... Ano se ga takakute, kami ga kuroi hito desu.",
+      "en": "Tuan Santos orang yang mana? ... Orang yang tinggi dan berambut hitam itu."
+    },
+    {
+      "id": "r16-5",
+      "jp": "奈良は どんな 町ですか。... 静かで、きれいな 町です。",
+      "rom": "Nara wa donna machi desu ka? ... Shizuka de, kirei na machi desu.",
+      "en": "Nara kota yang bagaimana? ... Kota yang sunyi dan indah."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb16-1",
+      "pattern": "V 普通形 (Plain Form) の基本",
+      "instruction": "Ubah kata kerja berikut ke dalam bentuk kamus (plain/dictionary form).",
+      "question": "Tabemasu → plain form",
+      "correct": "たべる",
+      "romaji": "taberu",
+      "translation": "(Bentuk kamus dari tabemasu)"
+    },
+    {
+      "id": "wb16-2",
+      "pattern": "～と思います (Saya pikir ~)",
+      "instruction": "Sampaikan pendapat menggunakan plain form + と思います.",
+      "question": "Ashita / ame / furu / to omoimasu",
+      "correct": "あした あめが ふると おもいます。",
+      "romaji": "Ashita ame ga furu to omoimasu.",
+      "translation": "Saya pikir besok akan hujan."
+    },
+    {
+      "id": "wb16-3",
+      "pattern": "～と言っていました (Katanya ~)",
+      "instruction": "Laporkan apa yang dikatakan seseorang dengan plain form + と言っていました.",
+      "question": "Tanaka-san / kuru / to itte imashita",
+      "correct": "たなかさんは くると いって いました。",
+      "romaji": "Tanaka-san wa kuru to itte imashita.",
+      "translation": "Pak Tanaka bilang akan datang."
+    },
+    {
+      "id": "wb16-4",
+      "pattern": "～と思いますか (Apa pendapat Anda tentang ~?)",
+      "instruction": "Tanyakan pendapat seseorang menggunakan plain form + と思いますか.",
+      "question": "Nihon / takai / to omoimasu ka",
+      "correct": "にほんは たかいと おもいますか。",
+      "romaji": "Nihon wa takai to omoimasu ka.",
+      "translation": "Apakah Anda pikir Jepang itu mahal?"
+    },
+    {
+      "id": "wb16-5",
+      "pattern": "～ながら / ～ので (Alasan)",
+      "instruction": "Nyatakan alasan menggunakan plain form + ので (lebih sopan dari から).",
+      "question": "Byouki / na node / yasumimasu",
+      "correct": "びょうきなので やすみます。",
+      "romaji": "Byouki na node yasumimasu.",
+      "translation": "Karena sakit, akan istirahat."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex16-1",
+        "sentence": "あした あめが ふる [ ] おもいます。",
+        "correct": "と",
+        "translation": "Saya pikir besok akan hujan."
+      },
+      {
+        "id": "ex16-2",
+        "sentence": "かれは こない [ ] いって いました。",
+        "correct": "と",
+        "translation": "Dia bilang tidak akan datang."
+      },
+      {
+        "id": "ex16-3",
+        "sentence": "びょうきな [ ] やすみます。",
+        "correct": "ので",
+        "translation": "Karena sakit, istirahat."
+      },
+      {
+        "id": "ex16-4",
+        "sentence": "にほんごは むずかしい [ ] おもいます。",
+        "correct": "と",
+        "translation": "Saya pikir bahasa Jepang itu sulit."
+      },
+      {
+        "id": "ex16-5",
+        "sentence": "たなかさんは きょう [ ] と いって いました。",
+        "correct": "くる",
+        "translation": "Pak Tanaka bilang akan datang hari ini."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex16-6",
+        "question": "Bentuk kamus (plain/dictionary form) dari 'ikimasu' (pergi) adalah:",
+        "options": [
+          {
+            "text": "いった",
+            "correct": false
+          },
+          {
+            "text": "いく",
+            "correct": true
+          },
+          {
+            "text": "いき",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex16-7",
+        "question": "'Ame ga furu to omoimasu' menggunakan bentuk:",
+        "options": [
+          {
+            "text": "Bentuk kamus (dictionary form)",
+            "correct": true
+          },
+          {
+            "text": "Bentuk masu",
+            "correct": false
+          },
+          {
+            "text": "Bentuk te-form",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex16-8",
+        "question": "'Node' digunakan untuk menyatakan alasan dan lebih sopan dari 'kara'. Contoh penggunaan yang tepat setelah kata sifat-na:",
+        "options": [
+          {
+            "text": "しずかな ので",
+            "correct": true
+          },
+          {
+            "text": "しずかく ので",
+            "correct": false
+          },
+          {
+            "text": "しずかです ので",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "ともだちが にほんは たかいと いって いました。でも わたしは そう おもいません。くるまや でんきせいひんは やすいと おもいます。たべものは ちょっと たかいかも しれませんが、しつが いいです。",
+      "questions": [
+        {
+          "id": "ex16-9",
+          "question": "ともだちは にほんは やすいと いいました。",
+          "correct": "F"
+        },
+        {
+          "id": "ex16-10",
+          "question": "わたしは くるまは やすいと おもっています。",
+          "correct": "T"
+        },
+        {
+          "id": "ex16-11",
+          "question": "この人は にほんのたべものの しつが いいと おもっています。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

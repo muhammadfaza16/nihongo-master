@@ -1,0 +1,471 @@
+{
+  "id": 33,
+  "title": "Lesson 33: 〜ために vs 〜ように (Tujuan)",
+  "desc": "Membedakan dua pola tujuan yang sering tertukar: 〜ために (untuk/demi — dengan kata kerja kemauan) dan 〜ように (agar/supaya — dengan kata kerja potensial atau negatif).",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v33-1",
+      "rom": "Mokuhyoo",
+      "kana": "もくひょう",
+      "kanji": "目標",
+      "en": "Target / Tujuan",
+      "audio": ""
+    },
+    {
+      "id": "v33-2",
+      "rom": "Yume",
+      "kana": "ゆめ",
+      "kanji": "夢",
+      "en": "Mimpi / Impian",
+      "audio": ""
+    },
+    {
+      "id": "v33-3",
+      "rom": "Shoorai",
+      "kana": "しょうらい",
+      "kanji": "将来",
+      "en": "Masa depan",
+      "audio": ""
+    },
+    {
+      "id": "v33-4",
+      "rom": "Ikiru",
+      "kana": "いきます",
+      "kanji": "生きます",
+      "en": "Hidup / Tinggal",
+      "audio": ""
+    },
+    {
+      "id": "v33-5",
+      "rom": "Tasukeru",
+      "kana": "たすけます",
+      "kanji": "助けます",
+      "en": "Menolong / Membantu",
+      "audio": ""
+    },
+    {
+      "id": "v33-6",
+      "rom": "Sodateru",
+      "kana": "そだてます",
+      "kanji": "育てます",
+      "en": "Membesarkan / Mendidik",
+      "audio": ""
+    },
+    {
+      "id": "v33-7",
+      "rom": "Kyouiku",
+      "kana": "きょういく",
+      "kanji": "教育",
+      "en": "Pendidikan",
+      "audio": ""
+    },
+    {
+      "id": "v33-8",
+      "rom": "Eiyoo",
+      "kana": "えいよう",
+      "kanji": "栄養",
+      "en": "Nutrisi / Gizi",
+      "audio": ""
+    },
+    {
+      "id": "v33-9",
+      "rom": "Undoo",
+      "kana": "うんどう",
+      "kanji": "運動",
+      "en": "Olahraga / Gerakan",
+      "audio": ""
+    },
+    {
+      "id": "v33-10",
+      "rom": "Taijuu",
+      "kana": "たいじゅう",
+      "kanji": "体重",
+      "en": "Berat badan",
+      "audio": ""
+    },
+    {
+      "id": "v33-11",
+      "rom": "Herasu",
+      "kana": "へらします",
+      "kanji": "減らします",
+      "en": "Mengurangi",
+      "audio": ""
+    },
+    {
+      "id": "v33-12",
+      "rom": "Fusegu",
+      "kana": "ふせぎます",
+      "kanji": "防ぎます",
+      "en": "Mencegah / Menghalangi",
+      "audio": ""
+    },
+    {
+      "id": "v33-13",
+      "rom": "Jibun",
+      "kana": "じぶん",
+      "kanji": "自分",
+      "en": "Diri sendiri",
+      "audio": ""
+    },
+    {
+      "id": "v33-14",
+      "rom": "Shakai",
+      "kana": "しゃかい",
+      "kanji": "社会",
+      "en": "Masyarakat / Sosial",
+      "audio": ""
+    },
+    {
+      "id": "v33-15",
+      "rom": "Kifu (shimasu)",
+      "kana": "きふ（します）",
+      "kanji": "寄付（します）",
+      "en": "Berdonasi / Menyumbang",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g33-1",
+      "title": "1. 〜ために (Untuk / Demi — Tujuan dengan Kemauan)",
+      "desc": "Digunakan ketika subjek secara aktif dan sadar melakukan sesuatu untuk mencapai tujuan tertentu. Kata kerja sebelum ために harus berupa kata kerja kemauan (volitional verb).",
+      "points": [
+        "Pola: V dictionary form + ために / N + のために",
+        "Contoh V: Nihongo wo jouzu ni naru TAME NI, mainichi benkyoo shimasu. (Untuk menjadi pandai berbahasa Jepang, saya belajar setiap hari).",
+        "Contoh N: Kazoku NO TAME NI, isshookenmei hatarakimasu. (Demi keluarga, saya bekerja keras).",
+        "BATASAN: Kata kerja sebelum ために harus kata kerja 'kehendak' (bukan kondisi alami). ✗ Ame ga furu tame ni (salah) → gunakan ように"
+      ],
+      "formula": "V-dict + ために / N + のために",
+      "native_note": "ために bisa berarti 'untuk' (tujuan positif) atau 'karena' (sebab) tergantung konteks. Ketika berarti sebab, sering menunjukkan situasi negatif: Byooki no tame ni, yasumimashita (Karena sakit, saya absen)."
+    },
+    {
+      "id": "g33-2",
+      "title": "2. 〜ように (Agar / Supaya — Target dengan Potensial/Negatif)",
+      "desc": "Digunakan ketika tujuannya adalah mencapai suatu kondisi atau kemampuan, atau menghindari sesuatu. Berbeda dengan ために, kata kerja sebelum ように sering berupa bentuk potensial atau negatif.",
+      "points": [
+        "Pola: V-potential / V-negative + ように + V",
+        "Contoh potensial: Nihongo ga hanaSERU YOO NI, renshuu shimasu. (Berlatih agar bisa berbicara bahasa Jepang).",
+        "Contoh negatif: Wasurenai YOO NI, memo wo torimasu. (Agar tidak lupa, saya mencatat).",
+        "Perbedaan kunci: ために → tujuan dengan aksi aktif; ように → target kondisi/kemampuan/pencegahan.",
+        "Penggunaan bersama ください: ~youni shite kudasai = Tolong usahakan untuk..."
+      ],
+      "formula": "V-potential/negative + ように"
+    },
+    {
+      "id": "g33-3",
+      "title": "3. Perbandingan ために vs ように",
+      "desc": "Panduan praktis memilih antara ために dan ように.",
+      "points": [
+        "Gunakan ために: tujuan = aksi aktif yang Anda kontrol (beli, pergi, belajar, dll.)",
+        "Gunakan ように: tujuan = kondisi/kemampuan yang ingin dicapai (bisa berbicara, tidak lupa, dll.)",
+        "Test sederhana: Apakah kalimatnya 'saya [aktif melakukan X] untuk [tujuan]'? → ために",
+        "Apakah kalimatnya 'saya [melakukan X] agar [kondisi/kemampuan terpenuhi]'? → ように"
+      ],
+      "formula": "Aksi aktif → ために / Kondisi/kemampuan → ように"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "医者になるために、一生懸命勉強しています。",
+      "rom": "Isha ni naru tame ni, isshoukenmei benkyoo shite imasu.",
+      "en": "Untuk menjadi dokter, saya belajar keras."
+    },
+    {
+      "jp": "日本語が話せるように、毎日練習しています。",
+      "rom": "Nihongo ga hanaseru you ni, mainichi renshuu shite imasu.",
+      "en": "Agar bisa berbicara bahasa Jepang, saya berlatih setiap hari."
+    },
+    {
+      "jp": "家族のために、毎日働いています。",
+      "rom": "Kazoku no tame ni, mainichi hataraite imasu.",
+      "en": "Demi keluarga, saya bekerja setiap hari."
+    },
+    {
+      "jp": "遅刻しないように、早く起きます。",
+      "rom": "Chikoku shinai you ni, hayaku okimasu.",
+      "en": "Agar tidak terlambat, saya bangun pagi."
+    }
+  ],
+  "conversation": {
+    "title": "Berbagi Impian dan Usaha",
+    "dialogue": [
+      {
+        "speaker": "A",
+        "jp": "将来、何になりたいですか。",
+        "rom": "Shourai, nani ni naritai desu ka.",
+        "en": "Ke depannya, ingin menjadi apa?"
+      },
+      {
+        "speaker": "B",
+        "jp": "通訳になりたいです。そのために、今英語と日本語を勉強しています。",
+        "rom": "Tsuuyaku ni naritai desu. Sono tame ni, ima eigo to nihongo wo benkyoo shite imasu.",
+        "en": "Saya ingin menjadi penerjemah. Untuk itu, sekarang saya belajar bahasa Inggris dan Jepang."
+      },
+      {
+        "speaker": "A",
+        "jp": "すごいですね。二つの言語が話せるようになりたいんですね。",
+        "rom": "Sugoi desu ne. Futatsu no gengo ga hanaseru you ni naritain desu ne.",
+        "en": "Keren ya. Ingin bisa berbicara dua bahasa ya."
+      },
+      {
+        "speaker": "B",
+        "jp": "はい。夢のために、毎日頑張っています。",
+        "rom": "Hai. Yume no tame ni, mainichi ganbatte imasu.",
+        "en": "Ya. Demi impian, saya berjuang setiap hari."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "Kalimat yang menggunakan ために dengan BENAR:",
+      "options": [
+        {
+          "text": "日本語が話せるために、練習します。",
+          "correct": false
+        },
+        {
+          "text": "日本語を上手にするために、練習します。",
+          "correct": true
+        },
+        {
+          "text": "遅刻しないために、早起きします。",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "'Agar tidak sakit, saya makan sayuran'.\nByooki ni naranai [   ], yasai wo tabemasu.",
+      "answer": "you ni"
+    },
+    {
+      "type": "mcq",
+      "question": "Perbedaan ために dan ように:",
+      "options": [
+        {
+          "text": "ために untuk kondisi/kemampuan; ように untuk aksi aktif",
+          "correct": false
+        },
+        {
+          "text": "ために untuk aksi aktif; ように untuk kondisi/kemampuan/pencegahan",
+          "correct": true
+        },
+        {
+          "text": "Keduanya sama",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Motivasi Belajar",
+      "situation": "Teman bertanya tentang alasan belajar Jepang",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "なぜ日本語を勉強しているんですか。",
+          "rom": "Naze nihongo wo benkyoo shite iru n desu ka.",
+          "en": "Kenapa belajar bahasa Jepang?"
+        },
+        {
+          "speaker": "B",
+          "jp": "日本で働くために勉強しています。日本語が話せるようになりたいんです。",
+          "rom": "Nihon de hataraku tame ni benkyoo shite imasu. Nihongo ga hanaseru you ni naritain desu.",
+          "en": "Saya belajar untuk bekerja di Jepang. Saya ingin bisa berbicara bahasa Jepang."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r33-1",
+      "jp": "健康のために、毎日運動しています。",
+      "rom": "Kenkou no tame ni, mainichi undoo shite imasu.",
+      "en": "Demi kesehatan, saya berolahraga setiap hari."
+    },
+    {
+      "id": "r33-2",
+      "jp": "忘れないように、メモを取りました。",
+      "rom": "Wasurenai you ni, memo wo torimashita.",
+      "en": "Agar tidak lupa, saya mencatat."
+    },
+    {
+      "id": "r33-3",
+      "jp": "日本の大学に入るために、日本語の試験を受けます。",
+      "rom": "Nihon no daigaku ni hairu tame ni, nihongo no shiken wo ukemasu.",
+      "en": "Untuk masuk universitas di Jepang, saya ikut ujian bahasa Jepang."
+    },
+    {
+      "id": "r33-4",
+      "jp": "よく聞こえるように、大きい声で話してください。",
+      "rom": "Yoku kikoeru you ni, ookii koe de hanashite kudasai.",
+      "en": "Agar terdengar jelas, tolong bicara lebih keras."
+    },
+    {
+      "id": "r33-5",
+      "jp": "病気にならないように、手を洗います。",
+      "rom": "Byooki ni naranai you ni, te wo araimasu.",
+      "en": "Agar tidak sakit, saya cuci tangan."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb33-1",
+      "pattern": "V-dict + ために",
+      "instruction": "Buat kalimat tujuan: 'Untuk membeli rumah, menabung'.",
+      "question": "Ie / kau / tame ni / chokin shimasu",
+      "correct": "いえを かうために、ちょきんします。",
+      "romaji": "Ie wo kau tame ni, chokin shimasu.",
+      "translation": "Untuk membeli rumah, saya menabung."
+    },
+    {
+      "id": "wb33-2",
+      "pattern": "N + のために",
+      "instruction": "Gunakan のために: 'Demi perdamaian dunia, bekerja keras'.",
+      "question": "Sekai heiwa / no tame ni / hatarakimasu",
+      "correct": "せかいへいわのために、はたらきます。",
+      "romaji": "Sekai heiwa no tame ni, hatarakimasu.",
+      "translation": "Demi perdamaian dunia, saya bekerja."
+    },
+    {
+      "id": "wb33-3",
+      "pattern": "V-potential + ように",
+      "instruction": "Buat kalimat target kemampuan: 'Berlatih agar bisa berenang'.",
+      "question": "Oyogeru / you ni / renshuu shimasu",
+      "correct": "およげるように、れんしゅうします。",
+      "romaji": "Oyogeru you ni, renshuu shimasu.",
+      "translation": "Berlatih agar bisa berenang."
+    },
+    {
+      "id": "wb33-4",
+      "pattern": "V-negative + ように",
+      "instruction": "Buat kalimat pencegahan: 'Agar tidak lupa, menempel catatan'.",
+      "question": "Wasurenai / you ni / memo wo harimasu",
+      "correct": "わすれないように、めもをはります。",
+      "romaji": "Wasurenai you ni, memo wo harimasu.",
+      "translation": "Agar tidak lupa, saya menempel catatan."
+    },
+    {
+      "id": "wb33-5",
+      "pattern": "Pilih ために atau ように",
+      "instruction": "Pilih yang tepat: 'Berolahraga agar bisa menurunkan berat badan'.",
+      "question": "Taijuu / herasu / [tame ni / you ni] / undoo shimasu",
+      "correct": "たいじゅうを へらせるように、うんどうします。",
+      "romaji": "Taijuu wo heraseru you ni, undoo shimasu.",
+      "translation": "Berolahraga agar bisa menurunkan berat badan. (ように karena target kemampuan)"
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex33-1",
+        "sentence": "いしゃに なる [ ]、いっしょうけんめい べんきょうします。",
+        "correct": "ために",
+        "translation": "Untuk menjadi dokter, belajar keras."
+      },
+      {
+        "id": "ex33-2",
+        "sentence": "にほんごが はなせる [ ]、まいにち れんしゅうします。",
+        "correct": "ように",
+        "translation": "Agar bisa berbicara Jepang, berlatih setiap hari."
+      },
+      {
+        "id": "ex33-3",
+        "sentence": "かぞく [ ] ために、はたらいています。",
+        "correct": "の",
+        "translation": "Bekerja demi keluarga."
+      },
+      {
+        "id": "ex33-4",
+        "sentence": "わすれない [ ]、めもを とりました。",
+        "correct": "ように",
+        "translation": "Agar tidak lupa, mencatat."
+      },
+      {
+        "id": "ex33-5",
+        "sentence": "けんこう [ ] ために、やさいを たべます。",
+        "correct": "の",
+        "translation": "Makan sayuran demi kesehatan."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex33-6",
+        "question": "Gunakan ために atau ように: 'Berlatih agar bisa bermain piano'",
+        "options": [
+          {
+            "text": "ピアノが弾けるために、練習します。",
+            "correct": false
+          },
+          {
+            "text": "ピアノが弾けるように、練習します。",
+            "correct": true
+          },
+          {
+            "text": "ピアノを弾くために、練習します。",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex33-7",
+        "question": "Kata kerja yang bisa langsung mengikuti ために:",
+        "options": [
+          {
+            "text": "Bentuk potensial (〜られる/〜える)",
+            "correct": false
+          },
+          {
+            "text": "Bentuk kamus (dictionary form)",
+            "correct": true
+          },
+          {
+            "text": "Bentuk negatif (〜ない)",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex33-8",
+        "question": "'Yasai wo taberu you ni shite imasu' berarti:",
+        "options": [
+          {
+            "text": "Saya makan sayuran (fakta)",
+            "correct": false
+          },
+          {
+            "text": "Saya berusaha untuk makan sayuran",
+            "correct": true
+          },
+          {
+            "text": "Saya ingin makan sayuran",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "わたしの ゆめは ひしょです。そのために、まいにち えいごを べんきょうしています。えいごで しごとが できるように、かいわの れんしゅうも して います。むずかしいですが、ゆめの ために あきらめません。",
+      "questions": [
+        {
+          "id": "ex33-9",
+          "question": "この人の ゆめは いしゃに なることです。",
+          "correct": "F"
+        },
+        {
+          "id": "ex33-10",
+          "question": "この人は えいごを べんきょうしています。",
+          "correct": "T"
+        },
+        {
+          "id": "ex33-11",
+          "question": "この人は むずかしいから あきらめます。",
+          "correct": "F"
+        }
+      ]
+    }
+  }
+}

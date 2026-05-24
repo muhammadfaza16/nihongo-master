@@ -1,0 +1,462 @@
+{
+  "id": 42,
+  "title": "Lesson 42: Konsekuensi & Alasan Moral (〜わけです / 〜わけではありません / 〜わけにはいきません)",
+  "desc": "Mempelajari cara menyatakan kesimpulan logis (〜わけです), menyangkal anggapan mutlak (〜わけではありません), serta menyatakan ketidakmungkinan karena norma sosial/moral (〜わけにはいきません).",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v42-1",
+      "rom": "Riyuu",
+      "kana": "りゆう",
+      "kanji": "理由",
+      "en": "Alasan / Sebab",
+      "audio": ""
+    },
+    {
+      "id": "v42-2",
+      "rom": "Wake",
+      "kana": "わけ",
+      "kanji": "訳",
+      "en": "Arti / Sebab / Alasan",
+      "audio": ""
+    },
+    {
+      "id": "v42-3",
+      "rom": "Gimu",
+      "kana": "ぎむ",
+      "kanji": "義務",
+      "en": "Kewajiban",
+      "audio": ""
+    },
+    {
+      "id": "v42-4",
+      "rom": "Tatoeba",
+      "kana": "たとえば",
+      "kanji": "例えば",
+      "en": "Contohnya / Misalkan",
+      "audio": ""
+    },
+    {
+      "id": "v42-5",
+      "rom": "Moushibun nai",
+      "kana": "もうしぶんない",
+      "kanji": "申し分ない",
+      "en": "Tidak ada keluhan / Sempurna",
+      "audio": ""
+    },
+    {
+      "id": "v42-6",
+      "rom": "Kanzen",
+      "kana": "かんぜん",
+      "kanji": "完全",
+      "en": "Sempurna / Lengkap",
+      "audio": ""
+    },
+    {
+      "id": "v42-7",
+      "rom": "Keiken",
+      "kana": "けいけん",
+      "kanji": "経験",
+      "en": "Pengalaman",
+      "audio": ""
+    },
+    {
+      "id": "v42-8",
+      "rom": "Tokuchou",
+      "kana": "とくちょう",
+      "kanji": "特徴",
+      "en": "Ciri khas / Karakteristik",
+      "audio": ""
+    },
+    {
+      "id": "v42-9",
+      "rom": "Benri",
+      "kana": "べんり",
+      "kanji": "便利",
+      "en": "Praktis / Praktis / Nyaman",
+      "audio": ""
+    },
+    {
+      "id": "v42-10",
+      "rom": "Futsuu",
+      "kana": "ふつう",
+      "kanji": "普通",
+      "en": "Biasa / Umum",
+      "audio": ""
+    },
+    {
+      "id": "v42-11",
+      "rom": "Tokubetsu",
+      "kana": "とくべつ",
+      "kanji": "特別",
+      "en": "Khusus / Istimewa",
+      "audio": ""
+    },
+    {
+      "id": "v42-12",
+      "rom": "Kettei",
+      "kana": "けってい",
+      "kanji": "決定",
+      "en": "Keputusan / Ketetapan",
+      "audio": ""
+    },
+    {
+      "id": "v42-13",
+      "rom": "Setsumei",
+      "kana": "せつめい",
+      "kanji": "説明",
+      "en": "Penjelasan / Keterangan",
+      "audio": ""
+    },
+    {
+      "id": "v42-14",
+      "rom": "Hitsuyou",
+      "kana": "ひつよう",
+      "kanji": "必要",
+      "en": "Penting / Perlu",
+      "audio": ""
+    },
+    {
+      "id": "v42-15",
+      "rom": "Junbi",
+      "kana": "じゅんび",
+      "kanji": "準備",
+      "en": "Persiapan",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g42-1",
+      "title": "1. 〜わけです (Pantas Saja / Wajarnya)",
+      "desc": "Menyatakan konsekuensi logis atau kesimpulan wajar dari suatu fakta atau alasan yang telah dikemukakan sebelumnya.",
+      "points": [
+        "Pola: Plain Form (Na-adj + na, N + no/de aru) + わけです",
+        "Artinya: Pantas saja... / Wajar jika... / Berarti...",
+        "Contoh: Yuki ga futte iru kara, samui wake desu. (Karena salju turun, pantas saja dingin)."
+      ],
+      "formula": "Plain Form + わけです",
+      "native_note": "Gunakan ini untuk menunjukkan pengertian mendalam Anda atas situasi yang baru saja dijelaskan oleh lawan bicara."
+    },
+    {
+      "id": "g42-2",
+      "title": "2. 〜わけではありません (Bukan Berarti)",
+      "desc": "Menyangkal kesimpulan mutlak atau dugaan umum. Menjelaskan bahwa meskipun situasinya demikian, tidak berarti segalanya 100% seperti itu.",
+      "points": [
+        "Pola: Plain Form + わけではありません",
+        "Artinya: Bukan berarti... / Tidak selalu...",
+        "Contoh: Nihon-ryouri ga kirai na wake dewa arimasen. (Bukan berarti saya membenci masakan Jepang - hanya kurang suka saja)."
+      ],
+      "formula": "Plain Form + わけではありません"
+    },
+    {
+      "id": "g42-3",
+      "title": "3. 〜わけにはいきません (Tidak Boleh/Bisa secara Moral)",
+      "desc": "Menyatakan ketidakmungkinan melakukan suatu tindakan karena alasan tanggung jawab, moral, etika, atau norma sosial, meskipun secara fisik bisa dilakukan.",
+      "points": [
+        "Pola positif: V-dict + わけにはいきません (Tidak boleh dilakukan/tidak pantas).",
+        "Contoh: Unten-chuu na node, osake wo nomu wake ni wa ikimasen (Karena sedang menyetir, saya tidak boleh minum sake).",
+        "Pola negatif: V-nai + わけにはいきません (Tidak boleh tidak dilakukan = harus dilakukan).",
+        "Contoh: Yakusoku shita kara, ikanai wake ni wa ikimasen (Karena sudah berjanji, saya tidak boleh tidak pergi)."
+      ],
+      "formula": "V-dict + わけにはいきません / V-nai + わけにはいきません"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "雪が降っているから、寒いわけです。",
+      "rom": "Yuki ga futte iru kara, samui wake desu.",
+      "en": "Karena salju turun, pantas saja dingin."
+    },
+    {
+      "jp": "日本語が下手なわけではありませんが、話すのが苦手です。",
+      "rom": "Nihongo ga heta na wake dewa arimasen ga, hanasu no ga nigate desu.",
+      "en": "Bukan berarti bahasa Jepang saya buruk, tapi saya kurang mahir berbicara."
+    },
+    {
+      "jp": "明日は大事な試験があるから、休むわけにはいきません。",
+      "rom": "Ashita wa daiji na shiken ga aru kara, yasumu wake ni wa ikimasen.",
+      "en": "Karena besok ada ujian penting, saya tidak boleh/bisa libur."
+    },
+    {
+      "jp": "社長の命令だから、従わないわけにはいきません。",
+      "rom": "Shachou no meirei dakara, shitagawanai wake ni wa ikimasen.",
+      "en": "Karena ini perintah direktur, saya tidak boleh tidak patuh (harus patuh)."
+    }
+  ],
+  "conversation": {
+    "title": "Tanggung Jawab Pekerjaan",
+    "dialogue": [
+      {
+        "speaker": "A",
+        "jp": "今日も残業ですか。大変ですね。",
+        "rom": "Kyou mo zangyou desu ka. Taihen desu ne.",
+        "en": "Hari ini lembur lagi ya? Berat ya."
+      },
+      {
+        "speaker": "B",
+        "jp": "ええ、この仕事は今日中に終わらせなければならないので、帰るわけにはいかないんです。",
+        "rom": "Ee, kono shigoto wa kyou-juu ni owarase neba naranai node, kaeru wake ni wa ikanai n desu.",
+        "en": "Ya, karena pekerjaan ini harus selesai hari ini, saya tidak boleh pulang dulu."
+      },
+      {
+        "speaker": "A",
+        "jp": "そうですか。体には気をつけてくださいね。",
+        "rom": "Soo desu ka. Karada ni wa ki wo tsukete kudasai ne.",
+        "en": "Begitu ya. Tolong jaga kesehatan Anda ya."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "Arti dari 'yasumu wake ni wa ikimasen':",
+      "options": [
+        {
+          "text": "Tidak bisa/tidak boleh libur karena tanggung jawab",
+          "correct": true
+        },
+        {
+          "text": "Sangat ingin libur",
+          "correct": false
+        },
+        {
+          "text": "Pasti akan libur",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "Terjemahkan: 'Bukan berarti tidak punya uang'.\nOkane ga nai [   ] dewa arimasen.",
+      "answer": "wake"
+    },
+    {
+      "type": "mcq",
+      "question": "'Kare wa 10-nen kan Nihon ni ita kara, Nihongo ga jouzu na wake desu' artinya:",
+      "options": [
+        {
+          "text": "Pantas saja dia mahir bahasa Jepang karena sudah 10 tahun di Jepang",
+          "correct": true
+        },
+        {
+          "text": "Bahasa Jepangnya tidak terlalu mahir",
+          "correct": false
+        },
+        {
+          "text": "Dia harus belajar bahasa Jepang selama 10 tahun",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Batas Pengembalian Buku",
+      "situation": "Meminjam buku perpustakaan yang harus segera dikembalikan",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "この本、明日まで貸してもらえませんか。",
+          "rom": "Kono hon, ashita made kashite moraemasen ka.",
+          "en": "Buku ini, bolehkah saya pinjam sampai besok?"
+        },
+        {
+          "speaker": "B",
+          "jp": "すみません、明日が返却日なので、貸すわけにはいかないんです。",
+          "rom": "Sumimasen, ashita ga henkyou-bi na node, kasu wake ni wa ikanai n desu.",
+          "en": "Maaf, karena besok batas pengembaliannya, saya tidak boleh meminjamkannya."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r42-1",
+      "jp": "彼は10年間日本にいたから、日本語が上手なわけです。",
+      "rom": "Kare wa 10-nen kan Nihon ni ita kara, Nihongo ga jouzu na wake desu.",
+      "en": "Karena dia tinggal di Jepang selama 10 tahun, pantas saja bahasa Jepangnya mahir."
+    },
+    {
+      "id": "r42-2",
+      "jp": "毎日外食するわけではありません。",
+      "rom": "Mainichi gaia-shoku suru wake dewa arimasen.",
+      "en": "Bukan berarti saya makan di luar setiap hari."
+    },
+    {
+      "id": "r42-3",
+      "jp": "運転中なので、お酒を飲むわけにはいきません。",
+      "rom": "Unten-chuu na node, osake wo nomu wake ni wa ikimasen.",
+      "en": "Karena sedang menyetir, saya tidak boleh minum sake."
+    },
+    {
+      "id": "r42-4",
+      "jp": "風邪を引いたけれど、仕事を休むわけにはいきません。",
+      "rom": "Kaze wo hiita keredo, shigoto wo yasumu wake ni wa ikimasen.",
+      "en": "Meskipun pilek, saya tidak boleh meliburkan diri dari pekerjaan."
+    },
+    {
+      "id": "r42-5",
+      "jp": "約束したから、行かないわけにはいきません。",
+      "rom": "Yakusoku shita kara, ikanai wake ni wa ikimasen.",
+      "en": "Karena sudah berjanji, saya tidak boleh tidak pergi (harus pergi)."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb42-1",
+      "pattern": "Plain + わけです",
+      "instruction": "Nyatakan konsekuensi: 'Pantas saja mahir'.",
+      "question": "Jouzu / wake desu",
+      "correct": "じょうずなわけです。",
+      "romaji": "Jouzu na wake desu.",
+      "translation": "Pantas saja mahir."
+    },
+    {
+      "id": "wb42-2",
+      "pattern": "Plain + わけではありません",
+      "instruction": "Nyatakan sangkalan umum: 'Bukan berarti tidak punya uang'.",
+      "question": "Okane / nai / wake dewa arimasen",
+      "correct": "おかねがないわけではありません。",
+      "romaji": "Okane ga nai wake dewa arimasen.",
+      "translation": "Bukan berarti tidak punya uang."
+    },
+    {
+      "id": "wb42-3",
+      "pattern": "V-dict + わけにはいきません",
+      "instruction": "Nyatakan larangan moral: 'Tidak boleh makan kue ini (diet)'.",
+      "question": "Taberu / wake ni wa ikimasen",
+      "correct": "たべるわけにはいきません。",
+      "romaji": "Taberu wake ni wa ikimasen.",
+      "translation": "Tidak boleh makan."
+    },
+    {
+      "id": "wb42-4",
+      "pattern": "V-nai + わけにはいきません",
+      "instruction": "Nyatakan keharusan moral: 'Harus belajar'.",
+      "question": "Benkyou shinai / wake ni wa ikimasen",
+      "correct": "べんきょうしないわけにはいきません。",
+      "romaji": "Benkyou shinai wake ni wa ikimasen.",
+      "translation": "Tidak boleh tidak belajar (harus belajar)."
+    },
+    {
+      "id": "wb42-5",
+      "pattern": "Plain + わけ desu",
+      "instruction": "Nyatakan konsekuensi: 'Pantas saja lelah'.",
+      "question": "Tsukareta / wake desu",
+      "correct": "つかれたわけです。",
+      "romaji": "Tsukareta wake desu.",
+      "translation": "Pantas saja lelah."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex42-1",
+        "sentence": "あしたは テストが あるから、やすむ [ ] には いきません。",
+        "correct": "わけ",
+        "translation": "Karena besok ada ujian, saya tidak boleh libur."
+      },
+      {
+        "id": "ex42-2",
+        "sentence": "かれは にほんごが はなせる [ ] です。10ねん すんでいますから。",
+        "correct": "wake",
+        "translation": "Pantas saja dia bisa bahasa Jepang, karena sudah tinggal 10 tahun."
+      },
+      {
+        "id": "ex42-3",
+        "sentence": "にほんりょうりが きらいな [ ] では ありません。",
+        "correct": "わけ",
+        "translation": "Bukan berarti saya membenci makanan Jepang."
+      },
+      {
+        "id": "ex42-4",
+        "sentence": "やくそくしたから、いかない わけ [ ] は いきません。",
+        "correct": "に",
+        "translation": "Karena sudah berjanji, saya harus pergi."
+      },
+      {
+        "id": "ex42-5",
+        "sentence": "うんてんするから、おさけを のむ わけには [ ]。",
+        "correct": "いきません",
+        "translation": "Karena menyetir, saya tidak boleh minum sake."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex42-6",
+        "question": "Pilih kalimat yang berarti 'Saya harus pergi' (secara moral):",
+        "options": [
+          {
+            "text": "行かないわけにはいきません。",
+            "correct": true
+          },
+          {
+            "text": "行くわけにはいきません。",
+            "correct": false
+          },
+          {
+            "text": "行くわけです。",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex42-7",
+        "question": "Apa arti dari 'Keren na wake desu'?",
+        "options": [
+          {
+            "text": "Pantas saja keren.",
+            "correct": true
+          },
+          {
+            "text": "Bukan berarti keren.",
+            "correct": false
+          },
+          {
+            "text": "Tidak boleh keren.",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex42-8",
+        "question": "Kapan kita menggunakan 'wake ni wa ikimasen'?",
+        "options": [
+          {
+            "text": "Ketika ada aturan moral/tanggung jawab menghalangi tindakan",
+            "correct": true
+          },
+          {
+            "text": "Ketika kemampuan fisik kita terbatas",
+            "correct": false
+          },
+          {
+            "text": "Ketika kita memprediksi cuaca",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "わたしは あした かいしゃを やすむわけにはいきません。だいじな かいぎが あるからです。かぜを ひいて あたまが いたいわけですが、薬を のんで がんばります。しごとが おわったあとで、ゆっくり やすむことにします。",
+      "questions": [
+        {
+          "id": "ex42-9",
+          "question": "この人は あした 会社を 休むことができます。",
+          "correct": "F"
+        },
+        {
+          "id": "ex42-10",
+          "question": "この人は かぜを ひいています。",
+          "correct": "T"
+        },
+        {
+          "id": "ex42-11",
+          "question": "あしたは 大事な 会議が あります。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

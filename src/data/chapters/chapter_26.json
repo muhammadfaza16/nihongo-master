@@ -1,0 +1,491 @@
+{
+  "id": 26,
+  "title": "Lesson 26: Kausatif — Menyuruh & Memberi Izin (させます)",
+  "desc": "Bab pembuka MNN II. Anda akan menguasai bentuk kausatif (させます/させません) untuk menyatakan 'menyuruh seseorang melakukan sesuatu' atau 'membiarkan seseorang melakukan sesuatu', serta penggunaannya dalam konteks formal.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v26-1",
+      "rom": "Kōchō (sensei)",
+      "kana": "こうちょう（せんせい）",
+      "kanji": "校長（先生）",
+      "en": "Kepala sekolah",
+      "audio": ""
+    },
+    {
+      "id": "v26-2",
+      "rom": "Shachō",
+      "kana": "しゃちょう",
+      "kanji": "社長",
+      "en": "Direktur / Presiden Direktur",
+      "audio": ""
+    },
+    {
+      "id": "v26-3",
+      "rom": "Buchō",
+      "kana": "ぶちょう",
+      "kanji": "部長",
+      "en": "Kepala bagian / Manager",
+      "audio": ""
+    },
+    {
+      "id": "v26-4",
+      "rom": "Kakari (no hito)",
+      "kana": "かかり（のひと）",
+      "kanji": "係（の人）",
+      "en": "Petugas / PIC",
+      "audio": ""
+    },
+    {
+      "id": "v26-5",
+      "rom": "Kinyōbi",
+      "kana": "きんようび",
+      "kanji": "金曜日",
+      "en": "Hari Jumat",
+      "audio": ""
+    },
+    {
+      "id": "v26-6",
+      "rom": "Hayameru",
+      "kana": "はやめます",
+      "kanji": "早めます",
+      "en": "Memajukan (jadwal, waktu)",
+      "audio": ""
+    },
+    {
+      "id": "v26-7",
+      "rom": "Okurimasu",
+      "kana": "おくります",
+      "kanji": "送ります",
+      "en": "Mengantar / Mengirim",
+      "audio": ""
+    },
+    {
+      "id": "v26-8",
+      "rom": "Tsutaemasu",
+      "kana": "つたえます",
+      "kanji": "伝えます",
+      "en": "Menyampaikan pesan",
+      "audio": ""
+    },
+    {
+      "id": "v26-9",
+      "rom": "Yasumimasu",
+      "kana": "やすみます",
+      "kanji": "休みます",
+      "en": "Beristirahat / Absen",
+      "audio": ""
+    },
+    {
+      "id": "v26-10",
+      "rom": "Mōshimasu",
+      "kana": "もうします",
+      "kanji": "申します",
+      "en": "Saya bernama ~ (bentuk rendah hati)",
+      "audio": ""
+    },
+    {
+      "id": "v26-11",
+      "rom": "Ukagaimasu",
+      "kana": "うかがいます",
+      "kanji": "伺います",
+      "en": "Mengunjungi / Menanyakan (rendah hati)",
+      "audio": ""
+    },
+    {
+      "id": "v26-12",
+      "rom": "Itadakimasu",
+      "kana": "いただきます",
+      "kanji": "いただきます",
+      "en": "Menerima / Memakan/minum (rendah hati)",
+      "audio": ""
+    },
+    {
+      "id": "v26-13",
+      "rom": "Mōshiwake gozaimasen",
+      "kana": "もうしわけございません",
+      "kanji": "申し訳ございません",
+      "en": "Saya sangat minta maaf (sangat formal)",
+      "audio": ""
+    },
+    {
+      "id": "v26-14",
+      "rom": "Sassoku",
+      "kana": "さっそく",
+      "kanji": "早速",
+      "en": "Segera / Seketika",
+      "audio": ""
+    },
+    {
+      "id": "v26-15",
+      "rom": "Sumimasen ga",
+      "kana": "すみませんが",
+      "kanji": "",
+      "en": "Mohon maaf, tapi~ / Permisi~",
+      "audio": ""
+    },
+    {
+      "id": "v26-16",
+      "rom": "Zangyō (shimasu)",
+      "kana": "ざんぎょう（します）",
+      "kanji": "残業（します）",
+      "en": "Lembur (kerja)",
+      "audio": ""
+    },
+    {
+      "id": "v26-17",
+      "rom": "Toriaezu",
+      "kana": "とりあえず",
+      "kanji": "",
+      "en": "Untuk sementara ini / Pertama-tama",
+      "audio": ""
+    },
+    {
+      "id": "v26-18",
+      "rom": "Meiwaku (na)",
+      "kana": "めいわく（な）",
+      "kanji": "迷惑（な）",
+      "en": "Merepotkan / Mengganggu",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g26-1",
+      "title": "1. Bentuk Kausatif (Causative Form)",
+      "desc": "Digunakan untuk menyatakan 'A menyuruh/membiarkan B melakukan sesuatu'. Dibagi dua nuansa: menyuruh (paksa/wajib) atau membiarkan (izin).",
+      "points": [
+        "Grup I (う-verb): ganti ～う → ～あせる. Contoh: kaku→ kakaseru, yomu→ yomaseru",
+        "Grup II (る-verb): ganti ～る → ～させる. Contoh: taberu→ tabesaseru, miru→ misaseru",
+        "Grup III (irregular): suru→ saseru, kuru→ kosaseru",
+        "Pola kalimat: [A は] [B に/を] [V-causative]。",
+        "Partikel B: Gunakan NI jika kata kerja intransitif (ikimasu, nemasu), gunakan WO jika transitif.",
+        "Contoh menyuruh: Sensei ga gakusei NI kanji wo KAKASEMASU (Guru menyuruh murid menulis kanji).",
+        "Contoh membiarkan: Haha wa watashi NI suki na koto wo SASETEKUREMASU (Ibu membiarkan saya melakukan hal yang saya suka)."
+      ],
+      "formula": "う-V: ～わせます / る-V: ～させます / する: させます",
+      "native_note": "Dalam konteks pekerjaan, kausatif sering digunakan dalam frasa sopan 'Watashi ni yarasete kudasai' (Izinkan saya yang mengerjakan) — cara sopan menawarkan diri."
+    },
+    {
+      "id": "g26-2",
+      "title": "2. V-causative + てください / てもらいます",
+      "desc": "Menggabungkan bentuk kausatif dengan ekspresi izin atau permintaan.",
+      "points": [
+        "V-させてください: Memohon izin melakukan sesuatu untuk diri sendiri.",
+        "Contoh: Kyou hayaku kaerasete kudasai. (Tolong izinkan saya pulang cepat hari ini).",
+        "V-させてもらいます: Menerima izin dari atasan/seseorang untuk melakukan sesuatu.",
+        "Contoh: Raishuu yasumasetemoraimasu. (Saya akan mengambil izin minggu depan)."
+      ],
+      "formula": "V-causative form + てください / てもらいます"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "部長は 田中さんを 残業させました。",
+      "rom": "Buchō wa Tanaka-san wo zangyō sasemashita.",
+      "en": "Manajer menyuruh Tanaka lembur."
+    },
+    {
+      "jp": "わたしに 説明させてください。",
+      "rom": "Watashi ni setsumei sasete kudasai.",
+      "en": "Izinkan saya yang menjelaskan."
+    },
+    {
+      "jp": "子供に 好きな スポーツを させています。",
+      "rom": "Kodomo ni sukina supōtsu wo sasete imasu.",
+      "en": "Membiarkan anak melakukan olahraga yang disukainya."
+    },
+    {
+      "jp": "来週、休ませてもらいます。",
+      "rom": "Raishuu, yasumasete moraimasu.",
+      "en": "Minggu depan saya akan mengambil libur (mohon izin)."
+    }
+  ],
+  "conversation": {
+    "title": "Di Tempat Kerja: Memohon Izin Absen",
+    "dialogue": [
+      {
+        "speaker": "Tanaka",
+        "jp": "課長、明日 休ませていただけませんか。",
+        "rom": "Kachō, ashita yasumasete itadakemasen ka.",
+        "en": "Pak, bolehkah saya izin tidak masuk besok?"
+      },
+      {
+        "speaker": "Kachō",
+        "jp": "どうしたんですか。",
+        "rom": "Dō shitan desu ka.",
+        "en": "Ada apa memangnya?"
+      },
+      {
+        "speaker": "Tanaka",
+        "jp": "子供が 熱を 出しまして…。",
+        "rom": "Kodomo ga netsu wo dashimashite...",
+        "en": "Anak saya demam..."
+      },
+      {
+        "speaker": "Kachō",
+        "jp": "そうですか。じゃ、しかたがないですね。いいですよ。",
+        "rom": "Sō desu ka. Ja, shikata ga nai desu ne. Ii desu yo.",
+        "en": "Begitu ya. Tidak ada cara lain dong. Oke boleh."
+      },
+      {
+        "speaker": "Tanaka",
+        "jp": "ありがとうございます。申し訳ございません。",
+        "rom": "Arigatō gozaimasu. Mōshiwake gozaimasen.",
+        "en": "Terima kasih banyak. Saya sungguh minta maaf."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "Bentuk kausatif dari 'ikimasu' (pergi, Grup I) untuk 'menyuruh pergi' adalah:",
+      "options": [
+        {
+          "text": "いかせます",
+          "correct": true
+        },
+        {
+          "text": "いきさせます",
+          "correct": false
+        },
+        {
+          "text": "いかれます",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "Terjemahkan: 'Izinkan saya yang menjawab (kotaeru)'.\nWatashi ni [   ].",
+      "answer": "kotaesasete kudasai"
+    },
+    {
+      "type": "mcq",
+      "question": "Partikel yang digunakan untuk orang yang disuruh (B) dalam kausatif intransitif adalah:",
+      "options": [
+        {
+          "text": "を",
+          "correct": false
+        },
+        {
+          "text": "に",
+          "correct": true
+        },
+        {
+          "text": "で",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Menawarkan Diri di Rapat",
+      "situation": "Dalam rapat, seseorang menawarkan diri untuk presentasi",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "プレゼンは 誰が しますか。",
+          "rom": "Purezen wa dare ga shimasu ka.",
+          "en": "Siapa yang akan presentasi?"
+        },
+        {
+          "speaker": "B",
+          "jp": "わたしに やらせてください。",
+          "rom": "Watashi ni yarasete kudasai.",
+          "en": "Izinkan saya yang melakukannya."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r26-1",
+      "jp": "部長は 山田さんを 大阪へ 出張させました。",
+      "rom": "Buchō wa Yamada-san wo Ōsaka e shutchō sasemashita.",
+      "en": "Manajer mengirim Yamada ke Osaka untuk perjalanan dinas."
+    },
+    {
+      "id": "r26-2",
+      "jp": "親は 子供に 自由に させています。",
+      "rom": "Oya wa kodomo ni jiyū ni sasete imasu.",
+      "en": "Orang tua membiarkan anaknya bebas (melakukan sesuka hati)."
+    },
+    {
+      "id": "r26-3",
+      "jp": "少し 考えさせてください。",
+      "rom": "Sukoshi kangaesasete kudasai.",
+      "en": "Tolong izinkan saya berpikir sebentar."
+    },
+    {
+      "id": "r26-4",
+      "jp": "今日は 早く 帰らせていただきます。",
+      "rom": "Kyō wa hayaku kaerasete itadakimasu.",
+      "en": "Hari ini saya mohon izin untuk pulang lebih cepat."
+    },
+    {
+      "id": "r26-5",
+      "jp": "その仕事は わたしに させてもらえませんか。",
+      "rom": "Sono shigoto wa watashi ni sasete moraemasen ka.",
+      "en": "Bolehkah saya yang mengerjakan pekerjaan itu?"
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb26-1",
+      "pattern": "V-causative form (Grup I)",
+      "instruction": "Ubah kata kerja berikut ke bentuk kausatif.",
+      "question": "Nomimasu → Causative",
+      "correct": "のませます",
+      "romaji": "nomasemasu",
+      "translation": "(Menyuruh/membiarkan minum)"
+    },
+    {
+      "id": "wb26-2",
+      "pattern": "V-causative form (Grup II)",
+      "instruction": "Ubah kata kerja berikut ke bentuk kausatif.",
+      "question": "Tabemasu → Causative",
+      "correct": "たべさせます",
+      "romaji": "tabesasemasu",
+      "translation": "(Menyuruh/membiarkan makan)"
+    },
+    {
+      "id": "wb26-3",
+      "pattern": "A は B に V-causative",
+      "instruction": "Buat kalimat kausatif: Manajer menyuruh karyawan lembur.",
+      "question": "Buchō / shain / zangyō",
+      "correct": "ぶちょうは しゃいんに ざんぎょうさせました。",
+      "romaji": "Buchō wa shain ni zangyō sasemashita.",
+      "translation": "Manajer menyuruh karyawan lembur."
+    },
+    {
+      "id": "wb26-4",
+      "pattern": "V-causative + てください",
+      "instruction": "Minta izin melakukan sesuatu: 'Izinkan saya mencoba'.",
+      "question": "Watashi ni / yatte / sasete / kudasai",
+      "correct": "わたしに やってみさせてください。",
+      "romaji": "Watashi ni yatte misasete kudasai.",
+      "translation": "Izinkan saya mencoba melakukannya."
+    },
+    {
+      "id": "wb26-5",
+      "pattern": "V-causative + てもらいます",
+      "instruction": "Nyatakan mendapat izin dari atasan.",
+      "question": "Raishuu / yasumu / sasete / moraimasu",
+      "correct": "らいしゅう やすませてもらいます。",
+      "romaji": "Raishuu yasumasete moraimasu.",
+      "translation": "Minggu depan saya akan mengambil izin."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex26-1",
+        "sentence": "ぶちょうは やまださんを おおさかへ しゅっちょう [ ] ました。",
+        "correct": "させ",
+        "translation": "Manajer mengirim Yamada ke Osaka untuk dinas."
+      },
+      {
+        "id": "ex26-2",
+        "sentence": "すこし かんがえ [ ] てください。",
+        "correct": "させ",
+        "translation": "Tolong izinkan saya berpikir sebentar."
+      },
+      {
+        "id": "ex26-3",
+        "sentence": "こどもに すきな ことを [ ] ています。",
+        "correct": "させて",
+        "translation": "Membiarkan anak melakukan yang disukainya."
+      },
+      {
+        "id": "ex26-4",
+        "sentence": "きょう はやく かえら [ ] いただきます。",
+        "correct": "せて",
+        "translation": "Saya mohon izin pulang lebih cepat hari ini."
+      },
+      {
+        "id": "ex26-5",
+        "sentence": "その しごとは わたしに [ ] もらえませんか。",
+        "correct": "させて",
+        "translation": "Bolehkah saya yang mengerjakan pekerjaan itu?"
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex26-6",
+        "question": "Bentuk kausatif dari 'kimasu' (datang) adalah:",
+        "options": [
+          {
+            "text": "きさせます",
+            "correct": false
+          },
+          {
+            "text": "こさせます",
+            "correct": true
+          },
+          {
+            "text": "こられます",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex26-7",
+        "question": "Partikel mana yang digunakan untuk menandai orang yang 'disuruh' dalam kalimat kausatif dengan kata kerja transitif (makan, minum)?",
+        "options": [
+          {
+            "text": "に",
+            "correct": false
+          },
+          {
+            "text": "を",
+            "correct": true
+          },
+          {
+            "text": "で",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex26-8",
+        "question": "'Watashi ni setsumei sasete kudasai' berarti:",
+        "options": [
+          {
+            "text": "Tolong jelaskan kepada saya",
+            "correct": false
+          },
+          {
+            "text": "Izinkan saya yang menjelaskan",
+            "correct": true
+          },
+          {
+            "text": "Saya sudah menjelaskan",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "たなかさんは きょう こどもが かぜを ひいて、かいしゃを やすみたいです。かちょうに 「やすませていただけませんか」と おねがいしました。かちょうは 「いいですよ。おだいじに」と いいました。たなかさんは ほっと しました。",
+      "questions": [
+        {
+          "id": "ex26-9",
+          "question": "たなかさんは びょうきで やすみたいです。",
+          "correct": "F"
+        },
+        {
+          "id": "ex26-10",
+          "question": "たなかさんは かちょうに やすむ きょかを もとめました。",
+          "correct": "T"
+        },
+        {
+          "id": "ex26-11",
+          "question": "かちょうは やすむことを きょかしませんでした。",
+          "correct": "F"
+        }
+      ]
+    }
+  }
+}

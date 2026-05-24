@@ -1,0 +1,728 @@
+{
+  "id": 5,
+  "title": "Lesson 5: Pergerakan (Pergi, Datang, Pulang)",
+  "desc": "Mempelajari kata kerja perpindahan arah (ikimasu, kimasu, kaerimasu) beserta partikel tujuan (e), kendaraan (de), dan kawan perjalanan (to).",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v5-1",
+      "rom": "Ikimasu",
+      "kana": "いきます",
+      "kanji": "行きます",
+      "en": "Pergi",
+      "audio": ""
+    },
+    {
+      "id": "v5-2",
+      "rom": "Kimasu",
+      "kana": "きます",
+      "kanji": "来ます",
+      "en": "Datang",
+      "audio": ""
+    },
+    {
+      "id": "v5-3",
+      "rom": "Kaerimasu",
+      "kana": "かえります",
+      "kanji": "帰ります",
+      "en": "Pulang",
+      "audio": ""
+    },
+    {
+      "id": "v5-4",
+      "rom": "Gakkou",
+      "kana": "がっこう",
+      "kanji": "学校",
+      "en": "Sekolah",
+      "audio": ""
+    },
+    {
+      "id": "v5-5",
+      "rom": "Suupaa",
+      "kana": "スーパー",
+      "kanji": "",
+      "en": "Supermarket",
+      "audio": ""
+    },
+    {
+      "id": "v5-6",
+      "rom": "Eki",
+      "kana": "えき",
+      "kanji": "駅",
+      "en": "Stasiun",
+      "audio": ""
+    },
+    {
+      "id": "v5-7",
+      "rom": "Hikouki",
+      "kana": "ひこうき",
+      "kanji": "飛行機",
+      "en": "Pesawat Terbang",
+      "audio": ""
+    },
+    {
+      "id": "v5-8",
+      "rom": "Fune",
+      "kana": "ふね",
+      "kanji": "船",
+      "en": "Kapal Laut",
+      "audio": ""
+    },
+    {
+      "id": "v5-9",
+      "rom": "Densha",
+      "kana": "でんしゃ",
+      "kanji": "電車",
+      "en": "Kereta Listrik (Commuter)",
+      "audio": ""
+    },
+    {
+      "id": "v5-10",
+      "rom": "Chikatetsu",
+      "kana": "ちかてつ",
+      "kanji": "地下鉄",
+      "en": "Kereta Bawah Tanah (Subway)",
+      "audio": ""
+    },
+    {
+      "id": "v5-11",
+      "rom": "Shinkansen",
+      "kana": "しんかんせん",
+      "kanji": "新幹線",
+      "en": "Kereta Cepat (Shinkansen)",
+      "audio": ""
+    },
+    {
+      "id": "v5-12",
+      "rom": "Basu",
+      "kana": "バス",
+      "kanji": "",
+      "en": "Bus",
+      "audio": ""
+    },
+    {
+      "id": "v5-13",
+      "rom": "Takushii",
+      "kana": "タクシー",
+      "kanji": "",
+      "en": "Taksi",
+      "audio": ""
+    },
+    {
+      "id": "v5-14",
+      "rom": "Jitensha",
+      "kana": "じてんしゃ",
+      "kanji": "自転車",
+      "en": "Sepeda",
+      "audio": ""
+    },
+    {
+      "id": "v5-15",
+      "rom": "Aruite",
+      "kana": "あるいて",
+      "kanji": "歩いて",
+      "en": "Jalan kaki (Tidak boleh pakai partikel De)",
+      "audio": ""
+    },
+    {
+      "id": "v5-16",
+      "rom": "Hito",
+      "kana": "ひと",
+      "kanji": "人",
+      "en": "Orang",
+      "audio": ""
+    },
+    {
+      "id": "v5-17",
+      "rom": "Tomodachi",
+      "kana": "ともだち",
+      "kanji": "友達",
+      "en": "Teman",
+      "audio": ""
+    },
+    {
+      "id": "v5-18",
+      "rom": "Kare",
+      "kana": "かれ",
+      "kanji": "彼",
+      "en": "Dia (Laki-laki) / Pacar laki-laki",
+      "audio": ""
+    },
+    {
+      "id": "v5-19",
+      "rom": "Kanojo",
+      "kana": "かのじょ",
+      "kanji": "彼女",
+      "en": "Dia (Perempuan) / Pacar perempuan",
+      "audio": ""
+    },
+    {
+      "id": "v5-20",
+      "rom": "Kazoku",
+      "kana": "かぞく",
+      "kanji": "家族",
+      "en": "Keluarga",
+      "audio": ""
+    },
+    {
+      "id": "v5-21",
+      "rom": "Hitori de",
+      "kana": "ひとりで",
+      "kanji": "一人で",
+      "en": "Sendirian",
+      "audio": ""
+    },
+    {
+      "id": "v5-22",
+      "rom": "Senshuu",
+      "kana": "せんしゅう",
+      "kanji": "先週",
+      "en": "Minggu lalu",
+      "audio": ""
+    },
+    {
+      "id": "v5-23",
+      "rom": "Konshuu",
+      "kana": "こんしゅう",
+      "kanji": "今週",
+      "en": "Minggu ini",
+      "audio": ""
+    },
+    {
+      "id": "v5-24",
+      "rom": "Raishuu",
+      "kana": "らいしゅう",
+      "kanji": "来週",
+      "en": "Minggu depan",
+      "audio": ""
+    },
+    {
+      "id": "v5-25",
+      "rom": "Sengetsu",
+      "kana": "せんげつ",
+      "kanji": "先月",
+      "en": "Bulan lalu",
+      "audio": ""
+    },
+    {
+      "id": "v5-26",
+      "rom": "Kongetsu",
+      "kana": "こんげつ",
+      "kanji": "今月",
+      "en": "Bulan ini",
+      "audio": ""
+    },
+    {
+      "id": "v5-27",
+      "rom": "Raigetsu",
+      "kana": "らいげつ",
+      "kanji": "来月",
+      "en": "Bulan depan",
+      "audio": ""
+    },
+    {
+      "id": "v5-28",
+      "rom": "Kyonen",
+      "kana": "きょねん",
+      "kanji": "去年",
+      "en": "Tahun lalu",
+      "audio": ""
+    },
+    {
+      "id": "v5-29",
+      "rom": "Kotoshi",
+      "kana": "ことし",
+      "kanji": "今年",
+      "en": "Tahun ini",
+      "audio": ""
+    },
+    {
+      "id": "v5-30",
+      "rom": "Rainen",
+      "kana": "らいねん",
+      "kanji": "来年",
+      "en": "Tahun depan",
+      "audio": ""
+    },
+    {
+      "id": "v5-31",
+      "rom": "Nangatsu",
+      "kana": "なんがつ",
+      "kanji": "何月",
+      "en": "Bulan apa?",
+      "audio": ""
+    },
+    {
+      "id": "v5-32",
+      "rom": "Tsuitachi/Futsuka/Mikka/Yokka",
+      "kana": "ついたち / ふつか / みっか / よっか",
+      "kanji": "1日/2日/3日/4日",
+      "en": "Tanggal 1 / 2 / 3 / 4",
+      "audio": ""
+    },
+    {
+      "id": "v5-33",
+      "rom": "Itsu",
+      "kana": "いつ",
+      "kanji": "",
+      "en": "Kapan?",
+      "audio": ""
+    },
+    {
+      "id": "v5-34",
+      "rom": "Tanjoubi",
+      "kana": "たんじょうび",
+      "kanji": "誕生日",
+      "en": "Ulang tahun",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g5-1",
+      "title": "1. [Tempat] へ 行きます / 来ます / 帰ります",
+      "desc": "Partikel 'E' (ditulis dengan huruf Hiragana へ/he, TAPI dibaca e) digunakan KHUSUS untuk menunjukkan ARAH TUJUAN dari sebuah pergerakan (Directional Particle).",
+      "points": [
+        "Ikimasu (Pergi): Arahnya menjauhi pembicara. Contoh: Kyouto e ikimasu (Pergi ke Kyoto).",
+        "Kimasu (Datang): Arahnya mendekati pembicara. Contoh: Nihon e kimashita (Telah datang ke Jepang - diucapkan saat sudah di Jepang).",
+        "Kaerimasu (Pulang): Digunakan HANYA jika tujuannya adalah tempat asal/markas (Rumah, Negara asal). Uchi e kaerimasu."
+      ],
+      "formula": "[Tempat] へ V (ikimasu/kimasu/kaerimasu)",
+      "native_note": "Partikel arah 'e' (へ) sangat sering digantikan oleh partikel 'ni' (に) dalam percakapan lisan sehari-hari (misal: 'Toukyou ni iku' alih-alih 'Toukyou e iku'). Partikel 'ni' lebih menekankan pada titik kedatangan akhir, sedangkan 'e' menekankan pada arah proses perjalanannya."
+    },
+    {
+      "id": "g5-2",
+      "title": "2. どこへも 行きません (Penyangkalan Total)",
+      "desc": "Jika Anda TIDAK pergi ke mana-mana, Anda tidak bisa menggunakan bentuk negatif biasa. Anda harus menggunakan kata tanya + partikel MO + Negatif.",
+      "points": [
+        "Doko = Ke mana.",
+        "Doko e mo = Ke mana pun (ditambah 'e' untuk arah).",
+        "Doko e mo ikimasen = Tidak pergi ke mana pun.",
+        "Masa Lalu: Kinou doko e mo ikimasen deshita (Kemarin tidak pergi ke mana pun)."
+      ],
+      "formula": "Kata Tanya + (partikel) + も + V-negatif"
+    },
+    {
+      "id": "g5-3",
+      "title": "3. [Kendaraan] で 行きます (Alat Transportasi)",
+      "desc": "Partikel DE menandakan ALAT, SARANA, atau METODE yang digunakan untuk melakukan suatu aksi. Di bab ini, fungsinya spesifik untuk kendaraan.",
+      "points": [
+        "Densha de ikimasu. (Pergi MENGGUNAKAN kereta).",
+        "Takushii de kimasu. (Datang NAIK taksi).",
+        "Pengecualian KRUSIAL: Jika Anda berjalan kaki, gunakan 'Aruite' (Bentuk Te dari Arukimasu) TANPA partikel de. Contoh: Eki e aruite ikimasu (BUKAN aruite de)."
+      ],
+      "formula": "[Kendaraan] で V"
+    },
+    {
+      "id": "g5-4",
+      "title": "4. [Orang/Hewan] と 行きます (Dengan Siapa)",
+      "desc": "Partikel TO di sini berarti 'Bersama'. Menunjukkan partner/kawan yang menemani Anda.",
+      "points": [
+        "Tomodachi to ikimasu. (Pergi BERSAMA teman).",
+        "Kazoku to Nihon e kimashita. (Datang ke Jepang bersama keluarga).",
+        "Pengecualian KRUSIAL: Jika Anda sendirian, gunakan 'Hitori de' TANPA partikel to. Contoh: Hitori de ikimasu (BUKAN hitori to)."
+      ],
+      "formula": "[Orang/Partner] と V"
+    },
+    {
+      "id": "g5-5",
+      "title": "5. いつ (Kapan)",
+      "desc": "Kata tanya 'Itsu' (Kapan) digunakan untuk menanyakan waktu bebas. Berbeda dengan 'Nanji' (Jam berapa), 'Itsu' TIDAK memerlukan partikel NI.",
+      "points": [
+        "Benar: Itsu Nihon e kimasuka. (Kapan datang ke Jepang?).",
+        "Salah: Itsu NI Nihon e kimasuka. (Partikel NI dilarang menempel pada Itsu)."
+      ],
+      "formula": "いつ + Kalimat ~ か"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "京都へ 行きます。",
+      "rom": "Kyouto e ikimasu.",
+      "en": "Saya pergi ke Kyoto."
+    },
+    {
+      "jp": "タクシーで うちへ 帰ります。",
+      "rom": "Takushii de uchi e kaerimasu.",
+      "en": "Saya pulang ke rumah dengan (menggunakan) Taksi."
+    },
+    {
+      "jp": "家族と 日本へ 来ました。",
+      "rom": "Kazoku to Nihon e kimashita.",
+      "en": "Saya (telah) datang ke Jepang bersama keluarga."
+    },
+    {
+      "jp": "日曜日は どこへも 行きませんでした。",
+      "rom": "Nichiyoubi wa doko e mo ikimasen deshita.",
+      "en": "Hari Minggu (lalu) saya tidak pergi ke mana pun."
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: Koushien e Ikimasuka (Pergi ke Koshien?)",
+    "dialogue": [
+      {
+        "speaker": "Santos",
+        "jp": "すみません。甲子園まで いくらですか。",
+        "rom": "Sumimasen. Koushien made ikura desu ka.",
+        "en": "Permisi. Sampai ke Koshien (tiket keretanya) berapa harganya?"
+      },
+      {
+        "speaker": "Warga",
+        "jp": "３５０円です。",
+        "rom": "Sanbyaku-gojuu en desu.",
+        "en": "350 Yen."
+      },
+      {
+        "speaker": "Santos",
+        "jp": "３５０円ですね。ありがとうございました。",
+        "rom": "Sanbyaku-gojuu en desu ne. Arigatou gozaimashita.",
+        "en": "350 Yen ya. Terima kasih banyak."
+      },
+      {
+        "speaker": "Warga",
+        "jp": "どういたしまして。",
+        "rom": "Dou itashimashite.",
+        "en": "Sama-sama."
+      },
+      {
+        "speaker": "Santos",
+        "jp": "すみません。甲子園は 何番線ですか。",
+        "rom": "Sumimasen. Koushien wa nan-bansen desu ka.",
+        "en": "Permisi. (Kereta ke) Koshien di peron (jalur) berapa?"
+      },
+      {
+        "speaker": "Pegawai Eki",
+        "jp": "５番線です。",
+        "rom": "Go-bansen desu.",
+        "en": "Peron jalur 5."
+      },
+      {
+        "speaker": "Santos",
+        "jp": "どうも。",
+        "rom": "Doumo.",
+        "en": "Terima kasih."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] Jika Anda berjalan kaki menuju stasiun, kalimat yang BENAR secara gramatikal adalah:",
+      "options": [
+        {
+          "text": "Eki e aruite de ikimasu",
+          "correct": false
+        },
+        {
+          "text": "Eki e aruite ikimasu",
+          "correct": true
+        },
+        {
+          "text": "Eki e aruite ni ikimasu",
+          "correct": false
+        },
+        {
+          "text": "Aruite wa eki e ikimasu",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] Lengkapi kalimat: 'Tadi malam, saya tidak pergi ke mana pun'.\nKinou no ban, doko [     ] mo ikimasen deshita.",
+      "answer": "e"
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu B] Anda pergi liburan sendirian ke Kyoto. Apa partikel yang tepat untuk 'sendirian'?",
+      "options": [
+        {
+          "text": "Hitori to ikimasu",
+          "correct": false
+        },
+        {
+          "text": "Hitori ni ikimasu",
+          "correct": false
+        },
+        {
+          "text": "Hitori de ikimasu",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu C] Terjemahkan: 'Kapan ulang tahun Anda?'\nTanjoubi wa [       ] desu ka.",
+      "answer": "itsu"
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Menanyakan Transportasi & Pendamping",
+      "situation": "Bertanya bagaimana seseorang pergi ke stasiun dan bersama siapa",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "何で 駅へ 行きますか。",
+          "rom": "Nan de eki e ikimasu ka.",
+          "en": "Naik apa pergi ke stasiun?"
+        },
+        {
+          "speaker": "B",
+          "jp": "自転車で 行きます。",
+          "rom": "Jitensha de ikimasu.",
+          "en": "Naik sepeda."
+        },
+        {
+          "speaker": "A",
+          "jp": "一人で 行きますか。",
+          "rom": "Hitori de ikimasu ka.",
+          "en": "Pergi sendirian?"
+        },
+        {
+          "speaker": "B",
+          "jp": "いいえ、友達と 行きます。",
+          "rom": "Iie, tomodachi to ikimasu.",
+          "en": "Tidak, pergi bersama teman."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Menanyakan Destinasi Liburan",
+      "situation": "Mengobrol tentang rencana liburan musim panas rekan kerja",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "この 夏休みは どこへ 行きますか。",
+          "rom": "Kono natsuyasumi wa doko e ikimasu ka.",
+          "en": "Liburan musim panas ini pergi ke mana?"
+        },
+        {
+          "speaker": "B",
+          "jp": "京都へ 行きます。",
+          "rom": "Kyouto e ikimasu.",
+          "en": "Pergi ke Kyoto."
+        },
+        {
+          "speaker": "A",
+          "jp": "いいですね。",
+          "rom": "Ii desu ne.",
+          "en": "Asyik/bagus sekali ya."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Menanyakan Tanggal Ulang Tahun",
+      "situation": "Mengobrol santai dan menanyakan hari lahir teman",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "お誕生日のは いつですか。",
+          "rom": "O-tanjoubi wa itsu desu ka.",
+          "en": "Ulang tahun Anda kapan?"
+        },
+        {
+          "speaker": "B",
+          "jp": "9月 15日です。",
+          "rom": "Ku-gatsu juu-go-nichi desu.",
+          "en": "Tanggal 15 September."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。",
+          "rom": "Sou desu ka.",
+          "en": "Oh, begitu ya."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r5-1",
+      "jp": "明日 どこへ 行きますか。... 奈良へ 行きます。",
+      "rom": "Ashita doko e ikimasu ka? ... Nara e ikimasu.",
+      "en": "Besok pergi ke mana? ... Pergi ke Nara."
+    },
+    {
+      "id": "r5-2",
+      "jp": "日曜日 どこへ 行きましたか。... どこ[へ]も 行きませんでした。",
+      "rom": "Nichiyoubi doko e ikimashita ka? ... Doko [e] mo ikimasen deshita.",
+      "en": "Hari Minggu kemarin pergi ke mana? ... Tidak pergi ke mana-mana."
+    },
+    {
+      "id": "r5-3",
+      "jp": "何で 東京へ 行きますか。... 新幹線で 行きます。",
+      "rom": "Nande Toukyou e ikimasu ka? ... Shinkansen de ikimasu.",
+      "en": "Pergi ke Tokyo naik apa? ... Naik Shinkansen."
+    },
+    {
+      "id": "r5-4",
+      "jp": "だれと 東京へ 行きますか。... 家族と 行きます。",
+      "rom": "Dare to Toukyou e ikimasu ka? ... Kazoku to ikimasu.",
+      "en": "Pergi ke Tokyo dengan siapa? ... Dengan keluarga."
+    },
+    {
+      "id": "r5-5",
+      "jp": "いつ 日本へ 来ましたか。... ３月２５日に 来ました。",
+      "rom": "Itsu Nihon e kimashita ka? ... Sangatsu nijyuugonichi ni kimashita.",
+      "en": "Kapan datang ke Jepang? ... Datang tanggal 25 Maret."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb5-1",
+      "pattern": "N へ いきます / きます / かえります",
+      "instruction": "Buat kalimat menggunakan kata kerja perpindahan arah dan partikel tujuan へ.",
+      "question": "Toukyou / ikimasu",
+      "correct": "とうきょうへ いきます。",
+      "romaji": "Toukyou e ikimasu.",
+      "translation": "Saya pergi ke Tokyo."
+    },
+    {
+      "id": "wb5-2",
+      "pattern": "N で いきます (kendaraan)",
+      "instruction": "Nyatakan sarana/kendaraan yang digunakan untuk pergi dengan partikel で.",
+      "question": "Shinkansen / Toukyou / ikimasu",
+      "correct": "しんかんせんで とうきょうへ いきます。",
+      "romaji": "Shinkansen de Toukyou e ikimasu.",
+      "translation": "Saya pergi ke Tokyo dengan shinkansen."
+    },
+    {
+      "id": "wb5-3",
+      "pattern": "N と いきます (bersama)",
+      "instruction": "Nyatakan dengan siapa Anda pergi menggunakan partikel と.",
+      "question": "Tomodachi / eiga / ikimasu",
+      "correct": "ともだちと えいがに いきます。",
+      "romaji": "Tomodachi to eiga ni ikimasu.",
+      "translation": "Saya pergi menonton film bersama teman."
+    },
+    {
+      "id": "wb5-4",
+      "pattern": "いつ ~ V ますか",
+      "instruction": "Buat pertanyaan menanyakan kapan aktivitas dilakukan.",
+      "question": "Nihon / kimashita",
+      "correct": "いつ にほんへ きましたか。",
+      "romaji": "Itsu Nihon e kimashita ka.",
+      "translation": "Kapan datang ke Jepang?"
+    },
+    {
+      "id": "wb5-5",
+      "pattern": "V た + あとで (Setelah ~)",
+      "instruction": "Nyatakan urutan kejadian dengan pola 'setelah melakukan X'.",
+      "question": "Shigoto / owaru / kaerimasu",
+      "correct": "しごとが おわってから かえります。",
+      "romaji": "Shigoto ga owatte kara kaerimasu.",
+      "translation": "Setelah pekerjaan selesai, saya pulang."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex5-1",
+        "sentence": "らいねん にほん [ ] いきます。",
+        "correct": "へ",
+        "translation": "Tahun depan akan pergi ke Jepang."
+      },
+      {
+        "id": "ex5-2",
+        "sentence": "ひこうき [ ] おおさかへ いきました。",
+        "correct": "で",
+        "translation": "Pergi ke Osaka dengan pesawat."
+      },
+      {
+        "id": "ex5-3",
+        "sentence": "かぞく [ ] りょこうしました。",
+        "correct": "と",
+        "translation": "Berwisata bersama keluarga."
+      },
+      {
+        "id": "ex5-4",
+        "sentence": "[ ] にほんへ きましたか。",
+        "correct": "いつ",
+        "translation": "Kapan datang ke Jepang?"
+      },
+      {
+        "id": "ex5-5",
+        "sentence": "しごとが おわって [ ] かえります。",
+        "correct": "から",
+        "translation": "Setelah pekerjaan selesai, pulang."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex5-6",
+        "question": "Partikel yang digunakan untuk menyatakan tujuan perjalanan adalah:",
+        "options": [
+          {
+            "text": "で",
+            "correct": false
+          },
+          {
+            "text": "へ / に",
+            "correct": true
+          },
+          {
+            "text": "から",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex5-7",
+        "question": "Partikel yang digunakan untuk menyatakan moda transportasi (naik kereta, dll.) adalah:",
+        "options": [
+          {
+            "text": "を",
+            "correct": false
+          },
+          {
+            "text": "と",
+            "correct": false
+          },
+          {
+            "text": "で",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "id": "ex5-8",
+        "question": "Kalimat yang benar untuk 'saya pulang ke Jepang bersama teman naik pesawat' adalah:",
+        "options": [
+          {
+            "text": "ともだちと ひこうきで にほんへ かえります。",
+            "correct": true
+          },
+          {
+            "text": "ともだちへ ひこうきと にほんで かえります。",
+            "correct": false
+          },
+          {
+            "text": "にほんで ともだちへ ひこうきから かえります。",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "ミラーさんは らいしゅう ともだちと おきなわへ いきます。ひこうきで いきます。３日間 りょこうします。おきなわで うみを みます。",
+      "questions": [
+        {
+          "id": "ex5-9",
+          "question": "ミラーさんは ひとりで おきなわへ いきます。",
+          "correct": "F"
+        },
+        {
+          "id": "ex5-10",
+          "question": "ミラーさんは しんかんせんで いきます。",
+          "correct": "F"
+        },
+        {
+          "id": "ex5-11",
+          "question": "ミラーさんは おきなわで うみを みます。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,709 @@
+{
+  "id": 14,
+  "title": "Lesson 14: Te-Form & Permintaan (Kudasai)",
+  "desc": "BAB TERPENTING di seluruh MNN! Anda belajar mengubah kata kerja ke Bentuk-Te (Te-Form), yang menjadi fondasi MUTLAK dari hampir semua konjugasi lanjutan: sedang berlangsung, izin, larangan, dan sambungan kalimat.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v14-1",
+      "rom": "Tsukemasu",
+      "kana": "つけます",
+      "kanji": "",
+      "en": "Menyalakan (lampu/AC)",
+      "audio": ""
+    },
+    {
+      "id": "v14-2",
+      "rom": "Keshimasu",
+      "kana": "けします",
+      "kanji": "消します",
+      "en": "Mematikan (lampu/AC)",
+      "audio": ""
+    },
+    {
+      "id": "v14-3",
+      "rom": "Akemasu",
+      "kana": "あけます",
+      "kanji": "開けます",
+      "en": "Membuka (pintu/jendela)",
+      "audio": ""
+    },
+    {
+      "id": "v14-4",
+      "rom": "Shimemasu",
+      "kana": "しめます",
+      "kanji": "閉めます",
+      "en": "Menutup (pintu/jendela)",
+      "audio": ""
+    },
+    {
+      "id": "v14-5",
+      "rom": "Isogu / Isogimasu",
+      "kana": "いそぐ",
+      "kanji": "急ぐ",
+      "en": "Bergegas / Terburu-buru",
+      "audio": ""
+    },
+    {
+      "id": "v14-6",
+      "rom": "Matsu / Machimasu",
+      "kana": "まつ",
+      "kanji": "待つ",
+      "en": "Menunggu",
+      "audio": ""
+    },
+    {
+      "id": "v14-7",
+      "rom": "Tomeru / Tomemasu",
+      "kana": "とめる",
+      "kanji": "止める",
+      "en": "Menghentikan / Memarkirkan",
+      "audio": ""
+    },
+    {
+      "id": "v14-8",
+      "rom": "Mawasu / Mawashimasu",
+      "kana": "まわす",
+      "kanji": "回す",
+      "en": "Memutar",
+      "audio": ""
+    },
+    {
+      "id": "v14-9",
+      "rom": "Hiku / Hikimasu",
+      "kana": "ひく",
+      "kanji": "引く",
+      "en": "Menarik",
+      "audio": ""
+    },
+    {
+      "id": "v14-10",
+      "rom": "Osu / Oshimasu",
+      "kana": "おす",
+      "kanji": "押す",
+      "en": "Mendorong / Menekan",
+      "audio": ""
+    },
+    {
+      "id": "v14-11",
+      "rom": "Nomu / Nomimasu",
+      "kana": "のむ",
+      "kanji": "飲む",
+      "en": "Minum",
+      "audio": ""
+    },
+    {
+      "id": "v14-12",
+      "rom": "Yobu / Yobimasu",
+      "kana": "よぶ",
+      "kanji": "呼ぶ",
+      "en": "Memanggil",
+      "audio": ""
+    },
+    {
+      "id": "v14-13",
+      "rom": "Toru / Torimasu",
+      "kana": "とる",
+      "kanji": "撮る",
+      "en": "Mengambil (foto)",
+      "audio": ""
+    },
+    {
+      "id": "v14-14",
+      "rom": "Kiru / Kirimasu",
+      "kana": "きる",
+      "kanji": "切る",
+      "en": "Memotong",
+      "audio": ""
+    },
+    {
+      "id": "v14-15",
+      "rom": "Okuru / Okurimasu",
+      "kana": "おくる",
+      "kanji": "送る",
+      "en": "Mengirim",
+      "audio": ""
+    },
+    {
+      "id": "v14-16",
+      "rom": "Denki",
+      "kana": "でんき",
+      "kanji": "電気",
+      "en": "Lampu / Listrik",
+      "audio": ""
+    },
+    {
+      "id": "v14-17",
+      "rom": "Mado",
+      "kana": "まど",
+      "kanji": "窓",
+      "en": "Jendela",
+      "audio": ""
+    },
+    {
+      "id": "v14-18",
+      "rom": "Doa",
+      "kana": "ドア",
+      "kanji": "",
+      "en": "Pintu",
+      "audio": ""
+    },
+    {
+      "id": "v14-19",
+      "rom": "Shashin",
+      "kana": "しゃしん",
+      "kanji": "写真",
+      "en": "Foto",
+      "audio": ""
+    },
+    {
+      "id": "v14-20",
+      "rom": "Eakon",
+      "kana": "エアコン",
+      "kanji": "",
+      "en": "AC (Air Conditioner)",
+      "audio": ""
+    },
+    {
+      "id": "v14-21",
+      "rom": "Pasupōto",
+      "kana": "パスポート",
+      "kanji": "",
+      "en": "Paspor",
+      "audio": ""
+    },
+    {
+      "id": "v14-22",
+      "rom": "Namae",
+      "kana": "なまえ",
+      "kanji": "名前",
+      "en": "Nama",
+      "audio": ""
+    },
+    {
+      "id": "v14-23",
+      "rom": "Tabako",
+      "kana": "たばこ",
+      "kanji": "",
+      "en": "Rokok",
+      "audio": ""
+    },
+    {
+      "id": "v14-24",
+      "rom": "Suimasu (tabako o)",
+      "kana": "すいます",
+      "kanji": "吸います",
+      "en": "Merokok / Menghisap",
+      "audio": ""
+    },
+    {
+      "id": "v14-25",
+      "rom": "Misemasu",
+      "kana": "みせます",
+      "kanji": "見せます",
+      "en": "Menunjukkan / Memperlihatkan",
+      "audio": ""
+    },
+    {
+      "id": "v14-26",
+      "rom": "Oshiemasu",
+      "kana": "おしえます",
+      "kanji": "教えます",
+      "en": "Mengajarkan / Memberitahu",
+      "audio": ""
+    },
+    {
+      "id": "v14-27",
+      "rom": "Hanashimasu",
+      "kana": "はなします",
+      "kanji": "話します",
+      "en": "Berbicara / Bercerita",
+      "audio": ""
+    },
+    {
+      "id": "v14-28",
+      "rom": "Tsukaimasu",
+      "kana": "つかいます",
+      "kanji": "使います",
+      "en": "Memakai / Menggunakan",
+      "audio": ""
+    },
+    {
+      "id": "v14-29",
+      "rom": "Mochimasu",
+      "kana": "もちます",
+      "kanji": "持ちます",
+      "en": "Memegang / Membawa (benda)",
+      "audio": ""
+    },
+    {
+      "id": "v14-30",
+      "rom": "Chotto",
+      "kana": "ちょっと",
+      "kanji": "",
+      "en": "Sebentar / Sedikit",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g14-1",
+      "title": "1. Te-Form: Aturan Konversi (WAJIB HAFAL MATI)",
+      "desc": "Te-Form adalah FONDASI seluruh bahasa Jepang lanjutan. Tanpa menghafal ini, Anda TIDAK bisa maju. Ada 3 kelompok kata kerja dengan aturan berbeda.",
+      "points": [
+        "--- KELOMPOK 1 (Godan / U-verbs) --- Akhiran berubah tergantung huruf terakhir SEBELUM -masu:",
+        "い/ち/り → って: Kai-masu→Katte. Machi-masu→Matte. Kaeri-masu→Kaette.",
+        "み/に/び → んで: Nomi-masu→Nonde. Shini-masu→Shinde. Yobi-masu→Yonde.",
+        "き → いて: Kaki-masu→Kaite. Kiki-masu→Kiite. ★PENGECUALIAN: Iki-masu→Itte (bukan Iite!).",
+        "ぎ → いで: Isogi-masu→Isoide. Oyogi-masu→Oyoide.",
+        "し → して: Hanashi-masu→Hanashite. Kashi-masu→Kashite.",
+        "--- KELOMPOK 2 (Ichidan / Ru-verbs) --- SIMPLE: Buang -masu, tambah -te. Tabe-masu→Tabe-te. Mi-masu→Mi-te. Ake-masu→Ake-te.",
+        "--- KELOMPOK 3 (Irregular) --- Hanya 2: Shi-masu→Shite. Ki-masu→Kite."
+      ],
+      "formula": "HAFAL TABEL! い/ち/り→って | み/に/び→んで | き→いて | ぎ→いで | し→して | Grp2: -て | Grp3: して/きて",
+      "native_note": "Dalam lingkungan pertemanan akrab, Anda cukup mengucapkan kata kerja bentuk '~te' tanpa 'kudasai' untuk meminta tolong secara ramah dan santai (misal: 'Chotto matte!' = 'Tunggu sebentar!', 'Kore, mite!' = 'Coba lihat ini!')."
+    },
+    {
+      "id": "g14-2",
+      "title": "2. V-て ください (Tolong Lakukan ~)",
+      "desc": "Te-Form + Kudasai = Permintaan sopan untuk melakukan sesuatu. Ini bentuk permintaan paling umum dan versatile.",
+      "points": [
+        "Chotto matte kudasai. (Tolong tunggu sebentar).",
+        "Shashin o totte kudasai. (Tolong ambilkan foto).",
+        "Namae o kaite kudasai. (Tolong tuliskan nama Anda).",
+        "Sumimasen ga, mou ichido itte kudasai. (Maaf, tolong ucapkan sekali lagi)."
+      ],
+      "formula": "V-て ください"
+    },
+    {
+      "id": "g14-3",
+      "title": "3. V-て います (Sedang ~ / Keadaan)",
+      "desc": "Te-Form + Imasu memiliki DUA makna penting: (A) Aksi SEDANG berlangsung (Progressive), dan (B) KEADAAN yang masih berlaku (State).",
+      "points": [
+        "(A) Progressive: Ima gohan o tabete imasu. (Saya SEDANG makan nasi sekarang).",
+        "(A) Progressive: Dare ga denwa o kakete imasu ka. (Siapa yang SEDANG menelepon?).",
+        "(B) State: Miller-san wa kekkon shite imasu. (Pak Miller SUDAH menikah / dalam keadaan menikah).",
+        "(B) State: Watashi wa Osaka ni sunde imasu. (Saya tinggal di Osaka — keadaan permanen)."
+      ],
+      "formula": "V-て います (Progressive & State)"
+    },
+    {
+      "id": "g14-4",
+      "title": "4. V-ても いいですか (Bolehkah Saya ~?)",
+      "desc": "Te-Form + Mo ii desu ka = Meminta izin. Ini cara paling standar untuk meminta izin dalam bahasa Jepang sopan.",
+      "points": [
+        "Shashin o tottemo ii desu ka. (Bolehkah saya mengambil foto?).",
+        "Koko de tabako o suttemo ii desu ka. (Bolehkah saya merokok di sini?).",
+        "Jawab YA: Ee, ii desu yo. (Ya, boleh). / Ee, doozo. (Ya, silakan).",
+        "Jawab TIDAK: Sumimasen, chotto... (Maaf, sedikit [bermasalah]...). Pola penolakan halus khas Jepang."
+      ],
+      "formula": "V-ても いいですか → はい、いいですよ / すみません、ちょっと…"
+    },
+    {
+      "id": "g14-5",
+      "title": "5. V-ては いけません (Tidak Boleh / Dilarang)",
+      "desc": "Te-Form + Wa Ikemasen = Larangan tegas. Kebalikan dari 'temo ii desu ka'. Ini adalah perintah LARANGAN.",
+      "points": [
+        "Koko de tabako o suttewa ikemasen. (TIDAK BOLEH merokok di sini).",
+        "Koko ni kuruma o tometewa ikemasen. (TIDAK BOLEH memarkirkan mobil di sini).",
+        "Shashin o tottewa ikemasen. (TIDAK BOLEH mengambil foto — misal di museum)."
+      ],
+      "formula": "V-ては いけません"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "すみませんが、ちょっと 待って ください。",
+      "rom": "Sumimasen ga, chotto matte kudasai.",
+      "en": "Maaf, tolong tunggu sebentar."
+    },
+    {
+      "jp": "ミラーさんは 今 電話を かけて います。",
+      "rom": "Miraa-san wa ima denwa o kakete imasu.",
+      "en": "Pak Miller sedang menelepon sekarang."
+    },
+    {
+      "jp": "写真を 撮っても いいですか。",
+      "rom": "Shashin o tottemo ii desu ka.",
+      "en": "Bolehkah saya mengambil foto?"
+    },
+    {
+      "jp": "ここで たばこを 吸っては いけません。",
+      "rom": "Koko de tabako o suttewa ikemasen.",
+      "en": "Tidak boleh merokok di sini."
+    },
+    {
+      "jp": "もう 一度 言って ください。",
+      "rom": "Mou ichido itte kudasai.",
+      "en": "Tolong ucapkan sekali lagi."
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: 京都行きは何番線ですか (Ke Kyoto Jalur Berapa?)",
+    "dialogue": [
+      {
+        "speaker": "Miller",
+        "jp": "すみません。京都行きは 何番線ですか。",
+        "rom": "Sumimasen. Kyouto-iki wa nan-bansen desu ka.",
+        "en": "Permisi. Kereta menuju Kyoto di jalur berapa?"
+      },
+      {
+        "speaker": "Pegawai",
+        "jp": "４番線です。",
+        "rom": "Yon-bansen desu.",
+        "en": "Jalur 4."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "次の「のぞみ」は 何時ですか。",
+        "rom": "Tsugi no 'Nozomi' wa nan-ji desu ka.",
+        "en": "Nozomi berikutnya jam berapa?"
+      },
+      {
+        "speaker": "Pegawai",
+        "jp": "１１時１０分です。",
+        "rom": "Juuichi-ji juppun desu.",
+        "en": "Jam 11:10."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "ありがとう ございます。",
+        "rom": "Arigatou gozaimasu.",
+        "en": "Terima kasih banyak."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "（友達に）急いで ください！",
+        "rom": "(Tomodachi ni) Isoide kudasai!",
+        "en": "(Ke teman) Tolong bergegas!"
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] Te-Form dari 'Nomimasu' (minum: み→んで) adalah:",
+      "options": [
+        {
+          "text": "Nomite",
+          "correct": false
+        },
+        {
+          "text": "Nonde",
+          "correct": true
+        },
+        {
+          "text": "Nominde",
+          "correct": false
+        },
+        {
+          "text": "Nomite",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] Te-Form dari 'Machimasu' (menunggu: ち→って) adalah:\nMa-[     ]",
+      "answer": "tte"
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu B] Te-Form dari 'Ikimasu' (pergi) adalah IRREGULIER. Bentuk yang benar:",
+      "options": [
+        {
+          "text": "Iite",
+          "correct": false
+        },
+        {
+          "text": "Itte",
+          "correct": true
+        },
+        {
+          "text": "Ikite",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu C] Pak Miller SEDANG membaca buku.\nMiraa-san wa hon o [       ] imasu.",
+      "answer": "yonde"
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu D] Anda ingin meminta izin mengambil foto. Kalimat yang tepat:",
+      "options": [
+        {
+          "text": "Shashin o tottewa ikemasen ka.",
+          "correct": false
+        },
+        {
+          "text": "Shashin o tottemo ii desu ka.",
+          "correct": true
+        },
+        {
+          "text": "Shashin o totte kudasai.",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Meminta Tolong Diambilkan Barang (Garam)",
+      "situation": "Meminta tolong kepada rekan semeja untuk mengambilkan wadah garam",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "すみませんが、その 塩を 取って ください。",
+          "rom": "Sumimasen ga, sono shio o totte kudasai.",
+          "en": "Maaf/permisi, tolong ambilkan garam itu."
+        },
+        {
+          "speaker": "B",
+          "jp": "はい、どうぞ。",
+          "rom": "Hai, douzo.",
+          "en": "Ya, silakan."
+        },
+        {
+          "speaker": "A",
+          "jp": "ありがとうございます。",
+          "rom": "Arigatou gozaimasu.",
+          "en": "Terima kasih banyak."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Menawarkan Bantuan Membawa Barang",
+      "situation": "Menawarkan bantuan membawakan barang bawaan teman yang sangat berat",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "荷物が 重そうですね。手伝いましょうか。",
+          "rom": "Nimotsu ga omosou desu ne. Tetsudaimashou ka.",
+          "en": "Barang bawaannya kelihatan berat ya. Boleh saya bantu?"
+        },
+        {
+          "speaker": "B",
+          "jp": "ありがとうございます。お願いします。",
+          "rom": "Arigatou gozaimasu. Onegai shimasu.",
+          "en": "Terima kasih banyak. Tolong ya."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Menanyakan Lokasi Layanan (Loket Tiket)",
+      "situation": "Bertanya arah lokasi loket penjualan tiket di stasiun",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "すみません、切符売り場は どこですか。",
+          "rom": "Sumimasen, kippu uriba wa doko desu ka.",
+          "en": "Permisi, loket penjualan tiket ada di mana?"
+        },
+        {
+          "speaker": "B",
+          "jp": "あの 角を 右へ 曲がって ください。",
+          "rom": "Ano kado o migi e magatte kudasai.",
+          "en": "Tolong belok ke kanan di sudut jalan itu."
+        },
+        {
+          "speaker": "A",
+          "jp": "わかりました。ありがとう ございます。",
+          "rom": "Wakarimashita. Arigatou gozaimasu.",
+          "en": "Saya mengerti. Terima kasih banyak."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r14-1",
+      "jp": "ちょっと 待ってください。... はい、分かりました。",
+      "rom": "Chotto matte kudasai. ... Hai, wakarimashita.",
+      "en": "Tolong tunggu sebentar. ... Ya, baiklah."
+    },
+    {
+      "id": "r14-2",
+      "jp": "荷物を 持ちましょうか。... すみません。お願いします。",
+      "rom": "Nimotsu o mochimashou ka? ... Sumimasen. Onegaishimasu.",
+      "en": "Bolehkah saya bawakan barang Anda? ... Permisi (Maaf merepotkan). Tolong ya."
+    },
+    {
+      "id": "r14-3",
+      "jp": "塩を 取ってください。... はい、どうぞ。",
+      "rom": "Shio o totte kudasai. ... Hai, douzo.",
+      "en": "Tolong ambilkan garam. ... Ya, ini silakan."
+    },
+    {
+      "id": "r14-4",
+      "jp": "今 雨が 降っていますか。... いいえ、降っていません。",
+      "rom": "Ima ame ga futte imasu ka? ... Iie, futte imasen.",
+      "en": "Apakah sekarang sedang turun hujan? ... Tidak, tidak sedang hujan."
+    },
+    {
+      "id": "r14-5",
+      "jp": "タクsiを 呼びましょうか。... いいえ、結構です。",
+      "rom": "Takushii o yobimashou ka? ... Iie, kekkou desu.",
+      "en": "Bolehkah saya panggilkan taksi? ... Tidak, terima kasih (sudah cukup)."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb14-1",
+      "pattern": "V てみます (Mencoba ~)",
+      "instruction": "Nyatakan mencoba melakukan sesuatu untuk pertama kali dengan te-form + みます.",
+      "question": "Nihon ryouri / tsukutte / mimasu",
+      "correct": "にほんりょうりを つくって みます。",
+      "romaji": "Nihon ryouri wo tsukutte mimasu.",
+      "translation": "Akan mencoba membuat masakan Jepang."
+    },
+    {
+      "id": "wb14-2",
+      "pattern": "V ておきます (Menyiapkan/Melakukan sebelumnya)",
+      "instruction": "Nyatakan persiapan yang dilakukan sebelumnya dengan te-form + おきます.",
+      "question": "Kaigi / mae ni / shiryou wo / yonde okimasu",
+      "correct": "かいぎの まえに しりょうを よんで おきます。",
+      "romaji": "Kaigi no mae ni shiryou wo yonde okimasu.",
+      "translation": "Membaca materi sebelumnya sebelum rapat."
+    },
+    {
+      "id": "wb14-3",
+      "pattern": "V てしまいます (Telah selesai / Menyesal)",
+      "instruction": "Nyatakan aktivitas yang sudah selesai (dengan nuansa menyesal) dengan te-form + しまいます.",
+      "question": "Saifu / nakushite / shimaimashita",
+      "correct": "さいふを なくして しまいました。",
+      "romaji": "Saifu wo nakushite shimaimashita.",
+      "translation": "Dompet sudah hilang (menyesal)."
+    },
+    {
+      "id": "wb14-4",
+      "pattern": "V てあります (Sudah dilakukan untuk persiapan)",
+      "instruction": "Nyatakan kondisi yang merupakan hasil dari tindakan yang sudah dilakukan dengan te + あります.",
+      "question": "Heya / soujisite / arimasu",
+      "correct": "へやは そうじして あります。",
+      "romaji": "Heya wa souji shite arimasu.",
+      "translation": "Kamar sudah dibersihkan (hasilnya terlihat)."
+    },
+    {
+      "id": "wb14-5",
+      "pattern": "まだ V ていません / もう V てしまいました",
+      "instruction": "Bandingkan sudah/belum menyelesaikan sesuatu.",
+      "question": "Houkokusho / mada / kaite imasen",
+      "correct": "ほうこくしょは まだ かいて いません。",
+      "romaji": "Houkokusho wa mada kaite imasen.",
+      "translation": "Laporan belum ditulis."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex14-1",
+        "sentence": "あたらしい レストランに いっ [ ] みました。",
+        "correct": "て",
+        "translation": "Pergi mencoba restoran baru."
+      },
+      {
+        "id": "ex14-2",
+        "sentence": "りょこうの まえに ホテルを よやく し [ ] おきました。",
+        "correct": "て",
+        "translation": "Sudah memesan hotel sebelum perjalanan."
+      },
+      {
+        "id": "ex14-3",
+        "sentence": "さいふを なくし [ ] しまいました。",
+        "correct": "て",
+        "translation": "Dompet sudah hilang (menyesal)."
+      },
+      {
+        "id": "ex14-4",
+        "sentence": "まどが あけ [ ] あります。",
+        "correct": "て",
+        "translation": "Jendela sudah dibuka (dalam kondisi terbuka)."
+      },
+      {
+        "id": "ex14-5",
+        "sentence": "しゅくだいは もう し [ ] しまいました。",
+        "correct": "て",
+        "translation": "PR sudah selesai dikerjakan."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex14-6",
+        "question": "'Tabete mimasu' berarti:",
+        "options": [
+          {
+            "text": "Sudah pernah makan",
+            "correct": false
+          },
+          {
+            "text": "Mencoba makan (untuk pertama kali)",
+            "correct": true
+          },
+          {
+            "text": "Sedang makan",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex14-7",
+        "question": "'Kagi wo kakete okimashita' (sudah mengunci pintu sebelumnya) menggunakan pola:",
+        "options": [
+          {
+            "text": "て + います",
+            "correct": false
+          },
+          {
+            "text": "て + おきます",
+            "correct": true
+          },
+          {
+            "text": "て + みます",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex14-8",
+        "question": "Nuansa dari 'kagi wo wasurete shimaimashita' adalah:",
+        "options": [
+          {
+            "text": "Senang sudah melupakan kunci",
+            "correct": false
+          },
+          {
+            "text": "Menyesal/tidak sengaja lupa membawa kunci",
+            "correct": true
+          },
+          {
+            "text": "Sengaja meninggalkan kunci",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "あしたは だいじな かいぎが あります。だから きょう しりょうを ぜんぶ よんで おきました。パソコンも じゅんびして おきました。でも プレゼンの れんしゅうは まだ して いません。いまから れんしゅうして みます。",
+      "questions": [
+        {
+          "id": "ex14-9",
+          "question": "あした かいぎが あります。",
+          "correct": "T"
+        },
+        {
+          "id": "ex14-10",
+          "question": "しりょうは まだ よんで いません。",
+          "correct": "F"
+        },
+        {
+          "id": "ex14-11",
+          "question": "プレゼンの れんしゅうは もう おわりました。",
+          "correct": "F"
+        }
+      ]
+    }
+  }
+}

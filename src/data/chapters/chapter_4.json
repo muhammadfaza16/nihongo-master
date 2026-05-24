@@ -1,0 +1,835 @@
+{
+  "id": 4,
+  "title": "Lesson 4: Waktu & Aktivitas Dasar (Masu Form)",
+  "desc": "Mempelajari cara menyebutkan jam, hari, dan memperkenalkan Kata Kerja formal (Masu-Form) untuk rutinitas masa kini dan masa lalu.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v4-1",
+      "rom": "Okimasu",
+      "kana": "おきます",
+      "kanji": "起きます",
+      "en": "Bangun (tidur)",
+      "audio": ""
+    },
+    {
+      "id": "v4-2",
+      "rom": "Nemasu",
+      "kana": "ねます",
+      "kanji": "寝ます",
+      "en": "Tidur",
+      "audio": ""
+    },
+    {
+      "id": "v4-3",
+      "rom": "Hatarakimasu",
+      "kana": "はたらきます",
+      "kanji": "働きます",
+      "en": "Bekerja",
+      "audio": ""
+    },
+    {
+      "id": "v4-4",
+      "rom": "Yasumimasu",
+      "kana": "やすみます",
+      "kanji": "休みます",
+      "en": "Beristirahat / Libur",
+      "audio": ""
+    },
+    {
+      "id": "v4-5",
+      "rom": "Benkyoushimasu",
+      "kana": "べんきょうします",
+      "kanji": "勉強します",
+      "en": "Belajar",
+      "audio": ""
+    },
+    {
+      "id": "v4-6",
+      "rom": "Owarimasu",
+      "kana": "おわります",
+      "kanji": "終わります",
+      "en": "Selesai / Berakhir",
+      "audio": ""
+    },
+    {
+      "id": "v4-7",
+      "rom": "Depaato",
+      "kana": "デパート",
+      "kanji": "",
+      "en": "Department store",
+      "audio": ""
+    },
+    {
+      "id": "v4-8",
+      "rom": "Ginkou",
+      "kana": "ぎんこう",
+      "kanji": "銀行",
+      "en": "Bank",
+      "audio": ""
+    },
+    {
+      "id": "v4-9",
+      "rom": "Yuubinkyoku",
+      "kana": "ゆうびんきょく",
+      "kanji": "郵便局",
+      "en": "Kantor Pos",
+      "audio": ""
+    },
+    {
+      "id": "v4-10",
+      "rom": "Toshokan",
+      "kana": "としょかん",
+      "kanji": "図書館",
+      "en": "Perpustakaan",
+      "audio": ""
+    },
+    {
+      "id": "v4-11",
+      "rom": "Bijutsukan",
+      "kana": "びじゅつかん",
+      "kanji": "美術館",
+      "en": "Museum Seni",
+      "audio": ""
+    },
+    {
+      "id": "v4-12",
+      "rom": "Ima",
+      "kana": "いま",
+      "kanji": "今",
+      "en": "Sekarang",
+      "audio": ""
+    },
+    {
+      "id": "v4-13",
+      "rom": "~Ji",
+      "kana": "〜じ",
+      "kanji": "〜時",
+      "en": "Jam ~",
+      "audio": ""
+    },
+    {
+      "id": "v4-14",
+      "rom": "~Fun / ~Pun",
+      "kana": "〜ふん / 〜ぷん",
+      "kanji": "〜分",
+      "en": "Menit ~",
+      "audio": ""
+    },
+    {
+      "id": "v4-15",
+      "rom": "Han",
+      "kana": "はん",
+      "kanji": "半",
+      "en": "Setengah (30 Menit)",
+      "audio": ""
+    },
+    {
+      "id": "v4-16",
+      "rom": "Nanji",
+      "kana": "なんじ",
+      "kanji": "何時",
+      "en": "Jam berapa?",
+      "audio": ""
+    },
+    {
+      "id": "v4-17",
+      "rom": "Nanpun",
+      "kana": "なんぷん",
+      "kanji": "何分",
+      "en": "Menit berapa?",
+      "audio": ""
+    },
+    {
+      "id": "v4-18",
+      "rom": "Gozen",
+      "kana": "ごぜん",
+      "kanji": "午前",
+      "en": "AM (Pagi)",
+      "audio": ""
+    },
+    {
+      "id": "v4-19",
+      "rom": "Gogo",
+      "kana": "ごご",
+      "kanji": "午後",
+      "en": "PM (Siang-Malam)",
+      "audio": ""
+    },
+    {
+      "id": "v4-20",
+      "rom": "Asa",
+      "kana": "あさ",
+      "kanji": "朝",
+      "en": "Pagi hari",
+      "audio": ""
+    },
+    {
+      "id": "v4-21",
+      "rom": "Hiru",
+      "kana": "ひる",
+      "kanji": "昼",
+      "en": "Siang hari",
+      "audio": ""
+    },
+    {
+      "id": "v4-22",
+      "rom": "Ban / Yoru",
+      "kana": "ばん / よる",
+      "kanji": "晩 / 夜",
+      "en": "Malam hari",
+      "audio": ""
+    },
+    {
+      "id": "v4-23",
+      "rom": "Ototoi",
+      "kana": "おととい",
+      "kanji": "",
+      "en": "Kemarin lusa",
+      "audio": ""
+    },
+    {
+      "id": "v4-24",
+      "rom": "Kinou",
+      "kana": "きのう",
+      "kanji": "昨日",
+      "en": "Kemarin",
+      "audio": ""
+    },
+    {
+      "id": "v4-25",
+      "rom": "Kyou",
+      "kana": "きょう",
+      "kanji": "今日",
+      "en": "Hari ini",
+      "audio": ""
+    },
+    {
+      "id": "v4-26",
+      "rom": "Ashita",
+      "kana": "あした",
+      "kanji": "明日",
+      "en": "Besok",
+      "audio": ""
+    },
+    {
+      "id": "v4-27",
+      "rom": "Asatte",
+      "kana": "あさって",
+      "kanji": "",
+      "en": "Besok lusa",
+      "audio": ""
+    },
+    {
+      "id": "v4-28",
+      "rom": "Kesa",
+      "kana": "けさ",
+      "kanji": "今朝",
+      "en": "Pagi ini",
+      "audio": ""
+    },
+    {
+      "id": "v4-29",
+      "rom": "Konban",
+      "kana": "こんばん",
+      "kanji": "今晩",
+      "en": "Malam ini",
+      "audio": ""
+    },
+    {
+      "id": "v4-30",
+      "rom": "Yasumi",
+      "kana": "やすみ",
+      "kanji": "休み",
+      "en": "Libur / Istirahat",
+      "audio": ""
+    },
+    {
+      "id": "v4-31",
+      "rom": "Hiruyasumi",
+      "kana": "ひるやすみ",
+      "kanji": "昼休み",
+      "en": "Istirahat siang",
+      "audio": ""
+    },
+    {
+      "id": "v4-32",
+      "rom": "Shiken",
+      "kana": "しけん",
+      "kanji": "試験",
+      "en": "Ujian",
+      "audio": ""
+    },
+    {
+      "id": "v4-33",
+      "rom": "Kaigi",
+      "kana": "かいぎ",
+      "kanji": "会議",
+      "en": "Rapat",
+      "audio": ""
+    },
+    {
+      "id": "v4-34",
+      "rom": "Eiga",
+      "kana": "えいが",
+      "kanji": "映画",
+      "en": "Film",
+      "audio": ""
+    },
+    {
+      "id": "v4-35",
+      "rom": "Maiasa",
+      "kana": "まいあさ",
+      "kanji": "毎朝",
+      "en": "Setiap pagi",
+      "audio": ""
+    },
+    {
+      "id": "v4-36",
+      "rom": "Maiban",
+      "kana": "まいばん",
+      "kanji": "毎晩",
+      "en": "Setiap malam",
+      "audio": ""
+    },
+    {
+      "id": "v4-37",
+      "rom": "Mainichi",
+      "kana": "まいにち",
+      "kanji": "毎日",
+      "en": "Setiap hari",
+      "audio": ""
+    },
+    {
+      "id": "v4-38",
+      "rom": "Getsuyoubi",
+      "kana": "げつようび",
+      "kanji": "月曜日",
+      "en": "Hari Senin",
+      "audio": ""
+    },
+    {
+      "id": "v4-39",
+      "rom": "Kayoubi",
+      "kana": "かようび",
+      "kanji": "火曜日",
+      "en": "Hari Selasa",
+      "audio": ""
+    },
+    {
+      "id": "v4-40",
+      "rom": "Suiyoubi",
+      "kana": "すいようび",
+      "kanji": "水曜日",
+      "en": "Hari Rabu",
+      "audio": ""
+    },
+    {
+      "id": "v4-41",
+      "rom": "Mokuyoubi",
+      "kana": "もくようび",
+      "kanji": "木曜日",
+      "en": "Hari Kamis",
+      "audio": ""
+    },
+    {
+      "id": "v4-42",
+      "rom": "Kinyoubi",
+      "kana": "きんようび",
+      "kanji": "金曜日",
+      "en": "Hari Jumat",
+      "audio": ""
+    },
+    {
+      "id": "v4-43",
+      "rom": "Doyoubi",
+      "kana": "どようび",
+      "kanji": "土曜日",
+      "en": "Hari Sabtu",
+      "audio": ""
+    },
+    {
+      "id": "v4-44",
+      "rom": "Nichiyoubi",
+      "kana": "にちようび",
+      "kanji": "日曜日",
+      "en": "Hari Minggu",
+      "audio": ""
+    },
+    {
+      "id": "v4-45",
+      "rom": "Nanyoubi",
+      "kana": "なんようび",
+      "kanji": "何曜日",
+      "en": "Hari apa?",
+      "audio": ""
+    },
+    {
+      "id": "v4-46",
+      "rom": "Taihen desu ne",
+      "kana": "たいへんですね",
+      "kanji": "大変ですね",
+      "en": "Pasti berat ya (Simpati)",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g4-1",
+      "title": "1. 今 〜時 〜分 です (Menyebutkan Jam)",
+      "desc": "Struktur dasar menyebutkan waktu dalam bahasa Jepang.",
+      "points": [
+        "Format Jepang memasukkan penanda AM/PM (Gozen/Gogo) DI DEPAN jam. Contoh: Gogo 3-ji (3 PM / Jam 3 sore).",
+        "Setengah (30 menit) menggunakan 半 (Han). Contoh: 4-ji han (Jam 4:30).",
+        "Tanya jam: Ima nanji desu ka? (Sekarang jam berapa?)"
+      ],
+      "formula": "今 [AM/PM] [Angka]時 [Angka]分 です",
+      "native_note": "Karena angka 4 (shi) dan 9 (ku) berbunyi mirip dengan kata 'Kematian' (shinu) dan 'Penderitaan' (kurushii) dalam kepercayaan tradisional Jepang, penyebutan jam 4 selalu dibaca 'yoji' (bukan shiji) dan jam 9 dibaca 'kuji' (bukan kyuuji) untuk menghindari kesialan."
+    },
+    {
+      "id": "g4-2",
+      "title": "2. Kata Kerja Formal: 〜ます (Masu Form)",
+      "desc": "Akhiran 'Masu' digunakan untuk menyatakan rutinitas kebiasaan atau aktivitas masa depan secara sopan (Teineigo).",
+      "points": [
+        "Positif Masa Kini/Depan: 〜ます (Masu). Contoh: Okimasu (Saya bangun).",
+        "Negatif Masa Kini/Depan: 〜ません (Masen). Contoh: Okimasen (Saya tidak bangun).",
+        "Positif Masa Lalu (Past): 〜ました (Mashita). Contoh: Okimashita (Saya sudah/telah bangun).",
+        "Negatif Masa Lalu: 〜ませんでした (Masen deshita). Contoh: Okimasen deshita (Saya tidak bangun tadinya)."
+      ],
+      "formula": "Kata Kerja (Masu / Masen / Mashita / Masen deshita)"
+    },
+    {
+      "id": "g4-3",
+      "title": "3. Partikel Waktu: 〜に (NI)",
+      "desc": "Partikel NI (pada) digunakan JIKA suatu aksi terjadi di titik waktu yang ANGKA-NYA SPESIFIK (ada jam, tanggal, atau bulan).",
+      "points": [
+        "Pakai NI: 6-ji NI okimasu (Bangun PADA jam 6).",
+        "Pakai NI (opsional): Nichiyoubi (ni) okimasu (Bangun pada hari Minggu).",
+        "TIDAK BOLEH pakai NI: Jika keterangan waktunya relatif (hari ini, besok, minggu depan, setiap hari). Contoh BENAR: Kyou okimasu. Contoh SALAH: Kyou ni okimasu."
+      ],
+      "formula": "Waktu (Angka spesifik) に [Kata Kerja]"
+    },
+    {
+      "id": "g4-4",
+      "title": "4. N1 から N2 まで (Dari... Sampai...)",
+      "desc": "Partikel KARA menandakan titik awal, sedangkan MADE menandakan titik akhir (bisa waktu atau tempat).",
+      "points": [
+        "9-ji KARA 5-ji MADE hatarakimasu (Bekerja DARI jam 9 SAMPAI jam 5).",
+        "Bisa juga berdiri sendiri: 9-ji kara hatarakimasu (Saya mulai kerja dari jam 9).",
+        "Bisa diletakkan langsung sebelum 'desu' jika menjelaskan jam operasional: Ginkou wa 9-ji kara 3-ji made desu (Bank buka dari jam 9 sampai 3)."
+      ],
+      "formula": "[Awal] から [Akhir] まで"
+    },
+    {
+      "id": "g4-5",
+      "title": "5. Kalimat1 と Kalimat2 (Partikel TO)",
+      "desc": "Partikel 'TO' menghubungkan dua kata benda. Artinya 'Dan'.",
+      "points": [
+        "Ginkou no yasumi wa Doyoubi TO Nichiyoubi desu (Libur bank adalah hari Sabtu DAN Minggu).",
+        "Tidak bisa digunakan untuk menyambungkan dua kalimat kerja! Hanya benda murni."
+      ],
+      "formula": "Benda1 と Benda2"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "今 ４時５分です。",
+      "rom": "Ima yo-ji go-fun desu.",
+      "en": "Sekarang jam 4 lewat 5 menit."
+    },
+    {
+      "jp": "わたしは 毎朝 ６時に 起きます。",
+      "rom": "Watashi wa maiasa roku-ji ni okimasu.",
+      "en": "Saya bangun pada jam 6 setiap pagi."
+    },
+    {
+      "jp": "きのう 勉強しました。",
+      "rom": "Kinou benkyoushimashita.",
+      "en": "Kemarin saya (telah) belajar."
+    },
+    {
+      "jp": "きのうの晩 勉強しませんでした。",
+      "rom": "Kinou no ban benkyoushimasen deshita.",
+      "en": "Tadi malam saya (telah) tidak belajar."
+    },
+    {
+      "jp": "銀行は ９時から ３時までです。",
+      "rom": "Ginkou wa ku-ji kara san-ji made desu.",
+      "en": "Bank (buka) dari jam 9 sampai jam 3."
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: そちらは何時までですか (Di sana buka sampai jam berapa?)",
+    "dialogue": [
+      {
+        "speaker": "Nomor Bantuan",
+        "jp": "はい、１０４の 石田です。",
+        "rom": "Hai, hyaku-yon no Ishida desu.",
+        "en": "Ya, ini bagian informasi (104), dengan Ishida."
+      },
+      {
+        "speaker": "Karina",
+        "jp": "大和美術館の 電話番号を お願いします。",
+        "rom": "Yamato bijutsukan no denwabangou o onegaishimasu.",
+        "en": "Tolong berikan nomor telepon Museum Seni Yamato."
+      },
+      {
+        "speaker": "Nomor Bantuan",
+        "jp": "大和美術館ですね。かしこまりました。",
+        "rom": "Yamato bijutsukan desu ne. Kashikomarimashita.",
+        "en": "Museum Seni Yamato ya. Baik, dimengerti."
+      },
+      {
+        "speaker": "Museum Yamato",
+        "jp": "はい、大和美術館です。",
+        "rom": "Hai, Yamato bijutsukan desu.",
+        "en": "Ya, ini Museum Seni Yamato."
+      },
+      {
+        "speaker": "Karina",
+        "jp": "すみません。そちらは 何時から 何時までですか。",
+        "rom": "Sumimasen. Sochira wa nan-ji kara nan-ji made desu ka.",
+        "en": "Permisi. Di sana buka dari jam berapa sampai jam berapa?"
+      },
+      {
+        "speaker": "Museum Yamato",
+        "jp": "９時から ４時までです。",
+        "rom": "Ku-ji kara yo-ji made desu.",
+        "en": "Dari jam 9 sampai jam 4."
+      },
+      {
+        "speaker": "Karina",
+        "jp": "休みは 何曜日ですか。",
+        "rom": "Yasumi wa nan-youbi desu ka.",
+        "en": "Liburnya hari apa?"
+      },
+      {
+        "speaker": "Museum Yamato",
+        "jp": "月曜日です。",
+        "rom": "Getsuyoubi desu.",
+        "en": "Hari Senin."
+      },
+      {
+        "speaker": "Karina",
+        "jp": "どうも ありがとうございました。",
+        "rom": "Doumo arigatou gozaimashita.",
+        "en": "Terima kasih banyak tadinya."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] Jika hari ini saya memutuskan 'tidak belajar' (kebiasaan masa kini), kata kerjanya menjadi:",
+      "options": [
+        {
+          "text": "Benkyoushimasu",
+          "correct": false
+        },
+        {
+          "text": "Benkyoushimasen",
+          "correct": true
+        },
+        {
+          "text": "Benkyoushimashita",
+          "correct": false
+        },
+        {
+          "text": "Benkyoushimasen deshita",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] Terjemahkan: 'Tidur DARI jam 10 malam SAMPAI jam 6 pagi'.\nYoru 10-ji [     ] asa 6-ji [     ] nemasu. (Tulis dengan koma: kata1, kata2)",
+      "answer": "kara, made"
+    },
+    {
+      "type": "mcq",
+      "question": "[Grammar Check] Kalimat mana yang penggunaan partikel NI-nya TEPAT?",
+      "options": [
+        {
+          "text": "Ashita ni benkyoushimasu.",
+          "correct": false
+        },
+        {
+          "text": "Kyou ni 6-ji okimasu.",
+          "correct": false
+        },
+        {
+          "text": "Asa 6-ji ni okimasu.",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu C] Anda ingin bertanya jam operasional bank: 'Bank dari jam berapa sampai jam berapa?'\nGinkou wa [       ] kara nan-ji made desu ka.",
+      "answer": "nan-ji"
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Menanyakan Jam Buka-Tutup",
+      "situation": "Menanyakan jam operasional dari perpustakaan umum",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "図書館は 何時から 何時まで ですか。",
+          "rom": "Toshokan wa nan-ji kara nan-ji made desu ka.",
+          "en": "Perpustakaan buka dari jam berapa sampai jam berapa?"
+        },
+        {
+          "speaker": "B",
+          "jp": "午前9時から 午後5時まで です。",
+          "rom": "Gozen ku-ji kara gogo go-ji made desu.",
+          "en": "Dari jam 9 pagi sampai jam 5 sore."
+        },
+        {
+          "speaker": "A",
+          "jp": "休みは 何曜日ですか。",
+          "rom": "Yasumi wa nan-youbi desu ka.",
+          "en": "Liburnya hari apa?"
+        },
+        {
+          "speaker": "B",
+          "jp": "月曜日です。",
+          "rom": "Getsuyoubi desu.",
+          "en": "Hari Senin."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Menanyakan Waktu Ujian/Acara",
+      "situation": "Bertanya tentang jam mulai suatu kegiatan formal",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "試験は 何時に 始まりますか。",
+          "rom": "Shiken wa nan-ji ni hajimarimasu ka.",
+          "en": "Ujian dimulai jam berapa?"
+        },
+        {
+          "speaker": "B",
+          "jp": "午前10時に 始まります。",
+          "rom": "Gozen juu-ji ni hajimarimasu.",
+          "en": "Dimulai jam 10 pagi."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。ありがとう ございます。",
+          "rom": "Sou desu ka. Arigatou gozaimasu.",
+          "en": "Oh begitu. Terima kasih banyak."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Menyapa Teman yang Kerja Lembur",
+      "situation": "Menyapa kolega kerja yang terlihat sangat lelah bekerja hingga malam",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "毎晩 遅いですね。大変ですね。",
+          "rom": "Maiban osoi desu ne. Taihen desu ne.",
+          "en": "Tiap malam pulang lambat ya. Berat/capek sekali ya."
+        },
+        {
+          "speaker": "B",
+          "jp": "ええ。10時まで 働きます。",
+          "rom": "Ee. Juu-ji made hatarakimasu.",
+          "en": "Iya. Saya bekerja sampai jam 10 malam."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r4-1",
+      "jp": "今 何時ですか。... ２時１０分です。",
+      "rom": "Ima nanji desu ka? ... Niji juppun desu.",
+      "en": "Sekarang jam berapa? ... Jam 2 lewat 10 menit."
+    },
+    {
+      "id": "r4-2",
+      "jp": "ニューヨークは 今 何時ですか。... 午前４時です。",
+      "rom": "Nyuuyooku wa ima nanji desu ka? ... Gozen yoji desu.",
+      "en": "New York sekarang jam berapa? ... Jam 4 pagi."
+    },
+    {
+      "id": "r4-3",
+      "jp": "試験は 何曜日に ありますか。... 火曜日に あります。",
+      "rom": "Shiken wa nanyoubi ni arimasu ka? ... Kayoubi ni arimasu.",
+      "en": "Ujiannya hari apa? ... Hari Selasa."
+    },
+    {
+      "id": "r4-4",
+      "jp": "銀行は 何時から 何時まで ですか。... ９時から ３時まで です。",
+      "rom": "Ginkou wa naji kara nanji made desu ka? ... Kujihana kara sanji made desu.",
+      "en": "Bank buka dari jam berapa sampai jam berapa? ... Dari jam 9 sampai jam 3."
+    },
+    {
+      "id": "r4-5",
+      "jp": "毎日 何時に 起きますか。... ６時に 起きます。",
+      "rom": "Mainichi nanji ni okimasu ka? ... Rokuji ni okimasu.",
+      "en": "Setiap hari bangun jam berapa? ... Bangun jam 6."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb4-1",
+      "pattern": "V ます (Positif, Sekarang/Masa Depan)",
+      "instruction": "Ubah kata kerja berikut ke bentuk formal positif (masu-form) dan buat kalimat.",
+      "question": "Okiru / gozen rokuji",
+      "correct": "ごぜん ６時に 起きます。",
+      "romaji": "Gozen rokuji ni okimasu.",
+      "translation": "Saya bangun jam 6 pagi."
+    },
+    {
+      "id": "wb4-2",
+      "pattern": "V ません (Negatif)",
+      "instruction": "Buat kalimat negatif dengan mengubah kata kerja ke bentuk negatif (masen).",
+      "question": "Sakura Daigaku / benkyoushimasu → iie",
+      "correct": "さくら大学で 勉強しません。",
+      "romaji": "Sakura Daigaku de benkyoushimasen.",
+      "translation": "Saya tidak belajar di Universitas Sakura."
+    },
+    {
+      "id": "wb4-3",
+      "pattern": "V ました (Positif, Lampau)",
+      "instruction": "Buat kalimat lampau positif untuk aktivitas yang sudah selesai dilakukan.",
+      "question": "Kinoo / benkyoushimasu",
+      "correct": "きのう 勉強しました。",
+      "romaji": "Kinou benkyoushimashita.",
+      "translation": "Kemarin saya belajar."
+    },
+    {
+      "id": "wb4-4",
+      "pattern": "V ませんでした (Negatif Lampau)",
+      "instruction": "Buat kalimat negatif lampau untuk aktivitas yang TIDAK dilakukan.",
+      "question": "Kinoo / neru → iie",
+      "correct": "きのう 寝ませんでした。",
+      "romaji": "Kinou nemasen deshita.",
+      "translation": "Kemarin saya tidak tidur."
+    },
+    {
+      "id": "wb4-5",
+      "pattern": "N から N まで",
+      "instruction": "Nyatakan rentang waktu dari ... sampai ... menggunakan から dan まで.",
+      "question": "Shigoto / 9ji kara 5ji made",
+      "correct": "しごとは ９時から ５時まで です。",
+      "romaji": "Shigoto wa kuji kara goji made desu.",
+      "translation": "Pekerjaan dari jam 9 sampai jam 5."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex4-1",
+        "sentence": "まいにち ６時 [ ] おきます。",
+        "correct": "に",
+        "translation": "Setiap hari bangun jam 6."
+      },
+      {
+        "id": "ex4-2",
+        "sentence": "ぎんこうは ９時 [ ] ３時 [ ] です。",
+        "correct": "から",
+        "translation": "Bank buka dari jam 9 sampai jam 3."
+      },
+      {
+        "id": "ex4-3",
+        "sentence": "きのう しごとを [ ]。",
+        "correct": "しました",
+        "translation": "Kemarin bekerja."
+      },
+      {
+        "id": "ex4-4",
+        "sentence": "あした べんきょうし [ ]。",
+        "correct": "ます",
+        "translation": "Besok akan belajar."
+      },
+      {
+        "id": "ex4-5",
+        "sentence": "なんじ [ ] ねますか。",
+        "correct": "に",
+        "translation": "Tidur jam berapa?"
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex4-6",
+        "question": "Jam berapa sekarang? Baca angka berikut:\n「７：３０」",
+        "options": [
+          {
+            "text": "しちじ さんじゅっぷん",
+            "correct": true
+          },
+          {
+            "text": "ななじ みっつ",
+            "correct": false
+          },
+          {
+            "text": "しちじ はんです",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex4-7",
+        "question": "Bentuk lampau negatif dari 'tabemasu' (makan) adalah:",
+        "options": [
+          {
+            "text": "たべません",
+            "correct": false
+          },
+          {
+            "text": "たべませんでした",
+            "correct": true
+          },
+          {
+            "text": "たべましたか",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex4-8",
+        "question": "Menjawab 'Hai' untuk pertanyaan 'Mainichi benkyoushimasu ka?'",
+        "options": [
+          {
+            "text": "はい、べんきょうします。",
+            "correct": true
+          },
+          {
+            "text": "はい、べんきょうしません。",
+            "correct": false
+          },
+          {
+            "text": "いいえ、べんきょうします。",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "わたしは まいにち ６時に おきます。そして、７時ごろ かいしゃに いきます。しごとは ９時から ６時まで です。よる １０時ごろ ねます。きのうは とても いそがしかった です。",
+      "questions": [
+        {
+          "id": "ex4-9",
+          "question": "この人は まいにち ６時に おきます。",
+          "correct": "T"
+        },
+        {
+          "id": "ex4-10",
+          "question": "しごとは ８時から はじまります。",
+          "correct": "F"
+        },
+        {
+          "id": "ex4-11",
+          "question": "きのうは いそがしかったです。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,459 @@
+{
+  "id": 29,
+  "title": "Lesson 29: Hearsay vs Inference (〜そうです / 〜ようです)",
+  "desc": "Membedakan dua pola dugaan penting: そうです untuk menyampaikan informasi dari sumber lain ('katanya ~'), dan ようです untuk menyatakan kesimpulan berdasarkan observasi langsung ('tampaknya ~'). Juga dibahas: らしいです.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v29-1",
+      "rom": "Nyūsu",
+      "kana": "ニュース",
+      "kanji": "",
+      "en": "Berita (news)",
+      "audio": ""
+    },
+    {
+      "id": "v29-2",
+      "rom": "Tenpō",
+      "kana": "てんぽ",
+      "kanji": "店舗",
+      "en": "Toko / Gerai",
+      "audio": ""
+    },
+    {
+      "id": "v29-3",
+      "rom": "Heisa (shimasu)",
+      "kana": "へいさ（します）",
+      "kanji": "閉鎖（します）",
+      "en": "Menutup (usaha/toko) / Pembubaran",
+      "audio": ""
+    },
+    {
+      "id": "v29-4",
+      "rom": "Torikeshimasu",
+      "kana": "とりけします",
+      "kanji": "取り消します",
+      "en": "Membatalkan / Menganulir",
+      "audio": ""
+    },
+    {
+      "id": "v29-5",
+      "rom": "Enzuru",
+      "kana": "えんずる",
+      "kanji": "演ずる",
+      "en": "Memerankan / Bermain peran",
+      "audio": ""
+    },
+    {
+      "id": "v29-6",
+      "rom": "Taifuu",
+      "kana": "たいふう",
+      "kanji": "台風",
+      "en": "Topan / Taufan",
+      "audio": ""
+    },
+    {
+      "id": "v29-7",
+      "rom": "Kakaku",
+      "kana": "かかく",
+      "kanji": "価格",
+      "en": "Harga",
+      "audio": ""
+    },
+    {
+      "id": "v29-8",
+      "rom": "Keizai",
+      "kana": "けいざい",
+      "kanji": "経済",
+      "en": "Ekonomi",
+      "audio": ""
+    },
+    {
+      "id": "v29-9",
+      "rom": "Jishin",
+      "kana": "じしん",
+      "kanji": "地震",
+      "en": "Gempa bumi",
+      "audio": ""
+    },
+    {
+      "id": "v29-10",
+      "rom": "Higai",
+      "kana": "ひがい",
+      "kanji": "被害",
+      "en": "Kerusakan / Korban",
+      "audio": ""
+    },
+    {
+      "id": "v29-11",
+      "rom": "Yasashii",
+      "kana": "やさしい",
+      "kanji": "優しい",
+      "en": "Baik hati / Lembut",
+      "audio": ""
+    },
+    {
+      "id": "v29-12",
+      "rom": "Mendokusai",
+      "kana": "めんどくさい",
+      "kanji": "面倒くさい",
+      "en": "Repot / Merepotkan / Malas",
+      "audio": ""
+    },
+    {
+      "id": "v29-13",
+      "rom": "Kibun",
+      "kana": "きぶん",
+      "kanji": "気分",
+      "en": "Perasaan / Suasana hati / Kondisi",
+      "audio": ""
+    },
+    {
+      "id": "v29-14",
+      "rom": "Saiken",
+      "kana": "さいきん",
+      "kanji": "最近",
+      "en": "Akhir-akhir ini / Belakangan ini",
+      "audio": ""
+    },
+    {
+      "id": "v29-15",
+      "rom": "Uwasa",
+      "kana": "うわさ",
+      "kanji": "噂",
+      "en": "Gosip / Desas-desus / Rumor",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g29-1",
+      "title": "1. 〜そうです (Hearsay / Katanya ~)",
+      "desc": "Menyampaikan informasi yang Anda dengar dari sumber lain (berita, gosip, teman). Pembicara tidak memverifikasi sendiri.",
+      "points": [
+        "Pola: Plain form (kamus/lampau) + そうです。",
+        "Contoh V: Tanaka-san wa kaisha wo yameru sou desu. (Katanya Tanaka akan keluar dari perusahaan).",
+        "Contoh Adj-i: Ano resutoran wa oishii sou desu. (Katanya restoran itu enak).",
+        "Contoh Adj-na: Kare wa shinsetsuda sou desu. (Katanya dia baik hati).",
+        "PERHATIAN: Berbeda dengan そうです untuk 'penampilan visual' (Bab 8 MNN I) yang menggunakan V-stem/Adj-stem!"
+      ],
+      "formula": "Plain form + そうです (hearsay) ≠ Adj-stem + そうです (penampilan)",
+      "native_note": "Untuk menunjukkan sumber informasi, tambahkan: 'Nyūsu ni yoru to...' (Menurut berita...) atau '~san ni yoru to...' (Menurut ~san...)."
+    },
+    {
+      "id": "g29-2",
+      "title": "2. 〜ようです (Inference — Tampaknya ~)",
+      "desc": "Menyatakan kesimpulan atau dugaan berdasarkan informasi/bukti yang Anda lihat atau ketahui langsung.",
+      "points": [
+        "Pola: Plain form + ようです (lebih formal); atau みたいです (lebih kasual/lisan).",
+        "Contoh V: Kare wa byouki no you desu. (Tampaknya dia sakit) — berdasarkan observasi penampilan.",
+        "Contoh Adj: Soto wa samui you desu. (Tampaknya di luar dingin) — berdasarkan melihat orang yang pakai jaket.",
+        "みたいです: Versi kasual dari ようです. Kare, byouki mitai desu ne."
+      ],
+      "formula": "Plain form / N + ようです / みたいです"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "ニュースに よると、大きな 地震が あった そうです。",
+      "rom": "Nyūsu ni yoru to, ookina jishin ga atta sou desu.",
+      "en": "Menurut berita, katanya ada gempa besar."
+    },
+    {
+      "jp": "彼女は 今日 来ない ようです。",
+      "rom": "Kanojo wa kyō konai you desu.",
+      "en": "Tampaknya dia tidak akan datang hari ini."
+    },
+    {
+      "jp": "あの レストランは 予約が 必要だ そうです。",
+      "rom": "Ano resutoran wa yoyaku ga hitsuyōda sou desu.",
+      "en": "Katanya restoran itu perlu reservasi."
+    },
+    {
+      "jp": "外は 雨が 降っている みたいです。",
+      "rom": "Soto wa ame ga futte iru mitai desu.",
+      "en": "Sepertinya di luar sedang hujan."
+    }
+  ],
+  "conversation": {
+    "title": "Gosip Kantor",
+    "dialogue": [
+      {
+        "speaker": "A",
+        "jp": "田中さんの 話を 聞きましたか。",
+        "rom": "Tanaka-san no hanashi wo kikimashita ka.",
+        "en": "Sudah dengar tentang Tanaka-san?"
+      },
+      {
+        "speaker": "B",
+        "jp": "いいえ、何ですか。",
+        "rom": "Iie, nan desu ka.",
+        "en": "Belum, ada apa?"
+      },
+      {
+        "speaker": "A",
+        "jp": "来月、会社を 辞める そうです。",
+        "rom": "Raigetsu, kaisha wo yameru sou desu.",
+        "en": "Katanya bulan depan dia keluar dari perusahaan."
+      },
+      {
+        "speaker": "B",
+        "jp": "え、本当ですか。最近 元気が ない ようでしたが…。",
+        "rom": "E, hontō desu ka. Sakin genki ga nai yō deshita ga...",
+        "en": "Eh, benarkah? Akhir-akhir ini memang tampaknya kurang bersemangat..."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "そうです untuk 'hearsay' menggunakan bentuk:",
+      "options": [
+        {
+          "text": "Plain form + そうです",
+          "correct": true
+        },
+        {
+          "text": "Adj-stem + そうです",
+          "correct": false
+        },
+        {
+          "text": "Masu-form + そうです",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "Sampaikan informasi yang didengar: 'Katanya besok akan hujan'.\nAshita ame ga furu [   ].",
+      "answer": "sou desu"
+    },
+    {
+      "type": "mcq",
+      "question": "みたいです adalah versi ___ dari ようです:",
+      "options": [
+        {
+          "text": "Lebih formal",
+          "correct": false
+        },
+        {
+          "text": "Lebih kasual/lisan",
+          "correct": true
+        },
+        {
+          "text": "Lebih pasti",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Mengomentari Cuaca",
+      "situation": "Melihat keluar jendela",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "外、寒そうですね。",
+          "rom": "Soto, samusō desu ne.",
+          "en": "Sepertinya di luar dingin ya."
+        },
+        {
+          "speaker": "B",
+          "jp": "天気予報では、雪が 降る そうですよ。",
+          "rom": "Tenkiyohō de wa, yuki ga furu sou desu yo.",
+          "en": "Di ramalan cuaca katanya akan turun salju."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r29-1",
+      "jp": "ニュースに よると、明日 台風が 来る そうです。",
+      "rom": "Nyūsu ni yoru to, ashita taifū ga kuru sou desu.",
+      "en": "Menurut berita, katanya besok topan akan datang."
+    },
+    {
+      "id": "r29-2",
+      "jp": "田中さんは 最近 忙しい ようです。",
+      "rom": "Tanaka-san wa sakin isogashii you desu.",
+      "en": "Tampaknya Tanaka-san akhir-akhir ini sibuk."
+    },
+    {
+      "id": "r29-3",
+      "jp": "あの 映画は とても 面白い そうですよ。",
+      "rom": "Ano eiga wa totemo omoshiroi sou desu yo.",
+      "en": "Katanya film itu sangat menarik lho."
+    },
+    {
+      "id": "r29-4",
+      "jp": "彼女は 体の 具合が 悪い みたいです。",
+      "rom": "Kanojo wa karada no guai ga warui mitai desu.",
+      "en": "Sepertinya kondisi badannya kurang baik."
+    },
+    {
+      "id": "r29-5",
+      "jp": "友達に よると、その 店は 閉まった そうです。",
+      "rom": "Tomodachi ni yoru to, sono mise wa shimatta sou desu.",
+      "en": "Menurut teman, katanya toko itu sudah tutup."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb29-1",
+      "pattern": "Plain form + そうです (hearsay)",
+      "instruction": "Laporkan informasi yang Anda dengar: 'Katanya Tanaka sakit'.",
+      "question": "Tanaka-san / byouki / sou desu",
+      "correct": "たなかさんは びょうきだ そうです。",
+      "romaji": "Tanaka-san wa byouki da sou desu.",
+      "translation": "Katanya Tanaka-san sakit."
+    },
+    {
+      "id": "wb29-2",
+      "pattern": "Plain form + ようです (inference)",
+      "instruction": "Nyatakan kesimpulan berdasarkan observasi: 'Tampaknya dia sedang tidur'.",
+      "question": "Kare / nete iru / you desu",
+      "correct": "かれは ねているようです。",
+      "romaji": "Kare wa nete iru you desu.",
+      "translation": "Tampaknya dia sedang tidur."
+    },
+    {
+      "id": "wb29-3",
+      "pattern": "みたいです (kasual)",
+      "instruction": "Ubah kalimat ようです menjadi versi kasual みたいです.",
+      "question": "Soto wa samui you desu → mitai",
+      "correct": "そとは さむいみたいです。",
+      "romaji": "Soto wa samui mitai desu.",
+      "translation": "Sepertinya di luar dingin (kasual)."
+    },
+    {
+      "id": "wb29-4",
+      "pattern": "〜に よると、〜そうです",
+      "instruction": "Gunakan sumber informasi dalam kalimat.",
+      "question": "Nyuusu / ashita / ame / furu / sou desu",
+      "correct": "ニュースによると、あした あめが ふるそうです。",
+      "romaji": "Nyuusu ni yoru to, ashita ame ga furu sou desu.",
+      "translation": "Menurut berita, katanya besok akan hujan."
+    },
+    {
+      "id": "wb29-5",
+      "pattern": "Bedakan sou desu (hearsay vs visual)",
+      "instruction": "Tentukan: mana yang 'hearsay' dan mana yang 'penampilan visual'?\nA: おいしそうです / B: おいしいそうです",
+      "question": "Mana yang menyatakan 'Katanya enak' (informasi dari luar)?",
+      "correct": "B: おいしいそうです (hearsay — plain form + sou desu)",
+      "romaji": "B: oishii sou desu",
+      "translation": "Katanya enak (menurut orang)"
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex29-1",
+        "sentence": "ニュースに よると、じしんが あった [ ]。",
+        "correct": "そうです",
+        "translation": "Menurut berita, katanya ada gempa."
+      },
+      {
+        "id": "ex29-2",
+        "sentence": "かれは びょうきの [ ] です。",
+        "correct": "よう",
+        "translation": "Tampaknya dia sakit."
+      },
+      {
+        "id": "ex29-3",
+        "sentence": "そとは さむい [ ] ですね。",
+        "correct": "みたい",
+        "translation": "Sepertinya di luar dingin ya."
+      },
+      {
+        "id": "ex29-4",
+        "sentence": "ともだちに よると、あの てんは やすい [ ]。",
+        "correct": "そうです",
+        "translation": "Menurut teman, katanya toko itu murah."
+      },
+      {
+        "id": "ex29-5",
+        "sentence": "かれじょは きょう こない [ ]。",
+        "correct": "ようです",
+        "translation": "Tampaknya dia tidak akan datang hari ini."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex29-6",
+        "question": "Perbedaan antara 'oishisou desu' dan 'oishii sou desu':",
+        "options": [
+          {
+            "text": "Tidak ada perbedaan",
+            "correct": false
+          },
+          {
+            "text": "oishisou = tampak enak (visual); oishii sou = katanya enak (hearsay)",
+            "correct": true
+          },
+          {
+            "text": "oishii sou = tampak enak; oishisou = katanya enak",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex29-7",
+        "question": "Kalimat yang menggunakan ようです dengan benar adalah:",
+        "options": [
+          {
+            "text": "かれは かぜの ようです (berdasarkan melihat dia bersin-bersin)",
+            "correct": true
+          },
+          {
+            "text": "かれは かぜ そうです (hearsay)",
+            "correct": false
+          },
+          {
+            "text": "かれは かぜ らしいです (dari informasi pihak ketiga)",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex29-8",
+        "question": "みたいです dan ようです memiliki makna yang:",
+        "options": [
+          {
+            "text": "Berbeda sepenuhnya",
+            "correct": false
+          },
+          {
+            "text": "Sama, tapi みたいです lebih kasual",
+            "correct": true
+          },
+          {
+            "text": "みたいです lebih pasti dari ようです",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "ともだちから きいたのですが、たなかさんは らいげつ かいしゃを やめるそうです。さいきん、あまり げんきが ないようです。まいにち おそくまで はたらいているみたいで、つかれているのかも しれません。",
+      "questions": [
+        {
+          "id": "ex29-9",
+          "question": "このじょうほうは ともだちから きいたものです。",
+          "correct": "T"
+        },
+        {
+          "id": "ex29-10",
+          "question": "たなかさんは らいねん かいしゃを やめるそうです。",
+          "correct": "F"
+        },
+        {
+          "id": "ex29-11",
+          "question": "たなかさんは まいにち おそくまで はたらいているようです。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

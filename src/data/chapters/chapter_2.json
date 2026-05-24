@@ -1,0 +1,804 @@
+{
+  "id": 2,
+  "title": "Lesson 2: Kata Tunjuk Benda (Kore, Sore, Are)",
+  "desc": "Membedah Bab 2 Minna No Nihongo. Anda akan belajar cara menunjuk benda di sekitar Anda, menyatakan kepemilikan mutlak, serta meminta konfirmasi fakta.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v2-1",
+      "rom": "Kore",
+      "kana": "これ",
+      "kanji": "",
+      "en": "Ini (benda dekat pembicara)"
+    },
+    {
+      "id": "v2-2",
+      "rom": "Sore",
+      "kana": "それ",
+      "kanji": "",
+      "en": "Itu (benda dekat lawan bicara)"
+    },
+    {
+      "id": "v2-3",
+      "rom": "Are",
+      "kana": "あれ",
+      "kanji": "",
+      "en": "Itu jauh (jauh dari keduanya)"
+    },
+    {
+      "id": "v2-4",
+      "rom": "Kono ~",
+      "kana": "この",
+      "kanji": "",
+      "en": "~ ini (menempel pada benda)"
+    },
+    {
+      "id": "v2-5",
+      "rom": "Sono ~",
+      "kana": "その",
+      "kanji": "",
+      "en": "~ itu (menempel pada benda)"
+    },
+    {
+      "id": "v2-6",
+      "rom": "Ano ~",
+      "kana": "あの",
+      "kanji": "",
+      "en": "~ itu jauh (menempel pada benda)"
+    },
+    {
+      "id": "v2-7",
+      "rom": "Hon",
+      "kana": "ほん",
+      "kanji": "本",
+      "en": "Buku"
+    },
+    {
+      "id": "v2-8",
+      "rom": "Jisho",
+      "kana": "じしょ",
+      "kanji": "辞書",
+      "en": "Kamus"
+    },
+    {
+      "id": "v2-9",
+      "rom": "Zasshi",
+      "kana": "ざっし",
+      "kanji": "雑誌",
+      "en": "Majalah"
+    },
+    {
+      "id": "v2-10",
+      "rom": "Shinbun",
+      "kana": "しんぶん",
+      "kanji": "新聞",
+      "en": "Koran"
+    },
+    {
+      "id": "v2-11",
+      "rom": "Nooto",
+      "kana": "ノート",
+      "kanji": "",
+      "en": "Buku catatan"
+    },
+    {
+      "id": "v2-12",
+      "rom": "Techou",
+      "kana": "てちょう",
+      "kanji": "手帳",
+      "en": "Buku agenda"
+    },
+    {
+      "id": "v2-13",
+      "rom": "Meishi",
+      "kana": "めいし",
+      "kanji": "名刺",
+      "en": "Kartu nama"
+    },
+    {
+      "id": "v2-14",
+      "rom": "Kaado",
+      "kana": "カード",
+      "kanji": "",
+      "en": "Kartu (Kredit/ATM)"
+    },
+    {
+      "id": "v2-15",
+      "rom": "Enpitsu",
+      "kana": "えんぴつ",
+      "kanji": "鉛筆",
+      "en": "Pensil"
+    },
+    {
+      "id": "v2-16",
+      "rom": "Boorupen",
+      "kana": "ボールペン",
+      "kanji": "",
+      "en": "Pulpen"
+    },
+    {
+      "id": "v2-17",
+      "rom": "Shaapu penshiru",
+      "kana": "シャープペンシル",
+      "kanji": "",
+      "en": "Pensil mekanik"
+    },
+    {
+      "id": "v2-18",
+      "rom": "Kagi",
+      "kana": "かぎ",
+      "kanji": "鍵",
+      "en": "Kunci"
+    },
+    {
+      "id": "v2-19",
+      "rom": "Tokei",
+      "kana": "とけい",
+      "kanji": "時計",
+      "en": "Jam / Arloji"
+    },
+    {
+      "id": "v2-20",
+      "rom": "Kasa",
+      "kana": "かさ",
+      "kanji": "傘",
+      "en": "Payung"
+    },
+    {
+      "id": "v2-21",
+      "rom": "Kaban",
+      "kana": "かばん",
+      "kanji": "鞄",
+      "en": "Tas"
+    },
+    {
+      "id": "v2-22",
+      "rom": "Terebi",
+      "kana": "テレビ",
+      "kanji": "",
+      "en": "Televisi"
+    },
+    {
+      "id": "v2-23",
+      "rom": "Rajio",
+      "kana": "ラジオ",
+      "kanji": "",
+      "en": "Radio"
+    },
+    {
+      "id": "v2-24",
+      "rom": "Kamera",
+      "kana": "カメラ",
+      "kanji": "",
+      "en": "Kamera"
+    },
+    {
+      "id": "v2-25",
+      "rom": "Konpyuutaa",
+      "kana": "コンピューター",
+      "kanji": "",
+      "en": "Komputer"
+    },
+    {
+      "id": "v2-26",
+      "rom": "Kuruma",
+      "kana": "くるま",
+      "kanji": "車",
+      "en": "Mobil"
+    },
+    {
+      "id": "v2-27",
+      "rom": "Tsukue",
+      "kana": "つくえ",
+      "kanji": "机",
+      "en": "Meja"
+    },
+    {
+      "id": "v2-28",
+      "rom": "Isu",
+      "kana": "いす",
+      "kanji": "椅子",
+      "en": "Kursi"
+    },
+    {
+      "id": "v2-29",
+      "rom": "Chokoreeto",
+      "kana": "チョコレート",
+      "kanji": "",
+      "en": "Cokelat"
+    },
+    {
+      "id": "v2-30",
+      "rom": "Koohii",
+      "kana": "コーヒー",
+      "kanji": "",
+      "en": "Kopi"
+    },
+    {
+      "id": "v2-31",
+      "rom": "Eigo",
+      "kana": "えいご",
+      "kanji": "英語",
+      "en": "Bahasa Inggris"
+    },
+    {
+      "id": "v2-32",
+      "rom": "Nihongo",
+      "kana": "にほんご",
+      "kanji": "日本語",
+      "en": "Bahasa Jepang"
+    },
+    {
+      "id": "v2-33",
+      "rom": "~go",
+      "kana": "〜ご",
+      "kanji": "〜語",
+      "en": "Bahasa ~"
+    },
+    {
+      "id": "v2-34",
+      "rom": "Nan",
+      "kana": "なん",
+      "kanji": "何",
+      "en": "Apa?"
+    },
+    {
+      "id": "v2-35",
+      "rom": "Sou",
+      "kana": "そう",
+      "kanji": "",
+      "en": "Begitu"
+    },
+    {
+      "id": "v2-36",
+      "rom": "Chigaimasu",
+      "kana": "ちがいます",
+      "kanji": "違います",
+      "en": "Bukan / Salah"
+    },
+    {
+      "id": "v2-37",
+      "rom": "Sou desu ka",
+      "kana": "そうですか",
+      "kanji": "",
+      "en": "Oh, begitu (Mengerti)"
+    },
+    {
+      "id": "v2-38",
+      "rom": "Anoo",
+      "kana": "あのう",
+      "kanji": "",
+      "en": "Mmm... (Ragu-ragu / memulai pembicaraan)"
+    },
+    {
+      "id": "v2-39",
+      "rom": "Honno kimochi desu",
+      "kana": "ほんのきもちです",
+      "kanji": "ほんの気持ちです",
+      "en": "Ini sekadar tanda mata (bingkisan)"
+    },
+    {
+      "id": "v2-40",
+      "rom": "Douzo",
+      "kana": "どうぞ",
+      "kanji": "",
+      "en": "Silakan (saat menawarkan barang)"
+    },
+    {
+      "id": "v2-41",
+      "rom": "Doumo",
+      "kana": "どうも",
+      "kanji": "",
+      "en": "Terima kasih (singkat)"
+    },
+    {
+      "id": "v2-42",
+      "rom": "Doumo arigatou gozaimasu",
+      "kana": "どうもありがとうございます",
+      "kanji": "",
+      "en": "Terima kasih banyak (sangat sopan)"
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g2-1",
+      "title": "1. これ / それ / あれ は N です (Kata Tunjuk Mandiri)",
+      "desc": "Kata ganti penunjuk benda. Penggunaannya MURNI bergantung pada JARAK fisik antara pembicara dan lawan bicara.",
+      "points": [
+        "これ (Kore) = Ini. Digunakan jika benda berada dalam jangkauan tangan PEMBICARA.",
+        "それ (Sore) = Itu. Digunakan jika benda berada dalam jangkauan tangan LAWAN BICARA.",
+        "あれ (Are) = Itu jauh. Digunakan jika benda berada jauh dari KEDUANYA.",
+        "Kata-kata ini berdiri sendiri sebagai KATA BENDA. Artinya, mereka bisa langsung diikuti partikel 'wa' (Kore wa...). JANGAN PERNAH menambahkan kata benda di belakangnya (Kore hon wa = SALAH FATAL)."
+      ],
+      "formula": "これ/それ/あれ は [Benda] です",
+      "native_note": "Dalam percakapan cepat sehari-hari, native speaker sangat sering menyingkat 'Kore wa...' menjadi 'Kore...' saja dengan intonasi naik untuk bertanya (misal: 'Kore, nani?' = 'Ini apa?'). Juga untuk menyangkal kepemilikan, singkatan 'ja nai' jauh lebih kasual digunakan dibanding 'ja arimasen' (misal: 'watashi no janai' = 'bukan milik saya')."
+    },
+    {
+      "id": "g2-2",
+      "title": "2. この / その / あの + Noun (Kata Tunjuk Penempel)",
+      "desc": "Berbeda dengan Kore/Sore/Are, kelompok ini adalah Kata Sifat Penunjuk (Demonstrative Adjectives).",
+      "points": [
+        "Kono/Sono/Ano TIDAK BISA berdiri sendiri. Mereka WAJIB menempel secara langsung pada kata benda yang ditunjuk.",
+        "Salah: Kono wa hon desu. (Kono tidak bisa diikuti partikel).",
+        "Benar: Kono hon wa watashi no desu. (Buku INI adalah milik saya).",
+        "Aturan jaraknya (pembicara vs lawan bicara) persis sama dengan Kore/Sore/Are."
+      ],
+      "formula": "この/その/あの [Benda] は ~ です"
+    },
+    {
+      "id": "g2-3",
+      "title": "3. そうです / そうじゃありません (Konfirmasi Instan)",
+      "desc": "Cara instan dan natural orang Jepang menjawab pertanyaan Ya/Tidak yang berfokus pada IDENTITAS benda.",
+      "points": [
+        "Pertanyaan: Sore wa jisho desu ka. (Apakah itu kamus?)",
+        "Jawaban YA: はい、そうです。(Hai, sou desu - Ya, betul begitu).",
+        "Jawaban TIDAK: いいえ、そうじゃありません。(Iie, sou ja arimasen - Tidak, bukan begitu).",
+        "Alternatif TIDAK: いいえ、ちがいます。(Iie, chigaimasu - Tidak, salah/berbeda). Kata kerja 'chigaimasu' sangat sering dipakai dalam percakapan nyata."
+      ],
+      "formula": "はい、そうです / いいえ、ちがいます"
+    },
+    {
+      "id": "g2-4",
+      "title": "4. N1 の N2 (Topik/Isi Buku)",
+      "desc": "Di Bab 1 kita belajar partikel 'no' untuk kepemilikan. Di Bab 2, fungsinya bertambah untuk menjelaskan ISI atau TOPIK suatu media.",
+      "points": [
+        "Kore wa konpyuutaa NO hon desu (Ini adalah buku TENTANG/ISI komputer).",
+        "Sore wa jidousha NO zasshi desu (Itu adalah majalah TENTANG mobil)."
+      ],
+      "formula": "[Topik/Isi] の [Media/Benda]"
+    },
+    {
+      "id": "g2-5",
+      "title": "5. N1 の N2 (Penghilangan N2)",
+      "desc": "Jika N2 (benda utama) sudah sangat jelas dari konteks atau sudah disebutkan sebelumnya, N2 boleh (dan disarankan) DIHAPUS agar kalimat tidak bertele-tele.",
+      "points": [
+        "Pertanyaan: Are wa dare no kaban desu ka? (Itu tas milik siapa?)",
+        "Jawaban Asli: Sato-san no kaban desu. (Tas milik Bu Sato).",
+        "Jawaban Natural: Sato-san NO desu. (Milik Bu Sato - Kata 'kaban' dihapus karena mubazir).",
+        "Pengecualian: Jika N2 adalah ORANG, tidak boleh dihapus. (Miraa-san wa IMC no shain desu -> JANGAN jadi IMC no desu)."
+      ],
+      "formula": "[Pemilik] の (Benda dihapus) です"
+    },
+    {
+      "id": "g2-6",
+      "title": "6. Pertanyaan Pilihan: S1 か、S2 か",
+      "desc": "Pertanyaan yang memberikan pilihan (A atau B?).",
+      "points": [
+        "Kore wa '9' desu ka, '7' desu ka. (Ini angka 9, atau angka 7?).",
+        "Penting: Jangan menjawab pertanyaan ini dengan Hai / Iie! Langsung sebutkan jawaban yang benar.",
+        "Jawaban: '9' desu. (Angka 9)."
+      ],
+      "formula": "[Kalimat 1] か、[Kalimat 2] か"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "これは 辞書です。",
+      "rom": "Kore wa jisho desu.",
+      "en": "Ini adalah kamus."
+    },
+    {
+      "jp": "それは コンピューターの 本ですか。",
+      "rom": "Sore wa konpyuutaa no hon desu ka.",
+      "en": "Apakah itu buku tentang komputer?"
+    },
+    {
+      "jp": "あれは わたしの 傘です。",
+      "rom": "Are wa watashi no kasa desu.",
+      "en": "Itu (jauh di sana) adalah payung saya."
+    },
+    {
+      "jp": "この 本は わたしのです。",
+      "rom": "Kono hon wa watashi no desu.",
+      "en": "Buku INI adalah milik saya."
+    },
+    {
+      "jp": "あれは 誰の かばんですか。",
+      "rom": "Are wa dare no kaban desu ka.",
+      "en": "Itu (jauh) tas milik siapa?"
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: Honno Kimochi Desu (Tanda Mata)",
+    "dialogue": [
+      {
+        "speaker": "Yamada",
+        "jp": "はい、どなたですか。",
+        "rom": "Hai, donata desu ka.",
+        "en": "Ya, siapa? (Menjawab bel pintu)"
+      },
+      {
+        "speaker": "Miller",
+        "jp": "４０８の ミラーです。",
+        "rom": "408 no Miraa desu.",
+        "en": "Saya Miller dari kamar 408."
+      },
+      {
+        "speaker": "Yamada",
+        "jp": "あ、ミラーさん。こんにちは。",
+        "rom": "A, Miraa-san. Konnichiwa.",
+        "en": "Ah, Pak Miller. Selamat siang."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "こんにちは。ミラーです。これから お世話に なります。どうぞ よろしく お願いします。",
+        "rom": "Konnichiwa. Miraa desu. Korekara osewani narimasu. Douzo yoroshiku onegaishimasu.",
+        "en": "Selamat siang. Saya Miller. Mulai sekarang saya akan merepotkan Anda bertetangga. Mohon bantuannya (senang berkenalan dengan Anda)."
+      },
+      {
+        "speaker": "Yamada",
+        "jp": "こちらこそ よろしく。",
+        "rom": "Kochirakoso yoroshiku.",
+        "en": "Sama-sama, mohon bantuannya juga."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "あのう、これ、ほんの 気持ちです。",
+        "rom": "Anou, kore, honno kimochi desu.",
+        "en": "Mmm, ini, sekadar tanda mata (sedikit perasaan dari saya)."
+      },
+      {
+        "speaker": "Yamada",
+        "jp": "あ、どうも。何ですか。",
+        "rom": "A, doumo. Nan desu ka.",
+        "en": "Ah, terima kasih. Apa ini?"
+      },
+      {
+        "speaker": "Miller",
+        "jp": "コーヒーです。どうぞ。",
+        "rom": "Koohii desu. Douzo.",
+        "en": "Kopi. Silakan diterima."
+      },
+      {
+        "speaker": "Yamada",
+        "jp": "どうも ありがとうございます。",
+        "rom": "Doumo arigatou gozaimasu.",
+        "en": "Terima kasih banyak ya."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] Jika Anda MEMEGANG sebuah kamus di tangan Anda sendiri, bagaimana cara menunjukkannya?",
+      "options": [
+        {
+          "text": "Sore wa jisho desu.",
+          "correct": false
+        },
+        {
+          "text": "Are wa jisho desu.",
+          "correct": false
+        },
+        {
+          "text": "Kore wa jisho desu.",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] Lengkapi kalimat: 'Tas INI adalah milik saya'.\n[     ] kaban wa watashi no desu.",
+      "answer": "kono"
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu B] A: 'Kore wa shaapu penshiru desu ka.'\nAnda melihat bahwa benda itu BUKAN pensil mekanik, melainkan pulpen. Jawaban natural yang paling tepat adalah?",
+      "options": [
+        {
+          "text": "Iie, sou desu.",
+          "correct": false
+        },
+        {
+          "text": "Iie, chigaimasu. Boorupen desu.",
+          "correct": true
+        },
+        {
+          "text": "Hai, chigaimasu.",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu C] Ini adalah majalah TENTANG mobil.\nKore wa kuruma [     ] zasshi desu.",
+      "answer": "no"
+    },
+    {
+      "type": "mcq",
+      "question": "[Grammar Check] Pilihlah kalimat yang SALAH secara tata bahasa!",
+      "options": [
+        {
+          "text": "Kono wa watashi no kasa desu.",
+          "correct": true
+        },
+        {
+          "text": "Kore wa watashi no kasa desu.",
+          "correct": false
+        },
+        {
+          "text": "Kono kasa wa watashi no desu.",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Menanyakan Benda Terdekat",
+      "situation": "Bertanya tentang benda yang dipegang atau dekat dengan lawan bicara",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "それは 何ですか。",
+          "rom": "Sore wa nan desu ka.",
+          "en": "Itu apa?"
+        },
+        {
+          "speaker": "B",
+          "jp": "テレホンカードです。",
+          "rom": "Terefon kaado desu.",
+          "en": "Ini kartu telepon."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。",
+          "rom": "Sou desu ka.",
+          "en": "Oh, begitu ya."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Memberikan Hadiah Kecil",
+      "situation": "Memberikan hadiah kecil atau oleh-oleh kepada tetangga/teman baru",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "これ、どうぞ。",
+          "rom": "Kore, douzo.",
+          "en": "Ini, silakan."
+        },
+        {
+          "speaker": "B",
+          "jp": "何ですか。",
+          "rom": "Nan desu ka.",
+          "en": "Apakah ini?"
+        },
+        {
+          "speaker": "A",
+          "jp": "コーヒーです。",
+          "rom": "Koohii desu.",
+          "en": "Kopi."
+        },
+        {
+          "speaker": "B",
+          "jp": "どうも ありがとう ございます。",
+          "rom": "Doumo arigatou gozaimasu.",
+          "en": "Terima kasih banyak."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Menanyakan Kepemilikan Barang",
+      "situation": "Bertanya siapa pemilik dari suatu barang yang tergeletak",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "この 傘は 誰の ですか。",
+          "rom": "Kono kasa wa dare no desu ka.",
+          "en": "Payung ini milik siapa?"
+        },
+        {
+          "speaker": "B",
+          "jp": "私のです。",
+          "rom": "Watashi no desu.",
+          "en": "Milik saya."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。",
+          "rom": "Sou desu ka.",
+          "en": "Oh, begitu ya."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r2-1",
+      "jp": "これは 辞書ですか。... はい、そうです。",
+      "rom": "Kore wa jisho desu ka? ... Hai, sou desu.",
+      "en": "Apakah ini kamus? ... Ya, benar."
+    },
+    {
+      "id": "r2-2",
+      "jp": "それは シャープペンシルですか。... いいえ、ボールペンです。",
+      "rom": "Sore wa shaapupenshiru desu ka? ... Iie, boorupen desu.",
+      "en": "Apakah itu pensil mekanik? ... Bukan, ini pulpen."
+    },
+    {
+      "id": "r2-3",
+      "jp": "あれは だれの 傘ですか。... 佐藤さんの 傘です。",
+      "rom": "Are wa dare no kasa desu ka? ... Satou-san no kasa desu.",
+      "en": "Itu payung siapa? ... Payung Ibu Sato."
+    },
+    {
+      "id": "r2-4",
+      "jp": "この 傘は あなたの ですか。... いいえ、わたしのじゃ ありません。",
+      "rom": "Kono kasa wa anata no desu ka? ... Iie, watashi no ja arimasen.",
+      "en": "Apakah payung ini milik Anda? ... Bukan, bukan milik saya."
+    },
+    {
+      "id": "r2-5",
+      "jp": "この コップは あなたの ですか。... はい、わたしのです。",
+      "rom": "Kono koppu wa anata no desu ka? ... Hai, watashi no desu.",
+      "en": "Apakah gelas ini milik Anda? ... Ya, milik saya."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb2-1",
+      "pattern": "これ/それ/あれ は N です",
+      "instruction": "Lihat posisi benda dari sudut pandang pembicara (A). Pilih kata tunjuk yang tepat, lalu buat kalimat lengkap.",
+      "question": "Benda di tangan A → jisho",
+      "correct": "これは 辞書です。",
+      "romaji": "Kore wa jisho desu.",
+      "translation": "Ini adalah kamus."
+    },
+    {
+      "id": "wb2-2",
+      "pattern": "この/その/あの + N",
+      "instruction": "Buat kalimat menggunakan kata tunjuk penempel (kono/sono/ano) yang sesuai.",
+      "question": "Buku di tangan B → hon / watashi no",
+      "correct": "その 本は わたしのです。",
+      "romaji": "Sono hon wa watashi no desu.",
+      "translation": "Buku itu adalah milik saya."
+    },
+    {
+      "id": "wb2-3",
+      "pattern": "N1 の N2 (kepemilikan)",
+      "instruction": "Gabungkan dengan partikel の untuk menyatakan kepemilikan benda.",
+      "question": "Kasa / Sato-san",
+      "correct": "これは 佐藤さんの 傘です。",
+      "romaji": "Kore wa Satou-san no kasa desu.",
+      "translation": "Ini adalah payung milik Ibu Sato."
+    },
+    {
+      "id": "wb2-4",
+      "pattern": "そうです / そうじゃありません",
+      "instruction": "Jawab pertanyaan di bawah dengan konfirmasi positif atau negatif menggunakan そうです / ちがいます.",
+      "question": "A: 'Kore wa jisho desu ka?' → Jawab: Ya",
+      "correct": "はい、そうです。",
+      "romaji": "Hai, sou desu.",
+      "translation": "Ya, benar (itu kamus)."
+    },
+    {
+      "id": "wb2-5",
+      "pattern": "N1 の N2 (penghilangan N2)",
+      "instruction": "Jawab pertanyaan berikut dengan menghilangkan kata benda yang sudah jelas dari konteks.",
+      "question": "A: 'Are wa dare no kaban desu ka?' → Satou-san",
+      "correct": "佐藤さんのです。",
+      "romaji": "Satou-san no desu.",
+      "translation": "Milik Ibu Sato."
+    },
+    {
+      "id": "wb2-6",
+      "pattern": "S1 か、S2 か (pilihan)",
+      "instruction": "Buat pertanyaan pilihan antara dua benda/pilihan yang tersedia.",
+      "question": "Enpitsu / boorupen",
+      "correct": "これは えんぴつですか、ボールペンですか。",
+      "romaji": "Kore wa enpitsu desu ka, boorupen desu ka.",
+      "translation": "Ini pensil atau pulpen?"
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex2-1",
+        "sentence": "これ [ ] 辞書です。",
+        "correct": "は",
+        "translation": "Ini adalah kamus."
+      },
+      {
+        "id": "ex2-2",
+        "sentence": "この かばんは だれ [ ] ですか。",
+        "correct": "の",
+        "translation": "Tas ini milik siapa?"
+      },
+      {
+        "id": "ex2-3",
+        "sentence": "あれは ミラーさん [ ] 傘です。",
+        "correct": "の",
+        "translation": "Itu adalah payung milik Sdr. Miller."
+      },
+      {
+        "id": "ex2-4",
+        "sentence": "それは えんぴつ [ ]。",
+        "correct": "です",
+        "translation": "Itu adalah pensil."
+      },
+      {
+        "id": "ex2-5",
+        "sentence": "それは じしょ [ ]、ノートですか。",
+        "correct": "ですか",
+        "translation": "Apakah itu kamus, atau buku catatan?"
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex2-6",
+        "question": "Benda ada di tangan lawan bicara (B). Anda ingin menanyakan benda itu. Gunakan kata tunjuk yang tepat:\n[ ] は なんですか。",
+        "options": [
+          {
+            "text": "これ",
+            "correct": false
+          },
+          {
+            "text": "それ",
+            "correct": true
+          },
+          {
+            "text": "あれ",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex2-7",
+        "question": "A: 'Kore wa shumitto-san no desu ka?' Jawaban yang paling natural jika IYA adalah:",
+        "options": [
+          {
+            "text": "はい、そうです。",
+            "correct": true
+          },
+          {
+            "text": "はい、ちがいます。",
+            "correct": false
+          },
+          {
+            "text": "いいえ、そうです。",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex2-8",
+        "question": "Kalimat mana yang SALAH secara tata bahasa?\n",
+        "options": [
+          {
+            "text": "この 本は わたしのです。",
+            "correct": false
+          },
+          {
+            "text": "Kono wa hon desu.",
+            "correct": true
+          },
+          {
+            "text": "この 本は だれのですか。",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "A: これは なんですか。\nB: コーヒーです。どうぞ。\nA: どうも ありがとうございます。これは だれの コーヒーですか。\nB: わたしのです。",
+      "questions": [
+        {
+          "id": "ex2-9",
+          "question": "B は コーヒーを もっています (B sedang memegang kopi)。",
+          "correct": "T"
+        },
+        {
+          "id": "ex2-10",
+          "question": "A は コーヒーを あげます (A yang memberikan kopi)。",
+          "correct": "F"
+        },
+        {
+          "id": "ex2-11",
+          "question": "コーヒーは B のです。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

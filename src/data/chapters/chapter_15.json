@@ -1,0 +1,674 @@
+{
+  "id": 15,
+  "title": "Lesson 15: Te-Form Sambung & Izin",
+  "desc": "Membedah Bab 15. Memperluas Te-Form untuk menghubungkan beberapa aksi berurutan, mendeskripsikan keadaan permanen (tinggal, tahu), dan menyambung kata sifat.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v15-1",
+      "rom": "Tatsu / Tachimasu",
+      "kana": "たつ",
+      "kanji": "立つ",
+      "en": "Berdiri",
+      "audio": ""
+    },
+    {
+      "id": "v15-2",
+      "rom": "Suwaru / Suwarimasu",
+      "kana": "すわる",
+      "kanji": "座る",
+      "en": "Duduk",
+      "audio": ""
+    },
+    {
+      "id": "v15-3",
+      "rom": "Tsukau / Tsukaimasu",
+      "kana": "つかう",
+      "kanji": "使う",
+      "en": "Menggunakan",
+      "audio": ""
+    },
+    {
+      "id": "v15-4",
+      "rom": "Oku / Okimasu",
+      "kana": "おく",
+      "kanji": "置く",
+      "en": "Menaruh / Meletakkan",
+      "audio": ""
+    },
+    {
+      "id": "v15-5",
+      "rom": "Tsukuru / Tsukurimasu",
+      "kana": "つくる",
+      "kanji": "作る",
+      "en": "Membuat",
+      "audio": ""
+    },
+    {
+      "id": "v15-6",
+      "rom": "Uru / Urimasu",
+      "kana": "うる",
+      "kanji": "売る",
+      "en": "Menjual",
+      "audio": ""
+    },
+    {
+      "id": "v15-7",
+      "rom": "Shiru / Shirimasu",
+      "kana": "しる",
+      "kanji": "知る",
+      "en": "Mengetahui (★Spesial: negatifnya 'shirimasen')",
+      "audio": ""
+    },
+    {
+      "id": "v15-8",
+      "rom": "Sumu / Sumimasu",
+      "kana": "すむ",
+      "kanji": "住む",
+      "en": "Tinggal / Berdomisili",
+      "audio": ""
+    },
+    {
+      "id": "v15-9",
+      "rom": "Hataraku / Hatarakimasu",
+      "kana": "はたらく",
+      "kanji": "働く",
+      "en": "Bekerja",
+      "audio": ""
+    },
+    {
+      "id": "v15-10",
+      "rom": "Motsu / Mochimasu",
+      "kana": "もつ",
+      "kanji": "持つ",
+      "en": "Memegang / Membawa / Memiliki",
+      "audio": ""
+    },
+    {
+      "id": "v15-11",
+      "rom": "Kekkon suru",
+      "kana": "けっこんする",
+      "kanji": "結婚する",
+      "en": "Menikah",
+      "audio": ""
+    },
+    {
+      "id": "v15-12",
+      "rom": "Kenkyuu",
+      "kana": "けんきゅう",
+      "kanji": "研究",
+      "en": "Penelitian / Riset",
+      "audio": ""
+    },
+    {
+      "id": "v15-13",
+      "rom": "Shiryou",
+      "kana": "しりょう",
+      "kanji": "資料",
+      "en": "Bahan / Dokumen",
+      "audio": ""
+    },
+    {
+      "id": "v15-14",
+      "rom": "Juusho",
+      "kana": "じゅうしょ",
+      "kanji": "住所",
+      "en": "Alamat",
+      "audio": ""
+    },
+    {
+      "id": "v15-15",
+      "rom": "Denwabangou",
+      "kana": "でんわばんごう",
+      "kanji": "電話番号",
+      "en": "Nomor Telepon",
+      "audio": ""
+    },
+    {
+      "id": "v15-16",
+      "rom": "Shiyakusho",
+      "kana": "しやくしょ",
+      "kanji": "市役所",
+      "en": "Balai Kota / Kantor Pemerintah Kota",
+      "audio": ""
+    },
+    {
+      "id": "v15-17",
+      "rom": "Futoi / Hosoi",
+      "kana": "ふとい / ほそい",
+      "kanji": "太い / 細い",
+      "en": "Tebal-Gemuk / Tipis-Kurus",
+      "audio": ""
+    },
+    {
+      "id": "v15-18",
+      "rom": "Akarui / Kurai",
+      "kana": "あかるい / くらい",
+      "kanji": "明るい / 暗い",
+      "en": "Terang / Gelap",
+      "audio": ""
+    },
+    {
+      "id": "v15-19",
+      "rom": "Katarogu",
+      "kana": "カタログ",
+      "kanji": "",
+      "en": "Katalog",
+      "audio": ""
+    },
+    {
+      "id": "v15-20",
+      "rom": "Jikokuhyou",
+      "kana": "じこくひょう",
+      "kanji": "時刻表",
+      "en": "Jadwal kereta / Tabel waktu",
+      "audio": ""
+    },
+    {
+      "id": "v15-21",
+      "rom": "Fuku",
+      "kana": "ふく",
+      "kanji": "服",
+      "en": "Pakaian / Baju",
+      "audio": ""
+    },
+    {
+      "id": "v15-22",
+      "rom": "Seihin",
+      "kana": "せいひん",
+      "kanji": "製品",
+      "en": "Produk / Barang buatan",
+      "audio": ""
+    },
+    {
+      "id": "v15-23",
+      "rom": "Sofuto",
+      "kana": "ソフト",
+      "kanji": "",
+      "en": "Perangkat lunak / Software",
+      "audio": ""
+    },
+    {
+      "id": "v15-24",
+      "rom": "Senmon",
+      "kana": "せんもん",
+      "kanji": "専門",
+      "en": "Spesialisasi / Keahlian",
+      "audio": ""
+    },
+    {
+      "id": "v15-25",
+      "rom": "Haisha",
+      "kana": "はいしゃ",
+      "kanji": "歯医者",
+      "en": "Dokter gigi",
+      "audio": ""
+    },
+    {
+      "id": "v15-26",
+      "rom": "Tokoya",
+      "kana": "とこや",
+      "kanji": "床屋",
+      "en": "Tukang cukur / Barbershop",
+      "audio": ""
+    },
+    {
+      "id": "v15-27",
+      "rom": "Pureigaido",
+      "kana": "プレイガイド",
+      "kanji": "",
+      "en": "Loket tiket / Agen tiket",
+      "audio": ""
+    },
+    {
+      "id": "v15-28",
+      "rom": "Dokushin",
+      "kana": "どくしん",
+      "kanji": "独身",
+      "en": "Belum menikah / Lajang",
+      "audio": ""
+    },
+    {
+      "id": "v15-29",
+      "rom": "Tokuni",
+      "kana": "とくに",
+      "kanji": "特に",
+      "en": "Terutama / Khususnya",
+      "audio": ""
+    },
+    {
+      "id": "v15-30",
+      "rom": "Omoidashimasu",
+      "kana": "おもいだします",
+      "kanji": "思い出します",
+      "en": "Teringat kembali / Mengingat kembali",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g15-1",
+      "title": "1. V-て、V-て、V (Merangkai Aksi Berurutan)",
+      "desc": "Te-Form bisa menyambung beberapa aksi secara kronologis dalam satu kalimat panjang. Hanya kalimat TERAKHIR yang dikonjugasikan penuh.",
+      "points": [
+        "Asa okite, gohan o tabete, kaisha e ikimasu. (Pagi bangun, makan nasi, lalu pergi ke kantor).",
+        "Te-Form menyatakan urutan temporal. Kata kerja TERAKHIR saja yang bentuk -masu/-mashita.",
+        "Bisa juga untuk aksi yang TIDAK berurutan ketat, tapi saling berkaitan: Kyou wa toshokan de hon o yonde, repōto o kakimashita. (Hari ini membaca buku di perpustakaan DAN menulis laporan)."
+      ],
+      "formula": "V1-て、V2-て、V3-ます (hanya V terakhir yang formal)",
+      "native_note": "Meminta izin secara kasual kepada teman sangat mudah: cukup hilangkan 'mo ii desu ka' dan ganti menjadi '~te ii?' dengan intonasi bertanya (misal: 'Kore, tabete ii?' = 'Boleh makan ini?')."
+    },
+    {
+      "id": "g15-2",
+      "title": "2. V-て います (Keadaan Permanen / Status)",
+      "desc": "Perluasan dari Bab 14. Te-imasu juga berarti KEADAAN PERMANEN/KEBIASAAN, bukan hanya 'sedang'.",
+      "points": [
+        "Watashi wa Osaka ni sunde imasu. (Saya TINGGAL/berdomisili di Osaka). Bukan 'sedang tinggal sementara'.",
+        "Kono kotoba o shitte imasu ka. (Apakah Anda TAHU kata ini?). Shitte imasu = Tahu (keadaan tetap).",
+        "★AWAS PENTING: Negatif dari 'shitte imasu' (tahu) adalah 'shirimasen' (tidak tahu). BUKAN 'shitte imasen'!",
+        "Miller-san wa IMC de hataraite imasu. (Pak Miller BEKERJA di perusahaan IMC)."
+      ],
+      "formula": "V-て います (keadaan tetap/status)"
+    },
+    {
+      "id": "g15-3",
+      "title": "3. I-Adj-くて / Na-Adj-で / N-で (Menyambung Sifat & Benda)",
+      "desc": "Kata sifat dan kata benda juga punya 'Te-Form' untuk menyambung keterangan dalam satu kalimat.",
+      "points": [
+        "I-Adj: Buang い, tambah くて. Yasui→Yasukute oishii desu. (Murah DAN enak).",
+        "I-Adj Negatif sambung: ~kunakute. Takaku-nakute ii desu. (Tidak mahal DAN bagus).",
+        "Na-Adj: Tambah で. Shizuka→Shizuka de kirei na machi desu. (Kota yang tenang DAN cantik).",
+        "Kata Benda: Tambah で. Gakusei→Gakusei de, 20-sai desu. (Pelajar, DAN berumur 20 tahun).",
+        "CATATAN: い-Adj negatif: kunakute. Na-Adj negatif: ja nakute."
+      ],
+      "formula": "I-Adj-くて / Na-Adj-で / N-で (sambungan DAN)"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "朝 起きて、ご飯を 食べて、会社へ 行きます。",
+      "rom": "Asa okite, gohan o tabete, kaisha e ikimasu.",
+      "en": "Pagi bangun, makan, lalu pergi ke kantor."
+    },
+    {
+      "jp": "わたしは 大阪に 住んで います。",
+      "rom": "Watashi wa Osaka ni sunde imasu.",
+      "en": "Saya tinggal/berdomisili di Osaka."
+    },
+    {
+      "jp": "この レストランは 安くて おいしいです。",
+      "rom": "Kono resutoran wa yasukute oishii desu.",
+      "en": "Restoran ini murah DAN enak."
+    },
+    {
+      "jp": "カリナさんは きれいで 親切です。",
+      "rom": "Karina-san wa kirei de shinsetsu desu.",
+      "en": "Bu Karina cantik DAN baik hati."
+    },
+    {
+      "jp": "この 言葉を 知って いますか。",
+      "rom": "Kono kotoba o shitte imasu ka.",
+      "en": "Apakah Anda tahu kata ini?"
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: 知っていますか (Apakah Anda Tahu?)",
+    "dialogue": [
+      {
+        "speaker": "Karina",
+        "jp": "すみません。市役所の 電話番号を 知って いますか。",
+        "rom": "Sumimasen. Shiyakusho no denwabangou o shitte imasu ka.",
+        "en": "Permisi. Apakah Anda tahu nomor telepon balai kota?"
+      },
+      {
+        "speaker": "Sato",
+        "jp": "いいえ、知りません。",
+        "rom": "Iie, shirimasen.",
+        "en": "Tidak, saya tidak tahu."
+      },
+      {
+        "speaker": "Karina",
+        "jp": "そうですか。じゃ、住所を 教えて ください。",
+        "rom": "Sou desu ka. Ja, juusho o oshiete kudasai.",
+        "en": "Oh begitu ya. Kalau begitu, tolong beritahu alamatnya."
+      },
+      {
+        "speaker": "Sato",
+        "jp": "住所ですか。ちょっと 待って ください。…ここに 書いて あります。",
+        "rom": "Juusho desu ka. Chotto matte kudasai. ...Koko ni kaite arimasu.",
+        "en": "Alamatnya ya. Tunggu sebentar. ...Tertulis di sini."
+      },
+      {
+        "speaker": "Karina",
+        "jp": "ありがとう ございます。",
+        "rom": "Arigatou gozaimasu.",
+        "en": "Terima kasih banyak."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] Negatif dari 'Shitte imasu' (Tahu) yang BENAR adalah:",
+      "options": [
+        {
+          "text": "Shitte imasen",
+          "correct": false
+        },
+        {
+          "text": "Shirimasen",
+          "correct": true
+        },
+        {
+          "text": "Shittekunai",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] Sambung kalimat: 'Murah DAN enak'.\nYasu-[     ] oishii desu.",
+      "answer": "kute"
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu B] Menyambung Na-Adjective 'Kirei' (cantik) dengan 'Shinsetsu' (ramah). Sambungannya:",
+      "options": [
+        {
+          "text": "Kireikute shinsetsu desu.",
+          "correct": false
+        },
+        {
+          "text": "Kirei de shinsetsu desu.",
+          "correct": true
+        },
+        {
+          "text": "Kirei to shinsetsu desu.",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu C] 'Pagi bangun, makan, lalu pergi ke kantor.'\nAsa [       ], gohan o tabete, kaisha e ikimasu.",
+      "answer": "okite"
+    },
+    {
+      "type": "mcq",
+      "question": "[Pola Kalimat] 'Watashi wa Osaka ni sunde imasu' artinya:",
+      "options": [
+        {
+          "text": "Saya sedang tinggal sementara di Osaka.",
+          "correct": false
+        },
+        {
+          "text": "Saya tinggal/berdomisili di Osaka (keadaan tetap).",
+          "correct": true
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Meminta Izin Mengambil Foto",
+      "situation": "Meminta izin mengambil gambar/foto di dalam area pameran",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "ここで 写真を 撮っても いいですか。",
+          "rom": "Koko de shashin o tottemo ii desu ka.",
+          "en": "Bolehkah saya mengambil foto di sini?"
+        },
+        {
+          "speaker": "B",
+          "jp": "すみません、写真は ちょっと ダメです。",
+          "rom": "Sumimasen, shashin wa chotto dame desu.",
+          "en": "Maaf, kalau foto tidak boleh."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。わかりました。",
+          "rom": "Sou desu ka. Wakarimashita.",
+          "en": "Oh begitu. Saya mengerti."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Menanyakan Pekerjaan Utama",
+      "situation": "Mengobrol tentang profesi dan produk yang dibuat oleh perusahaan lawan bicara",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "お仕事は 何を して いますか。",
+          "rom": "O-shigoto wa nani o shite imasu ka.",
+          "en": "Pekerjaan Anda melakukan apa?"
+        },
+        {
+          "speaker": "B",
+          "jp": "パワー電気で コンピューターの ソフトを 作って います。",
+          "rom": "Pawaa Denki de konpyuutaa no sofuto o tsukutte imasu.",
+          "en": "Membuat software komputer di perusahaan Power Denki."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。すごいですね。",
+          "rom": "Sou desu ka. Sugoi desu ne.",
+          "en": "Oh begitu. Hebat sekali ya."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Menanyakan Kegiatan Kuliah Teman",
+      "situation": "Bertanya tentang jurusan atau bidang yang ditekuni teman di universitas",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "カリナさんは 大学で 何を 勉強して いますか。",
+          "rom": "Karina-san wa daigaku de nani o benkyou shite imasu ka.",
+          "en": "Sdri. Karina sedang belajar apa di universitas?"
+        },
+        {
+          "speaker": "B",
+          "jp": "美術を 勉強して います。絵を 描いて いますよ。",
+          "rom": "Bijutsu o benkyou shite imasu. E o kaite imasu yo.",
+          "en": "Belajar seni rupa. Sedang melukis/menggambar lho."
+        },
+        {
+          "speaker": "A",
+          "jp": "面白そうですね。",
+          "rom": "Omoshirosou desu ne.",
+          "en": "Kelihatannya menarik sekali ya."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r15-1",
+      "jp": "写真を 撮っても いいですか。... はい、いいですよ。",
+      "rom": "Shashin o totte mo ii desu ka? ... Hai, ii desu yo.",
+      "en": "Bolehkah saya mengambil foto? ... Ya, boleh."
+    },
+    {
+      "id": "r15-2",
+      "jp": "この 辞書を 借りても いいですか。... いいえ、使っていますから、だめです。",
+      "rom": "Kono jisho o karite mo ii desu ka? ... Iie, tsukatte imasu kara, dame desu.",
+      "en": "Bolehkah saya meminjam kamus ini? ... Jangan, karena sedang saya pakai."
+    },
+    {
+      "id": "r15-3",
+      "jp": "ここで タバコを 吸ってはいけません。... 分かりました。すみません。",
+      "rom": "Koko de tabako o sutte wa ikemasen. ... Wakarimashita. Sumimasen.",
+      "en": "Tidak boleh merokok di sini. ... Baik, saya paham. Maaf."
+    },
+    {
+      "id": "r15-4",
+      "jp": "サントスさんは どこに 住んでいますか。... 神戸に 住んでいます。",
+      "rom": "Santosu-san wa doko ni sunde imasu ka? ... Koube ni sunde imasu.",
+      "en": "Tuan Santos tinggal di mana? ... Tinggal di Kobe."
+    },
+    {
+      "id": "r15-5",
+      "jp": "お仕事は 何ですか。... 教師です。富士大学で 教えています。",
+      "rom": "Oshigoto wa nan desu ka? ... Kyoushi desu. Fuji daigaku de oshiete imasu.",
+      "en": "Pekerjaan Anda apa? ... Saya guru. Mengajar di Universitas Fuji."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb15-1",
+      "pattern": "V なければなりません (Harus ~)",
+      "instruction": "Nyatakan kewajiban melakukan sesuatu dengan pola なければなりません.",
+      "question": "Mainichi / kusuri / nomanakerebanarimase n",
+      "correct": "まいにち くすりを のまなければ なりません。",
+      "romaji": "Mainichi kusuri wo nomanakere ba narimasen.",
+      "translation": "Harus minum obat setiap hari."
+    },
+    {
+      "id": "wb15-2",
+      "pattern": "V なくてもいいです (Tidak perlu ~)",
+      "instruction": "Nyatakan bahwa tidak perlu melakukan sesuatu dengan なくてもいいです.",
+      "question": "Kyou / kuru / nakutemo ii desu",
+      "correct": "きょうは こなくても いいです。",
+      "romaji": "Kyou wa konakute mo ii desu.",
+      "translation": "Hari ini tidak perlu datang."
+    },
+    {
+      "id": "wb15-3",
+      "pattern": "V ないでください (Tolong jangan ~)",
+      "instruction": "Buat larangan sopan menggunakan nai-form + でください.",
+      "question": "Koko / hanasanai de kudasai",
+      "correct": "ここで はなさないで ください。",
+      "romaji": "Koko de hanasanaide kudasai.",
+      "translation": "Tolong jangan berbicara di sini."
+    },
+    {
+      "id": "wb15-4",
+      "pattern": "Comparison: しなければなりません vs しなくてもいいです",
+      "instruction": "Pilih pola yang tepat berdasarkan situasi: wajib atau tidak wajib.",
+      "question": "Byouki / kusuri / nomanakere ba narimasen",
+      "correct": "びょうきだから くすりを のまなければ なりません。",
+      "romaji": "Byouki dakara kusuri wo nomanakere ba narimasen.",
+      "translation": "Karena sakit, harus minum obat."
+    },
+    {
+      "id": "wb15-5",
+      "pattern": "どうしなければなりませんか (Harus bagaimana?)",
+      "instruction": "Tanyakan apa yang harus dilakukan dalam situasi tertentu.",
+      "question": "Kaze / hiita toki / dou sureba ii",
+      "correct": "かぜを ひいたとき、どう すれば いいですか。",
+      "romaji": "Kaze wo hiita toki, dou sureba ii desu ka.",
+      "translation": "Kalau sudah kena flu, sebaiknya bagaimana?"
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex15-1",
+        "sentence": "まいにち くすりを [ ] なりません。",
+        "correct": "のまなければ",
+        "translation": "Harus minum obat setiap hari."
+      },
+      {
+        "id": "ex15-2",
+        "sentence": "きょうは こ [ ] いいです。",
+        "correct": "なくても",
+        "translation": "Hari ini tidak perlu datang."
+      },
+      {
+        "id": "ex15-3",
+        "sentence": "しずかに し [ ] なりません。",
+        "correct": "なければ",
+        "translation": "Harus diam/tenang."
+      },
+      {
+        "id": "ex15-4",
+        "sentence": "ここで たばこを すわ [ ] ください。",
+        "correct": "ないで",
+        "translation": "Tolong jangan merokok di sini."
+      },
+      {
+        "id": "ex15-5",
+        "sentence": "かのじょは びょうきだから [ ] なりません。",
+        "correct": "やすまなければ",
+        "translation": "Karena dia sakit, harus istirahat."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex15-6",
+        "question": "Pola untuk menyatakan KEWAJIBAN melakukan sesuatu (wajib/must) adalah:",
+        "options": [
+          {
+            "text": "V なくてもいいです",
+            "correct": false
+          },
+          {
+            "text": "V なければなりません",
+            "correct": true
+          },
+          {
+            "text": "V ないでください",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex15-7",
+        "question": "Cara membuat bentuk negatif wajib dari 'ikimasu' (pergi) untuk 'harus tidak pergi' adalah:",
+        "options": [
+          {
+            "text": "いかなければなりません",
+            "correct": false
+          },
+          {
+            "text": "いかなくてもいいです",
+            "correct": false
+          },
+          {
+            "text": "いってはいけません",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "id": "ex15-8",
+        "question": "'Mada kaite imasen' berarti Anda:",
+        "options": [
+          {
+            "text": "Sudah selesai menulis",
+            "correct": false
+          },
+          {
+            "text": "Belum menulis / sedang belum menulis",
+            "correct": true
+          },
+          {
+            "text": "Tidak perlu menulis",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "びょういんでは けいたいを つかっては いけません。しずかにしなければなりません。かんじゃさんは くすりを まいにち のまなければなりません。でも むりに おきなくても いいです。",
+      "questions": [
+        {
+          "id": "ex15-9",
+          "question": "びょういんで けいたいを つかっても いいです。",
+          "correct": "F"
+        },
+        {
+          "id": "ex15-10",
+          "question": "かんじゃは まいにち くすりを のむ ひつようが あります。",
+          "correct": "T"
+        },
+        {
+          "id": "ex15-11",
+          "question": "びょういんでは かならず おきなければ なりません。",
+          "correct": "F"
+        }
+      ]
+    }
+  }
+}

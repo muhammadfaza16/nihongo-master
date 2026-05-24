@@ -1,0 +1,824 @@
+{
+  "id": 1,
+  "title": "Lesson 1: Anatomi Kalimat Dasar",
+  "desc": "Membedah tuntas Bab 1 Minna No Nihongo: Subjek, Predikat, dan Partikel Penanda (Wa, Ka, Mo, No). Kami tidak memotong isi buku; semua variasi Renshuu A, B, dan C diakomodasi di sini.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v1-1",
+      "rom": "Watashi",
+      "kana": "わたし",
+      "kanji": "私",
+      "en": "Saya",
+      "audio": ""
+    },
+    {
+      "id": "v1-2",
+      "rom": "Watashitachi",
+      "kana": "わたしたち",
+      "kanji": "私達",
+      "en": "Kami / Kita",
+      "audio": ""
+    },
+    {
+      "id": "v1-3",
+      "rom": "Anata",
+      "kana": "あなた",
+      "kanji": "貴方",
+      "en": "Anda / Saudara (jarang dipakai langsung, lebih sopan panggil nama)",
+      "audio": ""
+    },
+    {
+      "id": "v1-4",
+      "rom": "Ano hito",
+      "kana": "あのひと",
+      "kanji": "あの人",
+      "en": "Orang itu",
+      "audio": ""
+    },
+    {
+      "id": "v1-5",
+      "rom": "Ano kata",
+      "kana": "あのかた",
+      "kanji": "あの方",
+      "en": "Beliau (bentuk sopan dari Ano hito)",
+      "audio": ""
+    },
+    {
+      "id": "v1-6",
+      "rom": "Minasan",
+      "kana": "みなさん",
+      "kanji": "皆さん",
+      "en": "Saudara-saudara sekalian / Semuanya",
+      "audio": ""
+    },
+    {
+      "id": "v1-7",
+      "rom": "~san",
+      "kana": "〜さん",
+      "kanji": "",
+      "en": "Sdr/Sdri/Tuan/Nyonya (Akhiran sopan untuk nama orang lain)",
+      "audio": ""
+    },
+    {
+      "id": "v1-8",
+      "rom": "~chan",
+      "kana": "〜ちゃん",
+      "kanji": "",
+      "en": "Akhiran akrab untuk anak perempuan / teman dekat",
+      "audio": ""
+    },
+    {
+      "id": "v1-9",
+      "rom": "~kun",
+      "kana": "〜くん",
+      "kanji": "〜君",
+      "en": "Akhiran akrab untuk anak laki-laki",
+      "audio": ""
+    },
+    {
+      "id": "v1-10",
+      "rom": "~jin",
+      "kana": "〜じん",
+      "kanji": "〜人",
+      "en": "Orang ~ (Menyatakan kewarganegaraan, misal: Amerika-jin)",
+      "audio": ""
+    },
+    {
+      "id": "v1-11",
+      "rom": "Sensei",
+      "kana": "せんせい",
+      "kanji": "先生",
+      "en": "Guru / Dosen (Sebagai sebutan kehormatan, bukan untuk merujuk profesi diri sendiri)",
+      "audio": ""
+    },
+    {
+      "id": "v1-12",
+      "rom": "Kyoushi",
+      "kana": "きょうし",
+      "kanji": "教師",
+      "en": "Guru / Dosen (Untuk menyebut profesi diri sendiri)",
+      "audio": ""
+    },
+    {
+      "id": "v1-13",
+      "rom": "Gakusei",
+      "kana": "がくせい",
+      "kanji": "学生",
+      "en": "Pelajar / Mahasiswa",
+      "audio": ""
+    },
+    {
+      "id": "v1-14",
+      "rom": "Kaishain",
+      "kana": "かいしゃいん",
+      "kanji": "会社員",
+      "en": "Karyawan perusahaan",
+      "audio": ""
+    },
+    {
+      "id": "v1-15",
+      "rom": "Shain",
+      "kana": "しゃいん",
+      "kanji": "社員",
+      "en": "Karyawan (Digunakan bersama nama perusahaan: IMC no shain)",
+      "audio": ""
+    },
+    {
+      "id": "v1-16",
+      "rom": "Ginkouin",
+      "kana": "ぎんこういん",
+      "kanji": "銀行員",
+      "en": "Pegawai bank",
+      "audio": ""
+    },
+    {
+      "id": "v1-17",
+      "rom": "Isha",
+      "kana": "いしゃ",
+      "kanji": "医者",
+      "en": "Dokter",
+      "audio": ""
+    },
+    {
+      "id": "v1-18",
+      "rom": "Kenkyuusha",
+      "kana": "けんきゅうしゃ",
+      "kanji": "研究者",
+      "en": "Peneliti",
+      "audio": ""
+    },
+    {
+      "id": "v1-19",
+      "rom": "Enjinia",
+      "kana": "エンジニア",
+      "kanji": "",
+      "en": "Insinyur / Engineer",
+      "audio": ""
+    },
+    {
+      "id": "v1-20",
+      "rom": "Daigaku",
+      "kana": "だいがく",
+      "kanji": "大学",
+      "en": "Universitas",
+      "audio": ""
+    },
+    {
+      "id": "v1-21",
+      "rom": "Byouin",
+      "kana": "びょういん",
+      "kanji": "病院",
+      "en": "Rumah sakit",
+      "audio": ""
+    },
+    {
+      "id": "v1-22",
+      "rom": "Denki",
+      "kana": "でんき",
+      "kanji": "電気",
+      "en": "Listrik / Lampu",
+      "audio": ""
+    },
+    {
+      "id": "v1-23",
+      "rom": "Dare",
+      "kana": "だれ",
+      "kanji": "誰",
+      "en": "Siapa (Kasual)",
+      "audio": ""
+    },
+    {
+      "id": "v1-24",
+      "rom": "Donata",
+      "kana": "どなた",
+      "kanji": "",
+      "en": "Siapa (Sopan / Formal dari Dare)",
+      "audio": ""
+    },
+    {
+      "id": "v1-25",
+      "rom": "~sai",
+      "kana": "〜さい",
+      "kanji": "〜歳",
+      "en": "Umur ~ tahun",
+      "audio": ""
+    },
+    {
+      "id": "v1-26",
+      "rom": "Nansai",
+      "kana": "なんさい",
+      "kanji": "何歳",
+      "en": "Berapa umur (Kasual)",
+      "audio": ""
+    },
+    {
+      "id": "v1-27",
+      "rom": "Oikutsu",
+      "kana": "おいくつ",
+      "kanji": "",
+      "en": "Berapa umur (Sopan / Formal dari Nansai)",
+      "audio": ""
+    },
+    {
+      "id": "v1-28",
+      "rom": "Hai",
+      "kana": "はい",
+      "kanji": "",
+      "en": "Ya",
+      "audio": ""
+    },
+    {
+      "id": "v1-29",
+      "rom": "Iie",
+      "kana": "いいえ",
+      "kanji": "",
+      "en": "Tidak / Bukan",
+      "audio": ""
+    },
+    {
+      "id": "v1-30",
+      "rom": "Shitsurei desu ga",
+      "kana": "しつれいですが",
+      "kanji": "失礼ですが",
+      "en": "Permisi / Maaf, (ketika bertanya privasi)",
+      "audio": ""
+    },
+    {
+      "id": "v1-31",
+      "rom": "Onamae wa?",
+      "kana": "おなまえは？",
+      "kanji": "お名前は？",
+      "en": "Siapa nama Anda?",
+      "audio": ""
+    },
+    {
+      "id": "v1-32",
+      "rom": "Hajimemashite",
+      "kana": "はじめまして",
+      "kanji": "初めまして",
+      "en": "Senang bertemu Anda (diucapkan pertama kali bertemu)",
+      "audio": ""
+    },
+    {
+      "id": "v1-33",
+      "rom": "Douzo yoroshiku onegaishimasu",
+      "kana": "どうぞ よろしく おねがいします",
+      "kanji": "",
+      "en": "Mohon bimbingannya / Senang berkenalan dengan Anda (Penutup perkenalan)",
+      "audio": ""
+    },
+    {
+      "id": "v1-34",
+      "rom": "Kochira wa ~san desu",
+      "kana": "こちらは 〜さんです",
+      "kanji": "",
+      "en": "Di sebelah sini adalah Sdr. ~ (Memperkenalkan pihak ketiga)",
+      "audio": ""
+    },
+    {
+      "id": "v1-35",
+      "rom": "~kara kimashita",
+      "kana": "〜からきました",
+      "kanji": "〜から来ました",
+      "en": "Saya datang dari ~",
+      "audio": ""
+    },
+    {
+      "id": "v1-36",
+      "rom": "Amerika",
+      "kana": "アメリカ",
+      "kanji": "",
+      "en": "Amerika",
+      "audio": ""
+    },
+    {
+      "id": "v1-37",
+      "rom": "Igirisu",
+      "kana": "イギリス",
+      "kanji": "",
+      "en": "Inggris",
+      "audio": ""
+    },
+    {
+      "id": "v1-38",
+      "rom": "Indo",
+      "kana": "インド",
+      "kanji": "",
+      "en": "India",
+      "audio": ""
+    },
+    {
+      "id": "v1-39",
+      "rom": "Indoneshia",
+      "kana": "インドネシア",
+      "kanji": "",
+      "en": "Indonesia",
+      "audio": ""
+    },
+    {
+      "id": "v1-40",
+      "rom": "Kankoku",
+      "kana": "かんこく",
+      "kanji": "韓国",
+      "en": "Korea Selatan",
+      "audio": ""
+    },
+    {
+      "id": "v1-41",
+      "rom": "Chuugoku",
+      "kana": "ちゅうごく",
+      "kanji": "中国",
+      "en": "Tiongkok / China",
+      "audio": ""
+    },
+    {
+      "id": "v1-42",
+      "rom": "Doitsu",
+      "kana": "ドイツ",
+      "kanji": "",
+      "en": "Jerman",
+      "audio": ""
+    },
+    {
+      "id": "v1-43",
+      "rom": "Nihon",
+      "kana": "にほん",
+      "kanji": "日本",
+      "en": "Jepang",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g1-1",
+      "title": "1. N1 は N2 です (Kalimat Positif)",
+      "desc": "Struktur paling dasar dalam bahasa Jepang. Menjelaskan bahwa N1 (Subjek/Topik) adalah N2 (Predikat).",
+      "points": [
+        "Partikel は: Ditulis dengan huruf Hiragana 'ha' (は) tetapi dibaca 'wa'. Berfungsi sebagai penanda TOPIK (Subjek) dari kalimat.",
+        "です (Desu): Diletakkan di akhir kalimat. Berfungsi untuk menyatakan kesopanan (Polite/Teineigo) dan memberikan nuansa kepastian (fakta). Tidak memiliki arti mandiri (mirip to-be 'is/am/are').",
+        "Watashi wa Miraa desu. (Saya [Topik] - Miller - [Adalah/Sopan])."
+      ],
+      "formula": "N1(Topik) は N2(Predikat) です",
+      "native_note": "Dalam percakapan kasual sehari-hari (terutama dengan teman), native speaker sangat sering membuang partikel 'wa' sepenuhnya. Misalnya, daripada bilang 'Watashi wa anime ga suki desu', mereka cukup bilang 'Watashi, anime suki'."
+    },
+    {
+      "id": "g1-2",
+      "title": "2. N1 は N2 じゃありません (Kalimat Negatif)",
+      "desc": "Cara menyangkal kalimat positif. 'Desu' diganti menjadi bentuk negatifnya, yaitu 'Ja arimasen'.",
+      "points": [
+        "じゃありません (Ja arimasen) adalah bentuk negatif yang lazim dipakai dalam percakapan sehari-hari.",
+        "ではありません (Dewa arimasen) adalah bentuk yang LEBIH FORMAL. Biasanya digunakan dalam pidato atau teks tertulis yang resmi.",
+        "Watashi wa gakusei ja arimasen. (Saya BUKAN pelajar).",
+        "Miraa-san wa isha dewa arimasen. (Sdr. Miller BUKAN dokter - Lebih sopan)."
+      ],
+      "formula": "N1 は N2 じゃありません / ではありません",
+      "native_note": "Meskipun 'Ja arimasen' itu sopan, orang Jepang jaman sekarang lebih sering menggunakan 'Janai desu' (じゃないです) di situasi kasual yang agak formal, dan hanya 'Janai' (じゃない) ke teman dekat."
+    },
+    {
+      "id": "g1-3",
+      "title": "3. Kalimat + か (Pertanyaan Ya/Tidak & Kata Tanya)",
+      "desc": "Dalam bahasa Jepang, urutan kata tidak pernah diubah untuk membuat pertanyaan. Cukup tambahkan partikel 'ka' (か) di akhir kalimat.",
+      "points": [
+        "Partikel か berfungsi sebagai tanda tanya secara gramatikal. Anda tidak perlu membubuhkan tanda tanya (?) dalam penulisan bahasa Jepang vertikal tradisional jika sudah ada 'ka'.",
+        "Pertanyaan Ya/Tidak wajib dijawab dengan はい (Ya) atau いいえ (Tidak).",
+        "Miraa-san wa amerika-jin desu ka. (Apakah Miller orang Amerika?) -> Hai, amerika-jin desu.",
+        "Pertanyaan Terbuka: Menggunakan kata tanya seperti 'Dare' (Siapa) atau 'Nansai' (Umur berapa).",
+        "Ano hito wa dare desu ka. (Orang itu siapa?)"
+      ],
+      "formula": "[Kalimat Lengkap] + か"
+    },
+    {
+      "id": "g1-4",
+      "title": "4. N も (Partikel 'Mo' / Juga)",
+      "desc": "Partikel 'mo' menggantikan partikel 'wa' jika fakta yang disebutkan untuk topik baru SAMA dengan fakta dari topik sebelumnya.",
+      "points": [
+        "Watashi wa kaishain desu. (Saya pegawai perusahaan). Miraa-san MO kaishain desu. (Sdr. Miller JUGA pegawai perusahaan).",
+        "JANGAN pernah menggabungkan menjadi 'wa mo'. Partikel 'wa' lenyap dan diganti 100% oleh 'mo'."
+      ],
+      "formula": "N も ~ です"
+    },
+    {
+      "id": "g1-5",
+      "title": "5. N1 の N2 (Partikel Kepemilikan & Kategori)",
+      "desc": "Partikel 'no' menyambungkan dua kata benda. Aturan utamanya: N1 SELALU MENJELASKAN N2. (Mirip dengan pola DM / Diterangkan-Menerangkan yang DIBALIK).",
+      "points": [
+        "Fungsi 1 - Milik: Watashi NO hon (Buku MILIK saya).",
+        "Fungsi 2 - Atribut/Afiliasi: IMC NO shain (Pegawai DARI/KATEGORI perusahaan IMC).",
+        "Dalam pola 'IMC no shain', N1 (IMC) membatasi makna dari N2 (shain). Bukan pegawai sembarangan, melainkan pegawai IMC."
+      ],
+      "formula": "N1(Penjelas) の N2(Benda Utama)"
+    },
+    {
+      "id": "g1-6",
+      "title": "6. Nuansa Panggilan: ~さん (San) vs ~ちゃん (Chan)",
+      "desc": "Etiket memanggil nama dalam budaya Jepang sangat ketat.",
+      "points": [
+        "~さん (San): Gelar netral untuk Pria/Wanita. Ditempel di belakang nama marga atau nama depan orang lain. PENTING: JANGAN PERNAH menempelkan ~san di nama Anda sendiri!",
+        "~ちゃん (Chan): Dipakai untuk anak-anak (terutama perempuan) atau antar sahabat karib yang sangat dekat.",
+        "Jika Anda menyebut profesi, gunakan 'Isha' atau 'Kyoushi' untuk diri sendiri, tetapi panggil orang lain dengan 'Sensei' untuk menghormati."
+      ],
+      "formula": "[Nama Orang Lain] + さん"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "わたしは マイク・ミラーです。",
+      "rom": "Watashi wa Maiku Miraa desu.",
+      "en": "Saya adalah Mike Miller."
+    },
+    {
+      "jp": "サントスさんは 学生じゃありません。",
+      "rom": "Santosu-san wa gakusei ja arimasen.",
+      "en": "Sdr. Santos bukan pelajar."
+    },
+    {
+      "jp": "ミラーさんは 会社員ですか。",
+      "rom": "Miraa-san wa kaishain desu ka.",
+      "en": "Apakah Sdr. Miller pegawai perusahaan?"
+    },
+    {
+      "jp": "サントスさんも 会社員です。",
+      "rom": "Santosu-san mo kaishain desu.",
+      "en": "Sdr. Santos JUGA pegawai perusahaan."
+    },
+    {
+      "jp": "カリナさんは 富士大学の 学生です。",
+      "rom": "Karina-san wa Fuji Daigaku no gakusei desu.",
+      "en": "Sdri. Karina adalah mahasiswa Universitas Fuji."
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: Hajimemashite (Perkenalan Diri Resmi)",
+    "dialogue": [
+      {
+        "speaker": "Sato",
+        "jp": "おはようございます。",
+        "rom": "Ohayou gozaimasu.",
+        "en": "Selamat pagi."
+      },
+      {
+        "speaker": "Yamada",
+        "jp": "おはようございます。佐藤さん、こちらは ミラーさんです。",
+        "rom": "Ohayou gozaimasu. Satou-san, kochira wa Miraa-san desu.",
+        "en": "Selamat pagi. Ibu Sato, perkenalkan (di sebelah sini) ini adalah Sdr. Miller."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "はじめまして。マイク・ミラーです。IMCの 社員です。アメリカから 来ました。どうぞ よろしく お願いします。",
+        "rom": "Hajimemashite. Maiku Miraa desu. IMC no shain desu. Amerika kara kimashita. Douzo yoroshiku onegaishimasu.",
+        "en": "Senang bertemu Anda pertama kali. Saya Mike Miller. Pegawai perusahaan IMC. Saya datang dari Amerika. Senang berkenalan dengan Anda (mohon bimbingannya)."
+      },
+      {
+        "speaker": "Sato",
+        "jp": "佐藤けい子です。どうぞ よろしく お願いします。",
+        "rom": "Satou Keiko desu. Douzo yoroshiku onegaishimasu.",
+        "en": "Saya Keiko Sato. Senang berkenalan dengan Anda juga."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A/B] Jika Anda ingin memperkenalkan diri sebagai Dokter, kalimat mana yang PALING BENAR?",
+      "options": [
+        {
+          "text": "Watashi wa sensei desu.",
+          "correct": false
+        },
+        {
+          "text": "Watashi wa isha desu.",
+          "correct": true
+        },
+        {
+          "text": "Watashi wa isha san desu.",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu C] Anda melihat seorang pria tua dan ingin bertanya umurnya secara sopan. Pilihan mana yang tepat?",
+      "options": [
+        {
+          "text": "Ano hito wa nansai desu ka.",
+          "correct": false
+        },
+        {
+          "text": "Ano kata wa oikutsu desu ka.",
+          "correct": true
+        },
+        {
+          "text": "Ano kata wa nansai desu ka.",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] Lengkapi kalimat berikut: 'Pak Santos bukan guru'.\nSantosu-san wa sensei [     ] arimasen.",
+      "answer": "ja"
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu B] Lengkapi kalimat: 'Miller adalah pegawai IMC'.\nMiraa-san wa IMC [     ] shain desu.",
+      "answer": "no"
+    },
+    {
+      "type": "mcq",
+      "question": "[Grammar Check] Apa bentuk negatif yang LEBIH FORMAL dari 'ja arimasen'?",
+      "options": [
+        {
+          "text": "Dewa arimasu",
+          "correct": false
+        },
+        {
+          "text": "Dewa arimasen",
+          "correct": true
+        },
+        {
+          "text": "Ja nai desu",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Menanyakan Nama Seseorang",
+      "situation": "Bertemu seseorang untuk pertama kali dan menanyakan namanya secara sopan",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "失礼ですが、お名前は？",
+          "rom": "Shitsurei desu ga, onamae wa?",
+          "en": "Maaf / permisi, nama Anda siapa?"
+        },
+        {
+          "speaker": "B",
+          "jp": "サントスです。",
+          "rom": "Santosu desu.",
+          "en": "Saya Santos."
+        },
+        {
+          "speaker": "A",
+          "jp": "サントスさんですか。",
+          "rom": "Santosu-san desu ka.",
+          "en": "Apakah Anda Sdr. Santos?"
+        },
+        {
+          "speaker": "B",
+          "jp": "はい、そうです。",
+          "rom": "Hai, sou desu.",
+          "en": "Ya, benar."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Menanyakan Pekerjaan",
+      "situation": "Bertanya tentang pekerjaan atau status profesional lawan bicara",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "失礼ですが、お仕事は？",
+          "rom": "Shitsurei desu ga, o-shigoto wa?",
+          "en": "Permisi, pekerjaan Anda apa?"
+        },
+        {
+          "speaker": "B",
+          "jp": "IMCの 社員です。",
+          "rom": "IMC no shain desu.",
+          "en": "Saya karyawan perusahaan IMC."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。",
+          "rom": "Sou desu ka.",
+          "en": "Oh, begitu ya."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Memperkenalkan Orang Lain",
+      "situation": "Memperkenalkan rekan kerja atau teman baru kepada orang lain",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "こちらは サントスさんです。",
+          "rom": "Kochira wa Santosu-san desu.",
+          "en": "Di sebelah sini adalah Sdr. Santos."
+        },
+        {
+          "speaker": "B",
+          "jp": "はじめまして。サントスです。ブラジルから 来ました。どうぞ よろしく。",
+          "rom": "Hajimemashite. Santosu desu. Burajiru kara kimashita. Douzo yoroshiku.",
+          "en": "Senang bertemu Anda pertama kali. Saya Santos. Datang dari Brasil. Senang berkenalan dengan Anda."
+        },
+        {
+          "speaker": "C",
+          "jp": "佐藤です。どうぞ よろしく。",
+          "rom": "Satou desu. Douzo yoroshiku.",
+          "en": "Saya Sato. Senang berkenalan dengan Anda juga."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r1-1",
+      "jp": "あなたは マイク・ミラーさんですか。... はい、わたしは マイク・ミラーです。",
+      "rom": "Anata wa Maiku Miraa-san desu ka? ... Hai, watashi wa Maiku Miraa desu.",
+      "en": "Apakah Anda Sdr. Mike Miller? ... Ya, saya Mike Miller."
+    },
+    {
+      "id": "r1-2",
+      "jp": "ミラーさんは 学生ですか。... いいえ、わたしは 学生じゃありません。会社員です。",
+      "rom": "Miraa-san wa gakusei desu ka? ... Iie, watashi wa gakusei ja arimasen. Kaishain desu.",
+      "en": "Apakah Sdr. Miller mahasiswa? ... Bukan, saya bukan mahasiswa. Saya karyawan perusahaan."
+    },
+    {
+      "id": "r1-3",
+      "jp": "ワンさんは 先生ですか。... いいえ、先生じゃありません。学生です。",
+      "rom": "Wan-san wa sensei desu ka? ... Iie, sensei ja arimasen. Gakusei desu.",
+      "en": "Apakah Sdr. Wang guru? ... Bukan, bukan guru. Dia mahasiswa."
+    },
+    {
+      "id": "r1-4",
+      "jp": "あの人は だれですか。... サントスさんです。ブラジルエアーの 社員です。",
+      "rom": "Ano hito wa dare desu ka? ... Santosu-san desu. Burajiru Eaa no shain desu.",
+      "en": "Siapakah orang itu? ... Tuan Santos. Dia karyawan Brazil Air."
+    },
+    {
+      "id": "r1-5",
+      "jp": "テレサちゃんは 何歳ですか。... ９歳です。",
+      "rom": "Teresa-chan wa nansai desu ka? ... Kyuusai desu.",
+      "en": "Dek Teresa umur berapa? ... 9 tahun."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb1-1",
+      "pattern": "N1 は N2 です",
+      "instruction": "Hubungkan kata-kata berikut menjadi kalimat positif utuh menggunakan partikel は dan akhiran です.",
+      "question": "わたし / マイク・ミラー",
+      "correct": "わたしは マイク・ミラーです。",
+      "romaji": "Watashi wa Maiku Miraa desu.",
+      "translation": "Saya adalah Mike Miller."
+    },
+    {
+      "id": "wb1-2",
+      "pattern": "N1 は N2 です",
+      "instruction": "Hubungkan kata-kata berikut menjadi kalimat positif utuh menggunakan partikel は dan akhiran です.",
+      "question": "あの方 / シュミットさん",
+      "correct": "あの方は シュミットさんです。",
+      "romaji": "Ano kata wa Shumitto-san desu.",
+      "translation": "Beliau adalah Bapak Schmidt."
+    },
+    {
+      "id": "wb1-3",
+      "pattern": "N1 は N2 じゃありません",
+      "instruction": "Hubungkan kata-kata berikut menjadi kalimat negatif utuh menggunakan partikel は dan akhiran じゃありません.",
+      "question": "サントスさん / 学生",
+      "correct": "サントスさんは 学生じゃありません。",
+      "romaji": "Santosu-san wa gakusei ja arimasen.",
+      "translation": "Tuan Santos bukan seorang mahasiswa."
+    },
+    {
+      "id": "wb1-4",
+      "pattern": "N1 は N2 ですか",
+      "instruction": "Buatlah kalimat tanya dan kalimat jawabnya yang sesuai dengan petunjuk.",
+      "question": "ワットさん / 先生 / いいえ",
+      "correct": "ワットさんは 先生ですか。いいえ、先生じゃありません。",
+      "romaji": "Watto-san wa sensei desu ka? Iie, sensei ja arimasen.",
+      "translation": "Apakah Tuan Watt seorang guru? Bukan, bukan guru."
+    },
+    {
+      "id": "wb1-5",
+      "pattern": "N も N です",
+      "instruction": "Nyatakan bahwa orang kedua juga memiliki profesi yang sama menggunakan partikel も.",
+      "question": "ワンさんは 医者です。 / タワポンさん / 医者",
+      "correct": "ワンさんは 医者です。タワポンさんも 医者です。",
+      "romaji": "Wan-san wa isha desu. Tawapon-san mo isha desu.",
+      "translation": "Tuan Wang adalah dokter. Tuan Tawapon juga dokter."
+    },
+    {
+      "id": "wb1-6",
+      "pattern": "N1 の N2",
+      "instruction": "Gabungkan dua kata benda berikut dengan partikel kepemilikan/afiliasi の.",
+      "question": "カリナさん / 富士大学 / 学生",
+      "correct": "カリナさんは 富士大学の学生です。",
+      "romaji": "Karina-san wa Fuji Daigaku no gakusei desu.",
+      "translation": "Nona Karina adalah mahasiswa Universitas Fuji."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex1-1",
+        "sentence": "わたし [ ] マイク・ミラーです。",
+        "correct": "は",
+        "translation": "Saya adalah Mike Miller."
+      },
+      {
+        "id": "ex1-2",
+        "sentence": "サントスさん [ ] ブラジル人です。",
+        "correct": "も",
+        "translation": "Tuan Santos juga orang Brasil."
+      },
+      {
+        "id": "ex1-3",
+        "sentence": "カリナさんは 富士大学 [ ] 学生です。",
+        "correct": "の",
+        "translation": "Nona Karina adalah mahasiswa Universitas Fuji."
+      },
+      {
+        "id": "ex1-4",
+        "sentence": "あの方は [ ] ですか。 ... ミラーさんです。",
+        "correct": "どなた",
+        "translation": "Beliau siapakah? ... Tuan Miller."
+      },
+      {
+        "id": "ex1-5",
+        "sentence": "テレサちゃん [ ] 9歳です。",
+        "correct": "は",
+        "translation": "Dek Teresa berumur 9 tahun."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex1-6",
+        "question": "Berdasarkan profil buku: 'サントスさん (Brasil Air - Karyawan)'. Lengkapi:\nサントスさんは 学生 [ ]。",
+        "options": [
+          {
+            "text": "です",
+            "correct": false
+          },
+          {
+            "text": "じゃありません",
+            "correct": true
+          },
+          {
+            "text": "も",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex1-7",
+        "question": "Berdasarkan profil buku: 'ワットさん (Sakura Daigaku - Guru)'. Lengkapi:\nワットさんは 先生 [ ]。",
+        "options": [
+          {
+            "text": "です",
+            "correct": true
+          },
+          {
+            "text": "じゃありません",
+            "correct": false
+          },
+          {
+            "text": "の",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex1-8",
+        "question": "Berdasarkan profil buku: 'シュミットさん (Power Electric - Insinyur)'. Lengkapi:\nシュミットさんは エンジニア [ ]。",
+        "options": [
+          {
+            "text": "です",
+            "correct": true
+          },
+          {
+            "text": "じゃありません",
+            "correct": false
+          },
+          {
+            "text": "ではありません",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "はじめまして。マイク・ミラーです。IMCの社員です。アメリカから来ました。どうぞよろしく。\nこちらはサントスさんです。ブラジル航空の社員です。ブラジルから来ました。どうぞよろしく。",
+      "questions": [
+        {
+          "id": "ex1-9",
+          "question": "ミラーさんは アメリカから 来ました。",
+          "correct": "T"
+        },
+        {
+          "id": "ex1-10",
+          "question": "サントスさんは 先生です。",
+          "correct": "F"
+        },
+        {
+          "id": "ex1-11",
+          "question": "ミラーさんは IMCの 社員です。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

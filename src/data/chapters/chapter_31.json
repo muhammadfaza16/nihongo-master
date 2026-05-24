@@ -1,0 +1,477 @@
+{
+  "id": 31,
+  "title": "Lesson 31: Permintaan Formal (〜ていただけませんか)",
+  "desc": "Mempelajari cara meminta bantuan secara sangat sopan menggunakan 〜ていただけませんか dan 〜てくださいませんか, serta perbedaan tingkat kesopanannya.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v31-1",
+      "rom": "Oshiete itadakemasu ka",
+      "kana": "おしえていただけますか",
+      "kanji": "教えていただけますか",
+      "en": "Bolehkah saya minta Anda mengajari saya? (sangat sopan)",
+      "audio": ""
+    },
+    {
+      "id": "v31-2",
+      "rom": "Onegai shimasu",
+      "kana": "おねがいします",
+      "kanji": "お願いします",
+      "en": "Mohon / Tolong (permintaan)",
+      "audio": ""
+    },
+    {
+      "id": "v31-3",
+      "rom": "Setsumei (shimasu)",
+      "kana": "せつめい（します）",
+      "kanji": "説明（します）",
+      "en": "Menjelaskan / Penjelasan",
+      "audio": ""
+    },
+    {
+      "id": "v31-4",
+      "rom": "Kakunin (shimasu)",
+      "kana": "かくにん（します）",
+      "kanji": "確認（します）",
+      "en": "Mengonfirmasi / Memeriksa",
+      "audio": ""
+    },
+    {
+      "id": "v31-5",
+      "rom": "Shiryō",
+      "kana": "しりょう",
+      "kanji": "資料",
+      "en": "Materi / Dokumen referensi",
+      "audio": ""
+    },
+    {
+      "id": "v31-6",
+      "rom": "Hookoku (shimasu)",
+      "kana": "ほうこく（します）",
+      "kanji": "報告（します）",
+      "en": "Melaporkan / Laporan",
+      "audio": ""
+    },
+    {
+      "id": "v31-7",
+      "rom": "Kansha shimasu",
+      "kana": "かんしゃします",
+      "kanji": "感謝します",
+      "en": "Berterima kasih / Menghargai",
+      "audio": ""
+    },
+    {
+      "id": "v31-8",
+      "rom": "Goannai (shimasu)",
+      "kana": "ごあんない（します）",
+      "kanji": "ご案内（します）",
+      "en": "Memandu / Mengarahkan (sopan)",
+      "audio": ""
+    },
+    {
+      "id": "v31-9",
+      "rom": "Teruchi",
+      "kana": "てつづき",
+      "kanji": "手続き",
+      "en": "Prosedur / Proses administrasi",
+      "audio": ""
+    },
+    {
+      "id": "v31-10",
+      "rom": "Mooshikomi (shimasu)",
+      "kana": "もうしこみ（します）",
+      "kanji": "申し込み（します）",
+      "en": "Mendaftar / Permohonan",
+      "audio": ""
+    },
+    {
+      "id": "v31-11",
+      "rom": "Kinyuu (shimasu)",
+      "kana": "きにゅう（します）",
+      "kanji": "記入（します）",
+      "en": "Mengisi (formulir)",
+      "audio": ""
+    },
+    {
+      "id": "v31-12",
+      "rom": "Shorui",
+      "kana": "しょるい",
+      "kanji": "書類",
+      "en": "Dokumen / Berkas",
+      "audio": ""
+    },
+    {
+      "id": "v31-13",
+      "rom": "Toritsugi",
+      "kana": "とりつぎ",
+      "kanji": "取り次ぎ",
+      "en": "Menyambungkan (telepon) / Perantara",
+      "audio": ""
+    },
+    {
+      "id": "v31-14",
+      "rom": "Meiwaku",
+      "kana": "めいわく",
+      "kanji": "迷惑",
+      "en": "Gangguan / Merepotkan",
+      "audio": ""
+    },
+    {
+      "id": "v31-15",
+      "rom": "Sassoku",
+      "kana": "さっそく",
+      "kanji": "早速",
+      "en": "Segera / Langsung",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g31-1",
+      "title": "1. 〜ていただけませんか (Permintaan Paling Sopan)",
+      "desc": "Bentuk permintaan paling formal dan hormat dalam bahasa Jepang. Digunakan kepada atasan, klien, atau orang yang jauh lebih senior.",
+      "points": [
+        "Pola: V-te form + いただけませんか",
+        "Contoh: Kono shorui wo kakunin shite itadakemasen ka. (Apakah Anda berkenan memeriksa dokumen ini?)",
+        "Lebih sopan dari: ~てもらえませんか → ~てくれませんか → ~てください (urutan dari paling sopan ke kasual)",
+        "Versi positif (sedikit kurang sopan): ~ていただけますか",
+        "Digunakan dalam situasi: permohonan kepada klien, surat resmi, permohonan kepada atasan"
+      ],
+      "formula": "V-て + いただけませんか",
+      "native_note": "Dalam email bisnis formal Jepang, ungkapan ini hampir selalu muncul. Menggunakannya menunjukkan Anda memahami budaya bisnis Jepang."
+    },
+    {
+      "id": "g31-2",
+      "title": "2. 〜てくださいませんか (Alternatif Formal)",
+      "desc": "Setingkat kesopanan dengan いただけませんか, namun posisinya lebih pada 'memohon dengan hormat'.",
+      "points": [
+        "Pola: V-te form + くださいませんか",
+        "Contoh: Mou ichido oshiete kudasaimasen ka. (Bolehkah Anda mengajari saya sekali lagi?)",
+        "Perbedaan nuansa: いただけませんか = 'apakah saya boleh menerima...'; くださいませんか = 'apakah Anda berkenan memberi...'",
+        "Dalam praktik, keduanya dapat digunakan bergantian"
+      ],
+      "formula": "V-て + くださいませんか"
+    },
+    {
+      "id": "g31-3",
+      "title": "3. Hierarki Kesopanan Permintaan",
+      "desc": "Memahami tingkatan permintaan dari paling kasual ke paling formal.",
+      "points": [
+        "Level 1 (kasual/perintah): V-て ください",
+        "Level 2 (sopan): V-て もらえませんか / V-て くれませんか",
+        "Level 3 (formal): V-て いただけませんか / V-て くださいませんか",
+        "Level 4 (sangat formal/tertulis): お + V-stem + いただけますでしょうか"
+      ],
+      "formula": "Semakin panjang ekspresi → semakin sopan"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "この書類を確認していただけませんか。",
+      "rom": "Kono shorui wo kakunin shite itadakemasen ka.",
+      "en": "Apakah Anda berkenan memeriksa dokumen ini?"
+    },
+    {
+      "jp": "もう一度説明していただけますか。",
+      "rom": "Mou ichido setsumei shite itadakemasu ka.",
+      "en": "Bolehkah Anda menjelaskan sekali lagi?"
+    },
+    {
+      "jp": "駅まで案内してくださいませんか。",
+      "rom": "Eki made goannai shite kudasaimasen ka.",
+      "en": "Apakah Anda berkenan memandu saya ke stasiun?"
+    },
+    {
+      "jp": "こちらにご記入いただけますでしょうか。",
+      "rom": "Kochira ni gokinyuu itadakemasu deshoo ka.",
+      "en": "Apakah Anda berkenan mengisi di sini?"
+    }
+  ],
+  "conversation": {
+    "title": "Memohon Bantuan Rekan Senior di Kantor",
+    "dialogue": [
+      {
+        "speaker": "Yamada",
+        "jp": "田中さん、少しよろしいですか。",
+        "rom": "Tanaka-san, sukoshi yoroshii desu ka.",
+        "en": "Tanaka-san, ada waktu sebentar?"
+      },
+      {
+        "speaker": "Tanaka",
+        "jp": "はい、どうぞ。",
+        "rom": "Hai, douzo.",
+        "en": "Ya, silakan."
+      },
+      {
+        "speaker": "Yamada",
+        "jp": "この報告書の書き方を教えていただけませんか。",
+        "rom": "Kono hookokusho no kakikata wo oshiete itadakemasen ka.",
+        "en": "Apakah Anda berkenan mengajari saya cara menulis laporan ini?"
+      },
+      {
+        "speaker": "Tanaka",
+        "jp": "もちろん。一緒に見ましょう。",
+        "rom": "Mochiron. Issho ni mimashou.",
+        "en": "Tentu saja. Mari kita lihat bersama."
+      },
+      {
+        "speaker": "Yamada",
+        "jp": "ありがとうございます。助かります。",
+        "rom": "Arigatou gozaimasu. Tasukarimasu.",
+        "en": "Terima kasih banyak. Sangat membantu."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "Permintaan yang paling sopan dari pilihan berikut adalah:",
+      "options": [
+        {
+          "text": "教えてください。",
+          "correct": false
+        },
+        {
+          "text": "教えてもらえませんか。",
+          "correct": false
+        },
+        {
+          "text": "教えていただけませんか。",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "Terjemahkan dengan sopan: 'Bolehkah Anda menunggu sebentar?'\nShoushou omachi [   ] ka.",
+      "answer": "itadakemasen"
+    },
+    {
+      "type": "mcq",
+      "question": "Perbedaan 〜ていただけませんか dan 〜てくれませんか:",
+      "options": [
+        {
+          "text": "Tidak ada perbedaan",
+          "correct": false
+        },
+        {
+          "text": "いただけませんか jauh lebih sopan dan formal",
+          "correct": true
+        },
+        {
+          "text": "くれませんか lebih sopan",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Di Loket Bank",
+      "situation": "Nasabah meminta bantuan petugas bank",
+      "dialogue": [
+        {
+          "speaker": "Nasabah",
+          "jp": "すみません、この用紙の書き方を教えていただけませんか。",
+          "rom": "Sumimasen, kono youshi no kakikata wo oshiete itadakemasen ka.",
+          "en": "Permisi, bolehkah Anda mengajari cara mengisi formulir ini?"
+        },
+        {
+          "speaker": "Petugas",
+          "jp": "はい、もちろんです。こちらへどうぞ。",
+          "rom": "Hai, mochiron desu. Kochira e douzo.",
+          "en": "Tentu saja. Silakan ke sini."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r31-1",
+      "jp": "この資料を明日までに送っていただけませんか。",
+      "rom": "Kono shiryou wo ashita made ni okutte itadakemasen ka.",
+      "en": "Apakah Anda berkenan mengirimkan dokumen ini sebelum besok?"
+    },
+    {
+      "id": "r31-2",
+      "jp": "もう少し大きい声で話していただけますか。",
+      "rom": "Mou sukoshi ookii koe de hanashite itadakemasu ka.",
+      "en": "Bolehkah Anda berbicara sedikit lebih keras?"
+    },
+    {
+      "id": "r31-3",
+      "jp": "ここにサインしていただけますでしょうか。",
+      "rom": "Koko ni sain shite itadakemasu deshou ka.",
+      "en": "Apakah Anda berkenan menandatangani di sini?"
+    },
+    {
+      "id": "r31-4",
+      "jp": "電話番号を教えていただけませんか。",
+      "rom": "Denwa bangou wo oshiete itadakemasen ka.",
+      "en": "Bolehkah saya minta nomor telepon Anda?"
+    },
+    {
+      "id": "r31-5",
+      "jp": "もう一度確認してくださいませんか。",
+      "rom": "Mou ichido kakunin shite kudasaimasen ka.",
+      "en": "Apakah Anda berkenan memeriksa sekali lagi?"
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb31-1",
+      "pattern": "V-て + いただけませんか",
+      "instruction": "Ubah permintaan biasa ini menjadi sangat sopan.",
+      "question": "Mite kudasai → itadakemasen ka",
+      "correct": "みていただけませんか。",
+      "romaji": "Mite itadakemasen ka.",
+      "translation": "Apakah Anda berkenan melihatnya?"
+    },
+    {
+      "id": "wb31-2",
+      "pattern": "V-て + くださいませんか",
+      "instruction": "Buat permintaan formal: 'Tolong ajari saya bahasa Jepang'.",
+      "question": "Nihongo / oshieru / kudasaimasen ka",
+      "correct": "にほんごを おしえてくださいませんか。",
+      "romaji": "Nihongo wo oshiete kudasaimasen ka.",
+      "translation": "Apakah Anda berkenan mengajari saya bahasa Jepang?"
+    },
+    {
+      "id": "wb31-3",
+      "pattern": "お + V-stem + いただけますでしょうか",
+      "instruction": "Buat permintaan paling formal.",
+      "question": "Machi kudasai → paling formal",
+      "correct": "おまちいただけますでしょうか。",
+      "romaji": "Omachi itadakemasu deshou ka.",
+      "translation": "Apakah Anda berkenan menunggu? (paling sopan)"
+    },
+    {
+      "id": "wb31-4",
+      "pattern": "Hierarki permintaan",
+      "instruction": "Pilih ekspresi yang tepat untuk konteks: meminta klien VIP menandatangani dokumen.",
+      "question": "Sain suru / VIP client / most polite",
+      "correct": "こちらにサインしていただけますでしょうか。",
+      "romaji": "Kochira ni sain shite itadakemasu deshou ka.",
+      "translation": "Apakah Anda berkenan menandatangani di sini?"
+    },
+    {
+      "id": "wb31-5",
+      "pattern": "Respons terhadap permintaan sopan",
+      "instruction": "Berikan respons yang sesuai saat menerima permintaan sopan.",
+      "question": "Kakunin shite itadakemasen ka → jawab positif",
+      "correct": "はい、かしこまりました。",
+      "romaji": "Hai, kashikomarimashita.",
+      "translation": "Baik, saya mengerti (sangat sopan)."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex31-1",
+        "sentence": "この しょるいを かくにんして [ ] ませんか。",
+        "correct": "いただけ",
+        "translation": "Apakah Anda berkenan memeriksa dokumen ini?"
+      },
+      {
+        "id": "ex31-2",
+        "sentence": "もういちど せつめいして [ ] ますか。",
+        "correct": "いただけ",
+        "translation": "Bolehkah Anda menjelaskan sekali lagi?"
+      },
+      {
+        "id": "ex31-3",
+        "sentence": "ここに サインして [ ] ませんか。",
+        "correct": "くださいませんか→くださいませ",
+        "translation": "Apakah Anda berkenan menandatangani di sini?"
+      },
+      {
+        "id": "ex31-4",
+        "sentence": "おなまえを おしえて [ ] でしょうか。",
+        "correct": "いただけます",
+        "translation": "Bolehkah saya tahu nama Anda?"
+      },
+      {
+        "id": "ex31-5",
+        "sentence": "しりょうを おくって [ ] ませんか。",
+        "correct": "いただけ",
+        "translation": "Apakah Anda berkenan mengirimkan dokumen?"
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex31-6",
+        "question": "Urutan kesopanan permintaan dari yang PALING SOPAN adalah:",
+        "options": [
+          {
+            "text": "ください → もらえませんか → いただけませんか",
+            "correct": false
+          },
+          {
+            "text": "いただけませんか → もらえませんか → ください",
+            "correct": true
+          },
+          {
+            "text": "もらえませんか → いただけませんか → ください",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex31-7",
+        "question": "'Kashikomarimashita' adalah respons yang paling tepat dari:",
+        "options": [
+          {
+            "text": "Teman kepada teman",
+            "correct": false
+          },
+          {
+            "text": "Staf/pelayan kepada pelanggan/atasan",
+            "correct": true
+          },
+          {
+            "text": "Atasan kepada bawahan",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex31-8",
+        "question": "Dalam email bisnis formal, permintaan yang paling tepat adalah:",
+        "options": [
+          {
+            "text": "〜てください",
+            "correct": false
+          },
+          {
+            "text": "〜ていただけますでしょうか",
+            "correct": true
+          },
+          {
+            "text": "〜てくれませんか",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "ABCのやまだです。いつもおせわになっております。さきほどおおくりしたしりょうについて、ごかくにんいただけますでしょうか。ごふめいなてんがございましたら、おしらせいただけますようおねがいいたします。",
+      "questions": [
+        {
+          "id": "ex31-9",
+          "question": "このメールはビジネスのメールです。",
+          "correct": "T"
+        },
+        {
+          "id": "ex31-10",
+          "question": "やまださんはしりょうをまだおくっていません。",
+          "correct": "F"
+        },
+        {
+          "id": "ex31-11",
+          "question": "やまださんはしつもんがあればれんらくしてほしいとおもっています。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "id": 0,
+  "title": "Chapter 0: Fondasi Nol Besar (Sistem Tulisan & Pelafalan)",
+  "desc": "Sebelum menyentuh Bab 1 Minna No Nihongo, Anda WAJIB menguasai sistem tulisan (Hiragana & Katakana) serta aturan dasar pelafalan bahasa Jepang.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v0-1",
+      "rom": "Ohayou gozaimasu",
+      "kana": "おはようございます",
+      "kanji": "",
+      "en": "Selamat pagi",
+      "audio": ""
+    },
+    {
+      "id": "v0-2",
+      "rom": "Konnichiwa",
+      "kana": "こんにちは",
+      "kanji": "",
+      "en": "Selamat siang",
+      "audio": ""
+    },
+    {
+      "id": "v0-3",
+      "rom": "Konbanwa",
+      "kana": "こんばんは",
+      "kanji": "",
+      "en": "Selamat malam",
+      "audio": ""
+    },
+    {
+      "id": "v0-4",
+      "rom": "Arigatou gozaimasu",
+      "kana": "ありがとうございます",
+      "kanji": "",
+      "en": "Terima kasih banyak",
+      "audio": ""
+    },
+    {
+      "id": "v0-5",
+      "rom": "Sumimasen",
+      "kana": "すみません",
+      "kanji": "",
+      "en": "Permisi / Maaf",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g0-1",
+      "title": "1. Tiga Jenis Huruf Jepang",
+      "desc": "Bahasa Jepang tidak menggunakan abjad A-Z. Mereka menggunakan 3 jenis huruf secara bersamaan dalam satu kalimat.",
+      "points": [
+        "HIRAGANA (ひらがな): Huruf asli Jepang. Bentuknya melengkung. Digunakan untuk tata bahasa, partikel, dan kata-kata asli Jepang. Ada 46 huruf dasar.",
+        "KATAKANA (カタカナ): Huruf serapan asing. Bentuknya kaku dan bersudut tajam. Digunakan untuk menulis nama orang asing (seperti nama Anda), nama negara, dan kata serapan (misal: 'Komputer' -> コンピューター).",
+        "KANJI (漢字): Karakter gambar dari China. Satu huruf mewakili SATU MAKNA utuh, bukan bunyi. Kenapa butuh Kanji? Karena bahasa Jepang tidak pakai spasi. Kanji berfungsi sebagai jangkar visual agar kalimat mudah dibaca."
+      ],
+      "formula": "Satu kalimat normal = Kanji (akar kata) + Hiragana (tata bahasa) + Katakana (kata asing)"
+    },
+    {
+      "id": "g0-2",
+      "title": "2. Pelafalan Vokal Panjang (Chouon)",
+      "desc": "Di bahasa Jepang, panjang-pendeknya nada sangat fatal. Beda panjang nada, beda arti mutlak.",
+      "points": [
+        "Obaasan (おばあさん) = Nenek. Obasan (おばさん) = Bibi. Kesalahan baca bisa menghina orang!",
+        "Vokal panjang di Hiragana ditulis dengan menambahkan huruf vokal pendamping (a, i, u, e, o).",
+        "Vokal panjang di Katakana ditandai dengan garis lurus 'ー' (Contoh: Kōhī / Kopi = コーヒー)."
+      ],
+      "formula": "Baca vokal 2 ketukan (dipanjangkan)"
+    },
+    {
+      "id": "g0-3",
+      "title": "3. Konsonan Ganda (Sokuon - っ)",
+      "desc": "Konsonan ganda ditandai dengan huruf 'tsu' kecil (っ). Ini memberikan jeda/hentakan sepersekian detik sebelum bunyi berikutnya.",
+      "points": [
+        "Buka (物価 - bukka): Harga barang. Buka (部下 - buka): Bawahan.",
+        "Jika Anda melewatkan hentakan 'tsu' kecil ini, orang Jepang tidak akan mengerti apa yang Anda ucapkan."
+      ],
+      "formula": "Beri jeda 1 ketukan keras sebelum huruf berikutnya."
+    },
+    {
+      "id": "g0-4",
+      "title": "4. Bunyi Sengau 'N' (ん)",
+      "desc": "Huruf 'n' (ん) adalah satu-satunya konsonan mati di bahasa Jepang yang bisa berdiri sendiri.",
+      "points": [
+        "Bisa dibaca 'n', 'm', atau 'ng' tergantung huruf setelahnya. (Contoh: 'Senpai' dibaca sempai, 'Tenpura' dibaca tempura)."
+      ],
+      "formula": "ん = Bunyi sengau"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "あ い う え お",
+      "rom": "a i u e o",
+      "en": "Vokal Dasar Hiragana"
+    },
+    {
+      "jp": "おばあさん / おばさん",
+      "rom": "obaasan / obasan",
+      "en": "Nenek / Bibi (Beda Vokal Panjang)"
+    },
+    {
+      "jp": "きって / きて",
+      "rom": "kitte / kite",
+      "en": "Perangko / Datanglah (Beda Konsonan Ganda)"
+    }
+  ],
+  "conversation": {
+    "title": "Aisatsu (Salam Dasar Sehari-hari)",
+    "dialogue": [
+      {
+        "speaker": "Guru",
+        "jp": "みなさん、おはようございます。",
+        "rom": "Minasan, ohayou gozaimasu.",
+        "en": "Semuanya, selamat pagi."
+      },
+      {
+        "speaker": "Murid",
+        "jp": "先生、おはようございます。",
+        "rom": "Sensei, ohayou gozaimasu.",
+        "en": "Guru, selamat pagi."
+      },
+      {
+        "speaker": "Guru",
+        "jp": "ありがとうございます。",
+        "rom": "Arigatou gozaimasu.",
+        "en": "Terima kasih banyak."
+      },
+      {
+        "speaker": "Murid",
+        "jp": "いいえ、どういたしまして。",
+        "rom": "Iie, dou itashimashite.",
+        "en": "Tidak, sama-sama."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "Huruf apa yang digunakan khusus untuk menulis kata serapan asing seperti 'Komputer' atau nama Anda?",
+      "options": [
+        {
+          "text": "Hiragana",
+          "correct": false
+        },
+        {
+          "text": "Katakana",
+          "correct": true
+        },
+        {
+          "text": "Kanji",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "mcq",
+      "question": "Mengapa membedakan panjang vokal (seperti obasan vs obaasan) sangat kritis dalam bahasa Jepang?",
+      "options": [
+        {
+          "text": "Hanya untuk agar terdengar keren.",
+          "correct": false
+        },
+        {
+          "text": "Karena mengubah arti kata secara total.",
+          "correct": true
+        },
+        {
+          "text": "Karena orang Jepang berbicara lambat.",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "reibun": [],
+  "workbook": [],
+  "exam": []
+}

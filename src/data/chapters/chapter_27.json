@@ -1,0 +1,455 @@
+{
+  "id": 27,
+  "title": "Lesson 27: Keigo — Bahasa Hormat (尊敬語 & 謙譲語)",
+  "desc": "Bab krusial untuk komunikasi profesional di Jepang. Anda akan belajar dua pilar Keigo: Sonkeigo (meninggikan lawan bicara) dan Kenjōgo (merendahkan diri sendiri). Pola ini wajib dikuasai untuk lingkungan kerja formal.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v27-1",
+      "rom": "Irasshaimasu",
+      "kana": "いらっしゃいます",
+      "kanji": "",
+      "en": "Ada / Pergi / Datang (hormat, pengganti います/います/きます/いきます)",
+      "audio": ""
+    },
+    {
+      "id": "v27-2",
+      "rom": "Osshaimasu",
+      "kana": "おっしゃいます",
+      "kanji": "",
+      "en": "Berkata (hormat, pengganti いいます)",
+      "audio": ""
+    },
+    {
+      "id": "v27-3",
+      "rom": "Nasaimasu",
+      "kana": "なさいます",
+      "kanji": "",
+      "en": "Melakukan (hormat, pengganti します)",
+      "audio": ""
+    },
+    {
+      "id": "v27-4",
+      "rom": "Meshiagarimasuu",
+      "kana": "めしあがります",
+      "kanji": "召し上がります",
+      "en": "Makan/Minum (hormat, pengganti たべます/のみます)",
+      "audio": ""
+    },
+    {
+      "id": "v27-5",
+      "rom": "Goran ni narimasu",
+      "kana": "ごらんになります",
+      "kanji": "ご覧になります",
+      "en": "Melihat (hormat, pengganti みます)",
+      "audio": ""
+    },
+    {
+      "id": "v27-6",
+      "rom": "Mōshimasu",
+      "kana": "もうします",
+      "kanji": "申します",
+      "en": "Berkata/bernama (rendah hati, pengganti いいます)",
+      "audio": ""
+    },
+    {
+      "id": "v27-7",
+      "rom": "Marimasu",
+      "kana": "まいります",
+      "kanji": "参ります",
+      "en": "Pergi/Datang (rendah hati, pengganti いきます/きます)",
+      "audio": ""
+    },
+    {
+      "id": "v27-8",
+      "rom": "Orimasu",
+      "kana": "おります",
+      "kanji": "",
+      "en": "Ada (rendah hati, pengganti います)",
+      "audio": ""
+    },
+    {
+      "id": "v27-9",
+      "rom": "Itashimasu",
+      "kana": "いたします",
+      "kanji": "",
+      "en": "Melakukan (rendah hati, pengganti します)",
+      "audio": ""
+    },
+    {
+      "id": "v27-10",
+      "rom": "Haiken shimasu",
+      "kana": "はいけんします",
+      "kanji": "拝見します",
+      "en": "Melihat (rendah hati, pengganti みます)",
+      "audio": ""
+    },
+    {
+      "id": "v27-11",
+      "rom": "Ukagaimasu",
+      "kana": "うかがいます",
+      "kanji": "伺います",
+      "en": "Mengunjungi/bertanya (rendah hati, pengganti たずねます/ききます)",
+      "audio": ""
+    },
+    {
+      "id": "v27-12",
+      "rom": "Itadakimasu",
+      "kana": "いただきます",
+      "kanji": "いただきます",
+      "en": "Menerima/makan (rendah hati, pengganti もらいます/たべます)",
+      "audio": ""
+    },
+    {
+      "id": "v27-13",
+      "rom": "Sashiagemasu",
+      "kana": "さしあげます",
+      "kanji": "差し上げます",
+      "en": "Memberikan (rendah hati, pengganti あげます)",
+      "audio": ""
+    },
+    {
+      "id": "v27-14",
+      "rom": "Kudasaimasu",
+      "kana": "くださいます",
+      "kanji": "",
+      "en": "Memberikan (hormat, pengganti くれます)",
+      "audio": ""
+    },
+    {
+      "id": "v27-15",
+      "rom": "O~ ni narimasu",
+      "kana": "お〜になります",
+      "kanji": "",
+      "en": "Pola hormat umum untuk kata kerja Jepang asli",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g27-1",
+      "title": "1. 尊敬語 — Sonkeigo (Meninggikan lawan bicara)",
+      "desc": "Digunakan untuk menghormati tindakan orang lain (atasan, pelanggan, orang asing yang dihormati).",
+      "points": [
+        "Kata kerja khusus: います→いらっしゃいます, いいます→おっしゃいます, します→なさいます, たべます/のみます→めしあがります, みます→ごらんになります",
+        "Pola umum: お + V-stem + に + なります. Contoh: Yomimasu → Oyomi ni narimasu (Berkenan membaca).",
+        "Pola perintah hormat: お + V-stem + ください. Contoh: Oyomi kudasai (Silakan dibaca)."
+      ],
+      "formula": "お + V-stem + に なります / お + V-stem + ください",
+      "native_note": "Sonkeigo dipakai untuk menggambarkan tindakan orang LAIN yang Anda hormati, bukan tindakan diri sendiri."
+    },
+    {
+      "id": "g27-2",
+      "title": "2. 謙譲語 — Kenjōgo (Merendahkan diri sendiri)",
+      "desc": "Digunakan untuk menggambarkan tindakan diri sendiri dengan cara yang merendah, sehingga secara tidak langsung meninggikan lawan bicara.",
+      "points": [
+        "Kata kerja khusus: いきます/きます→まいります, います→おります, します→いたします, みます→はいけんします, いいます→もうします, たずねます→うかがいます, もらいます→いただきます, あげます→さしあげます",
+        "Pola umum: お + V-stem + します. Contoh: Yomimasu → Oyomi shimasu (Saya (dengan rendah hati) membacakan)."
+      ],
+      "formula": "お + V-stem + します (Kenjōgo)"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "社長は もう いらっしゃいますか。",
+      "rom": "Shachō wa mō irasshaimasu ka.",
+      "en": "Apakah Direktur sudah hadir?"
+    },
+    {
+      "jp": "田中と 申します。",
+      "rom": "Tanaka to mōshimasu.",
+      "en": "Nama saya Tanaka (rendah hati)."
+    },
+    {
+      "jp": "資料を ご覧に なりましたか。",
+      "rom": "Shiryō wo goran ni narimashita ka.",
+      "en": "Sudahkah Anda melihat dokumennya?"
+    },
+    {
+      "jp": "少々 お待ち ください。",
+      "rom": "Shōshō omachi kudasai.",
+      "en": "Mohon tunggu sebentar (sangat sopan)."
+    }
+  ],
+  "conversation": {
+    "title": "Telepon ke Perusahaan Klien",
+    "dialogue": [
+      {
+        "speaker": "Tanaka",
+        "jp": "もしもし、IMC の 田中と 申しますが、山田部長は いらっしゃいますか。",
+        "rom": "Moshi moshi, IMC no Tanaka to mōshimasu ga, Yamada buchō wa irasshaimasu ka.",
+        "en": "Halo, saya Tanaka dari IMC, apakah Manajer Yamada ada?"
+      },
+      {
+        "speaker": "Uketsuke",
+        "jp": "はい、少々 お待ち ください。",
+        "rom": "Hai, shōshō omachi kudasai.",
+        "en": "Baik, mohon tunggu sebentar."
+      },
+      {
+        "speaker": "Yamada",
+        "jp": "お電話 代わりました。山田です。",
+        "rom": "Odenwa kawarimashita. Yamada desu.",
+        "en": "Sudah tersambung. Ini Yamada."
+      },
+      {
+        "speaker": "Tanaka",
+        "jp": "いつも お世話に なっております。来週 ご挨拶に 伺いたいのですが、ご都合は いかがでしょうか。",
+        "rom": "Itsumo osewa ni natte orimasu. Raishuu goisatsu ni ukagaitai no desu ga, gotsugō wa ikaga deshō ka.",
+        "en": "Terima kasih selalu atas kerjasamanya. Minggu depan saya ingin berkunjung untuk salam, bagaimana dengan jadwal Anda?"
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "Ungkapan hormat untuk 'tabemasu' (makan) adalah:",
+      "options": [
+        {
+          "text": "めしあがります",
+          "correct": true
+        },
+        {
+          "text": "いただきます",
+          "correct": false
+        },
+        {
+          "text": "たべられます",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "Cara rendah hati menyatakan nama diri: '[nama] to [   ].'",
+      "answer": "mōshimasu"
+    },
+    {
+      "type": "mcq",
+      "question": "'Haiken shimasu' adalah kenjōgo dari:",
+      "options": [
+        {
+          "text": "きます",
+          "correct": false
+        },
+        {
+          "text": "みます",
+          "correct": true
+        },
+        {
+          "text": "はなします",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Menerima Tamu di Kantor",
+      "situation": "Resepsionis menyambut tamu",
+      "dialogue": [
+        {
+          "speaker": "Resepsionis",
+          "jp": "いらっしゃいませ。どちら様でしょうか。",
+          "rom": "Irasshaimase. Dochira-sama deshō ka.",
+          "en": "Selamat datang. Anda dari mana?"
+        },
+        {
+          "speaker": "Tamu",
+          "jp": "ABCの 鈴木と 申します。",
+          "rom": "ABC no Suzuki to mōshimasu.",
+          "en": "Saya Suzuki dari ABC."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r27-1",
+      "jp": "先生は 何時に いらっしゃいますか。",
+      "rom": "Sensei wa nanji ni irasshaimasu ka.",
+      "en": "Guru akan tiba jam berapa?"
+    },
+    {
+      "id": "r27-2",
+      "jp": "資料を 拝見 しました。",
+      "rom": "Shiryō wo haiken shimashita.",
+      "en": "Saya sudah melihat dokumennya."
+    },
+    {
+      "id": "r27-3",
+      "jp": "社長が おっしゃった とおりです。",
+      "rom": "Shachō ga osshatta tōri desu.",
+      "en": "Persis seperti yang Direktur katakan."
+    },
+    {
+      "id": "r27-4",
+      "jp": "明日 午後 2時に 伺います。",
+      "rom": "Ashita gogo niji ni ukagaimasu.",
+      "en": "Besok saya akan berkunjung jam 2 siang."
+    },
+    {
+      "id": "r27-5",
+      "jp": "何か ご用が ございましたら、何でも おっしゃってください。",
+      "rom": "Nanika goyō ga gozaimashitara, nandemo osshatte kudasai.",
+      "en": "Kalau ada keperluan apapun, silakan beritahu saya."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb27-1",
+      "pattern": "Sonkeigo: います → いらっしゃいます",
+      "instruction": "Ubah kalimat ini ke bentuk hormat.",
+      "question": "Sensei wa ima jimusho ni imasu.",
+      "correct": "せんせいは いま じむしょに いらっしゃいます。",
+      "romaji": "Sensei wa ima jimusho ni irasshaimasu.",
+      "translation": "Guru sekarang ada di kantor (hormat)."
+    },
+    {
+      "id": "wb27-2",
+      "pattern": "Kenjōgo: いきます → まいります",
+      "instruction": "Ubah tindakan diri sendiri ke bentuk rendah hati.",
+      "question": "Ashita ukagaimasu. (berkunjung)",
+      "correct": "あした うかがいます。",
+      "romaji": "Ashita ukagaimasu.",
+      "translation": "Besok saya akan berkunjung (rendah hati)."
+    },
+    {
+      "id": "wb27-3",
+      "pattern": "Sonkeigo: します → なさいます",
+      "instruction": "Ubah ke bentuk hormat.",
+      "question": "Shachō wa nani wo shimasu ka.",
+      "correct": "しゃちょうは なにを なさいますか。",
+      "romaji": "Shachō wa nani wo nasaimasu ka.",
+      "translation": "Apa yang akan Direktur lakukan?"
+    },
+    {
+      "id": "wb27-4",
+      "pattern": "Kenjōgo: もらいます → いただきます",
+      "instruction": "Ubah ke bentuk rendah hati.",
+      "question": "Sensei ni hon wo moraimashita.",
+      "correct": "せんせいに ほんを いただきました。",
+      "romaji": "Sensei ni hon wo itadakimashita.",
+      "translation": "Saya menerima buku dari guru (rendah hati)."
+    },
+    {
+      "id": "wb27-5",
+      "pattern": "お + V-stem + ください (perintah hormat)",
+      "instruction": "Buat kalimat perintah hormat untuk 'menunggu'.",
+      "question": "Matte kudasai → keigo",
+      "correct": "おまち ください。",
+      "romaji": "Omachi kudasai.",
+      "translation": "Mohon tunggu (sangat sopan)."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex27-1",
+        "sentence": "しゃちょうは いま かいぎしつに [ ]。",
+        "correct": "いらっしゃいます",
+        "translation": "Direktur sekarang ada di ruang rapat."
+      },
+      {
+        "id": "ex27-2",
+        "sentence": "たなかと [ ]。よろしく おねがいします。",
+        "correct": "もうします",
+        "translation": "Nama saya Tanaka. Mohon bantuannya."
+      },
+      {
+        "id": "ex27-3",
+        "sentence": "しりょうを [ ] しました。",
+        "correct": "はいけん",
+        "translation": "Saya sudah melihat dokumennya."
+      },
+      {
+        "id": "ex27-4",
+        "sentence": "あした ごごに [ ]。",
+        "correct": "うかがいます",
+        "translation": "Besok sore saya akan berkunjung."
+      },
+      {
+        "id": "ex27-5",
+        "sentence": "すこし おまち [ ]。",
+        "correct": "ください",
+        "translation": "Mohon tunggu sebentar."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex27-6",
+        "question": "Kenjōgo (bentuk rendah hati) untuk 'tabemasu' adalah:",
+        "options": [
+          {
+            "text": "めしあがります",
+            "correct": false
+          },
+          {
+            "text": "いただきます",
+            "correct": true
+          },
+          {
+            "text": "おたべします",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex27-7",
+        "question": "Sonkeigo digunakan untuk:",
+        "options": [
+          {
+            "text": "Mendeskripsikan tindakan diri sendiri dengan rendah hati",
+            "correct": false
+          },
+          {
+            "text": "Mendeskripsikan tindakan orang yang dihormati",
+            "correct": true
+          },
+          {
+            "text": "Berbicara kepada teman sebaya",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex27-8",
+        "question": "Cara paling sopan untuk mengatakan 'saya pergi' (kenjōgo) adalah:",
+        "options": [
+          {
+            "text": "いきます",
+            "correct": false
+          },
+          {
+            "text": "まいります",
+            "correct": true
+          },
+          {
+            "text": "いらっしゃいます",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "もしもし、わたくしは さくら商事の すずきと もうします。やまだ部長は いらっしゃいますか。... はい、しょうしょうおまちください。... おまたせしました。やまだです。... らいしゅうのかようびにうかがいたいのですが、ごつごうはいかがでしょうか。",
+      "questions": [
+        {
+          "id": "ex27-9",
+          "question": "すずきさんは さくら商事の しゃいんです。",
+          "correct": "T"
+        },
+        {
+          "id": "ex27-10",
+          "question": "すずきさんは やまださんに でんわしています。",
+          "correct": "T"
+        },
+        {
+          "id": "ex27-11",
+          "question": "すずきさんは らいしゅう もくようびに うかがいたいです。",
+          "correct": "F"
+        }
+      ]
+    }
+  }
+}

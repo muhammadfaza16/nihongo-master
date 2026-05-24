@@ -1,0 +1,818 @@
+{
+  "id": 6,
+  "title": "Lesson 6: Kata Kerja Transitif & Objek (Partikel O)",
+  "desc": "Membedah Bab 6. Anda akan belajar bagaimana menunjuk objek penderita yang dikenai pekerjaan (makan nasi, minum air), menyatakan tempat terjadinya aktivitas, serta mengajak orang lain.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v6-1",
+      "rom": "Tabemasu",
+      "kana": "たべます",
+      "kanji": "食べます",
+      "en": "Makan",
+      "audio": ""
+    },
+    {
+      "id": "v6-2",
+      "rom": "Nomimasu",
+      "kana": "のみます",
+      "kanji": "飲みます",
+      "en": "Minum",
+      "audio": ""
+    },
+    {
+      "id": "v6-3",
+      "rom": "Suimasu",
+      "kana": "すいます",
+      "kanji": "吸います",
+      "en": "Menghisap (merokok)",
+      "audio": ""
+    },
+    {
+      "id": "v6-4",
+      "rom": "Mimasu",
+      "kana": "みます",
+      "kanji": "見ます",
+      "en": "Melihat / Menonton",
+      "audio": ""
+    },
+    {
+      "id": "v6-5",
+      "rom": "Kikimasu",
+      "kana": "ききます",
+      "kanji": "聞きます",
+      "en": "Mendengar",
+      "audio": ""
+    },
+    {
+      "id": "v6-6",
+      "rom": "Yomimasu",
+      "kana": "よみます",
+      "kanji": "読みます",
+      "en": "Membaca",
+      "audio": ""
+    },
+    {
+      "id": "v6-7",
+      "rom": "Kakimasu",
+      "kana": "かきます",
+      "kanji": "書きます",
+      "en": "Menulis / Menggambar",
+      "audio": ""
+    },
+    {
+      "id": "v6-8",
+      "rom": "Kaimasu",
+      "kana": "かいます",
+      "kanji": "買います",
+      "en": "Membeli",
+      "audio": ""
+    },
+    {
+      "id": "v6-9",
+      "rom": "Torimasu (shashin o)",
+      "kana": "とります",
+      "kanji": "撮ります",
+      "en": "Mengambil (foto)",
+      "audio": ""
+    },
+    {
+      "id": "v6-10",
+      "rom": "Shimasu",
+      "kana": "します",
+      "kanji": "",
+      "en": "Melakukan / Mengerjakan / Bermain (olahraga)",
+      "audio": ""
+    },
+    {
+      "id": "v6-11",
+      "rom": "Aimasu (tomodachi ni)",
+      "kana": "あいます",
+      "kanji": "会います",
+      "en": "Bertemu (teman) -> Pakai partikel NI",
+      "audio": ""
+    },
+    {
+      "id": "v6-12",
+      "rom": "Gohan",
+      "kana": "ごはん",
+      "kanji": "ご飯",
+      "en": "Nasi / Makan",
+      "audio": ""
+    },
+    {
+      "id": "v6-13",
+      "rom": "Asagohan",
+      "kana": "あさごはん",
+      "kanji": "朝ご飯",
+      "en": "Makan pagi / Sarapan",
+      "audio": ""
+    },
+    {
+      "id": "v6-14",
+      "rom": "Hirugohan",
+      "kana": "ひるごはん",
+      "kanji": "昼ご飯",
+      "en": "Makan siang",
+      "audio": ""
+    },
+    {
+      "id": "v6-15",
+      "rom": "Bangohan",
+      "kana": "ばんごはん",
+      "kanji": "晩ご飯",
+      "en": "Makan malam",
+      "audio": ""
+    },
+    {
+      "id": "v6-16",
+      "rom": "Pan",
+      "kana": "パン",
+      "kanji": "",
+      "en": "Roti",
+      "audio": ""
+    },
+    {
+      "id": "v6-17",
+      "rom": "Tamago",
+      "kana": "たまご",
+      "kanji": "卵",
+      "en": "Telur",
+      "audio": ""
+    },
+    {
+      "id": "v6-18",
+      "rom": "Niku",
+      "kana": "にく",
+      "kanji": "肉",
+      "en": "Daging",
+      "audio": ""
+    },
+    {
+      "id": "v6-19",
+      "rom": "Sakana",
+      "kana": "さかな",
+      "kanji": "魚",
+      "en": "Ikan",
+      "audio": ""
+    },
+    {
+      "id": "v6-20",
+      "rom": "Yasai",
+      "kana": "やさい",
+      "kanji": "野菜",
+      "en": "Sayuran",
+      "audio": ""
+    },
+    {
+      "id": "v6-21",
+      "rom": "Kudamono",
+      "kana": "くだもの",
+      "kanji": "果物",
+      "en": "Buah-buahan",
+      "audio": ""
+    },
+    {
+      "id": "v6-22",
+      "rom": "Mizu",
+      "kana": "みず",
+      "kanji": "水",
+      "en": "Air",
+      "audio": ""
+    },
+    {
+      "id": "v6-23",
+      "rom": "Ocha",
+      "kana": "おちゃ",
+      "kanji": "お茶",
+      "en": "Teh hijau",
+      "audio": ""
+    },
+    {
+      "id": "v6-24",
+      "rom": "Koucha",
+      "kana": "こうちゃ",
+      "kanji": "紅茶",
+      "en": "Teh hitam (Teh celup/barat)",
+      "audio": ""
+    },
+    {
+      "id": "v6-25",
+      "rom": "Gyuunyuu / Miruku",
+      "kana": "ぎゅうにゅう / ミルク",
+      "kanji": "牛乳",
+      "en": "Susu",
+      "audio": ""
+    },
+    {
+      "id": "v6-26",
+      "rom": "Juusu",
+      "kana": "ジュース",
+      "kanji": "",
+      "en": "Jus",
+      "audio": ""
+    },
+    {
+      "id": "v6-27",
+      "rom": "Biiru",
+      "kana": "ビール",
+      "kanji": "",
+      "en": "Bir",
+      "audio": ""
+    },
+    {
+      "id": "v6-28",
+      "rom": "Osake",
+      "kana": "おさけ",
+      "kanji": "お酒",
+      "en": "Sake (Alkohol Jepang)",
+      "audio": ""
+    },
+    {
+      "id": "v6-29",
+      "rom": "Eiga",
+      "kana": "えいが",
+      "kanji": "映画",
+      "en": "Film",
+      "audio": ""
+    },
+    {
+      "id": "v6-30",
+      "rom": "Tegami",
+      "kana": "てがみ",
+      "kanji": "手紙",
+      "en": "Surat",
+      "audio": ""
+    },
+    {
+      "id": "v6-31",
+      "rom": "Repooto",
+      "kana": "レポート",
+      "kanji": "",
+      "en": "Laporan",
+      "audio": ""
+    },
+    {
+      "id": "v6-32",
+      "rom": "Shashin",
+      "kana": "しゃしん",
+      "kanji": "写真",
+      "en": "Foto",
+      "audio": ""
+    },
+    {
+      "id": "v6-33",
+      "rom": "Mise",
+      "kana": "みせ",
+      "kanji": "店",
+      "en": "Toko",
+      "audio": ""
+    },
+    {
+      "id": "v6-34",
+      "rom": "Resutoran",
+      "kana": "レストラン",
+      "kanji": "",
+      "en": "Restoran",
+      "audio": ""
+    },
+    {
+      "id": "v6-35",
+      "rom": "Niwa",
+      "kana": "にわ",
+      "kanji": "庭",
+      "en": "Halaman / Taman rumah",
+      "audio": ""
+    },
+    {
+      "id": "v6-36",
+      "rom": "Shukudai",
+      "kana": "しゅくだい",
+      "kanji": "宿題",
+      "en": "PR (Pekerjaan Rumah)",
+      "audio": ""
+    },
+    {
+      "id": "v6-37",
+      "rom": "Tenisu",
+      "kana": "テニス",
+      "kanji": "",
+      "en": "Tenis",
+      "audio": ""
+    },
+    {
+      "id": "v6-38",
+      "rom": "Sakkaa",
+      "kana": "サッカー",
+      "kanji": "",
+      "en": "Sepak bola",
+      "audio": ""
+    },
+    {
+      "id": "v6-39",
+      "rom": "O-hanami",
+      "kana": "おはなみ",
+      "kanji": "お花見",
+      "en": "Kegiatan melihat bunga sakura",
+      "audio": ""
+    },
+    {
+      "id": "v6-40",
+      "rom": "Nani",
+      "kana": "なに",
+      "kanji": "何",
+      "en": "Apa?",
+      "audio": ""
+    },
+    {
+      "id": "v6-41",
+      "rom": "Issho ni",
+      "kana": "いっしょに",
+      "kanji": "一緒に",
+      "en": "Bersama-sama",
+      "audio": ""
+    },
+    {
+      "id": "v6-42",
+      "rom": "Chotto",
+      "kana": "ちょっと",
+      "kanji": "",
+      "en": "Sebentar / Sedikit",
+      "audio": ""
+    },
+    {
+      "id": "v6-43",
+      "rom": "Itsumo",
+      "kana": "いつも",
+      "kanji": "",
+      "en": "Selalu",
+      "audio": ""
+    },
+    {
+      "id": "v6-44",
+      "rom": "Tokidoki",
+      "kana": "ときどき",
+      "kanji": "時々",
+      "en": "Kadang-kadang",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g6-1",
+      "title": "1. [Objek] を Kata Kerja",
+      "desc": "Partikel を (O) adalah penanda OBJEK PENDERITA. Huruf ini diketik dengan 'wo' tapi selalu dibaca 'o'. Partikel ini eksklusif dan HANYA dipakai untuk menghubungkan kata benda yang dikenai aksi langsung oleh kata kerja transitif.",
+      "points": [
+        "Gohan o tabemasu (Makan nasi). 'Nasi' adalah objek yang dikenai aksi 'makan'.",
+        "Mizu o nomimasu (Minum air).",
+        "Shashin o torimasu (Mengambil foto)."
+      ],
+      "formula": "[Objek] を [Kata Kerja]",
+      "native_note": "Hampir 90% partikel objek 'o' (を) dihilangkan dalam percakapan kasual lisan. Misalnya, daripada bilang 'Gohan o taberu', native speaker akan langsung berkata 'Gohan taberu' atau 'Mizu nomu'. Ini terdengar sangat natural dan dinamis."
+    },
+    {
+      "id": "g6-2",
+      "title": "2. [Benda] を します (Melakukan / Bermain)",
+      "desc": "Kata kerja SHIMASU sangat serbaguna. Ia bisa menyulap kata benda menjadi kata kerja (Noun-Verb), atau digunakan untuk olahraga dan permainan.",
+      "points": [
+        "Olahraga/Game: Sakkaa o shimasu (Bermain sepak bola).",
+        "Kegiatan/Event: Paatii o shimasu (Mengadakan pesta).",
+        "Tugas: Shukudai o shimasu (Mengerjakan PR)."
+      ],
+      "formula": "[Aktivitas] を します"
+    },
+    {
+      "id": "g6-3",
+      "title": "3. 何を しますか (Melakukan Apa?)",
+      "desc": "Bentuk tanya untuk mengetahui aktivitas apa yang sedang/akan/telah dilakukan seseorang.",
+      "points": [
+        "Nani o shimasu ka? (Melakukan apa?)",
+        "Getsuyoubi nani o shimasu ka? (Senin melakukan apa?).",
+        "Kinou nani o shimashita ka? (Kemarin melakukan apa?) -> Bentuk lampau."
+      ],
+      "formula": "何を しますか / しましたか"
+    },
+    {
+      "id": "g6-4",
+      "title": "4. [Tempat] で Kata Kerja (Tempat Terjadinya Aksi)",
+      "desc": "Di Bab 5, partikel DE berarti 'alat transportasi' (Densha de). Di Bab 6, jika dipasangkan dengan TEMPAT, partikel DE berarti 'DI tempat terjadinya aktivitas'. Harus ada aksi nyata yang dilakukan di tempat tersebut.",
+      "points": [
+        "Resutoran DE gohan o tabemasu. (Makan nasi DI restoran).",
+        "Eki DE shinbun o kaimasu. (Membeli koran DI stasiun).",
+        "PENTING: Jangan tertukar dengan partikel NI. 'Kyouto ni ikimasu' (Pergi ke Kyoto - arah perpindahan). 'Kyouto de kaimasu' (Membeli barang di Kyoto - aksi)."
+      ],
+      "formula": "[Tempat] で [Objek] を [Kata Kerja]"
+    },
+    {
+      "id": "g6-5",
+      "title": "5. 〜ませんか (Maukah...? / Mengajak Halus)",
+      "desc": "Bentuk negatif tanya (Masen ka) digunakan secara sangat sopan untuk mengajak atau menawarkan sesuatu kepada orang lain.",
+      "points": [
+        "Issho ni Kyouto e ikimasen ka? (Maukah pergi ke Kyoto bersama-sama?)",
+        "Kenapa pakai bentuk negatif? Karena dalam budaya Jepang, ini memberi ruang bagi lawan bicara untuk menolak dengan lebih halus (tidak memaksa)."
+      ],
+      "formula": "[Kata Kerja - masen] か"
+    },
+    {
+      "id": "g6-6",
+      "title": "6. 〜ましょう (Ayo... / Let's)",
+      "desc": "Bentuk aktif dan positif untuk mengajak (Ayo), menyarankan, atau menyetujui ajakan seseorang dengan antusias.",
+      "points": [
+        "A: Eiga o mimasen ka? (Maukah menonton film?)",
+        "B: Ee, mima-shou! (Ya, ayo kita tonton!)",
+        "Chotto yasumimashou (Ayo istirahat sebentar - diucapkan bos ke bawahan, dll)."
+      ],
+      "formula": "[Kata Kerja - mashou]"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "わたしは ジュースを 飲みます。",
+      "rom": "Watashi wa juusu o nomimasu.",
+      "en": "Saya meminum jus."
+    },
+    {
+      "jp": "駅で 新聞を 買います。",
+      "rom": "Eki de shinbun o kaimasu.",
+      "en": "Saya membeli koran DI stasiun."
+    },
+    {
+      "jp": "いっしょに 神戸へ 行きませんか。",
+      "rom": "Issho ni Koube e ikimasen ka.",
+      "en": "Maukah (Anda) pergi ke Kobe bersama-sama?"
+    },
+    {
+      "jp": "ちょっと 休みましょう。",
+      "rom": "Chotto yasumimashou.",
+      "en": "Ayo beristirahat sejenak."
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: Issho ni ikimasen ka (Maukah pergi bersama?)",
+    "dialogue": [
+      {
+        "speaker": "Miller",
+        "jp": "佐藤さん、明日 友達と お花見を します。佐藤さんも いっしょに 行きませんか。",
+        "rom": "Satou-san, ashita tomodachi to ohanami o shimasu. Satou-san mo issho ni ikimasen ka.",
+        "en": "Ibu Sato, besok saya akan melakukan Ohanami (melihat sakura) dengan teman. Maukah Ibu Sato juga pergi bersama-sama?"
+      },
+      {
+        "speaker": "Sato",
+        "jp": "いいですね。どこへ 行きますか。",
+        "rom": "Ii desu ne. Doko e ikimasu ka.",
+        "en": "Terdengar bagus ya. Pergi ke mana?"
+      },
+      {
+        "speaker": "Miller",
+        "jp": "大阪城公園です。",
+        "rom": "Oosakajou-kouen desu.",
+        "en": "Taman Kastil Osaka."
+      },
+      {
+        "speaker": "Sato",
+        "jp": "何時に 会いますか。",
+        "rom": "Nan-ji ni aimasu ka.",
+        "en": "Jam berapa (kita) bertemu?"
+      },
+      {
+        "speaker": "Miller",
+        "jp": "１０時に 大阪駅で 会いましょう。",
+        "rom": "Juu-ji ni Oosaka-eki de aimashou.",
+        "en": "Ayo bertemu di stasiun Osaka pada jam 10."
+      },
+      {
+        "speaker": "Sato",
+        "jp": "わかりました。",
+        "rom": "Wakarimashita.",
+        "en": "Saya mengerti."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "じゃ、また 明日。",
+        "rom": "Ja, mata ashita.",
+        "en": "Kalau begitu, sampai jumpa besok."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] Partikel apa yang dipakai untuk 'DI restoran' pada kalimat 'Makan nasi di restoran'?",
+      "options": [
+        {
+          "text": "Ni",
+          "correct": false
+        },
+        {
+          "text": "De",
+          "correct": true
+        },
+        {
+          "text": "Wa",
+          "correct": false
+        },
+        {
+          "text": "E",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] Terjemahkan: 'Apakah mau bermain tenis bersama?'\nIssho ni tenisu [   ] shimasen ka.",
+      "answer": "o"
+    },
+    {
+      "type": "mcq",
+      "question": "[Grammar Check] Bagaimana cara merespon 'Issho ni biiru o nomimasen ka' dengan antusias?",
+      "options": [
+        {
+          "text": "Ee, nomimasen.",
+          "correct": false
+        },
+        {
+          "text": "Ee, nomimashita.",
+          "correct": false
+        },
+        {
+          "text": "Ee, nomimashou.",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu C] PENTING: Anda 'bertemu' teman. Partikel untuk bertemu bukanlah O, melainkan... (Lihat vocab list)\nTomodachi [   ] aimasu.",
+      "answer": "ni"
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Mengajak Makan Siang Bersama",
+      "situation": "Mengajak teman kantor makan bersama dan menentukan lokasinya",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "一緒に 昼ご飯を 食べませんか。",
+          "rom": "Issho ni hirugohan o tabemasen ka.",
+          "en": "Maukah makan siang bersama?"
+        },
+        {
+          "speaker": "B",
+          "jp": "ええ、いいですね。食べましょう。",
+          "rom": "Ee, ii desu ne. Tabemashou.",
+          "en": "Wah, boleh juga ya. Mari kita makan."
+        },
+        {
+          "speaker": "A",
+          "jp": "どこで 食べますか。",
+          "rom": "Doko de tabemasu ka.",
+          "en": "Makan di mana?"
+        },
+        {
+          "speaker": "B",
+          "jp": "あの レストランで 食べましょう。",
+          "rom": "Ano resutoran de tabemashou.",
+          "en": "Mari makan di restoran itu."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Menanyakan Aktivitas Akhir Pekan",
+      "situation": "Mengobrol tentang kegiatan yang dilakukan pada hari Minggu kemarin",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "日曜日 何を しましたか。",
+          "rom": "Nichiyoubi nani o shimashita ka.",
+          "en": "Hari Minggu kemarin melakukan apa?"
+        },
+        {
+          "speaker": "B",
+          "jp": "サッカーを しました。それから 映画を 見ました。",
+          "rom": "Sakkaa o shimashita. Sorekara eiga o mimashita.",
+          "en": "Bermain sepak bola. Setelah itu menonton film."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。いいですね。",
+          "rom": "Sou desu ka. Ii desu ne.",
+          "en": "Oh begitu. Asyik sekali ya."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Menawarkan Minum Kopi (Penolakan Sopan)",
+      "situation": "Menawarkan kopi pada tamu, namun tamu menolak dengan halus",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "ロビーで コーヒーを 飲みませんか。",
+          "rom": "Robii de koohii o nomimasen ka.",
+          "en": "Maukah minum kopi di lobi?"
+        },
+        {
+          "speaker": "B",
+          "jp": "すみません、コーヒーは ちょっと...",
+          "rom": "Sumimasen, koohii wa chotto...",
+          "en": "Maaf, kalau kopi agak kurang..."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。",
+          "rom": "Sou desu ka.",
+          "en": "Oh, begitu ya."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r6-1",
+      "jp": "お酒を 飲みますか。... いいえ、飲みません。",
+      "rom": "Osake o nomimasu ka? ... Iie, nomimasen.",
+      "en": "Apakah Anda minum sake? ... Tidak, saya tidak minum."
+    },
+    {
+      "id": "r6-2",
+      "jp": "毎朝 何を 食べますか。... パンと 卵を 食べます。",
+      "rom": "Maiasa nani o tabemasu ka? ... Pan to tamago o tabemasu.",
+      "en": "Setiap pagi makan apa? ... Makan roti dan telur."
+    },
+    {
+      "id": "r6-3",
+      "jp": "今朝 何を 食べましたか。... 何も 食べませんでした。",
+      "rom": "Kesa nani o tabemashita ka? ... Nani mo tabemasen deshita.",
+      "en": "Tadi pagi makan apa? ... Tidak makan apa-apa."
+    },
+    {
+      "id": "r6-4",
+      "jp": "土曜日 何を しましたか。... 日本語を 勉強しました。それから 映画を 見ました。",
+      "rom": "Doyoubi nani o shimashita ka? ... Nihongo o benkyou shimashita. Sorekara eiga o mimashita.",
+      "en": "Hari Sabtu kemarin melakukan apa? ... Belajar bahasa Jepang. Setelah itu menonton film."
+    },
+    {
+      "id": "r6-5",
+      "jp": "日曜日 何を しましたか。... 友達と テニスを しました。",
+      "rom": "Nichiyoubi nani o shimashita ka? ... Tomodachi to tenisu o shimashita.",
+      "en": "Hari Minggu kemarin melakukan apa? ... Bermain tenis dengan teman."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb6-1",
+      "pattern": "N を V します",
+      "instruction": "Buat kalimat menggunakan objek langsung dengan partikel を.",
+      "question": "Gohan / tabemasu",
+      "correct": "ごはんを たべます。",
+      "romaji": "Gohan wo tabemasu.",
+      "translation": "Saya makan nasi."
+    },
+    {
+      "id": "wb6-2",
+      "pattern": "N で V します (lokasi aktivitas)",
+      "instruction": "Nyatakan tempat berlangsungnya aktivitas dengan partikel で.",
+      "question": "Kissaten / koohii / nomimasu",
+      "correct": "きっさてんで コーヒーを のみます。",
+      "romaji": "Kissaten de koohii wo nomimasu.",
+      "translation": "Saya minum kopi di kafe."
+    },
+    {
+      "id": "wb6-3",
+      "pattern": "N を V しませんか (Ajakan)",
+      "instruction": "Ajak seseorang melakukan sesuatu dengan pola～ませんか.",
+      "question": "Issho ni / hiru gohan / taberu",
+      "correct": "いっしょに ひるごはんを たべませんか。",
+      "romaji": "Issho ni hirugohan wo tabemasen ka.",
+      "translation": "Ayo makan siang bersama-sama?"
+    },
+    {
+      "id": "wb6-4",
+      "pattern": "N を V しましょう (Ajakan/Keputusan bersama)",
+      "instruction": "Nyatakan ajakan atau keputusan bersama dengan pola ～ましょう.",
+      "question": "Nihongo / benkyoushimashoo",
+      "correct": "にほんごを べんきょうしましょう。",
+      "romaji": "Nihongo wo benkyoushimashou.",
+      "translation": "Ayo belajar bahasa Jepang!"
+    },
+    {
+      "id": "wb6-5",
+      "pattern": "N を V して から ~ (urutan kegiatan)",
+      "instruction": "Nyatakan urutan kegiatan: setelah melakukan X, lanjut Y.",
+      "question": "Shokuji / suru / kara / koohii / nomu",
+      "correct": "しょくじを してから コーヒーを のみます。",
+      "romaji": "Shokuji wo shite kara koohii wo nomimasu.",
+      "translation": "Setelah makan, minum kopi."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex6-1",
+        "sentence": "まいあさ パン [ ] たべます。",
+        "correct": "を",
+        "translation": "Setiap pagi makan roti."
+      },
+      {
+        "id": "ex6-2",
+        "sentence": "としょかん [ ] ほんを よみます。",
+        "correct": "で",
+        "translation": "Membaca buku di perpustakaan."
+      },
+      {
+        "id": "ex6-3",
+        "sentence": "いっしょに えいが [ ] みませんか。",
+        "correct": "を",
+        "translation": "Ayo menonton film bersama?"
+      },
+      {
+        "id": "ex6-4",
+        "sentence": "にほんご [ ] べんきょうしましょう！",
+        "correct": "を",
+        "translation": "Ayo belajar bahasa Jepang!"
+      },
+      {
+        "id": "ex6-5",
+        "sentence": "しごとを してから [ ]。",
+        "correct": "かえります",
+        "translation": "Setelah bekerja, pulang."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex6-6",
+        "question": "Partikel yang digunakan untuk menandai OBJEK dari kata kerja transitif (makan, minum, baca) adalah:",
+        "options": [
+          {
+            "text": "が",
+            "correct": false
+          },
+          {
+            "text": "を",
+            "correct": true
+          },
+          {
+            "text": "に",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex6-7",
+        "question": "Bedakan fungsi: 'Resutoran DE tabemasu' dan 'Resutoran NI ikimasu':\nKalimat pertama menggunakan で karena menunjuk...",
+        "options": [
+          {
+            "text": "Tujuan perjalanan",
+            "correct": false
+          },
+          {
+            "text": "Tempat berlangsungnya aktivitas",
+            "correct": true
+          },
+          {
+            "text": "Sarana/alat",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex6-8",
+        "question": "Cara paling alami mengajak seseorang makan malam adalah:",
+        "options": [
+          {
+            "text": "ばんごはんを たべましょうか。",
+            "correct": false
+          },
+          {
+            "text": "ばんごはんを たべませんか。",
+            "correct": true
+          },
+          {
+            "text": "ばんごはんを たべます。",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "きのう ともだちと えいがを みました。えいがの まえに きっさてんで コーヒーを のみました。えいがは とても おもしろかったです。えいがの あとで レストランで ばんごはんを たべました。",
+      "questions": [
+        {
+          "id": "ex6-9",
+          "question": "きのう ひとりで えいがを みました。",
+          "correct": "F"
+        },
+        {
+          "id": "ex6-10",
+          "question": "えいがの まえに コーヒーを のみました。",
+          "correct": "T"
+        },
+        {
+          "id": "ex6-11",
+          "question": "えいがの あとで なにも たべませんでした。",
+          "correct": "F"
+        }
+      ]
+    }
+  }
+}

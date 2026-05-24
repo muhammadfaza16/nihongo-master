@@ -1,0 +1,461 @@
+{
+  "id": 48,
+  "title": "Lesson 48: Ekspresi Pertentangan Formal (〜ものの / 〜とはいえ / 〜ながらも)",
+  "desc": "Mempelajari ungkapan pertentangan yang lebih formal: 〜ものの (meskipun - tertulis), 〜とはいえ (walaupun dikatakan demikian), dan 〜ながらも (meskipun berada dalam kondisi).",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v48-1",
+      "rom": "Jijitsu",
+      "kana": "じじつ",
+      "kanji": "事実",
+      "en": "Kenyataan / Fakta",
+      "audio": ""
+    },
+    {
+      "id": "v48-2",
+      "rom": "Genjitsu",
+      "kana": "げんじつ",
+      "kanji": "現実",
+      "en": "Realitas",
+      "audio": ""
+    },
+    {
+      "id": "v48-3",
+      "rom": "Rikai (shimasu)",
+      "kana": "りかい（します）",
+      "kanji": "理解（します）",
+      "en": "Pemahaman / Memahami",
+      "audio": ""
+    },
+    {
+      "id": "v48-4",
+      "rom": "Monono",
+      "kana": "ものの",
+      "kanji": "",
+      "en": "Meskipun / Walaupun (tertulis)",
+      "audio": ""
+    },
+    {
+      "id": "v48-5",
+      "rom": "To wa ie",
+      "kana": "とはいえ",
+      "kanji": "",
+      "en": "Meskipun demikian / Walaupun",
+      "audio": ""
+    },
+    {
+      "id": "v48-6",
+      "rom": "Nagara mo",
+      "kana": "ながらも",
+      "kanji": "",
+      "en": "Meskipun / Walaupun dalam keadaan",
+      "audio": ""
+    },
+    {
+      "id": "v48-7",
+      "rom": "Kotoba",
+      "kana": "ことば",
+      "kanji": "言葉",
+      "en": "Kata-kata",
+      "audio": ""
+    },
+    {
+      "id": "v48-8",
+      "rom": "Kaisha",
+      "kana": "かいしゃ",
+      "kanji": "会社",
+      "en": "Perusahaan",
+      "audio": ""
+    },
+    {
+      "id": "v48-9",
+      "rom": "Shakai",
+      "kana": "しゃかい",
+      "kanji": "社会",
+      "en": "Masyarakat",
+      "audio": ""
+    },
+    {
+      "id": "v48-10",
+      "rom": "Keiken",
+      "kana": "けいけん",
+      "kanji": "経験",
+      "en": "Pengalaman",
+      "audio": ""
+    },
+    {
+      "id": "v48-11",
+      "rom": "Muzukashii",
+      "kana": "むずかしい",
+      "kanji": "難しい",
+      "en": "Sulit",
+      "audio": ""
+    },
+    {
+      "id": "v48-12",
+      "rom": "Kantan (na)",
+      "kana": "かんたん（な）",
+      "kanji": "簡単（な）",
+      "en": "Mudah / Sederhana",
+      "audio": ""
+    },
+    {
+      "id": "v48-13",
+      "rom": "Okane",
+      "kana": "おかね",
+      "kanji": "お金",
+      "en": "Uang",
+      "audio": ""
+    },
+    {
+      "id": "v48-14",
+      "rom": "Kiboo",
+      "kana": "きぼう",
+      "kanji": "希望",
+      "en": "Harapan / Keinginan",
+      "audio": ""
+    },
+    {
+      "id": "v48-15",
+      "rom": "Genki (na)",
+      "kana": "げんき（な）",
+      "kanji": "元気（な）",
+      "en": "Sehat / Bersemangat",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g48-1",
+      "title": "1. 〜ものの (Meskipun / Walaupun — Tertulis)",
+      "desc": "Menyatakan kontradiksi antara fakta yang diakui dengan kenyataan sesudahnya yang tidak sesuai harapan (mirip keredo/ga namun lebih formal).",
+      "points": [
+        "Pola: Plain Form (Na-adj + na, N + de aru) + ものの",
+        "Artinya: Meskipun... namun kenyataannya...",
+        "Contoh: Nihon-ryoko ni ikitai monono, okane ga arimasen. (Meskipun ingin wisata ke Jepang, saya tidak punya uang)."
+      ],
+      "formula": "Plain Form + ものの",
+      "native_note": "Biasa ditemukan dalam teks tulisan, artikel berita, atau laporan bisnis resmi."
+    },
+    {
+      "id": "g48-2",
+      "title": "2. 〜とはいえ (Meskipun Demikian)",
+      "desc": "Mengakui kebenaran suatu pernyataan A, namun menekankan bahwa kenyataan B tidak sepenuhnya sama atau terdapat batasan.",
+      "points": [
+        "Pola: N / Plain Form + とはいえ",
+        "Artinya: Walaupun dikatakan demikian... / Meskipun...",
+        "Contoh: Pro to wa ie, machigau koto mo arimasu. (Meskipun dia profesional, ada kalanya dia salah juga)."
+      ],
+      "formula": "N / Plain Form + とはいえ"
+    },
+    {
+      "id": "g48-3",
+      "title": "3. 〜ながらも (Meskipun dalam Keadaan)",
+      "desc": "Menyatakan pertentangan di mana subjek melakukan sesuatu yang luar biasa meskipun berada dalam kondisi yang kurang mendukung.",
+      "points": [
+        "Pola: V-stem / N / Adj + ながらも",
+        "Artinya: Meskipun... (dalam kondisi tersebut).",
+        "Contoh: Semai nagara mo tanoshii uchi desu. (Meskipun sempit, ini adalah rumah yang menyenangkan)."
+      ],
+      "formula": "V-stem / N / Adj + ながらも"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "日本語を３年勉強しているものの、まだ話せません。",
+      "rom": "Nihongo wo 3-nen benkyou shite iru monono, mada hanasemasen.",
+      "en": "Meskipun sudah belajar bahasa Jepang selama 3 tahun, saya belum bisa berbicara."
+    },
+    {
+      "jp": "春とはいえ、まだ寒い日があります。",
+      "rom": "Haru to wa ie, mada samui hi ga arimasu.",
+      "en": "Meskipun sudah musim semi, hari-hari dingin masih ada."
+    },
+    {
+      "jp": "残念ながらも、試験に落ちてしまいました。",
+      "rom": "Zannen nagara mo, shiken ni ochite shimaimashita.",
+      "en": "Meskipun disayangkan, saya telah gagal dalam ujian."
+    },
+    {
+      "jp": "車を買ったものの、運転ができません。",
+      "rom": "Kuruma wo katta monono, unten ga dekimasen.",
+      "en": "Meskipun sudah membeli mobil, saya tidak bisa menyetir."
+    }
+  ],
+  "conversation": {
+    "title": "Meskipun Musim Semi",
+    "dialogue": [
+      {
+        "speaker": "A",
+        "jp": "今日はとても寒いですね。本当に春ですか。",
+        "rom": "Kyou wa totemo samui desu ne. Hontou ni haru desu ka?",
+        "en": "Hari ini dingin sekali ya. Apakah ini benar-benar musim semi?"
+      },
+      {
+        "speaker": "B",
+        "jp": "ええ、春とはいえ、冷たい風がまだ吹きますね。",
+        "rom": "Ee, haru to wa ie, tsumetai kaze ga mada fukimasu ne.",
+        "en": "Ya, meskipun sudah musim semi, angin dingin masih bertiup ya."
+      },
+      {
+        "speaker": "A",
+        "jp": "早く暖かくなるといいですね。",
+        "rom": "Hayaku atatakaku naru to ii desu ne.",
+        "en": "Semoga cepat hangat ya."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "Arti dari 'Pro to wa ie':",
+      "options": [
+        {
+          "text": "Meskipun dikatakan profesional",
+          "correct": true
+        },
+        {
+          "text": "Agar menjadi profesional",
+          "correct": false
+        },
+        {
+          "text": "Karena profesional",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "Terjemahkan: 'Meskipun tahu fakta itu'.\nJijitsu wo shitte iru [   ]...",
+      "answer": "monono"
+    },
+    {
+      "type": "mcq",
+      "question": "Pilih kalimat 'Meskipun kecil, menyenangkan' yang tepat:",
+      "options": [
+        {
+          "text": "狭いながらも楽しい",
+          "correct": true
+        },
+        {
+          "text": "狭いといいながら",
+          "correct": false
+        },
+        {
+          "text": "狭いとはいえ",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Membeli Gadget Baru",
+      "situation": "Membicarakan barang elektronik yang baru dibeli",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "新しいタブレットはどうですか。",
+          "rom": "Atarashii taburetto wa dou desu ka?",
+          "en": "Bagaimana tablet barumu?"
+        },
+        {
+          "speaker": "B",
+          "jp": "買ったものの、あまり使っていません。",
+          "rom": "Katta monono, amari tsukatte imasen.",
+          "en": "Meskipun sudah dibeli, saya jarang menggunakannya."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r48-1",
+      "jp": "勉強したものの、試験の点は悪かったです。",
+      "rom": "Benkyou shita monono, shiken no ten wa warakatta desu.",
+      "en": "Meskipun sudah belajar, nilai ujiannya buruk."
+    },
+    {
+      "id": "r48-2",
+      "jp": "実力があるとはいえ、本番は緊張します。",
+      "rom": "Jitsuryoku ga aru to wa ie, honban wa kinchou shimasu.",
+      "en": "Meskipun dikatakan memiliki kemampuan, saat pertunjukan tetap gugup."
+    },
+    {
+      "id": "r48-3",
+      "jp": "少しながらも、お金を寄付しました。",
+      "rom": "Sukoshi nagara mo, okane wo kifuu shimashita.",
+      "en": "Meskipun hanya sedikit, saya menyumbangkan uang."
+    },
+    {
+      "id": "r48-4",
+      "jp": "計画を立てたものの、実施できません。",
+      "rom": "Keikaku wo tateta monono, jisshi dekimasen.",
+      "en": "Meskipun sudah membuat rencana, itu tidak bisa dilaksanakan."
+    },
+    {
+      "id": "r48-5",
+      "jp": "子どもながらも、社会の規則を守ります。",
+      "rom": "Kodomo nagara mo, shakai no kisoku wo mamorimasu.",
+      "en": "Meskipun anak-anak, dia mematuhi aturan masyarakat."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb48-1",
+      "pattern": "Plain + ものの",
+      "instruction": "Terjemahkan: 'Meskipun ingin membeli'.",
+      "question": "Kaitai",
+      "correct": "かいたいものの",
+      "romaji": "Kaitai monono.",
+      "translation": "Meskipun ingin membeli."
+    },
+    {
+      "id": "wb48-2",
+      "pattern": "N + とはいえ",
+      "instruction": "Terjemahkan: 'Meskipun dokter'.",
+      "question": "Isha",
+      "correct": "いしゃとはいえ",
+      "romaji": "Isha to wa ie.",
+      "translation": "Meskipun dokter."
+    },
+    {
+      "id": "wb48-3",
+      "pattern": "Adj + ながらも",
+      "instruction": "Terjemahkan: 'Meskipun kecil'.",
+      "question": "Chiisai",
+      "correct": "ちいさいながらも",
+      "romaji": "Chiisai nagara mo.",
+      "translation": "Meskipun kecil."
+    },
+    {
+      "id": "wb48-4",
+      "pattern": "Plain + ものの",
+      "instruction": "Terjemahkan: 'Meskipun sudah berjanji'.",
+      "question": "Yakusoku shita",
+      "correct": "やくそくしたものの",
+      "romaji": "Yakusoku shita monono.",
+      "translation": "Meskipun sudah berjanji."
+    },
+    {
+      "id": "wb48-5",
+      "pattern": "N + とはいえ",
+      "instruction": "Terjemahkan: 'Meskipun hari libur'.",
+      "question": "Yasumi no hi",
+      "correct": "やすみのひとはいえ",
+      "romaji": "Yasumi no hi to wa ie.",
+      "translation": "Meskipun hari libur."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex48-1",
+        "sentence": "カメラを 買った [ ]、あまり つかっていません。",
+        "correct": "ものの",
+        "translation": "Meskipun membeli kamera, saya jarang memakainya."
+      },
+      {
+        "id": "ex48-2",
+        "sentence": "あき [ ] は いえ、まだ あつい ひが つづきます。",
+        "correct": "と",
+        "translation": "Meskipun dikatakan sudah musim gugur, hari-hari panas masih berlanjut."
+      },
+      {
+        "id": "ex48-3",
+        "sentence": "すこし [ ] も、ボランティア活動に さんかしたいです。",
+        "correct": "ながら",
+        "translation": "Meskipun hanya sedikit, saya ingin berpartisipasi dalam aktivitas relawan."
+      },
+      {
+        "id": "ex48-4",
+        "sentence": "にほんごが じょうずだ [ ] いえ、かんじは まだ かけません。",
+        "correct": "とは",
+        "translation": "Meskipun dikatakan mahir bahasa Jepang, kanji masih belum bisa ditulis."
+      },
+      {
+        "id": "ex48-5",
+        "sentence": "やくそくは した [ ]、いけるか どうか わかりません。",
+        "correct": "ものの",
+        "translation": "Meskipun sudah berjanji, saya tidak tahu bisa pergi atau tidak."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex48-6",
+        "question": "Pilih makna 'Kantan to wa ie':",
+        "options": [
+          {
+            "text": "Meskipun dikatakan mudah",
+            "correct": true
+          },
+          {
+            "text": "Karena mudah",
+            "correct": false
+          },
+          {
+            "text": "Jika mudah",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex48-7",
+        "question": "Apa perbedaan 'monono' dibanding 'ga/keredo'?",
+        "options": [
+          {
+            "text": "Lebih formal dan sering dalam tulisan",
+            "correct": true
+          },
+          {
+            "text": "Artinya sama sekali berbeda",
+            "correct": false
+          },
+          {
+            "text": "Digunakan untuk menyatakan sebab",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex48-8",
+        "question": "Contoh penggunaan 'nagara mo' yang benar:",
+        "options": [
+          {
+            "text": "貧しいながらも幸せです。",
+            "correct": true
+          },
+          {
+            "text": "行くながらも帰ります。",
+            "correct": false
+          },
+          {
+            "text": "子供ながらも知りません。",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "彼は プロの 歌手であるものの、最近は あまり 歌を 歌っていません。病気を したためです。病気は 治ったとはいえ、まだ 無理は できません。ファンは 心配しながらも、彼の 復帰を 待っています。",
+      "questions": [
+        {
+          "id": "ex48-9",
+          "question": "彼は プロの 歌手ですが、最近は 歌っていません。",
+          "correct": "T"
+        },
+        {
+          "id": "ex48-10",
+          "question": "彼の 病気は まだ 全然 治っていません。",
+          "correct": "F"
+        },
+        {
+          "id": "ex48-11",
+          "question": "ファンは 彼の 復帰を 待っています。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

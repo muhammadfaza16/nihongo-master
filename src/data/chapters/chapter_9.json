@@ -1,0 +1,763 @@
+{
+  "id": 9,
+  "title": "Lesson 9: Suka, Bisa, Mengerti (Ga + Adjective)",
+  "desc": "Membedah Bab 9. Anda belajar menyatakan kegemaran (Suki/Kirai), kemampuan (Jouzu/Heta), pemahaman (Wakarimasu), dan cara memberikan alasan dengan KARA. Bab ini memperkenalkan partikel GA yang krusial.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v9-1",
+      "rom": "Suki (na)",
+      "kana": "すき",
+      "kanji": "好き",
+      "en": "Suka (Na-Adj)",
+      "audio": ""
+    },
+    {
+      "id": "v9-2",
+      "rom": "Daisuki (na)",
+      "kana": "だいすき",
+      "kanji": "大好き",
+      "en": "Sangat suka / Cinta (Na-Adj)",
+      "audio": ""
+    },
+    {
+      "id": "v9-3",
+      "rom": "Kirai (na)",
+      "kana": "きらい",
+      "kanji": "嫌い",
+      "en": "Benci / Tidak suka (Na-Adj)",
+      "audio": ""
+    },
+    {
+      "id": "v9-4",
+      "rom": "Daikirai (na)",
+      "kana": "だいきらい",
+      "kanji": "大嫌い",
+      "en": "Sangat benci (Na-Adj)",
+      "audio": ""
+    },
+    {
+      "id": "v9-5",
+      "rom": "Jouzu (na)",
+      "kana": "じょうず",
+      "kanji": "上手",
+      "en": "Pandai / Mahir (Na-Adj) - untuk orang LAIN",
+      "audio": ""
+    },
+    {
+      "id": "v9-6",
+      "rom": "Heta (na)",
+      "kana": "へた",
+      "kanji": "下手",
+      "en": "Payah / Tidak mahir (Na-Adj)",
+      "audio": ""
+    },
+    {
+      "id": "v9-7",
+      "rom": "Wakarimasu",
+      "kana": "わかります",
+      "kanji": "分かります",
+      "en": "Mengerti / Paham (Pakai GA, bukan O!)",
+      "audio": ""
+    },
+    {
+      "id": "v9-8",
+      "rom": "Arimasu",
+      "kana": "あります",
+      "kanji": "",
+      "en": "Ada / Punya (benda mati)",
+      "audio": ""
+    },
+    {
+      "id": "v9-9",
+      "rom": "Ongaku",
+      "kana": "おんがく",
+      "kanji": "音楽",
+      "en": "Musik",
+      "audio": ""
+    },
+    {
+      "id": "v9-10",
+      "rom": "Uta",
+      "kana": "うた",
+      "kanji": "歌",
+      "en": "Lagu / Nyanyian",
+      "audio": ""
+    },
+    {
+      "id": "v9-11",
+      "rom": "Kurassiku",
+      "kana": "クラシック",
+      "kanji": "",
+      "en": "Musik Klasik",
+      "audio": ""
+    },
+    {
+      "id": "v9-12",
+      "rom": "Jazu",
+      "kana": "ジャズ",
+      "kanji": "",
+      "en": "Jazz",
+      "audio": ""
+    },
+    {
+      "id": "v9-13",
+      "rom": "Dansu",
+      "kana": "ダンス",
+      "kanji": "",
+      "en": "Tari / Menari",
+      "audio": ""
+    },
+    {
+      "id": "v9-14",
+      "rom": "Ryouri",
+      "kana": "りょうり",
+      "kanji": "料理",
+      "en": "Masakan / Memasak",
+      "audio": ""
+    },
+    {
+      "id": "v9-15",
+      "rom": "Supootsu",
+      "kana": "スポーツ",
+      "kanji": "",
+      "en": "Olahraga",
+      "audio": ""
+    },
+    {
+      "id": "v9-16",
+      "rom": "Oyogi",
+      "kana": "およぎ",
+      "kanji": "泳ぎ",
+      "en": "Berenang (kata benda)",
+      "audio": ""
+    },
+    {
+      "id": "v9-17",
+      "rom": "E",
+      "kana": "え",
+      "kanji": "絵",
+      "en": "Lukisan / Gambar",
+      "audio": ""
+    },
+    {
+      "id": "v9-18",
+      "rom": "Ji",
+      "kana": "じ",
+      "kanji": "字",
+      "en": "Huruf / Tulisan tangan",
+      "audio": ""
+    },
+    {
+      "id": "v9-19",
+      "rom": "Kanji",
+      "kana": "かんじ",
+      "kanji": "漢字",
+      "en": "Huruf Kanji (China)",
+      "audio": ""
+    },
+    {
+      "id": "v9-20",
+      "rom": "Hiragana",
+      "kana": "ひらがな",
+      "kanji": "",
+      "en": "Huruf Hiragana",
+      "audio": ""
+    },
+    {
+      "id": "v9-21",
+      "rom": "Katakana",
+      "kana": "カタカナ",
+      "kanji": "",
+      "en": "Huruf Katakana",
+      "audio": ""
+    },
+    {
+      "id": "v9-22",
+      "rom": "Kotoba",
+      "kana": "ことば",
+      "kanji": "言葉",
+      "en": "Kata / Bahasa",
+      "audio": ""
+    },
+    {
+      "id": "v9-23",
+      "rom": "Mono",
+      "kana": "もの",
+      "kanji": "物",
+      "en": "Benda / Barang",
+      "audio": ""
+    },
+    {
+      "id": "v9-24",
+      "rom": "Anime",
+      "kana": "アニメ",
+      "kanji": "",
+      "en": "Anime",
+      "audio": ""
+    },
+    {
+      "id": "v9-25",
+      "rom": "Jikan",
+      "kana": "じかん",
+      "kanji": "時間",
+      "en": "Waktu",
+      "audio": ""
+    },
+    {
+      "id": "v9-26",
+      "rom": "Yoku",
+      "kana": "よく",
+      "kanji": "",
+      "en": "Sering / Dengan baik",
+      "audio": ""
+    },
+    {
+      "id": "v9-27",
+      "rom": "Daitai",
+      "kana": "だいたい",
+      "kanji": "",
+      "en": "Kira-kira / Kurang lebih",
+      "audio": ""
+    },
+    {
+      "id": "v9-28",
+      "rom": "Sukoshi",
+      "kana": "すこし",
+      "kanji": "少し",
+      "en": "Sedikit",
+      "audio": ""
+    },
+    {
+      "id": "v9-29",
+      "rom": "Zenzen",
+      "kana": "ぜんぜん",
+      "kanji": "全然",
+      "en": "Sama sekali tidak (WAJIB + negatif)",
+      "audio": ""
+    },
+    {
+      "id": "v9-30",
+      "rom": "Takusan",
+      "kana": "たくさん",
+      "kanji": "",
+      "en": "Banyak",
+      "audio": ""
+    },
+    {
+      "id": "v9-31",
+      "rom": "Hayaku",
+      "kana": "はやく",
+      "kanji": "早く",
+      "en": "Cepat / Lebih awal",
+      "audio": ""
+    },
+    {
+      "id": "v9-32",
+      "rom": "Donna",
+      "kana": "どんな",
+      "kanji": "",
+      "en": "Jenis apa / Seperti apa?",
+      "audio": ""
+    },
+    {
+      "id": "v9-33",
+      "rom": "Doushite",
+      "kana": "どうして",
+      "kanji": "",
+      "en": "Mengapa / Kenapa?",
+      "audio": ""
+    },
+    {
+      "id": "v9-34",
+      "rom": "Kara",
+      "kana": "から",
+      "kanji": "",
+      "en": "Karena (di AKHIR klausa alasan)",
+      "audio": ""
+    },
+    {
+      "id": "v9-35",
+      "rom": "Zannen (na)",
+      "kana": "ざんねん",
+      "kanji": "残念",
+      "en": "Sayang sekali / Disayangkan",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g9-1",
+      "title": "1. N が すきです / きらいです (Suka / Benci)",
+      "desc": "Perubahan besar: Untuk menyatakan preferensi (suka/benci), partikel yang digunakan bukan は (WA) melainkan が (GA). GA menandai OBJEK dari perasaan.",
+      "points": [
+        "Watashi wa ongaku GA suki desu. (Saya suka musik).",
+        "Perhatikan: 'Watashi wa' tetap wa (topik), tapi 'ongaku' memakai GA karena musik adalah OBJEK dari rasa suka.",
+        "Tingkatan Preferensi: Daisuki (Sangat suka) -> Suki (Suka) -> Amari suki ja arimasen (Kurang suka) -> Kirai (Benci) -> Daikirai (Sangat benci).",
+        "Poin Kritis: 'Suki' dan 'Kirai' adalah Na-Adjective, BUKAN kata kerja. Jadi konjugasi negatifnya adalah 'suki ja arimasen', bukan 'sukimasen'."
+      ],
+      "formula": "N は [Objek Perasaan] が すき / きらい です",
+      "native_note": "Kata 'Suki' (Suka) dapat diubah menjadi sangat kasual dengan hanya mengucapkan 'Suki?' dengan nada naik di akhir untuk bertanya. Untuk memberi penekanan emosional yang tinggi, native speaker lebih suka memakai kata 'Daisuki' (Sangat suka) dalam percakapan akrab."
+    },
+    {
+      "id": "g9-2",
+      "title": "2. N が じょうずです / へたです (Mahir / Payah)",
+      "desc": "Pola yang sama persis dengan suka/benci. Partikel GA menandai OBJEK kemahiran.",
+      "points": [
+        "Karina-san wa Nihongo GA jouzu desu. (Bu Karina mahir bahasa Jepang).",
+        "CATATAN BUDAYA KRUSIAL: JANGAN PERNAH pakai 'jouzu' untuk diri sendiri. Itu dianggap sombong berat dalam budaya Jepang.",
+        "Untuk diri sendiri, rendah hati: 'Mada mada desu' (Masih jauh). Atau gunakan batas bawah: 'Sukoshi dekimasu' (Sedikit bisa).",
+        "Pasangan: Jouzu (Mahir) <-> Heta (Payah/Tidak mahir)."
+      ],
+      "formula": "N は [Keahlian] が じょうず / へた です"
+    },
+    {
+      "id": "g9-3",
+      "title": "3. N が わかります (Mengerti/Paham)",
+      "desc": "Kata kerja 'wakarimasu' (mengerti) juga menggunakan partikel GA, bukan O. Ini salah satu kesalahan paling umum bagi pemula.",
+      "points": [
+        "BENAR: Nihongo GA wakarimasu. (Mengerti bahasa Jepang).",
+        "SALAH: Nihongo O wakarimasu. (Ini error gramatikal berat).",
+        "Tingkatan: Yoku wakarimasu (Betul-betul mengerti) -> Daitai wakarimasu (Kurang-lebih mengerti) -> Sukoshi wakarimasu (Sedikit mengerti) -> Zenzen wakarimasen (Sama sekali tidak mengerti)."
+      ],
+      "formula": "[Objek Pemahaman] が わかります"
+    },
+    {
+      "id": "g9-4",
+      "title": "4. N が あります (Punya/Ada)",
+      "desc": "Kata kerja 'Arimasu' saat digunakan dengan partikel GA juga bisa berarti 'PUNYA' (kepemilikan), bukan hanya 'Ada' (keberadaan).",
+      "points": [
+        "Okane ga arimasu. (Punya uang / Ada uang).",
+        "Jikan ga arimasen. (Tidak punya waktu).",
+        "Konteks: Di Bab 10, Arimasu akan dibahas untuk keberadaan (Ada di lokasi). Di sini fokusnya pada kepemilikan abstrak."
+      ],
+      "formula": "[Benda] が あります / ありません"
+    },
+    {
+      "id": "g9-5",
+      "title": "5. どんな N (Jenis Apa / Seperti Apa?)",
+      "desc": "Kata tanya untuk menanyakan jenis, karakteristik, atau tipe sesuatu secara spesifik.",
+      "points": [
+        "Donna ongaku ga suki desu ka. (Jenis musik APA yang kamu suka?)",
+        "Jazu ga suki desu. (Saya suka Jazz).",
+        "Donna supootsu ga dekimasu ka. (Olahraga jenis APA yang bisa kamu lakukan?)"
+      ],
+      "formula": "どんな [Kategori] が すきですか"
+    },
+    {
+      "id": "g9-6",
+      "title": "6. どうして... からです (Kenapa... Karena)",
+      "desc": "Untuk menanyakan alasan (Doushite) dan memberikan jawaban dengan KARA (karena). Perhatikan bahwa urutan KARA berbeda dari bahasa Indonesia.",
+      "points": [
+        "A: Doushite kinou yasumimashita ka. (Kenapa kemarin libur?)",
+        "B: Atama ga itai desu KARA. (KARENA kepala saya sakit).",
+        "KARA (karena) ditaruh DI AKHIR klausa alasan, kebalikan dari bahasa Indonesia ('Karena sakit kepala').",
+        "Bentuk lain: [Kalimat alasan] kara, [Kalimat hasil]. Contoh: Jikan ga arimasen kara, ikimasen. (Karena tidak punya waktu, tidak pergi)."
+      ],
+      "formula": "[Alasan kalimat lengkap] から、[Hasil/Keputusan]。"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "わたしは イタリア料理が 好きです。",
+      "rom": "Watashi wa Itaria-ryouri ga suki desu.",
+      "en": "Saya suka masakan Italia."
+    },
+    {
+      "jp": "カリナさんは 日本語が 上手です。",
+      "rom": "Karina-san wa Nihongo ga jouzu desu.",
+      "en": "Bu Karina mahir bahasa Jepang."
+    },
+    {
+      "jp": "漢字が 少し わかります。",
+      "rom": "Kanji ga sukoshi wakarimasu.",
+      "en": "Saya sedikit mengerti Kanji."
+    },
+    {
+      "jp": "どんな スポーツが 好きですか。",
+      "rom": "Donna supootsu ga suki desu ka.",
+      "en": "Jenis olahraga apa yang kamu suka?"
+    },
+    {
+      "jp": "どうして 食べませんか。…おなかが 痛いですから。",
+      "rom": "Doushite tabemasen ka. ...Onaka ga itai desu kara.",
+      "en": "Kenapa tidak makan? ...Karena perut saya sakit."
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: 残念ですね (Sayang Sekali Ya)",
+    "dialogue": [
+      {
+        "speaker": "Miller",
+        "jp": "もうすぐ 祇園祭ですね。",
+        "rom": "Mousugu Gion-matsuri desu ne.",
+        "en": "Sebentar lagi festival Gion ya."
+      },
+      {
+        "speaker": "Santos",
+        "jp": "ミラーさんは もう 見ましたか。",
+        "rom": "Miraa-san wa mou mimashita ka.",
+        "en": "Pak Miller sudah pernah melihat (festival itu)?"
+      },
+      {
+        "speaker": "Miller",
+        "jp": "いいえ、まだです。サントスさんは？",
+        "rom": "Iie, mada desu. Santosu-san wa?",
+        "en": "Belum. Pak Santos?"
+      },
+      {
+        "speaker": "Santos",
+        "jp": "わたしも まだです。いっしょに 行きませんか。",
+        "rom": "Watashi mo mada desu. Issho ni ikimasen ka.",
+        "en": "Saya juga belum. Maukah pergi bersama?"
+      },
+      {
+        "speaker": "Miller",
+        "jp": "いいですね。いつですか。",
+        "rom": "Ii desu ne. Itsu desu ka.",
+        "en": "Bagus ya. Kapan?"
+      },
+      {
+        "speaker": "Santos",
+        "jp": "７月１７日です。",
+        "rom": "Shichigatsu juushichinichi desu.",
+        "en": "17 Juli."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "あ、１７日は ちょっと…。",
+        "rom": "A, juushichinichi wa chotto...",
+        "en": "Ah, tanggal 17 sedikit (bermasalah)..."
+      },
+      {
+        "speaker": "Santos",
+        "jp": "そうですか。残念ですね。",
+        "rom": "Sou desu ka. Zannen desu ne.",
+        "en": "Oh begitu ya. Sayang sekali."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] Partikel apa yang digunakan untuk menandai objek dari kata 'suki' (suka)?",
+      "options": [
+        {
+          "text": "を (O)",
+          "correct": false
+        },
+        {
+          "text": "が (GA)",
+          "correct": true
+        },
+        {
+          "text": "は (WA)",
+          "correct": false
+        },
+        {
+          "text": "に (NI)",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] Jawab: 'Kenapa tidak pergi?' -> 'Karena saya sibuk.'\nIsogashii desu [     ].",
+      "answer": "kara"
+    },
+    {
+      "type": "mcq",
+      "question": "[Budaya] Anda dipuji 'Nihongo ga jouzu desu ne!' oleh orang Jepang. Balasan paling sopan dan tepat secara budaya adalah:",
+      "options": [
+        {
+          "text": "Hai, jouzu desu. (Ya, saya mahir.)",
+          "correct": false
+        },
+        {
+          "text": "Arigatou gozaimasu. Jouzu desu. (Terima kasih. Saya memang mahir.)",
+          "correct": false
+        },
+        {
+          "text": "Iie, mada mada desu. (Tidak, masih jauh.)",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu C] 'Saya SAMA SEKALI tidak mengerti bahasa Jepang'.\nNihongo ga [       ] wakarimasen.",
+      "answer": "zenzen"
+    },
+    {
+      "type": "mcq",
+      "question": "[Jebakan Partikel] Kalimat 'Nihongo O wakarimasu' adalah:",
+      "options": [
+        {
+          "text": "Benar secara gramatikal",
+          "correct": false
+        },
+        {
+          "text": "SALAH. 'Wakarimasu' wajib pakai GA, bukan O.",
+          "correct": true
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Menanyakan Kemahiran Lawan Bicara",
+      "situation": "Bertanya tentang kemahiran menari/bernyanyi rekan kerja",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "木村さんは ダンスが 上手ですか。",
+          "rom": "Kimura-san wa dansu ga jouzu desu ka.",
+          "en": "Apakah Sdr. Kimura mahir menari?"
+        },
+        {
+          "speaker": "B",
+          "jp": "はい、とても 上手ですよ。",
+          "rom": "Hai, totemo jouzu desu yo.",
+          "en": "Ya, dia sangat mahir lho."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。",
+          "rom": "Sou desu ka.",
+          "en": "Oh, begitu ya."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Mengajak Pergi Karena Ada Tiket Gratis",
+      "situation": "Mengajak teman nonton konser musik klasik karena punya tiket ekstra",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "クラシックの 切符が あります。一緒に 行きませんか。",
+          "rom": "Kurashikku no kippu ga arimasu. Issho ni ikimasen ka.",
+          "en": "Saya punya tiket musik klasik. Maukah pergi bersama?"
+        },
+        {
+          "speaker": "B",
+          "jp": "いいですね。行きましょう。",
+          "rom": "Ii desu ne. Ikimashou.",
+          "en": "Boleh juga ya. Mari kita pergi!"
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Menolak Ajakan Karena Ada Urusan Lain",
+      "situation": "Menolak ajakan nonton film secara halus karena sudah ada janji lain",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "明日 一緒に 映画を 見に行きませんか。",
+          "rom": "Ashita issho ni eiga o mini ikimasen ka.",
+          "en": "Maukah besok pergi menonton film bersama?"
+        },
+        {
+          "speaker": "B",
+          "jp": "すみません、明日は ちょっと 用事が あります。",
+          "rom": "Sumimasen, ashita wa chotto youji ga arimasu.",
+          "en": "Maaf, kalau besok saya ada sedikit urusan."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。残念ですね。",
+          "rom": "Sou desu ka. Zannen desu ne.",
+          "en": "Oh begitu. Sayang sekali ya."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r9-1",
+      "jp": "お酒が 好きですか。... いいえ、好きじゃありません。",
+      "rom": "Osake ga suki desu ka? ... Iie, suki ja arimasen.",
+      "en": "Apakah Anda suka sake? ... Tidak, saya tidak suka."
+    },
+    {
+      "id": "r9-2",
+      "jp": "どんな スポーツが 好きですか。... 野球が 好きです。",
+      "rom": "Donna supootsu ga suki desu ka? ... Yakyuu ga suki desu.",
+      "en": "Olahraga apa yang Anda sukai? ... Saya suka bisbol."
+    },
+    {
+      "id": "r9-3",
+      "jp": "英語が よく 分かりますか。... いいえ、よく 分かりません。",
+      "rom": "Eigo ga yoku wakarimasu ka? ... Iie, yoku wakarimasen.",
+      "en": "Apakah Anda mengerti bahasa Inggris dengan baik? ... Tidak, saya tidak begitu mengerti."
+    },
+    {
+      "id": "r9-4",
+      "jp": "漢字が 分かりますか。... はい、だいたい 分かります。",
+      "rom": "Kanji ga wakarimasu ka? ... Hai, daitai wakarimasu.",
+      "en": "Apakah Anda paham Kanji? ... Ya, kira-kira paham."
+    },
+    {
+      "id": "r9-5",
+      "jp": "用事が ありますから、早く 帰ります。... そうですか。",
+      "rom": "Youji ga arimasu kara, hayaku kaerimasu. ... Sou desu ka.",
+      "en": "Karena ada urusan, saya pulang cepat. ... Oh, begitu ya."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb9-1",
+      "pattern": "N が 好きです / 嫌いです",
+      "instruction": "Nyatakan kesukaan atau ketidaksukaan menggunakan が + 好き/嫌い.",
+      "question": "Sushi / suki",
+      "correct": "わたしは すしが すきです。",
+      "romaji": "Watashi wa sushi ga suki desu.",
+      "translation": "Saya suka sushi."
+    },
+    {
+      "id": "wb9-2",
+      "pattern": "N が 上手です / 下手です",
+      "instruction": "Nyatakan kemampuan seseorang baik atau kurang baik dalam sesuatu.",
+      "question": "Miraa-san / ryouri / jouzu",
+      "correct": "ミラーさんは りょうりが じょうずです。",
+      "romaji": "Miraa-san wa ryouri ga jouzu desu.",
+      "translation": "Sdr. Miller pandai memasak."
+    },
+    {
+      "id": "wb9-3",
+      "pattern": "どんな N が 好きですか",
+      "instruction": "Tanyakan jenis/tipe apa yang disukai seseorang.",
+      "question": "Ongaku / dono you na",
+      "correct": "どんな おんがくが すきですか。",
+      "romaji": "Donna ongaku ga suki desu ka.",
+      "translation": "Anda suka musik seperti apa?"
+    },
+    {
+      "id": "wb9-4",
+      "pattern": "N を V のが 好きです (Nominalizing)",
+      "instruction": "Nyatakan kesukaan terhadap suatu aktivitas dengan menominalisasi kata kerja menggunakan の.",
+      "question": "Oyogu / koto / suki",
+      "correct": "わたしは およぐのが すきです。",
+      "romaji": "Watashi wa oyogu no ga suki desu.",
+      "translation": "Saya suka berenang."
+    },
+    {
+      "id": "wb9-5",
+      "pattern": "よく / あまり + V ます/ません",
+      "instruction": "Nyatakan frekuensi aktivitas menggunakan よく (sering) atau あまり～ません (tidak begitu sering).",
+      "question": "Eiga / amari / mimasen",
+      "correct": "えいがは あまり みません。",
+      "romaji": "Eiga wa amari mimasen.",
+      "translation": "Saya tidak begitu sering menonton film."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex9-1",
+        "sentence": "わたしは スポーツ [ ] すきです。",
+        "correct": "が",
+        "translation": "Saya suka olahraga."
+      },
+      {
+        "id": "ex9-2",
+        "sentence": "ミラーさんは ピアノ [ ] じょうずです。",
+        "correct": "が",
+        "translation": "Sdr. Miller pandai bermain piano."
+      },
+      {
+        "id": "ex9-3",
+        "sentence": "どんな たべもの [ ] すきですか。",
+        "correct": "が",
+        "translation": "Anda suka makanan seperti apa?"
+      },
+      {
+        "id": "ex9-4",
+        "sentence": "すしは あまり すき [ ] ありません。",
+        "correct": "では / じゃ",
+        "translation": "Saya tidak begitu suka sushi."
+      },
+      {
+        "id": "ex9-5",
+        "sentence": "えいがを みる [ ] が すきです。",
+        "correct": "の",
+        "translation": "Saya suka menonton film."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex9-6",
+        "question": "Partikel yang digunakan sebelum 好き/嫌い/上手 untuk menandai objek yang disukai/dibenci/dikuasai:",
+        "options": [
+          {
+            "text": "を",
+            "correct": false
+          },
+          {
+            "text": "が",
+            "correct": true
+          },
+          {
+            "text": "は",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex9-7",
+        "question": "Cara mengatakan 'saya tidak terlalu pandai berbicara bahasa Jepang' adalah:",
+        "options": [
+          {
+            "text": "にほんごが じょうずじゃ ありません。",
+            "correct": false
+          },
+          {
+            "text": "にほんごが あまり じょうずでは ありません。",
+            "correct": true
+          },
+          {
+            "text": "にほんごが きらいです。",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex9-8",
+        "question": "Untuk menominalisasi kata kerja 'taberu' (makan) menjadi 'kegiatan makan', gunakan:",
+        "options": [
+          {
+            "text": "たべる こと / たべる の",
+            "correct": true
+          },
+          {
+            "text": "たべる です",
+            "correct": false
+          },
+          {
+            "text": "たべ ます",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "カリナさんは りょうりが じょうずです。まいにち うちで りょうりを します。にほんりょうりが とても すきです。でも、からいたべものは あまり すきでは ありません。",
+      "questions": [
+        {
+          "id": "ex9-9",
+          "question": "カリナさんは りょうりが とくいです。",
+          "correct": "T"
+        },
+        {
+          "id": "ex9-10",
+          "question": "カリナさんは まいにち そとで たべます。",
+          "correct": "F"
+        },
+        {
+          "id": "ex9-11",
+          "question": "カリナさんは からいたべものが だいすきです。",
+          "correct": "F"
+        }
+      ]
+    }
+  }
+}

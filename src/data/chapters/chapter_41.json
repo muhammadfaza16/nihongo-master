@@ -1,0 +1,468 @@
+{
+  "id": 41,
+  "title": "Lesson 41: Definisi & Kabar (〜という / 〜というのは / 〜ということ)",
+  "desc": "Mempelajari cara mendefinisikan suatu istilah menggunakan 〜というのは, menyebut nama sesuatu dengan 〜という, serta mengubah kalimat/kabar menjadi kata benda dengan 〜ということ.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v41-1",
+      "rom": "Imi",
+      "kana": "いみ",
+      "kanji": "意味",
+      "en": "Arti / Makna",
+      "audio": ""
+    },
+    {
+      "id": "v41-2",
+      "rom": "Teigi (shimasu)",
+      "kana": "ていぎ（します）",
+      "kanji": "定義（します）",
+      "en": "Definisi / Mendefinisikan",
+      "audio": ""
+    },
+    {
+      "id": "v41-3",
+      "rom": "Kotoba",
+      "kana": "ことば",
+      "kanji": "言葉",
+      "en": "Kata / Bahasa",
+      "audio": ""
+    },
+    {
+      "id": "v41-4",
+      "rom": "Yobi (shimasu)",
+      "kana": "よび（します）",
+      "kanji": "呼び（します）",
+      "en": "Panggilan / Memanggil",
+      "audio": ""
+    },
+    {
+      "id": "v41-5",
+      "rom": "Hyougen (shimasu)",
+      "kana": "ひょうげん（します）",
+      "kanji": "表現（します）",
+      "en": "Ekspresi / Mengungkapkan",
+      "audio": ""
+    },
+    {
+      "id": "v41-6",
+      "rom": "Sain (shimasu)",
+      "kana": "サイン（します）",
+      "kanji": "",
+      "en": "Tanda tangan",
+      "audio": ""
+    },
+    {
+      "id": "v41-7",
+      "rom": "Kanji",
+      "kana": "かんじ",
+      "kanji": "漢字",
+      "en": "Karakter Kanji",
+      "audio": ""
+    },
+    {
+      "id": "v41-8",
+      "rom": "Kana",
+      "kana": "かな",
+      "kanji": "仮名",
+      "en": "Karakter Kana (Hiragana/Katakana)",
+      "audio": ""
+    },
+    {
+      "id": "v41-9",
+      "rom": "Bunshou",
+      "kana": "ぶんしょう",
+      "kanji": "文章",
+      "en": "Kalimat / Paragraf",
+      "audio": ""
+    },
+    {
+      "id": "v41-10",
+      "rom": "Honyaku (shimasu)",
+      "kana": "ほんやく（します）",
+      "kanji": "翻訳（します）",
+      "en": "Menerjemahkan (tulisan)",
+      "audio": ""
+    },
+    {
+      "id": "v41-11",
+      "rom": "Tsuyaku (shimasu)",
+      "kana": "つうやく（します）",
+      "kanji": "通訳（します）",
+      "en": "Menerjemahkan (lisan)",
+      "audio": ""
+    },
+    {
+      "id": "v41-12",
+      "rom": "Setaka",
+      "kana": "せたか",
+      "kanji": "背丈",
+      "en": "Tinggi badan",
+      "audio": ""
+    },
+    {
+      "id": "v41-13",
+      "rom": "Kawaii",
+      "kana": "かわいい",
+      "kanji": "",
+      "en": "Lucu / Imut",
+      "audio": ""
+    },
+    {
+      "id": "v41-14",
+      "rom": "Meishi",
+      "kana": "めいし",
+      "kanji": "名刺",
+      "en": "Kartu nama",
+      "audio": ""
+    },
+    {
+      "id": "v41-15",
+      "rom": "Shinbun",
+      "kana": "しんぶん",
+      "kanji": "新聞",
+      "en": "Surat kabar / Koran",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g41-1",
+      "title": "1. N1 という N2 (Bernama/Disebut)",
+      "desc": "Menjelaskan kata benda N2 dengan menyebut namanya N1. Sangat berguna ketika menyebut nama benda, tempat, atau orang yang mungkin belum dikenal oleh lawan bicara.",
+      "points": [
+        "Pola: N1 + という + N2",
+        "Artinya: N2 yang bernama/disebut N1.",
+        "Contoh: Sakura to iu hana (Bunga yang bernama Sakura).",
+        "Contoh: Tanaka to iu hito (Orang yang bernama Tanaka)."
+      ],
+      "formula": "N1 + という + N2",
+      "native_note": "Digunakan untuk memperkenalkan sesuatu yang belum diketahui lawan bicara agar mereka memahami kategorinya (misal: 'Indomie' to iu instant ramen)."
+    },
+    {
+      "id": "g41-2",
+      "title": "2. N というのは (Definisi)",
+      "desc": "Digunakan untuk mendefinisikan suatu istilah atau kata benda N. Bagian akhir kalimat biasanya diakhiri dengan ~ no koto desu (adalah hal tentang) atau ~ to iu imi desu (artinya adalah).",
+      "points": [
+        "Pola: N + というのは ~ のことです / 〜という意味です",
+        "Artinya: Yang dimaksud dengan N adalah...",
+        "Contoh: 'Keigo' to iu no wa teinei na kotoba no koto desu (Yang dimaksud keigo adalah bahasa sopan)."
+      ],
+      "formula": "N + というのは 〜 のことです / 〜という意味です"
+    },
+    {
+      "id": "g41-3",
+      "title": "3. Plain Form + ということ (Hal bahwa / Kabar bahwa)",
+      "desc": "Mengubah suatu klausa kalimat menjadi kata benda untuk melaporkan isi informasi atau kabar yang didengar.",
+      "points": [
+        "Pola: Plain Form + ということ",
+        "Artinya: Hal/Kabar bahwa...",
+        "Contoh: Kare ga kekkon suru to iu koto wo kikimashita. (Saya mendengar kabar bahwa dia akan menikah)."
+      ],
+      "formula": "Plain Form + ということ"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "田中さんという人を知っていますか。",
+      "rom": "Tanaka-san to iu hito wo shitte imasu ka.",
+      "en": "Apakah Anda kenal orang yang bernama Tanaka?"
+    },
+    {
+      "jp": "「禁煙」というのはタバコを吸ってはいけないということです。",
+      "rom": "'Kinen' to iu no wa tabako wo sutte wa ikenai to iu koto desu.",
+      "en": "Yang dimaksud dengan 'Kinen' adalah dilarang merokok."
+    },
+    {
+      "jp": "彼が日本へ行くということを聞きました。",
+      "rom": "Kare ga Nihon e iku to iu koto wo kikimashita.",
+      "en": "Saya mendengar kabar bahwa dia akan pergi ke Jepang."
+    },
+    {
+      "jp": "「研修」というのは何の意味ですか。",
+      "rom": "'Kenshuu' to iu no wa nan no imi desu ka.",
+      "en": "Apa arti dari kata 'Kenshuu'?"
+    }
+  ],
+  "conversation": {
+    "title": "Orang Bernama Hayashi",
+    "dialogue": [
+      {
+        "speaker": "A",
+        "jp": "すみません、林さんという人はいますか。",
+        "rom": "Sumimasen, Hayashi-san to iu hito wa imasu ka.",
+        "en": "Permisi, apakah ada orang bernama Hayashi?"
+      },
+      {
+        "speaker": "B",
+        "jp": "林さんですか。ああ、いま会議中ですよ。",
+        "rom": "Hayashi-san desu ka. Aa, ima kaigi-chuu desu yo.",
+        "en": "Hayashi? Oh, dia sedang rapat sekarang."
+      },
+      {
+        "speaker": "A",
+        "jp": "そうですか。この書類を預かったということを伝えてください。",
+        "rom": "Soo desu ka. Kono shorui wo azukata to iu koto wo tsutaete kudasai.",
+        "en": "Begitu ya. Tolong sampaikan bahwa saya menitipkan dokumen ini."
+      },
+      {
+        "speaker": "B",
+        "jp": "はい、わかりました。伝えておきます。",
+        "rom": "Hai, wakarimashita. Tsutaete okimasu.",
+        "en": "Baik, saya mengerti. Akan saya sampaikan nanti."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "Pilih terjemahan yang tepat untuk 'Bunga yang bernama Sakura':",
+      "options": [
+        {
+          "text": "さくらというはな",
+          "correct": true
+        },
+        {
+          "text": "さくらのためのなは",
+          "correct": false
+        },
+        {
+          "text": "さくらのようにはな",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "Isi partikel: 'Yang dimaksud dengan 'tsuyaku' adalah interpreter'.\nTsuuyaku to iu no [   ] tsuuyakusha no koto desu.",
+      "answer": "wa"
+    },
+    {
+      "type": "mcq",
+      "question": "Pola 'Plain Form + to iu koto' digunakan untuk:",
+      "options": [
+        {
+          "text": "Mengubah kalimat kabar menjadi kata benda",
+          "correct": true
+        },
+        {
+          "text": "Menyatakan alasan",
+          "correct": false
+        },
+        {
+          "text": "Menunjukkan syarat",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Menanyakan Arti Rambu",
+      "situation": "Di jalan melihat tanda larangan masuk",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "あの看板はなんという意味ですか。",
+          "rom": "Ano kanban wa nan to iu imi desu ka.",
+          "en": "Rambu itu artinya apa?"
+        },
+        {
+          "speaker": "B",
+          "jp": "「立入禁止」という意味です。入ってはいけません。",
+          "rom": "'Tachiri-kinshi' to iu imi desu. Haitte wa ikemasen.",
+          "en": "Artinya 'Dilarang Masuk'. Tidak boleh masuk."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r41-1",
+      "jp": "さくらという花が好きです。",
+      "rom": "Sakura to iu hana ga suki desu.",
+      "en": "Saya suka bunga yang bernama Sakura."
+    },
+    {
+      "id": "r41-2",
+      "jp": "「記入」というのは書くことです。",
+      "rom": "'Kinyuu' to iu no wa kaku koto desu.",
+      "en": "Yang dimaksud dengan 'Kinyuu' adalah menulis/mengisi."
+    },
+    {
+      "id": "r41-3",
+      "jp": "彼が小説を書いたということを知っていますか。",
+      "rom": "Kare ga shousetsu wo kaita to iu koto wo shitte imasu ka.",
+      "en": "Apakah Anda tahu hal bahwa dia telah menulis novel?"
+    },
+    {
+      "id": "r41-4",
+      "jp": "ハリセンボンという魚は棘があります。",
+      "rom": "Harisenbon to iu sakana wa toge ga arimasu.",
+      "en": "Ikan yang bernama pufferfish (harisenbon) memiliki duri."
+    },
+    {
+      "id": "r41-5",
+      "jp": "「アルバイト」というのはドイツ語から来た言葉です。",
+      "rom": "'Arubaito' to iu no wa doitsu-go kara kita kotoba desu.",
+      "en": "'Arubaito' adalah kata yang berasal dari bahasa Jerman."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb41-1",
+      "pattern": "N1 + という + N2",
+      "instruction": "Buat frase: 'Orang yang bernama Budi'.",
+      "question": "Budi / hito",
+      "correct": "ブディというひと",
+      "romaji": "Budi to iu hito.",
+      "translation": "Orang bernama Budi."
+    },
+    {
+      "id": "wb41-2",
+      "pattern": "N + というのは",
+      "instruction": "Buat pola definisi: 'Yang dimaksud dengan PC'.",
+      "question": "PC / N-to iu no wa",
+      "correct": "PCというのは",
+      "romaji": "PC to iu no wa.",
+      "translation": "Yang dimaksud dengan PC."
+    },
+    {
+      "id": "wb41-3",
+      "pattern": "Plain + ということ",
+      "instruction": "Mendengar kabar: 'Mendengar bahwa dia lulus ujian'.",
+      "question": "Shiken / goukaku shita / koto / kiku",
+      "correct": "しけんにごうかくしたということをききました。",
+      "romaji": "Shiken ni goukaku shita to iu koto wo kikimashita.",
+      "translation": "Mendengar kabar bahwa dia lulus ujian."
+    },
+    {
+      "id": "wb41-4",
+      "pattern": "N1 + という + N2",
+      "instruction": "Buat frase: 'Buku yang berjudul Minna no Nihongo'.",
+      "question": "Minna no Nihongo / hon",
+      "correct": "みんなのにほんごというほん",
+      "romaji": "Minna no Nihongo to iu hon.",
+      "translation": "Buku yang berjudul Minna no Nihongo."
+    },
+    {
+      "id": "wb41-5",
+      "pattern": "N + というのは",
+      "instruction": "Jelaskan rambu: 'Tachiri-kinshi berarti jangan masuk'.",
+      "question": "Tachiri-kinshi / hairu na / imi desu",
+      "correct": "たちいりきんしというのははいるなという意味です。",
+      "romaji": "Tachiri-kinshi to iu no wa hairu na to iu imi desu.",
+      "translation": "Yang dimaksud 'Tachiri-kinshi' adalah jangan masuk."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex41-1",
+        "sentence": "この しょるいを かりにんした [ ] ことを つたえてください。",
+        "correct": "という",
+        "translation": "Tolong sampaikan hal bahwa Anda sudah menerima dokumen ini."
+      },
+      {
+        "id": "ex41-2",
+        "sentence": "「きんえん」と [ ] のは、タバコを すってはいけない ということです。",
+        "correct": "いう",
+        "translation": "Yang dimaksud dengan 'Kinen' adalah dilarang merokok."
+      },
+      {
+        "id": "ex41-3",
+        "sentence": "やまださん [ ] ひとから でんわが ありましたよ。",
+        "correct": "という",
+        "translation": "Tadi ada telepon dari orang bernama Yamada lho."
+      },
+      {
+        "id": "ex41-4",
+        "sentence": "かれが しけんを うけたという [ ] を しっています。",
+        "correct": "こと",
+        "translation": "Saya tahu hal bahwa dia telah mengikuti ujian."
+      },
+      {
+        "id": "ex41-5",
+        "sentence": "「ありがとう」というのは インドネシアごで 「Terima kasih」 [ ] いう意味です。",
+        "correct": "と",
+        "translation": "'Arigatou' itu artinya 'Terima kasih' dalam bahasa Indonesia."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex41-6",
+        "question": "Pola 'N1 to iu N2' paling tepat digunakan ketika:",
+        "options": [
+          {
+            "text": "N1 adalah nama spesifik dan N2 adalah kategorinya",
+            "correct": true
+          },
+          {
+            "text": "N1 adalah alasan dan N2 adalah akibat",
+            "correct": false
+          },
+          {
+            "text": "N1 adalah kata kerja potensial",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex41-7",
+        "question": "Apa arti 'Nihon e iku to iu koto wo kikitai'?",
+        "options": [
+          {
+            "text": "Saya ingin mendengar hal/kabar tentang pergi ke Jepang",
+            "correct": true
+          },
+          {
+            "text": "Saya harus pergi ke Jepang",
+            "correct": false
+          },
+          {
+            "text": "Saya tidak mau pergi ke Jepang",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex41-8",
+        "question": "Definisi dari 'Tsuyaku' yang benar adalah:",
+        "options": [
+          {
+            "text": "Penerjemah lisan",
+            "correct": true
+          },
+          {
+            "text": "Penerjemah tulisan",
+            "correct": false
+          },
+          {
+            "text": "Guru bahasa",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "きょう、かいしゃで 「サクラ」という おみせの ケーキを もらいました。とても おいしかったです。ケーキを くれた やまださんは、らいげつ けっこんするという ことを はなしていました。みんなで お祝いを するつもりです。",
+      "questions": [
+        {
+          "id": "ex41-9",
+          "question": "サクラは ケーキのお店の なまえです。",
+          "correct": "T"
+        },
+        {
+          "id": "ex41-10",
+          "question": "やまださんは らいげつ けっこんします。",
+          "correct": "T"
+        },
+        {
+          "id": "ex41-11",
+          "question": "わたしは やまださんが けっこんするのを しりませんでした。",
+          "correct": "F"
+        }
+      ]
+    }
+  }
+}

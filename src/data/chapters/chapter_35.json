@@ -1,0 +1,460 @@
+{
+  "id": 35,
+  "title": "Lesson 35: 〜てほしいです / 〜といいです",
+  "desc": "Mempelajari cara menyatakan keinginan agar orang lain melakukan sesuatu (〜てほしいです) dan harapan yang bersifat umum atau untuk diri sendiri (〜といいです / 〜といいのですが).",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v35-1",
+      "rom": "Negau",
+      "kana": "ねがいます",
+      "kanji": "願います",
+      "en": "Memohon / Berharap",
+      "audio": ""
+    },
+    {
+      "id": "v35-2",
+      "rom": "Kiboo",
+      "kana": "きぼう",
+      "kanji": "希望",
+      "en": "Harapan / Keinginan",
+      "audio": ""
+    },
+    {
+      "id": "v35-3",
+      "rom": "Kitai",
+      "kana": "きたい",
+      "kanji": "期待",
+      "en": "Ekspektasi / Harapan besar",
+      "audio": ""
+    },
+    {
+      "id": "v35-4",
+      "rom": "Tanomi",
+      "kana": "たのみ",
+      "kanji": "頼み",
+      "en": "Permintaan / Permohonan bantuan",
+      "audio": ""
+    },
+    {
+      "id": "v35-5",
+      "rom": "Joukyoo",
+      "kana": "じょうきょう",
+      "kanji": "状況",
+      "en": "Situasi / Kondisi",
+      "audio": ""
+    },
+    {
+      "id": "v35-6",
+      "rom": "Chuui (shimasu)",
+      "kana": "ちゅうい（します）",
+      "kanji": "注意（します）",
+      "en": "Memperhatikan / Mengingatkan / Waspada",
+      "audio": ""
+    },
+    {
+      "id": "v35-7",
+      "rom": "Naosu",
+      "kana": "なおします",
+      "kanji": "直します",
+      "en": "Memperbaiki / Mengoreksi",
+      "audio": ""
+    },
+    {
+      "id": "v35-8",
+      "rom": "Mitsukaru",
+      "kana": "みつかります",
+      "kanji": "見つかります",
+      "en": "Ditemukan (intransitif)",
+      "audio": ""
+    },
+    {
+      "id": "v35-9",
+      "rom": "Hayaku naorimasu",
+      "kana": "はやくなおります",
+      "kanji": "早く治ります",
+      "en": "Cepat sembuh",
+      "audio": ""
+    },
+    {
+      "id": "v35-10",
+      "rom": "Umai",
+      "kana": "うまい",
+      "kanji": "うまい",
+      "en": "Enak / Mahir (kasual)",
+      "audio": ""
+    },
+    {
+      "id": "v35-11",
+      "rom": "Seikoo (shimasu)",
+      "kana": "せいこう（します）",
+      "kanji": "成功（します）",
+      "en": "Berhasil / Sukses",
+      "audio": ""
+    },
+    {
+      "id": "v35-12",
+      "rom": "Shiken",
+      "kana": "しけん",
+      "kanji": "試験",
+      "en": "Ujian / Tes",
+      "audio": ""
+    },
+    {
+      "id": "v35-13",
+      "rom": "Ukaru",
+      "kana": "うかります",
+      "kanji": "受かります",
+      "en": "Lulus ujian",
+      "audio": ""
+    },
+    {
+      "id": "v35-14",
+      "rom": "Kekkon",
+      "kana": "けっこん",
+      "kanji": "結婚",
+      "en": "Pernikahan",
+      "audio": ""
+    },
+    {
+      "id": "v35-15",
+      "rom": "Shiawase",
+      "kana": "しあわせ",
+      "kanji": "幸せ",
+      "en": "Kebahagiaan / Bahagia",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g35-1",
+      "title": "1. 〜てほしいです (Ingin Orang Lain Melakukan ~)",
+      "desc": "Menyatakan keinginan atau permintaan agar orang tertentu melakukan sesuatu. Subjek yang diinginkan melakukan sesuatu ditandai dengan partikel に.",
+      "points": [
+        "Pola: [Orang に] V-te form + ほしいです",
+        "Contoh: Kare NI hayaku kaette hoshii desu. (Saya ingin dia cepat pulang).",
+        "Negatif: [Orang に] V-negative + でほしいです. Contoh: Soko ni ikanaide hoshii. (Saya tidak ingin kamu pergi ke sana).",
+        "Lebih sopan: ~ていただきたいです (kenjōgo version).",
+        "PERHATIAN: Jangan gunakan untuk permintaan kepada orang yang lebih tinggi statusnya — gunakan 〜ていただけませんか."
+      ],
+      "formula": "[Person に] V-te + ほしいです / V-ないで + ほしいです",
+      "native_note": "てほしい sering dipakai dalam lagu-lagu Jepang! Misalnya: 'そばにいてほしい' (ingin kamu selalu di sisiku) adalah ungkapan yang sangat umum dalam J-pop."
+    },
+    {
+      "id": "g35-2",
+      "title": "2. 〜といいです / 〜といいのですが (Semoga / Mudah-mudahan)",
+      "desc": "Menyatakan harapan yang bersifat umum, untuk diri sendiri, atau untuk orang lain. Berbeda dari てほしい yang lebih spesifik kepada seseorang.",
+      "points": [
+        "Pola: Plain form + といいです / といいですね",
+        "Contoh harapan untuk orang lain: Hayaku naoru TO II desu ne. (Semoga cepat sembuh ya).",
+        "Contoh harapan untuk diri sendiri: Shiken ni ukaru TO II N desu ga... (Saya harap bisa lulus ujian, tapi...).",
+        "~といいですね → harapan untuk orang lain (dengan nuansa simpati).",
+        "~といいんですが → harapan pribadi yang tidak pasti, sering dengan nuansa kekhawatiran."
+      ],
+      "formula": "Plain form + といいです(ね) / といいんですが"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "もっとよく考えてほしいです。",
+      "rom": "Motto yoku kangaete hoshii desu.",
+      "en": "Saya ingin Anda memikirkannya lebih baik lagi."
+    },
+    {
+      "jp": "早く元気になるといいですね。",
+      "rom": "Hayaku genki ni naru to ii desu ne.",
+      "en": "Semoga cepat pulih ya."
+    },
+    {
+      "jp": "彼に本当のことを話してほしいです。",
+      "rom": "Kare ni hontoo no koto wo hanashite hoshii desu.",
+      "en": "Saya ingin dia menceritakan yang sebenarnya."
+    },
+    {
+      "jp": "明日、晴れるといいですね。",
+      "rom": "Ashita, hareru to ii desu ne.",
+      "en": "Mudah-mudahan besok cerah ya."
+    }
+  ],
+  "conversation": {
+    "title": "Mendoakan dan Meminta",
+    "dialogue": [
+      {
+        "speaker": "A",
+        "jp": "明日、大事な発表があるんです。",
+        "rom": "Ashita, daiji na happyoo ga aru n desu.",
+        "en": "Besok ada presentasi penting."
+      },
+      {
+        "speaker": "B",
+        "jp": "そうですか。うまくいくといいですね。",
+        "rom": "Soo desu ka. Umaku iku to ii desu ne.",
+        "en": "Begitu ya. Semoga berjalan dengan baik ya."
+      },
+      {
+        "speaker": "A",
+        "jp": "ありがとうございます。山田さんにも来てほしいんですが…。",
+        "rom": "Arigatoo gozaimasu. Yamada-san ni mo kite hoshiin desu ga...",
+        "en": "Terima kasih. Saya ingin Yamada-san juga datang, tapi..."
+      },
+      {
+        "speaker": "B",
+        "jp": "わかりました。できる限り参加するようにします。",
+        "rom": "Wakarimashita. Dekiru kagiri sanka suru you ni shimasu.",
+        "en": "Baik. Saya akan berusaha hadir semampu saya."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "'Kare ni shinjitsu wo itte hoshii desu' berarti:",
+      "options": [
+        {
+          "text": "Dia ingin saya mengatakan kebenaran",
+          "correct": false
+        },
+        {
+          "text": "Saya ingin dia mengatakan kebenaran",
+          "correct": true
+        },
+        {
+          "text": "Saya harap dia berkata jujur (harapan umum)",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "'Semoga cuacanya bagus besok'.\nAshita, ii tenki ni naru [   ] desu ne.",
+      "answer": "to ii"
+    },
+    {
+      "type": "mcq",
+      "question": "Perbedaan てほしい dan といいです:",
+      "options": [
+        {
+          "text": "Keduanya sama",
+          "correct": false
+        },
+        {
+          "text": "てほしい = permintaan kepada orang tertentu; といいです = harapan umum/personal",
+          "correct": true
+        },
+        {
+          "text": "といいです = permintaan kepada orang tertentu",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Mendoakan Teman Sakit",
+      "situation": "Mengunjungi teman yang sakit",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "早く元気になってほしいです。",
+          "rom": "Hayaku genki ni natte hoshii desu.",
+          "en": "Saya ingin kamu cepat sembuh."
+        },
+        {
+          "speaker": "B",
+          "jp": "ありがとう。もう少しで治ると思う。",
+          "rom": "Arigatoo. Moo sukoshi de naoru to omou.",
+          "en": "Makasih. Sepertinya sebentar lagi sembuh."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r35-1",
+      "jp": "彼女に早く来てほしいです。",
+      "rom": "Kanojo ni hayaku kite hoshii desu.",
+      "en": "Saya ingin dia cepat datang."
+    },
+    {
+      "id": "r35-2",
+      "jp": "試験に合格するといいですね。",
+      "rom": "Shiken ni goukaku suru to ii desu ne.",
+      "en": "Semoga lulus ujian ya."
+    },
+    {
+      "id": "r35-3",
+      "jp": "子供には健康でいてほしいです。",
+      "rom": "Kodomo ni wa kenkou de ite hoshii desu.",
+      "en": "Saya ingin anak-anak tetap sehat."
+    },
+    {
+      "id": "r35-4",
+      "jp": "明日の天気が良くなるといいんですが…。",
+      "rom": "Ashita no tenki ga yoku naru to ii n desu ga...",
+      "en": "Mudah-mudahan cuaca besok membaik, tapi..."
+    },
+    {
+      "id": "r35-5",
+      "jp": "もっと時間があるといいのに。",
+      "rom": "Motto jikan ga aru to ii noni.",
+      "en": "Kalau saja ada lebih banyak waktu (menyesal)."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb35-1",
+      "pattern": "[Person に] V-te + ほしいです",
+      "instruction": "Nyatakan keinginan: 'Saya ingin teman saya membantu'.",
+      "question": "Tomodachi / tetsudau / hoshii",
+      "correct": "ともだちに てつだってほしいです。",
+      "romaji": "Tomodachi ni tetsudatte hoshii desu.",
+      "translation": "Saya ingin teman saya membantu."
+    },
+    {
+      "id": "wb35-2",
+      "pattern": "V-naide + ほしいです (negatif)",
+      "instruction": "Nyatakan larangan yang diinginkan: 'Saya tidak ingin dia pergi'.",
+      "question": "Kare / ikanaide / hoshii",
+      "correct": "かれに いかないでほしいです。",
+      "romaji": "Kare ni ikanaide hoshii desu.",
+      "translation": "Saya tidak ingin dia pergi."
+    },
+    {
+      "id": "wb35-3",
+      "pattern": "〜といいですね (harapan untuk orang lain)",
+      "instruction": "Berikan harapan: 'Semoga bisnis Anda sukses'.",
+      "question": "Shigoto / umaku iku / to ii desu ne",
+      "correct": "しごとが うまく いくといいですね。",
+      "romaji": "Shigoto ga umaku iku to ii desu ne.",
+      "translation": "Semoga pekerjaan Anda berjalan baik."
+    },
+    {
+      "id": "wb35-4",
+      "pattern": "〜といいんですが (harapan pribadi)",
+      "instruction": "Ungkapkan harapan pribadi yang tidak pasti.",
+      "question": "Shiken / ukaru / to ii n desu ga",
+      "correct": "しけんに うかるといいんですが...",
+      "romaji": "Shiken ni ukaru to ii n desu ga..",
+      "translation": "Saya harap bisa lulus ujian, tapi..."
+    },
+    {
+      "id": "wb35-5",
+      "pattern": "〜といいのに (penyesalan)",
+      "instruction": "Ungkapkan penyesalan atas situasi saat ini.",
+      "question": "Motto / okane / aru / to ii noni",
+      "correct": "もっと おかねが あるといいのに。",
+      "romaji": "Motto okane ga aru to ii noni.",
+      "translation": "Kalau saja ada lebih banyak uang (tapi tidak ada)."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex35-1",
+        "sentence": "かれに しんじつを はなして [ ] です。",
+        "correct": "ほしい",
+        "translation": "Saya ingin dia mengatakan kebenaran."
+      },
+      {
+        "id": "ex35-2",
+        "sentence": "あした はれる [ ] いいですね。",
+        "correct": "と",
+        "translation": "Semoga besok cerah ya."
+      },
+      {
+        "id": "ex35-3",
+        "sentence": "こどもに けんこうで いて [ ] です。",
+        "correct": "ほしい",
+        "translation": "Saya ingin anak-anak tetap sehat."
+      },
+      {
+        "id": "ex35-4",
+        "sentence": "しけんに ごうかく する [ ] いいんですが...",
+        "correct": "と",
+        "translation": "Saya harap bisa lulus ujian, tapi..."
+      },
+      {
+        "id": "ex35-5",
+        "sentence": "もっと じかんが ある [ ] いいのに。",
+        "correct": "と",
+        "translation": "Kalau saja ada lebih banyak waktu."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex35-6",
+        "question": "てほしいです digunakan untuk:",
+        "options": [
+          {
+            "text": "Harapan umum yang tidak ditujukan kepada siapapun",
+            "correct": false
+          },
+          {
+            "text": "Keinginan agar orang tertentu melakukan sesuatu",
+            "correct": true
+          },
+          {
+            "text": "Harapan untuk diri sendiri",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex35-7",
+        "question": "'Hayaku naoru to ii desu ne' paling tepat dikatakan kepada:",
+        "options": [
+          {
+            "text": "Diri sendiri yang sedang sakit",
+            "correct": false
+          },
+          {
+            "text": "Orang lain yang sedang sakit (harapan/doa)",
+            "correct": true
+          },
+          {
+            "text": "Dokter",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex35-8",
+        "question": "Versi sopan dari てほしいです untuk permintaan kepada atasan:",
+        "options": [
+          {
+            "text": "〜てもらいたいです",
+            "correct": false
+          },
+          {
+            "text": "〜ていただきたいです",
+            "correct": true
+          },
+          {
+            "text": "〜てください",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "ともだちが しごとの めんせつを うけます。わたしは かれに うまく いってほしいです。めんせつで じぶんの きもちを しっかり つたえられるといいですね。かれは とても まじめなので、きっと だいじょうぶだと おもいます。せいこうを いのっています。",
+      "questions": [
+        {
+          "id": "ex35-9",
+          "question": "ともだちは しごとの めんせつを うけます。",
+          "correct": "T"
+        },
+        {
+          "id": "ex35-10",
+          "question": "わたしは ともだちが しっぱいしてほしいです。",
+          "correct": "F"
+        },
+        {
+          "id": "ex35-11",
+          "question": "わたしは ともだちは だいじょうぶだと おもっています。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

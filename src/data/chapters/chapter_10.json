@@ -1,0 +1,736 @@
+{
+  "id": 10,
+  "title": "Lesson 10: Ada / Berada (Arimasu & Imasu)",
+  "desc": "Membedah Bab 10. Anda belajar kata kerja keberadaan: Arimasu (benda mati) vs Imasu (makhluk hidup), kosakata posisi (atas, bawah, dalam, antara), serta dua pola kalimat penting untuk menanyakan 'Ada apa?' vs 'Ada di mana?'.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v10-1",
+      "rom": "Imasu",
+      "kana": "います",
+      "kanji": "",
+      "en": "Ada (makhluk hidup: manusia, hewan)",
+      "audio": ""
+    },
+    {
+      "id": "v10-2",
+      "rom": "Arimasu",
+      "kana": "あります",
+      "kanji": "",
+      "en": "Ada (benda mati: buku, gedung, pohon)",
+      "audio": ""
+    },
+    {
+      "id": "v10-3",
+      "rom": "Ue",
+      "kana": "うえ",
+      "kanji": "上",
+      "en": "Atas",
+      "audio": ""
+    },
+    {
+      "id": "v10-4",
+      "rom": "Shita",
+      "kana": "した",
+      "kanji": "下",
+      "en": "Bawah",
+      "audio": ""
+    },
+    {
+      "id": "v10-5",
+      "rom": "Mae",
+      "kana": "まえ",
+      "kanji": "前",
+      "en": "Depan",
+      "audio": ""
+    },
+    {
+      "id": "v10-6",
+      "rom": "Ushiro",
+      "kana": "うしろ",
+      "kanji": "後ろ",
+      "en": "Belakang",
+      "audio": ""
+    },
+    {
+      "id": "v10-7",
+      "rom": "Migi",
+      "kana": "みぎ",
+      "kanji": "右",
+      "en": "Kanan",
+      "audio": ""
+    },
+    {
+      "id": "v10-8",
+      "rom": "Hidari",
+      "kana": "ひだり",
+      "kanji": "左",
+      "en": "Kiri",
+      "audio": ""
+    },
+    {
+      "id": "v10-9",
+      "rom": "Naka",
+      "kana": "なか",
+      "kanji": "中",
+      "en": "Di dalam",
+      "audio": ""
+    },
+    {
+      "id": "v10-10",
+      "rom": "Soto",
+      "kana": "そと",
+      "kanji": "外",
+      "en": "Di luar",
+      "audio": ""
+    },
+    {
+      "id": "v10-11",
+      "rom": "Tonari",
+      "kana": "となり",
+      "kanji": "隣",
+      "en": "Di sebelah / Samping",
+      "audio": ""
+    },
+    {
+      "id": "v10-12",
+      "rom": "Aida",
+      "kana": "あいだ",
+      "kanji": "間",
+      "en": "Di antara (dua benda)",
+      "audio": ""
+    },
+    {
+      "id": "v10-13",
+      "rom": "Chikaku",
+      "kana": "ちかく",
+      "kanji": "近く",
+      "en": "Dekat / Di sekitar",
+      "audio": ""
+    },
+    {
+      "id": "v10-14",
+      "rom": "Inu",
+      "kana": "いぬ",
+      "kanji": "犬",
+      "en": "Anjing",
+      "audio": ""
+    },
+    {
+      "id": "v10-15",
+      "rom": "Neko",
+      "kana": "ねこ",
+      "kanji": "猫",
+      "en": "Kucing",
+      "audio": ""
+    },
+    {
+      "id": "v10-16",
+      "rom": "Ki",
+      "kana": "き",
+      "kanji": "木",
+      "en": "Pohon",
+      "audio": ""
+    },
+    {
+      "id": "v10-17",
+      "rom": "Hana",
+      "kana": "はな",
+      "kanji": "花",
+      "en": "Bunga",
+      "audio": ""
+    },
+    {
+      "id": "v10-18",
+      "rom": "Kouen",
+      "kana": "こうえん",
+      "kanji": "公園",
+      "en": "Taman",
+      "audio": ""
+    },
+    {
+      "id": "v10-19",
+      "rom": "Tsukue",
+      "kana": "つくえ",
+      "kanji": "机",
+      "en": "Meja tulis",
+      "audio": ""
+    },
+    {
+      "id": "v10-20",
+      "rom": "Isu",
+      "kana": "いす",
+      "kanji": "",
+      "en": "Kursi",
+      "audio": ""
+    },
+    {
+      "id": "v10-21",
+      "rom": "Tana",
+      "kana": "たな",
+      "kanji": "棚",
+      "en": "Rak",
+      "audio": ""
+    },
+    {
+      "id": "v10-22",
+      "rom": "Hako",
+      "kana": "はこ",
+      "kanji": "箱",
+      "en": "Kotak",
+      "audio": ""
+    },
+    {
+      "id": "v10-23",
+      "rom": "Beddo",
+      "kana": "ベッド",
+      "kanji": "",
+      "en": "Tempat tidur",
+      "audio": ""
+    },
+    {
+      "id": "v10-24",
+      "rom": "Terebi",
+      "kana": "テレビ",
+      "kanji": "",
+      "en": "TV / Televisi",
+      "audio": ""
+    },
+    {
+      "id": "v10-25",
+      "rom": "Reizouko",
+      "kana": "れいぞうこ",
+      "kanji": "冷蔵庫",
+      "en": "Kulkas",
+      "audio": ""
+    },
+    {
+      "id": "v10-26",
+      "rom": "Heya",
+      "kana": "へや",
+      "kanji": "部屋",
+      "en": "Kamar",
+      "audio": ""
+    },
+    {
+      "id": "v10-27",
+      "rom": "Ginkou",
+      "kana": "ぎんこう",
+      "kanji": "銀行",
+      "en": "Bank",
+      "audio": ""
+    },
+    {
+      "id": "v10-28",
+      "rom": "Yuubinkyoku",
+      "kana": "ゆうびんきょく",
+      "kanji": "郵便局",
+      "en": "Kantor Pos",
+      "audio": ""
+    },
+    {
+      "id": "v10-29",
+      "rom": "Byouin",
+      "kana": "びょういん",
+      "kanji": "病院",
+      "en": "Rumah Sakit",
+      "audio": ""
+    },
+    {
+      "id": "v10-30",
+      "rom": "Kissaten",
+      "kana": "きっさてん",
+      "kanji": "喫茶店",
+      "en": "Kedai Kopi (Tradisional)",
+      "audio": ""
+    },
+    {
+      "id": "v10-31",
+      "rom": "Konbini",
+      "kana": "コンビニ",
+      "kanji": "",
+      "en": "Minimarket / Konbini",
+      "audio": ""
+    },
+    {
+      "id": "v10-32",
+      "rom": "Biru",
+      "kana": "ビル",
+      "kanji": "",
+      "en": "Gedung",
+      "audio": ""
+    },
+    {
+      "id": "v10-33",
+      "rom": "ATM",
+      "kana": "エーティーエム",
+      "kanji": "",
+      "en": "ATM",
+      "audio": ""
+    },
+    {
+      "id": "v10-34",
+      "rom": "Otoko no hito",
+      "kana": "おとこのひと",
+      "kanji": "男の人",
+      "en": "Pria / Laki-laki",
+      "audio": ""
+    },
+    {
+      "id": "v10-35",
+      "rom": "Onna no hito",
+      "kana": "おんなのひと",
+      "kanji": "女の人",
+      "en": "Wanita / Perempuan",
+      "audio": ""
+    },
+    {
+      "id": "v10-36",
+      "rom": "Otoko no ko",
+      "kana": "おとこのこ",
+      "kanji": "男の子",
+      "en": "Anak laki-laki",
+      "audio": ""
+    },
+    {
+      "id": "v10-37",
+      "rom": "Onna no ko",
+      "kana": "おんなのこ",
+      "kanji": "女の子",
+      "en": "Anak perempuan",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g10-1",
+      "title": "1. [Tempat] に [Benda] が あります / います (Ada Apa?)",
+      "desc": "Pola ini digunakan jika Anda ingin menyatakan APA yang ada di suatu tempat. Partikel NI menandai LOKASI, partikel GA menandai SUBJEK yang 'ada'.",
+      "points": [
+        "あります (Arimasu): Untuk benda MATI (kursi, gedung, bunga, uang, pohon, ATM).",
+        "います (Imasu): Untuk makhluk HIDUP (orang, kucing, ikan, serangga).",
+        "Contoh: Tsukue no ue ni hon GA arimasu. (DI ATAS meja ADA buku).",
+        "Contoh: Niwa ni neko GA imasu. (DI taman ADA kucing).",
+        "POIN TRICKY: Pohon/Tanaman pakai Arimasu (walau hidup, mereka tidak bergerak). Robot/Mobil juga Arimasu."
+      ],
+      "formula": "[Tempat] に [Benda/Makhluk] が あります / います",
+      "native_note": "Kata keberadaan makhluk hidup 'iru' (います) dalam percakapan kasual sering diucapkan cepat dan mengalami kontraksi jika digabungkan dengan partikel penegas (misal: 'iru yo' menjadi 'iru' dengan penekanan suara)."
+    },
+    {
+      "id": "g10-2",
+      "title": "2. [Benda] は [Tempat] に あります / います (Ada Di Mana?)",
+      "desc": "Pola KEBALIKAN dari pola 1. Jika Anda sudah tahu bendanya dan ingin menjelaskan atau menanyakan LOKASINYA.",
+      "points": [
+        "Pola 1 (ada APA?): Tsukue no ue NI hon GA arimasu. (Di atas meja ada buku).",
+        "Pola 2 (ada DIMANA?): Hon WA tsukue no ue NI arimasu. (Buku ada di atas meja).",
+        "Perbedaan Krusial: Pola 1 menjawab 'Ada apa di situ?'. Pola 2 menjawab 'Benda itu ada di mana?'.",
+        "Pertanyaan: Toire wa doko ni arimasu ka. (Toilet ada di mana?)"
+      ],
+      "formula": "[Benda/Makhluk] は [Tempat] に あります / います"
+    },
+    {
+      "id": "g10-3",
+      "title": "3. Kata Posisi Relatif (Ue, Shita, Mae, Naka, dll.)",
+      "desc": "Kosakata posisi selalu ditempel setelah kata benda + の (NO) untuk menyatakan letak RELATIF terhadap acuan.",
+      "points": [
+        "Tsukue NO Ue = Di ATAS meja. Isu NO Shita = Di BAWAH kursi.",
+        "Ginkou NO Tonari = Di SEBELAH bank. Yuubinkyoku NO Mae = Di DEPAN kantor pos.",
+        "Hako NO Naka = Di DALAM kotak. Biru NO Soto = Di LUAR gedung.",
+        "A TO B NO Aida = Di ANTARA A dan B. Eki NO Chikaku = Di DEKAT stasiun."
+      ],
+      "formula": "[Acuan] の [Posisi] に"
+    },
+    {
+      "id": "g10-4",
+      "title": "4. 何もありません / 誰もいません (Penyangkalan Total)",
+      "desc": "Untuk menyangkal keberadaan secara total — tidak ada apa-apa atau tidak ada siapa-siapa.",
+      "points": [
+        "Heya ni nani mo arimasen. (Di kamar tidak ada APA-APA sama sekali).",
+        "Heya ni dare mo imasen. (Di kamar tidak ada SIAPA-SIAPA sama sekali).",
+        "Ingat pola Bab 5: Kata tanya + MO + Negatif = Penyangkalan total."
+      ],
+      "formula": "[Tempat] に 何も ありません / 誰も いません"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "部屋に 机が あります。",
+      "rom": "Heya ni tsukue ga arimasu.",
+      "en": "Di dalam kamar ada meja."
+    },
+    {
+      "jp": "庭に 猫が います。",
+      "rom": "Niwa ni neko ga imasu.",
+      "en": "Di halaman ada kucing."
+    },
+    {
+      "jp": "本は つくえの 上に あります。",
+      "rom": "Hon wa tsukue no ue ni arimasu.",
+      "en": "Buku ada di atas meja."
+    },
+    {
+      "jp": "郵便局は 銀行の 隣に あります。",
+      "rom": "Yuubinkyoku wa ginkou no tonari ni arimasu.",
+      "en": "Kantor pos ada di sebelah bank."
+    },
+    {
+      "jp": "教室に だれも いません。",
+      "rom": "Kyoushitsu ni dare mo imasen.",
+      "en": "Di kelas tidak ada siapa-siapa."
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: 何がありますか (Ada Apa Saja?)",
+    "dialogue": [
+      {
+        "speaker": "Santos",
+        "jp": "すみません。チーズバーガーと サラダを お願いします。",
+        "rom": "Sumimasen. Chiizubaagaa to sarada o onegaishimasu.",
+        "en": "Permisi. Minta cheeseburger dan salad."
+      },
+      {
+        "speaker": "Pelayan",
+        "jp": "はい。お飲み物は？",
+        "rom": "Hai. Onomimono wa?",
+        "en": "Baik. Minumannya?"
+      },
+      {
+        "speaker": "Santos",
+        "jp": "何が ありますか。",
+        "rom": "Nani ga arimasu ka.",
+        "en": "Ada apa saja?"
+      },
+      {
+        "speaker": "Pelayan",
+        "jp": "コーラと オレンジジュースと お茶が あります。",
+        "rom": "Koora to orenji-juusu to ocha ga arimasu.",
+        "en": "Ada Coca-Cola, jus jeruk, dan teh."
+      },
+      {
+        "speaker": "Santos",
+        "jp": "じゃ、コーラを ください。",
+        "rom": "Ja, koora o kudasai.",
+        "en": "Kalau begitu, tolong Coca-Cola."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] 'Di taman ada anjing.' Kata kerja keberadaan yang tepat adalah:",
+      "options": [
+        {
+          "text": "Arimasu (benda mati)",
+          "correct": false
+        },
+        {
+          "text": "Imasu (makhluk hidup)",
+          "correct": true
+        },
+        {
+          "text": "Desu",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] Terjemahkan: 'Buku ada di atas meja'.\nHon wa tsukue no [     ] ni arimasu.",
+      "answer": "ue"
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu B] POHON ada di taman. Kata kerja yang dipakai untuk pohon adalah:",
+      "options": [
+        {
+          "text": "Imasu (karena pohon hidup)",
+          "correct": false
+        },
+        {
+          "text": "Arimasu (karena pohon tidak bergerak)",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu C] 'Di dalam kamar tidak ada apa-apa.'\nHeya ni [       ] arimasen.",
+      "answer": "nani mo"
+    },
+    {
+      "type": "mcq",
+      "question": "[Pola Kalimat] 'Toilet ada di mana?' — Pola kalimat yang benar adalah:",
+      "options": [
+        {
+          "text": "Doko ni toire ga arimasu ka.",
+          "correct": false
+        },
+        {
+          "text": "Toire wa doko ni arimasu ka.",
+          "correct": true
+        },
+        {
+          "text": "Toire ga doko arimasu ka.",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Menanyakan Keberadaan Seseorang",
+      "situation": "Mencari keberadaan rekan kerja di kantor kepada resepsionis",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "すみません、ミラーさんは どこに いますか。",
+          "rom": "Sumimasen, Miraa-san wa doko ni imasu ka.",
+          "en": "Permisi, Mr. Miller ada di mana ya?"
+        },
+        {
+          "speaker": "B",
+          "jp": "会議室に いますよ。",
+          "rom": "Kaigishitsu ni imasu yo.",
+          "en": "Ada di ruang rapat lho."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。ありがとうございます。",
+          "rom": "Sou desu ka. Arigatou gozaimasu.",
+          "en": "Oh begitu. Terima kasih banyak."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Menanyakan Barang dalam Ruangan",
+      "situation": "Bertanya benda apa saja yang diletakkan di atas meja kerja",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "机の 上に 何が ありますか。",
+          "rom": "Tsukue no ue ni nani ga arimasu ka.",
+          "en": "Di atas meja ada barang apa?"
+        },
+        {
+          "speaker": "B",
+          "jp": "本や ペンなどが あります。",
+          "rom": "Hon ya pen nado ga arimasu.",
+          "en": "Ada buku, pena, dan lain-lain."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Menanyakan Letak Supermarket Terdekat",
+      "situation": "Bertanya kepada orang di jalan tentang keberadaan supermarket terdekat",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "すみません、この 近くに スーパーが ありますか。",
+          "rom": "Sumimasen, kono chikaku ni suupaa ga arimasu ka.",
+          "en": "Permisi, apakah di dekat sini ada supermarket?"
+        },
+        {
+          "speaker": "B",
+          "jp": "はい。あの 公園の 隣に あります。",
+          "rom": "Hai. Ano kouen no tonari ni arimasu.",
+          "en": "Ya. Ada di sebelah taman itu."
+        },
+        {
+          "speaker": "A",
+          "jp": "わかりました。ありがとう ございます。",
+          "rom": "Wakarimashita. Arigatou gozaimasu.",
+          "en": "Saya mengerti. Terima kasih banyak."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r10-1",
+      "jp": "あそこに 男の人が いますね。あの人は だれですか。... IMCの 松本さんです。",
+      "rom": "Asoko ni otoko no hito ga imasu ne. Ano hito wa dare desu ka? ... IMC no Matsumoto-san desu.",
+      "en": "Di sana ada laki-laki ya. Siapakah orang itu? ... Tuan Matsumoto dari IMC."
+    },
+    {
+      "id": "r10-2",
+      "jp": "あなたの 部屋に 何が ありますか。... 机と ベッドがあります。",
+      "rom": "Anata no heya ni nani ga arimasu ka? ... Tsukue to beddo ga arimasu.",
+      "en": "Di kamar Anda ada apa? ... Ada meja dan tempat tidur."
+    },
+    {
+      "id": "r10-3",
+      "jp": "庭に だれが いますか。... だれも いません。猫が います。",
+      "rom": "Niwa ni dare ga imasu ka? ... Dare mo imasen. Neko ga imasu.",
+      "en": "Di halaman ada siapa? ... Tidak ada siapa-siapa. Ada kucing."
+    },
+    {
+      "id": "r10-4",
+      "jp": "箱の 中に 何が ありますか。... 古い 手紙や 写真などが あります。",
+      "rom": "Hako no naka ni nani ga arimasu ka? ... Furui tegami ya shashin nado ga arimasu.",
+      "en": "Di dalam kotak ada apa? ... Ada surat lama, foto, dan lain-lain."
+    },
+    {
+      "id": "r10-5",
+      "jp": "郵便局は どこに ありますか。... 駅の 近くに あります。銀行の 隣です。",
+      "rom": "Yuubinkyoku wa doko ni arimasu ka? ... Eki no chikaku ni arimasu. Ginkou no tonari desu.",
+      "en": "Kantor pos ada di mana? ... Ada di dekat stasiun. Di sebelah bank."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb10-1",
+      "pattern": "V て + ください (Permintaan Sopan)",
+      "instruction": "Ubah kata kerja ke bentuk て dan tambahkan ください untuk membuat permintaan sopan.",
+      "question": "Mite / kudasai",
+      "correct": "みて ください。",
+      "romaji": "Mite kudasai.",
+      "translation": "Tolong lihat."
+    },
+    {
+      "id": "wb10-2",
+      "pattern": "V て + います (Sedang Berlangsung)",
+      "instruction": "Nyatakan aktivitas yang sedang dilakukan saat ini menggunakan bentuk て + います.",
+      "question": "Ima / zasshi / yonde imasu",
+      "correct": "いま ざっしを よんで います。",
+      "romaji": "Ima zasshi wo yonde imasu.",
+      "translation": "Sekarang sedang membaca majalah."
+    },
+    {
+      "id": "wb10-3",
+      "pattern": "V て + から (Setelah ~, lanjut ~)",
+      "instruction": "Buat kalimat urutan kegiatan dengan pola te-form + kara.",
+      "question": "Shokujishite / kara / yasumimasu",
+      "correct": "しょくじして から やすみます。",
+      "romaji": "Shokuji shite kara yasumimasu.",
+      "translation": "Setelah makan, beristirahat."
+    },
+    {
+      "id": "wb10-4",
+      "pattern": "V て + もいいですか (Minta Izin)",
+      "instruction": "Minta izin untuk melakukan sesuatu menggunakan te-form + もいいですか.",
+      "question": "Koko / shashin / totte mo ii desu ka",
+      "correct": "ここで しゃしんを とっても いいですか。",
+      "romaji": "Koko de shashin wo totte mo ii desu ka.",
+      "translation": "Bolehkah saya mengambil foto di sini?"
+    },
+    {
+      "id": "wb10-5",
+      "pattern": "V て は いけません (Larangan)",
+      "instruction": "Nyatakan larangan melakukan sesuatu menggunakan te-form + はいけません.",
+      "question": "Koko / tabete / wa ikemasen",
+      "correct": "ここで たべては いけません。",
+      "romaji": "Koko de tabete wa ikemasen.",
+      "translation": "Tidak boleh makan di sini."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex10-1",
+        "sentence": "すみません、ちょっと まっ [ ] ください。",
+        "correct": "て",
+        "translation": "Permisi, tolong tunggu sebentar."
+      },
+      {
+        "id": "ex10-2",
+        "sentence": "いま にほんごを べんきょうし [ ] います。",
+        "correct": "て",
+        "translation": "Sekarang sedang belajar bahasa Jepang."
+      },
+      {
+        "id": "ex10-3",
+        "sentence": "ここで たばこを すっ [ ] いけません。",
+        "correct": "ては",
+        "translation": "Tidak boleh merokok di sini."
+      },
+      {
+        "id": "ex10-4",
+        "sentence": "しゃしんを [ ] も いいですか。",
+        "correct": "とって",
+        "translation": "Bolehkah saya mengambil foto?"
+      },
+      {
+        "id": "ex10-5",
+        "sentence": "てを あらっ [ ] から たべます。",
+        "correct": "て",
+        "translation": "Setelah cuci tangan, makan."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex10-6",
+        "question": "Bentuk て dari 'tabemasu' (makan) adalah:",
+        "options": [
+          {
+            "text": "たべて",
+            "correct": true
+          },
+          {
+            "text": "たべって",
+            "correct": false
+          },
+          {
+            "text": "たべいて",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex10-7",
+        "question": "Untuk meminta izin keluar kelas ('dete mo ii desu ka'), bentuk て dari 'demasu' adalah:",
+        "options": [
+          {
+            "text": "でいて",
+            "correct": false
+          },
+          {
+            "text": "でて",
+            "correct": true
+          },
+          {
+            "text": "でって",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex10-8",
+        "question": "Ungkapan yang tepat untuk menyatakan 'dilarang memotret' di museum adalah:",
+        "options": [
+          {
+            "text": "しゃしんを とっては いけません。",
+            "correct": true
+          },
+          {
+            "text": "しゃしんを とっても いいです。",
+            "correct": false
+          },
+          {
+            "text": "しゃしんを とってください。",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "やくそくの じかんに おくれては いけません。じゅぎょうの まえに かならず てを あらって ください。きょうしつの なかで けいたいを つかっては いけません。しつもんが あったら、てを あげて ください。",
+      "questions": [
+        {
+          "id": "ex10-9",
+          "question": "じゅぎょうの まえに てを あらう ひつようが あります。",
+          "correct": "T"
+        },
+        {
+          "id": "ex10-10",
+          "question": "きょうしつで けいたいを つかっても いいです。",
+          "correct": "F"
+        },
+        {
+          "id": "ex10-11",
+          "question": "しつもんが ある とき、てを あげます。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

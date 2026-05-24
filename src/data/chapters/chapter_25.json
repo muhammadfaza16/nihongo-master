@@ -1,0 +1,666 @@
+{
+  "id": 25,
+  "title": "Lesson 25: Kondisional (Tara) & Konsesi (Temo)",
+  "desc": "Membedah Bab 25 (BAB TERAKHIR SHOKYU I!). Anda akan belajar menyatakan 'Jika/Kalau' (Tara) untuk pengandaian, dan 'Meskipun/Walaupun' (Temo). Kedua pola ini sangat luas pemakaiannya.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v25-1",
+      "rom": "Kangaemasu",
+      "kana": "かんがえます",
+      "kanji": "考えます",
+      "en": "Memikirkan / Mempertimbangkan",
+      "audio": ""
+    },
+    {
+      "id": "v25-2",
+      "rom": "Tsukimasu",
+      "kana": "つきます",
+      "kanji": "着きます",
+      "en": "Tiba / Sampai [Eki NI]",
+      "audio": ""
+    },
+    {
+      "id": "v25-3",
+      "rom": "Ryuugaku-shimasu",
+      "kana": "りゅうがくします",
+      "kanji": "留学します",
+      "en": "Sekolah ke luar negeri",
+      "audio": ""
+    },
+    {
+      "id": "v25-4",
+      "rom": "Torimasu",
+      "kana": "とります",
+      "kanji": "取ります",
+      "en": "Bertambah [Toshi o ~ (Menua)]",
+      "audio": ""
+    },
+    {
+      "id": "v25-5",
+      "rom": "Inaka",
+      "kana": "いなか",
+      "kanji": "田舎",
+      "en": "Pedesaan / Kampung halaman",
+      "audio": ""
+    },
+    {
+      "id": "v25-6",
+      "rom": "Taishikan",
+      "kana": "たいしかん",
+      "kanji": "大使館",
+      "en": "Kedutaan besar",
+      "audio": ""
+    },
+    {
+      "id": "v25-7",
+      "rom": "Guruupu",
+      "kana": "グループ",
+      "kanji": "",
+      "en": "Grup / Kelompok",
+      "audio": ""
+    },
+    {
+      "id": "v25-8",
+      "rom": "Chansu",
+      "kana": "チャンス",
+      "kanji": "",
+      "en": "Peluang / Kesempatan",
+      "audio": ""
+    },
+    {
+      "id": "v25-9",
+      "rom": "Oku",
+      "kana": "おく",
+      "kanji": "億",
+      "en": "Seratus juta (100.000.000)",
+      "audio": ""
+    },
+    {
+      "id": "v25-10",
+      "rom": "Moshi",
+      "kana": "もし",
+      "kanji": "",
+      "en": "Seandainya (If...)",
+      "audio": ""
+    },
+    {
+      "id": "v25-11",
+      "rom": "Ikura",
+      "kana": "いくら",
+      "kanji": "",
+      "en": "Berapapun / Sekalipun (Even if...)",
+      "audio": ""
+    },
+    {
+      "id": "v25-12",
+      "rom": "Ganbarimasu",
+      "kana": "がんばります",
+      "kanji": "頑張ります",
+      "en": "Bersemangat / Berjuang keras",
+      "audio": ""
+    },
+    {
+      "id": "v25-13",
+      "rom": "Tenkin",
+      "kana": "てんきん",
+      "kanji": "転勤",
+      "en": "Pindah tempat kerja (mutasi)",
+      "audio": ""
+    },
+    {
+      "id": "v25-14",
+      "rom": "Koto",
+      "kana": "こと",
+      "kanji": "事",
+      "en": "Hal / Perkara",
+      "audio": ""
+    },
+    {
+      "id": "v25-15",
+      "rom": "Osewa ni narimashita",
+      "kana": "おせわに なりました",
+      "kanji": "お世話に なりました",
+      "en": "Terima kasih atas bantuan Anda (perpisahan)",
+      "audio": ""
+    },
+    {
+      "id": "v25-16",
+      "rom": "Tsukaremasu",
+      "kana": "つかれます",
+      "kanji": "疲れます",
+      "en": "Lelah / Capek",
+      "audio": ""
+    },
+    {
+      "id": "v25-17",
+      "rom": "Yamemasu",
+      "kana": "やめます",
+      "kanji": "辞めます",
+      "en": "Berhenti (kerja/aktivitas) / Mengundurkan diri",
+      "audio": ""
+    },
+    {
+      "id": "v25-18",
+      "rom": "Todokimasu",
+      "kana": "とどきます",
+      "kanji": "届きます",
+      "en": "Sampai / Tiba (surat/paket)",
+      "audio": ""
+    },
+    {
+      "id": "v25-19",
+      "rom": "Sugimasu",
+      "kana": "すぎます",
+      "kanji": "過ぎます",
+      "en": "Lewat / Berlalu (waktu)",
+      "audio": ""
+    },
+    {
+      "id": "v25-20",
+      "rom": "Okane",
+      "kana": "おかね",
+      "kanji": "お金",
+      "en": "Uang",
+      "audio": ""
+    },
+    {
+      "id": "v25-21",
+      "rom": "Jikan",
+      "kana": "じかん",
+      "kanji": "時間",
+      "en": "Waktu / Jam (durasi)",
+      "audio": ""
+    },
+    {
+      "id": "v25-22",
+      "rom": "Shigoto",
+      "kana": "しごと",
+      "kanji": "仕事",
+      "en": "Pekerjaan / Kerja",
+      "audio": ""
+    },
+    {
+      "id": "v25-23",
+      "rom": "Ryokou",
+      "kana": "りょこう",
+      "kanji": "旅行",
+      "en": "Perjalanan / Wisata / Jalan-jalan",
+      "audio": ""
+    },
+    {
+      "id": "v25-24",
+      "rom": "Byouki",
+      "kana": "びょうき",
+      "kanji": "病気",
+      "en": "Sakit / Penyakit",
+      "audio": ""
+    },
+    {
+      "id": "v25-25",
+      "rom": "Toshi",
+      "kana": "とし",
+      "kanji": "年",
+      "en": "Umur / Usia / Tahun",
+      "audio": ""
+    },
+    {
+      "id": "v25-26",
+      "rom": "Kaisha",
+      "kana": "かいしゃ",
+      "kanji": "会社",
+      "en": "Perusahaan / Kantor",
+      "audio": ""
+    },
+    {
+      "id": "v25-27",
+      "rom": "Natsuyasumi",
+      "kana": "なつやすみ",
+      "kanji": "夏休み",
+      "en": "Liburan musim panas",
+      "audio": ""
+    },
+    {
+      "id": "v25-28",
+      "rom": "Takusan",
+      "kana": "たくさん",
+      "kanji": "",
+      "en": "Banyak / Berlimpah",
+      "audio": ""
+    },
+    {
+      "id": "v25-29",
+      "rom": "Hima (na)",
+      "kana": "ひま",
+      "kanji": "暇",
+      "en": "Senggang / Kosong (waktu luang)",
+      "audio": ""
+    },
+    {
+      "id": "v25-30",
+      "rom": "Isogashii",
+      "kana": "いそがしい",
+      "kanji": "忙しい",
+      "en": "Sibuk",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g25-1",
+      "title": "1. ~たら (Tara: Kalau / Jika)",
+      "desc": "Kondisional paling umum dalam bahasa Jepang. Jauh lebih fleksibel daripada 'To' di Bab 23. Bisa dipakai untuk tebakan masa depan, ajakan, perintah, atau niat.",
+      "points": [
+        "Cara buat: Ambil Ta-Form (Bentuk lampau) lalu tambah 'ra'.",
+        "V-tara: Ame ga futTARA, ikimasen. (KALAU turun hujan, saya tidak pergi).",
+        "I-Adj-kattara: YasukatTARA, kaimasu. (KALAU murah, saya beli).",
+        "Na-Adj/N-dattara: Hima DATTARA, asobi ni kimasu ka. (KALAU senggang, maukah datang main?).",
+        "Negatif: ~nakattara. Okane ga nakatTARA... (KALAU tidak ada uang...)"
+      ],
+      "formula": "V-たら / Adj-かったら / N-だったら",
+      "native_note": "Meskipun ada beberapa jenis pola pengandaian dalam bahasa Jepang (seperti ~ba, ~to, ~tara), pola '~tara' adalah bentuk yang paling aman, paling fleksibel, dan paling sering digunakan dalam percakapan lisan karena minim batasan."
+    },
+    {
+      "id": "g25-2",
+      "title": "2. ~ても (Temo: Walaupun / Meskipun)",
+      "desc": "Kebalikan dari Tara (Kondisi berlawanan). Diartikan 'Sekalipun A, B tetap terjadi'.",
+      "points": [
+        "Cara buat: Gunakan Te-Form.",
+        "Verb + Temo: Ame ga futTEMO, ikimasu. (WALAUPUN hujan, saya tetap pergi).",
+        "I-Adj + Kutemo: TakakuTEMO, kaimasu. (WALAUPUN mahal, saya beli).",
+        "Na-Adj/Noun + Demo: Hima DEMO, asobimasen. (WALAUPUN senggang, saya tidak main)."
+      ],
+      "formula": "V-ても / Adj-くても / N-でも"
+    },
+    {
+      "id": "g25-3",
+      "title": "3. もし (Moshi) & いくら (Ikura)",
+      "desc": "Kata penegas yang sering ditaruh di awal kalimat untuk memperjelas dan memperkuat nuansa pengandaian.",
+      "points": [
+        "MOSHI + ~tara. (SEANDAINYA... kalau). Moshi 1-oku en attara... (Seandainya punya 100 juta yen...). Memperkuat unsur 'Jika'.",
+        "IKURA + ~temo. (SEKALIPUN / BAGAIMANAPUN ... meskipun). Ikura kangaetemo, wakarimasen. (Bagaimanapun/Berapa kali pun saya pikirkan, tetap tidak mengerti). Memperkuat unsur 'Meskipun'."
+      ],
+      "formula": "もし ~たら / いくら ~ても"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "雨が 降ったら、出かけません。",
+      "rom": "Ame ga futtara, dekakemasen.",
+      "en": "Kalau turun hujan, saya tidak akan keluar."
+    },
+    {
+      "jp": "お金が あったら、旅行 します。",
+      "rom": "Okane ga attara, ryokou shimasu.",
+      "en": "Kalau ada uang, saya akan jalan-jalan (traveling)."
+    },
+    {
+      "jp": "安くても、わたしは グループ旅行が 嫌いです。",
+      "rom": "Yasukutemo, watashi wa guruupu-ryokou ga kirai desu.",
+      "en": "Walaupun murah, saya benci travel rombongan."
+    },
+    {
+      "jp": "いくら 考えても、わかりません。",
+      "rom": "Ikura kangaetemo, wakarimasen.",
+      "en": "Bagaimanapun dipikirkan, saya tetap tidak mengerti."
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: もし １億円 あったら (Seandainya Punya 100 Juta Yen...)",
+    "dialogue": [
+      {
+        "speaker": "Miller",
+        "jp": "太郎君は もし １億円 あったら、何を したいですか。",
+        "rom": "Tarou-kun wa moshi ichi-oku en attara, nani o shitai desu ka.",
+        "en": "Taro, kalau seandainya punya 100 juta yen, ingin melakukan apa?"
+      },
+      {
+        "speaker": "Taro",
+        "jp": "コンピューターの 会社を 作りたいです。",
+        "rom": "Konpyuutaa no kaisha o tsukuritai desu.",
+        "en": "Ingin membuat perusahaan komputer."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "サントスさんは？",
+        "rom": "Santosu-san wa?",
+        "en": "Kalau Pak Santos?"
+      },
+      {
+        "speaker": "Santos",
+        "jp": "わたしは 会社を 辞めて、海で 釣りを したいです。",
+        "rom": "Watashi wa kaisha o yamete, umi de tsuri o shitai desu.",
+        "en": "Saya ingin berhenti dari perusahaan, lalu memancing di laut."
+      },
+      {
+        "speaker": "Taro",
+        "jp": "ミラーさんは？",
+        "rom": "Miraa-san wa?",
+        "en": "Kalau Pak Miller?"
+      },
+      {
+        "speaker": "Miller",
+        "jp": "わたしですか。わたしは もう少し 頑張ります。",
+        "rom": "Watashi desu ka. Watashi wa mou sukoshi ganbarimasu.",
+        "en": "Saya? Saya akan berjuang (bekerja keras) sedikit lagi."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] Kata sifat I (contoh: Takai/mahal) jika diubah ke bentuk kondisional 'Tara' (Kalau mahal) menjadi:",
+      "options": [
+        {
+          "text": "Takakattara",
+          "correct": true
+        },
+        {
+          "text": "Takaitara",
+          "correct": false
+        },
+        {
+          "text": "Takakara",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] Terjemahkan: 'Meskipun sibuk, saya belajar'.\nIsogashiku-[     ], benkyou shimasu.",
+      "answer": "temo"
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu B] 'Kalau tidak mengerti (wakarimasen), bertanyalah pada guru'.",
+      "options": [
+        {
+          "text": "Wakaranakattara, sensei ni kiite kudasai.",
+          "correct": true
+        },
+        {
+          "text": "Wakaranaitara, sensei ni kiite kudasai.",
+          "correct": false
+        },
+        {
+          "text": "Wakattara, sensei ni kiite kudasai.",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu C] 'Kalau hujan, saya tidak main tenis'.\nAme [        ], tenisu o shimasen.",
+      "answer": "dattara"
+    },
+    {
+      "type": "mcq",
+      "question": "[Akhir MNN I] Kata penegas yang berpasangan dengan '~Temo' (Meskipun/Bagaimanapun) adalah:",
+      "options": [
+        {
+          "text": "Ikura",
+          "correct": true
+        },
+        {
+          "text": "Moshi",
+          "correct": false
+        },
+        {
+          "text": "Zutto",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Andai Memiliki Banyak Uang",
+      "situation": "Mengobrol santai membayangkan rencana jika memiliki banyak uang tabungan",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "お金が たくさん あったら、何が したいですか。",
+          "rom": "Okane ga takusan attara, nani ga shitai desu ka.",
+          "en": "Jika punya banyak uang, apa yang ingin dilakukan?"
+        },
+        {
+          "speaker": "B",
+          "jp": "大きな 家を 買って、世界旅行を したいです。",
+          "rom": "Ookina ie o katte, sekai-ryokou o shitai desu.",
+          "en": "Membeli rumah besar dan ingin jalan-jalan keliling dunia."
+        },
+        {
+          "speaker": "A",
+          "jp": "いいですね。夢の ようですね。",
+          "rom": "Ii desu ne. Yume no you desu ne.",
+          "en": "Bagus ya. Kelihatannya seperti mimpi ya."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Tindakan Andai Besok Turun Hujan",
+      "situation": "Mengobrol tentang rencana kegiatan esok hari seandainya cuaca hujan",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "明日 雨が 降ったら、ピクニックは 中止ですか。",
+          "rom": "Ashita ame ga futtara, pikunikku wa chuushi desu ka.",
+          "en": "Jika besok hujan turun, apakah pikniknya batal?"
+        },
+        {
+          "speaker": "B",
+          "jp": "はい。雨が 降ったら、家で ビデオを 見ましょう。",
+          "rom": "Hai. Ame ga futtara, uchi de bideo o mimashou.",
+          "en": "Ya. Jika hujan turun, mari kita menonton video di rumah saja."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Menolak Membeli Barang Murah",
+      "situation": "Menolak membeli jam tangan murah karena desainnya yang tidak disukai",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "この 時計は 安いですよ。買いませんか。",
+          "rom": "Kono tokei wa yasui desu yo. Kaimasen ka.",
+          "en": "Jam tangan ini murah lho. Maukah membelinya?"
+        },
+        {
+          "speaker": "B",
+          "jp": "いいえ、安くても 買いません。あまり 好きじゃないですから。",
+          "rom": "Iie, yasukutemo kaimasen. Amari suki janai desu kara.",
+          "en": "Tidak, meskipun murah saya tidak membelinya. Karena saya kurang suka."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r25-1",
+      "jp": "雨が 降ったら、ピクニックは 中止です。... そうですか。残念ですね。",
+      "rom": "Ame ga futtara, pikunikku wa chuushi desu. ... Sou desu ka. Zannen desu ne.",
+      "en": "Kalau turun hujan, piknik dibatalkan. ... Oh ya? Sayang sekali ya."
+    },
+    {
+      "id": "r25-2",
+      "jp": "安かったら、パソコンを 買いたいです。... そうですね。今 安いですから。",
+      "rom": "Yasukattara, pasokon o kaitai desu. ... Sou desu ne. Ima yasui desu kara.",
+      "en": "Kalau murah, saya ingin membeli komputer. ... Benar ya, karena sekarang sedang murah."
+    },
+    {
+      "id": "r25-3",
+      "jp": "雨が 降っても、サッカーを します。... 風邪を ひかないでくださいね。",
+      "rom": "Ame ga futte mo, sakkaa o shimasu. ... Kaze o hikanaide kudasai ne.",
+      "en": "Walaupun hujan turun, kita tetap main sepak bola. ... Tolong jangan sampai masuk angin ya."
+    },
+    {
+      "id": "r25-4",
+      "jp": "年を とったら、静かな 田舎に 住みたいです。... いいですね。わたしもです。",
+      "rom": "Toshi o tottara, shizuka na inaka ni sumitai desu. ... Ii desu ne. Watashi mo desu.",
+      "en": "Kalau sudah tua, saya ingin tinggal di desa yang tenang. ... Bagus ya. Saya juga."
+    },
+    {
+      "id": "r25-5",
+      "jp": "いくら 考えても、分かりません。... 先生に 聞きましょう。",
+      "rom": "Ikura kangaete mo, wakarimasen. ... Sensei ni kikimashou.",
+      "en": "Biar dipikirkan bagaimanapun, saya tidak mengerti. ... Mari bertanya kepada guru."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb25-1",
+      "pattern": "〜ようにします (Berusaha untuk ~)",
+      "instruction": "Nyatakan upaya/niat untuk membiasakan diri dengan pola ようにします.",
+      "question": "Mainichi / hanashimono wo / yomu you ni shimasu",
+      "correct": "まいにち はなしものを よむ ようにします。",
+      "romaji": "Mainichi hanashimono wo yomu you ni shimasu.",
+      "translation": "Berusaha membaca bacaan setiap hari."
+    },
+    {
+      "id": "wb25-2",
+      "pattern": "〜ようになります (Menjadi bisa / Akhirnya ~)",
+      "instruction": "Nyatakan perubahan kemampuan yang bertahap/gradual dengan ようになります.",
+      "question": "Nihongo de / hanaseru / you ni narimashita",
+      "correct": "にほんごで はなせる ようになりました。",
+      "romaji": "Nihongo de hanaseru you ni narimashita.",
+      "translation": "Akhirnya bisa berbicara dalam bahasa Jepang."
+    },
+    {
+      "id": "wb25-3",
+      "pattern": "〜ば〜のに / 〜たら〜のに (Seandainya saja ~)",
+      "instruction": "Nyatakan penyesalan tentang hal yang sudah terjadi dengan pola kondisional + のに.",
+      "question": "Motto / benkyoushite itara / yokatta noni",
+      "correct": "もっと べんきょうして いたら よかったのに。",
+      "romaji": "Motto benkyoushite itara yokatta noni.",
+      "translation": "Seandainya saja belajar lebih keras dulu."
+    },
+    {
+      "id": "wb25-4",
+      "pattern": "〜てほしいです (Ingin seseorang melakukan ~)",
+      "instruction": "Nyatakan keinginan agar orang lain melakukan sesuatu untuk Anda dengan てほしいです.",
+      "question": "Kare ni / hayaku / kaette / hoshii",
+      "correct": "かれに はやく かえって ほしいです。",
+      "romaji": "Kare ni hayaku kaette hoshii desu.",
+      "translation": "Ingin dia segera pulang."
+    },
+    {
+      "id": "wb25-5",
+      "pattern": "Review: Berbagai pola よう、そう、らしい、ように、ようになる",
+      "instruction": "Pilih pola yang tepat sesuai konteks kalimat.",
+      "question": "Nihongo / jouzu ni / nareru / you ni / mainitchi benkyoushimasu",
+      "correct": "にほんごが じょうずに なれる ように まいにち べんきょうします。",
+      "romaji": "Nihongo ga jouzu ni nareru you ni mainichi benkyoushimasu.",
+      "translation": "Belajar setiap hari agar bisa pandai berbahasa Jepang."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex25-1",
+        "sentence": "もっと べんきょうする [ ] に します。",
+        "correct": "よう",
+        "translation": "Berusaha untuk belajar lebih banyak."
+      },
+      {
+        "id": "ex25-2",
+        "sentence": "にほんごで はなせる [ ] に なりました。",
+        "correct": "よう",
+        "translation": "Akhirnya bisa berbicara bahasa Jepang."
+      },
+      {
+        "id": "ex25-3",
+        "sentence": "もっと べんきょうして いたら よかった [ ]。",
+        "correct": "のに",
+        "translation": "Seandainya saja belajar lebih keras."
+      },
+      {
+        "id": "ex25-4",
+        "sentence": "かれに はやく かえって [ ] です。",
+        "correct": "ほしい",
+        "translation": "Ingin dia segera pulang."
+      },
+      {
+        "id": "ex25-5",
+        "sentence": "にほんごが じょうずに なれる [ ] べんきょうします。",
+        "correct": "ように",
+        "translation": "Belajar agar bisa pandai berbahasa Jepang."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex25-6",
+        "question": "Perbedaan 'you ni shimasu' dan 'you ni narimasu':",
+        "options": [
+          {
+            "text": "Shimasu = upaya/niat aktif; narimasu = perubahan yang terjadi (menjadi bisa)",
+            "correct": true
+          },
+          {
+            "text": "Narimasu = upaya aktif; shimasu = perubahan alami",
+            "correct": false
+          },
+          {
+            "text": "Keduanya sama saja",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex25-7",
+        "question": "Kalimat 'Motto benkyoushitara yokatta noni' (seandainya saja belajar lebih keras) mengekspresikan:",
+        "options": [
+          {
+            "text": "Rencana untuk belajar lebih keras ke depan",
+            "correct": false
+          },
+          {
+            "text": "Penyesalan atas kesempatan yang sudah terlewat",
+            "correct": true
+          },
+          {
+            "text": "Saran kepada orang lain agar belajar lebih keras",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex25-8",
+        "question": "Cara meminta seseorang untuk berhenti berbicara dengan て + ほしいです (negatif):",
+        "options": [
+          {
+            "text": "はなすのを やめてほしいです",
+            "correct": true
+          },
+          {
+            "text": "はなさないで ほしいです",
+            "correct": false
+          },
+          {
+            "text": "はなしては ほしくないです",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "にほんへ きて、もう １ねん が たちました。はじめは にほんごが ぜんぜん わかりませんでしたが、いまは すこし はなせる ように なりました。もっと はやく はなせる ように、まいにち れんしゅうする ように して います。らいねんまでに、もっと じょうずに なりたいです。",
+      "questions": [
+        {
+          "id": "ex25-9",
+          "question": "この人は にほんへ きて まだ 1ねん たって いません。",
+          "correct": "F"
+        },
+        {
+          "id": "ex25-10",
+          "question": "いまは すこし にほんごが はなせます。",
+          "correct": "T"
+        },
+        {
+          "id": "ex25-11",
+          "question": "この人は まいにち にほんごを れんしゅうして います。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

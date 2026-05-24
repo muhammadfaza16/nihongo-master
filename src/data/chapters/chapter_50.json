@@ -1,0 +1,467 @@
+{
+  "id": 50,
+  "title": "Lesson 50: Review Komprehensif Minna no Nihongo II (MNN II)",
+  "desc": "Bab final Minna no Nihongo II. Melakukan review menyeluruh pola tata bahasa utama N4-N3 (Lessons 26-50), serta perayaan kelulusan perjalanan belajar Anda.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v50-1",
+      "rom": "Oiwai",
+      "kana": "おいわい",
+      "kanji": "お祝い",
+      "en": "Perayaan / Ucapan selamat",
+      "audio": ""
+    },
+    {
+      "id": "v50-2",
+      "rom": "Sotsugyou (shimasu)",
+      "kana": "そつぎょう（します）",
+      "kanji": "卒業（します）",
+      "en": "Kelulusan / Lulus sekolah",
+      "audio": ""
+    },
+    {
+      "id": "v50-3",
+      "rom": "Kandou (shimasu)",
+      "kana": "かんどう（します）",
+      "kanji": "感動（します）",
+      "en": "Terharu / Tersentuh",
+      "audio": ""
+    },
+    {
+      "id": "v50-4",
+      "rom": "Kansha (shimasu)",
+      "kana": "かんしゃ（します）",
+      "kanji": "感謝（します）",
+      "en": "Rasa syukur / Berterima kasih",
+      "audio": ""
+    },
+    {
+      "id": "v50-5",
+      "rom": "Seichou (shimasu)",
+      "kana": "せいちょう（します）",
+      "kanji": "成長（します）",
+      "en": "Pertumbuhan / Perkembangan",
+      "audio": ""
+    },
+    {
+      "id": "v50-6",
+      "rom": "Ganbaru",
+      "kana": "がんばります",
+      "kanji": "頑張ります",
+      "en": "Berusaha keras / Berjuang",
+      "audio": ""
+    },
+    {
+      "id": "v50-7",
+      "rom": "Doryoku (shimasu)",
+      "kana": "どりょく（します）",
+      "kanji": "努力（します）",
+      "en": "Usaha / Upaya keras",
+      "audio": ""
+    },
+    {
+      "id": "v50-8",
+      "rom": "Seikou (shimasu)",
+      "kana": "せいこう（します）",
+      "kanji": "成功（します）",
+      "en": "Kesuksesan / Berhasil",
+      "audio": ""
+    },
+    {
+      "id": "v50-9",
+      "rom": "Yume",
+      "kana": "ゆめ",
+      "kanji": "夢",
+      "en": "Impian / Mimpi",
+      "audio": ""
+    },
+    {
+      "id": "v50-10",
+      "rom": "Mirai",
+      "kana": "みらい",
+      "kanji": "未来",
+      "en": "Masa depan",
+      "audio": ""
+    },
+    {
+      "id": "v50-11",
+      "rom": "Omoide",
+      "kana": "おもいで",
+      "kanji": "思い出",
+      "en": "Kenangan",
+      "audio": ""
+    },
+    {
+      "id": "v50-12",
+      "rom": "Kankei",
+      "kana": "かんけい",
+      "kanji": "関係",
+      "en": "Hubungan / Relasi",
+      "audio": ""
+    },
+    {
+      "id": "v50-13",
+      "rom": "Tomodachi",
+      "kana": "ともだち",
+      "kanji": "友達",
+      "en": "Teman / Sahabat",
+      "audio": ""
+    },
+    {
+      "id": "v50-14",
+      "rom": "Nihongo",
+      "kana": "にほんご",
+      "kanji": "日本語",
+      "en": "Bahasa Jepang",
+      "audio": ""
+    },
+    {
+      "id": "v50-15",
+      "rom": "Saigo",
+      "kana": "さいご",
+      "kanji": "最後",
+      "en": "Terakhir / Akhir",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g50-1",
+      "title": "1. Review: Perbandingan Kabar vs Tampilan (そうです)",
+      "desc": "Poin yang sering membingungkan: Hearsay (kabarnya) dan Appearance (tampaknya/kelihatannya).",
+      "points": [
+        "Hearsay (Kabar): Plain form + そうです (Contoh: Ame ga furu sou desu = Kabarnya akan turun hujan).",
+        "Appearance (Tampilan): V-stem / Adj-stem + そうです (Contoh: Ame ga furisou desu = Kelihatannya akan turun hujan - melihat langit mendung)."
+      ],
+      "formula": "Plain + そうです (Kabar) vs Stem + そうです (Kelihatan)",
+      "native_note": "Perhatikan baik-baik perubahan bentuk kata kerjanya agar tidak salah menyampaikan informasi."
+    },
+    {
+      "id": "g50-2",
+      "title": "2. Review: Dugaan (ようです vs らしい vs みたい)",
+      "desc": "Membandingkan tingkat dugaan dan subjektivitas pembicara.",
+      "points": [
+        "よう desu: Berdasarkan bukti objektif/sensorik yang dilihat langsung (formal).",
+        "らしい desu: Berdasarkan rumor/kabar angin dari luar, atau menunjukkan sifat khas (Kare wa otoko-rashii = dia sangat kelaki-lakian).",
+        "みたい desu: Digunakan dalam lisan kasual (serupa dengan よう desu)."
+      ],
+      "formula": "ようです (Objektif) / らしい (Hearsay/Khas) / みたい (Kasual)"
+    },
+    {
+      "id": "g50-3",
+      "title": "3. Review: Pengandaian (ば vs たら vs と vs なら)",
+      "desc": "Merangkum empat jenis pola pengandaian dalam bahasa Jepang.",
+      "points": [
+        "と (to): Kepastian alamiah/pasti terjadi. (Contoh: Menekan tombol maka air keluar).",
+        "たら (tara): Kronologis. (Contoh: Jika sampai stasiun, kabari saya).",
+        "ば (ba): Syarat logis. (Contoh: Jika murah, saya beli).",
+        "なら (nara): Topik percakapan. (Contoh: Jika tentang komputer, serahkan pada saya)."
+      ],
+      "formula": "と (pasti) / たら (kronologis) / ば (syarat) / なら (topik)"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "日本語の勉強は難しかったですが、頑張って良かったです。",
+      "rom": "Nihongo no benkyou wa muzukashikatta desu ga, ganbatte yokatta desu.",
+      "en": "Belajar bahasa Jepang memang sulit, tapi syukurlah saya sudah berjuang keras."
+    },
+    {
+      "jp": "明日は雨が降るそうです。",
+      "rom": "Ashita wa ame ga furu sou desu.",
+      "en": "Kabarnya besok akan turun hujan (hearsay)."
+    },
+    {
+      "jp": "あの人はお医者さんのようです。",
+      "rom": "Ano hito wa o-isha-san no you desu.",
+      "en": "Orang itu sepertinya adalah seorang dokter (dugaan objektif)."
+    },
+    {
+      "jp": "日本に行けたら、富士山に登りたいです。",
+      "rom": "Nihon ni iketara, Fujisan ni noboritai desu.",
+      "en": "Jika bisa pergi ke Jepang, saya ingin mendaki Gunung Fuji (pengandaian)."
+    }
+  ],
+  "conversation": {
+    "title": "Kelulusan Minna no Nihongo",
+    "dialogue": [
+      {
+        "speaker": "A",
+        "jp": "おめでとうございます！ついに「みんなの日本語II」を終わりましたね。",
+        "rom": "Omedetou gozaimasu! Tsui ni 'Minna no Nihongo II' wo owarimashita ne.",
+        "en": "Selamat! Akhirnya kita menyelesaikan semua pelajaran Minna no Nihongo II ya."
+      },
+      {
+        "speaker": "B",
+        "jp": "ありがとうございます。長い道でしたが、とても価値がありました。",
+        "rom": "Arigatou gozaimasu. Nagai michi deshita ga, totemo kachi ga arimashita.",
+        "en": "Terima kasih banyak. Perjalanan yang panjang, tapi rasanya sangat berharga."
+      },
+      {
+        "speaker": "A",
+        "jp": "未来は明るいです。夢を目指して頑張り続けましょう！",
+        "rom": "Mirai wa akarui desu. Yume wo mezashite ganbari tsuzukeshashou!",
+        "en": "Masa depan kita cerah. Mari terus berjuang menggapai impian!"
+      },
+      {
+        "speaker": "B",
+        "jp": "はい、これからも日本語の勉強を続けます！",
+        "rom": "Hai, korekara mo Nihongo no benkyou wo tsuzukemasu!",
+        "en": "Ya, mulai sekarang pun saya akan terus belajar bahasa Jepang!"
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "Pilih kalimat yang menyatakan kabar bahwa besok hujan:",
+      "options": [
+        {
+          "text": "明日は雨が降るそうです。",
+          "correct": true
+        },
+        {
+          "text": "明日は雨が降りそうです。",
+          "correct": false
+        },
+        {
+          "text": "明日は雨が降るようです。",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "Terjemahkan: 'Kelihatannya hujan akan turun' (melihat langit mendung).\nAme ga [   ] desu.",
+      "answer": "furisou"
+    },
+    {
+      "type": "mcq",
+      "question": "Pola pengandaian mana yang digunakan jika 'A pasti mengakibatkan B secara alamiah'?",
+      "options": [
+        {
+          "text": "と (to)",
+          "correct": true
+        },
+        {
+          "text": "たら (tara)",
+          "correct": false
+        },
+        {
+          "text": "なら (nara)",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Kenangan Belajar",
+      "situation": "Dua murid mengobrol tentang kenangan mereka belajar bersama",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "どのレッスンが一番思い出に残っていますか。",
+          "rom": "Dono ressun ga ichiban omoide ni nokotte imasu ka?",
+          "en": "Pelajaran mana yang paling membekas dalam ingatanmu?"
+        },
+        {
+          "speaker": "B",
+          "jp": "敬語のレッスンは難しかったですが、理解したあとは嬉しかったです。",
+          "rom": "Keigo no ressun wa muzukashikatta desu ga, rikai shita ato wa ureshikatta desu.",
+          "en": "Pelajaran Keigo sangat sulit, tapi setelah memahaminya saya merasa senang."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r50-1",
+      "jp": "日本の生活に慣れたようです。",
+      "rom": "Nihon no seikatsu ni nareta you desu.",
+      "en": "Tampaknya dia sudah terbiasa dengan kehidupan di Jepang."
+    },
+    {
+      "id": "r50-2",
+      "jp": "春になると、桜が咲きます。",
+      "rom": "Haru ni naru to, sakura ga sakimasu.",
+      "en": "Ketika musim semi tiba, bunga sakura pasti bermekaran."
+    },
+    {
+      "id": "r50-3",
+      "jp": "この本を読めば、日本語がわかるようになります。",
+      "rom": "Kono hon wo yomeba, Nihongo ga wakaru you ni narimasu.",
+      "en": "Jika membaca buku ini, Anda akan menjadi paham bahasa Jepang."
+    },
+    {
+      "id": "r50-4",
+      "jp": "彼は頭が良いらしいです。",
+      "rom": "Kare wa atama ga ii rashii desu.",
+      "en": "Kabarnya dia pintar."
+    },
+    {
+      "id": "r50-5",
+      "jp": "みんなで一緒にがんばりましょう。",
+      "rom": "Minna de issho ni ganbarimashou.",
+      "en": "Mari kita berjuang bersama-sama semuanya."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb50-1",
+      "pattern": "Kondisional 〜たら",
+      "instruction": "Terjemahkan: 'Jika lulus ujian'.",
+      "question": "Goukaku suru",
+      "correct": "ごうかくしたら",
+      "romaji": "Goukaku shitara.",
+      "translation": "Jika lulus ujian."
+    },
+    {
+      "id": "wb50-2",
+      "pattern": "Hearsay そう desu",
+      "instruction": "Terjemahkan: 'Kabarnya besok dingin'.",
+      "question": "Ashita / samui",
+      "correct": "あしたはさむいだそうです。",
+      "romaji": "Ashita wa samui sou desu.",
+      "translation": "Kabarnya besok dingin."
+    },
+    {
+      "id": "wb50-3",
+      "pattern": "Dugaan ようです",
+      "instruction": "Terjemahkan: 'Sepertinya dia sibuk'.",
+      "question": "Isogashii",
+      "correct": "いそがしいようです。",
+      "romaji": "Isogashii you desu.",
+      "translation": "Sepertinya sibuk."
+    },
+    {
+      "id": "wb50-4",
+      "pattern": "Kondisional 〜と",
+      "instruction": "Terjemahkan: 'Kalau menekan tombol ini, air keluar'.",
+      "question": "Botan wo osu / mizu ga deru",
+      "correct": "ボタンをおすとみずがでます。",
+      "romaji": "Botan wo osu to mizu ga demasu.",
+      "translation": "Kalau menekan tombol ini, air akan keluar."
+    },
+    {
+      "id": "wb50-5",
+      "pattern": "Perbandingan みたい desu",
+      "instruction": "Terjemahkan: 'Seperti mimpi'.",
+      "question": "Yume",
+      "correct": "ゆめのみたいです。",
+      "romaji": "Yume no mitai desu.",
+      "translation": "Seperti mimpi."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex50-1",
+        "sentence": "あしたは てんきが よい [ ] です。ニュースで 言っていました。",
+        "correct": "そう",
+        "translation": "Kabarnya besok cuacanya bagus. Tadi di berita dikatakan demikian."
+      },
+      {
+        "id": "ex50-2",
+        "sentence": "ボタンを [ ] と、きっぷが でます。",
+        "correct": "おす",
+        "translation": "Jika tombol ditekan, tiket akan keluar."
+      },
+      {
+        "id": "ex50-3",
+        "sentence": "あめが ふり [ ] です。かさを もっていきましょう。",
+        "correct": "そう",
+        "translation": "Kelihatannya hujan akan turun. Mari bawa payung."
+      },
+      {
+        "id": "ex50-4",
+        "sentence": "かれは びょうきの [ ] です。きょう 休みました。",
+        "correct": "よう",
+        "translation": "Sepertinya dia sedang sakit. Hari ini dia absen."
+      },
+      {
+        "id": "ex50-5",
+        "sentence": "にほんごの 勉強なら、この ほんが [ ] ですよ。",
+        "correct": "いい",
+        "translation": "Jika tentang belajar bahasa Jepang, buku ini bagus lho."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex50-6",
+        "question": "Pola mana yang berarti 'Kelihatannya enak' (saat melihat makanan)?",
+        "options": [
+          {
+            "text": "美味しそうです。",
+            "correct": true
+          },
+          {
+            "text": "美味しいそうです。",
+            "correct": false
+          },
+          {
+            "text": "美味しいようです。",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex50-7",
+        "question": "Apa arti pengandaian 'Yasukereba kaimasu'?",
+        "options": [
+          {
+            "text": "Jika murah, saya beli",
+            "correct": true
+          },
+          {
+            "text": "Meskipun murah, saya beli",
+            "correct": false
+          },
+          {
+            "text": "Pasti murah jika dibeli",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex50-8",
+        "question": "Perbedaan antara 'yo desu' dan 'rashii desu':",
+        "options": [
+          {
+            "text": "yo desu = dugaan sensorik pribadi; rashii desu = dugaan rumor/sifat khas",
+            "correct": true
+          },
+          {
+            "text": "Keduanya persis sama",
+            "correct": false
+          },
+          {
+            "text": "rashii desu = dugaan sensorik pribadi; yo desu = dugaan rumor",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "日本語の 勉強を 始めてから、ついに 「みんなの日本語」を 終わりました。最初は 難しそうでしたが、勉強すれば するほど 面白くなりました。将来、日本で 仕事を するのが 私の 夢です。これからも 努力を 続けるつもりです。",
+      "questions": [
+        {
+          "id": "ex50-9",
+          "question": "この人は 「みんなの日本語」の 勉強を 終わりました。",
+          "correct": "T"
+        },
+        {
+          "id": "ex50-10",
+          "question": "日本語の 勉強は 最初は 簡単そうでした。",
+          "correct": "F"
+        },
+        {
+          "id": "ex50-11",
+          "question": "この人の 将来の 夢は 日本で 仕事を することです。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

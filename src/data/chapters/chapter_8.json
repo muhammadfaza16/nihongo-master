@@ -1,0 +1,844 @@
+{
+  "id": 8,
+  "title": "Lesson 8: Kata Sifat (I-Adjective & Na-Adjective)",
+  "desc": "Membedah Bab 8. Anda akan belajar dua jenis kata sifat bahasa Jepang beserta seluruh aturan konjugasinya (positif, negatif, lampau), cara mendeskripsikan benda, dan cara bertanya pendapat seseorang.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v8-1",
+      "rom": "Ookii",
+      "kana": "おおきい",
+      "kanji": "大きい",
+      "en": "Besar",
+      "audio": ""
+    },
+    {
+      "id": "v8-2",
+      "rom": "Chiisai",
+      "kana": "ちいさい",
+      "kanji": "小さい",
+      "en": "Kecil",
+      "audio": ""
+    },
+    {
+      "id": "v8-3",
+      "rom": "Atarashii",
+      "kana": "あたらしい",
+      "kanji": "新しい",
+      "en": "Baru",
+      "audio": ""
+    },
+    {
+      "id": "v8-4",
+      "rom": "Furui",
+      "kana": "ふるい",
+      "kanji": "古い",
+      "en": "Tua / Usang (untuk benda, BUKAN orang)",
+      "audio": ""
+    },
+    {
+      "id": "v8-5",
+      "rom": "Ii / Yoi",
+      "kana": "いい / よい",
+      "kanji": "",
+      "en": "Bagus / Baik (Konjugasinya IRREGULIER)",
+      "audio": ""
+    },
+    {
+      "id": "v8-6",
+      "rom": "Warui",
+      "kana": "わるい",
+      "kanji": "悪い",
+      "en": "Buruk / Jelek",
+      "audio": ""
+    },
+    {
+      "id": "v8-7",
+      "rom": "Atsui",
+      "kana": "あつい",
+      "kanji": "暑い",
+      "en": "Panas (cuaca/suhu udara)",
+      "audio": ""
+    },
+    {
+      "id": "v8-8",
+      "rom": "Samui",
+      "kana": "さむい",
+      "kanji": "寒い",
+      "en": "Dingin (cuaca/suhu udara)",
+      "audio": ""
+    },
+    {
+      "id": "v8-9",
+      "rom": "Atsui",
+      "kana": "あつい",
+      "kanji": "熱い",
+      "en": "Panas (benda: sup, air, dll)",
+      "audio": ""
+    },
+    {
+      "id": "v8-10",
+      "rom": "Tsumetai",
+      "kana": "つめたい",
+      "kanji": "冷たい",
+      "en": "Dingin (benda: air es, dll)",
+      "audio": ""
+    },
+    {
+      "id": "v8-11",
+      "rom": "Takai",
+      "kana": "たかい",
+      "kanji": "高い",
+      "en": "Mahal / Tinggi",
+      "audio": ""
+    },
+    {
+      "id": "v8-12",
+      "rom": "Yasui",
+      "kana": "やすい",
+      "kanji": "安い",
+      "en": "Murah",
+      "audio": ""
+    },
+    {
+      "id": "v8-13",
+      "rom": "Hikui",
+      "kana": "ひくい",
+      "kanji": "低い",
+      "en": "Rendah",
+      "audio": ""
+    },
+    {
+      "id": "v8-14",
+      "rom": "Omoshiroi",
+      "kana": "おもしろい",
+      "kanji": "面白い",
+      "en": "Menarik / Lucu",
+      "audio": ""
+    },
+    {
+      "id": "v8-15",
+      "rom": "Tsumaranai",
+      "kana": "つまらない",
+      "kanji": "",
+      "en": "Membosankan",
+      "audio": ""
+    },
+    {
+      "id": "v8-16",
+      "rom": "Oishii",
+      "kana": "おいしい",
+      "kanji": "",
+      "en": "Enak / Lezat",
+      "audio": ""
+    },
+    {
+      "id": "v8-17",
+      "rom": "Mazui",
+      "kana": "まずい",
+      "kanji": "",
+      "en": "Tidak enak (rasa)",
+      "audio": ""
+    },
+    {
+      "id": "v8-18",
+      "rom": "Isogashii",
+      "kana": "いそがしい",
+      "kanji": "忙しい",
+      "en": "Sibuk",
+      "audio": ""
+    },
+    {
+      "id": "v8-19",
+      "rom": "Tanoshii",
+      "kana": "たのしい",
+      "kanji": "楽しい",
+      "en": "Menyenangkan",
+      "audio": ""
+    },
+    {
+      "id": "v8-20",
+      "rom": "Muzukashii",
+      "kana": "むずかしい",
+      "kanji": "難しい",
+      "en": "Sulit",
+      "audio": ""
+    },
+    {
+      "id": "v8-21",
+      "rom": "Yasashii",
+      "kana": "やさしい",
+      "kanji": "優しい",
+      "en": "Mudah / Lembut / Baik hati",
+      "audio": ""
+    },
+    {
+      "id": "v8-22",
+      "rom": "Hiroi",
+      "kana": "ひろい",
+      "kanji": "広い",
+      "en": "Luas",
+      "audio": ""
+    },
+    {
+      "id": "v8-23",
+      "rom": "Semai",
+      "kana": "せまい",
+      "kanji": "狭い",
+      "en": "Sempit",
+      "audio": ""
+    },
+    {
+      "id": "v8-24",
+      "rom": "Wakai",
+      "kana": "わかい",
+      "kanji": "若い",
+      "en": "Muda (untuk ORANG)",
+      "audio": ""
+    },
+    {
+      "id": "v8-25",
+      "rom": "Nagai",
+      "kana": "ながい",
+      "kanji": "長い",
+      "en": "Panjang",
+      "audio": ""
+    },
+    {
+      "id": "v8-26",
+      "rom": "Mijikai",
+      "kana": "みじかい",
+      "kanji": "短い",
+      "en": "Pendek (benda, bukan orang)",
+      "audio": ""
+    },
+    {
+      "id": "v8-27",
+      "rom": "Akai / Shiroi / Kuroi / Aoi",
+      "kana": "あかい / しろい / くろい / あおい",
+      "kanji": "赤い/白い/黒い/青い",
+      "en": "Merah / Putih / Hitam / Biru",
+      "audio": ""
+    },
+    {
+      "id": "v8-28",
+      "rom": "Kirei (na)",
+      "kana": "きれい",
+      "kanji": "",
+      "en": "Cantik / Bersih (Na-Adj! Jebakan!)",
+      "audio": ""
+    },
+    {
+      "id": "v8-29",
+      "rom": "Shizuka (na)",
+      "kana": "しずか",
+      "kanji": "静か",
+      "en": "Tenang / Sepi",
+      "audio": ""
+    },
+    {
+      "id": "v8-30",
+      "rom": "Nigiyaka (na)",
+      "kana": "にぎやか",
+      "kanji": "",
+      "en": "Ramai / Meriah",
+      "audio": ""
+    },
+    {
+      "id": "v8-31",
+      "rom": "Yuumei (na)",
+      "kana": "ゆうめい",
+      "kanji": "有名",
+      "en": "Terkenal",
+      "audio": ""
+    },
+    {
+      "id": "v8-32",
+      "rom": "Shinsetsu (na)",
+      "kana": "しんせつ",
+      "kanji": "親切",
+      "en": "Ramah / Baik hati",
+      "audio": ""
+    },
+    {
+      "id": "v8-33",
+      "rom": "Genki (na)",
+      "kana": "げんき",
+      "kanji": "元気",
+      "en": "Sehat / Bersemangat",
+      "audio": ""
+    },
+    {
+      "id": "v8-34",
+      "rom": "Hima (na)",
+      "kana": "ひま",
+      "kanji": "暇",
+      "en": "Senggang / Luang",
+      "audio": ""
+    },
+    {
+      "id": "v8-35",
+      "rom": "Benri (na)",
+      "kana": "べんり",
+      "kanji": "便利",
+      "en": "Praktis / Nyaman",
+      "audio": ""
+    },
+    {
+      "id": "v8-36",
+      "rom": "Taihen (na)",
+      "kana": "たいへん",
+      "kanji": "大変",
+      "en": "Susah / Melelahkan / Gawat",
+      "audio": ""
+    },
+    {
+      "id": "v8-37",
+      "rom": "Suki (na)",
+      "kana": "すき",
+      "kanji": "好き",
+      "en": "Suka",
+      "audio": ""
+    },
+    {
+      "id": "v8-38",
+      "rom": "Kirai (na)",
+      "kana": "きらい",
+      "kanji": "嫌い",
+      "en": "Benci / Tidak suka",
+      "audio": ""
+    },
+    {
+      "id": "v8-39",
+      "rom": "Machi",
+      "kana": "まち",
+      "kanji": "町",
+      "en": "Kota",
+      "audio": ""
+    },
+    {
+      "id": "v8-40",
+      "rom": "Tokoro",
+      "kana": "ところ",
+      "kanji": "所",
+      "en": "Tempat",
+      "audio": ""
+    },
+    {
+      "id": "v8-41",
+      "rom": "Seikatsu",
+      "kana": "せいかつ",
+      "kanji": "生活",
+      "en": "Kehidupan",
+      "audio": ""
+    },
+    {
+      "id": "v8-42",
+      "rom": "Shigoto",
+      "kana": "しごと",
+      "kanji": "仕事",
+      "en": "Pekerjaan",
+      "audio": ""
+    },
+    {
+      "id": "v8-43",
+      "rom": "Totemo",
+      "kana": "とても",
+      "kanji": "",
+      "en": "Sangat (Positif)",
+      "audio": ""
+    },
+    {
+      "id": "v8-44",
+      "rom": "Amari",
+      "kana": "あまり",
+      "kanji": "",
+      "en": "Tidak terlalu (Harus diikuti negatif)",
+      "audio": ""
+    },
+    {
+      "id": "v8-45",
+      "rom": "Dou",
+      "kana": "どう",
+      "kanji": "",
+      "en": "Bagaimana?",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g8-1",
+      "title": "1. Dua Jenis Kata Sifat: い (I) vs な (Na)",
+      "desc": "Bahasa Jepang memiliki DUA jenis kata sifat dengan aturan konjugasi yang sangat berbeda. Mengenali jenisnya adalah langkah pertama.",
+      "points": [
+        "I-Adjective: SELALU berakhiran い (i). Contoh: taka-I (mahal), ooki-I (besar), atsu-I (panas), omoshiro-I (menarik).",
+        "Na-Adjective: TIDAK berakhiran い secara gramatikal. Contoh: Kirei, Shizuka, Genki, Hima.",
+        "AWAS JEBAKAN KRITIS: 'Kirei' (きれい) dan 'Kirai' (きらい) berakhiran い tapi keduanya adalah Na-Adjective! Harus dihafal mati.",
+        "Aturan Emas: Jika ragu, cek kamus. Mayoritas kata Yamato (asli Jepang) yang berakhiran い adalah I-Adj."
+      ],
+      "formula": "I-Adj: ~い + N / Na-Adj: ~な + N",
+      "native_note": "Kata 'Kirei' (きれい) diakhiri dengan huruf 'i', namun ini adalah jebakan klasik! 'Kirei' adalah kata sifat-Na, sehingga bentuk negatifnya adalah 'Kirei ja nai' (bukan kireikunai). Selalu perhatikan pengecualian ini agar tidak salah ucap!"
+    },
+    {
+      "id": "g8-2",
+      "title": "2. N は [Adj] です (Mendeskripsikan Topik)",
+      "desc": "Kata sifat bisa langsung menjadi predikat (keterangan akhir kalimat) dengan menambahkan 'desu'.",
+      "points": [
+        "I-Adj: Kono hon wa omoshiroi desu. (Buku ini menarik).",
+        "Na-Adj: Osaka wa nigiyaka desu. (Osaka ramai).",
+        "Catatan: Untuk I-Adj, 'desu' bersifat formalitas saja (kesopanan). Kata sifat I-Adj sudah lengkap maknanya tanpa 'desu'."
+      ],
+      "formula": "N は I-Adj です / N は Na-Adj です"
+    },
+    {
+      "id": "g8-3",
+      "title": "3. Konjugasi I-Adjective (Negatif & Lampau)",
+      "desc": "Konjugasi I-Adj mengubah akhiran い secara langsung. Ini BERBEDA total dengan Na-Adj.",
+      "points": [
+        "Positif: Takai desu (Mahal).",
+        "Negatif: Buang い, tambah くない(です). Takai -> Takaku-nai desu (Tidak mahal).",
+        "Lampau: Buang い, tambah かった(です). Takai -> Taka-katta desu (Dulu mahal).",
+        "Lampau Negatif: Buang い, tambah くなかった(です). Takai -> Takaku-nakatta desu (Dulu tidak mahal).",
+        "PENGECUALIAN PENTING: 'Ii' (bagus) menjadi IRREGULIER! Negatif: Yoku-nai. Lampau: Yokatta. Lampau Negatif: Yoku-nakatta. (Bukan ikunai/ikatta!)"
+      ],
+      "formula": "~くない / ~かった / ~くなかった | ii -> yokunai/yokatta/yokunakatta"
+    },
+    {
+      "id": "g8-4",
+      "title": "4. Konjugasi Na-Adjective (Negatif & Lampau)",
+      "desc": "Na-Adj tidak mengubah dirinya sendiri. Yang berubah adalah 'DESU' di belakangnya — sama persis dengan konjugasi kata benda.",
+      "points": [
+        "Positif: Shizuka desu (Tenang).",
+        "Negatif: Shizuka ja arimasen (Tidak tenang).",
+        "Lampau: Shizuka deshita (Dulu tenang).",
+        "Lampau Negatif: Shizuka ja arimasen deshita (Dulu tidak tenang)."
+      ],
+      "formula": "~じゃありません / ~でした / ~じゃありませんでした"
+    },
+    {
+      "id": "g8-5",
+      "title": "5. Adj + N (Memodifikasi Kata Benda)",
+      "desc": "Kata sifat bisa diletakkan SEBELUM kata benda untuk mendeskripsikannya secara langsung (adjective modifier).",
+      "points": [
+        "I-Adj: Langsung tempel. Ookii kaban (Tas besar). Oishii gohan (Nasi enak).",
+        "Na-Adj: Harus menambahkan な sebelum benda. Kirei-NA hana (Bunga cantik). Shizuka-NA machi (Kota sepi).",
+        "INGAT: 'na' HANYA muncul saat Na-Adj memodifikasi kata benda. Jika berdiri sendiri sebagai predikat, tanpa 'na'."
+      ],
+      "formula": "I-Adj + N / Na-Adj + な + N"
+    },
+    {
+      "id": "g8-6",
+      "title": "6. どうですか (Bagaimana?) & そして / でも",
+      "desc": "Kata tanya untuk meminta pendapat atau kesan umum tentang sesuatu, serta kata sambung.",
+      "points": [
+        "Nihon no seikatsu wa dou desu ka. (Kehidupan di Jepang bagaimana?)",
+        "Tanoshii desu. (Menyenangkan).",
+        "Soshite/Demo: Kata sambung. Soshite = Dan/Lalu. Demo = Tetapi/Namun."
+      ],
+      "formula": "N は どうですか / そして(Dan) / でも(Tapi)"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "富士山は 高いです。",
+      "rom": "Fujisan wa takai desu.",
+      "en": "Gunung Fuji itu tinggi."
+    },
+    {
+      "jp": "この 部屋は あまり 広くないです。",
+      "rom": "Kono heya wa amari hiroku-nai desu.",
+      "en": "Kamar ini tidak terlalu luas."
+    },
+    {
+      "jp": "奈良は 静かな 町です。",
+      "rom": "Nara wa shizuka-na machi desu.",
+      "en": "Nara adalah kota yang tenang."
+    },
+    {
+      "jp": "きのうは あまり 暑くなかったです。",
+      "rom": "Kinou wa amari atsuku-nakatta desu.",
+      "en": "Kemarin tidak terlalu panas."
+    },
+    {
+      "jp": "日本の 生活は どうですか。",
+      "rom": "Nihon no seikatsu wa dou desu ka.",
+      "en": "Kehidupan di Jepang bagaimana?"
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: どうでしたか (Bagaimana Tadi?)",
+    "dialogue": [
+      {
+        "speaker": "Miller",
+        "jp": "きのう 初めて お相撲を 見ました。",
+        "rom": "Kinou hajimete osumo o mimashita.",
+        "en": "Kemarin pertama kali saya menonton sumo."
+      },
+      {
+        "speaker": "Matsumoto",
+        "jp": "そうですか。どうでしたか。",
+        "rom": "Sou desu ka. Dou deshita ka.",
+        "en": "Oh begitu ya. Bagaimana (tadi)?"
+      },
+      {
+        "speaker": "Miller",
+        "jp": "とても おもしろかったです。",
+        "rom": "Totemo omoshirokatta desu.",
+        "en": "Sangat menarik."
+      },
+      {
+        "speaker": "Matsumoto",
+        "jp": "それは よかったですね。",
+        "rom": "Sore wa yokatta desu ne.",
+        "en": "Syukurlah (itu bagus ya)."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "でも、チケットは ちょっと 高かったです。",
+        "rom": "Demo, chiketto wa chotto takakatta desu.",
+        "en": "Tapi, tiketnya sedikit mahal."
+      },
+      {
+        "speaker": "Matsumoto",
+        "jp": "そうですか。いくらでしたか。",
+        "rom": "Sou desu ka. Ikura deshita ka.",
+        "en": "Oh begitu. Berapa (harganya) tadi?"
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] Bentuk NEGATIF dari kata sifat 'Takai' (mahal) adalah:",
+      "options": [
+        {
+          "text": "Takai ja arimasen",
+          "correct": false
+        },
+        {
+          "text": "Takakunai desu",
+          "correct": true
+        },
+        {
+          "text": "Takainai desu",
+          "correct": false
+        },
+        {
+          "text": "Takai dewa arimasen",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] Ubah ke bentuk lampau: 'Omoshiroi (menarik)' -> 'Dulu menarik'.\nOmoshiro-[     ] desu.",
+      "answer": "katta"
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu B] 'Ii' (bagus) adalah IRREGULIER. Bentuk lampaunya yang benar adalah:",
+      "options": [
+        {
+          "text": "Iikatta",
+          "correct": false
+        },
+        {
+          "text": "Yokatta",
+          "correct": true
+        },
+        {
+          "text": "Ikatta",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu C] Isi yang benar: 'Nara adalah kota yang tenang'.\nNara wa shizuka-[   ] machi desu.",
+      "answer": "na"
+    },
+    {
+      "type": "mcq",
+      "question": "[Jebakan] 'Kirei' (cantik) terlihat berakhiran い. Kategorinya adalah:",
+      "options": [
+        {
+          "text": "I-Adjective",
+          "correct": false
+        },
+        {
+          "text": "Na-Adjective",
+          "correct": true
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Menanyakan Kesan Kehidupan Baru",
+      "situation": "Bertanya kepada orang asing tentang bagaimana rasanya tinggal di Jepang",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "日本の 生活は どうですか。",
+          "rom": "Nihon no seikatsu wa dou desu ka.",
+          "en": "Bagaimana kehidupan di Jepang?"
+        },
+        {
+          "speaker": "B",
+          "jp": "忙しいですが、とても 面白いです。",
+          "rom": "Isogashii desu ga, totemo omoshiroi desu.",
+          "en": "Sibuk sih, tapi sangat menarik."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。",
+          "rom": "Sou desu ka.",
+          "en": "Oh, begitu ya."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Menanyakan Sifat Suatu Kota",
+      "situation": "Bertanya tentang karakteristik kota asal lawan bicara",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "奈良は どんな 町ですか。",
+          "rom": "Nara wa donna machi desu ka.",
+          "en": "Nara itu kota yang seperti apa?"
+        },
+        {
+          "speaker": "B",
+          "jp": "静かで、とても 古い 町です。",
+          "rom": "Shizuka de, totemo furui machi desu.",
+          "en": "Kota yang sepi dan sangat kuno/tua."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。",
+          "rom": "Sou desu ka.",
+          "en": "Oh, begitu ya."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Menawarkan Teh Hangat pada Tamu",
+      "situation": "Menawarkan minuman hangat secara sopan kepada tamu yang baru berkunjung",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "お茶は いかがですか。",
+          "rom": "O-cha wa ikaga desu ka.",
+          "en": "Bagaimana kalau minum teh?"
+        },
+        {
+          "speaker": "B",
+          "jp": "ありがとうございます。いただきます。",
+          "rom": "Arigatou gozaimasu. Itadakimasu.",
+          "en": "Terima kasih banyak. Saya terima (mari minum)."
+        },
+        {
+          "speaker": "A",
+          "jp": "どうぞ。熱いですよ。",
+          "rom": "Douzo. Atsui desu yo.",
+          "en": "Silakan. Agak panas lho."
+        },
+        {
+          "speaker": "B",
+          "jp": "美味しいですね。",
+          "rom": "Oishii desu ne.",
+          "en": "Enak sekali ya."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r8-1",
+      "jp": "桜は きれいですか。... はい、とても きれいです。",
+      "rom": "Sakura wa kirei desu ka? ... Hai, totemo kirei desu.",
+      "en": "Apakah sakura indah? ... Ya, sangat indah."
+    },
+    {
+      "id": "r8-2",
+      "jp": "富士山は 高いですか。... はい、高いです。",
+      "rom": "Fujisan wa takai desu ka? ... Hai, takai desu.",
+      "en": "Apakah Gunung Fuji tinggi? ... Ya, tinggi."
+    },
+    {
+      "id": "r8-3",
+      "jp": "日本の 食べ物は おいしいですか。... はい、おいしいですが、高いです。",
+      "rom": "Nihon no tabemono wa oishii desu ka? ... Hai, oishii desu ga, takai desu.",
+      "en": "Apakah makanan Jepang enak? ... Ya, enak, tapi mahal."
+    },
+    {
+      "id": "r8-4",
+      "jp": "その 辞書は いいですか。... いいえ、あまり よくありません。",
+      "rom": "Sono jisho wa ii desu ka? ... Iie, amari yoku arimasen.",
+      "en": "Apakah kamus itu bagus? ... Tidak, tidak begitu bagus."
+    },
+    {
+      "id": "r8-5",
+      "jp": "日本の 生活に 慣れましたか。... はい、だいたい 慣れました。",
+      "rom": "Nihon no seikatsu ni naremashita ka? ... Hai, daitai naremashita.",
+      "en": "Apakah sudah terbiasa dengan kehidupan di Jepang? ... Ya, sebagian besar sudah terbiasa."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb8-1",
+      "pattern": "い形容詞 + N / い形容詞 + です",
+      "instruction": "Buat kalimat deskripsi menggunakan kata sifat-i (i-adjective).",
+      "question": "Fuji-san / takai",
+      "correct": "ふじさんは たかいです。",
+      "romaji": "Fujisan wa takai desu.",
+      "translation": "Gunung Fuji itu tinggi."
+    },
+    {
+      "id": "wb8-2",
+      "pattern": "い形容詞の ～くない形 (negatif)",
+      "instruction": "Buat bentuk negatif dari kata sifat-i dengan mengubah akhiran い → くない.",
+      "question": "Koohii / atsuku nai",
+      "correct": "コーヒーは あつくないです。",
+      "romaji": "Koohii wa atsuku nai desu.",
+      "translation": "Kopi ini tidak panas."
+    },
+    {
+      "id": "wb8-3",
+      "pattern": "な形容詞 + N / な形容詞 + です",
+      "instruction": "Buat kalimat deskripsi menggunakan kata sifat-na (na-adjective).",
+      "question": "Kanojo / shizuka",
+      "correct": "かのじょは しずかです。",
+      "romaji": "Kanojo wa shizuka desu.",
+      "translation": "Dia (perempuan) pendiam/tenang."
+    },
+    {
+      "id": "wb8-4",
+      "pattern": "どんな N ですか",
+      "instruction": "Buat pertanyaan menanyakan sifat/karakteristik suatu benda atau orang.",
+      "question": "Toukyou / dono you na machi",
+      "correct": "とうきょうは どんな まちですか。",
+      "romaji": "Toukyou wa donna machi desu ka.",
+      "translation": "Tokyo itu kota seperti apa?"
+    },
+    {
+      "id": "wb8-5",
+      "pattern": "N は N より adj です (perbandingan)",
+      "instruction": "Buat kalimat perbandingan menggunakan より (lebih dari).",
+      "question": "Osaka / Kyouto / ookii",
+      "correct": "おおさかは きょうとより おおきいです。",
+      "romaji": "Oosaka wa Kyouto yori ookii desu.",
+      "translation": "Osaka lebih besar dari Kyoto."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex8-1",
+        "sentence": "ふじさんは [ ] です。",
+        "correct": "たかい",
+        "translation": "Gunung Fuji tinggi."
+      },
+      {
+        "id": "ex8-2",
+        "sentence": "このまちは [ ] で、たのしいです。",
+        "correct": "にぎやか",
+        "translation": "Kota ini ramai dan menyenangkan."
+      },
+      {
+        "id": "ex8-3",
+        "sentence": "きょうは あつく [ ]。ちょっと さむいです。",
+        "correct": "ないです",
+        "translation": "Hari ini tidak panas. Agak dingin."
+      },
+      {
+        "id": "ex8-4",
+        "sentence": "おおさかは とうきょう [ ] おおきいです。",
+        "correct": "より",
+        "translation": "Osaka lebih besar dari Tokyo."
+      },
+      {
+        "id": "ex8-5",
+        "sentence": "どんな [ ] が すきですか。",
+        "correct": "たべもの",
+        "translation": "Anda suka makanan seperti apa?"
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex8-6",
+        "question": "Bentuk negatif dari 'takai' (mahal/tinggi) dalam pola formal adalah:",
+        "options": [
+          {
+            "text": "たかいじゃありません",
+            "correct": false
+          },
+          {
+            "text": "たかくないです",
+            "correct": true
+          },
+          {
+            "text": "たかくありません",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex8-7",
+        "question": "Kata sifat yang termasuk 'na-keiyoushi' (kata sifat-na) adalah:",
+        "options": [
+          {
+            "text": "おもしろい",
+            "correct": false
+          },
+          {
+            "text": "きれい",
+            "correct": true
+          },
+          {
+            "text": "たのしい",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex8-8",
+        "question": "Kalimat perbandingan 'Osaka lebih ramai dari Nara' dalam bahasa Jepang:",
+        "options": [
+          {
+            "text": "おおさかは なら より にぎやか です。",
+            "correct": true
+          },
+          {
+            "text": "おおさかは なら に にぎやか です。",
+            "correct": false
+          },
+          {
+            "text": "おおさかは にぎやか より なら です。",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "わたしの まちは しずかな まちです。にぎやかではありませんが、とても きれいです。まちの なかに おおきい こうえんが あります。こうえんは しぜんが ゆたかで、きもちが いいです。",
+      "questions": [
+        {
+          "id": "ex8-9",
+          "question": "このまちは にぎやかです。",
+          "correct": "F"
+        },
+        {
+          "id": "ex8-10",
+          "question": "まちに こうえんが あります。",
+          "correct": "T"
+        },
+        {
+          "id": "ex8-11",
+          "question": "こうえんは ちいさいです。",
+          "correct": "F"
+        }
+      ]
+    }
+  }
+}

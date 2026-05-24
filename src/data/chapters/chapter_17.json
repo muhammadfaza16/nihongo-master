@@ -1,0 +1,692 @@
+{
+  "id": 17,
+  "title": "Lesson 17: Nai-Form & Kewajiban (Harus)",
+  "desc": "Membedah Bab 17. Pengenalan NAI-FORM (Bentuk Negatif Kasual) — bentuk ketiga setelah Te-Form dan Dict-Form. Dipakai untuk larangan sopan, kewajiban (harus), dan ketiadaan kewajiban (tidak usah).",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v17-1",
+      "rom": "Oboemasu",
+      "kana": "おぼえます",
+      "kanji": "覚えます",
+      "en": "Mengingat / Menghafal",
+      "audio": ""
+    },
+    {
+      "id": "v17-2",
+      "rom": "Wasuremasu",
+      "kana": "わすれます",
+      "kanji": "忘れます",
+      "en": "Melupakan / Lupa",
+      "audio": ""
+    },
+    {
+      "id": "v17-3",
+      "rom": "Nakushimasu",
+      "kana": "なくします",
+      "kanji": "無くします",
+      "en": "Kehilangan (benda)",
+      "audio": ""
+    },
+    {
+      "id": "v17-4",
+      "rom": "Haraimasu",
+      "kana": "はらいます",
+      "kanji": "払います",
+      "en": "Membayar",
+      "audio": ""
+    },
+    {
+      "id": "v17-5",
+      "rom": "Kaeshimasu",
+      "kana": "かえします",
+      "kanji": "返します",
+      "en": "Mengembalikan",
+      "audio": ""
+    },
+    {
+      "id": "v17-6",
+      "rom": "Dekakemasu",
+      "kana": "でかけます",
+      "kanji": "出かけます",
+      "en": "Pergi keluar (rumah)",
+      "audio": ""
+    },
+    {
+      "id": "v17-7",
+      "rom": "Nugimasu",
+      "kana": "ぬぎます",
+      "kanji": "脱ぎます",
+      "en": "Melepas (pakaian/sepatu)",
+      "audio": ""
+    },
+    {
+      "id": "v17-8",
+      "rom": "Motte ikimasu",
+      "kana": "もっていきます",
+      "kanji": "持って行きます",
+      "en": "Membawa pergi",
+      "audio": ""
+    },
+    {
+      "id": "v17-9",
+      "rom": "Motte kimasu",
+      "kana": "もってきます",
+      "kanji": "持って来ます",
+      "en": "Membawa datang",
+      "audio": ""
+    },
+    {
+      "id": "v17-10",
+      "rom": "Zangyou shimasu",
+      "kana": "ざんぎょうします",
+      "kanji": "残業します",
+      "en": "Lembur",
+      "audio": ""
+    },
+    {
+      "id": "v17-11",
+      "rom": "Shukkin shimasu",
+      "kana": "しゅっきんします",
+      "kanji": "出勤します",
+      "en": "Masuk kerja",
+      "audio": ""
+    },
+    {
+      "id": "v17-12",
+      "rom": "Taisetsu (na)",
+      "kana": "たいせつ",
+      "kanji": "大切",
+      "en": "Penting (Na-Adj)",
+      "audio": ""
+    },
+    {
+      "id": "v17-13",
+      "rom": "Daijoubu (na)",
+      "kana": "だいじょうぶ",
+      "kanji": "大丈夫",
+      "en": "Tidak apa-apa / Aman (Na-Adj)",
+      "audio": ""
+    },
+    {
+      "id": "v17-14",
+      "rom": "Abunai",
+      "kana": "あぶない",
+      "kanji": "危ない",
+      "en": "Berbahaya (I-Adj)",
+      "audio": ""
+    },
+    {
+      "id": "v17-15",
+      "rom": "Kusuri",
+      "kana": "くすり",
+      "kanji": "薬",
+      "en": "Obat",
+      "audio": ""
+    },
+    {
+      "id": "v17-16",
+      "rom": "Nodo",
+      "kana": "のど",
+      "kanji": "",
+      "en": "Tenggorokan",
+      "audio": ""
+    },
+    {
+      "id": "v17-17",
+      "rom": "Netsu",
+      "kana": "ねつ",
+      "kanji": "熱",
+      "en": "Demam / Panas (badan)",
+      "audio": ""
+    },
+    {
+      "id": "v17-18",
+      "rom": "Kaze",
+      "kana": "かぜ",
+      "kanji": "風邪",
+      "en": "Masuk Angin / Flu",
+      "audio": ""
+    },
+    {
+      "id": "v17-19",
+      "rom": "Ofuro",
+      "kana": "おふろ",
+      "kanji": "お風呂",
+      "en": "Bak Mandi / Berendam",
+      "audio": ""
+    },
+    {
+      "id": "v17-20",
+      "rom": "Odaijini",
+      "kana": "おだいじに",
+      "kanji": "お大事に",
+      "en": "Semoga cepat sembuh (ungkapan)",
+      "audio": ""
+    },
+    {
+      "id": "v17-21",
+      "rom": "Shinpai-shimasu",
+      "kana": "しんぱいします",
+      "kanji": "心配します",
+      "en": "Khawatir / Cemas",
+      "audio": ""
+    },
+    {
+      "id": "v17-22",
+      "rom": "Shucchou-shimasu",
+      "kana": "しゅっちょうします",
+      "kanji": "出張します",
+      "en": "Dinas ke luar kota / Perjalanan bisnis",
+      "audio": ""
+    },
+    {
+      "id": "v17-23",
+      "rom": "Mondai",
+      "kana": "もんだい",
+      "kanji": "問題",
+      "en": "Soal / Masalah / Pertanyaan",
+      "audio": ""
+    },
+    {
+      "id": "v17-24",
+      "rom": "Kotae",
+      "kana": "こたえ",
+      "kanji": "答え",
+      "en": "Jawaban",
+      "audio": ""
+    },
+    {
+      "id": "v17-25",
+      "rom": "Kin'en",
+      "kana": "きんえん",
+      "kanji": "禁煙",
+      "en": "Dilarang merokok",
+      "audio": ""
+    },
+    {
+      "id": "v17-26",
+      "rom": "Hoken-shou",
+      "kana": "ほけんしょう",
+      "kanji": "保険証",
+      "en": "Kartu asuransi kesehatan",
+      "audio": ""
+    },
+    {
+      "id": "v17-27",
+      "rom": "Byouki",
+      "kana": "びょうき",
+      "kanji": "病気",
+      "en": "Sakit / Penyakit",
+      "audio": ""
+    },
+    {
+      "id": "v17-28",
+      "rom": "Uwagi",
+      "kana": "うわぎ",
+      "kanji": "上着",
+      "en": "Jaket / Pakaian luar atas",
+      "audio": ""
+    },
+    {
+      "id": "v17-29",
+      "rom": "Shitagi",
+      "kana": "したぎ",
+      "kanji": "下着",
+      "en": "Pakaian dalam",
+      "audio": ""
+    },
+    {
+      "id": "v17-30",
+      "rom": "Repooto",
+      "kana": "レポート",
+      "kanji": "",
+      "en": "Laporan / Report",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g17-1",
+      "title": "1. Nai-Form: Aturan Konversi (Bentuk Negatif Kasual)",
+      "desc": "Bentuk negatif kasual — bentuk ketiga setelah Te-Form dan Dict-Form. Sangat krusial untuk membuat pola tata bahasa lanjutan.",
+      "points": [
+        "KELOMPOK 1 (Godan): Ubah vokal (i) sebelum -masu menjadi (a) lalu tambah NAI.",
+        "Kaki-masu → Kaka-nai. Nomi-masu → Noma-nai. Hanashi-masu → Hanasa-nai.",
+        "★PENGECUALIAN: Jika sebelum -masu adalah (i), maka berubah jadi (wa). Kai-masu → Kawa-nai (BUKAN kaa-nai!).",
+        "KELOMPOK 2 (Ichidan): Buang -masu, tambah NAI. Tabe-masu → Tabe-nai. Mi-masu → Mi-nai.",
+        "KELOMPOK 3: Shi-masu → Shi-nai. Ki-masu → Ko-nai. ★Hati-hati: Kimasu→KONAI (bukan kinai!)."
+      ],
+      "formula": "Grp1: Vokal i→a + NAI (★い段→わ) | Grp2: stem+NAI | Grp3: Shinai/Konai",
+      "native_note": "Ungkapan keharusan '~nakereba narimasen' (harus) sangat panjang dan melelahkan untuk percakapan sehari-hari. Native speaker menyingkatnya secara kasual menjadi '~nakya' atau '~nakucha' (misal: 'Ikanakya!' = 'Harus pergi!')."
+    },
+    {
+      "id": "g17-2",
+      "title": "2. V-ないで ください (Tolong Jangan ~)",
+      "desc": "Meminta seseorang secara sopan agar TIDAK melakukan sesuatu. Kebalikan dari 'V-te kudasai'.",
+      "points": [
+        "Shashin o tora-NAIDE kudasai. (Tolong JANGAN mengambil foto).",
+        "Wasure-NAIDE kudasai. (Tolong JANGAN lupa).",
+        "Ofuro ni haira-NAIDE kudasai. (Tolong JANGAN mandi berendam).",
+        "Perbandingan: V-te kudasai (Tolong lakukan) ↔ V-naide kudasai (Tolong jangan)."
+      ],
+      "formula": "V-ないで ください (Tolong jangan ~)"
+    },
+    {
+      "id": "g17-3",
+      "title": "3. V-なければ なりません (Harus)",
+      "desc": "Secara harfiah: 'Jika tidak dilakukan, maka tidak boleh' (Double Negative = Positif). Terjemahan praktis: HARUS.",
+      "points": [
+        "Kusuri o noma-NAKEREBA NARIMASEN. (HARUS minum obat).",
+        "Mainichi benkyou shi-nakereba narimasen. (Setiap hari HARUS belajar).",
+        "Cara membuat: Dari Nai-form (nomanai) → buang 'i' → tambah 'kereba narimasen'.",
+        "Contoh lengkap: Noma-nai → Noma-nakereba narimasen."
+      ],
+      "formula": "V-ない → coret い → ければ なりません"
+    },
+    {
+      "id": "g17-4",
+      "title": "4. V-なくても いいです (Tidak Usah / Tidak Perlu)",
+      "desc": "Kebalikan dari 'harus'. Memberi kebebasan untuk TIDAK melakukan sesuatu.",
+      "points": [
+        "Ashita ko-NAKUTEMO II DESU. (Besok tidak datang pun tidak apa-apa / Tidak usah datang).",
+        "Kutsu o nuga-nakutemo ii desu. (Tidak usah lepas sepatu).",
+        "Cara membuat: Dari Nai-form → buang 'i' → tambah 'kutemo ii desu'.",
+        "Perbandingan: ~nakereba narimasen (HARUS) ↔ ~nakutemo ii desu (TIDAK USAH)."
+      ],
+      "formula": "V-ない → coret い → くても いいです"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "ここで 写真を 撮らないで ください。",
+      "rom": "Koko de shashin o toranaide kudasai.",
+      "en": "Tolong jangan mengambil foto di sini."
+    },
+    {
+      "jp": "パスポートを 見せなければ なりません。",
+      "rom": "Pasupooto o misenakereba narimasen.",
+      "en": "Harus memperlihatkan paspor."
+    },
+    {
+      "jp": "日曜日は 早く 起きなくても いいです。",
+      "rom": "Nichiyoubi wa hayaku okinakutemo ii desu.",
+      "en": "Hari Minggu tidak usah bangun pagi."
+    },
+    {
+      "jp": "毎日 薬を 飲まなければ なりません。",
+      "rom": "Mainichi kusuri o nomanakereba narimasen.",
+      "en": "Setiap hari harus minum obat."
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: どうしましたか (Sakit Apa?)",
+    "dialogue": [
+      {
+        "speaker": "Dokter",
+        "jp": "どう しましたか。",
+        "rom": "Dou shimashita ka.",
+        "en": "Sakit apa? (Ada keluhan apa?)"
+      },
+      {
+        "speaker": "Miller",
+        "jp": "きのうから のどが 痛くて、熱も あります。",
+        "rom": "Kinou kara nodo ga itakute, netsu mo arimasu.",
+        "en": "Sejak kemarin tenggorokan sakit, dan ada demam juga."
+      },
+      {
+        "speaker": "Dokter",
+        "jp": "風邪ですね。ゆっくり 休んで ください。",
+        "rom": "Kaze desu ne. Yukkuri yasunde kudasai.",
+        "en": "Masuk angin ya. Tolong istirahat pelan-pelan."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "はい。",
+        "rom": "Hai.",
+        "en": "Baik."
+      },
+      {
+        "speaker": "Dokter",
+        "jp": "それから、今日は お風呂に 入らないで ください。",
+        "rom": "Sorekara, kyou wa ofuro ni hairanaide kudasai.",
+        "en": "Dan hari ini tolong jangan berendam dulu."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "わかりました。",
+        "rom": "Wakarimashita.",
+        "en": "Saya mengerti."
+      },
+      {
+        "speaker": "Dokter",
+        "jp": "じゃ、お大事に。",
+        "rom": "Ja, odaijini.",
+        "en": "Semoga cepat sembuh."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] Nai-form dari 'Kaimasu' (Membeli) adalah:",
+      "options": [
+        {
+          "text": "Kaanai",
+          "correct": false
+        },
+        {
+          "text": "Kawanai",
+          "correct": true
+        },
+        {
+          "text": "Kakinai",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] 'Besok tolong jangan datang'.\nAshita [       ] de kudasai.",
+      "answer": "konai"
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu B] 'Harus minum obat' (Kusuri o ___). Pola yang tepat:",
+      "options": [
+        {
+          "text": "Nomanakereba narimasen",
+          "correct": true
+        },
+        {
+          "text": "Nomanakutemo ii desu",
+          "correct": false
+        },
+        {
+          "text": "Nomanaide kudasai",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu C] 'Hari Minggu TIDAK USAH bangun pagi.'\nNichiyoubi wa hayaku oki-[           ] ii desu.",
+      "answer": "nakutemo"
+    },
+    {
+      "type": "mcq",
+      "question": "[Jebakan] Nai-form dari 'Kimasu' (Datang) — Kelompok 3 Irregular. Yang benar:",
+      "options": [
+        {
+          "text": "Kinai",
+          "correct": false
+        },
+        {
+          "text": "Konai",
+          "correct": true
+        },
+        {
+          "text": "Shinai",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Meminta untuk Tidak Mengambil Foto",
+      "situation": "Petugas museum meminta pengunjung untuk tidak mengambil foto artefak kuno",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "すみませんが、ここでは 写真を 撮らないで ください。",
+          "rom": "Sumimasen ga, koko dewa shashin o toranaide kudasai.",
+          "en": "Maaf/permisi, tolong jangan mengambil foto di sini."
+        },
+        {
+          "speaker": "B",
+          "jp": "あ、すみません。わかりました。",
+          "rom": "A, sumimasen. Wakarimashita.",
+          "en": "Ah, maaf. Saya mengerti."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Menanyakan Keharusan Minum Obat",
+      "situation": "Bertanya kepada dokter apakah harus meminum obat yang diberikan secara rutin",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "この 薬を 毎日 飲まなければ なりませんか。",
+          "rom": "Kono kusuri o maihichi nomanakereba narimasen ka.",
+          "en": "Apakah obat ini harus diminum setiap hari?"
+        },
+        {
+          "speaker": "B",
+          "jp": "はい。朝と 晩に 飲んで ください。",
+          "rom": "Hai. Asa to ban ni nonde kudasai.",
+          "en": "Ya. Tolong diminum pagi dan malam hari."
+        },
+        {
+          "speaker": "A",
+          "jp": "わかりました。",
+          "rom": "Wakarimashita.",
+          "en": "Baik, saya mengerti."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Menanyakan Keharusan Membawa Dokumen",
+      "situation": "Bertanya kepada guru apakah besok harus membawa paspor ke kelas",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "明日 パスポートを 持って 来なければ なりませんか。",
+          "rom": "Ashita pasupooto o motte konakereba narimasen ka.",
+          "en": "Apakah besok harus membawa paspor?"
+        },
+        {
+          "speaker": "B",
+          "jp": "いいえ、持って 来なくても いいですよ。",
+          "rom": "Iie, motte konakutemo ii desu yo.",
+          "en": "Tidak, tidak usah dibawa juga tidak apa-apa lho."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。安心しました。",
+          "rom": "Sou desu ka. Anshin shimashita.",
+          "en": "Oh begitu. Syukurlah (saya tenang)."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r17-1",
+      "jp": "薬を 飲まなければなりません。... はい、分かりました。",
+      "rom": "Kusuri o nomanakereba narimasen. ... Hai, wakarimashita.",
+      "en": "Harus minum obat. ... Ya, baiklah."
+    },
+    {
+      "id": "r17-2",
+      "jp": "傘を 忘れないでください。... はい、気を つけます。",
+      "rom": "Kasa o wasurenaide kudasai. ... Hai, ki o tsukemasu.",
+      "en": "Tolong jangan lupakan payung Anda. ... Ya, saya akan berhati-hati."
+    },
+    {
+      "id": "r17-3",
+      "jp": "土曜日も 働かなければなりませんか。... いいえ、働かなくても いいです。",
+      "rom": "Doyoubi mo hatarakanakereba narimasen ka? ... Iie, hatarakanakute mo ii desu.",
+      "en": "Apakah hari Sabtu juga harus bekerja? ... Tidak, tidak bekerja juga tidak apa-apa (tidak wajib)."
+    },
+    {
+      "id": "r17-4",
+      "jp": "レポートは いつまでに出さなければなりませんか。... 金曜日までに 出してください。",
+      "rom": "Repooto wa itsu made ni dasanakereba narimasen ka? ... Kinyoubi made ni dashite kudasai.",
+      "en": "Laporan harus dikumpulkan paling lambat kapan? ... Tolong kumpulkan paling lambat hari Jumat."
+    },
+    {
+      "id": "r17-5",
+      "jp": "靴を 脱がなくても いいですか。... いいえ、脱いでください。",
+      "rom": "Kutsu o nuganakute mo ii desu ka? ... Iie, nuide kudasai.",
+      "en": "Apakah tidak usah melepas sepatu tidak apa-apa? ... Tidak, tolong lepas sepatunya."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb17-1",
+      "pattern": "V てくれます (Orang lain melakukan untuk saya)",
+      "instruction": "Nyatakan seseorang melakukan sesuatu untuk Anda (pembicara) menggunakan て + くれます.",
+      "question": "Yamada-san / shashin wo / totte / kuremashita",
+      "correct": "やまださんが しゃしんを とって くれました。",
+      "romaji": "Yamada-san ga shashin wo totte kuremashita.",
+      "translation": "Pak Yamada mengambilkan foto untuk saya."
+    },
+    {
+      "id": "wb17-2",
+      "pattern": "V てあげます (Saya melakukan untuk orang lain)",
+      "instruction": "Nyatakan Anda melakukan sesuatu untuk orang lain menggunakan て + あげます.",
+      "question": "Tomodachi / ni / hon wo / kashite / agemashita",
+      "correct": "ともだちに ほんを かして あげました。",
+      "romaji": "Tomodachi ni hon wo kashite agemashita.",
+      "translation": "Saya meminjamkan buku kepada teman."
+    },
+    {
+      "id": "wb17-3",
+      "pattern": "V てもらいます (Meminta seseorang melakukan)",
+      "instruction": "Nyatakan meminta atau menerima bantuan dari seseorang dengan て + もらいます.",
+      "question": "Sensei ni / nihongo wo / oshiete / moraimashita",
+      "correct": "せんせいに にほんごを おしえて もらいました。",
+      "romaji": "Sensei ni nihongo wo oshiete moraimashita.",
+      "translation": "Saya diajarkan bahasa Jepang oleh guru (menerima kebaikan)."
+    },
+    {
+      "id": "wb17-4",
+      "pattern": "V てもらえますか (Bolehkah meminta tolong ~)",
+      "instruction": "Buat permintaan sopan menggunakan て + もらえますか.",
+      "question": "Chotto / mite / moraemasu ka",
+      "correct": "ちょっと みて もらえますか。",
+      "romaji": "Chotto mite moraemasu ka.",
+      "translation": "Bolehkah minta tolong dilihat sebentar?"
+    },
+    {
+      "id": "wb17-5",
+      "pattern": "V てくれませんか (Bolehkah tolong ~)",
+      "instruction": "Buat permintaan sopan kepada orang lain menggunakan て + くれませんか.",
+      "question": "Chotto / matte / kuremase n ka",
+      "correct": "ちょっと まって くれませんか。",
+      "romaji": "Chotto matte kuremasen ka.",
+      "translation": "Bolehkah tolong tunggu sebentar?"
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex17-1",
+        "sentence": "ともだちが えきまで おくって [ ] ました。",
+        "correct": "くれ",
+        "translation": "Teman mengantarkan saya sampai stasiun."
+      },
+      {
+        "id": "ex17-2",
+        "sentence": "せんせいに にほんごを おしえて [ ] ました。",
+        "correct": "もらい",
+        "translation": "Diajarkan bahasa Jepang oleh guru."
+      },
+      {
+        "id": "ex17-3",
+        "sentence": "おとうとに みやげを [ ] あげました。",
+        "correct": "かって",
+        "translation": "Membelikan oleh-oleh untuk adik."
+      },
+      {
+        "id": "ex17-4",
+        "sentence": "すみません、みちを おしえて [ ] ませんか。",
+        "correct": "くれ",
+        "translation": "Permisi, bolehkah tolong tunjukkan jalan?"
+      },
+      {
+        "id": "ex17-5",
+        "sentence": "しゃしんを とって [ ] ますか。",
+        "correct": "もらえ",
+        "translation": "Bolehkah minta tolong ambilkan foto?"
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex17-6",
+        "question": "'Tomodachi ga tetsudatte kuremashita' berarti:",
+        "options": [
+          {
+            "text": "Saya membantu teman",
+            "correct": false
+          },
+          {
+            "text": "Teman membantu saya",
+            "correct": true
+          },
+          {
+            "text": "Saya minta teman membantu orang lain",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex17-7",
+        "question": "'Sensei ni oshiete moraimashita' berarti:",
+        "options": [
+          {
+            "text": "Guru mengajari (dan saya menerima manfaatnya)",
+            "correct": true
+          },
+          {
+            "text": "Saya mengajari guru",
+            "correct": false
+          },
+          {
+            "text": "Guru diajarkan seseorang",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex17-8",
+        "question": "Cara yang paling sopan untuk meminta bantuan seseorang adalah:",
+        "options": [
+          {
+            "text": "V てください",
+            "correct": false
+          },
+          {
+            "text": "V てもらえますか / V てくれませんか",
+            "correct": true
+          },
+          {
+            "text": "V てはいけません",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "きのう やまださんが わたしの にもつを もって くれました。また、えきまで おくって くれました。わたしは やまださんに おかしを かって あげました。やまださんは とても よろこんで いました。",
+      "questions": [
+        {
+          "id": "ex17-9",
+          "question": "やまださんは わたしの にもつを もって くれました。",
+          "correct": "T"
+        },
+        {
+          "id": "ex17-10",
+          "question": "わたしは やまださんに なにも あげませんでした。",
+          "correct": "F"
+        },
+        {
+          "id": "ex17-11",
+          "question": "やまださんは うれしそうでした。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

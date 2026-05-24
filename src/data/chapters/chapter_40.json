@@ -1,0 +1,450 @@
+{
+  "id": 40,
+  "title": "Lesson 40: Kondisi Tetap & Kelalaian (〜まま / 〜っぱなし)",
+  "desc": "Mempelajari cara menyatakan kondisi yang dibiarkan tetap tidak berubah menggunakan 〜まま, serta kelalaian membiarkan sesuatu berantakan atau menyala dengan 〜っぱなし.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v40-1",
+      "rom": "Jōtai",
+      "kana": "じょうたい",
+      "kanji": "状態",
+      "en": "Keadaan / Kondisi",
+      "audio": ""
+    },
+    {
+      "id": "v40-2",
+      "rom": "Nokoru",
+      "kana": "のこります",
+      "kanji": "残ります",
+      "en": "Tersisa / Tinggal",
+      "audio": ""
+    },
+    {
+      "id": "v40-3",
+      "rom": "Sono mama",
+      "kana": "そのまま",
+      "kanji": "",
+      "en": "Tetap seperti itu",
+      "audio": ""
+    },
+    {
+      "id": "v40-4",
+      "rom": "Aketamama",
+      "kana": "あけたまま",
+      "kanji": "開けたまま",
+      "en": "Dibiarkan terbuka",
+      "audio": ""
+    },
+    {
+      "id": "v40-5",
+      "rom": "Kakeppanashi",
+      "kana": "かけっぱなし",
+      "kanji": "",
+      "en": "Dibiarkan tergantung / menyala",
+      "audio": ""
+    },
+    {
+      "id": "v40-6",
+      "rom": "Tsukepapanashi",
+      "kana": "つけっぱなし",
+      "kanji": "",
+      "en": "Dibiarkan menyala (AC/TV)",
+      "audio": ""
+    },
+    {
+      "id": "v40-7",
+      "rom": "Keshitsure",
+      "kana": "けしわすれ",
+      "kanji": "消し忘れ",
+      "en": "Lupa mematikan",
+      "audio": ""
+    },
+    {
+      "id": "v40-8",
+      "rom": "Doa",
+      "kana": "ドア",
+      "kanji": "",
+      "en": "Pintu (door)",
+      "audio": ""
+    },
+    {
+      "id": "v40-9",
+      "rom": "Kutsu no mama",
+      "kana": "くつのまま",
+      "kanji": "靴のまま",
+      "en": "Tetap memakai sepatu",
+      "audio": ""
+    },
+    {
+      "id": "v40-10",
+      "rom": "Hadashi",
+      "kana": "はだし",
+      "kanji": "裸足",
+      "en": "Nyeker / Telanjang kaki",
+      "audio": ""
+    },
+    {
+      "id": "v40-11",
+      "rom": "Terebi",
+      "kana": "テレビ",
+      "kanji": "",
+      "en": "Televisi",
+      "audio": ""
+    },
+    {
+      "id": "v40-12",
+      "rom": "Shashin",
+      "kana": "しゃしん",
+      "kanji": "写真",
+      "en": "Foto",
+      "audio": ""
+    },
+    {
+      "id": "v40-13",
+      "rom": "Megane",
+      "kana": "めがね",
+      "kanji": "眼鏡",
+      "en": "Kacamata",
+      "audio": ""
+    },
+    {
+      "id": "v40-14",
+      "rom": "Nemuru",
+      "kana": "ねむります",
+      "kanji": "眠ります",
+      "en": "Tidur / Tertidur",
+      "audio": ""
+    },
+    {
+      "id": "v40-15",
+      "rom": "Katazukenai",
+      "kana": "かたづけない",
+      "kanji": "片付けない",
+      "en": "Tidak merapikan",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g40-1",
+      "title": "1. 〜まま (Kondisi Tetap Tidak Berubah)",
+      "desc": "Menyatakan melakukan suatu aksi lain dengan kondisi awal yang dibiarkan tetap tidak berubah (misalnya masuk rumah tetap memakai sepatu).",
+      "points": [
+        "Pola: V-ta / V-nai / N + の / Adj-i + まま / Adj-na + な + まま",
+        "Contoh V-ta: Doa wo aketa MAMA nemurimashita. (Tidur dengan pintu dibiarkan terbuka).",
+        "Contoh N: Kutsu NO MAMA ie ni hairimashita. (Masuk ke rumah tetap mengenakan sepatu)."
+      ],
+      "formula": "V-た/ない + まま / N + の + まま",
+      "native_note": "Di Jepang, masuk rumah dengan 'kutsu no mama' (tetap pakai sepatu) adalah hal tabu besar. Jadi ungkapan ini sering dipakai untuk menegur anak-anak atau tamu asing."
+    },
+    {
+      "id": "g40-2",
+      "title": "2. 〜っぱなし (Kelalaian / Membiarkan Menyala/Berantakan)",
+      "desc": "Pola ekspresi lisan yang cenderung bernada komplain/kekesalan, menyatakan tindakan yang dibiarkan menyala, berantakan, atau terbuka karena lalai.",
+      "points": [
+        "Pola: V-stem + っぱなし",
+        "Contoh: Terebi wo tsuke-PPANASHI de dekakemashita. (Keluar rumah dengan TV dibiarkan tetap menyala saja — lalai).",
+        "Beda dengan まま: っぱなし selalu mengandung nuansa negatif/lalai/menyesal, sedangkan まま lebih netral."
+      ],
+      "formula": "V-stem + っぱなし"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "電気をつけたままで寝てしまいました。",
+      "rom": "Denki wo tsuketa mama de nete shimaimashita.",
+      "en": "Saya terlanjur tidur dengan lampu dibiarkan menyala."
+    },
+    {
+      "jp": "水が出しっぱなしになっていますよ。",
+      "rom": "Mizu ga dashi-ppanashi ni natte imasu yo.",
+      "en": "Airnya dibiarkan mengalir terus tuh (lalai)."
+    },
+    {
+      "jp": "日本は昔のままの建物が残っています。",
+      "rom": "Nihon wa mukashi no mama no tatemono ga nokotte imasu.",
+      "en": "Di Jepang, bangunan yang tetap seperti zaman dulu masih tersisa."
+    },
+    {
+      "jp": "本を開きっぱなしにしないでください。",
+      "rom": "Hon wo hiraki-ppanashi ni shinaide kudasai.",
+      "en": "Tolong jangan biarkan bukunya terbuka begitu saja (lalai/kotor)."
+    }
+  ],
+  "conversation": {
+    "title": "Teguran Ibu kepada Anak",
+    "dialogue": [
+      {
+        "speaker": "Ibu",
+        "jp": "コップが置きっぱなしになっているわよ。片付けなさい。",
+        "rom": "Koppu ga oki-ppanashi ni natte iru wa yo. Katazukenasai.",
+        "en": "Gelasnya dibiarkan tergeletak begitu saja tuh. Rapikan!"
+      },
+      {
+        "speaker": "Anak",
+        "jp": "あ、ごめんなさい。後でやります。",
+        "rom": "A, gomen nasai. Ato de yarimasu.",
+        "en": "Ah, maaf. Nanti saya lakukan."
+      },
+      {
+        "speaker": "Ibu",
+        "jp": "テレビもつけっぱなしよ。電気代がもったいないでしょ。",
+        "rom": "Terebi mo tsuke-ppanashi yo. Denkidai ga mottainai desho.",
+        "en": "TV-nya juga dibiarkan menyala. Kan sayang listriknya."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "Pola mana yang tepat jika ingin menyampaikan komplain tentang TV menyala seharian?",
+      "options": [
+        {
+          "text": "つけっぱなし",
+          "correct": true
+        },
+        {
+          "text": "つけたまま",
+          "correct": false
+        },
+        {
+          "text": "つけおく",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "'Masuk rumah dengan mengenakan sepatu (kutsu)'.\nKutsu [   ] mama de hairimashita.",
+      "answer": "no"
+    },
+    {
+      "type": "mcq",
+      "question": "Nuansa utama dari 〜っぱなし adalah:",
+      "options": [
+        {
+          "text": "Kelalaian yang menjengkelkan/negatif",
+          "correct": true
+        },
+        {
+          "text": "Persiapan yang rapi",
+          "correct": false
+        },
+        {
+          "text": "Aksi yang tidak sengaja tetapi positif",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "AC Menyala di Kantor",
+      "situation": "Rekan menegur karena AC lupa dimatikan",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "エアコンがつけっぱなしですよ。",
+          "rom": "Eakon ga tsuke-ppanashi desu yo.",
+          "en": "AC-nya dibiarkan menyala terus tuh."
+        },
+        {
+          "speaker": "B",
+          "jp": "すみません、消し忘れてしまいました。",
+          "rom": "Sumimasen, keshi-wasurete shimaimashita.",
+          "en": "Maaf, saya terlanjur lupa mematikannya."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r40-1",
+      "jp": "メガネをかけたままお風呂に入ってしまいました。",
+      "rom": "Megane wo kaketa mama ofuro ni haitte shimaimashita.",
+      "en": "Saya terlanjur masuk bak mandi dengan kacamata tetap terpasang."
+    },
+    {
+      "id": "r40-2",
+      "jp": "ドアを開けっぱなしにすると虫が入りますよ。",
+      "rom": "Doa wo ake-ppanashi ni suru to mushi ga hairimasu yo.",
+      "en": "Kalau pintu dibiarkan terbuka terus, serangga akan masuk."
+    },
+    {
+      "id": "r40-3",
+      "jp": "生魚のままでは食べられません。",
+      "rom": "Nama zakana no mama de wa taberaremasen.",
+      "en": "Kalau tetap dalam keadaan ikan mentah, tidak bisa dimakan."
+    },
+    {
+      "id": "r40-4",
+      "jp": "ハサミが出しっぱなしになっています。",
+      "rom": "Hasami ga dashi-ppanashi ni natte imasu.",
+      "en": "Guntingnya dibiarkan tergeletak di luar."
+    },
+    {
+      "id": "r40-5",
+      "jp": "昨日は疲れて、服を着たまま寝てしまいました。",
+      "rom": "Kinou wa tsukarete, fuku wo kita mama nete shimaimashita.",
+      "en": "Kemarin saya capek sekali, sampai tertidur dengan baju tetap terpakai."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb40-1",
+      "pattern": "V-ta + まま",
+      "instruction": "Buat kalimat: 'Tidur dengan memakai kacamata'.",
+      "question": "Megane / kakeru / nete shimau",
+      "correct": "メガネをかけたままねてしまいました。",
+      "romaji": "Megane wo kaketa mama nete shimaimashita.",
+      "translation": "Tidur dengan memakai kacamata."
+    },
+    {
+      "id": "wb40-2",
+      "pattern": "N + の + まま",
+      "instruction": "Buat kalimat: 'Masuk dengan memakai sepatu'.",
+      "question": "Kutsu / hairu",
+      "correct": "くつのままはいりました。",
+      "romaji": "Kutsu no mama hairimashita.",
+      "translation": "Masuk dengan memakai sepatu."
+    },
+    {
+      "id": "wb40-3",
+      "pattern": "V-stem + っぱなし",
+      "instruction": "Nyatakan kelalaian: 'Air dibiarkan mengalir'.",
+      "question": "Mizu / dasu / ppanashi",
+      "correct": "みずをだしっぱなしにしました。",
+      "romaji": "Mizu wo dashi-ppanashi ni shimashita.",
+      "translation": "Membiarkan air mengalir terus."
+    },
+    {
+      "id": "wb40-4",
+      "pattern": "Adj-i + まま",
+      "instruction": "Buat kalimat: 'Ikan dimakan mentah-mentah (raw/nama)'.",
+      "question": "Nama / taberu",
+      "correct": "なまのままたべます。",
+      "romaji": "Nama no mama tabemasu.",
+      "translation": "Dimakan mentah-mentah."
+    },
+    {
+      "id": "wb40-5",
+      "pattern": "Perbedaan まま vs っぱなし",
+      "instruction": "Pilih yang bermakna komplain karena TV menyala.",
+      "question": "Terebi / tsukeru / [mama / ppanashi]",
+      "correct": "テレビをつけっぱなしにしています。",
+      "romaji": "Terebi wo tsuke-ppanashi ni shite imasu.",
+      "translation": "Membiarkan TV menyala terus (lalai)."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex40-1",
+        "sentence": "ドアを あけた [ ] ねてしまいました。",
+        "correct": "まま",
+        "translation": "Tidur dengan pintu dibiarkan terbuka."
+      },
+      {
+        "id": "ex40-2",
+        "sentence": "みずが だし [ ] に なっています。",
+        "correct": "っぱなし",
+        "translation": "Air dibiarkan mengalir terus."
+      },
+      {
+        "id": "ex40-3",
+        "sentence": "くつ [ ] まま いえに はいってはいけません。",
+        "correct": "の",
+        "translation": "Tidak boleh masuk rumah tetap memakai sepatu."
+      },
+      {
+        "id": "ex40-4",
+        "sentence": "エアコンが つけ [ ] ですよ。",
+        "correct": "っぱなし",
+        "translation": "AC-nya dibiarkan menyala terus tuh."
+      },
+      {
+        "id": "ex40-5",
+        "sentence": "めがねを [ ] まま おふろに はいりました。",
+        "correct": "かけた",
+        "translation": "Masuk bak mandi dengan kacamata terpasang."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex40-6",
+        "question": "Pernyataan mana yang menunjukkan 'kelalaian menyebalkan'?",
+        "options": [
+          {
+            "text": "テレビをつけっぱなしにする",
+            "correct": true
+          },
+          {
+            "text": "テレビをつけたまま見る",
+            "correct": false
+          },
+          {
+            "text": "テレビをつけておく",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex40-7",
+        "question": "'Kutsu no mama' berarti:",
+        "options": [
+          {
+            "text": "Tetap menggunakan sepatu",
+            "correct": true
+          },
+          {
+            "text": "Sepatu baru",
+            "correct": false
+          },
+          {
+            "text": "Tanpa sepatu (nyeker)",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex40-8",
+        "question": "Contoh penggunaan adjektif dengan 'mama' yang benar:",
+        "options": [
+          {
+            "text": "冷たいまま飲む (minum dingin-dingin)",
+            "correct": true
+          },
+          {
+            "text": "冷たいのまま飲む",
+            "correct": false
+          },
+          {
+            "text": "冷たまま飲む",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "わたしの おとうとは いつも へやを かたづけません。ほんを ひらきっぱなしにしたり、ようふくを ぬぎっぱなしにしたりします。きょうも ドアを あけたまま でかけてしまいました。わたしは いつも おこっています。",
+      "questions": [
+        {
+          "id": "ex40-9",
+          "question": "おとうとは へyaを きれいに かたづけます。",
+          "correct": "F"
+        },
+        {
+          "id": "ex40-10",
+          "question": "おとうとは ほんを ひらきっぱなしにします。",
+          "correct": "T"
+        },
+        {
+          "id": "ex40-11",
+          "question": "おとうとは ドアを しめて でかけました。",
+          "correct": "F"
+        }
+      ]
+    }
+  }
+}

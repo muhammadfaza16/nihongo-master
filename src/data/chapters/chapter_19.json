@@ -1,0 +1,686 @@
+{
+  "id": 19,
+  "title": "Lesson 19: Ta-Form & Pengalaman",
+  "desc": "Membedah Bab 19. Memperkenalkan Ta-Form (Bentuk Lampau Kasual) — bentuk ke-5. Digunakan untuk menceritakan pengalaman hidup (pernah), mendaftar aktivitas acak (tari-tari), dan menyatakan perubahan keadaan (narimasu).",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v19-1",
+      "rom": "Noborimasu",
+      "kana": "のぼります",
+      "kanji": "登ります",
+      "en": "Mendaki [yama NI]",
+      "audio": ""
+    },
+    {
+      "id": "v19-2",
+      "rom": "Tomarimasu",
+      "kana": "とまります",
+      "kanji": "泊まります",
+      "en": "Menginap [hoteru NI]",
+      "audio": ""
+    },
+    {
+      "id": "v19-3",
+      "rom": "Souji-shimasu",
+      "kana": "そうじします",
+      "kanji": "掃除します",
+      "en": "Bersih-bersih (ruangan)",
+      "audio": ""
+    },
+    {
+      "id": "v19-4",
+      "rom": "Sentaku-shimasu",
+      "kana": "せんたくします",
+      "kanji": "洗濯します",
+      "en": "Mencuci (pakaian)",
+      "audio": ""
+    },
+    {
+      "id": "v19-5",
+      "rom": "Narimasu",
+      "kana": "なります",
+      "kanji": "",
+      "en": "Menjadi (Become)",
+      "audio": ""
+    },
+    {
+      "id": "v19-6",
+      "rom": "Nemui",
+      "kana": "ねむい",
+      "kanji": "眠い",
+      "en": "Mengantuk (I-Adj)",
+      "audio": ""
+    },
+    {
+      "id": "v19-7",
+      "rom": "Tsuyoi",
+      "kana": "つよい",
+      "kanji": "強い",
+      "en": "Kuat (I-Adj)",
+      "audio": ""
+    },
+    {
+      "id": "v19-8",
+      "rom": "Yowai",
+      "kana": "よわい",
+      "kanji": "弱い",
+      "en": "Lemah (I-Adj)",
+      "audio": ""
+    },
+    {
+      "id": "v19-9",
+      "rom": "Renshuu",
+      "kana": "れんしゅう",
+      "kanji": "練習",
+      "en": "Latihan",
+      "audio": ""
+    },
+    {
+      "id": "v19-10",
+      "rom": "Gorufu",
+      "kana": "ゴルフ",
+      "kanji": "",
+      "en": "Golf",
+      "audio": ""
+    },
+    {
+      "id": "v19-11",
+      "rom": "Sumou",
+      "kana": "すもう",
+      "kanji": "相撲",
+      "en": "Sumo",
+      "audio": ""
+    },
+    {
+      "id": "v19-12",
+      "rom": "Ocha",
+      "kana": "おちゃ",
+      "kanji": "お茶",
+      "en": "Teh (atau Upacara Minum Teh)",
+      "audio": ""
+    },
+    {
+      "id": "v19-13",
+      "rom": "Ichido",
+      "kana": "いちど",
+      "kanji": "一度",
+      "en": "Satu kali / Sekali",
+      "audio": ""
+    },
+    {
+      "id": "v19-14",
+      "rom": "Ichido mo",
+      "kana": "いちども",
+      "kanji": "一度も",
+      "en": "Sekali pun (+ negatif = belum pernah)",
+      "audio": ""
+    },
+    {
+      "id": "v19-15",
+      "rom": "Dandan",
+      "kana": "だんだん",
+      "kanji": "",
+      "en": "Lama-kelamaan / Perlahan-lahan",
+      "audio": ""
+    },
+    {
+      "id": "v19-16",
+      "rom": "Sukkari",
+      "kana": "すっかり",
+      "kanji": "",
+      "en": "Sepenuhnya / Seutuhnya",
+      "audio": ""
+    },
+    {
+      "id": "v19-17",
+      "rom": "Daietto",
+      "kana": "ダイエット",
+      "kanji": "",
+      "en": "Diet",
+      "audio": ""
+    },
+    {
+      "id": "v19-18",
+      "rom": "Hajimemasu",
+      "kana": "はじめます",
+      "kanji": "始めます",
+      "en": "Memulai",
+      "audio": ""
+    },
+    {
+      "id": "v19-19",
+      "rom": "Pachinko",
+      "kana": "パチンコ",
+      "kanji": "",
+      "en": "Pachinko (permainan mesin bola Jepang)",
+      "audio": ""
+    },
+    {
+      "id": "v19-20",
+      "rom": "Hi",
+      "kana": "ひ",
+      "kanji": "日",
+      "en": "Hari / Tanggal",
+      "audio": ""
+    },
+    {
+      "id": "v19-21",
+      "rom": "Mousugu",
+      "kana": "もうすぐ",
+      "kanji": "",
+      "en": "Sebentar lagi / Hampir",
+      "audio": ""
+    },
+    {
+      "id": "v19-22",
+      "rom": "Okagesama de",
+      "kana": "おかげさまで",
+      "kanji": "",
+      "en": "Alhamdulillah / Berkat doa Anda (ungkapan syukur)",
+      "audio": ""
+    },
+    {
+      "id": "v19-23",
+      "rom": "Kanpai",
+      "kana": "かんぱい",
+      "kanji": "乾杯",
+      "en": "Bersulang! / Cheers!",
+      "audio": ""
+    },
+    {
+      "id": "v19-24",
+      "rom": "Jitsu wa",
+      "kana": "じつは",
+      "kanji": "実は",
+      "en": "Sebenarnya / Sejujurnya",
+      "audio": ""
+    },
+    {
+      "id": "v19-25",
+      "rom": "Nankai mo",
+      "kana": "なんかいも",
+      "kanji": "何回も",
+      "en": "Berkali-kali / Berulang kali",
+      "audio": ""
+    },
+    {
+      "id": "v19-26",
+      "rom": "Shikashi",
+      "kana": "しかし",
+      "kanji": "",
+      "en": "Namun / Akan tetapi (formal)",
+      "audio": ""
+    },
+    {
+      "id": "v19-27",
+      "rom": "Muri (na)",
+      "kana": "むり",
+      "kanji": "無理",
+      "en": "Mustahil / Tidak masuk akal / Memaksakan diri",
+      "audio": ""
+    },
+    {
+      "id": "v19-28",
+      "rom": "Karada ni ii",
+      "kana": "からだにいい",
+      "kanji": "体にいい",
+      "en": "Baik untuk kesehatan / Menyehatkan",
+      "audio": ""
+    },
+    {
+      "id": "v19-29",
+      "rom": "Keeki",
+      "kana": "ケーキ",
+      "kanji": "",
+      "en": "Kue tart / Cake",
+      "audio": ""
+    },
+    {
+      "id": "v19-30",
+      "rom": "Choushi",
+      "kana": "ちょうし",
+      "kanji": "調子",
+      "en": "Kondisi / Keadaan (mesin/badan)",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g19-1",
+      "title": "1. Ta-Form: Aturan Konversi (Bentuk Lampau Kasual)",
+      "desc": "Ta-Form memiliki aturan konversi yang 100% PERSIS SAMA dengan Te-Form! Cukup ganti '-te' menjadi '-ta', dan '-de' menjadi '-da'.",
+      "points": [
+        "Kaite → Kaita. (Menulis). Nonde → Nonda. (Minum).",
+        "Matte → Matta. (Menunggu). Yonde → Yonda. (Membaca/Memanggil).",
+        "Tabete → Tabeta. (Makan). Mite → Mita. (Melihat).",
+        "Shite → Shita. (Melakukan). Kite → Kita. (Datang).",
+        "RANGKUMAN 5 BENTUK: Masu | Te | Nai | Dict | Ta. Jika hafal Te-form, Ta-form otomatis bisa!"
+      ],
+      "formula": "Te-form → ganti -te/-de menjadi -ta/-da",
+      "native_note": "Saat menceritakan aktivitas liburan yang acak menggunakan pola '~tari ~tari shimasu', dalam bahasa gaul lisan sering diakhiri dengan kata '~tari shiteru' untuk menggambarkan kebiasaan santai di akhir pekan."
+    },
+    {
+      "id": "g19-2",
+      "title": "2. V-た ことが あります (Pernah ~)",
+      "desc": "Digunakan untuk menceritakan PENGALAMAN HIDUP (Pernah melakukan sesuatu setidaknya sekali). Harus menggunakan Ta-form.",
+      "points": [
+        "Nihon e itTA KOTO GA ARIMASU. (Saya PERNAH pergi ke Jepang).",
+        "Uma ni notta koto ga arimasu ka. (Apakah Anda PERNAH naik kuda?).",
+        "Negatif: ~ta koto ga ARIMASEN. (BELUM PERNAH sama sekali).",
+        "Penekanan: Ichido mo ~ta koto ga arimasen. (Sekali pun belum pernah)."
+      ],
+      "formula": "V-た ことが あります / ありません"
+    },
+    {
+      "id": "g19-3",
+      "title": "3. V1-たり、V2-たり します (Mendaftar Aktivitas Acak)",
+      "desc": "Berbeda dari V-te V-te (kronologis wajib berurutan), pola TARI-TARI menyebutkan beberapa CONTOH kegiatan secara ACAK (kadang A, kadang B, dll).",
+      "points": [
+        "Nichiyoubi wa tenisu o shiTARI, eiga o miTARI SHIMASU. (Hari Minggu saya [antara lain] main tenis, nonton film, dsb).",
+        "Cara membuat: Ta-form → ganti -ta/-da → -tari/-dari.",
+        "Selalu ditutup dengan 'shimasu' (atau 'shimashita' jika lampau).",
+        "Bisa juga untuk Kata Sifat: Atsukattari samukattari shimasu. (Kadang panas kadang dingin)."
+      ],
+      "formula": "V1-たり、V2-たり します"
+    },
+    {
+      "id": "g19-4",
+      "title": "4. I-Adj-く / Na-Adj-に なります (Menjadi ~)",
+      "desc": "Digunakan untuk menyatakan PERUBAHAN keadaan — dari satu kondisi menjadi kondisi lain.",
+      "points": [
+        "I-Adj: Buang 'i', ganti 'ku'. Samui → Samuku narimasu. (Menjadi dingin).",
+        "I-Adj: Atsui → Atsuku narimashita. (Telah menjadi panas).",
+        "Na-Adj/Kata Benda: Tambah 'ni'. Genki → Genki NI narimasu. (Menjadi sehat).",
+        "Kata Benda: 25-sai NI narimashita. (Telah menjadi [berusia] 25 tahun).",
+        "Adverb: Dandan (lama-kelamaan). Dandan atsuku narimashita. (Perlahan menjadi panas)."
+      ],
+      "formula": "I-Adj-く / Na-Adj-に / N-に + なります"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "馬に 乗った ことが あります。",
+      "rom": "Uma ni notta koto ga arimasu.",
+      "en": "Saya pernah naik kuda."
+    },
+    {
+      "jp": "日本へ 一度も 行った ことが ありません。",
+      "rom": "Nihon e ichido mo itta koto ga arimasen.",
+      "en": "Sekali pun belum pernah pergi ke Jepang."
+    },
+    {
+      "jp": "日曜日は テニスを したり、映画を 見たり します。",
+      "rom": "Nichiyoubi wa tenisu o shitari, eiga o mitari shimasu.",
+      "en": "Hari Minggu saya bermain tenis, menonton film, dll."
+    },
+    {
+      "jp": "だんだん 暑く なりました。",
+      "rom": "Dandan atsuku narimashita.",
+      "en": "Lama-kelamaan menjadi panas."
+    },
+    {
+      "jp": "すっかり 元気に なりました。",
+      "rom": "Sukkari genki ni narimashita.",
+      "en": "Sudah sepenuhnya sehat."
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: ダイエットをしていますか (Sedang Diet?)",
+    "dialogue": [
+      {
+        "speaker": "Maria",
+        "jp": "サントスさん、ダイエットを して いますか。",
+        "rom": "Santosu-san, daietto o shite imasu ka.",
+        "en": "Pak Santos, apakah Anda sedang diet?"
+      },
+      {
+        "speaker": "Santos",
+        "jp": "いいえ。でも、毎日 りんごを 食べたり、水を たくさん 飲んだり して います。",
+        "rom": "Iie. Demo, mainichi ringo o tabetari, mizu o takusan nondari shite imasu.",
+        "en": "Tidak. Tapi setiap hari saya makan apel, banyak minum air, dll."
+      },
+      {
+        "speaker": "Maria",
+        "jp": "そうですか。",
+        "rom": "Sou desu ka.",
+        "en": "Oh begitu ya."
+      },
+      {
+        "speaker": "Santos",
+        "jp": "ええ。それから、テニスも 始めました。",
+        "rom": "Ee. Sorekara, tenisu mo hajimemashita.",
+        "en": "Iya. Selain itu, saya juga mulai tenis."
+      },
+      {
+        "speaker": "Maria",
+        "jp": "いいですね。すっかり 元気に なりましたね。",
+        "rom": "Ii desu ne. Sukkari genki ni narimashita ne.",
+        "en": "Bagus ya. Sudah sepenuhnya sehat ya."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] Ta-Form dari 'Nomimasu' (Minum: nonde→nonda) adalah:",
+      "options": [
+        {
+          "text": "Nonda",
+          "correct": true
+        },
+        {
+          "text": "Nota",
+          "correct": false
+        },
+        {
+          "text": "Nomata",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] 'Telah menjadi dingin'.\nSamu-[     ] narimashita.",
+      "answer": "ku"
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu B] 'Apakah Anda PERNAH naik kuda?' Pola kalimat yang benar:",
+      "options": [
+        {
+          "text": "Uma ni noru koto ga arimasu ka.",
+          "correct": false
+        },
+        {
+          "text": "Uma ni notta koto ga arimasu ka.",
+          "correct": true
+        },
+        {
+          "text": "Uma ni notte koto ga arimasu ka.",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu C] 'Hari Minggu saya (antara lain) main tenis, nonton film, dll.'\nNichiyoubi wa tenisu o shi-[       ], eiga o mitari shimasu.",
+      "answer": "tari"
+    },
+    {
+      "type": "mcq",
+      "question": "[Jebakan] 'Menjadi sehat'. Na-Adj 'Genki' + narimasu. Partikel yang tepat:",
+      "options": [
+        {
+          "text": "Genki ku narimasu",
+          "correct": false
+        },
+        {
+          "text": "Genki ni narimasu",
+          "correct": true
+        },
+        {
+          "text": "Genki de narimasu",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Pengalaman Mendaki Gunung Fuji",
+      "situation": "Bertanya apakah lawan bicara memiliki pengalaman mendaki gunung tertinggi di Jepang",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "富士山に 登った ことが ありますか。",
+          "rom": "Fuji-san ni nobotta koto ga arimasu ka.",
+          "en": "Apakah pernah mendaki Gunung Fuji?"
+        },
+        {
+          "speaker": "B",
+          "jp": "はい、一度 あります。とても 綺麗でしたよ。",
+          "rom": "Hai, ichido arimasu. Totemo kirei deshita yo.",
+          "en": "Ya, pernah sekali. Sangat indah lho."
+        },
+        {
+          "speaker": "A",
+          "jp": "いいですね。私も 登りたいです。",
+          "rom": "Ii desu ne. Watashi mo noboritai desu.",
+          "en": "Wah bagus ya. Saya juga ingin mendaki."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Aktivitas Variatif di Akhir Pekan",
+      "situation": "Menjelaskan berbagai aktivitas seperti olahraga atau rekreasi di kala libur",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "休みの 日は いつも 何を しますか。",
+          "rom": "Yasumi no hi wa itsumo nani o shimasu ka.",
+          "en": "Hari libur biasanya melakukan apa?"
+        },
+        {
+          "speaker": "B",
+          "jp": "テニスを したり、買い物に 行ったり します。",
+          "rom": "Tenisu o shitari, kaimono ni ittari shimasu.",
+          "en": "Bermain tenis atau pergi berbelanja."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。忙しいですね。",
+          "rom": "Sou desu ka. Isogashii desu ne.",
+          "en": "Oh begitu. Sibuk sekali ya."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Mengobrol tentang Perubahan Musim",
+      "situation": "Mengobrol tentang udara yang mulai terasa dingin karena menjelang musim dingin",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "最近 寒く なりましたね。",
+          "rom": "Saikin samuku narimashita ne.",
+          "en": "Akhir-akhir ini udara menjadi dingin ya."
+        },
+        {
+          "speaker": "B",
+          "jp": "ええ。もう すぐ 冬に なりますね。",
+          "rom": "Ee. Mou sugu fuyu ni narimasu ne.",
+          "en": "Iya. Sebentar lagi menjadi musim dingin ya."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r19-1",
+      "jp": "日本料理を 食べた ことが ありますか。... はい、一度 あります。",
+      "rom": "Nihonryouri o tabeta koto ga arimasu ka? ... Hai, ichido arimasu.",
+      "en": "Apakah pernah makan masakan Jepang? ... Ya, pernah satu kali."
+    },
+    {
+      "id": "r19-2",
+      "jp": "日曜日は 何を しますか。... テニスを したり、買い物を したりします。",
+      "rom": "Nichiyoubi wa nani o shimasu ka? ... Tenisu o shitari, kaimono o shitari shimasu.",
+      "en": "Hari Minggu melakukan apa? ... Bermain tenis, berbelanja, dan sebagainya."
+    },
+    {
+      "id": "r19-3",
+      "jp": "だんだん 寒く なりますね。... そうですね。もう １１月ですから。",
+      "rom": "Dandan samuku narimasu ne. ... Sou desu ne. Mou juuichigatsu desu kara.",
+      "en": "Lama-kelamaan menjadi dingin ya. ... Benar ya. Karena sudah bulan November."
+    },
+    {
+      "id": "r19-4",
+      "jp": "相撲を 見た ことが ありますか。... いいえ、一度も ありません。",
+      "rom": "Sumou o mita koto ga arimasu ka? ... Iie, ichido mo arimasen.",
+      "en": "Apakah pernah menonton Sumo? ... Tidak, belum pernah sekali pun."
+    },
+    {
+      "id": "r19-5",
+      "jp": "体調は どうですか。... おかげさまで よく なりました。",
+      "rom": "Taichou wa dou desu ka? ... Okagesama de yoku narimashita.",
+      "en": "Bagaimana kondisi badan Anda? ... Syukurlah, sudah membaik."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb19-1",
+      "pattern": "V ば (Kondisi: Kalau/Jika ~)",
+      "instruction": "Buat kalimat kondisional dengan pola ba-form (bentuk kondisi).",
+      "question": "Hayaku / kureba / maniaima su",
+      "correct": "はやく くれば まに あいます。",
+      "romaji": "Hayaku kureba maniaima su.",
+      "translation": "Kalau datang lebih cepat, akan tepat waktu."
+    },
+    {
+      "id": "wb19-2",
+      "pattern": "V たら (Kalau/Setelah ~ terjadi)",
+      "instruction": "Buat kalimat kondisional dengan pola tara yang menekankan 'setelah kondisi terpenuhi'.",
+      "question": "Hima / dattara / eiga / mimasu",
+      "correct": "ひまだったら えいがを みます。",
+      "romaji": "Hima dattara eiga wo mimasu.",
+      "translation": "Kalau ada waktu luang, akan menonton film."
+    },
+    {
+      "id": "wb19-3",
+      "pattern": "〜ば〜ほど (Semakin ~ semakin ~)",
+      "instruction": "Nyatakan hubungan proporsional dengan pola ba-form + hodo.",
+      "question": "Benkyousureba / suruhodo / jouzu ni narimasu",
+      "correct": "べんきょうすれば するほど じょうずに なります。",
+      "romaji": "Benkyousureba suru hodo jouzu ni narimasu.",
+      "translation": "Semakin banyak belajar, semakin pandai."
+    },
+    {
+      "id": "wb19-4",
+      "pattern": "なら (Kalau memang ~ / Kalau begitu)",
+      "instruction": "Gunakan なら untuk memberikan saran atau merespon informasi yang diterima.",
+      "question": "Nihon / ni iku / nara / Tokyo / ga ii",
+      "correct": "にほんへ いくなら とうきょうが いいです。",
+      "romaji": "Nihon e iku nara Toukyou ga ii desu.",
+      "translation": "Kalau pergi ke Jepang, Tokyo itu bagus."
+    },
+    {
+      "id": "wb19-5",
+      "pattern": "〜たら どうですか (Bagaimana kalau ~)",
+      "instruction": "Buat saran menggunakan tara + どうですか.",
+      "question": "Isha / ni ittara / dou desu ka",
+      "correct": "いしゃに いったら どうですか。",
+      "romaji": "Isha ni ittara dou desu ka.",
+      "translation": "Bagaimana kalau pergi ke dokter?"
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex19-1",
+        "sentence": "はやく くれ [ ] まに あいます。",
+        "correct": "ば",
+        "translation": "Kalau datang cepat, akan tepat waktu."
+      },
+      {
+        "id": "ex19-2",
+        "sentence": "ひまだっ [ ] えいがを みましょう。",
+        "correct": "たら",
+        "translation": "Kalau ada waktu luang, ayo menonton film."
+      },
+      {
+        "id": "ex19-3",
+        "sentence": "べんきょうすれ [ ] するほど じょうずになります。",
+        "correct": "ば",
+        "translation": "Semakin belajar semakin pandai."
+      },
+      {
+        "id": "ex19-4",
+        "sentence": "にほんへ いく [ ] とうきょうが いいですよ。",
+        "correct": "なら",
+        "translation": "Kalau pergi ke Jepang, Tokyo itu bagus."
+      },
+      {
+        "id": "ex19-5",
+        "sentence": "いしゃに いっ [ ] どうですか。",
+        "correct": "たら",
+        "translation": "Bagaimana kalau pergi ke dokter?"
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex19-6",
+        "question": "Perbedaan 'ba' dan 'tara' sebagai kondisional:",
+        "options": [
+          {
+            "text": "Ba lebih formal, tara lebih kasual; keduanya bisa dipakai bergantian",
+            "correct": false
+          },
+          {
+            "text": "Tara sering menekankan 'setelah kondisi terpenuhi', ba lebih umum untuk kondisi umum",
+            "correct": true
+          },
+          {
+            "text": "Ba digunakan untuk masa lalu, tara untuk masa depan",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex19-7",
+        "question": "Saat teman bilang ingin belajar bahasa Jepang, saran yang menggunakan 'nara' adalah:",
+        "options": [
+          {
+            "text": "にほんごを べんきょうする なら この ほんが いいですよ。",
+            "correct": true
+          },
+          {
+            "text": "にほんごを べんきょうして なら いいですよ。",
+            "correct": false
+          },
+          {
+            "text": "にほんごを べんきょうすれば なら いいですよ。",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex19-8",
+        "question": "Cara menyatakan saran 'Bagaimana kalau istirahat?' dengan pola tara dou desu ka:",
+        "options": [
+          {
+            "text": "やすむ どうですか",
+            "correct": false
+          },
+          {
+            "text": "やすんだら どうですか",
+            "correct": true
+          },
+          {
+            "text": "やすめば どうですか",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "にほんごが じょうずに なりたければ、まいにち れんしゅうしなければ なりません。べんきょうすれば するほど、はやく じょうずに なれます。もし にほんへ いくなら、たくさん にほんじんと はなすと いいですよ。",
+      "questions": [
+        {
+          "id": "ex19-9",
+          "question": "にほんごが うまくなるには まいにち れんしゅうする ひつようが あります。",
+          "correct": "T"
+        },
+        {
+          "id": "ex19-10",
+          "question": "べんきょうの りょうは かんけい ありません。",
+          "correct": "F"
+        },
+        {
+          "id": "ex19-11",
+          "question": "にほんへ いったら にほんじんと はなすと いいです。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,465 @@
+{
+  "id": 30,
+  "title": "Lesson 30: Kondisional Ba-Form (〜ば / 〜れば)",
+  "desc": "Mempelajari bentuk kondisional ば (ba-form) yang menyatakan 'jika/kalau A, maka B'. Dibandingkan dengan tara-form dan to-form untuk memahami nuansa perbedaannya.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v30-1",
+      "rom": "Hayameru",
+      "kana": "はやめます",
+      "kanji": "早めます",
+      "en": "Memajukan / Mempercepat (jadwal)",
+      "audio": ""
+    },
+    {
+      "id": "v30-2",
+      "rom": "Ōkiku narimasu",
+      "kana": "おおきくなります",
+      "kanji": "大きくなります",
+      "en": "Menjadi besar / Bertambah besar",
+      "audio": ""
+    },
+    {
+      "id": "v30-3",
+      "rom": "Mondai",
+      "kana": "もんだい",
+      "kanji": "問題",
+      "en": "Masalah / Soal",
+      "audio": ""
+    },
+    {
+      "id": "v30-4",
+      "rom": "Kanarazu",
+      "kana": "かならず",
+      "kanji": "必ず",
+      "en": "Pasti / Tanpa kecuali",
+      "audio": ""
+    },
+    {
+      "id": "v30-5",
+      "rom": "Manabu",
+      "kana": "まなびます",
+      "kanji": "学びます",
+      "en": "Belajar / Mempelajari",
+      "audio": ""
+    },
+    {
+      "id": "v30-6",
+      "rom": "Renshuu (shimasu)",
+      "kana": "れんしゅう（します）",
+      "kanji": "練習（します）",
+      "en": "Latihan / Berlatih",
+      "audio": ""
+    },
+    {
+      "id": "v30-7",
+      "rom": "Kantan (na)",
+      "kana": "かんたん（な）",
+      "kanji": "簡単（な）",
+      "en": "Mudah / Sederhana",
+      "audio": ""
+    },
+    {
+      "id": "v30-8",
+      "rom": "Muzukashii",
+      "kana": "むずかしい",
+      "kanji": "難しい",
+      "en": "Sulit / Susah",
+      "audio": ""
+    },
+    {
+      "id": "v30-9",
+      "rom": "Ii n desu ga",
+      "kana": "いいんですが",
+      "kanji": "",
+      "en": "Seharusnya baik tapi... / Bagusnya sih...",
+      "audio": ""
+    },
+    {
+      "id": "v30-10",
+      "rom": "Dōshitara ii desu ka",
+      "kana": "どうしたらいいですか",
+      "kanji": "",
+      "en": "Sebaiknya harus bagaimana?",
+      "audio": ""
+    },
+    {
+      "id": "v30-11",
+      "rom": "Kekkyoku",
+      "kana": "けっきょく",
+      "kanji": "結局",
+      "en": "Akhirnya / Pada akhirnya",
+      "audio": ""
+    },
+    {
+      "id": "v30-12",
+      "rom": "Moshi (moshi)",
+      "kana": "もし（もし）",
+      "kanji": "",
+      "en": "Jika (halo di telepon)",
+      "audio": ""
+    },
+    {
+      "id": "v30-13",
+      "rom": "Tōka",
+      "kana": "とおか",
+      "kanji": "10日",
+      "en": "Tanggal 10 / Sepuluh hari",
+      "audio": ""
+    },
+    {
+      "id": "v30-14",
+      "rom": "Naze",
+      "kana": "なぜ",
+      "kanji": "",
+      "en": "Mengapa / Kenapa (lebih formal dari どうして)",
+      "audio": ""
+    },
+    {
+      "id": "v30-15",
+      "rom": "Kekkon (shimasu)",
+      "kana": "けっこん（します）",
+      "kanji": "結婚（します）",
+      "en": "Menikah",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g30-1",
+      "title": "1. Cara Membuat Ba-Form",
+      "desc": "Ba-form (bentuk kondisional) dibuat dengan aturan berbeda untuk setiap grup kata kerja.",
+      "points": [
+        "Grup I (う-verb): ganti ～う → ～えば. Contoh: kaku→kakeba, yomu→yomeba, iku→ikeba",
+        "Grup II (る-verb): ganti ～る → ～れば. Contoh: taberu→tabereba, miru→mireba",
+        "Grup III: suru→sureba, kuru→kureba",
+        "I-Adj: ganti ～い → ～ければ. Contoh: takai→takakereba, hayai→hayakereba",
+        "Na-Adj/N: +であれば (formal) atau +なら (lebih umum).",
+        "Negatif: ～なければ (dari ない→なければ). Contoh: ikanai→ikanakereba"
+      ],
+      "formula": "V う→えば / V る→れば / I-Adj い→ければ"
+    },
+    {
+      "id": "g30-2",
+      "title": "2. Penggunaan Ba-Form",
+      "desc": "Ba-form digunakan untuk kondisi umum, saran, dan pernyataan yang berlaku secara universal.",
+      "points": [
+        "Kondisi umum (hukum alam/universal): Haru ga kureba, hana ga sakimasu. (Kalau musim semi datang, bunga mekar).",
+        "Saran dengan 'ii': Hayaku ikaREBA ii desu. (Kalau pergi cepat saja, akan baik).",
+        "Dalam pertanyaan 'Dō sureba ii desu ka?' (Sebaiknya bagaimana?), jawaban dengan ba-form.",
+        "BATASAN: Kalimat utama (B) tidak bisa berisi permintaan/perintah langsung → gunakan tara-form."
+      ],
+      "formula": "A-ば B (B berlaku jika A terpenuhi)"
+    },
+    {
+      "id": "g30-3",
+      "title": "3. 〜ばよかったです (Seharusnya ~)",
+      "desc": "Pola untuk menyatakan penyesalan atau sesuatu yang seharusnya dilakukan.",
+      "points": [
+        "Pola: V-ba + よかったです。",
+        "Contoh: Motto hayaku ikeBA yokatta desu. (Seharusnya pergi lebih cepat).",
+        "Versi negatif: V-nakereba yokatta desu → Seharusnya tidak melakukan.",
+        "Contoh negatif: Sonna koto iwanakereba yokatta desu. (Seharusnya tidak bilang hal seperti itu)."
+      ],
+      "formula": "V-ば よかったです (seharusnya ~)"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "春が くれば、花が 咲きます。",
+      "rom": "Haru ga kureba, hana ga sakimasu.",
+      "en": "Kalau musim semi datang, bunga akan mekar."
+    },
+    {
+      "jp": "もっと 早く 行けば よかったです。",
+      "rom": "Motto hayaku ikeba yokatta desu.",
+      "en": "Seharusnya pergi lebih cepat tadi."
+    },
+    {
+      "jp": "どう すれば いいですか。",
+      "rom": "Dō sureba ii desu ka.",
+      "en": "Sebaiknya bagaimana (harus dilakukan)?"
+    },
+    {
+      "jp": "毎日 練習 すれば、上手に なります。",
+      "rom": "Mainichi renshū sureba, jōzu ni narimasu.",
+      "en": "Kalau berlatih setiap hari, akan menjadi pandai."
+    }
+  ],
+  "conversation": {
+    "title": "Minta Saran",
+    "dialogue": [
+      {
+        "speaker": "A",
+        "jp": "日本語が なかなか 上手に ならないんですが、どうすれば いいですか。",
+        "rom": "Nihongo ga nakanaka jōzu ni naranain desu ga, dō sureba ii desu ka.",
+        "en": "Bahasa Jepang saya tidak kunjung membaik, sebaiknya bagaimana?"
+      },
+      {
+        "speaker": "B",
+        "jp": "毎日 少しずつ 練習すれば いいと 思いますよ。",
+        "rom": "Mainichi sukoshizutsu renshū sureba ii to omoimasu yo.",
+        "en": "Saya kira kalau berlatih sedikit-sedikit setiap hari, akan baik-baik saja."
+      },
+      {
+        "speaker": "A",
+        "jp": "そうですね。もっと 早く 始めれば よかったです。",
+        "rom": "Sō desu ne. Motto hayaku hajimereba yokatta desu.",
+        "en": "Betul juga. Seharusnya saya mulai lebih awal."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "Bentuk ba-form dari 'nomimasu' (minum) adalah:",
+      "options": [
+        {
+          "text": "のめば",
+          "correct": true
+        },
+        {
+          "text": "のまば",
+          "correct": false
+        },
+        {
+          "text": "のみれば",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "Terjemahkan: 'Seharusnya belajar lebih keras'.\nMotto benkyō sure[   ] yokatta desu.",
+      "answer": "ba"
+    },
+    {
+      "type": "mcq",
+      "question": "Ba-form paling cocok digunakan untuk:",
+      "options": [
+        {
+          "text": "Kondisi satu kali (jika hal ini terjadi nanti)",
+          "correct": false
+        },
+        {
+          "text": "Kondisi umum/universal dan saran",
+          "correct": true
+        },
+        {
+          "text": "Permintaan langsung kepada seseorang",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Keluhan dan Saran",
+      "situation": "Teman memberi saran atas masalah",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "頭が 痛いんですが…。",
+          "rom": "Atama ga itain desu ga...",
+          "en": "Kepala saya sakit..."
+        },
+        {
+          "speaker": "B",
+          "jp": "薬を 飲めば いいですよ。",
+          "rom": "Kusuri wo nomeba ii desu yo.",
+          "en": "Minum obat saja, nanti akan baik."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r30-1",
+      "jp": "早く 寝れば、明日 元気に なりますよ。",
+      "rom": "Hayaku nereba, ashita genki ni narimasu yo.",
+      "en": "Kalau cepat tidur, besok akan segar."
+    },
+    {
+      "id": "r30-2",
+      "jp": "どうすれば 日本語が 上手に なりますか。",
+      "rom": "Dō sureba Nihongo ga jōzu ni narimasu ka.",
+      "en": "Sebaiknya bagaimana agar bisa pandai berbahasa Jepang?"
+    },
+    {
+      "id": "r30-3",
+      "jp": "もっと 早く 起きれば よかった。",
+      "rom": "Motto hayaku okireba yokatta.",
+      "en": "Seharusnya bangun lebih cepat tadi."
+    },
+    {
+      "id": "r30-4",
+      "jp": "春に なれば、桜が 咲きます。",
+      "rom": "Haru ni nareba, sakura ga sakimasu.",
+      "en": "Kalau musim semi tiba, bunga sakura mekar."
+    },
+    {
+      "id": "r30-5",
+      "jp": "あの 本を 読めば、わかると 思います。",
+      "rom": "Ano hon wo yomeba, wakaru to omoimasu.",
+      "en": "Kalau membaca buku itu, saya kira akan mengerti."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb30-1",
+      "pattern": "Ba-form Grup I",
+      "instruction": "Ubah kata kerja ke bentuk ba-form.",
+      "question": "Kaku → ba-form",
+      "correct": "かけば",
+      "romaji": "kakeba",
+      "translation": "Kalau menulis"
+    },
+    {
+      "id": "wb30-2",
+      "pattern": "Ba-form Grup II",
+      "instruction": "Ubah kata kerja ke bentuk ba-form.",
+      "question": "Taberu → ba-form",
+      "correct": "たべれば",
+      "romaji": "tabereba",
+      "translation": "Kalau makan"
+    },
+    {
+      "id": "wb30-3",
+      "pattern": "I-Adj ba-form",
+      "instruction": "Ubah kata sifat-i ke bentuk ba-form.",
+      "question": "Yasui → ba-form",
+      "correct": "やすければ",
+      "romaji": "yasukereba",
+      "translation": "Kalau murah"
+    },
+    {
+      "id": "wb30-4",
+      "pattern": "V-ば + いいですよ (Saran)",
+      "instruction": "Beri saran menggunakan ba-form: 'Kalau istirahat, akan sembuh'.",
+      "question": "Yasumareba / ii desu yo",
+      "correct": "やすめば いいですよ。",
+      "romaji": "Yasumareba ii desu yo.",
+      "translation": "Kalau istirahat, akan baik-baik saja."
+    },
+    {
+      "id": "wb30-5",
+      "pattern": "V-ば よかったです (Penyesalan)",
+      "instruction": "Nyatakan penyesalan: 'Seharusnya membeli tiket lebih awal'.",
+      "question": "Hayaku / chiketto / kaeba / yokatta",
+      "correct": "はやく チケットを かえば よかったです。",
+      "romaji": "Hayaku chiketto wo kaeba yokatta desu.",
+      "translation": "Seharusnya membeli tiket lebih awal."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex30-1",
+        "sentence": "まいにち れんしゅう [ ] じょうずに なります。",
+        "correct": "すれば",
+        "translation": "Kalau berlatih setiap hari, akan jadi pandai."
+      },
+      {
+        "id": "ex30-2",
+        "sentence": "もっと はやく いけ [ ] よかったです。",
+        "correct": "ば",
+        "translation": "Seharusnya pergi lebih cepat."
+      },
+      {
+        "id": "ex30-3",
+        "sentence": "どう [ ] いいですか。",
+        "correct": "すれば",
+        "translation": "Sebaiknya harus bagaimana?"
+      },
+      {
+        "id": "ex30-4",
+        "sentence": "はるに な [ ]、さくらが さきます。",
+        "correct": "れば",
+        "translation": "Kalau musim semi tiba, sakura mekar."
+      },
+      {
+        "id": "ex30-5",
+        "sentence": "やすければ [ ] と おもいます。",
+        "correct": "かいます",
+        "translation": "Kalau murah, saya rasa akan beli."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex30-6",
+        "question": "Ba-form dari 'iku' (pergi) adalah:",
+        "options": [
+          {
+            "text": "いかば",
+            "correct": false
+          },
+          {
+            "text": "いけば",
+            "correct": true
+          },
+          {
+            "text": "いきれば",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex30-7",
+        "question": "Penggunaan ba-form yang BENAR adalah:",
+        "options": [
+          {
+            "text": "Untuk perintah langsung: 行けば！",
+            "correct": false
+          },
+          {
+            "text": "Untuk kondisi umum: 春が来れば、花が咲く",
+            "correct": true
+          },
+          {
+            "text": "Untuk kejadian yang sudah terjadi di masa lalu",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex30-8",
+        "question": "'V-ば よかったです' digunakan untuk:",
+        "options": [
+          {
+            "text": "Rencana masa depan",
+            "correct": false
+          },
+          {
+            "text": "Penyesalan atas sesuatu yang tidak dilakukan",
+            "correct": true
+          },
+          {
+            "text": "Saran kepada orang lain",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "にほんごの しけんに おちてしまいました。もっと まじめに べんきょうすれば よかったです。じかんが あれば、べんきょうしたのですが、しごとが いそがしくて できませんでした。つぎの しけんは かならず うかるように、こんかいから しっかり れんしゅうします。",
+      "questions": [
+        {
+          "id": "ex30-9",
+          "question": "しけんに うかりました。",
+          "correct": "F"
+        },
+        {
+          "id": "ex30-10",
+          "question": "しごとが いそがしくて べんきょうできませんでした。",
+          "correct": "T"
+        },
+        {
+          "id": "ex30-11",
+          "question": "つぎの しけんも あきらめています。",
+          "correct": "F"
+        }
+      ]
+    }
+  }
+}

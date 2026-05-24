@@ -1,0 +1,685 @@
+{
+  "id": 18,
+  "title": "Lesson 18: Dictionary-Form & Kemampuan",
+  "desc": "Membedah Bab 18. Pengenalan Bentuk Kamus (Jisho-kei) — bentuk dasar kata kerja di kamus. Digunakan untuk menyatakan kebisaan (koto ga dekimasu), hobi (koto desu), dan urutan waktu 'Sebelum' (mae ni).",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v18-1",
+      "rom": "Dekimasu",
+      "kana": "できます",
+      "kanji": "出来ます",
+      "en": "Bisa / Mampu",
+      "audio": ""
+    },
+    {
+      "id": "v18-2",
+      "rom": "Araimasu",
+      "kana": "あらいます",
+      "kanji": "洗います",
+      "en": "Mencuci",
+      "audio": ""
+    },
+    {
+      "id": "v18-3",
+      "rom": "Hikimasu (piano)",
+      "kana": "ひきます",
+      "kanji": "弾きます",
+      "en": "Memainkan (alat musik dawai/piano)",
+      "audio": ""
+    },
+    {
+      "id": "v18-4",
+      "rom": "Utaimasu",
+      "kana": "うたいます",
+      "kanji": "歌います",
+      "en": "Bernyanyi",
+      "audio": ""
+    },
+    {
+      "id": "v18-5",
+      "rom": "Atsumemasu",
+      "kana": "あつめます",
+      "kanji": "集めます",
+      "en": "Mengumpulkan / Mengoleksi",
+      "audio": ""
+    },
+    {
+      "id": "v18-6",
+      "rom": "Sutemasu",
+      "kana": "すてます",
+      "kanji": "捨てます",
+      "en": "Membuang",
+      "audio": ""
+    },
+    {
+      "id": "v18-7",
+      "rom": "Kaemasu",
+      "kana": "かえます",
+      "kanji": "換えます",
+      "en": "Menukar",
+      "audio": ""
+    },
+    {
+      "id": "v18-8",
+      "rom": "Unten-shimasu",
+      "kana": "うんてんします",
+      "kanji": "運転します",
+      "en": "Menyetir",
+      "audio": ""
+    },
+    {
+      "id": "v18-9",
+      "rom": "Yoyaku-shimasu",
+      "kana": "よやくします",
+      "kanji": "予約します",
+      "en": "Memesan (Booking/Reservasi)",
+      "audio": ""
+    },
+    {
+      "id": "v18-10",
+      "rom": "Kengaku-shimasu",
+      "kana": "けんがくします",
+      "kanji": "見学します",
+      "en": "Kunjungan studi / Observasi",
+      "audio": ""
+    },
+    {
+      "id": "v18-11",
+      "rom": "Piano",
+      "kana": "ピアノ",
+      "kanji": "",
+      "en": "Piano",
+      "audio": ""
+    },
+    {
+      "id": "v18-12",
+      "rom": "Shumi",
+      "kana": "しゅみ",
+      "kanji": "趣味",
+      "en": "Hobi",
+      "audio": ""
+    },
+    {
+      "id": "v18-13",
+      "rom": "Genkin",
+      "kana": "げんきん",
+      "kanji": "現金",
+      "en": "Uang tunai",
+      "audio": ""
+    },
+    {
+      "id": "v18-14",
+      "rom": "Nikki",
+      "kana": "にっき",
+      "kanji": "日記",
+      "en": "Buku Harian / Diary",
+      "audio": ""
+    },
+    {
+      "id": "v18-15",
+      "rom": "Doubutsu",
+      "kana": "どうぶつ",
+      "kanji": "動物",
+      "en": "Hewan / Binatang",
+      "audio": ""
+    },
+    {
+      "id": "v18-16",
+      "rom": "Uma",
+      "kana": "うま",
+      "kanji": "馬",
+      "en": "Kuda",
+      "audio": ""
+    },
+    {
+      "id": "v18-17",
+      "rom": "Tokuni",
+      "kana": "とくに",
+      "kanji": "特に",
+      "en": "Terutama / Khususnya",
+      "audio": ""
+    },
+    {
+      "id": "v18-18",
+      "rom": "Koto",
+      "kana": "こと",
+      "kanji": "事",
+      "en": "Hal / Perihal (nominalizer)",
+      "audio": ""
+    },
+    {
+      "id": "v18-19",
+      "rom": "~Meetoru",
+      "kana": "〜メートル",
+      "kanji": "",
+      "en": "~meter (satuan panjang)",
+      "audio": ""
+    },
+    {
+      "id": "v18-20",
+      "rom": "Kokusai~",
+      "kana": "こくさい〜",
+      "kanji": "国際〜",
+      "en": "Internasional~ (awalan)",
+      "audio": ""
+    },
+    {
+      "id": "v18-21",
+      "rom": "Oinori",
+      "kana": "おいのり",
+      "kanji": "お祈り",
+      "en": "Doa / Berdoa (~shimasu)",
+      "audio": ""
+    },
+    {
+      "id": "v18-22",
+      "rom": "Kachou",
+      "kana": "かちょう",
+      "kanji": "課長",
+      "en": "Kepala seksi / Manajer bagian",
+      "audio": ""
+    },
+    {
+      "id": "v18-23",
+      "rom": "Buchou",
+      "kana": "ぶちょう",
+      "kanji": "部長",
+      "en": "Kepala departemen",
+      "audio": ""
+    },
+    {
+      "id": "v18-24",
+      "rom": "Shachou",
+      "kana": "しゃちょう",
+      "kanji": "社長",
+      "en": "Direktur / Presiden perusahaan",
+      "audio": ""
+    },
+    {
+      "id": "v18-25",
+      "rom": "Hee",
+      "kana": "へえ",
+      "kanji": "",
+      "en": "Wah / Oh ya? (ekspresi terkejut)",
+      "audio": ""
+    },
+    {
+      "id": "v18-26",
+      "rom": "Nakanaka",
+      "kana": "なかなか",
+      "kanji": "",
+      "en": "Tidak mudah / Sulit (diikuti bentuk negatif)",
+      "audio": ""
+    },
+    {
+      "id": "v18-27",
+      "rom": "Bokujou",
+      "kana": "ぼくじょう",
+      "kanji": "牧場",
+      "en": "Peternakan / Ranch",
+      "audio": ""
+    },
+    {
+      "id": "v18-28",
+      "rom": "Zehi",
+      "kana": "ぜひ",
+      "kanji": "",
+      "en": "Tentu saja / Silakan (ajakan kuat)",
+      "audio": ""
+    },
+    {
+      "id": "v18-29",
+      "rom": "Bunka",
+      "kana": "ぶんか",
+      "kanji": "文化",
+      "en": "Budaya / Kebudayaan",
+      "audio": ""
+    },
+    {
+      "id": "v18-30",
+      "rom": "Matsuri",
+      "kana": "まつり",
+      "kanji": "祭り",
+      "en": "Festival / Perayaan tradisional",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g18-1",
+      "title": "1. Dictionary-Form (Jisho-kei): Aturan Konversi",
+      "desc": "Bentuk DASAR dari kata kerja — bentuk yang tercantum di kamus Jepang. Bukan bentuk -masu. Ini bentuk ke-4 yang harus dihafal.",
+      "points": [
+        "KELOMPOK 1 (Godan): Ubah vokal (i) sebelum -masu menjadi (u). Kaki-masu→Kaku. Nomi-masu→Nomu. Kai-masu→Kau. Machi-masu→Matsu.",
+        "KELOMPOK 2 (Ichidan): Buang -masu, tambah RU. Tabe-masu→Taberu. Mi-masu→Miru. Ake-masu→Akeru.",
+        "KELOMPOK 3 (Irregular): Shi-masu→Suru. Ki-masu→Kuru.",
+        "RANGKUMAN 4 BENTUK: Masu-form (sopan) | Te-form (sambung) | Nai-form (negatif) | Dict-form (dasar kamus)."
+      ],
+      "formula": "Grp1: i→u | Grp2: stem+RU | Grp3: Suru/Kuru",
+      "native_note": "Menyatakan kemampuan menggunakan '~koto ga dekimasu' terdengar sangat kaku seperti buku cetak. Native speaker sehari-hari lebih suka menggunakan bentuk potensial (kata kerja bentuk dapat, misal: 'nihongo ga hanaseru' alih-alih 'nihongo o hanasu koto ga dekimasu')."
+    },
+    {
+      "id": "g18-2",
+      "title": "2. V-Dictionary ことが できます (Bisa / Mampu)",
+      "desc": "'Dekimasu' (bisa) butuh KATA BENDA. Untuk bilang 'bisa melakukan V', V harus dijadikan kata benda pakai 'KOTO'.",
+      "points": [
+        "Nihongo GA dekimasu. (Bisa bahasa Jepang) → Langsung kata benda, tanpa 'koto'.",
+        "Nihongo o hanasu KOTO GA dekimasu. (Bisa BERBICARA bahasa Jepang). Hanasu (Dict) + Koto = nominalizer.",
+        "Piano o hiku koto ga dekimasu. (Bisa memainkan piano).",
+        "Negatif: ~koto ga dekimasen. (Tidak bisa ~)."
+      ],
+      "formula": "V-Dict ことが できます / できません"
+    },
+    {
+      "id": "g18-3",
+      "title": "3. 趣味は V-Dictionary ことです (Hobi Saya Adalah ~)",
+      "desc": "Hobi butuh kata benda. Jika hobi adalah suatu TINDAKAN, ubah ke Dict-form + Koto untuk menjadikannya kata benda.",
+      "points": [
+        "Watashi no shumi wa ongaku desu. (Hobi saya musik). → Langsung kata benda.",
+        "Watashi no shumi wa ongaku o KIKU KOTO desu. (Hobi saya MENDENGARKAN musik). → V-Dict + Koto.",
+        "Watashi no shumi wa shashin o toru koto desu. (Hobi saya mengambil foto)."
+      ],
+      "formula": "趣味は V-Dict ことです"
+    },
+    {
+      "id": "g18-4",
+      "title": "4. V-Dictionary まえに、~ (Sebelum ~)",
+      "desc": "'Mae ni' (Sebelum) SELALU disambung dengan Bentuk Kamus. JANGAN pakai bentuk lampau (Ta-form) di sini — itu kesalahan fatal.",
+      "points": [
+        "Neru MAE NI, hon o yomimasu. (SEBELUM tidur, baca buku).",
+        "Gohan o taberu MAE NI, te o araimasu. (SEBELUM makan, cuci tangan).",
+        "Bisa juga dengan KATA BENDA: Jugyou NO mae ni (Sebelum pelajaran).",
+        "Bisa juga dengan DURASI: 5-nen mae ni (5 tahun yang lalu).",
+        "AWAS: Mae ni selalu Dict-form. Te-kara (Bab 16) selalu Te-form. Jangan tertukar!"
+      ],
+      "formula": "V-Dict まえに、~ | N の まえに、~"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "ミラーさんは 漢字を 読む ことが できます。",
+      "rom": "Miraa-san wa kanji o yomu koto ga dekimasu.",
+      "en": "Pak Miller bisa membaca Kanji."
+    },
+    {
+      "jp": "わたしの 趣味は 映画を 見る ことです。",
+      "rom": "Watashi no shumi wa eiga o miru koto desu.",
+      "en": "Hobi saya adalah menonton film."
+    },
+    {
+      "jp": "寝る 前に、日記を 書きます。",
+      "rom": "Neru mae ni, nikki o kakimasu.",
+      "en": "Sebelum tidur, saya menulis buku harian."
+    },
+    {
+      "jp": "ご飯を 食べる 前に、手を 洗います。",
+      "rom": "Gohan o taberu mae ni, te o araimasu.",
+      "en": "Sebelum makan, saya mencuci tangan."
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: 趣味は何ですか (Hobinya Apa?)",
+    "dialogue": [
+      {
+        "speaker": "Yamada",
+        "jp": "サントスさんの 趣味は 何ですか。",
+        "rom": "Santosu-san no shumi wa nan desu ka.",
+        "en": "Hobi Pak Santos apa?"
+      },
+      {
+        "speaker": "Santos",
+        "jp": "写真です。",
+        "rom": "Shashin desu.",
+        "en": "Fotografi."
+      },
+      {
+        "speaker": "Yamada",
+        "jp": "どんな 写真を 撮りますか。",
+        "rom": "Donna shashin o torimasu ka.",
+        "en": "Foto seperti apa yang Anda ambil?"
+      },
+      {
+        "speaker": "Santos",
+        "jp": "動物の 写真です。特に 馬が 好きです。",
+        "rom": "Doubutsu no shashin desu. Tokuni uma ga suki desu.",
+        "en": "Foto hewan. Terutama saya suka kuda."
+      },
+      {
+        "speaker": "Yamada",
+        "jp": "へえ、それは おもしろいですね。",
+        "rom": "Hee, sore wa omoshiroi desu ne.",
+        "en": "Wah, itu menarik ya."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] Dictionary-Form dari 'Machimasu' (menunggu) adalah:",
+      "options": [
+        {
+          "text": "Mate",
+          "correct": false
+        },
+        {
+          "text": "Matsu",
+          "correct": true
+        },
+        {
+          "text": "Machiru",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] 'Sebelum tidur, saya membaca buku.'\n[       ] mae ni, hon o yomimasu.",
+      "answer": "neru"
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu B] 'Bisa memainkan piano.' Pola kalimat yang benar:",
+      "options": [
+        {
+          "text": "Piano o hikimasu koto ga dekimasu.",
+          "correct": false
+        },
+        {
+          "text": "Piano o hiku koto ga dekimasu.",
+          "correct": true
+        },
+        {
+          "text": "Piano o hiite koto ga dekimasu.",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu C] 'Hobi saya adalah MENDENGARKAN musik.'\nWatashi no shumi wa ongaku o kiku [       ] desu.",
+      "answer": "koto"
+    },
+    {
+      "type": "mcq",
+      "question": "[Jebakan] 'Sebelum makan' — Bentuk yang dipasangkan dengan 'mae ni' adalah:",
+      "options": [
+        {
+          "text": "Tabete mae ni (Te-form)",
+          "correct": false
+        },
+        {
+          "text": "Taberu mae ni (Dict-form)",
+          "correct": true
+        },
+        {
+          "text": "Tabeta mae ni (Ta-form)",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Menanyakan Kemampuan Membaca Kanji",
+      "situation": "Bertanya tentang tingkat kemampuan membaca huruf kanji Jepang",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "ミラーさんは 漢字を 読む ことが できますか。",
+          "rom": "Miraa-san wa kanji o yomu koto ga dekimasu ka.",
+          "en": "Apakah Mr. Miller bisa membaca kanji?"
+        },
+        {
+          "speaker": "B",
+          "jp": "はい。少し 読む ことが できますよ。",
+          "rom": "Hai. Sukoshi yomu koto ga dekimasu yo.",
+          "en": "Ya. Saya bisa membaca sedikit lho."
+        },
+        {
+          "speaker": "A",
+          "jp": "すごいですね。",
+          "rom": "Sugoi desu ne.",
+          "en": "Hebat sekali ya."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Mengobrol tentang Hobi Utama",
+      "situation": "Mengobrol santai mengenai kegemaran mengoleksi atau mendengarkan lagu",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "趣味は 何ですか。",
+          "rom": "Shumi wa nan desu ka.",
+          "en": "Hobi Anda apa?"
+        },
+        {
+          "speaker": "B",
+          "jp": "古い レコードを 集める ことです。",
+          "rom": "Furui rekoodo o atsumeru koto desu.",
+          "en": "Mengumpulkan piringan hitam kuno."
+        },
+        {
+          "speaker": "A",
+          "jp": "面白そうですね。今度 聞かせて ください。",
+          "rom": "Omoshirosou desu ne. Kondo kikasete kudasai.",
+          "en": "Kelihatannya seru ya. Kapan-kapan tolong perdengarkan ke saya."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Kebiasaan Sebelum Tidur",
+      "situation": "Bertanya tentang kebiasaan membaca atau berdoa sebelum istirahat malam",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "寝る 前に 何を しますか。",
+          "rom": "Neru mae ni nani o shimasu ka.",
+          "en": "Sebelum tidur melakukan apa?"
+        },
+        {
+          "speaker": "B",
+          "jp": "本を 読んだり、音楽を 聞いたり します。",
+          "rom": "Hon o yondari, ongaku o kiitari shimasu.",
+          "en": "Membaca buku atau mendengarkan musik."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。いいですね。",
+          "rom": "Sou desu ka. Ii desu ne.",
+          "en": "Oh begitu. Bagus sekali ya."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r18-1",
+      "jp": "日本語を 話す ことが できますか。... はい、少し 話す ことが できます。",
+      "rom": "Nihongo o hanasu koto ga dekimasu ka? ... Hai, sukoshi hanasu koto ga dekimasu.",
+      "en": "Apakah Anda bisa berbicara bahasa Jepang? ... Ya, bisa berbicara sedikit."
+    },
+    {
+      "id": "r18-2",
+      "jp": "趣味は 何ですか。... 音楽を 聴く ことです。",
+      "rom": "Shumi wa nan desu ka? ... Ongaku o kiku koto desu.",
+      "en": "Hobi Anda apa? ... Mendengarkan musik."
+    },
+    {
+      "id": "r18-3",
+      "jp": "寝る 前に、何を しますか。... 本を 読んだり、日記を 書いたりします。",
+      "rom": "Neru mae ni, nani o shimasu ka? ... Hon o yondari, nikki o kaitari shimasu.",
+      "en": "Sebelum tidur, melakukan apa? ... Membaca buku, menulis buku harian, dan sebagainya."
+    },
+    {
+      "id": "r18-4",
+      "jp": "いつ 日本語を 勉強しますか。... 寝る 前に 勉強します。",
+      "rom": "Itsu Nihongo o benkyou shimasu ka? ... Neru mae ni benkyou shimasu.",
+      "en": "Kapan Anda belajar bahasa Jepang? ... Belajar sebelum tidur."
+    },
+    {
+      "id": "r18-5",
+      "jp": "カードで 払う ことが できますか。... はい、できますよ。",
+      "rom": "Kaado de harau koto ga dekimasu ka? ... Hai, dekimasu yo.",
+      "en": "Apakah bisa membayar menggunakan kartu? ... Ya, bisa."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb18-1",
+      "pattern": "Plain form + でしょう (Kemungkinan/Dugaan Kuat)",
+      "instruction": "Nyatakan dugaan atau kemungkinan yang cukup kuat menggunakan でしょう.",
+      "question": "Ashita / ii tenki / deshou",
+      "correct": "あしたは いい てんきでしょう。",
+      "romaji": "Ashita wa ii tenki deshou.",
+      "translation": "Besok mungkin cuacanya bagus."
+    },
+    {
+      "id": "wb18-2",
+      "pattern": "Plain form + かもしれません (Mungkin saja / Tidak pasti)",
+      "instruction": "Nyatakan kemungkinan yang lebih tidak pasti dengan かもしれません.",
+      "question": "Ame / furu / kamo shiremasen",
+      "correct": "あめが ふるかも しれません。",
+      "romaji": "Ame ga furu kamo shiremasen.",
+      "translation": "Mungkin saja akan hujan."
+    },
+    {
+      "id": "wb18-3",
+      "pattern": "〜でしょう vs かもしれません",
+      "instruction": "Pilih ekspresi yang tepat berdasarkan tingkat kepastian dugaan.",
+      "question": "Tanaka-san / byouki (mungkin saja, tidak pasti)",
+      "correct": "たなかさんは びょうきかも しれません。",
+      "romaji": "Tanaka-san wa byouki kamo shiremasen.",
+      "translation": "Mungkin saja Pak Tanaka sedang sakit."
+    },
+    {
+      "id": "wb18-4",
+      "pattern": "〜でしょうか (Pertanyaan dugaan/konfirmasi halus)",
+      "instruction": "Ajukan pertanyaan dugaan yang halus dengan でしょうか.",
+      "question": "Ashita / kaigi / arimasu deshou ka",
+      "correct": "あした かいぎが あるでしょうか。",
+      "romaji": "Ashita kaigi ga aru deshou ka.",
+      "translation": "Apakah besok ada rapat ya?"
+    },
+    {
+      "id": "wb18-5",
+      "pattern": "Adj な / Adj い + でしょう / かもしれません",
+      "instruction": "Gunakan dugaan dengan kata sifat-na atau kata sifat-i.",
+      "question": "Nihon / takai / deshou",
+      "correct": "にほんは たかいでしょう。",
+      "romaji": "Nihon wa takai deshou.",
+      "translation": "Jepang mungkin mahal."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex18-1",
+        "sentence": "あした あめが ふる [ ] しれません。",
+        "correct": "かも",
+        "translation": "Mungkin saja besok akan hujan."
+      },
+      {
+        "id": "ex18-2",
+        "sentence": "かれは もう しって いる [ ]。",
+        "correct": "でしょう",
+        "translation": "Dia mungkin sudah tahu."
+      },
+      {
+        "id": "ex18-3",
+        "sentence": "たなかさんは きょう こない [ ] しれません。",
+        "correct": "かも",
+        "translation": "Mungkin saja Pak Tanaka tidak datang hari ini."
+      },
+      {
+        "id": "ex18-4",
+        "sentence": "にほんの ふゆは さむい [ ]。",
+        "correct": "でしょう",
+        "translation": "Musim dingin Jepang mungkin dingin."
+      },
+      {
+        "id": "ex18-5",
+        "sentence": "その レストランは たかい [ ] しれません。",
+        "correct": "かも",
+        "translation": "Restoran itu mungkin mahal."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex18-6",
+        "question": "Perbedaan 'deshou' dan 'kamo shiremasen':",
+        "options": [
+          {
+            "text": "Keduanya sama saja",
+            "correct": false
+          },
+          {
+            "text": "Deshou = kemungkinan lebih kuat/yakin; kamo shiremasen = lebih tidak pasti",
+            "correct": true
+          },
+          {
+            "text": "Kamo shiremasen = lebih yakin dari deshou",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex18-7",
+        "question": "Saat cuaca sedang mendung dan Anda menduga akan hujan tapi tidak yakin, ungkapan yang tepat:",
+        "options": [
+          {
+            "text": "ふるでしょう。",
+            "correct": false
+          },
+          {
+            "text": "ふるかも しれません。",
+            "correct": true
+          },
+          {
+            "text": "ふります。",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex18-8",
+        "question": "Bentuk 'kamo shiremasen' setelah kata sifat-na 'kirei' (cantik) adalah:",
+        "options": [
+          {
+            "text": "きれいく かも しれません",
+            "correct": false
+          },
+          {
+            "text": "きれい かも しれません",
+            "correct": true
+          },
+          {
+            "text": "きれいの かも しれません",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "てんきよほうに よると、あした ゆきが ふるかも しれません。きおんも ひくくなるでしょう。だから あついコートを きた ほうが いいでしょう。でんしゃも おくれるかも しれません。はやめに でかけましょう。",
+      "questions": [
+        {
+          "id": "ex18-9",
+          "question": "あした ゆきが ふるかも しれません。",
+          "correct": "T"
+        },
+        {
+          "id": "ex18-10",
+          "question": "あした きおんが たかくなると よそうされています。",
+          "correct": "F"
+        },
+        {
+          "id": "ex18-11",
+          "question": "はやく うちを でた ほうが いいです。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

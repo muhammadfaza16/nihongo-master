@@ -1,0 +1,451 @@
+{
+  "id": 44,
+  "title": "Lesson 44: Kausalitas & Sumber Informasi (〜によって / 〜によると)",
+  "desc": "Mempelajari empat kegunaan pola 〜によって (pelaku pasif, metode, penyebab, variasi) serta cara menyampaikan sumber informasi resmi menggunakan 〜によると.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v44-1",
+      "rom": "Houhou",
+      "kana": "ほうほう",
+      "kanji": "方法",
+      "en": "Cara / Metode",
+      "audio": ""
+    },
+    {
+      "id": "v44-2",
+      "rom": "Shudan",
+      "kana": "しゅだん",
+      "kanji": "手段",
+      "en": "Sarana / Alat",
+      "audio": ""
+    },
+    {
+      "id": "v44-3",
+      "rom": "Gen'in",
+      "kana": "げんいん",
+      "kanji": "原因",
+      "en": "Penyebab",
+      "audio": ""
+    },
+    {
+      "id": "v44-4",
+      "rom": "Kekka",
+      "kana": "けっか",
+      "kanji": "結果",
+      "en": "Hasil",
+      "audio": ""
+    },
+    {
+      "id": "v44-5",
+      "rom": "Eikyou",
+      "kana": "えいきょう",
+      "kanji": "影響",
+      "en": "Pengaruh",
+      "audio": ""
+    },
+    {
+      "id": "v44-6",
+      "rom": "Yoru",
+      "kana": "よる",
+      "kanji": "依る",
+      "en": "Bergantung pada / Berdasarkan",
+      "audio": ""
+    },
+    {
+      "id": "v44-7",
+      "rom": "Houdo (shimasu)",
+      "kana": "ほうどう（します）",
+      "kanji": "報道（します）",
+      "en": "Pemberitaan / Menyiarkan",
+      "audio": ""
+    },
+    {
+      "id": "v44-8",
+      "rom": "Nyusu",
+      "kana": "ニュース",
+      "kanji": "",
+      "en": "Berita",
+      "audio": ""
+    },
+    {
+      "id": "v44-9",
+      "rom": "Yogen",
+      "kana": "よげん",
+      "kanji": "予言",
+      "en": "Ramalan / Prediksi",
+      "audio": ""
+    },
+    {
+      "id": "v44-10",
+      "rom": "Tenki-yohou",
+      "kana": "てんきよほう",
+      "kanji": "天気予報",
+      "en": "Prakiraan cuaca",
+      "audio": ""
+    },
+    {
+      "id": "v44-11",
+      "rom": "Chishiki",
+      "kana": "ちしき",
+      "kanji": "知識",
+      "en": "Pengetahuan",
+      "audio": ""
+    },
+    {
+      "id": "v44-12",
+      "rom": "Kaji",
+      "kana": "かじ",
+      "kanji": "火事",
+      "en": "Kebakaran",
+      "audio": ""
+    },
+    {
+      "id": "v44-13",
+      "rom": "Jishin",
+      "kana": "じしん",
+      "kanji": "地震",
+      "en": "Gempa bumi",
+      "audio": ""
+    },
+    {
+      "id": "v44-14",
+      "rom": "Taifuu",
+      "kana": "たいふう",
+      "kanji": "台風",
+      "en": "Topan / Badai besar",
+      "audio": ""
+    },
+    {
+      "id": "v44-15",
+      "rom": "Hakken (shimasu)",
+      "kana": "はっけん（します）",
+      "kanji": "発見（します）",
+      "en": "Penemuan / Menemukan",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g44-1",
+      "title": "1. 〜によって (Oleh / Dengan cara / Karena / Tergantung)",
+      "desc": "Pola serbaguna yang memiliki empat fungsi tata bahasa utama tergantung pada konteksnya.",
+      "points": [
+        "a. Pelaku kalimat pasif: Kono hon wa Natsume Soseki ni yotte kakaremashita (Buku ini ditulis oleh Natsume Soseki).",
+        "b. Metode/Sarana: Internet ni yotte jouhou wo emasu (Mendapatkan informasi melalui internet).",
+        "c. Penyebab: Jishin ni yotte ie ga kowaremashita (Rumah rusak karena gempa).",
+        "d. Tergantung pada (variasi): Hito ni yotte kangaekata ga chigaimasu (Cara berpikir berbeda tergantung orangnya)."
+      ],
+      "formula": "N + によって / により",
+      "native_note": "Dalam percakapan bisnis, 'ni yotte' sering disingkat menjadi 'ni yori' untuk nuansa yang lebih formal."
+    },
+    {
+      "id": "g44-2",
+      "title": "2. 〜によると (Menurut / Berdasarkan)",
+      "desc": "Menunjukkan sumber informasi. Kalimat harus diakhiri dengan bentuk hearsay seperti 〜そうです atau 〜ということです.",
+      "points": [
+        "Pola: N + によると + ~ そうです / ということです",
+        "Artinya: Menurut N, kabarnya...",
+        "Contoh: Tenki yohou ni yoru to, ashita wa ame ga furu sou desu (Menurut prakiraan cuaca, kabarnya besok hujan)."
+      ],
+      "formula": "N + によると 〜 そうです"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "天気予報によると、台風が来るそうです。",
+      "rom": "Tenki yohou ni yoru to, taifuu ga kuru sou desu.",
+      "en": "Menurut prakiraan cuaca, topan dikabarkan akan datang."
+    },
+    {
+      "jp": "この本はコロンブスによって書かれました。",
+      "rom": "Kono hon wa Koronbusu ni yotte kakaremashita.",
+      "en": "Buku ini ditulis oleh Columbus."
+    },
+    {
+      "jp": "人によって考え方が違います。",
+      "rom": "Hito ni yotte kangaekata ga chigaimasu.",
+      "en": "Tergantung orangnya, cara berpikirnya berbeda."
+    },
+    {
+      "jp": "車の事故によって、道が込んでいます。",
+      "rom": "Kuruma no jiko ni yotte, michi ga konde imasu.",
+      "en": "Karena kecelakaan mobil, jalannya macet."
+    }
+  ],
+  "conversation": {
+    "title": "Berita Gempa Bumi",
+    "dialogue": [
+      {
+        "speaker": "A",
+        "jp": "テレビのニュースによると、昨日 地震があったそうですね。",
+        "rom": "Terebi no nyuusu ni yoru to, kinou jishin ga atta sou desu ne.",
+        "en": "Menurut berita televisi, kemarin dikabarkan ada gempa bumi ya."
+      },
+      {
+        "speaker": "B",
+        "jp": "ええ、その地震によって、いくつかの古い建物が壊れたそうです。",
+        "rom": "Ee, sono jishin ni yotte, ikutsu ka no furui tatemono ga kowareta sou desu.",
+        "en": "Ya, karena gempa bumi itu, beberapa bangunan tua dikabarkan rusak."
+      },
+      {
+        "speaker": "A",
+        "jp": "大変ですね。被害が大きくないといいですが。",
+        "rom": "Taihen desu ne. Higai ga ookikunai to ii desu ga.",
+        "en": "Gawat ya. Semoga kerusakannya tidak besar."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "Pilih fungsi 'ni yotte' dalam kalimat 'Jishin ni yotte ie ga kowareta':",
+      "options": [
+        {
+          "text": "Menunjukkan penyebab",
+          "correct": true
+        },
+        {
+          "text": "Menunjukkan pelaku pasif",
+          "correct": false
+        },
+        {
+          "text": "Menunjukkan sarana",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "Terjemahkan: 'Menurut prakiraan cuaca'.\nTenki-yohou ni yoru [   ].",
+      "answer": "to"
+    },
+    {
+      "type": "mcq",
+      "question": "Pola 'N ni yoru to' harus diakhiri dengan bentuk apa?",
+      "options": [
+        {
+          "text": "〜そうです / 〜ということです",
+          "correct": true
+        },
+        {
+          "text": "〜てください",
+          "correct": false
+        },
+        {
+          "text": "〜なければなりません",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Prakiraan Cuaca Hari Ini",
+      "situation": "Mengobrol sebelum berangkat kerja",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "今日は雨が降りますか。",
+          "rom": "Kyou wa ame ga furimasu ka?",
+          "en": "Apakah hari ini hujan?"
+        },
+        {
+          "speaker": "B",
+          "jp": "天気予報によると、午後から大雨が降るそうですよ。",
+          "rom": "Tenki-yohou ni yoru to, gogo kara ooame ga furu sou desu yo.",
+          "en": "Menurut prakiraan cuaca, kabarnya hujan lebat akan turun mulai siang."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r44-1",
+      "jp": "ラジオのニュースによると、事故があったそうです。",
+      "rom": "Rajio no nyuusu ni yoru to, jiko ga atta sou desu.",
+      "en": "Menurut berita radio, dikabarkan telah terjadi kecelakaan."
+    },
+    {
+      "id": "r44-2",
+      "jp": "この建物は有名な建築家によって設計されました。",
+      "rom": "Kono tatemono wa yuumei na kenchikuka ni yotte sekkei saremashita.",
+      "en": "Gedung ini dirancang oleh arsitek terkenal."
+    },
+    {
+      "id": "r44-3",
+      "jp": "強風によって窓ガラスが割れました。",
+      "rom": "Kyoufuu ni yotte mado-garasu ga waremashita.",
+      "en": "Kaca jendela pecah karena angin kencang."
+    },
+    {
+      "id": "r44-4",
+      "jp": "国によって生活の習慣が違います。",
+      "rom": "Kuni ni yotte seikatsu no shuukan ga chigaimasu.",
+      "en": "Tergantung negaranya, adat istiadat kehidupannya berbeda."
+    },
+    {
+      "id": "r44-5",
+      "jp": "調査によると、スマホの利用者が増えているそうです。",
+      "rom": "Chousa ni yoru to, sumaho no riyou-sha ga fuete iru sou desu.",
+      "en": "Menurut survei, kabarnya pengguna ponsel pintar terus bertambah."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb44-1",
+      "pattern": "N + によると",
+      "instruction": "Terjemahkan: 'Menurut ramalan cuaca'.",
+      "question": "Tenki-yohou",
+      "correct": "てんきよほうによると",
+      "romaji": "Tenki-yohou ni yoru to.",
+      "translation": "Menurut ramalan cuaca."
+    },
+    {
+      "id": "wb44-2",
+      "pattern": "N + によって (pelaku)",
+      "instruction": "Terjemahkan: 'Ditemukan oleh Columbus'.",
+      "question": "Koronbusu / hakken",
+      "correct": "コロンブスによってはっけんされました。",
+      "romaji": "Koronbusu ni yotte hakken saremashita.",
+      "translation": "Ditemukan oleh Columbus."
+    },
+    {
+      "id": "wb44-3",
+      "pattern": "N + によって (sebab)",
+      "instruction": "Terjemahkan: 'Rusak karena gempa'.",
+      "question": "Jishin / kowareru",
+      "correct": "じしんによってこわれました。",
+      "romaji": "Jishin ni yotte kowaremashita.",
+      "translation": "Rusak karena gempa bumi."
+    },
+    {
+      "id": "wb44-4",
+      "pattern": "N + によって (tergantung)",
+      "instruction": "Terjemahkan: 'Berbeda tergantung hari'.",
+      "question": "Hi / chigau",
+      "correct": "ひによってちがいます。",
+      "romaji": "Hi ni yotte chigaimasu.",
+      "translation": "Berbeda tergantung hari."
+    },
+    {
+      "id": "wb44-5",
+      "pattern": "N + によると",
+      "instruction": "Terjemahkan: 'Menurut koran'.",
+      "question": "Shinbun",
+      "correct": "しんぶんによると",
+      "romaji": "Shinbun ni yoru to.",
+      "translation": "Menurut koran."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex44-1",
+        "sentence": "てんきよほう [ ] よると、あしたは はれるそうです。",
+        "correct": "に",
+        "translation": "Menurut prakiraan cuaca, kabarnya besok akan cerah."
+      },
+      {
+        "id": "ex44-2",
+        "sentence": "じしん [ ] よって、たくさんの いえが こわれました。",
+        "correct": "に",
+        "translation": "Banyak rumah rusak karena gempa bumi."
+      },
+      {
+        "id": "ex44-3",
+        "sentence": "この えは ゆうめいな がかによって かかれ [ ]。",
+        "correct": "ました",
+        "translation": "Lukisan ini dilukis oleh pelukis terkenal."
+      },
+      {
+        "id": "ex44-4",
+        "sentence": "くにによって ことばが [ ] ます。",
+        "correct": "ちがい",
+        "translation": "Bahasanya berbeda tergantung negaranya."
+      },
+      {
+        "id": "ex44-5",
+        "sentence": "うわさによると、かれは 会社を やめる [ ] です。",
+        "correct": "そうだ",
+        "translation": "Menurut desas-desus, kabarnya dia akan mengundurkan diri."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex44-6",
+        "question": "Pola 'N ni yoru to' dipadukan dengan:",
+        "options": [
+          {
+            "text": "Bentuk desas-desus (sou desu)",
+            "correct": true
+          },
+          {
+            "text": "Bentuk larangan (naide kudasai)",
+            "correct": false
+          },
+          {
+            "text": "Bentuk keinginan (tai desu)",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex44-7",
+        "question": "Mana penggunaan 'ni yotte' sebagai sarana/metode?",
+        "options": [
+          {
+            "text": "インターネットによって情報を集める。",
+            "correct": true
+          },
+          {
+            "text": "台風によって木が倒れた。",
+            "correct": false
+          },
+          {
+            "text": "人によって好きな食べ物が違う。",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex44-8",
+        "question": "Arti dari 'Hi ni yotte konde imasu':",
+        "options": [
+          {
+            "text": "Macet tergantung pada harinya.",
+            "correct": true
+          },
+          {
+            "text": "Selalu macet setiap hari.",
+            "correct": false
+          },
+          {
+            "text": "Tidak pernah macet.",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "ニュースによると、昨日の 夜 台風が 来たそうです。その台風によって、いくつかの 電柱が 倒れました。地域によっては、電気が 使えなくなりました。今日の 午後には 直るそうです。",
+      "questions": [
+        {
+          "id": "ex44-9",
+          "question": "ニュースによると 台風は 今日の 朝 来ました。",
+          "correct": "F"
+        },
+        {
+          "id": "ex44-10",
+          "question": "台風によって 電柱が 倒れました。",
+          "correct": "T"
+        },
+        {
+          "id": "ex44-11",
+          "question": "すべての 地域で 電気が 使えません。",
+          "correct": "F"
+        }
+      ]
+    }
+  }
+}

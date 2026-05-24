@@ -1,0 +1,658 @@
+{
+  "id": 21,
+  "title": "Lesson 21: Opini & Kutipan (To Omoimasu)",
+  "desc": "Membedah Bab 21. Belajar cara mengungkapkan pendapat pribadi ('Saya pikir...') dan mengutip perkataan orang lain ('Dia berkata bahwa...'). Keduanya menggunakan Plain Form sebagai pondasi.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v21-1",
+      "rom": "Omoimasu",
+      "kana": "おもいます",
+      "kanji": "思います",
+      "en": "Berpikir / Menganggap",
+      "audio": ""
+    },
+    {
+      "id": "v21-2",
+      "rom": "Iimasu",
+      "kana": "いいます",
+      "kanji": "言います",
+      "en": "Berkata",
+      "audio": ""
+    },
+    {
+      "id": "v21-3",
+      "rom": "Tarimasu",
+      "kana": "たります",
+      "kanji": "足ります",
+      "en": "Cukup (tidak kurang)",
+      "audio": ""
+    },
+    {
+      "id": "v21-4",
+      "rom": "Kachimasu",
+      "kana": "かちます",
+      "kanji": "勝ちます",
+      "en": "Menang",
+      "audio": ""
+    },
+    {
+      "id": "v21-5",
+      "rom": "Makemasu",
+      "kana": "まけます",
+      "kanji": "負けます",
+      "en": "Kalah",
+      "audio": ""
+    },
+    {
+      "id": "v21-6",
+      "rom": "Yakuni tachimasu",
+      "kana": "やくに たちます",
+      "kanji": "役に 立ちます",
+      "en": "Berguna / Bermanfaat",
+      "audio": ""
+    },
+    {
+      "id": "v21-7",
+      "rom": "Muda (na)",
+      "kana": "むだ",
+      "kanji": "無駄",
+      "en": "Sia-sia / Percuma",
+      "audio": ""
+    },
+    {
+      "id": "v21-8",
+      "rom": "Fuben (na)",
+      "kana": "ふべん",
+      "kanji": "不便",
+      "en": "Tidak praktis / Inconvenient",
+      "audio": ""
+    },
+    {
+      "id": "v21-9",
+      "rom": "Onaji",
+      "kana": "おなじ",
+      "kanji": "同じ",
+      "en": "Sama",
+      "audio": ""
+    },
+    {
+      "id": "v21-10",
+      "rom": "Shushou",
+      "kana": "しゅしょう",
+      "kanji": "首相",
+      "en": "Perdana Menteri",
+      "audio": ""
+    },
+    {
+      "id": "v21-11",
+      "rom": "Daitouryou",
+      "kana": "だいとうりょう",
+      "kanji": "大統領",
+      "en": "Presiden",
+      "audio": ""
+    },
+    {
+      "id": "v21-12",
+      "rom": "Seiji",
+      "kana": "せいじ",
+      "kanji": "政治",
+      "en": "Politik",
+      "audio": ""
+    },
+    {
+      "id": "v21-13",
+      "rom": "Nyuusu",
+      "kana": "ニュース",
+      "kanji": "",
+      "en": "Berita",
+      "audio": ""
+    },
+    {
+      "id": "v21-14",
+      "rom": "Iken",
+      "kana": "いけん",
+      "kanji": "意見",
+      "en": "Pendapat / Opini",
+      "audio": ""
+    },
+    {
+      "id": "v21-15",
+      "rom": "Hanashi",
+      "kana": "はなし",
+      "kanji": "話",
+      "en": "Pembicaraan / Cerita",
+      "audio": ""
+    },
+    {
+      "id": "v21-16",
+      "rom": "Tsutaemasu",
+      "kana": "つたえます",
+      "kanji": "伝えます",
+      "en": "Menyampaikan / Mengabarkan",
+      "audio": ""
+    },
+    {
+      "id": "v21-17",
+      "rom": "Shinjimasu",
+      "kana": "しんじます",
+      "kanji": "信じます",
+      "en": "Mempercayai / Yakin",
+      "audio": ""
+    },
+    {
+      "id": "v21-18",
+      "rom": "Hantai-shimasu",
+      "kana": "はんたいします",
+      "kanji": "反対します",
+      "en": "Menentang / Menolak",
+      "audio": ""
+    },
+    {
+      "id": "v21-19",
+      "rom": "Sansei-shimasu",
+      "kana": "さんせいします",
+      "kanji": "賛成します",
+      "en": "Menyetujui / Mendukung",
+      "audio": ""
+    },
+    {
+      "id": "v21-20",
+      "rom": "Sensou",
+      "kana": "せんそう",
+      "kanji": "戦争",
+      "en": "Perang",
+      "audio": ""
+    },
+    {
+      "id": "v21-21",
+      "rom": "Heiwa",
+      "kana": "へいわ",
+      "kanji": "平和",
+      "en": "Perdamaian / Damai",
+      "audio": ""
+    },
+    {
+      "id": "v21-22",
+      "rom": "Jiyuu",
+      "kana": "じゆう",
+      "kanji": "自由",
+      "en": "Kebebasan / Bebas",
+      "audio": ""
+    },
+    {
+      "id": "v21-23",
+      "rom": "Mondai",
+      "kana": "もんだい",
+      "kanji": "問題",
+      "en": "Masalah / Persoalan",
+      "audio": ""
+    },
+    {
+      "id": "v21-24",
+      "rom": "Keizai",
+      "kana": "けいざい",
+      "kanji": "経済",
+      "en": "Ekonomi",
+      "audio": ""
+    },
+    {
+      "id": "v21-25",
+      "rom": "Shakai",
+      "kana": "しゃかい",
+      "kanji": "社会",
+      "en": "Masyarakat / Sosial",
+      "audio": ""
+    },
+    {
+      "id": "v21-26",
+      "rom": "Hontou",
+      "kana": "ほんとう",
+      "kanji": "本当",
+      "en": "Benar / Sungguhan",
+      "audio": ""
+    },
+    {
+      "id": "v21-27",
+      "rom": "Tashika",
+      "kana": "たしか",
+      "kanji": "確か",
+      "en": "Pasti / Kalau tidak salah",
+      "audio": ""
+    },
+    {
+      "id": "v21-28",
+      "rom": "Tabun",
+      "kana": "たぶん",
+      "kanji": "",
+      "en": "Mungkin / Barangkali",
+      "audio": ""
+    },
+    {
+      "id": "v21-29",
+      "rom": "Kitto",
+      "kana": "きっと",
+      "kanji": "",
+      "en": "Pasti (keyakinan kuat)",
+      "audio": ""
+    },
+    {
+      "id": "v21-30",
+      "rom": "Deshou",
+      "kana": "でしょう",
+      "kanji": "",
+      "en": "Mungkin / ~kan? (meminta persetujuan)",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g21-1",
+      "title": "1. Plain Form + と 思います (Saya pikir...)",
+      "desc": "Digunakan untuk menyampaikan pendapat pribadi atau tebakan. Bagian kalimat sebelum 'to omoimasu' WAJIB dalam bentuk Plain Form (Futsukei).",
+      "points": [
+        "V-Plain: Ashita ame ga furu TO OMOIMASU. (Saya pikir besok turun hujan).",
+        "I-Adj: Kono hon wa omoshiroi to omoimasu. (Saya pikir buku ini menarik).",
+        "Na-Adj/N + DA: Nihon wa anzen DA to omoimasu. (Saya pikir Jepang aman). ★HATI-HATI: Jangan lupakan 'da'!",
+        "Kalimat Negatif: Bentuk negatifnya ditaruh di dalam klausa. Ashita ikanai to omoimasu. (Saya pikir dia tidak pergi)."
+      ],
+      "formula": "Futsukei(Plain) + と 思います",
+      "native_note": "Menyatakan opini secara terlalu langsung dinilai kurang sopan dalam budaya Jepang yang menyukai harmoni (Wa). Native speaker biasanya melunakkannya dengan menambahkan kata 'tabun' (mungkin) di depan kalimat opini."
+    },
+    {
+      "id": "g21-2",
+      "title": "2. Plain Form + と 言いました (Telah berkata...)",
+      "desc": "Digunakan untuk menyampaikan kembali (mengutip) apa yang dikatakan orang lain (Indirect Speech).",
+      "points": [
+        "KUTIPAN LANGSUNG (pakai tanda kutip): Tanaka-san wa 'Ashita yasumimasu' to iimashita. (Pak Tanaka berkata 'Besok libur').",
+        "KUTIPAN TIDAK LANGSUNG (tanpa tanda kutip): Tanaka-san wa ashita yasumu TO IIMASHITA. (Pak Tanaka berkata bahwa besok dia libur).",
+        "Syarat Kutipan Tidak Langsung: Kalimat di dalamnya harus diubah menjadi Plain Form."
+      ],
+      "formula": "Futsukei(Plain) + と 言いました"
+    },
+    {
+      "id": "g21-3",
+      "title": "3. ~でしょう？ (Bukan? / Kan?)",
+      "desc": "Digunakan ketika pembicara meminta persetujuan dari lawan bicara. Diucapkan dengan intonasi naik di akhir.",
+      "points": [
+        "Nihongo no benkyou wa omoshiroi DESHOU? ↗ (Belajar bahasa Jepang menarik KAN?)",
+        "Untuk Na-Adj dan Noun, JANGAN tambah 'da' sebelum deshou. Koko wa shizuka deshou? (Di sini tenang kan?)"
+      ],
+      "formula": "Futsukei(Plain tanpa DA) + でしょう？"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "あした 雨が 降ると 思います。",
+      "rom": "Ashita ame ga furu to omoimasu.",
+      "en": "Saya pikir besok akan turun hujan."
+    },
+    {
+      "jp": "日本の 交通は 便利だと 思います。",
+      "rom": "Nihon no koutsuu wa benri da to omoimasu.",
+      "en": "Saya pikir transportasi Jepang praktis."
+    },
+    {
+      "jp": "首相は 来月 アメリカへ 行くと 言いました。",
+      "rom": "Shushou wa raigetsu Amerika e iku to iimashita.",
+      "en": "Perdana menteri berkata bahwa bulan depan beliau akan pergi ke Amerika."
+    },
+    {
+      "jp": "東京は 人が 多いでしょう？",
+      "rom": "Toukyou wa hito ga ooi deshou?",
+      "en": "Tokyo orangnya banyak kan?"
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: どう思いますか (Bagaimana Pendapatmu?)",
+    "dialogue": [
+      {
+        "speaker": "Taro",
+        "jp": "新しい 空港について どう 思いますか。",
+        "rom": "Atarashii kuukou ni tsuite dou omoimasu ka.",
+        "en": "Bagaimana pendapat Anda tentang bandara yang baru?"
+      },
+      {
+        "speaker": "Miller",
+        "jp": "きれいで、大きいと 思います。",
+        "rom": "Kirei de, ookii to omoimasu.",
+        "en": "Saya pikir cantik dan besar."
+      },
+      {
+        "speaker": "Taro",
+        "jp": "交通は 便利だと 思いますか。",
+        "rom": "Koutsuu wa benri da to omoimasu ka.",
+        "en": "Apakah Anda pikir transportasinya praktis?"
+      },
+      {
+        "speaker": "Miller",
+        "jp": "いいえ、あまり 便利じゃ ないと 思います。",
+        "rom": "Iie, amari benri ja nai to omoimasu.",
+        "en": "Tidak, saya pikir tidak terlalu praktis."
+      },
+      {
+        "speaker": "Taro",
+        "jp": "そうですか。",
+        "rom": "Sou desu ka.",
+        "en": "Begitu ya."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] 'Saya pikir Pak Miller sibuk'.\nMiraa-san wa [ ? ] to omoimasu.",
+      "options": [
+        {
+          "text": "isogashii",
+          "correct": true
+        },
+        {
+          "text": "isogashii da",
+          "correct": false
+        },
+        {
+          "text": "isogashikute",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] 'Saya pikir ini penting'. (Na-Adj)\nKore wa taisetsu [     ] to omoimasu.",
+      "answer": "da"
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu B] 'Bulan depan libur kan? (Libur = Yasumi/Kata benda)'.\nRaigetsu wa [ ? ] deshou?",
+      "options": [
+        {
+          "text": "yasumi da",
+          "correct": false
+        },
+        {
+          "text": "yasumi",
+          "correct": true
+        },
+        {
+          "text": "yasumikatta",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu C] 'Orang itu berkata bahwa besok dia datang'.\nAno hito wa ashita [       ] to iimashita.",
+      "answer": "kuru"
+    },
+    {
+      "type": "mcq",
+      "question": "[Jebakan] 'Saya pikir besok tidak turun hujan'. (Ame ga furimasen -> furinai? furakanai?)",
+      "options": [
+        {
+          "text": "Ame ga furanai to omoimasu",
+          "correct": true
+        },
+        {
+          "text": "Ame ga furinai to omoimasu",
+          "correct": false
+        },
+        {
+          "text": "Ame ga furimasen to omoimasu",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Opini Mengenai Tingginya Biaya Hidup",
+      "situation": "Menyampaikan dan mendiskusikan pendapat tentang harga barang di Jepang",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "日本は 物価が 高いと 思います。",
+          "rom": "Nihon wa bukka ga takai to omoimasu.",
+          "en": "Saya pikir harga barang/biaya hidup di Jepang tinggi."
+        },
+        {
+          "speaker": "B",
+          "jp": "私も そう 思います。本当に 大変ですね。",
+          "rom": "Watashi mo sou omoimasu. Hontou ni taihen desu ne.",
+          "en": "Saya juga berpikir begitu. Sungguh berat ya."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Menyampaikan Perkataan Rekan Kerja",
+      "situation": "Melaporkan pesan yang dikatakan oleh Mr. Miller kepada anggota tim kantor",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "ミラーさんは 何と 言いましたか。",
+          "rom": "Miraa-san wa nan to iimashita ka.",
+          "en": "Mr. Miller berkata apa?"
+        },
+        {
+          "speaker": "B",
+          "jp": "明日 東京へ 出張すると 言っていました。",
+          "rom": "Ashita Toukyou e shucchou suru to itte imashita.",
+          "en": "Dia berkata bahwa besok dia akan dinas ke Tokyo."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。わかりました。",
+          "rom": "Sou desu ka. Wakarimashita.",
+          "en": "Oh begitu. Saya mengerti."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Memprediksi Pemenang Pertandingan Bola",
+      "situation": "Bertanya opini teman mengenai tim mana yang akan memenangkan laga sepak bola nanti malam",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "今晩の サッカーは どちらが 勝つと 思いますか。",
+          "rom": "Konban no sakkaa wa dochira ga katsu to omoimasu ka.",
+          "en": "Sepak bola nanti malam menurutmu mana yang akan menang?"
+        },
+        {
+          "speaker": "B",
+          "jp": "ブラジルが 勝つと 思いますよ。強いですから。",
+          "rom": "Burajiru ga katsu to omoimasu yo. Tsuyoi desu kara.",
+          "en": "Saya pikir Brasil yang menang. Karena mereka kuat lho."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r21-1",
+      "jp": "日本は 物価が 高いと 思います。... そうですね。わたしも そう 思います。",
+      "rom": "Nihon wa bukka ga takai to omoimasu. ... Sou desu ne. Watashi mo sou omoimasu.",
+      "en": "Saya pikir harga barang di Jepang mahal. ... Benar ya. Saya juga berpikir begitu."
+    },
+    {
+      "id": "r21-2",
+      "jp": "ミラーさんは どこですか。... 会議室に いると 思います。",
+      "rom": "Miraa-san wa doko desu ka? ... Kaigishitsu ni iru to omoimasu.",
+      "en": "Sdr. Miller ada di mana? ... Saya pikir ada di ruang rapat."
+    },
+    {
+      "id": "r21-3",
+      "jp": "寝る 前に、「おやすみなさい」と言います。... そうですね。",
+      "rom": "Neru mae ni, \"Oyasuminasai\" to iimasu. ... Sou desu ne.",
+      "en": "Sebelum tidur mengucapkan \"Oyasuminasai\". ... Benar ya."
+    },
+    {
+      "id": "r21-4",
+      "jp": "会議で 何か 意見を 言いましたか。... はい、日本語は 難しいと 言いました。",
+      "rom": "Kaigi de nanika iken o iimashita ka? ... Hai, Nihongo wa muzukashii to iimashita.",
+      "en": "Apakah Anda mengemukakan pendapat di rapat? ... Ya, saya mengatakan bahwa bahasa Jepang sulit."
+    },
+    {
+      "id": "r21-5",
+      "jp": "明日 雨が 降るでしょう。... そうですね。曇っていますから。",
+      "rom": "Ashita ame ga furu deshou. ... Sou desu ne. Kumotte imasu kara.",
+      "en": "Besok mungkin akan hujan ya. ... Benar ya, karena mendung."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb21-1",
+      "pattern": "V させます (Membiarkan / Menyuruh)",
+      "instruction": "Buat kalimat kausatif: 'A menyuruh/membiarkan B melakukan sesuatu' menggunakan させます.",
+      "question": "Sensei ga / gakusei ni / kanji wo / kakaせます",
+      "correct": "せんせいが がくせいに かんじを かかせます。",
+      "romaji": "Sensei ga gakusei ni kanji wo kakasemasu.",
+      "translation": "Guru menyuruh murid menulis kanji."
+    },
+    {
+      "id": "wb21-2",
+      "pattern": "V させてください (Izinkan saya ~)",
+      "instruction": "Minta izin melakukan sesuatu menggunakan させてください (tono lebih formal).",
+      "question": "Watashi ni / yamada-san wo / tetsudawa / sete kudasai",
+      "correct": "わたしに やまださんを てつだわせて ください。",
+      "romaji": "Watashi ni Yamada-san wo tetsudawasete kudasai.",
+      "translation": "Izinkan saya membantu Pak Yamada."
+    },
+    {
+      "id": "wb21-3",
+      "pattern": "V させてもらいます (Saya diizinkan untuk ~)",
+      "instruction": "Nyatakan mendapat izin melakukan sesuatu menggunakan させてもらいます.",
+      "question": "Kyou / hayaku / kaera sete / moraimasu",
+      "correct": "きょう はやく かえらせて もらいます。",
+      "romaji": "Kyou hayaku kaeraste moraimasu.",
+      "translation": "Saya mohon izin pulang lebih cepat hari ini."
+    },
+    {
+      "id": "wb21-4",
+      "pattern": "V させられます (Dipaksa melakukan ~ / Kausatif Pasif)",
+      "instruction": "Nyatakan terpaksa melakukan sesuatu (perspektif yang dipaksa) menggunakan させられます.",
+      "question": "Mainichi / sooji / sase / rareru",
+      "correct": "まいにち そうじを させられます。",
+      "romaji": "Mainichi souji wo saseraremasu.",
+      "translation": "Setiap hari dipaksa/disuruh membersihkan."
+    },
+    {
+      "id": "wb21-5",
+      "pattern": "V させます vs 〜してもらいます",
+      "instruction": "Bedakan pola aktif-kausatif vs pola menerima bantuan.",
+      "question": "Haha ga / watashi wo / benkyou / sase masu",
+      "correct": "はは が わたしを べんきょうさせます。",
+      "romaji": "Haha ga watashi wo benkyousasemasu.",
+      "translation": "Ibu menyuruh saya belajar."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex21-1",
+        "sentence": "せんせいが がくせいに かんじを かか [ ] ます。",
+        "correct": "せ",
+        "translation": "Guru menyuruh murid menulis kanji."
+      },
+      {
+        "id": "ex21-2",
+        "sentence": "わたしに やって [ ] ください。",
+        "correct": "させて",
+        "translation": "Izinkan saya melakukannya."
+      },
+      {
+        "id": "ex21-3",
+        "sentence": "まいにち そうじを [ ] られます。",
+        "correct": "させ",
+        "translation": "Setiap hari disuruh membersihkan (terpaksa)."
+      },
+      {
+        "id": "ex21-4",
+        "sentence": "きょう はやく かえら [ ] もらいます。",
+        "correct": "せて",
+        "translation": "Mohon izin untuk pulang lebih cepat hari ini."
+      },
+      {
+        "id": "ex21-5",
+        "sentence": "こどもに すきな ことを [ ] あげたいです。",
+        "correct": "させて",
+        "translation": "Ingin membiarkan anak melakukan yang dia sukai."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex21-6",
+        "question": "Bentuk kausatif dari 'tabemasu' (makan) untuk 'menyuruh makan' adalah:",
+        "options": [
+          {
+            "text": "たべさせます",
+            "correct": true
+          },
+          {
+            "text": "たべてもらいます",
+            "correct": false
+          },
+          {
+            "text": "たべていただきます",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex21-7",
+        "question": "'Hayaku kaeraste moraimasu' (mohon izin pulang cepat) adalah contoh dari pola:",
+        "options": [
+          {
+            "text": "Kausatif langsung: menyuruh orang lain",
+            "correct": false
+          },
+          {
+            "text": "Kausatif + もらいます: memohon izin melakukan sesuatu untuk diri sendiri",
+            "correct": true
+          },
+          {
+            "text": "Kausatif pasif: dipaksa melakukan",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex21-8",
+        "question": "Nuansa dari 'saseraremasu' (kausatif pasif) adalah:",
+        "options": [
+          {
+            "text": "Senang dan sukarela melakukan",
+            "correct": false
+          },
+          {
+            "text": "Dipaksa atau tidak ada pilihan untuk melakukan",
+            "correct": true
+          },
+          {
+            "text": "Mengizinkan orang lain melakukan",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "むかし、ははは まいにち わたしに ピアノを れんしゅうさせました。わたしは あまり すきでは ありませんでしたが、いまは ははに かんしゃして います。おかげで いまは ピアノが じょうずに なりました。",
+      "questions": [
+        {
+          "id": "ex21-9",
+          "question": "むかし ははは まいにち ピアノを れんしゅうさせました。",
+          "correct": "T"
+        },
+        {
+          "id": "ex21-10",
+          "question": "わたしは こどもの ころ ピアノが だいすきでした。",
+          "correct": "F"
+        },
+        {
+          "id": "ex21-11",
+          "question": "いまは ははに かんしゃして います。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

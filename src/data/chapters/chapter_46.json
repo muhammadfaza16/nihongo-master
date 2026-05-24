@@ -1,0 +1,452 @@
+{
+  "id": 46,
+  "title": "Lesson 46: Syarat Mutlak & Penekanan (〜さえ〜ば / 〜さえ)",
+  "desc": "Mempelajari cara menyatakan satu-satunya syarat agar suatu hal terwujud dengan 〜さえ〜ば (asalkan), serta memberikan penekanan ekstrem dengan 〜さえ (bahkan).",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v46-1",
+      "rom": "Jouken",
+      "kana": "じょうけん",
+      "kanji": "条件",
+      "en": "Syarat / Kondisi",
+      "audio": ""
+    },
+    {
+      "id": "v46-2",
+      "rom": "Taisetsu",
+      "kana": "たいせつ",
+      "kanji": "大切",
+      "en": "Penting / Berharga",
+      "audio": ""
+    },
+    {
+      "id": "v46-3",
+      "rom": "Saishou",
+      "kana": "さいしょう",
+      "kanji": "最小",
+      "en": "Paling kecil / Minimal",
+      "audio": ""
+    },
+    {
+      "id": "v46-4",
+      "rom": "Okane",
+      "kana": "おかね",
+      "kanji": "お金",
+      "en": "Uang",
+      "audio": ""
+    },
+    {
+      "id": "v46-5",
+      "rom": "Keitai",
+      "kana": "けいたい",
+      "kanji": "携帯",
+      "en": "Ponsel / Handphone",
+      "audio": ""
+    },
+    {
+      "id": "v46-6",
+      "rom": "Jikan",
+      "kana": "じかん",
+      "kanji": "時間",
+      "en": "Waktu",
+      "audio": ""
+    },
+    {
+      "id": "v46-7",
+      "rom": "Sae",
+      "kana": "さえ",
+      "kanji": "",
+      "en": "Bahkan / Asalkan",
+      "audio": ""
+    },
+    {
+      "id": "v46-8",
+      "rom": "Ba",
+      "kana": "ば",
+      "kanji": "",
+      "en": "Bentuk pengandaian (if)",
+      "audio": ""
+    },
+    {
+      "id": "v46-9",
+      "rom": "Yomu",
+      "kana": "よみます",
+      "kanji": "読みます",
+      "en": "Membaca",
+      "audio": ""
+    },
+    {
+      "id": "v46-1",
+      "rom": "Kaku",
+      "kana": "かきます",
+      "kanji": "書きます",
+      "en": "Menulis",
+      "audio": ""
+    },
+    {
+      "id": "v46-11",
+      "rom": "Iku",
+      "kana": "いきます",
+      "kanji": "行きます",
+      "en": "Pergi",
+      "audio": ""
+    },
+    {
+      "id": "v46-12",
+      "rom": "Taberu",
+      "kana": "たべます",
+      "kanji": "食べます",
+      "en": "Makan",
+      "audio": ""
+    },
+    {
+      "id": "v46-13",
+      "rom": "Kosho",
+      "kana": "こしょう",
+      "kanji": "故障",
+      "en": "Kerusakan / Breakdown",
+      "audio": ""
+    },
+    {
+      "id": "v46-14",
+      "rom": "Shunkan",
+      "kana": "しゅんかん",
+      "kanji": "瞬間",
+      "en": "Momen / Seketika",
+      "audio": ""
+    },
+    {
+      "id": "v46-15",
+      "rom": "Anshin (shimasu)",
+      "kana": "あんしん（します）",
+      "kanji": "安心（します）",
+      "en": "Lega / Tenang",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g46-1",
+      "title": "1. 〜さえ 〜 ば (Asalkan)",
+      "desc": "Menyatakan syarat minimum/mutlak yang diperlukan agar suatu hal bisa terwujud. Jika syarat satu ini terpenuhi, hal lainnya bukan masalah.",
+      "points": [
+        "Pola kata benda: N + さえ + V-ba (areba/sureba)",
+        "Artinya: Asalkan ada/melakukan N.",
+        "Contoh: Okane sae areba shiawase desu. (Asalkan ada uang, saya bahagia).",
+        "Pola kata kerja: V-stem + さえすれば (Asalkan melakukan V).",
+        "Contoh: Benkyou shi sae sureba goukaku dekimasu. (Asalkan belajar, pasti lulus)."
+      ],
+      "formula": "N + さえ + V-ば / V-stem + さえすれば",
+      "native_note": "Pola ini menekankan jalan pintas atau syarat utama yang paling krusial dalam suatu masalah."
+    },
+    {
+      "id": "g46-2",
+      "title": "2. 〜さえ (Bahkan)",
+      "desc": "Menyebutkan contoh ekstrem untuk menekankan bahwa keadaan di sekitarnya pun sama atau lebih dari itu.",
+      "points": [
+        "Pola: N + さえ",
+        "Artinya: Bahkan N pun...",
+        "Contoh: Kono mondai wa kodomo sae dekimasu. (Masalah ini bahkan anak kecil pun bisa mengerjakannya)."
+      ],
+      "formula": "N + さえ"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "時間さえあれば、日本に行きたいです。",
+      "rom": "Jikan sae areba, Nihon ni ikitai desu.",
+      "en": "Asalkan ada waktu, saya ingin pergi ke Jepang."
+    },
+    {
+      "jp": "この問題は子どもさえできます。",
+      "rom": "Kono mondai wa kodomo sae dekimasu.",
+      "en": "Masalah ini bahkan anak kecil pun bisa mengerjakannya."
+    },
+    {
+      "jp": "薬を飲みさえすれば、風邪は治ります。",
+      "rom": "Kusuri wo nomi sae sureba, kaze wa naorimasu.",
+      "en": "Asalkan meminum obat, pilek/flu akan sembuh."
+    },
+    {
+      "jp": "あなたさえいれば、私は何も必要ありません。",
+      "rom": "Anata sae ireba, watashi wa nani mo hitsuyou arimasen.",
+      "en": "Asalkan ada kamu, saya tidak butuh apa-apa lagi."
+    }
+  ],
+  "conversation": {
+    "title": "Asalkan Sehat",
+    "dialogue": [
+      {
+        "speaker": "A",
+        "jp": "明日の試験がとても心配です。",
+        "rom": "Ashita no shiken ga totemo shinpai desu.",
+        "en": "Saya sangat khawatir tentang ujian besok."
+      },
+      {
+        "speaker": "B",
+        "jp": "大丈夫ですよ。体調さえ良ければ、実力を出すことができます。",
+        "rom": "Daijoubu desu yo. Taichou sae yokereba, jitsuryoku wo dasu koto ga dekimasu.",
+        "en": "Tidak apa-apa kok. Asalkan kondisi tubuh baik, kamu pasti bisa mengeluarkan kemampuanmu."
+      },
+      {
+        "speaker": "A",
+        "jp": "そうですね。今夜は早く寝ることにします。",
+        "rom": "Soo desu ne. Konya wa hayaku neru koto ni shimasu.",
+        "en": "Benar juga. Malam ini saya memutuskan untuk tidur cepat."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "Pilih terjemahan 'Asalkan ada uang':",
+      "options": [
+        {
+          "text": "おかねさえあれば",
+          "correct": true
+        },
+        {
+          "text": "おかねがあるのに",
+          "correct": false
+        },
+        {
+          "text": "おかねだけあれば",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "Terjemahkan: 'Bahkan guru pun tidak tahu'.\nSensei [   ] shirimasen.",
+      "answer": "sae"
+    },
+    {
+      "type": "mcq",
+      "question": "Pola kerja 'asalkan minum' yang tepat:",
+      "options": [
+        {
+          "text": "のみさえすれば",
+          "correct": true
+        },
+        {
+          "text": "のむだけで",
+          "correct": false
+        },
+        {
+          "text": "のむようにすれば",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Syarat Kelulusan",
+      "situation": "Siswa bertanya syarat lulus ujian",
+      "dialogue": [
+        {
+          "speaker": "Siswa",
+          "jp": "このテストに合格する条件は何ですか。",
+          "rom": "Kono tesuto ni goukaku suru jouken wa nan desu ka.",
+          "en": "Apa syarat lulus ujian ini?"
+        },
+        {
+          "speaker": "Guru",
+          "jp": "毎日復習しさえすれば、簡単に合格できますよ。",
+          "rom": "Mainichi fukushuu shi sae sureba, kantan ni goukaku dekimasu yo.",
+          "en": "Asalkan mengulang pelajaran setiap hari, kamu bisa lulus dengan mudah."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r46-1",
+      "jp": "あなたさえ良ければ、明日会いましょう。",
+      "rom": "Anata sae yokereba, ashita aimashou.",
+      "en": "Asalkan Anda setuju/baik, mari besok bertemu."
+    },
+    {
+      "id": "r46-2",
+      "jp": "平仮名さえ書けない人がいます。",
+      "rom": "Hiragana sae kakenai hito ga imasu.",
+      "en": "Ada orang yang bahkan tidak bisa menulis hiragana."
+    },
+    {
+      "id": "r46-3",
+      "jp": "辞書さえあれば、この本が読めます。",
+      "rom": "Jisho sae areba, kono hon ga yomemasu.",
+      "en": "Asalkan ada kamus, saya bisa membaca buku ini."
+    },
+    {
+      "id": "r46-4",
+      "jp": "この部屋は静かさえあれば、十分です。",
+      "rom": "Kono heya wa shizuka sae areba, juubun desu.",
+      "en": "Kamar ini asalkan tenang saja sudah cukup."
+    },
+    {
+      "id": "r46-5",
+      "jp": "体さえ丈夫なら、何でもできます。",
+      "rom": "Karada sae joubu nara, nani demo dekimasu.",
+      "en": "Asalkan tubuh sehat/kuat, apapun bisa dilakukan."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb46-1",
+      "pattern": "N + さえ + V-ba",
+      "instruction": "Terjemahkan: 'Asalkan ada komputer'.",
+      "question": "Konpyuutaa / areba",
+      "correct": "コンピューターさえあれば",
+      "romaji": "Konpyuutaa sae areba.",
+      "translation": "Asalkan ada komputer."
+    },
+    {
+      "id": "wb46-2",
+      "pattern": "N + さえ",
+      "instruction": "Terjemahkan: 'Bahkan istri pun'.",
+      "question": "Tsuma",
+      "correct": "つまさえ",
+      "romaji": "Tsuma sae.",
+      "translation": "Bahkan istri pun."
+    },
+    {
+      "id": "wb46-3",
+      "pattern": "V-stem + さえすれば",
+      "instruction": "Terjemahkan: 'Asalkan belajar'.",
+      "question": "Benkyou suru",
+      "correct": "べんきょうしさえすれば",
+      "romaji": "Benkyou shi sae sureba.",
+      "translation": "Asalkan belajar."
+    },
+    {
+      "id": "wb46-4",
+      "pattern": "N + さえ + Adj-ba",
+      "instruction": "Terjemahkan: 'Asalkan harganya murah'.",
+      "question": "Nedan / yasui",
+      "correct": "ねだんさえやすければ",
+      "romaji": "Nedan sae yasukereba.",
+      "translation": "Asalkan harganya murah."
+    },
+    {
+      "id": "wb46-5",
+      "pattern": "N + さえ",
+      "instruction": "Terjemahkan: 'Bahkan bayi pun'.",
+      "question": "Akachan",
+      "correct": "あかちゃんさえ",
+      "romaji": "Akachan sae.",
+      "translation": "Bahkan bayi pun."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex46-1",
+        "sentence": "おかね [ ] あれば、なんでも かえます。",
+        "correct": "さえ",
+        "translation": "Asalkan ada uang, apapun bisa dibeli."
+      },
+      {
+        "id": "ex46-2",
+        "sentence": "しずか [ ] あれば、このへやで いいです。",
+        "correct": "さえ",
+        "translation": "Asalkan tenang, kamar ini tidak apa-apa."
+      },
+      {
+        "id": "ex46-3",
+        "sentence": "あのひとは ひらがな [ ] かけません。",
+        "correct": "さえ",
+        "translation": "Orang itu bahkan hiragana pun tidak bisa menulis."
+      },
+      {
+        "id": "ex46-4",
+        "sentence": "まいにち れんしゅうし [ ] すれば、じょうずになります。",
+        "correct": "さえ",
+        "translation": "Asalkan latihan setiap hari, kamu akan menjadi mahir."
+      },
+      {
+        "id": "ex46-5",
+        "sentence": "てんき [ ] よければ、あした ハイキングに いきます。",
+        "correct": "さえ",
+        "translation": "Asalkan cuacanya bagus, besok pergi mendaki gunung."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex46-6",
+        "question": "Pilih arti 'Anata sae ireba shiawase':",
+        "options": [
+          {
+            "text": "Asalkan ada kamu saya bahagia",
+            "correct": true
+          },
+          {
+            "text": "Bahkan kamu pun bahagia",
+            "correct": false
+          },
+          {
+            "text": "Hanya kamu yang bahagia",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex46-7",
+        "question": "Apa arti 'Hiragana sae kakenai'?",
+        "options": [
+          {
+            "text": "Bahkan hiragana pun tidak bisa menulis",
+            "correct": true
+          },
+          {
+            "text": "Hanya bisa menulis hiragana",
+            "correct": false
+          },
+          {
+            "text": "Bisa menulis hiragana dengan baik",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex46-8",
+        "question": "Bagaimana cara membuat kata kerja 'asalkan makan'?",
+        "options": [
+          {
+            "text": "食べさえすれば",
+            "correct": true
+          },
+          {
+            "text": "食べるだけなら",
+            "correct": false
+          },
+          {
+            "text": "食べれば",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "現代の 人々は、携帯電話さえあれば どこでも 仕事が できます。しかし、携帯電話が あるために 忙しすぎることも あります。休みの日さえ 仕事の メールが 来るので、休む時間が ないと 怒る人も います。",
+      "questions": [
+        {
+          "id": "ex46-9",
+          "question": "携帯電話が あれば どこでも 仕事が できます。",
+          "correct": "T"
+        },
+        {
+          "id": "ex46-10",
+          "question": "携帯電話が あるのは 良いことばかりです。",
+          "correct": "F"
+        },
+        {
+          "id": "ex46-11",
+          "question": "休みの日に メールが 来るのを 嫌がる人が います。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

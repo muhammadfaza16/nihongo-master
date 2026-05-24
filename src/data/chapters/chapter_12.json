@@ -1,0 +1,674 @@
+{
+  "id": 12,
+  "title": "Lesson 12: Perbandingan (Motto, Ichiban)",
+  "desc": "Membedah Bab 12. Anda belajar membandingkan dua benda (comparative) atau lebih (superlative), menyatakan yang paling, dan menanyakan preferensi antara pilihan.",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v12-1",
+      "rom": "Motto",
+      "kana": "もっと",
+      "kanji": "",
+      "en": "Lebih (lagi)",
+      "audio": ""
+    },
+    {
+      "id": "v12-2",
+      "rom": "Ichiban",
+      "kana": "いちばん",
+      "kanji": "一番",
+      "en": "Paling / Nomor satu",
+      "audio": ""
+    },
+    {
+      "id": "v12-3",
+      "rom": "Dochira / Docchi",
+      "kana": "どちら / どっち",
+      "kanji": "",
+      "en": "Yang mana (dari 2 pilihan)?",
+      "audio": ""
+    },
+    {
+      "id": "v12-4",
+      "rom": "Dore",
+      "kana": "どれ",
+      "kanji": "",
+      "en": "Yang mana (dari 3+ pilihan)?",
+      "audio": ""
+    },
+    {
+      "id": "v12-5",
+      "rom": "Yori",
+      "kana": "より",
+      "kanji": "",
+      "en": "Daripada / Dibanding (partikel pembanding)",
+      "audio": ""
+    },
+    {
+      "id": "v12-6",
+      "rom": "~no hou ga",
+      "kana": "〜のほうが",
+      "kanji": "",
+      "en": "Yang ~ (lebih) ... (pola jawaban)",
+      "audio": ""
+    },
+    {
+      "id": "v12-7",
+      "rom": "Dochira mo",
+      "kana": "どちらも",
+      "kanji": "",
+      "en": "Dua-duanya (netral)",
+      "audio": ""
+    },
+    {
+      "id": "v12-8",
+      "rom": "Haru",
+      "kana": "はる",
+      "kanji": "春",
+      "en": "Musim Semi",
+      "audio": ""
+    },
+    {
+      "id": "v12-9",
+      "rom": "Natsu",
+      "kana": "なつ",
+      "kanji": "夏",
+      "en": "Musim Panas",
+      "audio": ""
+    },
+    {
+      "id": "v12-10",
+      "rom": "Aki",
+      "kana": "あき",
+      "kanji": "秋",
+      "en": "Musim Gugur",
+      "audio": ""
+    },
+    {
+      "id": "v12-11",
+      "rom": "Fuyu",
+      "kana": "ふゆ",
+      "kanji": "冬",
+      "en": "Musim Dingin",
+      "audio": ""
+    },
+    {
+      "id": "v12-12",
+      "rom": "Tenki",
+      "kana": "てんき",
+      "kanji": "天気",
+      "en": "Cuaca",
+      "audio": ""
+    },
+    {
+      "id": "v12-13",
+      "rom": "Ame",
+      "kana": "あめ",
+      "kanji": "雨",
+      "en": "Hujan",
+      "audio": ""
+    },
+    {
+      "id": "v12-14",
+      "rom": "Yuki",
+      "kana": "ゆき",
+      "kanji": "雪",
+      "en": "Salju",
+      "audio": ""
+    },
+    {
+      "id": "v12-15",
+      "rom": "Kumori",
+      "kana": "くもり",
+      "kanji": "曇り",
+      "en": "Mendung / Berawan",
+      "audio": ""
+    },
+    {
+      "id": "v12-16",
+      "rom": "Sugoi",
+      "kana": "すごい",
+      "kanji": "",
+      "en": "Hebat / Luar biasa",
+      "audio": ""
+    },
+    {
+      "id": "v12-17",
+      "rom": "Onaji",
+      "kana": "おなじ",
+      "kanji": "同じ",
+      "en": "Sama",
+      "audio": ""
+    },
+    {
+      "id": "v12-18",
+      "rom": "Sekai",
+      "kana": "せかい",
+      "kanji": "世界",
+      "en": "Dunia",
+      "audio": ""
+    },
+    {
+      "id": "v12-19",
+      "rom": "Tatemono",
+      "kana": "たてもの",
+      "kanji": "建物",
+      "en": "Gedung / Bangunan",
+      "audio": ""
+    },
+    {
+      "id": "v12-20",
+      "rom": "Kuni",
+      "kana": "くに",
+      "kanji": "国",
+      "en": "Negara",
+      "audio": ""
+    },
+    {
+      "id": "v12-21",
+      "rom": "Atatakai",
+      "kana": "あたたかい",
+      "kanji": "暖かい",
+      "en": "Hangat",
+      "audio": ""
+    },
+    {
+      "id": "v12-22",
+      "rom": "Suzushii",
+      "kana": "すずしい",
+      "kanji": "涼しい",
+      "en": "Sejuk",
+      "audio": ""
+    },
+    {
+      "id": "v12-23",
+      "rom": "Kisetsu",
+      "kana": "きせつ",
+      "kanji": "季節",
+      "en": "Musim",
+      "audio": ""
+    },
+    {
+      "id": "v12-24",
+      "rom": "Fuyuyasumi",
+      "kana": "ふゆやすみ",
+      "kanji": "冬休み",
+      "en": "Liburan Musim Dingin",
+      "audio": ""
+    },
+    {
+      "id": "v12-25",
+      "rom": "Natsuyasumi",
+      "kana": "なつやすみ",
+      "kanji": "夏休み",
+      "en": "Liburan Musim Panas",
+      "audio": ""
+    },
+    {
+      "id": "v12-26",
+      "rom": "Hayai",
+      "kana": "はやい",
+      "kanji": "早い",
+      "en": "Cepat (waktu) / Pagi-pagi",
+      "audio": ""
+    },
+    {
+      "id": "v12-27",
+      "rom": "Tsumetai",
+      "kana": "つめたい",
+      "kanji": "冷たい",
+      "en": "Dingin (benda/minuman, bukan cuaca)",
+      "audio": ""
+    },
+    {
+      "id": "v12-28",
+      "rom": "Ii / Yoi",
+      "kana": "いい / よい",
+      "kanji": "良い",
+      "en": "Bagus / Baik",
+      "audio": ""
+    },
+    {
+      "id": "v12-29",
+      "rom": "Warui",
+      "kana": "わるい",
+      "kanji": "悪い",
+      "en": "Jelek / Buruk",
+      "audio": ""
+    },
+    {
+      "id": "v12-30",
+      "rom": "Yasui",
+      "kana": "やすい",
+      "kanji": "安い",
+      "en": "Murah",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g12-1",
+      "title": "1. N1 は N2 より Adj です (N1 Lebih... Dari N2)",
+      "desc": "Partikel YORI (より) berarti 'daripada' atau 'dibanding'. Posisinya di belakang benda yang dijadikan pembanding (inferior).",
+      "points": [
+        "Tokyo wa Osaka YORI ookii desu. (Tokyo lebih besar DARIPADA Osaka).",
+        "Perhatikan: Urutan kalimatnya TERBALIK dari bahasa Indonesia. Yang LEBIH disebut duluan (sebelum WA), yang jadi pembanding disebut setelah YORI.",
+        "Motto: 'Motto yukkuri hanashite kudasai' (Tolong bicara LEBIH pelan lagi). Motto = lebih (tanpa pembanding eksplisit)."
+      ],
+      "formula": "N1(lebih) は N2(kurang) より Adj です",
+      "native_note": "Kata 'ichiban' (paling/nomor satu) sering digunakan di luar struktur perbandingan formal untuk menekankan kesukaan subjektif yang mutlak (misal: 'Ramen ga ichiban!' = 'Ramen adalah yang terbaik dari semuanya!')."
+    },
+    {
+      "id": "g12-2",
+      "title": "2. N1 と N2 と どちらが Adj ですか (Mana Yang Lebih...?)",
+      "desc": "Pola pertanyaan untuk membandingkan tepat DUA benda. Jawaban menggunakan pola 'N no HOU GA'.",
+      "points": [
+        "A: Niku to sakana to dochira ga suki desu ka. (Antara daging dan ikan, mana yang kamu suka?)",
+        "B: Niku NO HOU GA suki desu. (Daging YANG LEBIH saya suka).",
+        "Jika SAMA: Dochira mo suki desu. (Dua-duanya suka). Dochira mo = keduanya.",
+        "CATATAN: Dochira (sopan) = Docchi (kasual). Keduanya sama maknanya."
+      ],
+      "formula": "N1 と N2 と どちらが Adj ですか → N の ほうが Adj です / どちらも Adj です"
+    },
+    {
+      "id": "g12-3",
+      "title": "3. [Kategori] の中で N が 一番 Adj です (Paling...)",
+      "desc": "Ichiban (一番) = Nomor 1 / Paling. Digunakan untuk superlative (3+ pilihan). Gunakan 'no naka de' untuk menentukan lingkup.",
+      "points": [
+        "Supootsu no naka de sakkaa ga ichiban suki desu. (Di antara olahraga, sepak bola yang PALING saya suka).",
+        "Nihon de ichiban takai yama wa Fuji-san desu. (Gunung paling tinggi di Jepang adalah Gunung Fuji).",
+        "Pertanyaan lingkup: Kisetsu no naka de itsu ga ichiban suki desu ka. (Di antara musim-musim, kapan yang paling disukai?)"
+      ],
+      "formula": "[Kategori] の中で 何/どこ/いつ/だれ が 一番 Adj ですか"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "東京は 大阪より 大きいです。",
+      "rom": "Tokyo wa Osaka yori ookii desu.",
+      "en": "Tokyo lebih besar daripada Osaka."
+    },
+    {
+      "jp": "肉と 魚と どちらが 好きですか。",
+      "rom": "Niku to sakana to dochira ga suki desu ka.",
+      "en": "Antara daging dan ikan, mana yang kamu suka?"
+    },
+    {
+      "jp": "肉の ほうが 好きです。",
+      "rom": "Niku no hou ga suki desu.",
+      "en": "Daging yang lebih saya suka."
+    },
+    {
+      "jp": "日本で 一番 高い 山は 富士山です。",
+      "rom": "Nihon de ichiban takai yama wa Fuji-san desu.",
+      "en": "Gunung paling tinggi di Jepang adalah Gunung Fuji."
+    },
+    {
+      "jp": "季節の 中で いつが 一番 好きですか。",
+      "rom": "Kisetsu no naka de itsu ga ichiban suki desu ka.",
+      "en": "Di antara musim, kapan yang paling disukai?"
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: どちらがいいですか (Mana Yang Lebih Bagus?)",
+    "dialogue": [
+      {
+        "speaker": "Santos",
+        "jp": "もうすぐ 冬休みですね。どこか 行きますか。",
+        "rom": "Mousugu fuyuyasumi desu ne. Dokoka ikimasu ka.",
+        "en": "Sebentar lagi libur musim dingin ya. Mau pergi ke suatu tempat?"
+      },
+      {
+        "speaker": "Miller",
+        "jp": "ええ。北海道か 沖縄へ 行きたいです。",
+        "rom": "Ee. Hokkaido ka Okinawa e ikitai desu.",
+        "en": "Iya. Ingin pergi ke Hokkaido atau Okinawa."
+      },
+      {
+        "speaker": "Santos",
+        "jp": "そうですか。北海道と 沖縄と どちらが いいですか。",
+        "rom": "Sou desu ka. Hokkaido to Okinawa to dochira ga ii desu ka.",
+        "en": "Oh begitu. Antara Hokkaido dan Okinawa, mana yang lebih bagus?"
+      },
+      {
+        "speaker": "Miller",
+        "jp": "沖縄の ほうが いいです。沖縄は 北海道より 暖かいですから。",
+        "rom": "Okinawa no hou ga ii desu. Okinawa wa Hokkaido yori atatakai desu kara.",
+        "en": "Okinawa yang lebih baik. Karena Okinawa lebih hangat daripada Hokkaido."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] Jika ingin mengatakan 'Tokyo lebih besar dari Osaka', partikel pembanding yang dipakai adalah:",
+      "options": [
+        {
+          "text": "から (Kara)",
+          "correct": false
+        },
+        {
+          "text": "より (Yori)",
+          "correct": true
+        },
+        {
+          "text": "まで (Made)",
+          "correct": false
+        },
+        {
+          "text": "の方が (No hou ga)",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] Terjemahkan: 'Gunung Fuji adalah gunung paling tinggi di Jepang'.\nNihon de [       ] takai yama wa Fuji-san desu.",
+      "answer": "ichiban"
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu B] Pertanyaan: 'Niku to sakana to dochira ga suki desu ka?'. Anda suka dua-duanya. Jawaban yang tepat:",
+      "options": [
+        {
+          "text": "Niku no hou ga suki desu.",
+          "correct": false
+        },
+        {
+          "text": "Dochira mo suki desu.",
+          "correct": true
+        },
+        {
+          "text": "Niku ga ichiban suki desu.",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu C] 'Okinawa YANG LEBIH bagus (dari Hokkaido).'\nOkinawa [         ] ii desu.",
+      "answer": "no hou ga"
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu C] 'Dari semua musim, musim apa yang paling Anda suka?' Terjemahan yang tepat adalah:",
+      "options": [
+        {
+          "text": "Kisetsu de ichiban suki na kisetsu wa nan desu ka.",
+          "correct": false
+        },
+        {
+          "text": "Kisetsu no naka de dore ga ichiban suki desu ka.",
+          "correct": true
+        },
+        {
+          "text": "Donna kisetsu ga suki desu ka.",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Menanyakan Cuaca Kemarin Liburan",
+      "situation": "Mengobrol tentang cuaca dan liburan akhir pekan kemarin",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "昨日の 旅行は 寒かったですか。",
+          "rom": "Kinou no ryokou wa samukatta desu ka.",
+          "en": "Apakah liburan kemarin dingin?"
+        },
+        {
+          "speaker": "B",
+          "jp": "いいえ、あまり 寒くなかったです。いい 天気でしたよ。",
+          "rom": "Iie, amari samukunakatta desu. Ii tenki deshita yo.",
+          "en": "Tidak, tidak begitu dingin. Cuacanya bagus lho."
+        },
+        {
+          "speaker": "A",
+          "jp": "それは よかったですね。",
+          "rom": "Sore wa yokatta desu ne.",
+          "en": "Syukurlah kalau begitu."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Membandingkan Keramaian Dua Kota",
+      "situation": "Membandingkan tingkat keramaian kota Tokyo dengan kota Osaka",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "東京と 大阪と どちらが にぎやかですか。",
+          "rom": "Toukyou to Osaka to dochira ga nigiyaka desu ka.",
+          "en": "Tokyo dan Osaka mana yang lebih ramai?"
+        },
+        {
+          "speaker": "B",
+          "jp": "東京の 方が にぎやかです。",
+          "rom": "Toukyou no hou ga nigiyaka desu.",
+          "en": "Tokyo yang lebih ramai."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。",
+          "rom": "Sou desu ka.",
+          "en": "Oh, begitu ya."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Menanyakan Favorit dari Kategori (Olahraga)",
+      "situation": "Bertanya tentang jenis olahraga yang paling digemari dari semua cabang olahraga",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "スポーツの 中で 何が 一番 好きですか。",
+          "rom": "Supootsu no naka de nani ga ichiban suki desu ka.",
+          "en": "Di antara olahraga, apa yang paling Anda sukai?"
+        },
+        {
+          "speaker": "B",
+          "jp": "サッカーが 一番 好きです。",
+          "rom": "Sakkaa ga ichiban suki desu.",
+          "en": "Sepak bola yang paling saya sukai."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。",
+          "rom": "Sou desu ka.",
+          "en": "Oh, begitu ya."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r12-1",
+      "jp": "昨日は 雨でしたか。... いいえ、雨じゃありませんでした。いい 天気でした。",
+      "rom": "Kinou wa ame deshita ka? ... Iie, ame ja arimasen deshita. Ii tenki deshita.",
+      "en": "Apakah kemarin hujan? ... Tidak, tidak hujan. Cuacanya cerah."
+    },
+    {
+      "id": "r12-2",
+      "jp": "旅行は 楽しかったですか。... はい、とても 楽しかったです。",
+      "rom": "Ryokou wa tanoshikatta desu ka? ... Hai, totemo tanoshikatta desu.",
+      "en": "Apakah perjalanannya menyenangkan? ... Ya, sangat menyenangkan."
+    },
+    {
+      "id": "r12-3",
+      "jp": "天気は よかったですか。... いいえ、あまり よくありませんでした。",
+      "rom": "Tenki wa yokatta desu ka? ... Iie, amari yoku arimasen deshita.",
+      "en": "Apakah cuacanya bagus? ... Tidak, tidak begitu bagus."
+    },
+    {
+      "id": "r12-4",
+      "jp": "北海道は 九州より 寒いですか。... はい、ずっと 寒いです。",
+      "rom": "Hokkaidoo wa Kyuushuu yori samui desu ka? ... Hai, zutto samui desu.",
+      "en": "Apakah Hokkaido lebih dingin daripada Kyushu? ... Ya, jauh lebih dingin."
+    },
+    {
+      "id": "r12-5",
+      "jp": "どちらが 好きですか。... ビールと 日本酒と どちらが 好きですか。... ビールのほうが 好きです。",
+      "rom": "Dochira ga suki desu ka? ... Biiru to nihonshu to dochira ga suki desu ka? ... Biiru no hou ga suki desu.",
+      "en": "Yang mana yang Anda sukai? ... Antara bir dan sake Jepang, mana yang Anda sukai? ... Saya lebih suka bir."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb12-1",
+      "pattern": "V たり V たり します (Berbagai Kegiatan)",
+      "instruction": "Nyatakan beberapa kegiatan yang dilakukan bergantian dengan pola たり～たりします.",
+      "question": "Nichiyoubi / hataraita ri / yasundari shimasu",
+      "correct": "にちようびは はたらいたり やすんだり します。",
+      "romaji": "Nichiyoubi wa hataraitari yasundari shimasu.",
+      "translation": "Hari Minggu kadang bekerja, kadang istirahat."
+    },
+    {
+      "id": "wb12-2",
+      "pattern": "adj く / adj に + V (Modifikasi Kata Kerja)",
+      "instruction": "Ubah kata sifat menjadi adverbia (kata keterangan) untuk memodifikasi kata kerja.",
+      "question": "Hayaku / hashiru",
+      "correct": "はやく はしります。",
+      "romaji": "Hayaku hashirimasu.",
+      "translation": "Berlari dengan cepat."
+    },
+    {
+      "id": "wb12-3",
+      "pattern": "もう V ました / まだ V ていません",
+      "instruction": "Nyatakan sudah atau belum melakukan sesuatu.",
+      "question": "Shukudai / mou / shimashita",
+      "correct": "しゅくだいは もう しました。",
+      "romaji": "Shukudai wa mou shimashita.",
+      "translation": "PR sudah dikerjakan."
+    },
+    {
+      "id": "wb12-4",
+      "pattern": "N が V に なります (Perubahan)",
+      "instruction": "Nyatakan perubahan kondisi dengan pola ～になります.",
+      "question": "Nihongo / jouzu ni naru",
+      "correct": "にほんごが じょうずに なりたいです。",
+      "romaji": "Nihongo ga jouzu ni naritai desu.",
+      "translation": "Ingin menjadi pandai berbahasa Jepang."
+    },
+    {
+      "id": "wb12-5",
+      "pattern": "V たり V たり しないで ください",
+      "instruction": "Larang seseorang melakukan berbagai hal dengan pola negatif たり〜したりしないでください.",
+      "question": "Ookii koe / hanashitari / warattari / shinaide kudasai",
+      "correct": "おおきい こえで はなしたり わらったり しないで ください。",
+      "romaji": "Ookii koe de hanashitari warattari shinaide kudasai.",
+      "translation": "Tolong jangan berbicara atau tertawa dengan suara keras."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex12-1",
+        "sentence": "しゅうまつは えいがを み [ ] おんがくを きい [ ] します。",
+        "correct": "たり",
+        "translation": "Di akhir pekan, menonton film atau mendengarkan musik."
+      },
+      {
+        "id": "ex12-2",
+        "sentence": "もっと はや [ ] はしって ください。",
+        "correct": "く",
+        "translation": "Tolong berlari lebih cepat."
+      },
+      {
+        "id": "ex12-3",
+        "sentence": "しゅくだいは もう [ ]。",
+        "correct": "しました",
+        "translation": "PR sudah dikerjakan."
+      },
+      {
+        "id": "ex12-4",
+        "sentence": "にほんごが じょうずに な [ ] たいです。",
+        "correct": "り",
+        "translation": "Ingin menjadi pandai berbahasa Jepang."
+      },
+      {
+        "id": "ex12-5",
+        "sentence": "まだ ばんごはんを [ ] いません。",
+        "correct": "たべて",
+        "translation": "Belum makan malam."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex12-6",
+        "question": "Pola yang digunakan untuk menyatakan 'kadang A, kadang B' (aktivitas bergantian) adalah:",
+        "options": [
+          {
+            "text": "A て B ます",
+            "correct": false
+          },
+          {
+            "text": "A たり B たり します",
+            "correct": true
+          },
+          {
+            "text": "A も B も します",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex12-7",
+        "question": "Cara mengubah 'shizuka na' (tenang) menjadi adverbia adalah:",
+        "options": [
+          {
+            "text": "しずかく",
+            "correct": false
+          },
+          {
+            "text": "しずかに",
+            "correct": true
+          },
+          {
+            "text": "しずかです",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex12-8",
+        "question": "'Mada tabete imasen' berarti:",
+        "options": [
+          {
+            "text": "Belum makan",
+            "correct": true
+          },
+          {
+            "text": "Sudah makan",
+            "correct": false
+          },
+          {
+            "text": "Tidak makan",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "きのうの かえりに、コンビニで おにぎりを かったり、ざっしを よんだり しました。もう おふろに はいりました。でも まだ しゅくだいを していません。あしたは はやく おきなければ なりません。",
+      "questions": [
+        {
+          "id": "ex12-9",
+          "question": "きのう コンビニに よりました。",
+          "correct": "T"
+        },
+        {
+          "id": "ex12-10",
+          "question": "もう しゅくだいを しました。",
+          "correct": "F"
+        },
+        {
+          "id": "ex12-11",
+          "question": "あした はやく おきる よていです。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

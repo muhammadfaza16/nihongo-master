@@ -1,0 +1,461 @@
+{
+  "id": 43,
+  "title": "Lesson 43: Hubungan Aksi & Sudut Pandang (〜に対して / 〜について / 〜にとって)",
+  "desc": "Mempelajari perbedaan penting antara 〜に対して (sikap terhadap target), 〜について (topik bahasan), dan 〜にとって (sudut pandang/perspektif subjek).",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v43-1",
+      "rom": "Taido",
+      "kana": "たいど",
+      "kanji": "態度",
+      "en": "Sikap / Tingkah laku",
+      "audio": ""
+    },
+    {
+      "id": "v43-2",
+      "rom": "Ikken",
+      "kana": "いっけん",
+      "kanji": "意見",
+      "en": "Pendapat / Opini",
+      "audio": ""
+    },
+    {
+      "id": "v43-3",
+      "rom": "Kanten",
+      "kana": "かんてん",
+      "kanji": "観点",
+      "en": "Sudut pandang / Aspek",
+      "audio": ""
+    },
+    {
+      "id": "v43-4",
+      "rom": "Mikata",
+      "kana": "みかた",
+      "kanji": "見方",
+      "en": "Cara melihat / Sudut pandang",
+      "audio": ""
+    },
+    {
+      "id": "v43-5",
+      "rom": "Kenkai",
+      "kana": "けんかい",
+      "kanji": "見解",
+      "en": "Pendapat / Pandangan resmi",
+      "audio": ""
+    },
+    {
+      "id": "v43-6",
+      "rom": "Tai-shite",
+      "kana": "たいして",
+      "kanji": "に対して",
+      "en": "Terhadap / Kontras dengan",
+      "audio": ""
+    },
+    {
+      "id": "v43-7",
+      "rom": "Tsui-te",
+      "kana": "ついて",
+      "kanji": "について",
+      "en": "Tentang / Mengenai",
+      "audio": ""
+    },
+    {
+      "id": "v43-8",
+      "rom": "Tot-te",
+      "kana": "とって",
+      "kanji": "にとって",
+      "en": "Bagi / Dari sudut pandang",
+      "audio": ""
+    },
+    {
+      "id": "v43-9",
+      "rom": "Shitsumon",
+      "kana": "しつもん",
+      "kanji": "質問",
+      "en": "Pertanyaan",
+      "audio": ""
+    },
+    {
+      "id": "v43-10",
+      "rom": "Kyoumi",
+      "kana": "きょうみ",
+      "kanji": "興味",
+      "en": "Minat / Ketertarikan",
+      "audio": ""
+    },
+    {
+      "id": "v43-11",
+      "rom": "Nihon-bunka",
+      "kana": "にほんぶんか",
+      "kanji": "日本文化",
+      "en": "Kebudayaan Jepang",
+      "audio": ""
+    },
+    {
+      "id": "v43-12",
+      "rom": "Kankyo-mondai",
+      "kana": "かんきょうもんだい",
+      "kanji": "環境問題",
+      "en": "Masalah lingkungan",
+      "audio": ""
+    },
+    {
+      "id": "v43-13",
+      "rom": "Kokumin",
+      "kana": "こくみん",
+      "kanji": "国民",
+      "en": "Rakyat / Warga negara",
+      "audio": ""
+    },
+    {
+      "id": "v43-14",
+      "rom": "Seifu",
+      "kana": "せいふ",
+      "kanji": "政府",
+      "en": "Pemerintah",
+      "audio": ""
+    },
+    {
+      "id": "v43-15",
+      "rom": "Hihan",
+      "kana": "ひはん",
+      "kanji": "批判",
+      "en": "Kritik / Kritikan",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g43-1",
+      "title": "1. 〜に対して (Terhadap / Berlawanan)",
+      "desc": "Menunjukkan target dari suatu sikap, tindakan, atau perasaan. Bisa juga digunakan untuk membandingkan dua hal yang kontras.",
+      "points": [
+        "Pola: N + に対して (ni taishite)",
+        "Nuansa 1 (Sikap/Target): Gakusei ni taishite shinsetsu desu (Bersikap baik terhadap murid).",
+        "Nuansa 2 (Kontras): Ani ga eigo ga得意 na no ni taishite, otouto wa suugaku ga得意 desu (Berlawanan dengan kakak yang ahli bahasa Inggris, adik ahli matematika)."
+      ],
+      "formula": "N + に対して",
+      "native_note": "Gunakan ini untuk mengekspresikan aksi yang diarahkan ke luar, seperti keluhan atau rasa terima kasih kepada lembaga."
+    },
+    {
+      "id": "g43-2",
+      "title": "2. 〜について (Tentang / Mengenai)",
+      "desc": "Menunjukkan topik pembicaraan, isi pikiran, penelitian, atau penyelidikan.",
+      "points": [
+        "Pola: N + について (ni tsuite)",
+        "Artinya: Tentang N / Mengenai N.",
+        "Contoh: Nihon no rekishi ni tsuite shirabeています. (Saya sedang meneliti tentang sejarah Jepang)."
+      ],
+      "formula": "N + について"
+    },
+    {
+      "id": "g43-3",
+      "title": "3. 〜にとって (Bagi / Dari Sudut Pandang)",
+      "desc": "Menyatakan penilaian, nilai penting, atau pendapat subjek N terhadap suatu hal.",
+      "points": [
+        "Pola: N + にとって (ni totte)",
+        "Artinya: Bagi N / Menurut N.",
+        "Contoh: Watashi ni totte kazoku ga ichiban taisetsu desu. (Bagi saya, keluarga adalah yang paling penting)."
+      ],
+      "formula": "N + にとって"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "子どもに対して優しくしてください。",
+      "rom": "Kodomo ni taishite yasashiku shite kudasai.",
+      "en": "Tolong bersikap lembut terhadap anak-anak."
+    },
+    {
+      "jp": "この問題についてどう思いますか。",
+      "rom": "Kono mondai ni tsuite dou omoimasu ka.",
+      "en": "Bagaimana pendapat Anda tentang masalah ini?"
+    },
+    {
+      "jp": "外国人にとって漢字は難しいです。",
+      "rom": "Gaikokujin ni totte kanji wa muzukashii desu.",
+      "en": "Bagi orang asing, kanji itu sulit."
+    },
+    {
+      "jp": "兄が英語が得意なのにたいして、弟は数学が得意です。",
+      "rom": "Ani ga eigo ga tokui na no ni taishite, otouto wa suugaku ga tokui desu.",
+      "en": "Berlawanan dengan kakak yang mahir bahasa Inggris, adik laki-laki mahir matematika."
+    }
+  ],
+  "conversation": {
+    "title": "Kehidupan di Jepang",
+    "dialogue": [
+      {
+        "speaker": "A",
+        "jp": "日本の生活はあなたにとってどうですか。",
+        "rom": "Nihon no seikatsu wa anata ni totte dou desu ka.",
+        "en": "Bagaimana kehidupan di Jepang bagi Anda?"
+      },
+      {
+        "speaker": "B",
+        "jp": "私にとってとても楽しいですが、物価が高いですね。",
+        "rom": "Watashi ni totte wa totemo tanoshii desu ga, bukka ga takai desu ne.",
+        "en": "Bagi saya sangat menyenangkan, tapi biaya hidupnya tinggi ya."
+      },
+      {
+        "speaker": "A",
+        "jp": "そうですね。その問題について、政府も考えています。",
+        "rom": "Soo desu ne. Sono mondai ni tsuite, seifu mo kangaete imasu.",
+        "en": "Betul sekali. Mengenai masalah itu, pemerintah juga sedang memikirkannya."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "Pilih arti yang tepat untuk 'Watashi ni totte':",
+      "options": [
+        {
+          "text": "Bagi saya",
+          "correct": true
+        },
+        {
+          "text": "Tentang saya",
+          "correct": false
+        },
+        {
+          "text": "Terhadap saya",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "Isi partikel: 'Pendidikan tentang kebersihan'.\nEisei [   ] tsuite no kyouiku.",
+      "answer": "ni"
+    },
+    {
+      "type": "mcq",
+      "question": "Apa perbedaan 'ni taishite' dan 'ni totte'?",
+      "options": [
+        {
+          "text": "ni taishite = ditujukan ke target; ni totte = dari perspektif/penilaian",
+          "correct": true
+        },
+        {
+          "text": "Keduanya sama saja",
+          "correct": false
+        },
+        {
+          "text": "ni totte = ditujukan ke target; ni taishite = dari perspektif",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Topik Penelitian",
+      "situation": "Dua mahasiswa membicarakan topik skripsi mereka",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "何について研究していますか。",
+          "rom": "Nani ni tsuite kenkyuu shite imasu ka.",
+          "en": "Kamu sedang meneliti tentang apa?"
+        },
+        {
+          "speaker": "B",
+          "jp": "インドネシアの経済発展について研究しています。",
+          "rom": "Indoneshia no keizai-hatten ni tsuite kenkyuu shite imasu.",
+          "en": "Saya sedang meneliti tentang perkembangan ekonomi Indonesia."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r43-1",
+      "jp": "社長の意見に対して、反対の人が多いです。",
+      "rom": "Shachou no iken ni taishite, hantai no hito ga ooi desu.",
+      "en": "Terhadap pendapat direktur, banyak orang yang menentang."
+    },
+    {
+      "id": "r43-2",
+      "jp": "この商品について、説明書を読んでください。",
+      "rom": "Kono shouhin ni tsuite, setsumei-sho wo yonde kudasai.",
+      "en": "Mengenai produk ini, tolong baca buku penjelasannya."
+    },
+    {
+      "id": "r43-3",
+      "jp": "健康は誰にとっても大切です。",
+      "rom": "Kenkoo wa dare ni totte mo taisetsu desu.",
+      "en": "Kesehatan adalah hal penting bagi siapapun."
+    },
+    {
+      "id": "r43-4",
+      "jp": "恵子さんは親切なのにたいして、妹は冷淡です。",
+      "rom": "Keiko-san wa shinsetsu na no ni taishite, imouto wa reitan desu.",
+      "en": "Berbeda dengan Keiko yang ramah, adiknya dingin."
+    },
+    {
+      "id": "r43-5",
+      "jp": "将来について話しましょう。",
+      "rom": "Shourai ni tsuite hanashimashou.",
+      "en": "Mari kita berbicara tentang masa depan."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb43-1",
+      "pattern": "N + に対して",
+      "instruction": "Terjemahkan: 'Ramah terhadap tamu'.",
+      "question": "Kyaku / shinsetsu",
+      "correct": "きゃくにたいしてしんせつです。",
+      "romaji": "Kyaku ni taishite shinsetsu desu.",
+      "translation": "Ramah terhadap tamu."
+    },
+    {
+      "id": "wb43-2",
+      "pattern": "N + について",
+      "instruction": "Terjemahkan: 'Bertanya tentang harga'.",
+      "question": "Nedan / kiku",
+      "correct": "ねだんについてききます。",
+      "romaji": "Nedan ni tsuite kikimasu.",
+      "translation": "Bertanya tentang harga."
+    },
+    {
+      "id": "wb43-3",
+      "pattern": "N + にとって",
+      "instruction": "Terjemahkan: 'Bagi anak-anak'.",
+      "question": "Kodomo / taisetsu",
+      "correct": "こどもにとってたいせつです。",
+      "romaji": "Kodomo ni totte taisetsu desu.",
+      "translation": "Bagi anak-anak adalah hal berharga."
+    },
+    {
+      "id": "wb43-4",
+      "pattern": "N + について",
+      "instruction": "Terjemahkan: 'Belajar tentang Jepang'.",
+      "question": "Nihon / benkyou",
+      "correct": "にほんについてべんきょうします。",
+      "romaji": "Nihon ni tsuite benkyou shimasu.",
+      "translation": "Belajar tentang Jepang."
+    },
+    {
+      "id": "wb43-5",
+      "pattern": "N + に対して",
+      "instruction": "Terjemahkan: 'Menentang terhadap keputusan itu'.",
+      "question": "Kettei / hantai",
+      "correct": "けっていに対してはんたいします。",
+      "romaji": "Kettei ni taishite hantai shimasu.",
+      "translation": "Menentang terhadap keputusan itu."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex43-1",
+        "sentence": "にほんごの べんきょうは わたし [ ] とって とても たのしいです。",
+        "correct": "に",
+        "translation": "Belajar bahasa Jepang bagi saya sangat menyenangkan."
+      },
+      {
+        "id": "ex43-2",
+        "sentence": "しつもん [ ] ついて れんらくしてください。",
+        "correct": "に",
+        "translation": "Tolong hubungi saya mengenai pertanyaan Anda."
+      },
+      {
+        "id": "ex43-3",
+        "sentence": "せんせい [ ] たいして しつれいな ことを 言ってはいけません。",
+        "correct": "に",
+        "translation": "Tidak boleh berkata tidak sopan terhadap guru."
+      },
+      {
+        "id": "ex43-4",
+        "sentence": "しょうらいの ゆめ [ ] ついて はなしましょう。",
+        "correct": "に",
+        "translation": "Mari kita berbicara tentang impian masa depan."
+      },
+      {
+        "id": "ex43-5",
+        "sentence": "だれ [ ] とっても、かぞくは たいせつな ものです。",
+        "correct": "に",
+        "translation": "Bagi siapapun, keluarga adalah hal yang berharga."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex43-6",
+        "question": "Pilih partikel yang tepat: 'Nihon no kyouiku [  ] tsuite shiraberu'",
+        "options": [
+          {
+            "text": "に",
+            "correct": true
+          },
+          {
+            "text": "を",
+            "correct": false
+          },
+          {
+            "text": "へ",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex43-7",
+        "question": "Apa arti 'Senshu ni taishite h批判 ga ooi'?",
+        "options": [
+          {
+            "text": "Kritikan banyak ditujukan terhadap pemain",
+            "correct": true
+          },
+          {
+            "text": "Pemain banyak mengkritik orang lain",
+            "correct": false
+          },
+          {
+            "text": "Bagi pemain, kritikan adalah hal biasa",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex43-8",
+        "question": "Contoh penggunaan 'ni totte' yang benar:",
+        "options": [
+          {
+            "text": "私にとって水は必要不可欠です。",
+            "correct": true
+          },
+          {
+            "text": "私にとって歴史を調べます。",
+            "correct": false
+          },
+          {
+            "text": "先生にとって挨拶します。",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "外国人にとって、日本語の漢字はとても難しいです。漢字について 勉強するとき、書き方に対して 興味を持つことが 大切です。漢字の歴史について 知ることも、漢字を覚えるのに 役に立ちます。",
+      "questions": [
+        {
+          "id": "ex43-9",
+          "question": "外国人にとって 漢字は 簡単です。",
+          "correct": "F"
+        },
+        {
+          "id": "ex43-10",
+          "question": "漢字の 書き方に対して 興味を 持つのが 大切です。",
+          "correct": "T"
+        },
+        {
+          "id": "ex43-11",
+          "question": "漢字の 歴史について 知ることは 役に立ちます。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

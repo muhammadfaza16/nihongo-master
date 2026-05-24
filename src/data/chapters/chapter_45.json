@@ -1,0 +1,462 @@
+{
+  "id": 45,
+  "title": "Lesson 45: Pola Pembatasan (〜だけ / 〜しか〜ない / 〜ばかり)",
+  "desc": "Mempelajari tiga ekspresi pembatasan: 〜だけ (hanya - umum), 〜しか〜ない (hanya - nuansa negatif/kurang), dan 〜ばかり (hanya/melulu - mendominasi/mengkritik).",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v45-1",
+      "rom": "Kagiru",
+      "kana": "かぎります",
+      "kanji": "限ります",
+      "en": "Membatasi / Terbatas",
+      "audio": ""
+    },
+    {
+      "id": "v45-2",
+      "rom": "Seigen (shimasu)",
+      "kana": "せいげん（します）",
+      "kanji": "制限（します）",
+      "en": "Batasan / Membatasi",
+      "audio": ""
+    },
+    {
+      "id": "v45-3",
+      "rom": "Saigen",
+      "kana": "さいげん",
+      "kanji": "再現",
+      "en": "Batas akhir / Reproduksi",
+      "audio": ""
+    },
+    {
+      "id": "v45-4",
+      "rom": "Dake",
+      "kana": "だけ",
+      "kanji": "",
+      "en": "Hanya / Saja (umum)",
+      "audio": ""
+    },
+    {
+      "id": "v45-5",
+      "rom": "Shika",
+      "kana": "しか",
+      "kanji": "",
+      "en": "Hanya (diikuti bentuk negatif)",
+      "audio": ""
+    },
+    {
+      "id": "v45-6",
+      "rom": "Bakari",
+      "kana": "ばかり",
+      "kanji": "",
+      "en": "Hanya / Melulu (jengkel/kritik)",
+      "audio": ""
+    },
+    {
+      "id": "v45-7",
+      "rom": "Okane",
+      "kana": "おかね",
+      "kanji": "お金",
+      "en": "Uang",
+      "audio": ""
+    },
+    {
+      "id": "v45-8",
+      "rom": "Tomodachi",
+      "kana": "ともだち",
+      "kanji": "友達",
+      "en": "Teman",
+      "audio": ""
+    },
+    {
+      "id": "v45-9",
+      "rom": "Sukoshi",
+      "kana": "すこし",
+      "kanji": "少し",
+      "en": "Sedikit / Sebentar",
+      "audio": ""
+    },
+    {
+      "id": "v45-10",
+      "rom": "Nokoru",
+      "kana": "のこります",
+      "kanji": "残ります",
+      "en": "Tersisa / Tinggal",
+      "audio": ""
+    },
+    {
+      "id": "v45-11",
+      "rom": "Taberu",
+      "kana": "たべます",
+      "kanji": "食べます",
+      "en": "Makan",
+      "audio": ""
+    },
+    {
+      "id": "v45-12",
+      "rom": "Asobu",
+      "kana": "あそびます",
+      "kanji": "遊びます",
+      "en": "Bermain / Bermain-main",
+      "audio": ""
+    },
+    {
+      "id": "v45-13",
+      "rom": "Nemui",
+      "kana": "ねむい",
+      "kanji": "",
+      "en": "Mengantuk",
+      "audio": ""
+    },
+    {
+      "id": "v45-14",
+      "rom": "Kaisha",
+      "kana": "かいしゃ",
+      "kanji": "会社",
+      "en": "Perusahaan",
+      "audio": ""
+    },
+    {
+      "id": "v45-15",
+      "rom": "Benkyou (shimasu)",
+      "kana": "べんきょう（します）",
+      "kanji": "勉強（します）",
+      "en": "Belajar / Studi",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g45-1",
+      "title": "1. 〜だけ (Hanya / Saja)",
+      "desc": "Menyatakan batasan murni secara netral. Dapat digunakan pada kalimat bermakna positif maupun negatif.",
+      "points": [
+        "Pola: N / Plain + だけ",
+        "Artinya: Hanya N / Saja.",
+        "Contoh: Watashi dake ga shitte imasu. (Hanya saya saja yang tahu)."
+      ],
+      "formula": "N + だけ",
+      "native_note": "Dapat digabung dengan partikel lain seperti 'dake ni' (hanya pada) atau 'dake de' (hanya dengan)."
+    },
+    {
+      "id": "g45-2",
+      "title": "2. 〜しか 〜 ない (Hanya / Tiada lain selain)",
+      "desc": "Menyatakan batasan eksklusif yang bernuansa negatif. Pembicara merasa jumlah tersebut sedikit, kurang, atau tidak cukup.",
+      "points": [
+        "Pola: N + しか + V-negatif (nai/masen)",
+        "Artinya: Hanya... saja (dan merasa tidak cukup).",
+        "Contoh: Saifu ni wa 100-en shika arimasen. (Di dompet hanya ada 100 yen saja - mengeluh)."
+      ],
+      "formula": "N + しか 〜 ない / ません"
+    },
+    {
+      "id": "g45-3",
+      "title": "3. 〜ばかり (Melulu / Terus-menerus)",
+      "desc": "Menyatakan bahwa suatu hal mendominasi situasi, atau suatu tindakan dilakukan berulang kali sehingga menimbulkan kritik atau kejengkelan.",
+      "points": [
+        "Pola: N + ばかり / V-te + ばかり + いる",
+        "Artinya: ... melulu / ... terus-menerus.",
+        "Contoh: Mainichi niku bakari tabete imasu. (Makan daging melulu setiap hari).",
+        "Contoh: Terebi wo mite bakari iru. (Menonton TV melulu)."
+      ],
+      "formula": "N + ばかり / V-te + ばかりいる"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "この部屋には机だけがあります。",
+      "rom": "Kono heya ni wa tsue dake ga arimasu.",
+      "en": "Di kamar ini hanya ada meja (netral)."
+    },
+    {
+      "jp": "財布には千円しか残っていません。",
+      "rom": "Saifu ni wa sen-en shika nokotte imasen.",
+      "en": "Di dompet hanya tersisa 1000 yen saja (merasa kurang)."
+    },
+    {
+      "jp": "彼は毎日遊んでばかりいます。",
+      "rom": "Kare wa mainichi asonde bakari imasu.",
+      "en": "Dia kerjanya bermain melulu setiap hari (kritik)."
+    },
+    {
+      "jp": "少しだけ待ってください。",
+      "rom": "Sukoshi dake matte kudasai.",
+      "en": "Tolong tunggu sebentar saja."
+    }
+  ],
+  "conversation": {
+    "title": "Belajar Melulu",
+    "dialogue": [
+      {
+        "speaker": "A",
+        "jp": "どうしたんですか。疲れた顔をして。",
+        "rom": "Dou shitan desu ka. Tsukareta kao wo shite.",
+        "en": "Ada apa? Wajahmu tampak lelah."
+      },
+      {
+        "speaker": "B",
+        "jp": "最近試験があるので、勉強ばかりしているんです。",
+        "rom": "Saikin shiken ga aru node, benkyou bakari shite iru n desu.",
+        "en": "Akhir-akhir ini karena ada ujian, saya belajar melulu."
+      },
+      {
+        "speaker": "A",
+        "jp": "無理をしないで、少しだけ休んでくださいね。",
+        "rom": "Muri wo shinaide, sukoshi dake yasunde kudasai ne.",
+        "en": "Jangan dipaksakan, tolong istirahat sebentar saja ya."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "Kalimat yang menggunakan 'shika' dengan benar:",
+      "options": [
+        {
+          "text": "財布に百円しかありません。",
+          "correct": true
+        },
+        {
+          "text": "財布に百円しかあります。",
+          "correct": false
+        },
+        {
+          "text": "財布に百円だけありません。",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "Terjemahkan: 'Makan daging melulu'.\nNiku [   ] tabete imasu.",
+      "answer": "bakari"
+    },
+    {
+      "type": "mcq",
+      "question": "Apa perbedaan nuansa antara 'dake' dan 'shika'?",
+      "options": [
+        {
+          "text": "dake bersifat netral; shika bernuansa kurang/negatif",
+          "correct": true
+        },
+        {
+          "text": "Keduanya sama saja",
+          "correct": false
+        },
+        {
+          "text": "shika bersifat netral; dake bernuansa negatif",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Hanya Satu Yang Tersisa",
+      "situation": "Memeriksa persediaan makanan di lemari",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "ラーメンはまだありますか。",
+          "rom": "Ramen wa mada arimasu ka.",
+          "en": "Apakah ramennya masih ada?"
+        },
+        {
+          "speaker": "B",
+          "jp": "いいえ、もう一つしかありません。",
+          "rom": "Iie, mou hitotsu shika arimasen.",
+          "en": "Tidak, tinggal satu buah saja."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r45-1",
+      "jp": "この電車は京都だけに止まります。",
+      "rom": "Kono densha wa Kyoto dake ni tomarimasu.",
+      "en": "Kereta ini hanya berhenti di Kyoto."
+    },
+    {
+      "id": "r45-2",
+      "jp": "平仮名しか書くことができません。",
+      "rom": "Hiragana shika kaku koto ga dekimasen.",
+      "en": "Saya hanya bisa menulis hiragana saja."
+    },
+    {
+      "id": "r45-3",
+      "jp": "彼は毎日肉ばかり食べています。",
+      "rom": "Kare wa mainichi niku bakari tabete imasu.",
+      "en": "Dia makan daging melulu setiap hari."
+    },
+    {
+      "id": "r45-4",
+      "jp": "五分だけ休みましょう。",
+      "rom": "Go-fun dake yasumashou.",
+      "en": "Mari kita beristirahat selama 5 menit saja."
+    },
+    {
+      "id": "r45-5",
+      "jp": "テストの点が悪かったので、泣きばかりでした。",
+      "rom": "Tesuto no ten ga warakatta node, naki bakari deshita.",
+      "en": "Karena nilai ujiannya buruk, kerjanya menangis melulu."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb45-1",
+      "pattern": "N + だけ",
+      "instruction": "Terjemahkan: 'Hanya hari Minggu'.",
+      "question": "Nichiyoubi",
+      "correct": "にちようびだけ",
+      "romaji": "Nichiyoubi dake.",
+      "translation": "Hanya hari Minggu."
+    },
+    {
+      "id": "wb45-2",
+      "pattern": "N + しか + ない",
+      "instruction": "Terjemahkan: 'Hanya bisa bicara sedikit'.",
+      "question": "Sukoshi / hanaseru",
+      "correct": "すこししかはなせません。",
+      "romaji": "Sukoshi shika hanasemasen.",
+      "translation": "Hanya bisa bicara sedikit."
+    },
+    {
+      "id": "wb45-3",
+      "pattern": "N + ばかり",
+      "instruction": "Terjemahkan: 'Belanja melulu'.",
+      "question": "Kaimono / suru",
+      "correct": "かいものばかりしています。",
+      "romaji": "Kaimono bakari shite imasu.",
+      "translation": "Belanja melulu."
+    },
+    {
+      "id": "wb45-4",
+      "pattern": "V-te + ばかりいる",
+      "instruction": "Terjemahkan: 'Tidur melulu'.",
+      "question": "Neru",
+      "correct": "ねてばかりいます。",
+      "romaji": "Nete bakari imasu.",
+      "translation": "Tidur melulu."
+    },
+    {
+      "id": "wb45-5",
+      "pattern": "N + しか + ない",
+      "instruction": "Terjemahkan: 'Hanya ada satu orang'.",
+      "question": "Hitori / iru",
+      "correct": "ひとりしかいません。",
+      "romaji": "Hitori shika imasen.",
+      "translation": "Hanya ada satu orang."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex45-1",
+        "sentence": "ひらがな [ ] かくことが できません。",
+        "correct": "しか",
+        "translation": "Hanya bisa menulis hiragana saja."
+      },
+      {
+        "id": "ex45-2",
+        "sentence": "この ケーキは わたし [ ] 食べました。",
+        "correct": "だけ",
+        "translation": "Kue ini hanya saya saja yang makan."
+      },
+      {
+        "id": "ex45-3",
+        "sentence": "あそんで [ ] いると、しけんに おちますよ。",
+        "correct": "ばかり",
+        "translation": "Kalau bermain melulu, kamu akan gagal ujian lho."
+      },
+      {
+        "id": "ex45-4",
+        "sentence": "じかんが 5ふん [ ] ありません。いそぎましょう。",
+        "correct": "しか",
+        "translation": "Waktunya tinggal 5 menit saja. Mari bergegas."
+      },
+      {
+        "id": "ex45-5",
+        "sentence": "すこし [ ] まってください。",
+        "correct": "だけ",
+        "translation": "Tolong tunggu sebentar saja."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex45-6",
+        "question": "Pola 'shika' harus berpasangan dengan bentuk kata kerja:",
+        "options": [
+          {
+            "text": "Negatif",
+            "correct": true
+          },
+          {
+            "text": "Positif",
+            "correct": false
+          },
+          {
+            "text": "Bentuk kamus",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex45-7",
+        "question": "Apa arti kalimat 'Nete bakari iru'?",
+        "options": [
+          {
+            "text": "Tidur melulu",
+            "correct": true
+          },
+          {
+            "text": "Baru saja tidur",
+            "correct": false
+          },
+          {
+            "text": "Sulit tidur",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex45-8",
+        "question": "Pola pembatasan mana yang bernuansa netral?",
+        "options": [
+          {
+            "text": "dake",
+            "correct": true
+          },
+          {
+            "text": "shika",
+            "correct": false
+          },
+          {
+            "text": "bakari",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "わたしの おとうとは 毎日 ゲームをしてばかりいます。勉強は 少ししかしません。テストの 前だけ 勉強しますが、点数は いつも 悪いです。母は いつも 怒ってばかりいます。",
+      "questions": [
+        {
+          "id": "ex45-9",
+          "question": "おとうとは よく ゲームを します。",
+          "correct": "T"
+        },
+        {
+          "id": "ex45-10",
+          "question": "おとうとは 毎日 たくさん 勉強します。",
+          "correct": "F"
+        },
+        {
+          "id": "ex45-11",
+          "question": "母は おとうとに 怒っています。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

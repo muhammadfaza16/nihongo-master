@@ -1,0 +1,687 @@
+{
+  "id": 13,
+  "title": "Lesson 13: Keinginan & Tujuan (Tai-Form)",
+  "desc": "Membedah Bab 13. Anda belajar mengekspresikan keinginan (ingin melakukan/ingin benda), menyatakan tujuan pergi ke suatu tempat, dan kata tak-tentu (sesuatu, ke suatu tempat).",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v13-1",
+      "rom": "Hoshii",
+      "kana": "ほしい",
+      "kanji": "欲しい",
+      "en": "Ingin (benda) - I-Adj",
+      "audio": ""
+    },
+    {
+      "id": "v13-2",
+      "rom": "~Tai desu",
+      "kana": "〜たいです",
+      "kanji": "",
+      "en": "Ingin melakukan ~ (akhiran V)",
+      "audio": ""
+    },
+    {
+      "id": "v13-3",
+      "rom": "Oyogu / Oyogimasu",
+      "kana": "およぐ / およぎます",
+      "kanji": "泳ぐ",
+      "en": "Berenang",
+      "audio": ""
+    },
+    {
+      "id": "v13-4",
+      "rom": "Asobu / Asobimasu",
+      "kana": "あそぶ / あそびます",
+      "kanji": "遊ぶ",
+      "en": "Bermain / Bersenang-senang",
+      "audio": ""
+    },
+    {
+      "id": "v13-5",
+      "rom": "Toru / Torimasu",
+      "kana": "とる / とります",
+      "kanji": "撮る",
+      "en": "Mengambil (foto)",
+      "audio": ""
+    },
+    {
+      "id": "v13-6",
+      "rom": "Tsuri",
+      "kana": "つり",
+      "kanji": "釣り",
+      "en": "Memancing (kata benda)",
+      "audio": ""
+    },
+    {
+      "id": "v13-7",
+      "rom": "Sukii",
+      "kana": "スキー",
+      "kanji": "",
+      "en": "Ski",
+      "audio": ""
+    },
+    {
+      "id": "v13-8",
+      "rom": "Umi",
+      "kana": "うみ",
+      "kanji": "海",
+      "en": "Laut",
+      "audio": ""
+    },
+    {
+      "id": "v13-9",
+      "rom": "Yama",
+      "kana": "やま",
+      "kanji": "山",
+      "en": "Gunung",
+      "audio": ""
+    },
+    {
+      "id": "v13-10",
+      "rom": "Kawa",
+      "kana": "かわ",
+      "kanji": "川",
+      "en": "Sungai",
+      "audio": ""
+    },
+    {
+      "id": "v13-11",
+      "rom": "Bijutsukan",
+      "kana": "びじゅつかん",
+      "kanji": "美術館",
+      "en": "Museum Seni",
+      "audio": ""
+    },
+    {
+      "id": "v13-12",
+      "rom": "Tokoro",
+      "kana": "ところ",
+      "kanji": "所",
+      "en": "Tempat",
+      "audio": ""
+    },
+    {
+      "id": "v13-13",
+      "rom": "Dokoka",
+      "kana": "どこか",
+      "kanji": "",
+      "en": "Ke suatu tempat (indefinite)",
+      "audio": ""
+    },
+    {
+      "id": "v13-14",
+      "rom": "Nanika",
+      "kana": "なにか",
+      "kanji": "",
+      "en": "Sesuatu (indefinite)",
+      "audio": ""
+    },
+    {
+      "id": "v13-15",
+      "rom": "Natsuyasumi",
+      "kana": "なつやすみ",
+      "kanji": "夏休み",
+      "en": "Liburan Musim Panas",
+      "audio": ""
+    },
+    {
+      "id": "v13-16",
+      "rom": "Fuyuyasumi",
+      "kana": "ふゆやすみ",
+      "kanji": "冬休み",
+      "en": "Liburan Musim Dingin",
+      "audio": ""
+    },
+    {
+      "id": "v13-17",
+      "rom": "Tenpura",
+      "kana": "てんぷら",
+      "kanji": "",
+      "en": "Tempura",
+      "audio": ""
+    },
+    {
+      "id": "v13-18",
+      "rom": "Gyuudon",
+      "kana": "ぎゅうどん",
+      "kanji": "牛丼",
+      "en": "Gyudon (semur daging sapi di atas nasi)",
+      "audio": ""
+    },
+    {
+      "id": "v13-19",
+      "rom": "Teishoku",
+      "kana": "ていしょく",
+      "kanji": "定食",
+      "en": "Set Menu (nasi + lauk + sup)",
+      "audio": ""
+    },
+    {
+      "id": "v13-20",
+      "rom": "Okanjou",
+      "kana": "おかんじょう",
+      "kanji": "お勘定",
+      "en": "Bon / Tagihan",
+      "audio": ""
+    },
+    {
+      "id": "v13-21",
+      "rom": "Betsu-betsu ni",
+      "kana": "べつべつに",
+      "kanji": "別々に",
+      "en": "Sendiri-sendiri / Terpisah (bayar)",
+      "audio": ""
+    },
+    {
+      "id": "v13-22",
+      "rom": "Gochuumon",
+      "kana": "ごちゅうもん",
+      "kanji": "ご注文",
+      "en": "Pesanan (bentuk sopan)",
+      "audio": ""
+    },
+    {
+      "id": "v13-23",
+      "rom": "Shoushou",
+      "kana": "しょうしょう",
+      "kanji": "少々",
+      "en": "Sedikit / Sebentar (formal)",
+      "audio": ""
+    },
+    {
+      "id": "v13-24",
+      "rom": "Suteki (na)",
+      "kana": "すてき",
+      "kanji": "素敵",
+      "en": "Keren / Menakjubkan / Luar biasa",
+      "audio": ""
+    },
+    {
+      "id": "v13-25",
+      "rom": "Kirei (na)",
+      "kana": "きれい",
+      "kanji": "",
+      "en": "Cantik / Bersih / Indah",
+      "audio": ""
+    },
+    {
+      "id": "v13-26",
+      "rom": "Kaimono",
+      "kana": "かいもの",
+      "kanji": "買い物",
+      "en": "Belanja / Berbelanja (~shimasu)",
+      "audio": ""
+    },
+    {
+      "id": "v13-27",
+      "rom": "Eiga",
+      "kana": "えいが",
+      "kanji": "映画",
+      "en": "Film / Bioskop",
+      "audio": ""
+    },
+    {
+      "id": "v13-28",
+      "rom": "Shokuji",
+      "kana": "しょくじ",
+      "kanji": "食事",
+      "en": "Makan (formal) (~shimasu)",
+      "audio": ""
+    },
+    {
+      "id": "v13-29",
+      "rom": "Shashin",
+      "kana": "しゃしん",
+      "kanji": "写真",
+      "en": "Foto",
+      "audio": ""
+    },
+    {
+      "id": "v13-30",
+      "rom": "Ryokou",
+      "kana": "りょこう",
+      "kanji": "旅行",
+      "en": "Perjalanan / Jalan-jalan / Wisata",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g13-1",
+      "title": "1. V-ます → V-たいです (Ingin Melakukan)",
+      "desc": "Ubah akhiran -masu menjadi -tai untuk menyatakan keinginan melakukan sesuatu. Hasilnya berperilaku seperti I-Adjective.",
+      "points": [
+        "Tabe-masu -> Tabe-TAI desu. (Ingin makan).",
+        "Iki-masu -> Iki-TAI desu. (Ingin pergi).",
+        "Nomi-masu -> Nomi-TAI desu. (Ingin minum).",
+        "Negatif: Tabe-TAKU-NAI desu. (Tidak ingin makan). Konjugasi sama persis dengan I-Adj (karena tai adalah I-Adj).",
+        "CATATAN BUDAYA KRITIS: Tai-form HANYA untuk diri sendiri atau bertanya langsung ke lawan bicara. JANGAN bilang 'Tanaka-san wa tabetai desu' (itu lancang menebak keinginan orang ketiga)."
+      ],
+      "formula": "V-ます stem + たいです (Negatif: ~たくないです)",
+      "native_note": "Menyatakan keinginan langsung memakai '~tai desu' di depan umum terkadang terdengar terlalu blak-blakan atau menuntut. Untuk melembutkan ucapan, native speaker biasanya menambahkan akhiran '~ndesu kedo...' di belakangnya (misal: 'mizu o nomitai ndesu kedo' = 'saya ingin minum air...')."
+    },
+    {
+      "id": "g13-2",
+      "title": "2. N が ほしいです (Menginginkan Benda)",
+      "desc": "Kata sifat 'hoshii' (ingin) digunakan khusus untuk benda fisik/abstrak, bukan aktivitas. Partikelnya GA, bukan O.",
+      "points": [
+        "Kuruma GA hoshii desu. (Saya menginginkan mobil).",
+        "Atarashii pasokon GA hoshii desu. (Saya menginginkan laptop baru).",
+        "Negatif: Kuruma ga hoshiku-nai desu. (Tidak menginginkan mobil).",
+        "Sama seperti tai, JANGAN gunakan untuk menyatakan keinginan orang ketiga."
+      ],
+      "formula": "[Benda] が ほしいです (Negatif: ほしくないです)"
+    },
+    {
+      "id": "g13-3",
+      "title": "3. Tempat へ V-stem に 行きます (Pergi UNTUK Melakukan)",
+      "desc": "Menyatakan TUJUAN dari pergi ke suatu tempat. Partikel NI di sini berarti 'untuk', bukan lokasi.",
+      "points": [
+        "Umi e oyogi NI ikimasu. (Pergi ke laut UNTUK berenang).",
+        "Kobe e Indo-ryouri o tabe NI ikimasu. (Pergi ke Kobe UNTUK makan masakan India).",
+        "Bentuk kata kerjanya: Gunakan STEM (tanpa -masu). Tabe-masu -> tabe. Oyogi-masu -> oyogi. Shi-masu -> shi.",
+        "Kata kerja gerak yang bisa dipakai: ikimasu (pergi), kimasu (datang), kaerimasu (pulang)."
+      ],
+      "formula": "[Tempat] へ V-stem に 行きます/来ます/帰ります"
+    },
+    {
+      "id": "g13-4",
+      "title": "4. どこか / なにか (Suatu Tempat / Sesuatu)",
+      "desc": "Kata tanya + KA berubah menjadi kata tak-tentu (indefinite). Artinya berubah dari 'pertanyaan' jadi 'ketidaktentuan'.",
+      "points": [
+        "Doko (Di mana) + ka = Dokoka (Di suatu tempat). Dokoka ikitai desu. (Ingin pergi ke suatu tempat).",
+        "Nani (Apa) + ka = Nanika (Sesuatu). Nanika tabetai desu. (Ingin makan sesuatu).",
+        "Dare (Siapa) + ka = Dareka (Seseorang). Dareka imasu ka. (Ada seseorang kah?).",
+        "Dalam kalimat POSITIF, partikel e/o sering DIHILANGKAN: 'Dokoka ikitai' (bukan 'Dokoka e ikitai')."
+      ],
+      "formula": "Kata Tanya + か = Indefinite (どこか/なにか/だれか)"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "神戸へ インド料理を 食べに 行きます。",
+      "rom": "Koube e Indo-ryouri o tabe ni ikimasu.",
+      "en": "Saya pergi ke Kobe untuk makan masakan India."
+    },
+    {
+      "jp": "わたしは 新しい パソコンが ほしいです。",
+      "rom": "Watashi wa atarashii pasokon ga hoshii desu.",
+      "en": "Saya menginginkan laptop baru."
+    },
+    {
+      "jp": "冬休みに 何を したいですか。",
+      "rom": "Fuyuyasumi ni nani o shitai desu ka.",
+      "en": "Di liburan musim dingin ingin melakukan apa?"
+    },
+    {
+      "jp": "どこか 行きたいです。",
+      "rom": "Dokoka ikitai desu.",
+      "en": "Saya ingin pergi ke suatu tempat."
+    },
+    {
+      "jp": "海へ 泳ぎに 行きたいです。",
+      "rom": "Umi e oyogi ni ikitai desu.",
+      "en": "Saya ingin pergi ke laut untuk berenang."
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: 別々にお願いします (Bayar Sendiri-sendiri)",
+    "dialogue": [
+      {
+        "speaker": "Pelayan",
+        "jp": "ご注文は？",
+        "rom": "Gochuumon wa?",
+        "en": "Pesanannya?"
+      },
+      {
+        "speaker": "Santos",
+        "jp": "わたしは てんぷら定食。",
+        "rom": "Watashi wa tenpura-teishoku.",
+        "en": "Saya set tempura."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "わたしは 牛丼。",
+        "rom": "Watashi wa gyuudon.",
+        "en": "Saya gyudon (semur daging sapi)."
+      },
+      {
+        "speaker": "Pelayan",
+        "jp": "定食と 牛丼ですね。少々 お待ちください。",
+        "rom": "Teishoku to gyuudon desu ne. Shoushou omachi kudasai.",
+        "en": "Set menu dan gyudon ya. Tolong tunggu sebentar."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "すみません。お勘定 お願いします。",
+        "rom": "Sumimasen. Okanjou onegaishimasu.",
+        "en": "Permisi. Minta bonnya."
+      },
+      {
+        "speaker": "Santos",
+        "jp": "別々に お願いします。",
+        "rom": "Betsu-betsu ni onegaishimasu.",
+        "en": "Tolong pisahkan (bayarnya sendiri-sendiri)."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] Jika ingin bilang 'Ingin makan sushi', bentuk kata kerjanya adalah:",
+      "options": [
+        {
+          "text": "Sushi o tabemasu.",
+          "correct": false
+        },
+        {
+          "text": "Sushi o tabetai desu.",
+          "correct": true
+        },
+        {
+          "text": "Sushi ga hoshii desu.",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] Terjemahkan: 'Pergi ke laut untuk berenang'.\nUmi e oyogi [     ] ikimasu.",
+      "answer": "ni"
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu B] 'Saya menginginkan MOBIL (benda)'. Partikel yang dipakai sebelum 'hoshii' adalah:",
+      "options": [
+        {
+          "text": "を (O)",
+          "correct": false
+        },
+        {
+          "text": "が (GA)",
+          "correct": true
+        },
+        {
+          "text": "は (WA)",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu C] Bentuk NEGATIF dari 'tabetai' (ingin makan) adalah:\nTabe-[         ] desu.",
+      "answer": "takunai"
+    },
+    {
+      "type": "mcq",
+      "question": "[Budaya] Anda mengatakan keinginan orang ketiga: 'Tanaka-san wa tabetai desu'. Ini adalah:",
+      "options": [
+        {
+          "text": "Benar dan sopan.",
+          "correct": false
+        },
+        {
+          "text": "SALAH. Tai-form hanya untuk diri sendiri atau pertanyaan langsung.",
+          "correct": true
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Menanyakan Kado Impian",
+      "situation": "Menanyakan barang yang paling diinginkan sebagai hadiah ulang tahun",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "誕生日に 何が 一番 欲しいですか。",
+          "rom": "Tanjoubi ni nani ga ichiban hoshii desu ka.",
+          "en": "Saat ulang tahun barang apa yang paling diinginkan?"
+        },
+        {
+          "speaker": "B",
+          "jp": "新しい パソコンが 欲しいです。",
+          "rom": "Atarashii pasokon ga hoshii desu.",
+          "en": "Ingin laptop baru."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。いいですね。",
+          "rom": "Sou desu ka. Ii desu ne.",
+          "en": "Oh begitu. Keren/bagus sekali ya."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Rencana Kegiatan Akhir Pekan",
+      "situation": "Mengobrol tentang rencana aktivitas akhir pekan yang ingin dilaksanakan",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "今週の 土曜日に 何を したいですか。",
+          "rom": "Konshuu no doyoubi ni nani o shitai desu ka.",
+          "en": "Hari Sabtu minggu ini ingin melakukan apa?"
+        },
+        {
+          "speaker": "B",
+          "jp": "海へ 行って、泳ぎたいです。",
+          "rom": "Umi e itte, oyogitai esu.",
+          "en": "Pergi ke pantai dan ingin berenang."
+        },
+        {
+          "speaker": "A",
+          "jp": "いいですね。楽しそうですね。",
+          "rom": "Ii desu ne. Tanoshisou desu ne.",
+          "en": "Asyik ya. Kelihatannya menyenangkan."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Mengajak Pergi Makan Bersama",
+      "situation": "Mengajak pergi makan bersama karena perut sudah lapar",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "お腹が 空きましたね。何か 食べに行きませんか。",
+          "rom": "O-naka ga sukimashita ne. Nani ka tabeni ikimasen ka.",
+          "en": "Perut sudah lapar ya. Maukah pergi makan sesuatu?"
+        },
+        {
+          "speaker": "B",
+          "jp": "ええ。あの 駅の 近くの 店へ 行きましょう。",
+          "rom": "Ee. Ano eki no chikaku no mise e ikimashou.",
+          "en": "Iya. Mari kita pergi ke toko dekat stasiun itu."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r13-1",
+      "jp": "今 何が 一番 欲しいですか。... 車が 欲しいです。",
+      "rom": "Ima nani ga ichiban hoshii desu ka? ... Kuruma ga hoshii desu.",
+      "en": "Sekarang apa yang paling Anda inginkan? ... Saya ingin mobil."
+    },
+    {
+      "id": "r13-2",
+      "jp": "パソコンが 欲しいですか。... いいえ、欲しくありません。",
+      "rom": "Pasokon ga hoshii desu ka? ... Iie, hoshiku arimasen.",
+      "en": "Apakah Anda menginginkan komputer? ... Tidak, saya tidak menginginkannya."
+    },
+    {
+      "id": "r13-3",
+      "jp": "週末 何を したいですか。... 映画を 見たいです。",
+      "rom": "Shuumatsu nani o shitai desu ka? ... Eiga o mitai desu.",
+      "en": "Akhir pekan ini ingin melakukan apa? ... Ingin menonton film."
+    },
+    {
+      "id": "r13-4",
+      "jp": "どこへ 行きたいですか。... 京都へ 行きたいです。お寺を 見たいです。",
+      "rom": "Doko e ikitai desu ka? ... Kyo-to e ikitai desu. Otera o mitai desu.",
+      "en": "Ingin pergi ke mana? ... Ingin pergi ke Kyoto. Saya ingin melihat kuil Buddha."
+    },
+    {
+      "id": "r13-5",
+      "jp": "暑いですから、何か 飲みたいですね。... ええ、冷たい ビールを 飲みたいですね。",
+      "rom": "Atsui desu kara, nanika nomitai desu ne. ... Ee, tsumetai biiru o nomitai desu ne.",
+      "en": "Karena panas, kita ingin minum sesuatu ya. ... Benar, kita ingin minum bir dingin ya."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb13-1",
+      "pattern": "V ながら V (Sambil ~)",
+      "instruction": "Nyatakan dua aktivitas yang dilakukan bersamaan, aktivitas sekunder + ながら + aktivitas utama.",
+      "question": "Ongaku / kikinagara / benkyoushimasu",
+      "correct": "おんがくを ききながら べんきょうします。",
+      "romaji": "Ongaku wo kikinagara benkyoushimasu.",
+      "translation": "Belajar sambil mendengarkan musik."
+    },
+    {
+      "id": "wb13-2",
+      "pattern": "N のために V します (Demi / Untuk tujuan)",
+      "instruction": "Nyatakan tujuan suatu tindakan dengan pola N のために.",
+      "question": "Kenkoo / no tame ni / undoushimasu",
+      "correct": "けんこうの ために うんどうします。",
+      "romaji": "Kenkou no tame ni undoushimasu.",
+      "translation": "Berolahraga demi kesehatan."
+    },
+    {
+      "id": "wb13-3",
+      "pattern": "V ために V (Untuk ~ melakukan ~)",
+      "instruction": "Nyatakan tujuan suatu tindakan menggunakan kata kerja dictionary form + ために.",
+      "question": "Nihongo wo jyouzu ni naru / tame ni / benkyoushimasu",
+      "correct": "にほんごが じょうずに なる ために べんきょうします。",
+      "romaji": "Nihongo ga jouzu ni naru tame ni benkyoushimasu.",
+      "translation": "Belajar untuk menjadi pandai berbahasa Jepang."
+    },
+    {
+      "id": "wb13-4",
+      "pattern": "V まえに ~ (Sebelum ~)",
+      "instruction": "Nyatakan aktivitas yang dilakukan sebelum sesuatu menggunakan V dict.form + まえに.",
+      "question": "Neru / mae ni / ha wo migakimasu",
+      "correct": "ねる まえに はを みがきます。",
+      "romaji": "Neru mae ni ha wo migakimasu.",
+      "translation": "Menggosok gigi sebelum tidur."
+    },
+    {
+      "id": "wb13-5",
+      "pattern": "V あとで ~ (Setelah ~)",
+      "instruction": "Nyatakan aktivitas yang dilakukan setelah sesuatu menggunakan V ta-form + あとで.",
+      "question": "Shokuji / shita / ato de / yasumimaす",
+      "correct": "しょくじした あとで やすみます。",
+      "romaji": "Shokuji shita ato de yasumimasu.",
+      "translation": "Beristirahat setelah makan."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex13-1",
+        "sentence": "テレビを [ ] ながら ごはんを たべます。",
+        "correct": "み",
+        "translation": "Makan sambil menonton TV."
+      },
+      {
+        "id": "ex13-2",
+        "sentence": "けんこうの [ ] に まいにち あるきます。",
+        "correct": "ため",
+        "translation": "Berjalan kaki setiap hari demi kesehatan."
+      },
+      {
+        "id": "ex13-3",
+        "sentence": "ねる [ ] に は を みがいて ください。",
+        "correct": "まえ",
+        "translation": "Tolong gosok gigi sebelum tidur."
+      },
+      {
+        "id": "ex13-4",
+        "sentence": "にほんへ [ ] ために にほんごを べんきょうします。",
+        "correct": "いく",
+        "translation": "Belajar bahasa Jepang untuk pergi ke Jepang."
+      },
+      {
+        "id": "ex13-5",
+        "sentence": "しょくじした [ ] で やすみます。",
+        "correct": "あと",
+        "translation": "Beristirahat setelah makan."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex13-6",
+        "question": "'Ongaku wo kikinagara benkyoushimasu' berarti:",
+        "options": [
+          {
+            "text": "Belajar, kemudian mendengarkan musik",
+            "correct": false
+          },
+          {
+            "text": "Belajar sambil mendengarkan musik",
+            "correct": true
+          },
+          {
+            "text": "Mendengarkan musik, bukan belajar",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex13-7",
+        "question": "Kata yang digunakan sebelum 'tame ni' untuk menyatakan tujuan berupa kata kerja adalah:",
+        "options": [
+          {
+            "text": "Bentuk te-form",
+            "correct": false
+          },
+          {
+            "text": "Bentuk kamus (dictionary form)",
+            "correct": true
+          },
+          {
+            "text": "Bentuk ta-form (lampau)",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex13-8",
+        "question": "Perbedaan 'mae ni' (sebelum) dan 'ato de' (setelah): Kata kerja sebelum 'mae ni' menggunakan:",
+        "options": [
+          {
+            "text": "Bentuk kamus (dictionary form)",
+            "correct": true
+          },
+          {
+            "text": "Bentuk ta-form",
+            "correct": false
+          },
+          {
+            "text": "Bentuk te-form",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "わたしは まいにち おんがくを ききながら じょぎんぐを します。けんこうの ために まいにち 30ぷん うんどうする ように しています。ねる まえに かならず にっきを かきます。",
+      "questions": [
+        {
+          "id": "ex13-9",
+          "question": "この人は おんがくを ききながら うんどうします。",
+          "correct": "T"
+        },
+        {
+          "id": "ex13-10",
+          "question": "この人は しゅうに 1かい うんどうします。",
+          "correct": "F"
+        },
+        {
+          "id": "ex13-11",
+          "question": "この人は ねる まえに にっきを かきます。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

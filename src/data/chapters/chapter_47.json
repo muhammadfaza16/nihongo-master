@@ -1,0 +1,461 @@
+{
+  "id": 47,
+  "title": "Lesson 47: Kalimat Majemuk Tingkat Lanjut (〜上で / 〜上に / 〜上は)",
+  "desc": "Mempelajari struktur sambungan formal: 〜上で (setelah melakukan persiapan), 〜上に (selain itu/ditambah lagi), dan 〜上は (karena sudah/kini setelah).",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v47-1",
+      "rom": "Katei",
+      "kana": "かてい",
+      "kanji": "過程",
+      "en": "Proses / Tahapan",
+      "audio": ""
+    },
+    {
+      "id": "v47-2",
+      "rom": "Jouken",
+      "kana": "じょうけん",
+      "kanji": "条件",
+      "en": "Syarat / Ketentuan",
+      "audio": ""
+    },
+    {
+      "id": "v47-3",
+      "rom": "Kakugo",
+      "kana": "かくご",
+      "kanji": "覚悟",
+      "en": "Kesiapan mental / Ketetapan hati",
+      "audio": ""
+    },
+    {
+      "id": "v47-4",
+      "rom": "Keikaku",
+      "kana": "けいかく",
+      "kanji": "計画",
+      "en": "Rencana / Program",
+      "audio": ""
+    },
+    {
+      "id": "v47-5",
+      "rom": "Ue de",
+      "kana": "うえで",
+      "kanji": "上で",
+      "en": "Setelah melakukan / Berdasarkan",
+      "audio": ""
+    },
+    {
+      "id": "v47-6",
+      "rom": "Ue ni",
+      "kana": "うえに",
+      "kanji": "上に",
+      "en": "Di samping itu / Selain itu",
+      "audio": ""
+    },
+    {
+      "id": "v47-7",
+      "rom": "Ue wa",
+      "kana": "うえは",
+      "kanji": "上は",
+      "en": "Kini setelah / Karena sudah",
+      "audio": ""
+    },
+    {
+      "id": "v47-8",
+      "rom": "Shigoto",
+      "kana": "しごと",
+      "kanji": "仕事",
+      "en": "Pekerjaan",
+      "audio": ""
+    },
+    {
+      "id": "v47-9",
+      "rom": "Shiken",
+      "kana": "しけん",
+      "kanji": "試験",
+      "en": "Ujian",
+      "audio": ""
+    },
+    {
+      "id": "v47-10",
+      "rom": "Keiyaku",
+      "kana": "けいやく",
+      "kanji": "契約",
+      "en": "Kontrak / Perjanjian",
+      "audio": ""
+    },
+    {
+      "id": "v47-11",
+      "rom": "Soudan",
+      "kana": "そうだん",
+      "kanji": "相談",
+      "en": "Konsultasi / Diskusi",
+      "audio": ""
+    },
+    {
+      "id": "v47-12",
+      "rom": "Kettei",
+      "kana": "けってい",
+      "kanji": "決定",
+      "en": "Keputusan",
+      "audio": ""
+    },
+    {
+      "id": "v47-13",
+      "rom": "Bijin",
+      "kana": "びじん",
+      "kanji": "美人",
+      "en": "Wanita cantik",
+      "audio": ""
+    },
+    {
+      "id": "v47-14",
+      "rom": "Seikaku",
+      "kana": "せいかく",
+      "kanji": "性格",
+      "en": "Kepribadian / Sifat",
+      "audio": ""
+    },
+    {
+      "id": "v47-15",
+      "rom": "Kakunin",
+      "kana": "かくにん",
+      "kanji": "確認",
+      "en": "Konfirmasi / Pemeriksaan",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g47-1",
+      "title": "1. 〜上で (Setelah Melakukan / Berdasarkan)",
+      "desc": "Menyatakan bahwa tindakan B dilakukan setelah melakukan tindakan A sebagai persiapan, penyelidikan, atau landasan berpikir yang matang.",
+      "points": [
+        "Pola: V-ta + 上で / N + の上で (no ue de)",
+        "Artinya: Setelah melakukan A, baru melakukan B.",
+        "Contoh: Kazoku to soudan shita ue de kめます (Saya memutuskan setelah berdiskusi dengan keluarga)."
+      ],
+      "formula": "V-ta + 上で / N + の上で",
+      "native_note": "Ini lebih formal daripada '~te kara' dan menunjukkan proses pengambilan keputusan yang hati-hati."
+    },
+    {
+      "id": "g47-2",
+      "title": "2. 〜上に (Selain itu / Di samping itu)",
+      "desc": "Menyatakan penambahan informasi yang searah (positif ditambah positif, atau negatif ditambah negatif).",
+      "points": [
+        "Pola: Plain Form (Na-adj + na/de aru, N + no/de aru) + 上に",
+        "Artinya: Sudah... ditambah lagi... / Selain...",
+        "Contoh: Kono heya wa hiroi ue ni, yachin mo yasui desu. (Kamar ini selain luas, uang sewanya juga murah)."
+      ],
+      "formula": "Plain Form + 上に"
+    },
+    {
+      "id": "g47-3",
+      "title": "3. 〜上は (Karena Sudah / Kini Setelah)",
+      "desc": "Menyatakan tekad kuat, keputusan mutlak, atau kewajiban moral yang muncul karena suatu keadaan tidak bisa dihindari lagi (serupa dengan からには).",
+      "points": [
+        "Pola: V-dict / V-ta + 上は",
+        "Artinya: Kini setelah... / Karena sudah...",
+        "Contoh: Konyaku shita ue wa, kekkon shinai wake ni wa ikimasen. (Kini setelah bertunangan, tidak boleh tidak menikah)."
+      ],
+      "formula": "V-dict/ta + 上は"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "実施計画を確認した上で、署名します。",
+      "rom": "Jisshi-keikaku wo kakunin shita ue de, shomei shimasu.",
+      "en": "Saya menandatangani setelah mengonfirmasi rencana pelaksanaan."
+    },
+    {
+      "jp": "この部屋は広い上に、家賃も安いです。",
+      "rom": "Kono heya wa hiroi ue ni, yachin mo yasui desu.",
+      "en": "Kamar ini selain luas, uang sewanya juga murah."
+    },
+    {
+      "jp": "日本に来た上は、日本語を一生懸命勉強します。",
+      "rom": "Nihon ni kita ue wa, Nihongo wo isshoukenmei benkyou shimasu.",
+      "en": "Karena sudah datang ke Jepang, saya akan belajar bahasa Jepang dengan sungguh-sungguh."
+    },
+    {
+      "jp": "契約書を読んだ上で、サインしてください。",
+      "rom": "Keiyakusho wo yonda ue de, sain shite kudasai.",
+      "en": "Tolong tanda tangani setelah Anda membaca surat kontrak."
+    }
+  ],
+  "conversation": {
+    "title": "Menandatangani Kontrak",
+    "dialogue": [
+      {
+        "speaker": "A",
+        "jp": "これにすぐ署mしていいですか。",
+        "rom": "Kore ni sugu shomei shite ii desu ka?",
+        "en": "Bolehkah saya langsung menandatangani ini?"
+      },
+      {
+        "speaker": "B",
+        "jp": "いいえ、課長と相談した上で署名してください。",
+        "rom": "Iie, kachou to soudan shita ue de shomei shite kudasai.",
+        "en": "Tidak, tolong tanda tangani setelah berdiskusi dengan manajer terlebih dahulu."
+      },
+      {
+        "speaker": "A",
+        "jp": "わかりました。相談の上で署名します。",
+        "rom": "Wakarimashita. Soudan no ue de shomei shimasu.",
+        "en": "Baiklah. Saya akan tanda tangan setelah berkonsultasi."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "Arti dari 'Kono heya wa hiroi ue ni, yasui':",
+      "options": [
+        {
+          "text": "Kamar ini selain luas, juga murah",
+          "correct": true
+        },
+        {
+          "text": "Kamar ini murah setelah luas",
+          "correct": false
+        },
+        {
+          "text": "Kamar ini harus luas agar murah",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "Terjemahkan: 'Setelah mengonfirmasi fakta'.\nJijitsu wo kakunin shita [   ] de.",
+      "answer": "ue"
+    },
+    {
+      "type": "mcq",
+      "question": "Pola 'ue wa' menunjukkan:",
+      "options": [
+        {
+          "text": "Tekad kuat karena situasi sudah terjadi",
+          "correct": true
+        },
+        {
+          "text": "Perbandingan dua hal kontras",
+          "correct": false
+        },
+        {
+          "text": "Saran yang santai",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Memilih Universitas",
+      "situation": "Dua siswa membicarakan pilihan kampus mereka",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "どこの大学にするか決めましたか。",
+          "rom": "Doko no daigaku ni suru ka kimemashita ka.",
+          "en": "Apakah kamu sudah memutuskan universitas mana?"
+        },
+        {
+          "speaker": "B",
+          "jp": "いいえ、大学を見学した上で決めたいと思います。",
+          "rom": "Iie, daigaku wo kemgaku shita ue de kimetai to omoimasu.",
+          "en": "Belum, saya ingin memutuskan setelah mengunjungi universitasnya."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r47-1",
+      "jp": "よく考えた上で、返事をします。",
+      "rom": "Yoku kangaeta ue de, henji wo shimasu.",
+      "en": "Saya akan membalas setelah memikirkannya baik-baik."
+    },
+    {
+      "id": "r47-2",
+      "jp": "今日は寒い上に、風も強いです。",
+      "rom": "Kyou wa samui ue ni, kaze mo tsuyoi desu.",
+      "en": "Hari ini selain dingin, anginnya juga kencang."
+    },
+    {
+      "id": "r47-3",
+      "jp": "決断した上は、後悔しません。",
+      "rom": "Ketsudan shita ue wa, koukai shimasen.",
+      "en": "Kini setelah mengambil keputusan, saya tidak akan menyesal."
+    },
+    {
+      "id": "r47-4",
+      "jp": "両親の許可を得た上で、留学します。",
+      "rom": "Ryooshin no kyoka wo eta ue de, ryugaku shimasu.",
+      "en": "Saya kuliah di luar negeri setelah mendapat izin orang tua."
+    },
+    {
+      "id": "r47-5",
+      "jp": "あの店は安い上に、味も美味しいです。",
+      "rom": "Ano mise wa yasui ue ni, aji mo oishii desu.",
+      "en": "Toko itu selain murah, rasanya juga lezat."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb47-1",
+      "pattern": "V-ta + 上で",
+      "instruction": "Terjemahkan: 'Memutuskan setelah memeriksa'.",
+      "question": "Kakunin suru / kimeru",
+      "correct": "かくにんしたうえできめます。",
+      "romaji": "Kakunin shita ue de kimemasu.",
+      "translation": "Memutuskan setelah memeriksa."
+    },
+    {
+      "id": "wb47-2",
+      "pattern": "Plain + 上に",
+      "instruction": "Terjemahkan: 'Selain pintar, ramah'.",
+      "question": "Atama ga ii / shinsetsu",
+      "correct": "あたまがいいいうえにしんせつです。",
+      "romaji": "Atama ga ii ue ni shinsetsu desu.",
+      "translation": "Selain pintar, ramah."
+    },
+    {
+      "id": "wb47-3",
+      "pattern": "V-dict/ta + 上は",
+      "instruction": "Terjemahkan: 'Karena sudah berjanji, harus menepati'.",
+      "question": "Yakusoku shita / mamoru",
+      "correct": "やくそくしたうえはまもります。",
+      "romaji": "Yakusoku shita ue wa mamorimasu.",
+      "translation": "Karena sudah berjanji, saya akan menepatinya."
+    },
+    {
+      "id": "wb47-4",
+      "pattern": "N + の上で",
+      "instruction": "Terjemahkan: 'Setelah berkonsultasi'.",
+      "question": "Soudan",
+      "correct": "そうだんのうえで",
+      "romaji": "Soudan no ue de.",
+      "translation": "Setelah berkonsultasi."
+    },
+    {
+      "id": "wb47-5",
+      "pattern": "Plain + 上に",
+      "instruction": "Terjemahkan: 'Selain hujan, ada badai'.",
+      "question": "Ame / taifuu",
+      "correct": "あめがふるいうえにたいふうもきています。",
+      "romaji": "Ame ga furu ue ni taifuu mo kite imasu.",
+      "translation": "Selain hujan, badai juga datang."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex47-1",
+        "sentence": "けいやくしょを よく よんだ [ ] で サインしてください。",
+        "correct": "うえ",
+        "translation": "Silakan tanda tangan setelah membaca surat kontrak dengan baik."
+      },
+      {
+        "id": "ex47-2",
+        "sentence": "かれは あたまが いい [ ] に、スポーツも できます。",
+        "correct": "うえ",
+        "translation": "Dia selain pintar, juga bisa berolahraga."
+      },
+      {
+        "id": "ex47-3",
+        "sentence": "しゅっぱつする [ ] は、じゅんびを かんぜんに しなければなりません。",
+        "correct": "うえは",
+        "translation": "Kini setelah akan berangkat, persiapan harus dilakukan dengan sempurna."
+      },
+      {
+        "id": "ex47-4",
+        "sentence": "そうだんの [ ] で、お返事いたします。",
+        "correct": "うえ",
+        "translation": "Akan kami kabari setelah berkonsultasi."
+      },
+      {
+        "id": "ex47-5",
+        "sentence": "このアパートは せまい [ ] に、やちんが たかいです。",
+        "correct": "うえ",
+        "translation": "Apartemen ini selain sempit, uang sewanya juga mahal."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex47-6",
+        "question": "Pilih sambungan yang tepat: 'Nihon ni ryugaku suru [  ] wa, isshoukenmei benkyou suru'",
+        "options": [
+          {
+            "text": "上は",
+            "correct": true
+          },
+          {
+            "text": "上で",
+            "correct": false
+          },
+          {
+            "text": "上に",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex47-7",
+        "question": "Apa arti 'Kono ryuri wa tsukuri-kata ga kantan na ue ni, oishii'?",
+        "options": [
+          {
+            "text": "Masakan ini cara buatnya mudah dan juga enak",
+            "correct": true
+          },
+          {
+            "text": "Masakan ini dibuat setelah mudah",
+            "correct": false
+          },
+          {
+            "text": "Masakan ini tidak terlalu enak",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex47-8",
+        "question": "Pola 'N no ue de' setara dengan:",
+        "options": [
+          {
+            "text": "N + shita ue de",
+            "correct": true
+          },
+          {
+            "text": "N + suru ue ni",
+            "correct": false
+          },
+          {
+            "text": "N + suru ue wa",
+            "correct": false
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "私たちは 新しい 事業計画を よく 話し合った上で、スタートすることにしました。計画は 難しい 上に、時間も あまり ありません。しかし、スタートした 上は、成功するまで 全員で がんばる覚悟です。",
+      "questions": [
+        {
+          "id": "ex47-9",
+          "question": "話し合う前に スタートしました。",
+          "correct": "F"
+        },
+        {
+          "id": "ex47-10",
+          "question": "計画は 難しくて 時間も 少ないです。",
+          "correct": "T"
+        },
+        {
+          "id": "ex47-11",
+          "question": "スタートしたからには 成功するまで がんばります。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}

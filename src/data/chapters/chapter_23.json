@@ -1,0 +1,667 @@
+{
+  "id": 23,
+  "title": "Lesson 23: Toki (Saat) & Kondisional To",
+  "desc": "Membedah Bab 23. Anda belajar menyatakan 'Ketika/Saat' terjadi sesuatu (Toki), dan penggunaan 'To' untuk hubungan sebab-akibat yang absolut (Jika A ditekan, maka pasti B keluar).",
+  "locked": false,
+  "vocab": [
+    {
+      "id": "v23-1",
+      "rom": "Kikimasu",
+      "kana": "ききます",
+      "kanji": "聞きます",
+      "en": "Bertanya [Sensei NI]",
+      "audio": ""
+    },
+    {
+      "id": "v23-2",
+      "rom": "Mawashimasu",
+      "kana": "まわします",
+      "kanji": "回します",
+      "en": "Memutar (knob/tombol)",
+      "audio": ""
+    },
+    {
+      "id": "v23-3",
+      "rom": "Hikimasu",
+      "kana": "ひきます",
+      "kanji": "引きます",
+      "en": "Menarik",
+      "audio": ""
+    },
+    {
+      "id": "v23-4",
+      "rom": "Kaemasu",
+      "kana": "かえます",
+      "kanji": "変えます",
+      "en": "Mengubah",
+      "audio": ""
+    },
+    {
+      "id": "v23-5",
+      "rom": "Sawarimasu",
+      "kana": "さわります",
+      "kanji": "触ります",
+      "en": "Menyentuh [+NI]",
+      "audio": ""
+    },
+    {
+      "id": "v23-6",
+      "rom": "Demasu",
+      "kana": "でます",
+      "kanji": "出ます",
+      "en": "Keluar [Otsuri GA - kembaliannya keluar]",
+      "audio": ""
+    },
+    {
+      "id": "v23-7",
+      "rom": "Ugokimasu",
+      "kana": "うごきます",
+      "kanji": "動きます",
+      "en": "Bergerak / Berjalan (mesin)",
+      "audio": ""
+    },
+    {
+      "id": "v23-8",
+      "rom": "Arukimasu",
+      "kana": "あるきます",
+      "kanji": "歩きます",
+      "en": "Berjalan kaki [Michi O]",
+      "audio": ""
+    },
+    {
+      "id": "v23-9",
+      "rom": "Watarimasu",
+      "kana": "わたります",
+      "kanji": "渡ります",
+      "en": "Menyeberang [Hashi O]",
+      "audio": ""
+    },
+    {
+      "id": "v23-10",
+      "rom": "Kiwotsukemasu",
+      "kana": "きをつけます",
+      "kanji": "気をつけます",
+      "en": "Berhati-hati",
+      "audio": ""
+    },
+    {
+      "id": "v23-11",
+      "rom": "Hikkoshi-shimasu",
+      "kana": "ひっこしします",
+      "kanji": "引っ越しします",
+      "en": "Pindah rumah",
+      "audio": ""
+    },
+    {
+      "id": "v23-12",
+      "rom": "Oto",
+      "kana": "おと",
+      "kanji": "音",
+      "en": "Suara (benda mati)",
+      "audio": ""
+    },
+    {
+      "id": "v23-13",
+      "rom": "Kikai",
+      "kana": "きかい",
+      "kanji": "機械",
+      "en": "Mesin",
+      "audio": ""
+    },
+    {
+      "id": "v23-14",
+      "rom": "Koshou",
+      "kana": "こしょう",
+      "kanji": "故障",
+      "en": "Kerusakan (mesin)",
+      "audio": ""
+    },
+    {
+      "id": "v23-15",
+      "rom": "Michi",
+      "kana": "みち",
+      "kanji": "道",
+      "en": "Jalan",
+      "audio": ""
+    },
+    {
+      "id": "v23-16",
+      "rom": "Kousaten",
+      "kana": "こうさてん",
+      "kanji": "交差点",
+      "en": "Perempatan",
+      "audio": ""
+    },
+    {
+      "id": "v23-17",
+      "rom": "Shingou",
+      "kana": "しんごう",
+      "kanji": "信号",
+      "en": "Lampu lalu lintas",
+      "audio": ""
+    },
+    {
+      "id": "v23-18",
+      "rom": "Kado",
+      "kana": "かど",
+      "kanji": "角",
+      "en": "Sudut jalan",
+      "audio": ""
+    },
+    {
+      "id": "v23-19",
+      "rom": "Tomemasu",
+      "kana": "とめます",
+      "kanji": "止めます",
+      "en": "Menghentikan / Mematikan (mesin)",
+      "audio": ""
+    },
+    {
+      "id": "v23-20",
+      "rom": "Ochimasu",
+      "kana": "おちます",
+      "kanji": "落ちます",
+      "en": "Jatuh / Terjatuh",
+      "audio": ""
+    },
+    {
+      "id": "v23-21",
+      "rom": "Torimasu",
+      "kana": "とります",
+      "kanji": "取ります",
+      "en": "Mengambil",
+      "audio": ""
+    },
+    {
+      "id": "v23-22",
+      "rom": "Tsukemasu",
+      "kana": "つけます",
+      "kanji": "",
+      "en": "Menyalakan (lampu/AC)",
+      "audio": ""
+    },
+    {
+      "id": "v23-23",
+      "rom": "Keshimasu",
+      "kana": "けします",
+      "kanji": "消します",
+      "en": "Mematikan (lampu) / Menghapus",
+      "audio": ""
+    },
+    {
+      "id": "v23-24",
+      "rom": "Iremasu",
+      "kana": "いれます",
+      "kanji": "入れます",
+      "en": "Memasukkan",
+      "audio": ""
+    },
+    {
+      "id": "v23-25",
+      "rom": "Massugu",
+      "kana": "まっすぐ",
+      "kanji": "",
+      "en": "Lurus (arah)",
+      "audio": ""
+    },
+    {
+      "id": "v23-26",
+      "rom": "Migi",
+      "kana": "みぎ",
+      "kanji": "右",
+      "en": "Kanan",
+      "audio": ""
+    },
+    {
+      "id": "v23-27",
+      "rom": "Hidari",
+      "kana": "ひだり",
+      "kanji": "左",
+      "en": "Kiri",
+      "audio": ""
+    },
+    {
+      "id": "v23-28",
+      "rom": "Eki",
+      "kana": "えき",
+      "kanji": "駅",
+      "en": "Stasiun (kereta)",
+      "audio": ""
+    },
+    {
+      "id": "v23-29",
+      "rom": "Kippu",
+      "kana": "きっぷ",
+      "kanji": "切符",
+      "en": "Tiket / Karcis",
+      "audio": ""
+    },
+    {
+      "id": "v23-30",
+      "rom": "Densha",
+      "kana": "でんしゃ",
+      "kanji": "電車",
+      "en": "Kereta api listrik",
+      "audio": ""
+    }
+  ],
+  "grammar": [
+    {
+      "id": "g23-1",
+      "title": "1. ~時 (Toki = Saat / Ketika)",
+      "desc": "Toki menyambungkan dua kalimat. Aturan sambungannya persis seperti menyambungkan kata benda di Bab 22.",
+      "points": [
+        "V-Plain + Toki. Toshokan de hon o kariru TOKI, kaado ga irimasu. (SAAT meminjam buku, butuh kartu).",
+        "I-Adj + Toki. Nemui TOKI, koohii o nomimasu. (SAAT ngantuk, minum kopi).",
+        "Na-Adj + NA + Toki. Hima NA TOKI, terebi o mimasu. (SAAT senggang, nonton TV).",
+        "Noun + NO + Toki. Gakusei NO TOKI, yoku asobimashita. (SAAT jadi mahasiswa, sering main)."
+      ],
+      "formula": "Futsukei / Nの / Naな + 時",
+      "native_note": "Pola kondisional fakta alam '~to' memiliki aturan mutlak: kalimat kedua TIDAK boleh berisi keinginan, perintah, atau ajakan. Jika ingin menyatakan ajakan kondisional, gunakan pola '~tara' yang akan dipelajari di Bab 25."
+    },
+    {
+      "id": "g23-2",
+      "title": "2. V-る / V-た 時 (Perbedaan Nuansa Waktu)",
+      "desc": "Kapan pakai Dictionary form (V-ru) dan kapan pakai Ta-form (V-ta) sebelum Toki? Tergantung apakah aksinya SUDAH selesai atau BELUM saat kejadian kedua terjadi.",
+      "points": [
+        "Toukyou e IKU toki, kaban o kaimashita. (Saat MAU pergi ke Tokyo, saya beli tas). Artinya beli tasnya belum sampai Tokyo (misal beli di stasiun awal).",
+        "Toukyou e ITTA toki, kaban o kaimashita. (Saat SUDAH pergi ke Tokyo, saya beli tas). Artinya beli tasnya di Tokyo."
+      ],
+      "formula": "V-る (Belum selesai) vs V-た (Sudah selesai)"
+    },
+    {
+      "id": "g23-3",
+      "title": "3. V-る と、~ (Kondisional Absolut: Kalau... pasti...)",
+      "desc": "Digunakan untuk hal yang bersifat ABSOLUT: fakta alam, cara pakai mesin, atau panduan arah jalan. JIKA A terjadi, maka B PASTI otomatis terjadi.",
+      "points": [
+        "Kono botan o osu TO, mizu ga demasu. (KALAU tombol ini ditekan, air [pasti] keluar). Konteks: Mesin.",
+        "Haru ni naru TO, sakura ga sakimasu. (KALAU musim semi tiba, sakura [pasti] mekar). Konteks: Fakta Alam.",
+        "Migi e magaru TO, ginkou ga arimasu. (KALAU belok kanan, [pasti] ada bank). Konteks: Panduan Arah.",
+        "★AWAS: Bagian belakang kalimat JANGAN diisi dengan keinginan (tai), ajakan (mashou), atau perintah (kudasai)."
+      ],
+      "formula": "V-る (Dict) + と"
+    }
+  ],
+  "patterns": [
+    {
+      "jp": "図書館で 本を 借りる 時、カードが 要ります。",
+      "rom": "Toshokan de hon o kariru toki, kaado ga irimasu.",
+      "en": "Saat meminjam buku di perpustakaan, kartu (member) dibutuhkan."
+    },
+    {
+      "jp": "道が わからない 時、人に 聞きます。",
+      "rom": "Michi ga wakaranai toki, hito ni kikimasu.",
+      "en": "Saat tidak tahu jalan, (saya) bertanya pada orang."
+    },
+    {
+      "jp": "この ボタンを 押すと、お釣りが 出ます。",
+      "rom": "Kono botan o osu to, otsuri ga demasu.",
+      "en": "Kalau tombol ini ditekan, uang kembalian akan keluar."
+    },
+    {
+      "jp": "右へ 曲がると、郵便局が あります。",
+      "rom": "Migi e magaru to, yuubinkyoku ga arimasu.",
+      "en": "Kalau belok kanan, akan ada kantor pos."
+    }
+  ],
+  "conversation": {
+    "title": "Penerapan Nyata: どう行きますか (Perginya Bagaimana?)",
+    "dialogue": [
+      {
+        "speaker": "Miller",
+        "jp": "すみません。市役所まで どう 行きますか。",
+        "rom": "Sumimasen. Shiyakusho made dou ikimasu ka.",
+        "en": "Permisi. Ke balai kota perginya bagaimana?"
+      },
+      {
+        "speaker": "Warga",
+        "jp": "市役所ですか。この 道を まっすぐ 行くと、角に 銀行が あります。",
+        "rom": "Shiyakusho desu ka. Kono michi o massugu iku to, kado ni ginkou ga arimasu.",
+        "en": "Balai kota ya. Kalau pergi lurus di jalan ini, (nanti) di sudut ada bank."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "はい。",
+        "rom": "Hai.",
+        "en": "Ya."
+      },
+      {
+        "speaker": "Warga",
+        "jp": "そこを 右へ 曲がって ください。５０メートルぐらい 行くと、左に あります。",
+        "rom": "Soko o migi e magatte kudasai. Gojuu meetoru gurai iku to, hidari ni arimasu.",
+        "en": "Tolong belok kanan di sana. Kalau maju sekitar 50 meter, ada di sebelah kiri."
+      },
+      {
+        "speaker": "Miller",
+        "jp": "わかりました。どうも。",
+        "rom": "Wakarimashita. Doumo.",
+        "en": "Saya mengerti. Terima kasih."
+      }
+    ]
+  },
+  "practice": [
+    {
+      "type": "mcq",
+      "question": "[Renshuu A] Terjemahkan: 'Saat anak-anak (kodomo/Kata Benda)'.",
+      "options": [
+        {
+          "text": "Kodomo no toki",
+          "correct": true
+        },
+        {
+          "text": "Kodomo toki",
+          "correct": false
+        },
+        {
+          "text": "Kodomo na toki",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Mondai] 'Kalau musim semi tiba, sakura mekar'.\nHaru ni naru [     ], sakura ga sakimasu.",
+      "answer": "to"
+    },
+    {
+      "type": "mcq",
+      "question": "[Renshuu B] 'Kalau tombol ini ditekan...'. Pola kalimat di belakangnya yang BOLEH:",
+      "options": [
+        {
+          "text": "Kippu ga demasu (Tiket keluar - Fakta Mesin)",
+          "correct": true
+        },
+        {
+          "text": "Kippu o katte kudasai (Tolong beli tiket - Perintah)",
+          "correct": false
+        },
+        {
+          "text": "Kippu o kaitai desu (Ingin beli tiket - Keinginan)",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "type": "fill",
+      "question": "[Renshuu C] 'Saat TIDAK TAHU (wakaranai) jalan'.\nMichi ga wakara-[         ] toki, hito ni kikimasu.",
+      "answer": "nai"
+    },
+    {
+      "type": "mcq",
+      "question": "[Jebakan Nuansa] 'Saat ke Jepang, saya beli tas (di stasiun awal, tasnya belum sampai Jepang)'.",
+      "options": [
+        {
+          "text": "Nihon e IKU toki, kaban o kaimashita.",
+          "correct": true
+        },
+        {
+          "text": "Nihon e ITTA toki, kaban o kaimashita.",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mini_kaiwa": [
+    {
+      "title": "Renshuu C 1: Mengatasi Pusing Saat Belajar",
+      "situation": "Mengobrol tentang solusi yang biasa dilakukan teman ketika kepalanya terasa pusing",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "頭が 痛い 時、どう しますか。",
+          "rom": "Atama ga itai toki, dou shimasu ka.",
+          "en": "Saat kepala terasa pusing, apa yang dilakukan?"
+        },
+        {
+          "speaker": "B",
+          "jp": "薬を 飲んで、早く 寝る ように して います。",
+          "rom": "Kusuri o nonde, hayaku neru youni shite imasu.",
+          "en": "Minum obat, dan diusahakan tidur lebih cepat."
+        },
+        {
+          "speaker": "A",
+          "jp": "そうですか。お大事に。",
+          "rom": "Sou desu ka. O-daiji ni.",
+          "en": "Oh begitu. Semoga lekas sembuh."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 2: Menjelaskan Cara Kerja Mesin Tiket",
+      "situation": "Menjelaskan cara menggunakan tombol mesin tiket otomatis di stasiun",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "すみません、切符の 買い方を 教えて ください。",
+          "rom": "Sumimasen, kippu no kaika-ta o oshiete kudasai.",
+          "en": "Permisi, tolong ajarkan cara membeli tiket."
+        },
+        {
+          "speaker": "B",
+          "jp": "この ボタンを 押すと、切符が 出ますよ。",
+          "rom": "Kono botan o osu to, kippu ga demasu yo.",
+          "en": "Jika menekan tombol ini, tiketnya akan keluar lho."
+        },
+        {
+          "speaker": "A",
+          "jp": "ああ、簡単ですね。ありがとうございました。",
+          "rom": "Aa, kantan desu ne. Arigatou gozaimashita.",
+          "en": "Ah, mudah sekali ya. Terima kasih banyak."
+        }
+      ]
+    },
+    {
+      "title": "Renshuu C 3: Petunjuk Arah Menuju Taman Kota",
+      "situation": "Memberikan petunjuk jalan ke taman kota yang posisinya lurus setelah jembatan",
+      "dialogue": [
+        {
+          "speaker": "A",
+          "jp": "すみません、中央公園は どちらですか。",
+          "rom": "Sumimasen, Chuuou Kouen wa dochira desu ka.",
+          "en": "Permisi, Taman Pusat ada di sebelah mana?"
+        },
+        {
+          "speaker": "B",
+          "jp": "この 道を まっすぐ 行くと、右側に ありますよ。",
+          "rom": "Kono michi o massugu iku to, migigawa ni arimasu yo.",
+          "en": "Jika pergi lurus mengikuti jalan ini, letaknya ada di sebelah kanan lho."
+        },
+        {
+          "speaker": "A",
+          "jp": "わかりました。ありがとうございます。",
+          "rom": "Wakarimashita. Arigatou gozaimasu.",
+          "en": "Saya mengerti. Terima kasih banyak."
+        }
+      ]
+    }
+  ],
+  "reibun": [
+    {
+      "id": "r23-1",
+      "jp": "図書館で 本を 借りる とき、カードが 要ります。... そうですか。分かりました。",
+      "rom": "Toshokan de hon o kariru toki, kaado ga irimasu. ... Sou desu ka. Wakarimashita.",
+      "en": "Saat meminjam buku di perpustakaan, memerlukan kartu. ... Oh ya? Saya paham."
+    },
+    {
+      "id": "r23-2",
+      "jp": "この ボタンを 押すと、お釣りが出ます。... そうですか。便利ですね。",
+      "rom": "Kono botan o osu to, otsuri ga demasu. ... Sou desu ka. Benri desu ne.",
+      "en": "Kalau menekan tombol ini, uang kembalian akan keluar. ... Oh ya? Praktis sekali ya."
+    },
+    {
+      "id": "r23-3",
+      "jp": "暇な とき、何を聞きますか。... 音楽を 聞きます。",
+      "rom": "Hima na toki, nani o kikimasu ka? ... Ongaku o kikimasu.",
+      "en": "Saat senggang, Anda mendengarkan apa? ... Mendengarkan musik."
+    },
+    {
+      "id": "r23-4",
+      "jp": "道を 渡る とき、車に 気を つけてください。... はい、気を つけます。",
+      "rom": "Michi o wataru toki, kuruma ni ki o tsukete kudasai. ... Hai, ki o tsukemasu.",
+      "en": "Saat menyeberang jalan, tolong berhati-hati pada mobil. ... Ya, saya akan berhati-hati."
+    },
+    {
+      "id": "r23-5",
+      "jp": "これを 回すと、音が 大きく なります。... そうですか。やってみます。",
+      "rom": "Kore o mawasu to, oto ga ookiku narimasu. ... Sou desu ka. Yatte mimasu.",
+      "en": "Kalau memutar ini, suaranya akan membesar. ... Oh ya? Saya coba ya."
+    }
+  ],
+  "workbook": [
+    {
+      "id": "wb23-1",
+      "pattern": "Plain form + ようです (Sepertinya ~ / Tampaknya ~)",
+      "instruction": "Nyatakan dugaan berdasarkan indikasi/bukti yang terlihat menggunakan ようです.",
+      "question": "Kare / byouki no / you desu",
+      "correct": "かれは びょうきの ようです。",
+      "romaji": "Kare wa byouki no you desu.",
+      "translation": "Tampaknya dia sedang sakit."
+    },
+    {
+      "id": "wb23-2",
+      "pattern": "V stem / adj + そうです (Terlihat ~ / Kelihatannya ~)",
+      "instruction": "Nyatakan kesan visual langsung menggunakan sou desu (kesan dari penglihatan).",
+      "question": "Kono ryouri / oishisou",
+      "correct": "この りょうりは おいしそうです。",
+      "romaji": "Kono ryouri wa oishisou desu.",
+      "translation": "Masakan ini kelihatannya enak."
+    },
+    {
+      "id": "wb23-3",
+      "pattern": "Plain form + らしいです (Seperti katanya ~ / Katanya ~)",
+      "instruction": "Nyatakan informasi yang diperoleh dari luar (berita, rumor) menggunakan らしいです.",
+      "question": "Kare / kaisha / yameta / rashii",
+      "correct": "かれは かいしゃを やめた らしいです。",
+      "romaji": "Kare wa kaisha wo yameta rashii desu.",
+      "translation": "Katanya dia keluar dari perusahaan."
+    },
+    {
+      "id": "wb23-4",
+      "pattern": "Noun + らしい (Khas / Betul-betul ~)",
+      "instruction": "Gunakan らしい setelah kata benda untuk menyatakan sifat yang khas/tipikal.",
+      "question": "Nihon / rashii / keeshiki / desu",
+      "correct": "にほんらしい けしきです。",
+      "romaji": "Nihon rashii keshiki desu.",
+      "translation": "Pemandangan yang khas Jepang."
+    },
+    {
+      "id": "wb23-5",
+      "pattern": "〜ようだ vs 〜そうだ vs 〜らしい (Perbandingan)",
+      "instruction": "Pilih ekspresi yang tepat berdasarkan sumber informasi.",
+      "question": "Ame / furi / sou / desu (berdasarkan awan gelap yang terlihat)",
+      "correct": "あめが ふりそうです。",
+      "romaji": "Ame ga furisou desu.",
+      "translation": "Sepertinya akan hujan (berdasarkan penglihatan langsung)."
+    }
+  ],
+  "exam": {
+    "part1": [
+      {
+        "id": "ex23-1",
+        "sentence": "かれは びょうきの [ ] です。",
+        "correct": "よう",
+        "translation": "Tampaknya dia sakit (dari observasi)."
+      },
+      {
+        "id": "ex23-2",
+        "sentence": "この りょうりは おいし [ ] です。",
+        "correct": "そう",
+        "translation": "Masakan ini kelihatannya enak."
+      },
+      {
+        "id": "ex23-3",
+        "sentence": "かれは かいしゃを やめた [ ] です。",
+        "correct": "らしい",
+        "translation": "Katanya dia keluar dari perusahaan."
+      },
+      {
+        "id": "ex23-4",
+        "sentence": "あめが ふり [ ] ですね。",
+        "correct": "そう",
+        "translation": "Sepertinya akan hujan ya."
+      },
+      {
+        "id": "ex23-5",
+        "sentence": "にほん [ ] けしきが きれいですね。",
+        "correct": "らしい",
+        "translation": "Pemandangan khas Jepang itu indah ya."
+      }
+    ],
+    "part2": [
+      {
+        "id": "ex23-6",
+        "question": "Perbedaan antara 'youdesu', 'sou desu', dan 'rashii desu':",
+        "options": [
+          {
+            "text": "Youdesu = observasi langsung dengan pertimbangan; sou desu = kesan visual instan; rashii = dari informasi pihak ketiga",
+            "correct": true
+          },
+          {
+            "text": "Ketiganya sama dan bisa saling menggantikan",
+            "correct": false
+          },
+          {
+            "text": "Rashii lebih kuat kepastiannya dari youdesu",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex23-7",
+        "question": "Untuk menyatakan 'Kue ini kelihatannya enak' berdasarkan tampilannya yang langsung dilihat:",
+        "options": [
+          {
+            "text": "このケーキはおいしいようです。",
+            "correct": false
+          },
+          {
+            "text": "このケーキはおいしそうです。",
+            "correct": true
+          },
+          {
+            "text": "このケーキはおいしいらしいです。",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "id": "ex23-8",
+        "question": "Setelah mendengar gosip dari teman bahwa Pak Tanaka akan menikah, ungkapan yang tepat:",
+        "options": [
+          {
+            "text": "たなかさんは けっこんするようです。",
+            "correct": false
+          },
+          {
+            "text": "たなかさんは けっこんしそうです。",
+            "correct": false
+          },
+          {
+            "text": "たなかさんは けっこんするらしいです。",
+            "correct": true
+          }
+        ]
+      }
+    ],
+    "part3": {
+      "text": "そとは くもって いて、あめが ふりそうです。てんきよほうに よると、きょうの ごご あめが ふるらしいです。そとを みると、みんなが かさを もって いる ようです。わたしも かさを もって いった ほうが いいでしょう。",
+      "questions": [
+        {
+          "id": "ex23-9",
+          "question": "てんきよほうでは きょう あめが ふると いって いました。",
+          "correct": "T"
+        },
+        {
+          "id": "ex23-10",
+          "question": "そとに いる ひとびとは かさを もっていません。",
+          "correct": "F"
+        },
+        {
+          "id": "ex23-11",
+          "question": "かさを もって いく ほうが いいです。",
+          "correct": "T"
+        }
+      ]
+    }
+  }
+}
