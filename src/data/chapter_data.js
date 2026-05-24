@@ -2462,7 +2462,8 @@ export const MNN_DATA = [
       {
         "id": "r3-3",
         "jp": "山田さんは どこですか。... 事務所です。",
-        "rom": "Yamada-san wa doko desu ka? ... Di kantor."
+        "rom": "Yamada-san wa doko desu ka? ... Di kantor.",
+        "en": "Pak Yamada ada di mana? ... Di kantor."
       },
       {
         "id": "r3-4",

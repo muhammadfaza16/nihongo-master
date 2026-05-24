@@ -573,9 +573,9 @@ export function ChapterView(container, params) {
       if (chapterData.reibun && chapterData.reibun.length > 0) {
         chapterData.reibun.forEach((r, idx) => {
           // Split Q&A by the "..." marker
-          const jpParts = r.jp.split('...');
-          const romParts = r.rom.split('...');
-          const enParts = r.en.split('...');
+          const jpParts = (r.jp || '').split('...');
+          const romParts = (r.rom || '').split('...');
+          const enParts = (r.en || '').split('...');
 
           const qJp = jpParts[0]?.trim() || '';
           const aJp = jpParts[1]?.trim() || '';
