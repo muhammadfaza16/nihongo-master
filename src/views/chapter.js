@@ -216,6 +216,52 @@ export function ChapterView(container, params) {
 
     let html = `
       <style>
+        .resource-card-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 16px;
+          margin-bottom: 36px;
+        }
+        .resource-card {
+          background: var(--bg-card);
+          border: 1px solid var(--border) !important;
+          border-radius: var(--radius-md);
+          padding: 12px 14px;
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          cursor: pointer;
+          transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+          color: var(--text-main) !important;
+          text-decoration: none;
+        }
+        .resource-card:hover {
+          border-color: var(--border-bright) !important;
+          background: var(--bg-hover);
+          transform: translateY(-2px);
+        }
+        .resource-card.active {
+          background: var(--text-main) !important;
+          border-color: var(--text-main) !important;
+          color: var(--bg-main) !important;
+        }
+        .resource-card.active .resource-subtitle {
+          color: var(--bg-main) !important;
+          opacity: 0.75;
+        }
+        .resource-subtitle {
+          font-size: 0.7rem;
+          color: var(--text-muted);
+          font-weight: 500;
+          transition: color 0.2s;
+        }
+        @media (max-width: 768px) {
+          .resource-card-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+          }
+        }
         .kana-layout-grid {
           display: grid;
           grid-template-columns: 1fr;
@@ -230,8 +276,8 @@ export function ChapterView(container, params) {
       </style>
 
       <!-- Breadcrumb Navigation -->
-      <div class="chapter-breadcrumb">
-        <a href="#/curriculum?track=${backTrack}">
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 24px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">
+        <a href="#/curriculum?track=${backTrack}" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; gap: 6px;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'">
           <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i>
           Kurikulum
         </a>
@@ -265,9 +311,9 @@ export function ChapterView(container, params) {
         </div>
       </div>
 
-      <div class="chapter-header-info">
-        <h2 class="chapter-title">${chapterData.title}</h2>
-        <p class="chapter-desc">${chapterData.desc}</p>
+      <div style="margin-bottom:32px;">
+        <h2 style="font-size:var(--text-2xl);font-weight:800;color:var(--text-main);margin-bottom:6px;letter-spacing:var(--tracking-tight);line-height:var(--leading-tight);">${chapterData.title}</h2>
+        <p style="color:var(--text-secondary);font-size:var(--text-sm);line-height:var(--leading-normal);">${chapterData.desc}</p>
       </div>
 
       <!-- Quick Resource Access Grid -->
@@ -275,7 +321,7 @@ export function ChapterView(container, params) {
         <div id="res-card-teori" class="resource-card ${activeTab !== 'practice' ? 'active' : ''}">
           <div style="display: flex; align-items: center; gap: 8px;">
             <i data-lucide="book-open" style="width: 16px; height: 16px;"></i>
-            <span style="font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.02em;">Teori</span>
+            <span style="font-weight: 800; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em;">Teori</span>
           </div>
           <span class="resource-subtitle">${chapterId === 0 ? 'Kana & Pelafalan' : 'Kotoba & Bunpou'}</span>
         </div>
@@ -283,7 +329,7 @@ export function ChapterView(container, params) {
         <div id="res-card-latihan" class="resource-card ${activeTab === 'practice' ? 'active' : ''}">
           <div style="display: flex; align-items: center; gap: 8px;">
             <i data-lucide="dumbbell" style="width: 16px; height: 16px;"></i>
-            <span style="font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.02em;">Latihan</span>
+            <span style="font-weight: 800; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em;">Latihan</span>
           </div>
           <span class="resource-subtitle">Renshuu</span>
         </div>
@@ -291,7 +337,7 @@ export function ChapterView(container, params) {
         <a href="#/workbook/${chapterId}" class="resource-card">
           <div style="display: flex; align-items: center; gap: 8px;">
             <i data-lucide="pen-tool" style="width: 16px; height: 16px;"></i>
-            <span style="font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.02em;">Workbook</span>
+            <span style="font-weight: 800; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em;">Workbook</span>
           </div>
           <span class="resource-subtitle">Kaite Oboeru</span>
         </a>
@@ -299,7 +345,7 @@ export function ChapterView(container, params) {
         <a href="#/exam/${chapterId}" class="resource-card">
           <div style="display: flex; align-items: center; gap: 8px;">
             <i data-lucide="award" style="width: 16px; height: 16px;"></i>
-            <span style="font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.02em;">Ujian</span>
+            <span style="font-weight: 800; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em;">Ujian</span>
           </div>
           <span class="resource-subtitle">Mondaishuu</span>
         </a>
@@ -331,41 +377,43 @@ export function ChapterView(container, params) {
     // TAB: PELAFALAN (Only for Chapter 0)
     if (activeTab === 'pelafalan' && chapterId === 0) {
       html += `
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; align-items: start; margin-bottom: 24px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; align-items: start; margin-bottom: 24px;">
           <!-- Kiri: Aturan Pelafalan (Bunpou) -->
-          <div style="display: flex; flex-direction: column; gap: 16px;">
-            <h3 style="font-size: var(--text-lg); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
-              <i data-lucide="book-open" style="width: 20px; height: 20px;"></i>
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <h3 style="font-size: var(--text-md); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
+              <i data-lucide="book-open" style="width: 18px; height: 18px;"></i>
               Aturan Pelafalan Dasar
             </h3>
             ${chapterData.grammar.map((g, idx) => `
-              <div class="card" style="border-left: 3px solid var(--accent); padding: 16px; background: var(--bg-card); border-top-right-radius: var(--radius-md); border-bottom-right-radius: var(--radius-md);">
-                <div style="font-size: var(--text-2xs); font-weight: 700; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase;">Aturan ${idx + 1}</div>
-                <h4 style="font-size: var(--text-md); font-weight: 800; color: var(--text-main); margin-bottom: 6px;">${g.title}</h4>
-                <p style="color: var(--text-muted); font-size: var(--text-sm); margin-bottom: 12px; line-height: 1.5;">${g.desc}</p>
-                <ul style="padding-left: 20px; color: var(--text-main); display: flex; flex-direction: column; gap: 6px; font-size: var(--text-sm);">
-                  ${g.points.map(pt => `<li style="line-height: 1.5;">${pt}</li>`).join('')}
+              <div class="card" style="border-left: 3px solid var(--accent); padding: 14px; background: var(--bg-card); border-top-right-radius: var(--radius-md); border-bottom-right-radius: var(--radius-md);">
+                <div style="font-size: var(--text-2xs); font-weight: 800; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase;">Aturan ${idx + 1}</div>
+                <h4 style="font-size: 0.98rem; font-weight: 800; color: var(--text-main); margin-bottom: 6px;">${g.title}</h4>
+                <p style="color: var(--text-secondary); font-size: 0.82rem; margin-bottom: 12px; line-height: 1.5;">${g.desc}</p>
+                <ul style="padding-left: 18px; color: var(--text-main); display: flex; flex-direction: column; gap: 6px; font-size: 0.82rem;">
+                  ${g.points.map(pt => `<li style="line-height: 1.5; color: var(--text-secondary); list-style-type: square;"><span style="color: var(--text-main);">${pt}</span></li>`).join('')}
                 </ul>
               </div>
             `).join('')}
           </div>
 
           <!-- Kanan: Contoh Penggunaan (Bunkei) -->
-          <div style="display: flex; flex-direction: column; gap: 16px;">
-            <h3 style="font-size: var(--text-lg); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
-              <i data-lucide="play-circle" style="width: 20px; height: 20px;"></i>
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <h3 style="font-size: var(--text-md); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
+              <i data-lucide="play-circle" style="width: 18px; height: 18px;"></i>
               Contoh Pelafalan
             </h3>
             <div style="display: flex; flex-direction: column; gap: 12px;">
               ${chapterData.patterns.map(p => `
-                <div class="pattern-card-revamp">
-                  <div style="flex: 1;">
-                    <div class="vocab-kana-title">${p.jp}</div>
-                    <div class="vocab-rom-sub">${p.rom}</div>
-                    <div class="vocab-meaning-sub">${p.en}</div>
+                <div class="card" style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: var(--bg-card); border: 1px solid var(--border);">
+                  <div style="flex: 1; min-width: 0;">
+                    <div style="font-size: 1.15rem; font-family: var(--font-jp); font-weight: 700; color: var(--text-main); margin-bottom: 4px;">
+                      ${p.jp}
+                    </div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">${p.rom}</div>
+                    <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;">${p.en}</div>
                   </div>
-                  <button onclick="window.playAudio('${p.jp}')" style="width: 36px; height: 36px; border-radius: 50%; background: var(--bg-hover); color: var(--accent-bright); display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: none; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='var(--accent)'; this.style.color='var(--bg-main)';" onmouseout="this.style.background='var(--bg-hover)'; this.style.color='var(--accent-bright)';">
-                    <i data-lucide="volume-2" style="width: 16px; height: 16px;"></i>
+                  <button onclick="window.playAudio('${p.jp}')" style="width: 28px; height: 28px; border-radius: 50%; background: var(--bg-hover); color: var(--accent-bright); display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: none; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='var(--accent)'; this.style.color='var(--bg-main)';" onmouseout="this.style.background='var(--bg-hover)'; this.style.color='var(--accent-bright)';">
+                    <i data-lucide="volume-2" style="width: 12px; height: 12px;"></i>
                   </button>
                 </div>
               `).join('')}
@@ -378,23 +426,23 @@ export function ChapterView(container, params) {
     // TAB: VOCAB_SALAM (Only for Chapter 0)
     if (activeTab === 'vocab_salam' && chapterId === 0) {
       html += `
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; align-items: start; margin-bottom: 24px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; align-items: start; margin-bottom: 24px;">
           <!-- Kiri: Kosakata Dasar (Greetings) -->
-          <div style="display: flex; flex-direction: column; gap: 16px;">
-            <h3 style="font-size: var(--text-lg); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
-              <i data-lucide="message-square" style="width: 20px; height: 20px;"></i>
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <h3 style="font-size: var(--text-md); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
+              <i data-lucide="message-square" style="width: 18px; height: 18px;"></i>
               Aisatsu (Salam Dasar)
             </h3>
             <div style="display: flex; flex-direction: column; gap: 12px;">
               ${chapterData.vocab.map(v => `
-                <div class="vocab-card">
-                  <div>
-                    <div class="vocab-kana-title">${v.kana}</div>
-                    <div class="vocab-rom-sub">${v.rom}</div>
-                    <div class="vocab-meaning-sub">${v.en}</div>
+                <div class="card" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; background: var(--bg-card); border: 1px solid var(--border); gap: 8px;">
+                  <div style="flex: 1; min-width: 0;">
+                    <div style="font-size: 1.18rem; font-weight: 700; font-family: var(--font-jp); color: var(--accent-bright); margin-bottom: 2px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">${v.kana}</div>
+                    <div style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono); text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">${v.rom}</div>
+                    <div style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 600; margin-top: 4px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">${v.en}</div>
                   </div>
-                  <button onclick="window.playAudio('${v.kana}')" style="width: 36px; height: 36px; border-radius: 50%; background: var(--bg-hover); color: var(--accent-bright); display: flex; align-items: center; justify-content: center; border: none; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='var(--accent)'; this.style.color='var(--bg-main)';" onmouseout="this.style.background='var(--bg-hover)'; this.style.color='var(--accent-bright)';">
-                    <i data-lucide="volume-2" style="width: 16px; height: 16px;"></i>
+                  <button onclick="window.playAudio('${v.kana}')" style="width: 28px; height: 28px; border-radius: 50%; background: var(--bg-hover); color: var(--accent-bright); display: flex; align-items: center; justify-content: center; border: none; cursor: pointer; flex-shrink: 0; transition: all 0.2s;" onmouseover="this.style.background='var(--accent)'; this.style.color='var(--bg-main)';" onmouseout="this.style.background='var(--bg-hover)'; this.style.color='var(--accent-bright)';">
+                    <i data-lucide="volume-2" style="width: 12px; height: 12px;"></i>
                   </button>
                 </div>
               `).join('')}
@@ -402,13 +450,13 @@ export function ChapterView(container, params) {
           </div>
 
           <!-- Kanan: Dialog Aisatsu (Kaiwa) -->
-          <div style="display: flex; flex-direction: column; gap: 16px;">
-            <h3 style="font-size: var(--text-lg); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
-              <i data-lucide="users" style="width: 20px; height: 20px;"></i>
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <h3 style="font-size: var(--text-md); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
+              <i data-lucide="users" style="width: 18px; height: 18px;"></i>
               Simulasi Percakapan Salam
             </h3>
-            <div class="card" style="padding: 20px; background: var(--bg-card); border: 1px solid var(--border);">
-              <h4 style="text-align: center; font-size: var(--text-md); font-weight: 700; margin-bottom: 16px; color: var(--text-main); border-bottom: 1px solid var(--border); padding-bottom: 8px;">
+            <div class="card" style="padding: 16px; background: var(--bg-card); border: 1px solid var(--border);">
+              <h4 style="text-align: center; font-size: 0.95rem; font-weight: 800; margin-bottom: 16px; color: var(--text-main); border-bottom: 1px solid var(--border); padding-bottom: 8px;">
                 ${chapterData.conversation.title}
               </h4>
               <div style="display: flex; flex-direction: column; gap: 12px;">
@@ -416,18 +464,18 @@ export function ChapterView(container, params) {
                   const isSelf = index % 2 === 0;
                   return `
                     <div style="display: flex; flex-direction: column; align-items: ${isSelf ? 'flex-start' : 'flex-end'};">
-                      <span style="font-size: var(--text-2xs); color: var(--text-muted); font-weight: 700; margin-bottom: 2px;">
+                      <span style="font-size: var(--text-2xs); color: var(--text-muted); font-weight: 800; margin-bottom: 2px;">
                         ${line.speaker}
                       </span>
-                      <div class="dialogue-bubble ${isSelf ? 'dialogue-bubble-other' : 'dialogue-bubble-self'}" style="max-width: 85%;">
-                        <div style="font-family: var(--font-jp); font-weight: 700; font-size: 1.05rem; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+                      <div style="max-width: 85%; padding: 8px 12px; border-radius: 12px; ${isSelf ? 'background: var(--bg-hover); border-bottom-left-radius: 4px;' : 'background: var(--bg-main); border: 1px solid var(--border); border-bottom-right-radius: 4px;'}">
+                        <div style="font-family: var(--font-jp); font-weight: 700; font-size: 0.92rem; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
                           <span>${line.jp}</span>
                           <button onclick="window.playAudio('${line.jp}')" style="background: transparent; border: none; color: var(--text-muted); cursor: pointer; padding: 2px; display: inline-flex; align-items: center; justify-content: center; transition: color 0.15s;" onmouseover="this.style.color='var(--accent-bright)'" onmouseout="this.style.color='var(--text-muted)'">
-                            <i data-lucide="volume-2" style="width: 14px; height: 14px;"></i>
+                            <i data-lucide="volume-2" style="width: 12px; height: 12px;"></i>
                           </button>
                         </div>
-                        <div class="vocab-rom-sub" style="margin-bottom: 2px;">${line.rom}</div>
-                        <div class="vocab-meaning-sub" style="margin-top: 0; color: inherit; opacity: 0.95;">${line.en}</div>
+                        <div style="font-size: 0.68rem; color: var(--text-muted); font-family: var(--font-mono); margin-bottom: 2px;">${line.rom}</div>
+                        <div style="font-size: 0.78rem; color: var(--text-secondary);">${line.en}</div>
                       </div>
                     </div>
                   `;
@@ -442,17 +490,17 @@ export function ChapterView(container, params) {
     // TAB: VOCABULARY
     if (activeTab === 'vocab' && chapterId > 0) {
       html += `
-        <div class="vocab-grid">
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px;">
       `;
       chapterData.vocab.forEach(v => {
         html += `
-          <div class="vocab-card">
-            <div>
-              <div class="vocab-kana-title">${formatJP(v)}</div>
-              <div class="vocab-meaning-sub">${v.en}</div>
+          <div class="card" style="display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; gap: 8px;">
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-size: 1.15rem; font-weight: 700; font-family: var(--font-jp); color: var(--accent-bright); margin-bottom: 2px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">${formatJP(v)}</div>
+              <div style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 600; text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">${v.en}</div>
             </div>
-            <button onclick="window.playAudio('${v.kana || v.kanji || v.rom}')" class="vocab-play-btn">
-              <i data-lucide="play" style="width: 14px; height: 14px;"></i>
+            <button onclick="window.playAudio('${v.kana || v.kanji || v.rom}')" style="width: 28px; height: 28px; border-radius: 50%; background: var(--bg-hover); color: var(--accent-bright); display: flex; align-items: center; justify-content: center; border: none; cursor: pointer; flex-shrink: 0; transition: all 0.2s;" onmouseover="this.style.background='var(--accent)'; this.style.color='var(--bg-main)';" onmouseout="this.style.background='var(--bg-hover)'; this.style.color='var(--accent-bright)';">
+              <i data-lucide="volume-2" style="width: 12px; height: 12px;"></i>
             </button>
           </div>
         `;
@@ -462,27 +510,29 @@ export function ChapterView(container, params) {
 
     // TAB: GRAMMAR
     if (activeTab === 'grammar' && chapterId > 0) {
-      html += `<div style="display: flex; flex-direction: column; gap: 16px;">`;
+      html += `<div style="display: flex; flex-direction: column; gap: 28px;">`;
       chapterData.grammar.forEach((g, idx) => {
         html += `
-          <div class="card grammar-card-revamp">
-            <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Grammar Point ${idx + 1}</div>
-            <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--text-main); margin-bottom: 6px; letter-spacing: -0.01em;">${g.title}</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px;">${g.desc}</p>
+          <div class="card" style="border-left: 3px solid var(--accent); padding: 14px 18px;">
+            <div style="font-size: 0.7rem; font-weight: 800; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em;">Grammar Point ${idx + 1}</div>
+            <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--text-main); margin-bottom: 6px; letter-spacing: -0.01em;">${g.title}</h3>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 12px; line-height: 1.5;">${g.desc}</p>
             
-            <code class="grammar-formula">
-              Formula: ${g.formula}
-            </code>
+            <div style="margin-bottom: 12px;">
+              <code style="display: inline-block; background: var(--bg-main); border: 1px solid var(--border); padding: 5px 10px; border-radius: var(--radius-sm); font-weight: 700; color: var(--text-main); font-family: var(--font-mono); font-size: 0.88rem;">
+                Formula: ${g.formula}
+              </code>
+            </div>
             
-            <ul style="padding-left: 20px; color: var(--text-main); display: flex; flex-direction: column; gap: 6px; font-size: 0.9rem;">
-              ${g.points.map(pt => `<li style="line-height: 1.6;">${pt}</li>`).join('')}
+            <ul style="padding-left: 18px; color: var(--text-main); display: flex; flex-direction: column; gap: 6px; font-size: 0.85rem;">
+              ${g.points.map(pt => `<li style="line-height: 1.5; list-style-type: square; color: var(--text-secondary);"><span style="color: var(--text-main);">${pt}</span></li>`).join('')}
             </ul>
             ${g.native_note ? `
-            <div class="grammar-note-box">
-              <i data-lucide="lightbulb" style="width: 20px; height: 20px; color: var(--accent-bright); flex-shrink: 0; margin-top: 2px;"></i>
+            <div style="margin-top: 14px; background: var(--accent-dim); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 12px 14px; display: flex; gap: 10px; align-items: flex-start;">
+              <i data-lucide="lightbulb" style="width: 16px; height: 16px; color: var(--accent-bright); flex-shrink: 0; margin-top: 1px;"></i>
               <div>
-                <div style="font-size: 0.75rem; font-weight: 800; color: var(--accent-bright); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">Catatan Native / Nuansa Praktis</div>
-                <div style="font-size: 0.9rem; color: var(--text-main); line-height: 1.6;">${g.native_note}</div>
+                <div style="font-size: 0.7rem; font-weight: 800; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">Catatan Native / Nuansa Praktis</div>
+                <div style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">${g.native_note}</div>
               </div>
             </div>
             ` : ''}
@@ -494,18 +544,18 @@ export function ChapterView(container, params) {
 
     // TAB: PATTERNS
     if (activeTab === 'patterns' && chapterId > 0) {
-      html += `<div style="display: flex; flex-direction: column; gap: 12px;">`;
+      html += `<div style="display: flex; flex-direction: column; gap: 16px;">`;
       chapterData.patterns.forEach(p => {
         html += `
-          <div class="pattern-card-revamp">
-            <div style="flex: 1;">
-              <div style="font-size: 1.15rem; font-family: var(--font-jp); font-weight: 700; color: var(--text-main); margin-bottom: 4px;">
+          <div class="card" style="display: flex; align-items: center; gap: 12px; padding: 12px 14px;">
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-size: 1.05rem; font-family: var(--font-jp); font-weight: 700; color: var(--text-main); margin-bottom: 4px;">
                 ${getDisplayMode() === 'romaji' ? p.rom : p.jp}
               </div>
-              <div style="font-size: 0.85rem; color: var(--text-secondary);">${p.en}</div>
+              <div style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 500;">${p.en}</div>
             </div>
-            <button onclick="window.playAudio('${p.jp || p.kana || p.rom}')" style="width: 32px; height: 32px; border-radius: 50%; background: var(--bg-hover); color: var(--accent-bright); display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: none; cursor: pointer;">
-              <i data-lucide="play" style="width: 14px; height: 14px;"></i>
+            <button onclick="window.playAudio('${p.jp || p.kana || p.rom}')" style="width: 28px; height: 28px; border-radius: 50%; background: var(--bg-hover); color: var(--accent-bright); display: flex; align-items: center; justify-content: center; flex-shrink: 0; border: none; cursor: pointer; transition: all 0.2s;" onmouseover="this.style.background='var(--accent)'; this.style.color='var(--bg-main)';" onmouseout="this.style.background='var(--bg-hover)'; this.style.color='var(--accent-bright)';">
+              <i data-lucide="volume-2" style="width: 12px; height: 12px;"></i>
             </button>
           </div>
         `;
@@ -516,17 +566,16 @@ export function ChapterView(container, params) {
     // TAB: REIBUN
     if (activeTab === 'reibun' && chapterId > 0) {
       html += `
-        <div style="display: flex; flex-direction: column; gap: 16px; max-width: 700px; margin: 0 auto; padding-bottom: 24px;">
-          <div style="text-align: center; margin-bottom: 8px;">
-            <span style="font-size: var(--text-2xs); font-weight: 700; color: var(--accent); background: var(--accent-dim); border: 1px solid var(--border-accent); padding: 4px 10px; border-radius: 99px; text-transform: uppercase; letter-spacing: 1px;">
-              例文 (Reibun) — Contoh Tanya Jawab Kalimat
+        <div style="display: flex; flex-direction: column; gap: 28px; max-width: 660px; margin: 0 auto; padding-bottom: 24px;">
+          <div style="text-align: center; margin-bottom: 12px;">
+            <span style="font-size: var(--text-2xs); font-weight: 800; color: var(--text-main); background: var(--accent-dim); border: 1px solid var(--border); padding: 4px 12px; border-radius: 99px; text-transform: uppercase; letter-spacing: 0.05em;">
+              例文 (Reibun) • Tanya Jawab Kalimat
             </span>
           </div>
       `;
 
       if (chapterData.reibun && chapterData.reibun.length > 0) {
         chapterData.reibun.forEach((r, idx) => {
-          // Split Q&A by the "..." marker
           const jpParts = (r.jp || '').split('...');
           const romParts = (r.rom || '').split('...');
           const enParts = (r.en || '').split('...');
@@ -539,47 +588,47 @@ export function ChapterView(container, params) {
           const aEn = enParts[1]?.trim() || '';
 
           html += `
-            <div class="reibun-card">
+            <div class="card glassmorphic-card" style="padding: 16px; border-radius: var(--radius-lg); display: flex; flex-direction: column; gap: 14px; background: rgba(255, 255, 255, 0.01); backdrop-filter: blur(8px); border: 1px solid var(--border); box-shadow: var(--shadow-sm);">
               <!-- Q&A Row index -->
-              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 4px;">
-                <span style="font-size: var(--text-2xs); font-weight: 700; color: var(--text-muted); text-transform: uppercase;">
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: 2px;">
+                <span style="font-size: 0.7rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.02em;">
                   Contoh Kalimat ${idx + 1}
                 </span>
-                <span style="font-size: var(--text-2xs); font-weight: 600; color: var(--accent-bright); background: var(--accent-dim); padding: 2px 8px; border-radius: var(--radius-xs);">
-                  Q&A Dialog
+                <span style="font-size: 0.7rem; font-weight: 800; color: var(--text-main); background: var(--accent-dim); padding: 2px 6px; border-radius: var(--radius-xs);">
+                  Dialog
                 </span>
               </div>
 
               <!-- QUESTION (Q) -->
-              <div style="display: flex; gap: 12px; align-items: flex-start;">
-                <div style="width: 26px; height: 26px; border-radius: 50%; background: linear-gradient(135deg, var(--green), #059669); color: white; display: flex; align-items: center; justify-content: center; font-size: var(--text-sm); font-weight: 800; flex-shrink: 0; margin-top: 2px; box-shadow: 0 2px 8px var(--green-dim);">
+              <div style="display: flex; gap: 10px; align-items: flex-start;">
+                <div style="width: 22px; height: 22px; border-radius: 50%; background: var(--text-main); color: var(--bg-main); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; flex-shrink: 0; margin-top: 2px;">
                   Q
                 </div>
-                <div style="flex: 1;">
-                  <div style="font-family: var(--font-jp); font-weight: 700; font-size: var(--text-base); color: var(--text-main); display: flex; align-items: center; gap: 6px;">
+                <div style="flex: 1; min-width: 0;">
+                  <div style="font-family: var(--font-jp); font-weight: 700; font-size: 0.95rem; color: var(--text-main); display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
                     <span>${getDisplayMode() === 'romaji' ? qRom : qJp}</span>
-                    <button onclick="window.playAudio('${qJp || qRom}')" style="background: transparent; border: none; color: var(--text-muted); cursor: pointer; padding: 2px; display: inline-flex; align-items: center; justify-content: center; transition: color 0.15s;" onmouseover="this.style.color='var(--green)'" onmouseout="this.style.color='var(--text-muted)'" aria-label="Putar Suara (TTS)">
-                      <i data-lucide="volume-2" style="width: 15px; height: 15px;"></i>
+                    <button onclick="window.playAudio('${qJp || qRom}')" style="background: transparent; border: none; color: var(--text-muted); cursor: pointer; padding: 2px; display: inline-flex; align-items: center; justify-content: center; transition: color 0.15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'" aria-label="Putar Suara (TTS)">
+                      <i data-lucide="volume-2" style="width: 12px; height: 12px;"></i>
                     </button>
                   </div>
-                  <div style="font-size: var(--text-sm); color: var(--text-secondary); margin-top: 2px;">${qEn}</div>
+                  <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 2px; line-height: 1.4;">${qEn}</div>
                 </div>
               </div>
 
               <!-- ANSWER (A) -->
               ${aJp ? `
-              <div class="reibun-ans-row">
-                <div style="width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: var(--bg-main); display: flex; align-items: center; justify-content: center; font-size: var(--text-sm); font-weight: 800; flex-shrink: 0; margin-top: 2px; box-shadow: 0 2px 8px var(--accent-glow);">
+              <div style="display: flex; gap: 10px; align-items: flex-start; padding-left: 16px; border-left: 2px dashed var(--border);">
+                <div style="width: 22px; height: 22px; border-radius: 50%; background: var(--bg-hover); border: 1px solid var(--border); color: var(--text-main); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; flex-shrink: 0; margin-top: 2px;">
                   A
                 </div>
-                <div style="flex: 1;">
-                  <div style="font-family: var(--font-jp); font-weight: 700; font-size: var(--text-base); color: var(--accent-bright); display: flex; align-items: center; gap: 6px;">
+                <div style="flex: 1; min-width: 0;">
+                  <div style="font-family: var(--font-jp); font-weight: 700; font-size: 0.95rem; color: var(--accent-bright); display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
                     <span>${getDisplayMode() === 'romaji' ? aRom : aJp}</span>
                     <button onclick="window.playAudio('${aJp || aRom}')" style="background: transparent; border: none; color: var(--text-muted); cursor: pointer; padding: 2px; display: inline-flex; align-items: center; justify-content: center; transition: color 0.15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'" aria-label="Putar Suara (TTS)">
-                      <i data-lucide="volume-2" style="width: 15px; height: 15px;"></i>
+                      <i data-lucide="volume-2" style="width: 12px; height: 12px;"></i>
                     </button>
                   </div>
-                  <div style="font-size: var(--text-sm); color: var(--text-secondary); margin-top: 2px;">${aEn}</div>
+                  <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 2px; line-height: 1.4;">${aEn}</div>
                 </div>
               </div>
               ` : ''}
@@ -587,7 +636,7 @@ export function ChapterView(container, params) {
           `;
         });
       } else {
-        html += `<div style="text-align:center;color:var(--text-muted);padding:40px;">Belum ada Reibun untuk bab ini.</div>`;
+        html += `<div style="text-align:center;color:var(--text-muted);padding:40px;font-size:0.85rem;">Belum ada Reibun untuk bab ini.</div>`;
       }
 
       html += `</div>`;
@@ -597,9 +646,9 @@ export function ChapterView(container, params) {
     if (activeTab === 'conversation' && chapterId > 0) {
       const conv = chapterData.conversation;
       html += `
-        <div class="conversation-container">
+        <div style="max-width: 600px; margin: 0 auto; background: var(--bg-card); border-radius: 20px; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: flex; flex-direction: column;">
           <!-- Sticky Header -->
-          <div class="chat-sticky-header">
+          <div style="position: sticky; top: 0; z-index: 10; background: rgba(var(--bg-card-rgb, 255,255,255), 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 16px 20px; display: flex; align-items: center; gap: 12px;">
             <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--accent-dim); display: flex; align-items: center; justify-content: center; color: var(--accent-bright);">
               <i data-lucide="users" style="width: 20px; height: 20px;"></i>
             </div>
@@ -610,7 +659,7 @@ export function ChapterView(container, params) {
           </div>
           
           <!-- Chat Area -->
-          <div class="chat-area">
+          <div style="padding: 24px 20px; display: flex; flex-direction: column; gap: 16px; background: var(--bg-main);">
       `;
       let lastSpeaker = null;
       conv.dialogue.forEach((line, index) => {
@@ -627,16 +676,16 @@ export function ChapterView(container, params) {
             <div style="display: flex; flex-direction: column; align-items: ${isSelf ? 'flex-end' : 'flex-start'}; min-width: 0;">
               ${showAvatar ? `<span style="font-size: 0.7rem; color: var(--text-muted); font-weight: 700; margin-bottom: 4px; padding: 0 4px;">${line.speaker}</span>` : ''}
               
-              <div class="dialogue-bubble ${isSelf ? 'dialogue-bubble-self' : 'dialogue-bubble-other'}">
+              <div class="dialogue-bubble" style="padding: 12px 16px; border-radius: 18px; ${isSelf ? 'background: var(--accent); color: var(--bg-main); border-bottom-right-radius: 4px; box-shadow: 0 4px 12px var(--accent-glow);' : 'background: var(--bg-card); border: 1px solid var(--border); color: var(--text-main); border-bottom-left-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);'} position: relative;">
                 
                 <div style="font-family: var(--font-jp); font-weight: 700; font-size: 1.05rem; margin-bottom: 6px; display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; line-height: 1.4;">
                   <span>${getDisplayMode() === 'romaji' ? line.rom : line.jp}</span>
                   <button onclick="window.playAudio('${line.jp || line.rom}')" style="background: ${isSelf ? 'var(--bg-main)' : 'var(--bg-hover)'}; border: none; color: ${isSelf ? 'var(--text-main)' : 'var(--accent-bright)'}; cursor: pointer; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: -2px; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-                    <i data-lucide="play" style="width: 12px; height: 12px; margin-left: 2px;"></i>
+                    <i data-lucide="volume-2" style="width: 12px; height: 12px; margin-left: 0px;"></i>
                   </button>
                 </div>
-                ${getDisplayMode() !== 'romaji' && line.rom ? `<div style="font-size: 0.75rem; color: ${isSelf ? 'var(--bg-main)' : 'var(--text-muted)'}; opacity: 0.7; font-family: var(--font-mono); margin-bottom: 4px;">${line.rom}</div>` : ''}
-                <div style="font-size: 0.85rem; color: ${isSelf ? 'var(--bg-main)' : 'var(--text-secondary)'}; opacity: 0.9; line-height: 1.4;">${line.en}</div>
+                ${getDisplayMode() !== 'romaji' && line.rom ? `<div style="font-size: 0.75rem; color: ${isSelf ? 'var(--bg-main)' : 'var(--text-muted)'}; opacity: ${isSelf ? '0.7' : '1'}; font-family: var(--font-mono); margin-bottom: 4px;">${line.rom}</div>` : ''}
+                <div style="font-size: 0.85rem; color: ${isSelf ? 'var(--bg-main)' : 'var(--text-secondary)'}; opacity: ${isSelf ? '0.9' : '1'}; line-height: 1.4;">${line.en}</div>
               </div>
             </div>
           </div>
@@ -650,53 +699,53 @@ export function ChapterView(container, params) {
 
       if (chapterData.mini_kaiwa && chapterData.mini_kaiwa.length > 0) {
         html += `
-          <div style="max-width: 600px; margin: 32px auto 0 auto;">
-            <h3 style="font-size: var(--text-lg); font-weight: 800; color: var(--text-main); margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
-              <i data-lucide="message-square" style="width: 20px; height: 20px; color: var(--accent-bright);"></i>
+          <div style="max-width: 600px; margin: 48px auto 0 auto;">
+            <h3 style="font-size: var(--text-md); font-weight: 800; color: var(--text-main); margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
+              <i data-lucide="message-square" style="width: 18px; height: 18px; color: var(--accent-bright);"></i>
               Mini Percakapan (Renshuu C)
             </h3>
-            <p style="color: var(--text-muted); font-size: var(--text-sm); margin-bottom: 20px;">Latihan skenario percakapan pendek yang interaktif dari buku Minna no Nihongo.</p>
+            <p style="color: var(--text-muted); font-size: var(--text-xs); margin-bottom: 20px;">Latihan skenario percakapan pendek yang interaktif.</p>
             
-            <div style="display: flex; flex-direction: column; gap: 20px;">
+            <div style="display: flex; flex-direction: column; gap: 24px;">
         `;
         
         chapterData.mini_kaiwa.forEach((mini, mIdx) => {
           html += `
-            <div class="card" style="padding: 16px; background: var(--bg-hover); border: 1px solid var(--border); border-radius: var(--radius-md);">
-              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; border-bottom: 1px solid var(--border); padding-bottom: 10px;">
+            <div class="card" style="padding: 14px 16px; background: var(--bg-hover); border: 1px solid var(--border); border-radius: var(--radius-md);">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; border-bottom: 1px solid var(--border); padding-bottom: 8px;">
                 <div>
-                  <h4 style="font-size: var(--text-base); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">${mini.title}</h4>
-                  <div style="font-size: var(--text-xs); color: var(--text-muted); display: flex; align-items: center; gap: 4px;">
-                    <i data-lucide="info" style="width: 12px; height: 12px;"></i>
+                  <h4 style="font-size: 0.95rem; font-weight: 800; color: var(--text-main); margin-bottom: 2px;">${mini.title}</h4>
+                  <div style="font-size: 0.72rem; color: var(--text-muted); display: flex; align-items: center; gap: 4px;">
+                    <i data-lucide="info" style="width: 11px; height: 11px;"></i>
                     <span>Situasi: ${mini.situation}</span>
                   </div>
                 </div>
-                <span style="font-size: var(--text-2xs); font-weight: 700; color: var(--text-muted); background: var(--bg-main); border: 1px solid var(--border); padding: 2px 6px; border-radius: var(--radius-sm); text-transform: uppercase;">
+                <span style="font-size: var(--text-2xs); font-weight: 800; color: var(--text-muted); background: var(--bg-main); border: 1px solid var(--border); padding: 2px 6px; border-radius: var(--radius-sm); text-transform: uppercase;">
                   C${mIdx + 1}
                 </span>
               </div>
               
-          <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; flex-direction: column; gap: 14px;">
           `;
           
           mini.dialogue.forEach((line, lineIdx) => {
             const isSelf = lineIdx % 2 === 0;
             html += `
-              <div style="display: flex; gap: 10px; align-items: flex-end; align-self: ${isSelf ? 'flex-end' : 'flex-start'}; flex-direction: ${isSelf ? 'row-reverse' : 'row'}; max-width: 90%;">
-                <div style="width: 26px; height: 26px; border-radius: 50%; background: ${getAvatarColor(line.speaker)}; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 800; flex-shrink: 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+              <div style="display: flex; gap: 8px; align-items: flex-end; align-self: ${isSelf ? 'flex-end' : 'flex-start'}; flex-direction: ${isSelf ? 'row-reverse' : 'row'}; max-width: 90%;">
+                <div style="width: 24px; height: 24px; border-radius: 50%; background: ${getAvatarColor(line.speaker)}; color: white; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 800; flex-shrink: 0; box-shadow: 0 1px 4px rgba(0,0,0,0.15);">
                   ${line.speaker[0]}
                 </div>
                 <div style="display: flex; flex-direction: column; align-items: ${isSelf ? 'flex-end' : 'flex-start'}; min-width: 0;">
                   <span style="font-size: 0.65rem; color: var(--text-muted); font-weight: 700; margin-bottom: 2px; padding: 0 4px;">${line.speaker}</span>
-                  <div class="dialogue-bubble dialogue-bubble-mini ${isSelf ? 'dialogue-bubble-self' : 'dialogue-bubble-other'}">
-                    <div style="font-family: var(--font-jp); font-weight: 700; font-size: 1rem; margin-bottom: 4px; display: flex; align-items: flex-start; justify-content: space-between; gap: 8px;">
+                  <div class="dialogue-bubble dialogue-bubble-mini" style="padding: 8px 12px; border-radius: 14px; ${isSelf ? 'background: var(--accent); color: var(--bg-main); border-bottom-right-radius: 4px;' : 'background: var(--bg-main); border: 1px solid var(--border); color: var(--text-main); border-bottom-left-radius: 4px;'}">
+                    <div style="font-family: var(--font-jp); font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; display: flex; align-items: flex-start; justify-content: space-between; gap: 8px;">
                       <span>${getDisplayMode() === 'romaji' ? line.rom : line.jp}</span>
-                      <button onclick="window.playAudio('${line.jp || line.rom}')" style="background: transparent; border: none; color: ${isSelf ? 'var(--bg-main)' : 'var(--text-muted)'}; opacity: 0.7; cursor: pointer; padding: 0; margin-top: 2px;" onmouseover="this.style.color='${isSelf ? 'var(--bg-main)' : 'var(--accent)'}'; this.style.opacity='1';" onmouseout="this.style.color='${isSelf ? 'var(--bg-main)' : 'var(--text-muted)'}'; this.style.opacity='0.7';">
-                        <i data-lucide="volume-2" style="width: 14px; height: 14px;"></i>
+                      <button onclick="window.playAudio('${line.jp || line.rom}')" style="background: transparent; border: none; color: ${isSelf ? 'var(--bg-main)' : 'var(--text-muted)'}; opacity: ${isSelf ? '0.7' : '1'}; cursor: pointer; padding: 0; margin-top: 1px;" onmouseover="this.style.color='${isSelf ? 'var(--bg-main)' : 'var(--accent)'}'; this.style.opacity='1';" onmouseout="this.style.color='${isSelf ? 'var(--bg-main)' : 'var(--text-muted)'}'; this.style.opacity='${isSelf ? '0.7' : '1'}';">
+                        <i data-lucide="volume-2" style="width: 12px; height: 12px;"></i>
                       </button>
                     </div>
-                    ${getDisplayMode() !== 'romaji' && line.rom ? `<div style="font-size: 0.7rem; color: ${isSelf ? 'var(--bg-main)' : 'var(--text-muted)'}; opacity: 0.7; font-family: var(--font-mono); margin-bottom: 2px;">${line.rom}</div>` : ''}
-                    <div style="font-size: 0.8rem; color: ${isSelf ? 'var(--bg-main)' : 'var(--text-secondary)'}; opacity: 0.9;">${line.en}</div>
+                    ${getDisplayMode() !== 'romaji' && line.rom ? `<div style="font-size: 0.68rem; color: ${isSelf ? 'var(--bg-main)' : 'var(--text-muted)'}; opacity: ${isSelf ? '0.7' : '1'}; font-family: var(--font-mono); margin-bottom: 2px;">${line.rom}</div>` : ''}
+                    <div style="font-size: 0.78rem; color: ${isSelf ? 'var(--bg-main)' : 'var(--text-secondary)'}; opacity: ${isSelf ? '0.9' : '1'}; line-height: 1.35;">${line.en}</div>
                   </div>
                 </div>
               </div>
@@ -718,13 +767,13 @@ export function ChapterView(container, params) {
 
     // TAB: PRACTICE
     if (activeTab === 'practice') {
-      html += `<div style="display: flex; flex-direction: column; gap: 16px; max-width: 600px; margin: 0 auto;">`;
+      html += `<div style="display: flex; flex-direction: column; gap: 28px; max-width: 600px; margin: 0 auto;">`;
       chapterData.practice.forEach((q, i) => {
         if (q.type === 'mcq') {
           html += `
-            <div class="card practice-card">
-              <div style="font-size: 0.72rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Pilihan Ganda • Q${i+1}</div>
-              <div style="font-weight: 800; color: var(--text-main); margin-bottom: 18px; font-size: 1.05rem; line-height: 1.45; font-family: var(--font-jp);">${q.question}</div>
+            <div class="card" style="padding: 18px; border: 1px solid var(--border); border-radius: var(--radius-lg); position: relative; box-shadow: var(--shadow-sm);">
+              <div style="font-size: 0.7rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Pilihan Ganda • Q${i+1}</div>
+              <div style="font-weight: 800; color: var(--text-main); margin-bottom: 16px; font-size: 1.0rem; line-height: 1.45; font-family: var(--font-jp);">${q.question}</div>
               <div style="display: flex; flex-direction: column; gap: 8px;">
                 ${q.options.map(opt => {
                   const checkJs = `
@@ -736,7 +785,7 @@ export function ChapterView(container, params) {
                     }
                   `;
                   return `
-                    <button class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 12px 16px; font-size: 0.9rem; border-radius: var(--radius-md); transition: all 0.2s; border: 1px solid var(--border); width: 100%; cursor: pointer;" onclick="${checkJs.replace(/\s+/g, ' ')}">
+                    <button class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 10px 14px; font-size: 0.85rem; border-radius: var(--radius-md); transition: all 0.2s; border: 1px solid var(--border); width: 100%; cursor: pointer;" onclick="${checkJs.replace(/\s+/g, ' ')}">
                       ${opt.text}
                     </button>
                   `;
@@ -755,12 +804,12 @@ export function ChapterView(container, params) {
             }
           `;
           html += `
-            <div class="card practice-card">
-              <div style="font-size: 0.72rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Isian Singkat • Q${i+1}</div>
-              <div style="font-weight: 800; color: var(--text-main); margin-bottom: 18px; font-size: 1.05rem; line-height: 1.45; white-space: pre-line;">${q.question}</div>
-              <div style="display: flex; gap: 10px; align-items: center;">
-                <input type="text" placeholder="Ketik jawaban Anda..." id="ans-${i}" style="flex: 1; padding: 12px 16px; border-radius: var(--radius-md); border: 1px solid var(--border); background: var(--bg-input); color: var(--text-main); font-size: 0.9rem; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--text-main)'" onblur="this.style.borderColor='var(--border)'" />
-                <button class="btn btn-primary" style="padding: 12px 24px; border-radius: var(--radius-md); font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.8rem;" onclick="${checkInputJs.replace(/\s+/g, ' ')}">Periksa</button>
+            <div class="card" style="padding: 18px; border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
+              <div style="font-size: 0.7rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Isian Singkat • Q${i+1}</div>
+              <div style="font-weight: 800; color: var(--text-main); margin-bottom: 16px; font-size: 1.0rem; line-height: 1.45; white-space: pre-line;">${q.question}</div>
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <input type="text" placeholder="Ketik jawaban Anda..." id="ans-${i}" style="flex: 1; padding: 10px 14px; border-radius: var(--radius-md); border: 1px solid var(--border); background: var(--bg-input); color: var(--text-main); font-size: 0.85rem; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--text-main)'" onblur="this.style.borderColor='var(--border)'" />
+                <button class="btn btn-primary" style="padding: 10px 18px; border-radius: var(--radius-md); font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.78rem;" onclick="${checkInputJs.replace(/\s+/g, ' ')}">Periksa</button>
               </div>
             </div>
           `;
