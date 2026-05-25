@@ -2024,13 +2024,8 @@ export function WritingView(container) {
 
       if (window.lucide) lucide.createIcons({ root: controls });
 
-      // Retry handler: pushes current card back to the end of the queue for spaced active practice
+      // Retry handler: resets drawing state for the current character to allow immediate retry
       document.getElementById('btn-practice-retry').addEventListener('click', () => {
-        const item = sessionQueue[currentIndex];
-        // Remove from current index, append to the end of queue rotation
-        sessionQueue.splice(currentIndex, 1);
-        sessionQueue.push(item);
-
         isComparing = false;
         showGuide = false;
         undoStack = []; // Reset undo stack for the retried target
