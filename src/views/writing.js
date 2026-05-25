@@ -218,6 +218,51 @@ export function WritingView(container) {
   let showGuide = false; // Toggles trace helper overlay (low opacity)
   let isComparing = false; // Toggles full comparison overlay
 
+  // Check for "?char=X" query parameter in the URL hash
+  const hash = window.location.hash;
+  const qIndex = hash.indexOf('?');
+  if (qIndex !== -1) {
+    const query = hash.slice(qIndex + 1);
+    const params = new URLSearchParams(query);
+    const charParam = params.get('char');
+    if (charParam) {
+      let foundItem = null;
+      // Search in Kanji
+      Object.keys(KANJI_DATABASE).forEach(key => {
+        const match = KANJI_DATABASE[key].find(item => item.jp === charParam);
+        if (match) {
+          foundItem = match;
+          activeTab = 'kanji';
+        }
+      });
+      // Search in Hiragana
+      if (!foundItem) {
+        Object.keys(HIRAGANA_DATABASE).forEach(key => {
+          const match = HIRAGANA_DATABASE[key].find(item => item.jp === charParam);
+          if (match) {
+            foundItem = match;
+            activeTab = 'hiragana';
+          }
+        });
+      }
+      // Search in Katakana
+      if (!foundItem) {
+        Object.keys(KATAKANA_DATABASE).forEach(key => {
+          const match = KATAKANA_DATABASE[key].find(item => item.jp === charParam);
+          if (match) {
+            foundItem = match;
+            activeTab = 'katakana';
+          }
+        });
+      }
+
+      if (foundItem) {
+        sessionQueue = [foundItem];
+        currentIndex = 0;
+      }
+    }
+  }
+
   // ── SECTOR RENDERING ───────────────────────────────────────────────────────
   
   const renderLayout = () => {

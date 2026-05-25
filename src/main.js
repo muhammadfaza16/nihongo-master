@@ -11,6 +11,7 @@ import { GlossaryView }   from './views/glossary.js';
 import { WorkbookView }   from './views/workbook.js';
 import { ExamView }       from './views/exam.js';
 import { WritingView }    from './views/writing.js';
+import { KanjiView }      from './views/kanji.js';
 
 // Apply theme immediately (before DOM ready) to avoid flash
 initTheme();
@@ -25,6 +26,7 @@ function initApp() {
   registerRoute('/minna',       MinnaView);
   registerRoute('/review',      ReviewView);
   registerRoute('/writing',     WritingView);
+  registerRoute('/kanji',       KanjiView);
   registerRoute('/ai-tutor',    AiTutorView);
   registerRoute('/curriculum',  CurriculumView);
   registerRoute('/glossary',    GlossaryView);

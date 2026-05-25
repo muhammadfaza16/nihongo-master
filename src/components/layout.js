@@ -29,6 +29,7 @@ export function renderSidebar() {
     { icon: 'book-open',        label: 'Deep Digest',  hash: '#/minna',     id: 'nav-minna'     },
     { icon: 'repeat-2',         label: 'SRS Review',   hash: '#/review',    id: 'nav-review'    },
     { icon: 'pen-tool',         label: 'Latihan Menulis',hash: '#/writing', id: 'nav-writing'   },
+    { icon: 'languages',        label: 'Kanji Hub',    hash: '#/kanji',     id: 'nav-kanji'     },
     { icon: 'bot',              label: 'AI Tutor',     hash: '#/ai-tutor',  id: 'nav-ai-tutor'  },
     { icon: 'clipboard-list',   label: 'Kurikulum',    hash: '#/curriculum',id: 'nav-curriculum'},
     { icon: 'help-circle',      label: 'Glosarium',    hash: '#/glossary',  id: 'nav-glossary'  },
