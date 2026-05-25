@@ -5,7 +5,6 @@ import { DashboardView }  from './views/dashboard.js';
 import { ChapterView }    from './views/chapter.js';
 import { MinnaView }      from './views/minna.js';
 import { ReviewView }     from './views/review.js';
-import { AiTutorView }   from './views/ai-tutor.js';
 import { CurriculumView } from './views/curriculum.js';
 import { GlossaryView }   from './views/glossary.js';
 import { WorkbookView }   from './views/workbook.js';
@@ -27,7 +26,6 @@ function initApp() {
   registerRoute('/review',      ReviewView);
   registerRoute('/writing',     WritingView);
   registerRoute('/kanji',       KanjiView);
-  registerRoute('/ai-tutor',    AiTutorView);
   registerRoute('/curriculum',  CurriculumView);
   registerRoute('/glossary',    GlossaryView);
   registerRoute('/workbook/:id',WorkbookView);

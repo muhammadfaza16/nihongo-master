@@ -486,13 +486,13 @@ export function DashboardView(container) {
             </div>
           </a>
 
-          <a class="feature-card" href="#/ai-tutor">
+          <a class="feature-card" href="#/writing">
             <div class="feature-icon-wrapper">
-              <i data-lucide="bot" style="width: 18px; height: 18px;"></i>
+              <i data-lucide="pen-tool" style="width: 18px; height: 18px;"></i>
             </div>
             <div>
-              <div class="feature-title">AI Tutor Sensei</div>
-              <div class="feature-desc">Tanya jawab dan konsultasi tata bahasa langsung dengan AI Sensei.</div>
+              <div class="feature-title">Latihan Menulis</div>
+              <div class="feature-desc">Latih nulis Hiragana, Katakana, dan Kanji langsung di layar sentuh.</div>
             </div>
           </a>
 

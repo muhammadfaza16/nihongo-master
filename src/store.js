@@ -36,13 +36,9 @@ const defaultState = {
   settings: {
     showFurigana: true,
     showRomaji: false,
-    apiKey: '',
     dailyGoalMinutes: 30,
     autoPlayAudio: false,
   },
-
-  // AI Tutor chat history
-  chatHistory: [],
 };
 
 let state = null;

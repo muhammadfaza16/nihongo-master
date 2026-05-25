@@ -37,17 +37,6 @@ export function SettingsView(container) {
         </div>
       </div>
 
-      <div class="settings-section">
-        <h3>AI Tutor Sensei (Anthropic API)</h3>
-        <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:16px;">
-          Untuk menggunakan fitur chat dengan AI Tutor, Anda perlu memasukkan API Key Anthropic Anda. Kunci ini disimpan secara lokal di browser Anda dan tidak pernah dikirim ke server kami.
-        </p>
-        <div style="display:flex; flex-direction:column; gap:8px;">
-          <label style="font-size:0.9rem; font-weight:600;">Anthropic API Key</label>
-          <input type="password" id="api-key-input" value="${st.apiKey || ''}" placeholder="sk-ant-..." />
-          <button id="save-api-key" class="btn btn-secondary" style="align-self:flex-start; margin-top:8px;">Simpan Kunci API</button>
-        </div>
-      </div>
 
       <div class="settings-section">
         <h3>Manajemen Data</h3>
@@ -73,13 +62,6 @@ export function SettingsView(container) {
       
       updateSettings({ [key]: newVal });
     });
-  });
-
-  // API Key
-  container.querySelector('#save-api-key').addEventListener('click', () => {
-    const key = container.querySelector('#api-key-input').value.trim();
-    updateSettings({ apiKey: key });
-    showToast('API Key tersimpan secara lokal!');
   });
 
   // Reset
