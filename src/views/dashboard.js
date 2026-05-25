@@ -417,7 +417,7 @@ export function DashboardView(container) {
               <i data-lucide="star" style="width: 18px; height: 18px; color: var(--text-main);"></i>
               ${xp}
             </span>
-            <span class="stat-label">Total XP</span>
+            <span class="stat-label">TOTAL XP</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat-item">
@@ -425,7 +425,7 @@ export function DashboardView(container) {
               <i data-lucide="flame" style="width: 18px; height: 18px; fill: ${streak > 0 ? 'var(--text-main)' : 'none'};"></i>
               ${streak}
             </span>
-            <span class="stat-label">Streak</span>
+            <span class="stat-label">HARI BERUNTUN</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat-item">
@@ -433,7 +433,7 @@ export function DashboardView(container) {
               <i data-lucide="clock" style="width: 18px; height: 18px; color: var(--text-main);"></i>
               ${totalMinutes}m
             </span>
-            <span class="stat-label">Waktu</span>
+            <span class="stat-label">DURASI BELAJAR</span>
           </div>
           <div class="stat-divider"></div>
           <div class="stat-item" style="cursor: pointer;" onclick="window.location.hash='#/review'">
@@ -441,7 +441,7 @@ export function DashboardView(container) {
               <i data-lucide="repeat-2" style="width: 18px; height: 18px;"></i>
               ${dueCount}
             </span>
-            <span class="stat-label">Ulasan SRS</span>
+            <span class="stat-label">ULASAN SRS</span>
           </div>
         </div>
       </div>
