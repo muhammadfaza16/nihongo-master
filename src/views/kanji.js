@@ -1901,23 +1901,23 @@ export function KanjiView(container) {
     if (activeLevel === 'N5') {
       html = `
         ${renderCatalogSection('I. KANJI ANGKA & WAKTU (20 Kanji)', KANJI_N5_LIBRARY.numbers_time)}
-        ${renderCatalogSection('II. KANJI ALAM & TEMPAT (19 Kanji)', KANJI_N5_LIBRARY.nature_places)}
-        ${renderCatalogSection('III. KANJI ORANG & KELUARGA (9 Kanji)', KANJI_N5_LIBRARY.people_family)}
-        ${renderCatalogSection('IV. KANJI TEMPAT & BANGUNAN (10 Kanji)', KANJI_N5_LIBRARY.places_buildings)}
+        ${renderCatalogSection('II. KANJI ALAM & TEMPAT (20 Kanji)', KANJI_N5_LIBRARY.nature_places)}
+        ${renderCatalogSection('III. KANJI ORANG & KELUARGA (20 Kanji)', KANJI_N5_LIBRARY.people_family)}
+        ${renderCatalogSection('IV. KANJI TEMPAT & BANGUNAN (20 Kanji)', KANJI_N5_LIBRARY.places_buildings)}
       `;
     } else if (activeLevel === 'N4') {
       html = `
-        ${renderCatalogSection('I. KANJI GERAKAN & PERJALANAN (10 Kanji)', KANJI_N4_LIBRARY.movement)}
-        ${renderCatalogSection('II. KANJI WAKTU & TUBUH (12 Kanji)', KANJI_N4_LIBRARY.time_body)}
-        ${renderCatalogSection('III. KANJI MASYARAKAT & BISNIS (13 Kanji)', KANJI_N4_LIBRARY.society_business)}
-        ${renderCatalogSection('IV. KANJI SEKOLAH & AKSI (7 Kanji)', KANJI_N4_LIBRARY.school_action)}
+        ${renderCatalogSection('I. KANJI GERAKAN & PERJALANAN (20 Kanji)', KANJI_N4_LIBRARY.movement)}
+        ${renderCatalogSection('II. KANJI WAKTU & TUBUH (20 Kanji)', KANJI_N4_LIBRARY.time_body)}
+        ${renderCatalogSection('III. KANJI MASYARAKAT & BISNIS (20 Kanji)', KANJI_N4_LIBRARY.society_business)}
+        ${renderCatalogSection('IV. KANJI SEKOLAH & AKSI (20 Kanji)', KANJI_N4_LIBRARY.school_action)}
       `;
     } else if (activeLevel === 'N3') {
       html = `
-        ${renderCatalogSection('I. KANJI MASYARAKAT & KEHIDUPAN (10 Kanji)', KANJI_N3_LIBRARY.society)}
-        ${renderCatalogSection('II. KANJI BISNIS & SAINS (10 Kanji)', KANJI_N3_LIBRARY.business_science)}
-        ${renderCatalogSection('III. KANJI PIKIRAN & EMOSI (9 Kanji)', KANJI_N3_LIBRARY.mind_emotion)}
-        ${renderCatalogSection('IV. KANJI AKSI & KEADAAN (9 Kanji)', KANJI_N3_LIBRARY.action_state)}
+        ${renderCatalogSection('I. KANJI MASYARAKAT & KEHIDUPAN (20 Kanji)', KANJI_N3_LIBRARY.society)}
+        ${renderCatalogSection('II. KANJI BISNIS & SAINS (20 Kanji)', KANJI_N3_LIBRARY.business_science)}
+        ${renderCatalogSection('III. KANJI PIKIRAN & EMOSI (20 Kanji)', KANJI_N3_LIBRARY.mind_emotion)}
+        ${renderCatalogSection('IV. KANJI AKSI & KEADAAN (20 Kanji)', KANJI_N3_LIBRARY.action_state)}
       `;
     }
 
