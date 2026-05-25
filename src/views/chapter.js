@@ -673,7 +673,7 @@ export function ChapterView(container, params) {
             <div style="display: flex; flex-direction: column; align-items: ${isSelf ? 'flex-end' : 'flex-start'}; min-width: 0;">
               ${showAvatar ? `<span style="font-size: 0.7rem; color: var(--text-muted); font-weight: 700; margin-bottom: 4px; padding: 0 4px;">${line.speaker}</span>` : ''}
               
-              <div style="padding: 12px 16px; border-radius: 18px; ${isSelf ? 'background: var(--accent); color: var(--bg-main); border-bottom-right-radius: 4px; box-shadow: 0 4px 12px var(--accent-glow);' : 'background: var(--bg-card); border: 1px solid var(--border); color: var(--text-main); border-bottom-left-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);'} position: relative;">
+              <div class="dialogue-bubble" style="padding: 12px 16px; border-radius: 18px; ${isSelf ? 'background: var(--accent); color: var(--bg-main); border-bottom-right-radius: 4px; box-shadow: 0 4px 12px var(--accent-glow);' : 'background: var(--bg-card); border: 1px solid var(--border); color: var(--text-main); border-bottom-left-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);'} position: relative;">
                 
                 <div style="font-family: var(--font-jp); font-weight: 700; font-size: 1.05rem; margin-bottom: 6px; display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; line-height: 1.4;">
                   <span>${getDisplayMode() === 'romaji' ? line.rom : line.jp}</span>
@@ -734,7 +734,7 @@ export function ChapterView(container, params) {
                 </div>
                 <div style="display: flex; flex-direction: column; align-items: ${isSelf ? 'flex-end' : 'flex-start'}; min-width: 0;">
                   <span style="font-size: 0.65rem; color: var(--text-muted); font-weight: 700; margin-bottom: 2px; padding: 0 4px;">${line.speaker}</span>
-                  <div style="padding: 10px 14px; border-radius: 16px; ${isSelf ? 'background: var(--accent); color: var(--bg-main); border-bottom-right-radius: 4px;' : 'background: var(--bg-main); border: 1px solid var(--border); color: var(--text-main); border-bottom-left-radius: 4px;'}">
+                  <div class="dialogue-bubble dialogue-bubble-mini" style="padding: 10px 14px; border-radius: 16px; ${isSelf ? 'background: var(--accent); color: var(--bg-main); border-bottom-right-radius: 4px;' : 'background: var(--bg-main); border: 1px solid var(--border); color: var(--text-main); border-bottom-left-radius: 4px;'}">
                     <div style="font-family: var(--font-jp); font-weight: 700; font-size: 1rem; margin-bottom: 4px; display: flex; align-items: flex-start; justify-content: space-between; gap: 8px;">
                       <span>${getDisplayMode() === 'romaji' ? line.rom : line.jp}</span>
                       <button onclick="window.playAudio('${line.jp || line.rom}')" style="background: transparent; border: none; color: ${isSelf ? 'var(--bg-main)' : 'var(--text-muted)'}; opacity: ${isSelf ? '0.7' : '1'}; cursor: pointer; padding: 0; margin-top: 2px;" onmouseover="this.style.color='${isSelf ? 'var(--bg-main)' : 'var(--accent)'}'; this.style.opacity='1';" onmouseout="this.style.color='${isSelf ? 'var(--bg-main)' : 'var(--text-muted)'}'; this.style.opacity='${isSelf ? '0.7' : '1'}';">

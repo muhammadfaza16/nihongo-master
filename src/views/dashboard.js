@@ -413,27 +413,77 @@ export function DashboardView(container) {
         }
       }
       @media (max-width: 600px) {
-        .tracks-row {
-          grid-template-columns: 1fr;
+        .dashboard-wrapper {
+          gap: 20px !important;
         }
-        .bento-features {
-          grid-template-columns: 1fr;
+        .stats-banner {
+          padding: 16px 20px !important;
+          border-radius: var(--radius-lg);
+          gap: 16px;
+        }
+        .profile-name {
+          font-size: 1.45rem;
         }
         .stats-grid {
+          width: 100%;
           flex-wrap: wrap;
-          gap: 16px 20px;
+          gap: 12px 16px;
         }
         .stat-divider {
           display: none;
         }
         .resume-card {
           flex-direction: column;
-          align-items: flex-start;
-          padding: 24px;
+          align-items: stretch !important;
+          padding: 16px 20px !important;
+          border-radius: var(--radius-lg);
+          gap: 16px;
         }
         .resume-btn {
           width: 100%;
           text-align: center;
+          padding: 12px 20px;
+        }
+        .tracks-row {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .track-card {
+          padding: 16px 20px !important;
+          border-radius: var(--radius-lg);
+          gap: 12px;
+        }
+        .bento-features {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+        .feature-card {
+          padding: 16px 20px !important;
+          border-radius: var(--radius-lg);
+          gap: 10px;
+        }
+        .mission-content {
+          flex-direction: column !important;
+          align-items: stretch !important;
+          gap: 12px !important;
+        }
+        .mission-btn {
+          width: 100% !important;
+          text-align: center !important;
+        }
+      }
+      @media (max-width: 400px) {
+        .stats-banner {
+          padding: 14px 16px !important;
+        }
+        .resume-card {
+          padding: 14px 16px !important;
+        }
+        .feature-card {
+          padding: 14px 16px !important;
+        }
+        .track-card {
+          padding: 14px 16px !important;
         }
       }
       @media (max-width: 768px) {
@@ -511,12 +561,12 @@ export function DashboardView(container) {
         </div>
         
         <!-- Mission Content Row -->
-        <div style="display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap;">
-          <div style="flex: 1; min-width: 250px;">
-            <h3 style="font-size: 1.15rem; font-weight: 900; color: var(--text-main); margin-bottom: 4px; letter-spacing: -0.01em;">${getDailyMissionTitle(state.studyPlan)}</h3>
-            <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5;">${getDailyMissionDesc(state.studyPlan, nextChapter)}</p>
+        <div class="mission-content" style="display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 220px;">
+            <h3 style="font-size: 1.1rem; font-weight: 900; color: var(--text-main); margin-bottom: 4px; letter-spacing: -0.01em;">${getDailyMissionTitle(state.studyPlan)}</h3>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5;">${getDailyMissionDesc(state.studyPlan, nextChapter)}</p>
           </div>
-          <button class="btn btn-primary" onclick="window.location.hash='${getDailyMissionHash(state.studyPlan, nextChapter)}'" style="padding: 12px 24px; font-size: 0.78rem; font-weight: 800; border-radius: var(--radius-md); text-transform: uppercase; letter-spacing: 0.05em;">Selesaikan Misi</button>
+          <button class="btn btn-primary mission-btn" onclick="window.location.hash='${getDailyMissionHash(state.studyPlan, nextChapter)}'" style="padding: 12px 24px; font-size: 0.78rem; font-weight: 800; border-radius: var(--radius-md); text-transform: uppercase; letter-spacing: 0.05em;">Selesaikan Misi</button>
         </div>
       </div>
       ` : ''}

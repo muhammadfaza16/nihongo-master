@@ -1768,7 +1768,7 @@ export function WritingView(container) {
       activeTab === 'kanji-n4' ? 'Kanji N4' : 'Kanji N3';
 
     container.innerHTML = `
-      <div style="max-width: 500px; margin: 0 auto; padding: 12px 16px; display: flex; flex-direction: column;" class="fade-in">
+      <div class="writing-practice-container fade-in">
         
         <!-- Upper Navigation & Meta -->
         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">

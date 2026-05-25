@@ -39,12 +39,18 @@ export function renderSidebar() {
       <i data-lucide="x" style="width:16px;height:16px;"></i>
     </button>
 
-    <div class="brand">
-      <div class="brand-icon">語</div>
-      <div class="brand-text">
-        <h1>Minna<span style="color:var(--text-muted);font-weight:500;">Master</span></h1>
-        <p>JLPT N5 → N3</p>
+    <div class="brand" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div class="brand-icon">語</div>
+        <div class="brand-text">
+          <h1>Minna<span style="color:var(--text-muted);font-weight:500;">Master</span></h1>
+          <p>JLPT N5 → N3</p>
+        </div>
       </div>
+      
+      <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Ganti tema (Alt+T)" style="background: var(--bg-elevated); border: 1px solid var(--border); color: var(--text-main); width: 32px; height: 32px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; flex-shrink: 0;">
+        <i data-lucide="${currentTheme === 'dark' ? 'sun' : 'moon'}" style="width: 15px; height: 15px;"></i>
+      </button>
     </div>
 
     <div class="nav-section-label">Menu</div>
@@ -88,6 +94,9 @@ export function renderSidebar() {
 
   // Backdrop click
   document.getElementById('sidebar-backdrop')?.addEventListener('click', closeSidebar);
+
+  // Theme toggle button click
+  document.getElementById('theme-toggle-btn')?.addEventListener('click', toggleTheme);
 
   updateSidebarActive();
 
@@ -188,9 +197,6 @@ export function renderTopbar(title = 'Minna no Nihongo') {
         </button>
       </div>
     </div>
-    <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Ganti tema (Alt+T)">
-      <i data-lucide="${isDark ? 'sun' : 'moon'}" style="width:16px;height:16px;"></i>
-    </button>
   `;
 
   const menuBtn = document.getElementById('display-dropdown-btn');
@@ -198,7 +204,6 @@ export function renderTopbar(title = 'Minna no Nihongo') {
   const dropdownMenu = document.getElementById('display-dropdown-menu');
 
   document.getElementById('topbar-menu-btn')?.addEventListener('click', openSidebar);
-  document.getElementById('theme-toggle-btn')?.addEventListener('click', toggleTheme);
 
   // Synced state change handler
   const setDisplayMode = (mode) => {
