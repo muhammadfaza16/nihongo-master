@@ -1402,6 +1402,8 @@ export function WritingView(container) {
   let currentWidth = 8;
   let lastTime = 0;
   let undoStack = []; // Stack for canvas snapshots to support Undo
+  let brushSizePreset = 'medium'; // 'thin' | 'medium' | 'thick' brush size selector
+  let brushColorPreset = 'default'; // 'default' | 'vermilion' | 'indigo' | 'bamboo' brush ink color selector
 
   let showGuide = false; // Toggles trace helper overlay (low opacity)
   let isComparing = false; // Toggles full comparison overlay
@@ -1790,6 +1792,50 @@ export function WritingView(container) {
           </div>
         </div>
 
+        <!-- Dynamic Brush Settings Control Panel -->
+        <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 12px; margin-bottom: 16px; background: var(--bg-hover); padding: 10px 14px; border-radius: var(--radius-md); border: 1px solid var(--border); align-items: center;">
+          <!-- Brush Size Segment -->
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-size: var(--text-2xs); font-weight: 800; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">Ukuran Kuas</span>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <button id="btn-brush-thin" class="brush-size-btn" title="Tipis" style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid ${brushSizePreset === 'thin' ? 'var(--accent)' : 'var(--border)'}; background: ${brushSizePreset === 'thin' ? 'var(--accent-dim)' : 'transparent'}; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s;">
+                <div style="width: 3px; height: 3px; border-radius: 50%; background: ${brushSizePreset === 'thin' ? 'var(--accent-bright)' : 'var(--text-main)'};"></div>
+              </button>
+              
+              <button id="btn-brush-medium" class="brush-size-btn" title="Sedang" style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid ${brushSizePreset === 'medium' ? 'var(--accent)' : 'var(--border)'}; background: ${brushSizePreset === 'medium' ? 'var(--accent-dim)' : 'transparent'}; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s;">
+                <div style="width: 7px; height: 7px; border-radius: 50%; background: ${brushSizePreset === 'medium' ? 'var(--accent-bright)' : 'var(--text-main)'};"></div>
+              </button>
+              
+              <button id="btn-brush-thick" class="brush-size-btn" title="Tebal" style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid ${brushSizePreset === 'thick' ? 'var(--accent)' : 'var(--border)'}; background: ${brushSizePreset === 'thick' ? 'var(--accent-dim)' : 'transparent'}; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s;">
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: ${brushSizePreset === 'thick' ? 'var(--accent-bright)' : 'var(--text-main)'};"></div>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Ink Color Segment -->
+          <div style="display: flex; flex-direction: column; gap: 6px; border-left: 1px solid var(--border); padding-left: 12px;">
+            <span style="font-size: var(--text-2xs); font-weight: 800; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">Warna Tinta</span>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <!-- Theme Default (Monochrome Split Circle) -->
+              <button id="btn-color-default" class="brush-color-btn" title="Default" style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid ${brushColorPreset === 'default' ? 'var(--accent)' : 'var(--border)'}; background: ${brushColorPreset === 'default' ? 'var(--accent-dim)' : 'transparent'}; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s;">
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: linear-gradient(135deg, var(--text-main) 50%, var(--bg-hover) 50%); border: 1px solid var(--border-bright);"></div>
+              </button>
+              <!-- Vermilion Red -->
+              <button id="btn-color-vermilion" class="brush-color-btn" title="Shu (Merah)" style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid ${brushColorPreset === 'vermilion' ? 'var(--accent)' : 'var(--border)'}; background: ${brushColorPreset === 'vermilion' ? 'var(--accent-dim)' : 'transparent'}; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s;">
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: #d84315;"></div>
+              </button>
+              <!-- Indigo Blue -->
+              <button id="btn-color-indigo" class="brush-color-btn" title="Ai (Biru)" style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid ${brushColorPreset === 'indigo' ? 'var(--accent)' : 'var(--border)'}; background: ${brushColorPreset === 'indigo' ? 'var(--accent-dim)' : 'transparent'}; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s;">
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: #1565c0;"></div>
+              </button>
+              <!-- Bamboo Green -->
+              <button id="btn-color-bamboo" class="brush-color-btn" title="Take (Hijau)" style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid ${brushColorPreset === 'bamboo' ? 'var(--accent)' : 'var(--border)'}; background: ${brushColorPreset === 'bamboo' ? 'var(--accent-dim)' : 'transparent'}; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s;">
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: #2e7d32;"></div>
+              </button>
+            </div>
+          </div>
+        </div>
+
         <!-- Practice Cue Display Card -->
         <div class="card" style="padding: 16px 20px; text-align: center; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; background: var(--bg-hover); border: none;">
           <div style="text-align: left;">
@@ -1831,11 +1877,57 @@ export function WritingView(container) {
 
     setupCanvasDrawing();
     renderControls();
-    
     // Bind Cue Play Sound
     document.getElementById('btn-audio-pronounce').addEventListener('click', () => {
       window.playAudio(char.jp);
     });
+
+    // ── BRUSH SIZE & COLOR PICKER CONTROLLERS ─────────────────────────────────
+    
+    // Size picker logic
+    const selectBrushSize = (preset) => {
+      brushSizePreset = preset;
+      
+      document.querySelectorAll('.brush-size-btn').forEach(btn => {
+        btn.style.borderColor = 'var(--border)';
+        btn.style.background = 'transparent';
+        const inner = btn.querySelector('div');
+        if (inner) inner.style.background = 'var(--text-main)';
+      });
+      
+      const activeBtn = document.getElementById(`btn-brush-${preset}`);
+      if (activeBtn) {
+        activeBtn.style.borderColor = 'var(--accent)';
+        activeBtn.style.background = 'var(--accent-dim)';
+        const inner = activeBtn.querySelector('div');
+        if (inner) inner.style.background = 'var(--accent-bright)';
+      }
+    };
+
+    document.getElementById('btn-brush-thin').addEventListener('click', () => selectBrushSize('thin'));
+    document.getElementById('btn-brush-medium').addEventListener('click', () => selectBrushSize('medium'));
+    document.getElementById('btn-brush-thick').addEventListener('click', () => selectBrushSize('thick'));
+
+    // Color picker logic
+    const selectBrushColor = (preset) => {
+      brushColorPreset = preset;
+      
+      document.querySelectorAll('.brush-color-btn').forEach(btn => {
+        btn.style.borderColor = 'var(--border)';
+        btn.style.background = 'transparent';
+      });
+      
+      const activeBtn = document.getElementById(`btn-color-${preset}`);
+      if (activeBtn) {
+        activeBtn.style.borderColor = 'var(--accent)';
+        activeBtn.style.background = 'var(--accent-dim)';
+      }
+    };
+
+    document.getElementById('btn-color-default').addEventListener('click', () => selectBrushColor('default'));
+    document.getElementById('btn-color-vermilion').addEventListener('click', () => selectBrushColor('vermilion'));
+    document.getElementById('btn-color-indigo').addEventListener('click', () => selectBrushColor('indigo'));
+    document.getElementById('btn-color-bamboo').addEventListener('click', () => selectBrushColor('bamboo'));
 
     // Bind Back Menu Click
     document.getElementById('btn-back-menu').addEventListener('click', () => {
@@ -2026,6 +2118,14 @@ export function WritingView(container) {
       return getComputedStyle(document.documentElement).getPropertyValue('--text-main').trim() || '#ffffff';
     };
 
+    // Dynamic ink color solver based on chosen color preset
+    const getActiveColor = () => {
+      if (brushColorPreset === 'vermilion') return '#d84315';
+      if (brushColorPreset === 'indigo') return '#1565c0';
+      if (brushColorPreset === 'bamboo') return '#2e7d32';
+      return getThemeColor();
+    };
+
     // Relative mouse/finger coordinate solver (Viewport to canvas matrix)
     const getCoords = (e) => {
       const rect = canvas.getBoundingClientRect();
@@ -2063,12 +2163,12 @@ export function WritingView(container) {
       lastMidY = y;
       
       // Reset width and time
-      currentWidth = 8;
+      currentWidth = brushSizePreset === 'thin' ? 4 : brushSizePreset === 'thick' ? 12 : 8;
       lastTime = performance.now();
 
-      const themeColor = getThemeColor();
-      ctx.fillStyle = themeColor;
-      ctx.strokeStyle = themeColor;
+      const activeColor = getActiveColor();
+      ctx.fillStyle = activeColor;
+      ctx.strokeStyle = activeColor;
       
       // Draw smooth calligraphic starting dot
       ctx.beginPath();
@@ -2093,11 +2193,23 @@ export function WritingView(container) {
       let targetWidth;
       // Utilize stylus pressure sensitivity if available
       if (e.pressure && e.pressure > 0 && e.pressure !== 0.5 && e.pointerType !== 'mouse') {
-        targetWidth = 4 + e.pressure * 10; // Stylus range: 4px to 14px
+        if (brushSizePreset === 'thin') {
+          targetWidth = 2 + e.pressure * 6; // Thin stylus: 2px to 8px
+        } else if (brushSizePreset === 'thick') {
+          targetWidth = 6 + e.pressure * 16; // Thick stylus: 6px to 22px
+        } else {
+          targetWidth = 4 + e.pressure * 10; // Medium stylus: 4px to 14px
+        }
       } else {
         // Slower movement = thicker calligraphic ink line, faster movement = thinner tapered line
         const speedFactor = Math.min(2.5, velocity); // clamp speed factor
-        targetWidth = 12 - speedFactor * 3.2; // Finger/mouse range: 4px to 12px
+        if (brushSizePreset === 'thin') {
+          targetWidth = 8 - speedFactor * 2.2; // Thin finger/mouse: 2.5px to 8px
+        } else if (brushSizePreset === 'thick') {
+          targetWidth = 18 - speedFactor * 4.8; // Thick finger/mouse: 6px to 18px
+        } else {
+          targetWidth = 12 - speedFactor * 3.2; // Medium finger/mouse: 4px to 12px
+        }
       }
 
       // Smooth the brush width transition using LERP (Low-pass filter)
@@ -2106,13 +2218,13 @@ export function WritingView(container) {
       const midX = (lastX + x) / 2;
       const midY = (lastY + y) / 2;
 
-      const themeColor = getThemeColor();
-      ctx.strokeStyle = themeColor;
-      ctx.fillStyle = themeColor;
+      const activeColor = getActiveColor();
+      ctx.strokeStyle = activeColor;
+      ctx.fillStyle = activeColor;
       
       // Slight organic calligraphic glow for natural calligraphic brush aesthetics
       ctx.shadowBlur = 0.8;
-      ctx.shadowColor = themeColor;
+      ctx.shadowColor = activeColor;
 
       ctx.beginPath();
       ctx.moveTo(lastMidX, lastMidY);
@@ -2135,11 +2247,11 @@ export function WritingView(container) {
       
       // Finish the final segment to the release point
       if (ctx && (lastMidX !== lastX || lastMidY !== lastY)) {
-        const themeColor = getThemeColor();
-        ctx.strokeStyle = themeColor;
-        ctx.fillStyle = themeColor;
+        const activeColor = getActiveColor();
+        ctx.strokeStyle = activeColor;
+        ctx.fillStyle = activeColor;
         ctx.shadowBlur = 0.8;
-        ctx.shadowColor = themeColor;
+        ctx.shadowColor = activeColor;
 
         ctx.beginPath();
         ctx.moveTo(lastMidX, lastMidY);
