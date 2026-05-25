@@ -1932,10 +1932,16 @@ export function KanjiView(container) {
         <div class="kanji-catalog-meaning">${item.meaning}</div>
         
         <div class="kanji-catalog-readings">
-          <div style="margin-bottom: 4px;"><strong>On:</strong> <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-main);">${item.on}</span></div>
-          <div><strong>Kun:</strong> <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-main);">${item.kun}</span></div>
-          <div style="margin-top: 6px; font-size: 0.65rem; color: var(--text-muted); border-top: 1px dotted var(--border); padding-top: 4px;">
-            💬 ${item.example}
+          <div style="margin-bottom: 6px; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; border-bottom: 1px dashed var(--border); padding-bottom: 4px;">
+            <strong style="font-size: 0.62rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.02em;">Onyomi (Gabungan)</strong>
+            <span style="font-family: var(--font-mono); font-size: 0.68rem; font-weight: 700; color: var(--text-main); text-align: right; word-break: break-all;">${item.on}</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px; border-bottom: 1px dashed var(--border); padding-bottom: 4px;">
+            <strong style="font-size: 0.62rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.02em;">Kunyomi (Sendiri)</strong>
+            <span style="font-family: var(--font-mono); font-size: 0.68rem; font-weight: 700; color: var(--text-main); text-align: right; word-break: break-all;">${item.kun}</span>
+          </div>
+          <div style="margin-top: 8px; font-size: 0.68rem; color: var(--text-secondary); padding-top: 2px; line-height: 1.4;">
+            💬 <strong>Contoh:</strong> ${item.example}
           </div>
         </div>
 
