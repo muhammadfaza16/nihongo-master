@@ -10,6 +10,7 @@ import { CurriculumView } from './views/curriculum.js';
 import { GlossaryView }   from './views/glossary.js';
 import { WorkbookView }   from './views/workbook.js';
 import { ExamView }       from './views/exam.js';
+import { WritingView }    from './views/writing.js';
 
 // Apply theme immediately (before DOM ready) to avoid flash
 initTheme();
@@ -23,6 +24,7 @@ function initApp() {
   registerRoute('/chapter/:id', ChapterView);
   registerRoute('/minna',       MinnaView);
   registerRoute('/review',      ReviewView);
+  registerRoute('/writing',     WritingView);
   registerRoute('/ai-tutor',    AiTutorView);
   registerRoute('/curriculum',  CurriculumView);
   registerRoute('/glossary',    GlossaryView);

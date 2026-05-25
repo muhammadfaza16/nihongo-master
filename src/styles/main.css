@@ -1324,3 +1324,142 @@ body {
   stroke: var(--bg-hover);
 }
 
+/* ══════════════════════════════════════════════════════
+   LATIHAN MENULIS (DELIBERATE PRACTICE WRITING)
+   ══════════════════════════════════════════════════════ */
+.writing-canvas-container {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto 20px auto;
+  background: var(--bg-main);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+}
+
+.writing-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  cursor: crosshair;
+  touch-action: none; /* Prevents scroll gestures on mobile touch drawing */
+}
+
+/* Genkouyoushi Manuscript Dotted Dushed Cross Grid */
+.genkouyoushi-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.genkouyoushi-grid::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-top: 1px dashed var(--border-bright);
+  transform: translateY(-50%);
+  opacity: 0.5;
+}
+.genkouyoushi-grid::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  border-left: 1px dashed var(--border-bright);
+  transform: translateX(-50%);
+  opacity: 0.5;
+}
+/* Subtle diagonal lines */
+.genkouyoushi-grid-diagonal::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 141.4%; height: 141.4%;
+  border-top: 1px dotted var(--border);
+  transform: rotate(45deg);
+  transform-origin: top left;
+  opacity: 0.15;
+}
+.genkouyoushi-grid-diagonal::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; width: 141.4%; height: 141.4%;
+  border-top: 1px dotted var(--border);
+  transform: rotate(135deg);
+  transform-origin: top right;
+  opacity: 0.15;
+}
+
+/* Trace Guide Overlay */
+.writing-guide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-jp);
+  font-size: 8rem;
+  font-weight: 400;
+  color: var(--text-main);
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.writing-guide-overlay.show-guide {
+  opacity: 0.08; /* Subtle trace background during drawing */
+  z-index: 1;
+}
+.writing-guide-overlay.show-comparison {
+  opacity: 0.35; /* Stronger contrast comparison overlay */
+  z-index: 3; /* Render on top of canvas for clear visual comparison */
+  color: var(--accent-bright);
+}
+
+/* Character Select Item */
+.char-select-card {
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+}
+.char-select-card:hover {
+  border-color: var(--border-bright);
+  background: var(--bg-hover);
+}
+.char-select-card.active {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+  color: var(--accent-bright);
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .writing-canvas-container {
+    max-width: 280px;
+  }
+  .writing-guide-overlay {
+    font-size: 7rem;
+  }
+}
+
+
