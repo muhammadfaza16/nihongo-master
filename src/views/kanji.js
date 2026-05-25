@@ -1878,6 +1878,24 @@ export function KanjiView(container) {
             <button class="level-pill-btn" data-level="N3" style="cursor: pointer; border-radius: 99px; padding: 6px 18px; font-size: var(--text-xs); font-weight: 700; border: 1px solid var(--border); transition: all 0.15s; background: ${activeLevel === 'N3' ? 'var(--text-main)' : 'var(--bg-card)'}; color: ${activeLevel === 'N3' ? 'var(--bg-main)' : 'var(--text-main)'};">N3 (Lanjutan II)</button>
           </div>
 
+          <!-- Legend / Panduan Cara Baca -->
+          <div style="background: var(--bg-hover); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 14px 16px; margin-bottom: 24px; font-size: 0.8rem; line-height: 1.5; color: var(--text-secondary);">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-weight: 800; color: var(--text-main); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em;">
+              <i data-lucide="info" style="width: 15px; height: 15px; color: var(--text-main);"></i>
+              Panduan Cara Baca Kanji
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr; gap: 8px;">
+              <div style="display: flex; gap: 6px; align-items: baseline;">
+                <strong style="color: var(--text-main); min-width: 80px; display: inline-block;">音 (Onyomi):</strong>
+                <span>Cara baca Cina. Dipakai saat Kanji <strong>bergabung</strong> dengan Kanji lain (*Jukugo*).</span>
+              </div>
+              <div style="display: flex; gap: 6px; align-items: baseline; border-top: 1px dashed var(--border); padding-top: 8px; margin-top: 2px;">
+                <strong style="color: var(--text-main); min-width: 80px; display: inline-block;">訓 (Kunyomi):</strong>
+                <span>Cara baca Jepang asli. Dipakai saat Kanji <strong>berdiri sendiri</strong> (tunggal).</span>
+              </div>
+            </div>
+          </div>
+
           <!-- Dynamic List Wrapper -->
           <div id="level-catalog-container" style="display: flex; flex-direction: column; gap: 36px;">
             <!-- Rendered dynamically -->
@@ -1932,16 +1950,16 @@ export function KanjiView(container) {
         <div class="kanji-catalog-meaning">${item.meaning}</div>
         
         <div class="kanji-catalog-readings">
-          <div style="margin-bottom: 6px; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; border-bottom: 1px dashed var(--border); padding-bottom: 4px;">
-            <strong style="font-size: 0.62rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.02em;">Onyomi (Gabungan)</strong>
-            <span style="font-family: var(--font-mono); font-size: 0.68rem; font-weight: 700; color: var(--text-main); text-align: right; word-break: break-all;">${item.on}</span>
+          <div style="margin-bottom: 5px; display: flex; align-items: baseline; gap: 8px;">
+            <strong style="font-size: 0.65rem; color: var(--text-muted); min-width: 16px;">音:</strong>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; color: var(--text-main); word-break: break-all;">${item.on}</span>
           </div>
-          <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 8px; border-bottom: 1px dashed var(--border); padding-bottom: 4px;">
-            <strong style="font-size: 0.62rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.02em;">Kunyomi (Sendiri)</strong>
-            <span style="font-family: var(--font-mono); font-size: 0.68rem; font-weight: 700; color: var(--text-main); text-align: right; word-break: break-all;">${item.kun}</span>
+          <div style="margin-bottom: 8px; display: flex; align-items: baseline; gap: 8px;">
+            <strong style="font-size: 0.65rem; color: var(--text-muted); min-width: 16px;">訓:</strong>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; color: var(--text-main); word-break: break-all;">${item.kun}</span>
           </div>
-          <div style="margin-top: 8px; font-size: 0.68rem; color: var(--text-secondary); padding-top: 2px; line-height: 1.4;">
-            💬 <strong>Contoh:</strong> ${item.example}
+          <div style="margin-top: 8px; font-size: 0.68rem; color: var(--text-secondary); border-top: 1px dotted var(--border); padding-top: 6px; line-height: 1.35;">
+            💬 ${item.example}
           </div>
         </div>
 
