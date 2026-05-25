@@ -1,7 +1,6 @@
 import { renderTopbar } from '../components/layout.js';
 
 // ── 80 N5 KANJI COMPLETE DATABASE ────────────────────────────────────────────
-// Sourced exactly from kurikulum_detail_n5_n4_n3.md
 const KANJI_N5_LIBRARY = {
   numbers_time: [
     { jp: '一', meaning: 'Satu', on: 'イチ、イツ', kun: 'ひと(つ)', example: '一月 (ichigatsu) = Januari' },
@@ -11,8 +10,8 @@ const KANJI_N5_LIBRARY = {
     { jp: '五', meaning: 'Lima', on: 'ゴ', kun: 'いつ(つ)', example: '五十 (gojuu) = Lima puluh' },
     { jp: '六', meaning: 'Enam', on: 'ロク', kun: 'むっ(つ)', example: '六月 (rokugatsu) = Juni' },
     { jp: '七', meaning: 'Tujuh', on: 'シチ', kun: 'なな(つ)', example: '七夕 (tanabata) = Festival bintang' },
-    { jp: '八', meaning: 'Delapan', on: 'ハチ', kun: 'ยっ(つ)', example: '八月 (hachigatsu) = Agustus' },
-    { jp: '九', meaning: 'Sembilan', on: 'ク、キュウ', kun: 'ここの(つ)', example: '九月 (kugatsu) = September' },
+    { jp: '八', meaning: 'Delapan', on: 'ハチ', kun: 'やっ(つ)', example: '八月 (hachigatsu) = Agustus' },
+    { jp: '九', meaning: 'Sembilan', on: 'ク、キュウ', kun: 'こconо(つ)', example: '九月 (kugatsu) = September' },
     { jp: '十', meaning: 'Sepuluh', on: 'ジュウ', kun: 'とお', example: '十分 (juppun) = Sepuluh menit' },
     { jp: '百', meaning: 'Seratus', on: 'ヒャク', kun: '—', example: '三百 (sanbyaku) = Tiga ratus' },
     { jp: '千', meaning: 'Seribu', on: 'セン', kun: 'ち', example: '千円 (senen) = Seribu yen' },
@@ -71,11 +70,116 @@ const KANJI_N5_LIBRARY = {
   ]
 };
 
+// ── 40 N4 KANJI ESENSIAL DATABASE ────────────────────────────────────────────
+const KANJI_N4_LIBRARY = {
+  movement: [
+    { jp: '出', meaning: 'Keluar', on: 'シュツ', kun: 'de(ru)、da(su)', example: '出口 (deguchi) = Pintu keluar' },
+    { jp: '入', meaning: 'Masuk', on: 'ニュウ', kun: 'hai(ru)、i(reru)', example: '入口 (iriguchi) = Pintu masuk' },
+    { jp: '立', meaning: 'Berdiri', on: 'リツ', kun: 'た(tsu)', example: '起立 (kiritsu) = Berdiri (sopan)' },
+    { jp: '開', meaning: 'Membuka', on: 'カイ', kun: 'あ(keru)、ひら(ku)', example: '開会 (kaikai) = Pembukaan rapat' },
+    { jp: '閉', meaning: 'Menutup', on: 'ヘイ', kun: 'し(meru)、と(じる)', example: '閉会 (heikai) = Penutupan rapat' },
+    { jp: '帰', meaning: 'Pulang', on: 'キ', kun: 'かえ(ru)', example: '帰国 (kikoku) = Pulang ke tanah air' },
+    { jp: '歩', meaning: 'Berjalan', on: 'ホ', kun: 'ある(ku)', example: '歩道 (hodou) = Trotoar/Jalan kaki' },
+    { jp: '走', meaning: 'Berlari', on: 'ソウ', kun: 'はし(ru)', example: '走者 (sousha) = Pelari' },
+    { jp: '止', meaning: 'Berhenti', on: 'シ', kun: 'と(maru)', example: '中止 (chuushi) = Penghentian/Batal' },
+    { jp: '曜', meaning: 'Hari Seminggu', on: 'ヨウ', kun: '—', example: '月曜日 (getsuyōbi) = Hari Senin' }
+  ],
+  time_body: [
+    { jp: '朝', meaning: 'Pagi', on: 'チョウ', kun: 'asa', example: '朝食 (choushoku) = Makan pagi' },
+    { jp: '昼', meaning: 'Siang', on: 'チュウ', kun: 'hiru', example: '昼食 (chuushoku) = Makan siang' },
+    { jp: '夜', meaning: 'Malam', on: 'ヤ', kun: 'yoru', example: '夜食 (yashoku) = Camilan malam' },
+    { jp: '春', meaning: 'Musim Semi', on: 'シュン', kun: 'haru', example: '春休み (haruyasumi) = Libur musim semi' },
+    { jp: '夏', meaning: 'Musim Panas', on: 'カ', kun: 'natsu', example: '夏休み (natsuyasumi) = Libur musim panas' },
+    { jp: '秋', meaning: 'Musim Gugur', on: 'シュウ', kun: 'aki', example: '秋分 (shuubun) = Ekuinoks musim gugur' },
+    { jp: '冬', meaning: 'Musim Dingin', on: 'トウ', kun: 'fuyu', example: '冬休み (fuyuyasumi) = Libur musim dingin' },
+    { jp: '体', meaning: 'Tubuh', on: 'タイ', kun: 'karada', example: '体力 (tairyoku) = Kekuatan fisik' },
+    { jp: '心', meaning: 'Hati / Jiwa', on: 'シン', kun: 'kokoro', example: '安心 (anshin) = Lega/Tenang' },
+    { jp: '首', meaning: 'Leher', on: 'シュ', kun: 'kubi', example: '首都 (shuto) = Ibu kota' },
+    { jp: '声', meaning: 'Suara', on: 'セイ', kun: 'koe', example: '発声 (hassei) = Vokalisasi/Ucap' },
+    { jp: '自', meaning: 'Diri Sendiri', on: 'ジ、シ', kun: 'mizuka(ra)', example: '自転車 (jitensha) = Sepeda' }
+  ],
+  society_business: [
+    { jp: '民', meaning: 'Rakyat / Warga', on: 'ミン', kun: 'tami', example: '市民 (shimin) = Warga kota' },
+    { jp: '使', meaning: 'Memakai', on: 'シ', kun: 'つか(u)', example: '使用 (shiyou) = Penggunaan' },
+    { jp: '作', meaning: 'Membuat', on: 'サク、サ', kun: 'つく(ru)', example: '作文 (sakubun) = Karangan/Esai' },
+    { jp: '仕', meaning: 'Melayani', on: 'シ', kun: 'つか(eru)', example: '仕事 (shigoto) = Pekerjaan' },
+    { jp: '事', meaning: 'Hal / Tugas', on: 'ジ', kun: 'koto', example: '事故 (jiko) = Kecelakaan' },
+    { jp: '品', meaning: 'Barang', on: 'ヒン', kun: 'shina', example: '作品 (sakuhin) = Karya seni' },
+    { jp: '業', meaning: 'Industri', on: 'ギョウ', kun: 'waza', example: '授業 (jugyou) = Pelajaran di kelas' },
+    { jp: '長', meaning: 'Panjang / Kepala', on: 'チョウ', kun: 'naga(i)', example: '社長 (shachou) = Direktur utama' },
+    { jp: '強', meaning: 'Kuat', on: 'キョウ', kun: 'tsuyo(i)', example: '勉強 (benkyou) = Belajar' },
+    { jp: '新', meaning: 'Baru', on: 'シン', kun: 'atara(shii)', example: '新聞 (shinbun) = Koran/Surat kabar' },
+    { jp: '古', meaning: 'Lama', on: 'コ', kun: 'furu(i)', example: '中古 (chuuko) = Barang bekas' },
+    { jp: '安', meaning: 'Murah / Aman', on: 'アン', kun: 'yasu(i)', example: '安全 (anzen) = Aman/Keselamatan' },
+    { jp: '高', meaning: 'Tinggi / Mahal', on: 'コウ', kun: 'taka(i)', example: '高校 (kōkō) = SMA' }
+  ],
+  school_action: [
+    { jp: '考', meaning: 'Berpikir', on: 'コウ', kun: 'kanga(eru)', example: '思考 (shikou) = Pemikiran' },
+    { jp: '教', meaning: 'Mengajar', on: 'キョウ', kun: 'oshi(eru)', example: '教室 (kyoushitsu) = Ruang kelas' },
+    { jp: '室', meaning: 'Ruangan', on: 'シツ', kun: 'muro', example: '和室 (washitsu) = Kamar gaya Jepang' },
+    { jp: '文', meaning: 'Kalimat', on: 'ブン、モン', kun: 'fumi', example: '文学 (bungaku) = Kesusastraan' },
+    { jp: '字', meaning: 'Huruf', on: 'ジ', kun: 'aza', example: '漢字 (kanji) = Aksara Kanji' },
+    { jp: '音', meaning: 'Bunyi', on: 'オン', kun: 'oto', example: '音楽 (ongaku) = Musik' },
+    { jp: '楽', meaning: 'Senang / Musik', on: 'ガク、ラク', kun: 'tano(shii)', example: '楽観 (rakkan) = Optimis' }
+  ]
+};
+
+// ── 36 N3 KANJI ESENSIAL DATABASE ────────────────────────────────────────────
+const KANJI_N3_LIBRARY = {
+  society: [
+    { jp: '政', meaning: 'Politik', on: 'セイ', kun: 'matsuri', example: '政治 (seiji) = Politik' },
+    { jp: '治', meaning: 'Memerintah', on: 'ジ、チ', kun: 'osama(ru)', example: '治療 (chiryou) = Pengobatan/Terapi' },
+    { jp: '経', meaning: 'Ekonomi / Lewat', on: 'ケイ', kun: 'he(ru)', example: '経済 (keizai) = Ekonomi' },
+    { jp: '済', meaning: 'Selesai', on: 'サイ', kun: 'su(mu)', example: '経済 (keizai) = Ekonomi' },
+    { jp: '法', meaning: 'Hukum', on: 'ホウ', kun: '—', example: '法律 (houritsu) = Undang-undang' },
+    { jp: '律', meaning: 'Aturan', on: 'リツ', kun: '—', example: '法律 (houritsu) = Undang-undang' },
+    { jp: '際', meaning: 'Batas / Internasional', on: 'サイ', kun: 'kiwa', example: '国際 (kokusai) = Internasional' },
+    { jp: '関', meaning: 'Hubungan', on: 'カン', kun: 'seki', example: '関係 (kankei) = Hubungan/Koneksi' },
+    { jp: '係', meaning: 'Penanggung Jawab', on: 'ケイ', kun: 'kaka(ri)', example: '係員 (kakariin) = Petugas/Staf' },
+    { jp: '義', meaning: 'Keadilan / Makna', on: 'ギ', kun: '—', example: '義務 (gimu) = Kewajiban' }
+  ],
+  business_science: [
+    { jp: '研', meaning: 'Meneliti', on: 'ケン', kun: 'to(gu)', example: '研究 (kenkyuu) = Penelitian' },
+    { jp: '究', meaning: 'Menyelidiki', on: 'キュウ', kun: 'kiwa(meru)', example: '研究 (kenkyuu) = Penelitian' },
+    { jp: '科', meaning: 'Sains / Bidang', on: 'カ', kun: '—', example: '科学 (kagaku) = Ilmu sains' },
+    { jp: '数', meaning: 'Angka', on: 'スウ', kun: 'kazu', example: '数学 (suugaku) = Matematika' },
+    { jp: '算', meaning: 'Berhitung', on: 'サン', kun: '—', example: '計算 (keisan) = Penghitungan' },
+    { jp: '組', meaning: 'Kelompok / Kelas', on: 'ソ', kun: 'kumi', example: '番組 (bangumi) = Acara TV' },
+    { jp: '設', meaning: 'Mendirikan', on: 'セツ', kun: 'mou(keru)', example: '設計 (sekkei) = Perancangan/Desain' },
+    { jp: '建', meaning: 'Membangun', on: 'ケン', kun: 'ta(teru)', example: '建物 (tatemono) = Bangunan' },
+    { jp: '築', meaning: 'Konstruksi', on: 'チク', kun: 'kizu(ku)', example: '建築 (kenchiku) = Arsitektur' },
+    { jp: '造', meaning: 'Membuat', on: 'ゾウ', kun: 'tsuku(ru)', example: '製造 (seizou) = Manufaktur' }
+  ],
+  mind_emotion: [
+    { jp: '想', meaning: 'Ide / Pikiran', on: 'ソウ', kun: 'omo(u)', example: '想像 (souzou) = Imajinasi' },
+    { jp: '念', meaning: 'Perasaan', on: 'ネン', kun: '—', example: '残念 (zannen) = Sayang sekali' },
+    { jp: '感', meaning: 'Indra / Perasaan', on: 'カン', kun: '—', example: '感謝 (kansha) = Terima kasih' },
+    { jp: '情', meaning: 'Emosi', on: 'ジョウ', kun: 'nasa(ke)', example: '情報 (jouhou) = Informasi' },
+    { jp: '信', meaning: 'Percaya', on: 'シン', kun: '—', example: '信用 (shinyou) = Kepercayaan' },
+    { jp: '愛', meaning: 'Cinta', on: 'アイ', kun: '—', example: '愛情 (aijou) = Kasih sayang' },
+    { jp: '悲', meaning: 'Sedih', on: 'ヒ', kun: 'kana(shii)', example: '悲劇 (higeki) = Tragedi' },
+    { jp: '怒', meaning: 'Marah', on: 'ド', kun: 'oko(ru)', example: '怒気 (doki) = Kemarahan' },
+    { jp: '望', meaning: 'Berharap', on: 'ボウ', kun: 'nozo(mu)', example: '希望 (kibou) = Harapan' }
+  ],
+  action_state: [
+    { jp: '選', meaning: 'Memilih', on: 'セン', kun: 'era(bu)', example: '選手 (senshu) = Atlet/Pemain' },
+    { jp: '決', meaning: 'Memutuskan', on: 'ケツ', kun: 'ki(meru)', example: '決定 (kettei) = Keputusan' },
+    { jp: '認', meaning: 'Mengakui', on: 'ニン', kun: 'mito(meru)', example: '確認 (kakunin) = Konfirmasi' },
+    { jp: '表', meaning: 'Tabel / Ungkapan', on: 'ヒョウ', kun: 'omote', example: '発表 (happyou) = Presentasi/Pengumuman' },
+    { jp: '現', meaning: 'Muncul / Nyata', on: 'ゲン', kun: 'arawa(reru)', example: '現在 (genzai) = Saat ini' },
+    { jp: '調', meaning: 'Meneliti / Nada', on: 'チョウ', kun: 'shirabe(ru)', example: '調査 (chousa) = Investigasi' },
+    { jp: '査', meaning: 'Memeriksa', on: 'サ', kun: '—', example: '検査 (kensa) = Pemeriksaan medis' },
+    { jp: '確', meaning: 'Pasti / Yakin', on: 'カ防', kun: 'tashi(ka)', example: '確認 (kakunin) = Konfirmasi' },
+    { jp: '果', meaning: 'Hasil / Buah', on: 'カ', kun: 'ha(teru)', example: '結果 (kekka) = Hasil' }
+  ]
+};
+
 // ── COMPONENT VIEW ──────────────────────────────────────────────────────────
 export function KanjiView(container) {
-  renderTopbar('🏮 Kanji Hub N5');
+  renderTopbar('🏮 Kanji Hub');
 
   let activeSubTab = 'theory'; // 'theory' | 'kamus'
+  let activeLevel = 'N5'; // 'N5' | 'N4' | 'N3'
 
   const renderLayout = () => {
     container.innerHTML = `
@@ -83,16 +187,16 @@ export function KanjiView(container) {
         
         <!-- Header Section -->
         <div style="text-align: center; margin-bottom: 24px; border-bottom: 1px solid var(--border); padding-bottom: 20px;">
-          <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--text-main); margin-bottom: 6px; letter-spacing: -0.02em;">Kanal Kanji Masterclass N5</h2>
+          <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--text-main); margin-bottom: 6px; letter-spacing: -0.02em;">Kanal Kanji Masterclass Hub</h2>
           <p style="color: var(--text-muted); font-size: 0.85rem; max-width: 500px; margin: 0 auto; line-height: 1.5;">
-            Pelajari hukum dasar penulisan Kanji, kuasai perbedaan cara baca Onyomi/Kunyomi, dan latih 80 Kanji N5 secara fisik di layar sentuh Anda.
+            Pelajari hukum dasar penulisan Kanji, kuasai perbedaan cara baca Onyomi/Kunyomi, dan latih Kanji N5/N4/N3 Anda langsung di layar sentuh.
           </p>
         </div>
 
         <!-- Mode Tabs -->
         <div style="display: flex; gap: 4px; background: var(--bg-hover); padding: 4px; border-radius: var(--radius-md); margin-bottom: 28px; max-width: 400px; margin-left: auto; margin-right: auto;">
-          <button class="tab-btn sub-tab-btn ${activeSubTab === 'theory' ? 'active' : ''}" data-target="theory" style="flex: 1; padding: 8px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm); font-size: var(--text-xs);">Teori & Aturan</button>
-          <button class="tab-btn sub-tab-btn ${activeSubTab === 'kamus' ? 'active' : ''}" data-target="kamus" style="flex: 1; padding: 8px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm); font-size: var(--text-xs);">Katalog 80 Kanji</button>
+          <button class="tab-btn sub-tab-btn ${activeSubTab === 'theory' ? 'active' : ''}" data-target="theory" style="flex: 1; padding: 8px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm); font-size: var(--text-xs); cursor: pointer;">Teori & Aturan</button>
+          <button class="tab-btn sub-tab-btn ${activeSubTab === 'kamus' ? 'active' : ''}" data-target="kamus" style="flex: 1; padding: 8px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm); font-size: var(--text-xs); cursor: pointer;">Katalog Kanji</button>
         </div>
 
         <!-- Tab Contents -->
@@ -222,18 +326,61 @@ export function KanjiView(container) {
         </div>
       `;
     } else {
-      // Catalog 80 Kanji N5
+      // Catalog Tab: Levels selective render
       contentArea.innerHTML = `
-        <div class="fade-in" style="display: flex; flex-direction: column; gap: 36px;">
-          ${renderCatalogSection('I. KANJI ANGKA & WAKTU (20 Kanji)', KANJI_N5_LIBRARY.numbers_time)}
-          ${renderCatalogSection('II. KANJI ALAM & TEMPAT (19 Kanji)', KANJI_N5_LIBRARY.nature_places)}
-          ${renderCatalogSection('III. KANJI ORANG & KELUARGA (9 Kanji)', KANJI_N5_LIBRARY.people_family)}
-          ${renderCatalogSection('IV. KANJI TEMPAT & BANGUNAN (10 Kanji)', KANJI_N5_LIBRARY.places_buildings)}
+        <div class="fade-in">
+          <!-- Level Selector Pills -->
+          <div style="display: flex; gap: 8px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap;">
+            <button class="level-pill-btn" data-level="N5" style="cursor: pointer; border-radius: 99px; padding: 6px 18px; font-size: var(--text-xs); font-weight: 700; border: 1px solid var(--border); transition: all 0.15s; background: ${activeLevel === 'N5' ? 'var(--text-main)' : 'var(--bg-card)'}; color: ${activeLevel === 'N5' ? 'var(--bg-main)' : 'var(--text-main)'};">N5 (Dasar)</button>
+            <button class="level-pill-btn" data-level="N4" style="cursor: pointer; border-radius: 99px; padding: 6px 18px; font-size: var(--text-xs); font-weight: 700; border: 1px solid var(--border); transition: all 0.15s; background: ${activeLevel === 'N4' ? 'var(--text-main)' : 'var(--bg-card)'}; color: ${activeLevel === 'N4' ? 'var(--bg-main)' : 'var(--text-main)'};">N4 (Lanjutan I)</button>
+            <button class="level-pill-btn" data-level="N3" style="cursor: pointer; border-radius: 99px; padding: 6px 18px; font-size: var(--text-xs); font-weight: 700; border: 1px solid var(--border); transition: all 0.15s; background: ${activeLevel === 'N3' ? 'var(--text-main)' : 'var(--bg-card)'}; color: ${activeLevel === 'N3' ? 'var(--bg-main)' : 'var(--text-main)'};">N3 (Lanjutan II)</button>
+          </div>
+
+          <!-- Dynamic List Wrapper -->
+          <div id="level-catalog-container" style="display: flex; flex-direction: column; gap: 36px;">
+            <!-- Rendered dynamically -->
+          </div>
         </div>
       `;
+
+      renderCatalogList();
+      bindLevelPillEvents();
     }
 
     if (window.lucide) lucide.createIcons({ root: contentArea });
+  };
+
+  const renderCatalogList = () => {
+    const listContainer = container.querySelector('#level-catalog-container');
+    if (!listContainer) return;
+
+    let html = '';
+
+    if (activeLevel === 'N5') {
+      html = `
+        ${renderCatalogSection('I. KANJI ANGKA & WAKTU (20 Kanji)', KANJI_N5_LIBRARY.numbers_time)}
+        ${renderCatalogSection('II. KANJI ALAM & TEMPAT (19 Kanji)', KANJI_N5_LIBRARY.nature_places)}
+        ${renderCatalogSection('III. KANJI ORANG & KELUARGA (9 Kanji)', KANJI_N5_LIBRARY.people_family)}
+        ${renderCatalogSection('IV. KANJI TEMPAT & BANGUNAN (10 Kanji)', KANJI_N5_LIBRARY.places_buildings)}
+      `;
+    } else if (activeLevel === 'N4') {
+      html = `
+        ${renderCatalogSection('I. KANJI GERAKAN & PERJALANAN (10 Kanji)', KANJI_N4_LIBRARY.movement)}
+        ${renderCatalogSection('II. KANJI WAKTU & TUBUH (12 Kanji)', KANJI_N4_LIBRARY.time_body)}
+        ${renderCatalogSection('III. KANJI MASYARAKAT & BISNIS (13 Kanji)', KANJI_N4_LIBRARY.society_business)}
+        ${renderCatalogSection('IV. KANJI SEKOLAH & AKSI (7 Kanji)', KANJI_N4_LIBRARY.school_action)}
+      `;
+    } else if (activeLevel === 'N3') {
+      html = `
+        ${renderCatalogSection('I. KANJI MASYARAKAT & KEHIDUPAN (10 Kanji)', KANJI_N3_LIBRARY.society)}
+        ${renderCatalogSection('II. KANJI BISNIS & SAINS (10 Kanji)', KANJI_N3_LIBRARY.business_science)}
+        ${renderCatalogSection('III. KANJI PIKIRAN & EMOSI (9 Kanji)', KANJI_N3_LIBRARY.mind_emotion)}
+        ${renderCatalogSection('IV. KANJI AKSI & KEADAAN (9 Kanji)', KANJI_N3_LIBRARY.action_state)}
+      `;
+    }
+
+    listContainer.innerHTML = html;
+    if (window.lucide) lucide.createIcons({ root: listContainer });
   };
 
   const renderCatalogSection = (title, list) => {
@@ -281,6 +428,26 @@ export function KanjiView(container) {
         target.classList.add('active');
 
         renderContent();
+      });
+    });
+  };
+
+  const bindLevelPillEvents = () => {
+    container.querySelectorAll('.level-pill-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const target = e.target.closest('.level-pill-btn');
+        if (!target) return;
+
+        activeLevel = target.getAttribute('data-level');
+
+        container.querySelectorAll('.level-pill-btn').forEach(b => {
+          b.style.background = 'var(--bg-card)';
+          b.style.color = 'var(--text-main)';
+        });
+        target.style.background = 'var(--text-main)';
+        target.style.color = 'var(--bg-main)';
+
+        renderCatalogList();
       });
     });
   };

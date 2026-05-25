@@ -201,12 +201,114 @@ const KANJI_DATABASE = {
   ]
 };
 
+const KANJI_N4_DATABASE = {
+  movement: [
+    { jp: '出', rom: 'de(ru) / shutsu', en: 'Keluar' },
+    { jp: '入', rom: 'hai(ru) / ire(ru) / nyuu', en: 'Masuk' },
+    { jp: '立', rom: 'ta(tsu) / ritsu', en: 'Berdiri' },
+    { jp: '開', rom: 'a(keru) / kai', en: 'Membuka' },
+    { jp: '閉', rom: 'shi(meru) / hei', en: 'Menutup' },
+    { jp: '帰', rom: 'kae(ru) / ki', en: 'Pulang' },
+    { jp: '歩', rom: 'aru(ku) / ho', en: 'Berjalan' },
+    { jp: '走', rom: 'hashi(ru) / sou', en: 'Berlari' },
+    { jp: '止', rom: 'to(maru) / shi', en: 'Berhenti' },
+    { jp: '曜', rom: 'you', en: 'Hari dalam seminggu' }
+  ],
+  time_body: [
+    { jp: '朝', rom: 'asa / chou', en: 'Pagi' },
+    { jp: '昼', rom: 'hiru / chuu', en: 'Siang' },
+    { jp: '夜', rom: 'yoru / ya', en: 'Malam' },
+    { jp: '春', rom: 'haru / shun', en: 'Musim Semi' },
+    { jp: '夏', rom: 'natsu / ka', en: 'Musim Panas' },
+    { jp: '秋', rom: 'aki / shuu', en: 'Musim Gugur' },
+    { jp: '冬', rom: 'fuyu / tou', en: 'Musim Dingin' },
+    { jp: '体', rom: 'karada / tai', en: 'Tubuh' },
+    { jp: '心', rom: 'kokoro / shin', en: 'Hati / Jiwa' },
+    { jp: '首', rom: 'kubi / shu', en: 'Leher' },
+    { jp: '声', rom: 'koe / sei', en: 'Suara' },
+    { jp: '自', rom: 'mizuka(ra) / ji', en: 'Diri Sendiri' }
+  ],
+  society_business: [
+    { jp: '民', rom: 'tami / min', en: 'Rakyat / Warga' },
+    { jp: '使', rom: 'tsuka(u) / shi', en: 'Memakai / Menggunakan' },
+    { jp: '作', rom: 'tsuku(ru) / saku', en: 'Membuat' },
+    { jp: '仕', rom: 'tsuka(eru) / shi', en: 'Melayani / Tugas' },
+    { jp: '事', rom: 'koto / ji', en: 'Hal / Pekerjaan' },
+    { jp: '品', rom: 'shina / hin', en: 'Barang / Produk' },
+    { jp: '業', rom: 'waza / gyou', en: 'Industri / Usaha' },
+    { jp: '長', rom: 'naga(i) / chou', en: 'Panjang / Kepala-Pemimpin' },
+    { jp: '強', rom: 'tsuyo(i) / kyou', en: 'Kuat' },
+    { jp: '新', rom: 'atara(shii) / shin', en: 'Baru' },
+    { jp: '古', rom: 'furu(i) / ko', en: 'Lama / Kuno' },
+    { jp: '安', rom: 'yasu(i) / an', en: 'Murah / Aman' },
+    { jp: '高', rom: 'taka(i) / kou', en: 'Tinggi / Mahal' }
+  ],
+  school_action: [
+    { jp: '考', rom: 'kanga(eru) / kou', en: 'Berpikir' },
+    { jp: '教', rom: 'oshi(eru) / kyou', en: 'Mengajar' },
+    { jp: '室', rom: 'muro / shitsu', en: 'Ruangan' },
+    { jp: '文', rom: 'fumi / bun', en: 'Kalimat / Sastra' },
+    { jp: '字', rom: 'aza / ji', en: 'Huruf / Karakter' },
+    { jp: '音', rom: 'oto / on', en: 'Bunyi / Suara' },
+    { jp: '楽', rom: 'tano(shii) / gaku', en: 'Menyenangkan / Musik' }
+  ]
+};
+
+const KANJI_N3_DATABASE = {
+  society: [
+    { jp: '政', rom: 'matsuri / sei', en: 'Politik / Pemerintahan' },
+    { jp: '治', rom: 'osama(ru) / ji', en: 'Memerintah / Menyembuhkan' },
+    { jp: '経', rom: 'he(ru) / kei', en: 'Melewati / Mengelola / Ekonomi' },
+    { jp: '済', rom: 'su(mu) / sai', en: 'Selesai / Ekonomi' },
+    { jp: '法', rom: 'hou', en: 'Hukum / Undang-undang / Metode' },
+    { jp: '律', rom: 'ritsu', en: 'Aturan / Hukum' },
+    { jp: '際', rom: 'kiwa / sai', en: 'Batas / Internasional / Saat' },
+    { jp: '関', rom: 'seki / kan', en: 'Hubungan / Gerbang / Mengenai' },
+    { jp: '係', rom: 'kaka(ri) / kei', en: 'Hubungan / Penanggung Jawab' },
+    { jp: '義', rom: 'gi', en: 'Keadilan / Kebenaran / Makna' }
+  ],
+  business_science: [
+    { jp: '研', rom: 'to(gu) / ken', en: 'Mengasah / Meneliti' },
+    { jp: '究', rom: 'kiwa(meru) / kyuu', en: 'Menyelidiki / Meneliti' },
+    { jp: '科', rom: 'ka', en: 'Departemen / Sains / Cabang Ilmu' },
+    { jp: '数', rom: 'kazu / suu', en: 'Angka / Menghitung' },
+    { jp: '算', rom: 'san', en: 'Berhitung / Menghitung' },
+    { jp: '組', rom: 'kumi / so', en: 'Kelompok / Merakit / Kelas' },
+    { jp: '設', rom: 'mou(keru) / setsu', en: 'Mendirikan / Mengatur' },
+    { jp: '建', rom: 'ta(teru) / ken', en: 'Membangun' },
+    { jp: '築', rom: 'kizu(ku) / chiku', en: 'Membangun / Konstruksi' },
+    { jp: '造', rom: 'tsuku(ru) / zou', en: 'Membuat / Menciptakan' }
+  ],
+  mind_emotion: [
+    { jp: '想', rom: 'omo(u) / sou', en: 'Pikiran / Ide / Konsep' },
+    { jp: '念', rom: 'nen', en: 'Perasaan / Ingatan / Keinginan' },
+    { jp: '感', rom: 'kan', en: 'Perasaan / Indra / Tersentuh' },
+    { jp: '情', rom: 'nasa(ke) / jou', en: 'Emosi / Belas Kasih / Keadaan' },
+    { jp: '信', rom: 'shin', en: 'Percaya / Iman / Sinyal' },
+    { jp: '愛', rom: 'ai', en: 'Cinta / Kasih Sayang' },
+    { jp: '悲', rom: 'kana(shii) / hi', en: 'Sedih' },
+    { jp: '怒', rom: 'oko(ru) / do', en: 'Marah' },
+    { jp: '望', rom: 'nozo(mu) / bou', en: 'Berharap / Melihat Jauh' }
+  ],
+  action_state: [
+    { jp: '選', rom: 'era(bu) / sen', en: 'Memilih' },
+    { jp: '決', rom: 'ki(meru) / ketsu', en: 'Memutuskan' },
+    { jp: '認', rom: 'mito(meru) / nin', en: 'Mengakui / Menyetujui' },
+    { jp: '表', rom: 'omote / hyou', en: 'Permukaan / Tabel / Mengungkapkan' },
+    { jp: '現', rom: 'arawa(reru) / gen', en: 'Muncul / Nyata / Sekarang' },
+    { jp: '調', rom: 'shirabe(ru) / chou', en: 'Meneliti / Nada' },
+    { jp: '査', rom: 'sa', en: 'Memeriksa / Menyelidiki' },
+    { jp: '確', rom: 'tashi(ka) / kaku', en: 'Pasti / Yakin' },
+    { jp: '果', rom: 'ha(teru) / ka', en: 'Buah / Hasil / Menyelesaikan' }
+  ]
+};
+
 // ── COMPONENT VIEW ──────────────────────────────────────────────────────────
 export function WritingView(container) {
   renderTopbar('❖ Latihan Menulis');
 
   // Application session states
-  let activeTab = 'hiragana'; // 'hiragana' | 'katakana' | 'kanji'
+  let activeTab = 'hiragana'; // 'hiragana' | 'katakana' | 'kanji' | 'kanji-n4' | 'kanji-n3'
   let sessionQueue = []; // Queue of active characters in the session
   let currentIndex = 0;
   let isDrawing = false;
@@ -227,7 +329,7 @@ export function WritingView(container) {
     const charParam = params.get('char');
     if (charParam) {
       let foundItem = null;
-      // Search in Kanji
+      // Search in Kanji N5
       Object.keys(KANJI_DATABASE).forEach(key => {
         const match = KANJI_DATABASE[key].find(item => item.jp === charParam);
         if (match) {
@@ -235,6 +337,26 @@ export function WritingView(container) {
           activeTab = 'kanji';
         }
       });
+      // Search in Kanji N4
+      if (!foundItem) {
+        Object.keys(KANJI_N4_DATABASE).forEach(key => {
+          const match = KANJI_N4_DATABASE[key].find(item => item.jp === charParam);
+          if (match) {
+            foundItem = match;
+            activeTab = 'kanji-n4';
+          }
+        });
+      }
+      // Search in Kanji N3
+      if (!foundItem) {
+        Object.keys(KANJI_N3_DATABASE).forEach(key => {
+          const match = KANJI_N3_DATABASE[key].find(item => item.jp === charParam);
+          if (match) {
+            foundItem = match;
+            activeTab = 'kanji-n3';
+          }
+        });
+      }
       // Search in Hiragana
       if (!foundItem) {
         Object.keys(HIRAGANA_DATABASE).forEach(key => {
@@ -287,10 +409,12 @@ export function WritingView(container) {
         </p>
 
         <!-- Dynamic Sub Tabs -->
-        <div style="display: flex; gap: 4px; background: var(--bg-hover); padding: 4px; border-radius: var(--radius-md); margin-bottom: 20px;">
-          <button class="tab-btn selection-tab ${activeTab === 'hiragana' ? 'active' : ''}" data-target="hiragana" style="flex: 1; padding: 10px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm);">Hiragana</button>
-          <button class="tab-btn selection-tab ${activeTab === 'katakana' ? 'active' : ''}" data-target="katakana" style="flex: 1; padding: 10px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm);">Katakana</button>
-          <button class="tab-btn selection-tab ${activeTab === 'kanji' ? 'active' : ''}" data-target="kanji" style="flex: 1; padding: 10px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm);">Kanji N5</button>
+        <div style="display: flex; gap: 4px; background: var(--bg-hover); padding: 4px; border-radius: var(--radius-md); margin-bottom: 20px; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+          <button class="tab-btn selection-tab ${activeTab === 'hiragana' ? 'active' : ''}" data-target="hiragana" style="flex: 1; padding: 10px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm); white-space: nowrap; min-width: 75px;">Hiragana</button>
+          <button class="tab-btn selection-tab ${activeTab === 'katakana' ? 'active' : ''}" data-target="katakana" style="flex: 1; padding: 10px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm); white-space: nowrap; min-width: 75px;">Katakana</button>
+          <button class="tab-btn selection-tab ${activeTab === 'kanji' ? 'active' : ''}" data-target="kanji" style="flex: 1; padding: 10px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm); white-space: nowrap; min-width: 75px;">Kanji N5</button>
+          <button class="tab-btn selection-tab ${activeTab === 'kanji-n4' ? 'active' : ''}" data-target="kanji-n4" style="flex: 1; padding: 10px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm); white-space: nowrap; min-width: 75px;">Kanji N4</button>
+          <button class="tab-btn selection-tab ${activeTab === 'kanji-n3' ? 'active' : ''}" data-target="kanji-n3" style="flex: 1; padding: 10px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm); white-space: nowrap; min-width: 75px;">Kanji N3</button>
         </div>
 
         <div id="selection-grid-container" style="display: flex; flex-direction: column; gap: 24px;">
@@ -428,6 +552,59 @@ export function WritingView(container) {
             <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Kata Kerja Dasar</div>
           </button>
         </div>
+        <button class="btn btn-primary" data-type="kanji" data-key="all" style="width: 100%; padding: 14px; font-weight: 800; margin-top: 6px;">
+          Latih Semua Kanji N5 (39 Huruf)
+        </button>
+      `;
+    } else if (activeTab === 'kanji-n4') {
+      html = `
+        <h3 style="font-size: 0.8rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: -8px;">Kategori Kanji N4</h3>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+          <button class="char-select-card" data-type="kanji-n4" data-key="movement">
+            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">出入立開閉</div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Gerakan</div>
+          </button>
+          <button class="char-select-card" data-type="kanji-n4" data-key="time_body">
+            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">朝昼夜春夏</div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Waktu & Tubuh</div>
+          </button>
+          <button class="char-select-card" data-type="kanji-n4" data-key="society_business">
+            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">民使作仕事</div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Masyarakat & Bisnis</div>
+          </button>
+          <button class="char-select-card" data-type="kanji-n4" data-key="school_action">
+            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">考教室文字</div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Sekolah & Aksi</div>
+          </button>
+        </div>
+        <button class="btn btn-primary" data-type="kanji-n4" data-key="all" style="width: 100%; padding: 14px; font-weight: 800; margin-top: 6px;">
+          Latih Semua Kanji N4 (42 Huruf)
+        </button>
+      `;
+    } else if (activeTab === 'kanji-n3') {
+      html = `
+        <h3 style="font-size: 0.8rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: -8px;">Kategori Kanji N3</h3>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+          <button class="char-select-card" data-type="kanji-n3" data-key="society">
+            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">政治経済法</div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Masyarakat</div>
+          </button>
+          <button class="char-select-card" data-type="kanji-n3" data-key="business_science">
+            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">研究科数算</div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Bisnis & Sains</div>
+          </button>
+          <button class="char-select-card" data-type="kanji-n3" data-key="mind_emotion">
+            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">想念感情緒</div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Pikiran & Emosi</div>
+          </button>
+          <button class="char-select-card" data-type="kanji-n3" data-key="action_state">
+            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">選決認表現</div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Aksi & Keadaan</div>
+          </button>
+        </div>
+        <button class="btn btn-primary" data-type="kanji-n3" data-key="all" style="width: 100%; padding: 14px; font-weight: 800; margin-top: 6px;">
+          Latih Semua Kanji N3 (38 Huruf)
+        </button>
       `;
     }
 
@@ -456,6 +633,8 @@ export function WritingView(container) {
       if (type === 'hiragana') sourceDb = HIRAGANA_DATABASE;
       else if (type === 'katakana') sourceDb = KATAKANA_DATABASE;
       else if (type === 'kanji') sourceDb = KANJI_DATABASE;
+      else if (type === 'kanji-n4') sourceDb = KANJI_N4_DATABASE;
+      else if (type === 'kanji-n3') sourceDb = KANJI_N3_DATABASE;
 
       if (!sourceDb) return;
 
@@ -494,7 +673,11 @@ export function WritingView(container) {
   // Screen 2: Drawing / Deliberate Practice Stage
   const renderPracticeScreen = () => {
     const char = sessionQueue[currentIndex];
-    const categoryTitle = activeTab === 'hiragana' ? 'Hiragana' : activeTab === 'katakana' ? 'Katakana' : 'Kanji N5';
+    const categoryTitle = 
+      activeTab === 'hiragana' ? 'Hiragana' : 
+      activeTab === 'katakana' ? 'Katakana' : 
+      activeTab === 'kanji' ? 'Kanji N5' : 
+      activeTab === 'kanji-n4' ? 'Kanji N4' : 'Kanji N3';
 
     container.innerHTML = `
       <div style="max-width: 500px; margin: 0 auto; padding: 12px 16px; display: flex; flex-direction: column;" class="fade-in">
