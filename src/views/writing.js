@@ -152,154 +152,1235 @@ const KATAKANA_DATABASE = {
 };
 
 const KANJI_DATABASE = {
-  numbers: [
-    { jp: '一', rom: 'ichi', en: 'Satu' },
-    { jp: '二', rom: 'ni', en: 'Dua' },
-    { jp: '三', rom: 'san', en: 'Tiga' },
-    { jp: '四', rom: 'yon', en: 'Empat' },
-    { jp: '五', rom: 'go', en: 'Lima' },
-    { jp: '六', rom: 'roku', en: 'Enam' },
-    { jp: '七', rom: 'nana', en: 'Tujuh' },
-    { jp: '八', rom: 'hachi', en: 'Delapan' },
-    { jp: '九', rom: 'kyuu', en: 'Sembilan' },
-    { jp: '十', rom: 'juu', en: 'Sepuluh' }
+  "numbers_time": [
+    {
+      "jp": "一",
+      "rom": "ひと",
+      "en": "Satu"
+    },
+    {
+      "jp": "二",
+      "rom": "ふta",
+      "en": "Dua"
+    },
+    {
+      "jp": "三",
+      "rom": "みt",
+      "en": "Tiga"
+    },
+    {
+      "jp": "四",
+      "rom": "よt / よ",
+      "en": "Empat"
+    },
+    {
+      "jp": "五",
+      "rom": "いつ",
+      "en": "Lima"
+    },
+    {
+      "jp": "六",
+      "rom": "むt",
+      "en": "Enam"
+    },
+    {
+      "jp": "七",
+      "rom": "なな",
+      "en": "Tujuh"
+    },
+    {
+      "jp": "八",
+      "rom": "やt",
+      "en": "Delapan"
+    },
+    {
+      "jp": "九",
+      "rom": "ここの",
+      "en": "Sembilan"
+    },
+    {
+      "jp": "十",
+      "rom": "とお",
+      "en": "Sepuluh"
+    },
+    {
+      "jp": "百",
+      "rom": "ヒャク",
+      "en": "Seratus"
+    },
+    {
+      "jp": "千",
+      "rom": "ち",
+      "en": "Seribu"
+    },
+    {
+      "jp": "万",
+      "rom": "マン / バン",
+      "en": "Sepuluh Ribu"
+    },
+    {
+      "jp": "円",
+      "rom": "maru",
+      "en": "Yen / Lingkaran"
+    },
+    {
+      "jp": "年",
+      "rom": "とし",
+      "en": "Tahun"
+    },
+    {
+      "jp": "月",
+      "rom": "tsuki",
+      "en": "Bulan / Rembulan"
+    },
+    {
+      "jp": "日",
+      "rom": "hi / ka",
+      "en": "Hari / Matahari"
+    },
+    {
+      "jp": "時",
+      "rom": "とき",
+      "en": "Waktu / Jam"
+    },
+    {
+      "jp": "分",
+      "rom": "wa",
+      "en": "Menit / Bagian"
+    },
+    {
+      "jp": "半",
+      "rom": "naka",
+      "en": "Setengah"
+    }
   ],
-  nature: [
-    { jp: '日', rom: 'hi / nichi', en: 'Matahari / Hari' },
-    { jp: '月', rom: 'tsuki / getsu', en: 'Bulan' },
-    { jp: '火', rom: 'hi / ka', en: 'Api' },
-    { jp: '水', rom: 'mizu / sui', en: 'Air' },
-    { jp: '木', rom: 'ki / moku', en: 'Pohon / Kayu' },
-    { jp: '金', rom: 'kane / kin', en: 'Emas / Uang / Hari Jumat' },
-    { jp: '土', rom: 'tsuchi / do', en: 'Tanah / Hari Sabtu' },
-    { jp: '山', rom: 'yama / san', en: 'Gunung' },
-    { jp: '川', rom: 'kawa', en: 'Sungai' },
-    { jp: '田', rom: 'ta / den', en: 'Sawah' }
+  "nature_places": [
+    {
+      "jp": "山",
+      "rom": "yama",
+      "en": "Gunung"
+    },
+    {
+      "jp": "川",
+      "rom": "kawa",
+      "en": "Sungai"
+    },
+    {
+      "jp": "海",
+      "rom": "umi",
+      "en": "Laut"
+    },
+    {
+      "jp": "空",
+      "rom": "sora / a",
+      "en": "Langit / Kosong"
+    },
+    {
+      "jp": "木",
+      "rom": "ki",
+      "en": "Pohon / Kayu"
+    },
+    {
+      "jp": "花",
+      "rom": "hana",
+      "en": "Bunga"
+    },
+    {
+      "jp": "雨",
+      "rom": "ame",
+      "en": "Hujan"
+    },
+    {
+      "jp": "火",
+      "rom": "hi",
+      "en": "Api"
+    },
+    {
+      "jp": "水",
+      "rom": "mizu",
+      "en": "Air"
+    },
+    {
+      "jp": "土",
+      "rom": "tsuchi",
+      "en": "Tanah"
+    },
+    {
+      "jp": "金",
+      "rom": "kane / kana",
+      "en": "Emas / Uang"
+    },
+    {
+      "jp": "上",
+      "rom": "ue / a",
+      "en": "Atas"
+    },
+    {
+      "jp": "下",
+      "rom": "shita / sa",
+      "en": "Bawah"
+    },
+    {
+      "jp": "中",
+      "rom": "naka",
+      "en": "Tengah / Dalam"
+    },
+    {
+      "jp": "外",
+      "rom": "soto",
+      "en": "Luar"
+    },
+    {
+      "jp": "右",
+      "rom": "migi",
+      "en": "Kanan"
+    },
+    {
+      "jp": "左",
+      "rom": "hidari",
+      "en": "Kiri"
+    },
+    {
+      "jp": "前",
+      "rom": "mae",
+      "en": "Depan / Sebelum"
+    },
+    {
+      "jp": "後",
+      "rom": "ato / ushi",
+      "en": "Belakang / Sesudah"
+    },
+    {
+      "jp": "東",
+      "rom": "higashi",
+      "en": "Timur"
+    }
   ],
-  human_direction: [
-    { jp: '人', rom: 'hito / jin', en: 'Orang' },
-    { jp: '子', rom: 'ko / shi', en: 'Anak' },
-    { jp: '男', rom: 'otoko / dan', en: 'Laki-laki' },
-    { jp: '女', rom: 'onna / jo', en: 'Perempuan' },
-    { jp: '目', rom: 'me / moku', en: 'Mata' },
-    { jp: '口', rom: 'kuchi / kou', en: 'Mulut' },
-    { jp: '手', rom: 'te / shu', en: 'Tangan' },
-    { jp: '耳', rom: 'mimi / ji', en: 'Telinga' },
-    { jp: '上', rom: 'ue / jou', en: 'Atas' },
-    { jp: '下', rom: 'shita / ka', en: 'Bawah' },
-    { jp: '中', rom: 'naka / chuu', en: 'Tengah / Dalam' }
+  "people_family": [
+    {
+      "jp": "人",
+      "rom": "hito",
+      "en": "Orang"
+    },
+    {
+      "jp": "父",
+      "rom": "chichi / tou",
+      "en": "Ayah"
+    },
+    {
+      "jp": "母",
+      "rom": "haha / kaa",
+      "en": "Ibu"
+    },
+    {
+      "jp": "子",
+      "rom": "ko",
+      "en": "Anak"
+    },
+    {
+      "jp": "男",
+      "rom": "otoko",
+      "en": "Laki-laki"
+    },
+    {
+      "jp": "女",
+      "rom": "onna",
+      "en": "Perempuan"
+    },
+    {
+      "jp": "友",
+      "rom": "tomo",
+      "en": "Teman"
+    },
+    {
+      "jp": "先",
+      "rom": "saki",
+      "en": "Dahulu / Depan"
+    },
+    {
+      "jp": "生",
+      "rom": "i / u",
+      "en": "Lahir / Hidup"
+    },
+    {
+      "jp": "名",
+      "rom": "na",
+      "en": "Nama"
+    },
+    {
+      "jp": "気",
+      "rom": "キ / ケ",
+      "en": "Energi / Jiwa"
+    },
+    {
+      "jp": "元",
+      "rom": "moto",
+      "en": "Asal / Sehat"
+    },
+    {
+      "jp": "西",
+      "rom": "nishi",
+      "en": "Barat"
+    },
+    {
+      "jp": "南",
+      "rom": "minami",
+      "en": "Selatan"
+    },
+    {
+      "jp": "北",
+      "rom": "kita",
+      "en": "Utara"
+    },
+    {
+      "jp": "本",
+      "rom": "moto",
+      "en": "Buku / Asal"
+    },
+    {
+      "jp": "天",
+      "rom": "ama",
+      "en": "Langit / Surga"
+    },
+    {
+      "jp": "口",
+      "rom": "kuchi / guchi",
+      "en": "Mulut"
+    },
+    {
+      "jp": "目",
+      "rom": "me",
+      "en": "Mata"
+    },
+    {
+      "jp": "耳",
+      "rom": "mimi",
+      "en": "Telinga"
+    }
   ],
-  verbs: [
-    { jp: '行', rom: 'i(ku) / kou', en: 'Pergi' },
-    { jp: '来', rom: 'ku(ru) / rai', en: 'Datang' },
-    { jp: '食', rom: 'ta(beru) / shoku', en: 'Makan' },
-    { jp: '飲', rom: 'no(mu) / in', en: 'Minum' },
-    { jp: '見', rom: 'mi(ru) / ken', en: 'Melihat' },
-    { jp: '書', rom: 'ka(ku) / sho', en: 'Menulis' },
-    { jp: '読', rom: 'yo(mu) / doku', en: 'Membaca' },
-    { jp: '話', rom: 'hana(su) / wa', en: 'Berbicara' }
+  "places_buildings": [
+    {
+      "jp": "国",
+      "rom": "kuni",
+      "en": "Negara"
+    },
+    {
+      "jp": "店",
+      "rom": "mise",
+      "en": "Toko"
+    },
+    {
+      "jp": "駅",
+      "rom": "エキ",
+      "en": "Stasiun"
+    },
+    {
+      "jp": "電",
+      "rom": "デン",
+      "en": "Listrik"
+    },
+    {
+      "jp": "車",
+      "rom": "kuruma",
+      "en": "Kendaraan / Roda"
+    },
+    {
+      "jp": "道",
+      "rom": "michi",
+      "en": "Jalan"
+    },
+    {
+      "jp": "学",
+      "rom": "mana",
+      "en": "Belajar"
+    },
+    {
+      "jp": "校",
+      "rom": "コウ",
+      "en": "Sekolah"
+    },
+    {
+      "jp": "会",
+      "rom": "a",
+      "en": "Pertemuan / Bertemu"
+    },
+    {
+      "jp": "社",
+      "rom": "yashiro",
+      "en": "Perusahaan / Kuil"
+    },
+    {
+      "jp": "入",
+      "rom": "hai / i",
+      "en": "Masuk"
+    },
+    {
+      "jp": "出",
+      "rom": "de / da",
+      "en": "Keluar"
+    },
+    {
+      "jp": "立",
+      "rom": "ta",
+      "en": "Berdiri"
+    },
+    {
+      "jp": "休",
+      "rom": "yasu",
+      "en": "Istirahat"
+    },
+    {
+      "jp": "買",
+      "rom": "ka",
+      "en": "Membeli"
+    },
+    {
+      "jp": "何",
+      "rom": "nani / nan",
+      "en": "Apa"
+    },
+    {
+      "jp": "手",
+      "rom": "te",
+      "en": "Tangan"
+    },
+    {
+      "jp": "足",
+      "rom": "ashi / ta",
+      "en": "Kaki / Cukup"
+    },
+    {
+      "jp": "白",
+      "rom": "shiro",
+      "en": "Putih"
+    },
+    {
+      "jp": "赤",
+      "rom": "aka",
+      "en": "Merah"
+    }
   ]
 };
 
 const KANJI_N4_DATABASE = {
-  movement: [
-    { jp: '出', rom: 'de(ru) / shutsu', en: 'Keluar' },
-    { jp: '入', rom: 'hai(ru) / ire(ru) / nyuu', en: 'Masuk' },
-    { jp: '立', rom: 'ta(tsu) / ritsu', en: 'Berdiri' },
-    { jp: '開', rom: 'a(keru) / kai', en: 'Membuka' },
-    { jp: '閉', rom: 'shi(meru) / hei', en: 'Menutup' },
-    { jp: '帰', rom: 'kae(ru) / ki', en: 'Pulang' },
-    { jp: '歩', rom: 'aru(ku) / ho', en: 'Berjalan' },
-    { jp: '走', rom: 'hashi(ru) / sou', en: 'Berlari' },
-    { jp: '止', rom: 'to(maru) / shi', en: 'Berhenti' },
-    { jp: '曜', rom: 'you', en: 'Hari dalam seminggu' }
+  "movement": [
+    {
+      "jp": "開",
+      "rom": "a / ひら",
+      "en": "Membuka"
+    },
+    {
+      "jp": "閉",
+      "rom": "し / と",
+      "en": "Menutup"
+    },
+    {
+      "jp": "帰",
+      "rom": "かえ",
+      "en": "Pulang"
+    },
+    {
+      "jp": "歩",
+      "rom": "ある",
+      "en": "Berjalan"
+    },
+    {
+      "jp": "走",
+      "rom": "はし",
+      "en": "Berlari"
+    },
+    {
+      "jp": "止",
+      "rom": "to",
+      "en": "Berhenti"
+    },
+    {
+      "jp": "曜",
+      "rom": "ヨウ",
+      "en": "Hari Seminggu"
+    },
+    {
+      "jp": "送",
+      "rom": "oku",
+      "en": "Mengirim"
+    },
+    {
+      "jp": "急",
+      "rom": "iso",
+      "en": "Cepat / Tergesa"
+    },
+    {
+      "jp": "引",
+      "rom": "hi",
+      "en": "Menarik"
+    },
+    {
+      "jp": "押",
+      "rom": "o",
+      "en": "Mendorong"
+    },
+    {
+      "jp": "使",
+      "rom": "tsuka",
+      "en": "Menggunakan"
+    },
+    {
+      "jp": "始",
+      "rom": "haji",
+      "en": "Memulai"
+    },
+    {
+      "jp": "終",
+      "rom": "o",
+      "en": "Selesai"
+    },
+    {
+      "jp": "借",
+      "rom": "ka",
+      "en": "Meminjam"
+    },
+    {
+      "jp": "貸",
+      "rom": "ka",
+      "en": "Meminjamkan"
+    },
+    {
+      "jp": "待",
+      "rom": "ma",
+      "en": "Menunggu"
+    },
+    {
+      "jp": "持",
+      "rom": "mo",
+      "en": "Membawa / Memiliki"
+    },
+    {
+      "jp": "住",
+      "rom": "su",
+      "en": "Tinggal / Menetap"
+    },
+    {
+      "jp": "週",
+      "rom": "シュウ",
+      "en": "Minggu"
+    }
   ],
-  time_body: [
-    { jp: '朝', rom: 'asa / chou', en: 'Pagi' },
-    { jp: '昼', rom: 'hiru / chuu', en: 'Siang' },
-    { jp: '夜', rom: 'yoru / ya', en: 'Malam' },
-    { jp: '春', rom: 'haru / shun', en: 'Musim Semi' },
-    { jp: '夏', rom: 'natsu / ka', en: 'Musim Panas' },
-    { jp: '秋', rom: 'aki / shuu', en: 'Musim Gugur' },
-    { jp: '冬', rom: 'fuyu / tou', en: 'Musim Dingin' },
-    { jp: '体', rom: 'karada / tai', en: 'Tubuh' },
-    { jp: '心', rom: 'kokoro / shin', en: 'Hati / Jiwa' },
-    { jp: '首', rom: 'kubi / shu', en: 'Leher' },
-    { jp: '声', rom: 'koe / sei', en: 'Suara' },
-    { jp: '自', rom: 'mizuka(ra) / ji', en: 'Diri Sendiri' }
+  "time_body": [
+    {
+      "jp": "朝",
+      "rom": "asa",
+      "en": "Pagi"
+    },
+    {
+      "jp": "昼",
+      "rom": "hiru",
+      "en": "Siang"
+    },
+    {
+      "jp": "夜",
+      "rom": "yoru",
+      "en": "Malam"
+    },
+    {
+      "jp": "春",
+      "rom": "haru",
+      "en": "Musim Semi"
+    },
+    {
+      "jp": "夏",
+      "rom": "natsu",
+      "en": "Musim Panas"
+    },
+    {
+      "jp": "秋",
+      "rom": "aki",
+      "en": "Musim Gugur"
+    },
+    {
+      "jp": "冬",
+      "rom": "fuyu",
+      "en": "Musim Dingin"
+    },
+    {
+      "jp": "体",
+      "rom": "karada",
+      "en": "Tubuh"
+    },
+    {
+      "jp": "心",
+      "rom": "kokoro",
+      "en": "Hati / Jiwa"
+    },
+    {
+      "jp": "首",
+      "rom": "kubi",
+      "en": "Leher"
+    },
+    {
+      "jp": "声",
+      "rom": "koe",
+      "en": "Suara"
+    },
+    {
+      "jp": "自",
+      "rom": "mizuka",
+      "en": "Diri Sendiri"
+    },
+    {
+      "jp": "頭",
+      "rom": "atama",
+      "en": "Kepala"
+    },
+    {
+      "jp": "顔",
+      "rom": "kao",
+      "en": "Wajah"
+    },
+    {
+      "jp": "病",
+      "rom": "ya",
+      "en": "Sakit"
+    },
+    {
+      "jp": "院",
+      "rom": "イン",
+      "en": "Institusi"
+    },
+    {
+      "jp": "医",
+      "rom": "イ",
+      "en": "Medis / Dokter"
+    },
+    {
+      "jp": "薬",
+      "rom": "kusuri",
+      "en": "Obat"
+    },
+    {
+      "jp": "度",
+      "rom": "ta",
+      "en": "Derajat / Kali"
+    },
+    {
+      "jp": "力",
+      "rom": "chikara",
+      "en": "Kekuatan"
+    }
   ],
-  society_business: [
-    { jp: '民', rom: 'tami / min', en: 'Rakyat / Warga' },
-    { jp: '使', rom: 'tsuka(u) / shi', en: 'Memakai / Menggunakan' },
-    { jp: '作', rom: 'tsuku(ru) / saku', en: 'Membuat' },
-    { jp: '仕', rom: 'tsuka(eru) / shi', en: 'Melayani / Tugas' },
-    { jp: '事', rom: 'koto / ji', en: 'Hal / Pekerjaan' },
-    { jp: '品', rom: 'shina / hin', en: 'Barang / Produk' },
-    { jp: '業', rom: 'waza / gyou', en: 'Industri / Usaha' },
-    { jp: '長', rom: 'naga(i) / chou', en: 'Panjang / Kepala-Pemimpin' },
-    { jp: '強', rom: 'tsuyo(i) / kyou', en: 'Kuat' },
-    { jp: '新', rom: 'atara(shii) / shin', en: 'Baru' },
-    { jp: '古', rom: 'furu(i) / ko', en: 'Lama / Kuno' },
-    { jp: '安', rom: 'yasu(i) / an', en: 'Murah / Aman' },
-    { jp: '高', rom: 'taka(i) / kou', en: 'Tinggi / Mahal' }
+  "society_business": [
+    {
+      "jp": "民",
+      "rom": "tami",
+      "en": "Rakyat / Warga"
+    },
+    {
+      "jp": "作",
+      "rom": "つく",
+      "en": "Membuat"
+    },
+    {
+      "jp": "仕",
+      "rom": "tsuka",
+      "en": "Melayani"
+    },
+    {
+      "jp": "事",
+      "rom": "koto",
+      "en": "Hal / Tugas"
+    },
+    {
+      "jp": "品",
+      "rom": "shina",
+      "en": "Barang"
+    },
+    {
+      "jp": "業",
+      "rom": "waza",
+      "en": "Industri"
+    },
+    {
+      "jp": "長",
+      "rom": "naga",
+      "en": "Panjang / Kepala"
+    },
+    {
+      "jp": "强",
+      "rom": "tsuyo",
+      "en": "Kuat"
+    },
+    {
+      "jp": "新",
+      "rom": "atara",
+      "en": "Baru"
+    },
+    {
+      "jp": "古",
+      "rom": "furu",
+      "en": "Lama"
+    },
+    {
+      "jp": "安",
+      "rom": "yasu",
+      "en": "Murah / Aman"
+    },
+    {
+      "jp": "高",
+      "rom": "taka",
+      "en": "Tinggi / Mahal"
+    },
+    {
+      "jp": "同",
+      "rom": "onaji",
+      "en": "Sama"
+    },
+    {
+      "jp": "主",
+      "rom": "nushi",
+      "en": "Pemilik / Utama"
+    },
+    {
+      "jp": "代",
+      "rom": "ka",
+      "en": "Era / Mengganti"
+    },
+    {
+      "jp": "用",
+      "rom": "mochi",
+      "en": "Menggunakan / Urusan"
+    },
+    {
+      "jp": "理",
+      "rom": "リ",
+      "en": "Alasan / Kebenaran"
+    },
+    {
+      "jp": "物",
+      "rom": "mono",
+      "en": "Benda"
+    },
+    {
+      "jp": "特",
+      "rom": "トク",
+      "en": "Khusus"
+    },
+    {
+      "jp": "売",
+      "rom": "u",
+      "en": "Menjual"
+    }
   ],
-  school_action: [
-    { jp: '考', rom: 'kanga(eru) / kou', en: 'Berpikir' },
-    { jp: '教', rom: 'oshi(eru) / kyou', en: 'Mengajar' },
-    { jp: '室', rom: 'muro / shitsu', en: 'Ruangan' },
-    { jp: '文', rom: 'fumi / bun', en: 'Kalimat / Sastra' },
-    { jp: '字', rom: 'aza / ji', en: 'Huruf / Karakter' },
-    { jp: '音', rom: 'oto / on', en: 'Bunyi / Suara' },
-    { jp: '楽', rom: 'tano(shii) / gaku', en: 'Menyenangkan / Musik' }
+  "school_action": [
+    {
+      "jp": "考",
+      "rom": "kanga",
+      "en": "Berpikir"
+    },
+    {
+      "jp": "教",
+      "rom": "oshi",
+      "en": "Mengajar"
+    },
+    {
+      "jp": "室",
+      "rom": "muro",
+      "en": "Ruangan"
+    },
+    {
+      "jp": "文",
+      "rom": "fumi",
+      "en": "Kalimat"
+    },
+    {
+      "jp": "字",
+      "rom": "aza",
+      "en": "Huruf"
+    },
+    {
+      "jp": "音",
+      "rom": "oto",
+      "en": "Bunyi"
+    },
+    {
+      "jp": "楽",
+      "rom": "tano",
+      "en": "Senang / Musik"
+    },
+    {
+      "jp": "林",
+      "rom": "hayashi",
+      "en": "Hutan Kecil"
+    },
+    {
+      "jp": "森",
+      "rom": "mori",
+      "en": "Hutan Lebat"
+    },
+    {
+      "jp": "親",
+      "rom": "oya / shita",
+      "en": "Orang Tua / Dekat"
+    },
+    {
+      "jp": "少",
+      "rom": "suku / suko",
+      "en": "Sedikit"
+    },
+    {
+      "jp": "多",
+      "rom": "oo",
+      "en": "Banyak"
+    },
+    {
+      "jp": "近",
+      "rom": "chika",
+      "en": "Dekat"
+    },
+    {
+      "jp": "遠",
+      "rom": "too",
+      "en": "Jauh"
+    },
+    {
+      "jp": "犬",
+      "rom": "inu",
+      "en": "Anjing"
+    },
+    {
+      "jp": "牛",
+      "rom": "ushi",
+      "en": "Sapi"
+    },
+    {
+      "jp": "鳥",
+      "rom": "tori",
+      "en": "Burung"
+    },
+    {
+      "jp": "風",
+      "rom": "kaze",
+      "en": "Angin"
+    },
+    {
+      "jp": "台",
+      "rom": "ダイ / タイ",
+      "en": "Landasan / Unit"
+    },
+    {
+      "jp": "世",
+      "rom": "yo",
+      "en": "Dunia / Generasi"
+    }
   ]
 };
 
 const KANJI_N3_DATABASE = {
-  society: [
-    { jp: '政', rom: 'matsuri / sei', en: 'Politik / Pemerintahan' },
-    { jp: '治', rom: 'osama(ru) / ji', en: 'Memerintah / Menyembuhkan' },
-    { jp: '経', rom: 'he(ru) / kei', en: 'Melewati / Mengelola / Ekonomi' },
-    { jp: '済', rom: 'su(mu) / sai', en: 'Selesai / Ekonomi' },
-    { jp: '法', rom: 'hou', en: 'Hukum / Undang-undang / Metode' },
-    { jp: '律', rom: 'ritsu', en: 'Aturan / Hukum' },
-    { jp: '際', rom: 'kiwa / sai', en: 'Batas / Internasional / Saat' },
-    { jp: '関', rom: 'seki / kan', en: 'Hubungan / Gerbang / Mengenai' },
-    { jp: '係', rom: 'kaka(ri) / kei', en: 'Hubungan / Penanggung Jawab' },
-    { jp: '義', rom: 'gi', en: 'Keadilan / Kebenaran / Makna' }
+  "society": [
+    {
+      "jp": "政",
+      "rom": "matsuri",
+      "en": "Politik"
+    },
+    {
+      "jp": "治",
+      "rom": "osama",
+      "en": "Memerintah"
+    },
+    {
+      "jp": "経",
+      "rom": "he",
+      "en": "Ekonomi / Lewat"
+    },
+    {
+      "jp": "済",
+      "rom": "su",
+      "en": "Selesai"
+    },
+    {
+      "jp": "法",
+      "rom": "ホウ",
+      "en": "Hukum"
+    },
+    {
+      "jp": "律",
+      "rom": "リツ",
+      "en": "Aturan"
+    },
+    {
+      "jp": "際",
+      "rom": "kiwa",
+      "en": "Batas / Internasional"
+    },
+    {
+      "jp": "関",
+      "rom": "seki",
+      "en": "Hubungan"
+    },
+    {
+      "jp": "係",
+      "rom": "kaka",
+      "en": "Penanggung Jawab"
+    },
+    {
+      "jp": "義",
+      "rom": "ギ",
+      "en": "Keadilan / Makna"
+    },
+    {
+      "jp": "議",
+      "rom": "ギ",
+      "en": "Diskusi / Parlemen"
+    },
+    {
+      "jp": "党",
+      "rom": "トウ",
+      "en": "Partai Politik"
+    },
+    {
+      "jp": "都",
+      "rom": "miako",
+      "en": "Metropolis / Kota"
+    },
+    {
+      "jp": "府",
+      "rom": "フ",
+      "en": "Prefektur Kotamadya"
+    },
+    {
+      "jp": "県",
+      "rom": "ケン",
+      "en": "Prefektur Provinsi"
+    },
+    {
+      "jp": "区",
+      "rom": "ク",
+      "en": "Distrik / Wilayah"
+    },
+    {
+      "jp": "諸",
+      "rom": "ショ",
+      "en": "Berbagai / Banyak"
+    },
+    {
+      "jp": "権",
+      "rom": "ケン / ゴン",
+      "en": "Kekuasaan / Hak"
+    },
+    {
+      "jp": "財",
+      "rom": "ザイ / サイ",
+      "en": "Harta / Kekayaan"
+    },
+    {
+      "jp": "障",
+      "rom": "sawa",
+      "en": "Rintangan / Hambatan"
+    }
   ],
-  business_science: [
-    { jp: '研', rom: 'to(gu) / ken', en: 'Mengasah / Meneliti' },
-    { jp: '究', rom: 'kiwa(meru) / kyuu', en: 'Menyelidiki / Meneliti' },
-    { jp: '科', rom: 'ka', en: 'Departemen / Sains / Cabang Ilmu' },
-    { jp: '数', rom: 'kazu / suu', en: 'Angka / Menghitung' },
-    { jp: '算', rom: 'san', en: 'Berhitung / Menghitung' },
-    { jp: '組', rom: 'kumi / so', en: 'Kelompok / Merakit / Kelas' },
-    { jp: '設', rom: 'mou(keru) / setsu', en: 'Mendirikan / Mengatur' },
-    { jp: '建', rom: 'ta(teru) / ken', en: 'Membangun' },
-    { jp: '築', rom: 'kizu(ku) / chiku', en: 'Membangun / Konstruksi' },
-    { jp: '造', rom: 'tsuku(ru) / zou', en: 'Membuat / Menciptakan' }
+  "business_science": [
+    {
+      "jp": "研",
+      "rom": "to",
+      "en": "Meneliti"
+    },
+    {
+      "jp": "究",
+      "rom": "kiwa",
+      "en": "Menyelidiki"
+    },
+    {
+      "jp": "科",
+      "rom": "カ",
+      "en": "Sains / Bidang"
+    },
+    {
+      "jp": "数",
+      "rom": "kazu",
+      "en": "Angka"
+    },
+    {
+      "jp": "算",
+      "rom": "サン",
+      "en": "Berhitung"
+    },
+    {
+      "jp": "組",
+      "rom": "kumi",
+      "en": "Kelompok / Kelas"
+    },
+    {
+      "jp": "設",
+      "rom": "mou",
+      "en": "Mendirikan"
+    },
+    {
+      "jp": "建",
+      "rom": "ta",
+      "en": "Membangun"
+    },
+    {
+      "jp": "築",
+      "rom": "kizu",
+      "en": "Konstruksi"
+    },
+    {
+      "jp": "造",
+      "rom": "tsuku",
+      "en": "Membuat"
+    },
+    {
+      "jp": "術",
+      "rom": "sube",
+      "en": "Teknik / Seni"
+    },
+    {
+      "jp": "技",
+      "rom": "waza",
+      "en": "Keterampilan"
+    },
+    {
+      "jp": "複",
+      "rom": "フク",
+      "en": "Ganda / Kompleks"
+    },
+    {
+      "jp": "册",
+      "rom": "サツ / サク",
+      "en": "Counter Buku / Jilid"
+    },
+    {
+      "jp": "製",
+      "rom": "セイ",
+      "en": "Buatan / Pabrik"
+    },
+    {
+      "jp": "輸",
+      "rom": "ユ",
+      "en": "Mengangkut / Kirim"
+    },
+    {
+      "jp": "貿",
+      "rom": "ボウ",
+      "en": "Perdagangan"
+    },
+    {
+      "jp": "易",
+      "rom": "yasa",
+      "en": "Mudah / Barter"
+    },
+    {
+      "jp": "企",
+      "rom": "kuwada",
+      "en": "Merencanakan"
+    },
+    {
+      "jp": "創",
+      "rom": "haji",
+      "en": "Menciptakan"
+    }
   ],
-  mind_emotion: [
-    { jp: '想', rom: 'omo(u) / sou', en: 'Pikiran / Ide / Konsep' },
-    { jp: '念', rom: 'nen', en: 'Perasaan / Ingatan / Keinginan' },
-    { jp: '感', rom: 'kan', en: 'Perasaan / Indra / Tersentuh' },
-    { jp: '情', rom: 'nasa(ke) / jou', en: 'Emosi / Belas Kasih / Keadaan' },
-    { jp: '信', rom: 'shin', en: 'Percaya / Iman / Sinyal' },
-    { jp: '愛', rom: 'ai', en: 'Cinta / Kasih Sayang' },
-    { jp: '悲', rom: 'kana(shii) / hi', en: 'Sedih' },
-    { jp: '怒', rom: 'oko(ru) / do', en: 'Marah' },
-    { jp: '望', rom: 'nozo(mu) / bou', en: 'Berharap / Melihat Jauh' }
+  "mind_emotion": [
+    {
+      "jp": "想",
+      "rom": "omo",
+      "en": "Ide / Pikiran"
+    },
+    {
+      "jp": "念",
+      "rom": "ネン",
+      "en": "Perasaan"
+    },
+    {
+      "jp": "感",
+      "rom": "カン",
+      "en": "Indra / Perasaan"
+    },
+    {
+      "jp": "情",
+      "rom": "nasa",
+      "en": "Emosi"
+    },
+    {
+      "jp": "信",
+      "rom": "シン",
+      "en": "Percaya"
+    },
+    {
+      "jp": "愛",
+      "rom": "アイ",
+      "en": "Cinta"
+    },
+    {
+      "jp": "悲",
+      "rom": "kana",
+      "en": "Sedih"
+    },
+    {
+      "jp": "怒",
+      "rom": "oko",
+      "en": "Marah"
+    },
+    {
+      "jp": "望",
+      "rom": "nozo",
+      "en": "Berharap"
+    },
+    {
+      "jp": "欲",
+      "rom": "ho",
+      "en": "Ingin / Hasrat"
+    },
+    {
+      "jp": "願",
+      "rom": "nega",
+      "en": "Memohon"
+    },
+    {
+      "jp": "恐",
+      "rom": "kowa / oso",
+      "en": "Takut / Ngeri"
+    },
+    {
+      "jp": "悩",
+      "rom": "nayo",
+      "en": "Khawatir / Cemas"
+    },
+    {
+      "jp": "憎",
+      "rom": "niga",
+      "en": "Benci"
+    },
+    {
+      "jp": "恥",
+      "rom": "ha",
+      "en": "Malu"
+    },
+    {
+      "jp": "意",
+      "rom": "イ",
+      "en": "Maksud / Pikiran"
+    },
+    {
+      "jp": "志",
+      "rom": "kokorozashi",
+      "en": "Kehendak / Aspirasi"
+    },
+    {
+      "jp": "憶",
+      "rom": "オク",
+      "en": "Ingat / Memori"
+    },
+    {
+      "jp": "忘",
+      "rom": "wasu",
+      "en": "Lupa"
+    },
+    {
+      "jp": "恋",
+      "rom": "koi",
+      "en": "Cinta / Asmara"
+    }
   ],
-  action_state: [
-    { jp: '選', rom: 'era(bu) / sen', en: 'Memilih' },
-    { jp: '決', rom: 'ki(meru) / ketsu', en: 'Memutuskan' },
-    { jp: '認', rom: 'mito(meru) / nin', en: 'Mengakui / Menyetujui' },
-    { jp: '表', rom: 'omote / hyou', en: 'Permukaan / Tabel / Mengungkapkan' },
-    { jp: '現', rom: 'arawa(reru) / gen', en: 'Muncul / Nyata / Sekarang' },
-    { jp: '調', rom: 'shirabe(ru) / chou', en: 'Meneliti / Nada' },
-    { jp: '査', rom: 'sa', en: 'Memeriksa / Menyelidiki' },
-    { jp: '確', rom: 'tashi(ka) / kaku', en: 'Pasti / Yakin' },
-    { jp: '果', rom: 'ha(teru) / ka', en: 'Buah / Hasil / Menyelesaikan' }
+  "action_state": [
+    {
+      "jp": "選",
+      "rom": "era",
+      "en": "Memilih"
+    },
+    {
+      "jp": "決",
+      "rom": "ki",
+      "en": "Memutuskan"
+    },
+    {
+      "jp": "認",
+      "rom": "mito",
+      "en": "Mengakui"
+    },
+    {
+      "jp": "表",
+      "rom": "omote",
+      "en": "Tabel / Ungkapan"
+    },
+    {
+      "jp": "現",
+      "rom": "arawa",
+      "en": "Muncul / Nyata"
+    },
+    {
+      "jp": "調",
+      "rom": "shirabe",
+      "en": "Meneliti / Nada"
+    },
+    {
+      "jp": "査",
+      "rom": "サ",
+      "en": "Memeriksa"
+    },
+    {
+      "jp": "確",
+      "rom": "tashi",
+      "en": "Pasti / Yakin"
+    },
+    {
+      "jp": "果",
+      "rom": "ha",
+      "en": "Hasil / Buah"
+    },
+    {
+      "jp": "連",
+      "rom": "tsu",
+      "en": "Menghubungkan"
+    },
+    {
+      "jp": "絡",
+      "rom": "kara",
+      "en": "Keterikatan"
+    },
+    {
+      "jp": "戦",
+      "rom": "tataka",
+      "en": "Perang / Tarung"
+    },
+    {
+      "jp": "争",
+      "rom": "araso",
+      "en": "Berjuang / Rebut"
+    },
+    {
+      "jp": "幸",
+      "rom": "shiawa",
+      "en": "Bahagia"
+    },
+    {
+      "jp": "福",
+      "rom": "フク",
+      "en": "Keberuntungan"
+    },
+    {
+      "jp": "難",
+      "rom": "muzuka",
+      "en": "Sulit / Bencana"
+    },
+    {
+      "jp": "若",
+      "rom": "waka",
+      "en": "Muda"
+    },
+    {
+      "jp": "老",
+      "rom": "o",
+      "en": "Tua / Lansia"
+    },
+    {
+      "jp": "忙",
+      "rom": "isoga",
+      "en": "Sibuk"
+    },
+    {
+      "jp": "降",
+      "rom": "o / fu",
+      "en": "Turun"
+    }
   ]
 };
 
@@ -535,21 +1616,21 @@ export function WritingView(container) {
       html = `
         <h3 style="font-size: 0.8rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: -8px;">Kategori Kanji N5</h3>
         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-          <button class="char-select-card" data-type="kanji" data-key="numbers">
+          <button class="char-select-card" data-type="kanji" data-key="numbers_time">
             <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">一二三四五</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Angka Dasar</div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Angka & Waktu</div>
           </button>
-          <button class="char-select-card" data-type="kanji" data-key="nature">
+          <button class="char-select-card" data-type="kanji" data-key="nature_places">
             <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">日月火水木</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Alam & Waktu</div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Alam & Tempat</div>
           </button>
-          <button class="char-select-card" data-type="kanji" data-key="human_direction">
+          <button class="char-select-card" data-type="kanji" data-key="people_family">
             <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">人子男女手</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Manusia & Arah</div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Orang & Keluarga</div>
           </button>
-          <button class="char-select-card" data-type="kanji" data-key="verbs">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">行来食事書</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Kata Kerja Dasar</div>
+          <button class="char-select-card" data-type="kanji" data-key="places_buildings">
+            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">国店駅電車</div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Tempat & Bangunan</div>
           </button>
         </div>
         <button class="btn btn-primary" data-type="kanji" data-key="all" style="width: 100%; padding: 14px; font-weight: 800; margin-top: 6px;">
