@@ -1,5 +1,126 @@
 import { renderTopbar } from '../components/layout.js';
 
+// ── KANA TO ROMAJI CONVERTER FOR BEGINNERS ────────────────────────────────────
+const KANA_MAP = {
+  'あ': 'a', 'い': 'i', 'う': 'u', 'え': 'e', 'お': 'o',
+  'か': 'ka', 'き': 'ki', 'く': 'ku', 'け': 'ke', 'こ': 'ko',
+  'さ': 'sa', 'し': 'shi', 'す': 'su', 'せ': 'se', 'そ': 'so',
+  'た': 'ta', 'ち': 'chi', 'つ': 'tsu', 'て': 'te', 'と': 'to',
+  'な': 'na', 'に': 'ni', 'ぬ': 'nu', 'ね': 'ne', 'の': 'no',
+  'は': 'ha', 'ひ': 'hi', 'ふ': 'fu', 'へ': 'he', 'ほ': 'ho',
+  'ま': 'ma', 'み': 'mi', 'む': 'mu', 'め': 'me', 'も': 'mo',
+  'や': 'ya', 'ゆ': 'yu', 'よ': 'yo',
+  'ら': 'ra', 'り': 'ri', 'る': 'ru', 'れ': 're', 'ろ': 'ro',
+  'わ': 'wa', 'を': 'wo', 'ん': 'n',
+  'が': 'ga', 'ぎ': 'gi', 'ぐ': 'gu', 'げ': 'ge', 'ご': 'go',
+  'ざ': 'za', 'じ': 'ji', 'ず': 'zu', 'ぜ': 'ze', 'ぞ': 'zo',
+  'だ': 'da', 'ぢ': 'ji', 'づ': 'zu', 'で': 'de', 'ど': 'do',
+  'ば': 'ba', 'び': 'bi', 'ぶ': 'bu', 'べ': 'be', 'ぼ': 'bo',
+  'ぱ': 'pa', 'ぴ': 'pi', 'ぷ': 'pu', 'ぺ': 'pe', 'ぽ': 'po',
+  'ア': 'a', 'イ': 'i', 'ウ': 'u', 'エ': 'e', 'オ': 'o',
+  'カ': 'ka', 'キ': 'ki', 'ク': 'ku', 'ケ': 'ke', 'コ': 'ko',
+  'サ': 'sa', 'シ': 'shi', 'ス': 'su', 'セ': 'se', 'ソ': 'so',
+  'タ': 'ta', 'チ': 'chi', 'ツ': 'tsu', 'テ': 'te', 'ト': 'to',
+  'ナ': 'na', 'ニ': 'ni', 'ヌ': 'nu', 'ネ': 'ne', 'ノ': 'no',
+  'ハ': 'ha', 'ヒ': 'hi', 'フ': 'fu', 'ヘ': 'he', 'ホ': 'ho',
+  'マ': 'ma', 'ミ': 'mi', 'ム': 'mu', 'メ': 'me', 'モ': 'mo',
+  'ヤ': 'ya', 'ユ': 'yu', 'ヨ': 'yo',
+  'ラ': 'ra', 'リ': 'ri', 'ル': 'ru', 'レ': 're', 'ロ': 'ro',
+  'ワ': 'wa', 'ヲ': 'wo', 'ン': 'n',
+  'ガ': 'ga', 'ギ': 'gi', 'グ': 'gu', 'ゲ': 'ge', 'ゴ': 'go',
+  'ザ': 'za', 'ジ': 'ji', 'ズ': 'zu', 'ゼ': 'ze', 'ゾ': 'zo',
+  'ダ': 'da', 'ヂ': 'ji', 'ヅ': 'zu', 'デ': 'de', 'ド': 'do',
+  'バ': 'ba', 'ビ': 'bi', 'ブ': 'bu', 'ベ': 'be', 'ボ': 'bo',
+  'パ': 'pa', 'ピ': 'pi', 'プ': 'pu', 'ペ': 'pe', 'ポ': 'po',
+};
+
+const KANA_DOUBLE_MAP = {
+  'きゃ': 'kya', 'きゅ': 'kyu', 'きょ': 'kyo',
+  'しゃ': 'sha', 'しゅ': 'shu', 'しょ': 'sho',
+  'ちゃ': 'cha', 'ちゅ': 'chu', 'ちょ': 'cho',
+  'にゃ': 'nya', 'にゅ': 'nyu', 'にょ': 'nyo',
+  'ひゃ': 'hya', 'ひゅ': 'hyu', 'ひょ': 'hyo',
+  'みゃ': 'mya', 'みゅ': 'myu', 'みょ': 'myo',
+  'りゃ': 'rya', 'りゅ': 'ryu', 'りょ': 'ryo',
+  'ぎゃ': 'gya', 'ぎゅ': 'gyu', 'ぎょ': 'gyo',
+  'じゃ': 'ja', 'じゅ': 'ju', 'じょ': 'jo',
+  'びゃ': 'bya', 'びゅ': 'byu', 'びょ': 'byo',
+  'ぴゃ': 'pya', 'ぴゅ': 'pyu', 'ぴょ': 'pyo',
+  'キャ': 'kya', 'キュ': 'kyu', 'キョ': 'kyo',
+  'シャ': 'sha', 'シュ': 'shu', 'ショ': 'sho',
+  'チャ': 'cha', 'チュ': 'chu', 'チョ': 'cho',
+  'ニャ': 'nya', 'ニュ': 'nyu', 'ニョ': 'nyo',
+  'ヒャ': 'hya', 'ヒュ': 'hyu', 'ヒょ': 'hyo',
+  'ミャ': 'mya', 'ミュ': 'myu', 'ミョ': 'myo',
+  'リャ': 'rya', 'リュ': 'ryu', 'リョ': 'ryo',
+  'ギャ': 'gya', 'ギュ': 'gyu', 'ギョ': 'gyo',
+  'ジャ': 'ja', 'ジュ': 'ju', 'ジョ': 'jo',
+  'ビャ': 'bya', 'ビュ': 'byu', 'ビョ': 'byo',
+  'ピャ': 'pya', 'ピュ': 'pyu', 'ピョ': 'pyo',
+};
+
+function toRomaji(str) {
+  if (!str || str === '—') return '—';
+  let res = '';
+  let i = 0;
+  while (i < str.length) {
+    const char = str[i];
+    if (/[a-zA-Z0-9\s\(\)\-\,\.\/\?\!\=\:\;\~]/.test(char)) {
+      res += char;
+      i++;
+      continue;
+    }
+    if (char === '、') {
+      res += ', ';
+      i++;
+      continue;
+    }
+    if (i + 1 < str.length) {
+      const d = str.substr(i, 2);
+      if (KANA_DOUBLE_MAP[d]) {
+        res += KANA_DOUBLE_MAP[d];
+        i += 2;
+        continue;
+      }
+    }
+    if (KANA_MAP[char]) {
+      res += KANA_MAP[char];
+      i++;
+      continue;
+    }
+    if (char === 'っ' || char === 'ッ') {
+      let doubleConsonant = '';
+      if (i + 1 < str.length) {
+        const next = str[i + 1];
+        let nr = '';
+        if (next === '(' && i + 2 < str.length) {
+          const letter = str[i + 2];
+          if (/[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]/.test(letter)) {
+            doubleConsonant = letter.toLowerCase();
+          }
+        } else {
+          if (i + 2 < str.length && KANA_DOUBLE_MAP[str.substr(i + 1, 2)]) {
+            nr = KANA_DOUBLE_MAP[str.substr(i + 1, 2)];
+          } else if (KANA_MAP[next]) {
+            nr = KANA_MAP[next];
+          }
+          if (nr) {
+            doubleConsonant = nr[0];
+          }
+        }
+      }
+      if (doubleConsonant) {
+        res += doubleConsonant;
+      }
+      i++;
+      continue;
+    }
+    res += char;
+    i++;
+  }
+  return res;
+}
+
 // ── 80 N5 KANJI COMPLETE DATABASE ────────────────────────────────────────────
 const KANJI_N5_LIBRARY = {
   "numbers_time": [
@@ -14,7 +135,7 @@ const KANJI_N5_LIBRARY = {
       "jp": "二",
       "meaning": "Dua",
       "on": "ニ",
-      "kun": "ふta(tsu)",
+      "kun": "ふた(tsu)",
       "example": "二年生 (ninensei) = Siswa tahun ke-2"
     },
     {
@@ -1944,7 +2065,11 @@ export function KanjiView(container) {
   };
 
   const renderCatalogSection = (title, list) => {
-    const cardsHtml = list.map(item => `
+    const cardsHtml = list.map(item => {
+      const onRomaji = item.on !== '—' ? ` (${toRomaji(item.on)})` : '';
+      const kunRomaji = item.kun !== '—' ? ` (${toRomaji(item.kun)})` : '';
+
+      return `
       <div class="kanji-catalog-card">
         <div class="kanji-catalog-char">${item.jp}</div>
         <div class="kanji-catalog-meaning">${item.meaning}</div>
@@ -1952,11 +2077,15 @@ export function KanjiView(container) {
         <div class="kanji-catalog-readings">
           <div style="margin-bottom: 5px; display: flex; align-items: baseline; gap: 8px;">
             <strong style="font-size: 0.65rem; color: var(--text-muted); min-width: 16px;">音:</strong>
-            <span style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; color: var(--text-main); word-break: break-all;">${item.on}</span>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; color: var(--text-main); word-break: break-all;">
+              ${item.on}<span style="font-size: 0.65rem; font-weight: 500; color: var(--text-muted); font-family: var(--font-sans);">${onRomaji}</span>
+            </span>
           </div>
           <div style="margin-bottom: 8px; display: flex; align-items: baseline; gap: 8px;">
             <strong style="font-size: 0.65rem; color: var(--text-muted); min-width: 16px;">訓:</strong>
-            <span style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; color: var(--text-main); word-break: break-all;">${item.kun}</span>
+            <span style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; color: var(--text-main); word-break: break-all;">
+              ${item.kun}<span style="font-size: 0.65rem; font-weight: 500; color: var(--text-muted); font-family: var(--font-sans);">${kunRomaji}</span>
+            </span>
           </div>
           <div style="margin-top: 8px; font-size: 0.68rem; color: var(--text-secondary); border-top: 1px dotted var(--border); padding-top: 6px; line-height: 1.35;">
             💬 ${item.example}
@@ -1967,7 +2096,8 @@ export function KanjiView(container) {
           <i data-lucide="edit-3" style="width: 13px; height: 13px;"></i> Latih Nulis
         </button>
       </div>
-    `).join('');
+      `;
+    }).join('');
 
     return `
       <div>
