@@ -39,6 +39,14 @@ const defaultState = {
     dailyGoalMinutes: 30,
     autoPlayAudio: false,
   },
+
+  // Study Plan target settings for accelerate mode
+  studyPlan: {
+    active: false,
+    level: 'N5',
+    duration: 6,
+    startDate: null,
+  },
 };
 
 let state = null;
@@ -96,6 +104,13 @@ export function updateSettings(updates) {
   state.settings = { ...state.settings, ...updates };
   saveState();
   emit('settingsChanged', state.settings);
+}
+
+export function updateStudyPlan(updates) {
+  if (!state) loadState();
+  state.studyPlan = { ...state.studyPlan, ...updates };
+  saveState();
+  emit('studyPlanChanged', state.studyPlan);
 }
 
 // ===== Progress helpers =====

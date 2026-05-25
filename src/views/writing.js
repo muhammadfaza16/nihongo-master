@@ -155,408 +155,408 @@ const KANJI_DATABASE = {
   "numbers_time": [
     {
       "jp": "一",
-      "rom": "ひと",
+      "rom": "ICHI / ITSU / hito(tsu)",
       "en": "Satu"
     },
     {
       "jp": "二",
-      "rom": "ふta",
+      "rom": "NI / futa(tsu)",
       "en": "Dua"
     },
     {
       "jp": "三",
-      "rom": "みt",
+      "rom": "SAN / mit(tsu)",
       "en": "Tiga"
     },
     {
       "jp": "四",
-      "rom": "よt / よ",
+      "rom": "SHI / yot(tsu) / yo",
       "en": "Empat"
     },
     {
       "jp": "五",
-      "rom": "いつ",
+      "rom": "GO / itsu(tsu)",
       "en": "Lima"
     },
     {
       "jp": "六",
-      "rom": "むt",
+      "rom": "ROKU / mut(tsu)",
       "en": "Enam"
     },
     {
       "jp": "七",
-      "rom": "なな",
+      "rom": "SHICHI / nana(tsu)",
       "en": "Tujuh"
     },
     {
       "jp": "八",
-      "rom": "やt",
+      "rom": "HACHI / yat(tsu)",
       "en": "Delapan"
     },
     {
       "jp": "九",
-      "rom": "ここの",
+      "rom": "KU / KIュU / kokono(tsu)",
       "en": "Sembilan"
     },
     {
       "jp": "十",
-      "rom": "とお",
+      "rom": "JIュU / too",
       "en": "Sepuluh"
     },
     {
       "jp": "百",
-      "rom": "ヒャク",
+      "rom": "HIャKU",
       "en": "Seratus"
     },
     {
       "jp": "千",
-      "rom": "ち",
+      "rom": "SEN / chi",
       "en": "Seribu"
     },
     {
       "jp": "万",
-      "rom": "マン / バン",
+      "rom": "MAN / BAN",
       "en": "Sepuluh Ribu"
     },
     {
       "jp": "円",
-      "rom": "maru",
+      "rom": "EN / maru(i)",
       "en": "Yen / Lingkaran"
     },
     {
       "jp": "年",
-      "rom": "とし",
+      "rom": "NEN / toshi",
       "en": "Tahun"
     },
     {
       "jp": "月",
-      "rom": "tsuki",
+      "rom": "GETSU / GATSU / tsuki",
       "en": "Bulan / Rembulan"
     },
     {
       "jp": "日",
-      "rom": "hi / ka",
+      "rom": "NICHI / JITSU / hi / ka",
       "en": "Hari / Matahari"
     },
     {
       "jp": "時",
-      "rom": "とき",
+      "rom": "JI / toki",
       "en": "Waktu / Jam"
     },
     {
       "jp": "分",
-      "rom": "wa",
+      "rom": "FUN / PUN / BUN / wa(karu)",
       "en": "Menit / Bagian"
     },
     {
       "jp": "半",
-      "rom": "naka",
+      "rom": "HAN / naka(ba)",
       "en": "Setengah"
     }
   ],
   "nature_places": [
     {
       "jp": "山",
-      "rom": "yama",
+      "rom": "SAN / yama",
       "en": "Gunung"
     },
     {
       "jp": "川",
-      "rom": "kawa",
+      "rom": "SEN / kawa",
       "en": "Sungai"
     },
     {
       "jp": "海",
-      "rom": "umi",
+      "rom": "KAI / umi",
       "en": "Laut"
     },
     {
       "jp": "空",
-      "rom": "sora / a",
+      "rom": "KUU / sora / a(ku)",
       "en": "Langit / Kosong"
     },
     {
       "jp": "木",
-      "rom": "ki",
+      "rom": "MOKU / ボKU / ki",
       "en": "Pohon / Kayu"
     },
     {
       "jp": "花",
-      "rom": "hana",
+      "rom": "KA / hana",
       "en": "Bunga"
     },
     {
       "jp": "雨",
-      "rom": "ame",
+      "rom": "U / ame",
       "en": "Hujan"
     },
     {
       "jp": "火",
-      "rom": "hi",
+      "rom": "KA / hi",
       "en": "Api"
     },
     {
       "jp": "水",
-      "rom": "mizu",
+      "rom": "SUI / mizu",
       "en": "Air"
     },
     {
       "jp": "土",
-      "rom": "tsuchi",
+      "rom": "DO / TO / tsuchi",
       "en": "Tanah"
     },
     {
       "jp": "金",
-      "rom": "kane / kana",
+      "rom": "KIN / KON / kane / kana",
       "en": "Emas / Uang"
     },
     {
       "jp": "上",
-      "rom": "ue / a",
+      "rom": "JIョU / SHIョU / ue / a(garu)",
       "en": "Atas"
     },
     {
       "jp": "下",
-      "rom": "shita / sa",
+      "rom": "KA / GE / shita / sa(garu)",
       "en": "Bawah"
     },
     {
       "jp": "中",
-      "rom": "naka",
+      "rom": "CHIュU / naka",
       "en": "Tengah / Dalam"
     },
     {
       "jp": "外",
-      "rom": "soto",
+      "rom": "GAI / GE / soto",
       "en": "Luar"
     },
     {
       "jp": "右",
-      "rom": "migi",
+      "rom": "U / YUU / migi",
       "en": "Kanan"
     },
     {
       "jp": "左",
-      "rom": "hidari",
+      "rom": "SA / hidari",
       "en": "Kiri"
     },
     {
       "jp": "前",
-      "rom": "mae",
+      "rom": "ZEN / mae",
       "en": "Depan / Sebelum"
     },
     {
       "jp": "後",
-      "rom": "ato / ushi",
+      "rom": "GO / KOU / ato / ushi(ro)",
       "en": "Belakang / Sesudah"
     },
     {
       "jp": "東",
-      "rom": "higashi",
+      "rom": "TOU / higashi",
       "en": "Timur"
     }
   ],
   "people_family": [
     {
       "jp": "人",
-      "rom": "hito",
+      "rom": "JIN / NIN / hito",
       "en": "Orang"
     },
     {
       "jp": "父",
-      "rom": "chichi / tou",
+      "rom": "FU / chichi / tou",
       "en": "Ayah"
     },
     {
       "jp": "母",
-      "rom": "haha / kaa",
+      "rom": "ボ / haha / kaa",
       "en": "Ibu"
     },
     {
       "jp": "子",
-      "rom": "ko",
+      "rom": "SHI / SU / ko",
       "en": "Anak"
     },
     {
       "jp": "男",
-      "rom": "otoko",
+      "rom": "DAN / NAN / otoko",
       "en": "Laki-laki"
     },
     {
       "jp": "女",
-      "rom": "onna",
+      "rom": "JIョ / NIョ / onna",
       "en": "Perempuan"
     },
     {
       "jp": "友",
-      "rom": "tomo",
+      "rom": "YUU / tomo",
       "en": "Teman"
     },
     {
       "jp": "先",
-      "rom": "saki",
+      "rom": "SEN / saki",
       "en": "Dahulu / Depan"
     },
     {
       "jp": "生",
-      "rom": "i / u",
+      "rom": "SEI / SHIョU / i(kiru) / u(mare)",
       "en": "Lahir / Hidup"
     },
     {
       "jp": "名",
-      "rom": "na",
+      "rom": "MEI / MIョU / na",
       "en": "Nama"
     },
     {
       "jp": "気",
-      "rom": "キ / ケ",
+      "rom": "KI / KE",
       "en": "Energi / Jiwa"
     },
     {
       "jp": "元",
-      "rom": "moto",
+      "rom": "GEN / GAN / moto",
       "en": "Asal / Sehat"
     },
     {
       "jp": "西",
-      "rom": "nishi",
+      "rom": "SEI / SAI / nishi",
       "en": "Barat"
     },
     {
       "jp": "南",
-      "rom": "minami",
+      "rom": "NAN / minami",
       "en": "Selatan"
     },
     {
       "jp": "北",
-      "rom": "kita",
+      "rom": "HOKU / kita",
       "en": "Utara"
     },
     {
       "jp": "本",
-      "rom": "moto",
+      "rom": "HON / moto",
       "en": "Buku / Asal"
     },
     {
       "jp": "天",
-      "rom": "ama",
+      "rom": "TEN / ama",
       "en": "Langit / Surga"
     },
     {
       "jp": "口",
-      "rom": "kuchi / guchi",
+      "rom": "KOU / KU / kuchi / guchi",
       "en": "Mulut"
     },
     {
       "jp": "目",
-      "rom": "me",
+      "rom": "MOKU / ボKU / me",
       "en": "Mata"
     },
     {
       "jp": "耳",
-      "rom": "mimi",
+      "rom": "JI / mimi",
       "en": "Telinga"
     }
   ],
   "places_buildings": [
     {
       "jp": "国",
-      "rom": "kuni",
+      "rom": "KOKU / KOT / kuni",
       "en": "Negara"
     },
     {
       "jp": "店",
-      "rom": "mise",
+      "rom": "TEN / mise",
       "en": "Toko"
     },
     {
       "jp": "駅",
-      "rom": "エキ",
+      "rom": "EKI",
       "en": "Stasiun"
     },
     {
       "jp": "電",
-      "rom": "デン",
+      "rom": "DEN",
       "en": "Listrik"
     },
     {
       "jp": "車",
-      "rom": "kuruma",
+      "rom": "SHIャ / kuruma",
       "en": "Kendaraan / Roda"
     },
     {
       "jp": "道",
-      "rom": "michi",
+      "rom": "DOU / TOU / michi",
       "en": "Jalan"
     },
     {
       "jp": "学",
-      "rom": "mana",
+      "rom": "GAKU / GAT / mana(bu)",
       "en": "Belajar"
     },
     {
       "jp": "校",
-      "rom": "コウ",
+      "rom": "KOU",
       "en": "Sekolah"
     },
     {
       "jp": "会",
-      "rom": "a",
+      "rom": "KAI / E / a(u)",
       "en": "Pertemuan / Bertemu"
     },
     {
       "jp": "社",
-      "rom": "yashiro",
+      "rom": "SHIャ / yashiro",
       "en": "Perusahaan / Kuil"
     },
     {
       "jp": "入",
-      "rom": "hai / i",
+      "rom": "NIュU / hai(ru) / i(reru)",
       "en": "Masuk"
     },
     {
       "jp": "出",
-      "rom": "de / da",
+      "rom": "SHIュTSU / de(ru) / da(su)",
       "en": "Keluar"
     },
     {
       "jp": "立",
-      "rom": "ta",
+      "rom": "RITSU / ta(tsu)",
       "en": "Berdiri"
     },
     {
       "jp": "休",
-      "rom": "yasu",
+      "rom": "KIュU / yasu(mu)",
       "en": "Istirahat"
     },
     {
       "jp": "買",
-      "rom": "ka",
+      "rom": "BAI / ka(u)",
       "en": "Membeli"
     },
     {
       "jp": "何",
-      "rom": "nani / nan",
+      "rom": "KA / nani / nan",
       "en": "Apa"
     },
     {
       "jp": "手",
-      "rom": "te",
+      "rom": "SHIュ / te",
       "en": "Tangan"
     },
     {
       "jp": "足",
-      "rom": "ashi / ta",
+      "rom": "SOKU / ashi / ta(ru)",
       "en": "Kaki / Cukup"
     },
     {
       "jp": "白",
-      "rom": "shiro",
+      "rom": "HAKU / BIャKU / shiro(i)",
       "en": "Putih"
     },
     {
       "jp": "赤",
-      "rom": "aka",
+      "rom": "SEKI / SHIャKU / aka(i)",
       "en": "Merah"
     }
   ]
@@ -566,408 +566,408 @@ const KANJI_N4_DATABASE = {
   "movement": [
     {
       "jp": "開",
-      "rom": "a / ひら",
+      "rom": "KAI / a(keru) / hira(ku)",
       "en": "Membuka"
     },
     {
       "jp": "閉",
-      "rom": "し / と",
+      "rom": "HEI / shi(meru) / to(jiru)",
       "en": "Menutup"
     },
     {
       "jp": "帰",
-      "rom": "かえ",
+      "rom": "KI / kae(ru)",
       "en": "Pulang"
     },
     {
       "jp": "歩",
-      "rom": "ある",
+      "rom": "HO / aru(ku)",
       "en": "Berjalan"
     },
     {
       "jp": "走",
-      "rom": "はし",
+      "rom": "SOU / hashi(ru)",
       "en": "Berlari"
     },
     {
       "jp": "止",
-      "rom": "to",
+      "rom": "SHI / to(maru)",
       "en": "Berhenti"
     },
     {
       "jp": "曜",
-      "rom": "ヨウ",
+      "rom": "YOU",
       "en": "Hari Seminggu"
     },
     {
       "jp": "送",
-      "rom": "oku",
+      "rom": "SOU / oku(ru)",
       "en": "Mengirim"
     },
     {
       "jp": "急",
-      "rom": "iso",
+      "rom": "KIュU / iso(gu)",
       "en": "Cepat / Tergesa"
     },
     {
       "jp": "引",
-      "rom": "hi",
+      "rom": "IN / hi(ku)",
       "en": "Menarik"
     },
     {
       "jp": "押",
-      "rom": "o",
+      "rom": "OU / o(su)",
       "en": "Mendorong"
     },
     {
       "jp": "使",
-      "rom": "tsuka",
+      "rom": "SHI / tsuka(u)",
       "en": "Menggunakan"
     },
     {
       "jp": "始",
-      "rom": "haji",
+      "rom": "SHI / haji(meru)",
       "en": "Memulai"
     },
     {
       "jp": "終",
-      "rom": "o",
+      "rom": "SHIュU / o(waru)",
       "en": "Selesai"
     },
     {
       "jp": "借",
-      "rom": "ka",
+      "rom": "SHIャKU / ka(riru)",
       "en": "Meminjam"
     },
     {
       "jp": "貸",
-      "rom": "ka",
+      "rom": "TAI / ka(su)",
       "en": "Meminjamkan"
     },
     {
       "jp": "待",
-      "rom": "ma",
+      "rom": "TAI / ma(tsu)",
       "en": "Menunggu"
     },
     {
       "jp": "持",
-      "rom": "mo",
+      "rom": "JI / mo(tsu)",
       "en": "Membawa / Memiliki"
     },
     {
       "jp": "住",
-      "rom": "su",
+      "rom": "JIュU / su(mu)",
       "en": "Tinggal / Menetap"
     },
     {
       "jp": "週",
-      "rom": "シュウ",
+      "rom": "SHIュU",
       "en": "Minggu"
     }
   ],
   "time_body": [
     {
       "jp": "朝",
-      "rom": "asa",
+      "rom": "CHIョU / asa",
       "en": "Pagi"
     },
     {
       "jp": "昼",
-      "rom": "hiru",
+      "rom": "CHIュU / hiru",
       "en": "Siang"
     },
     {
       "jp": "夜",
-      "rom": "yoru",
+      "rom": "YA / yoru",
       "en": "Malam"
     },
     {
       "jp": "春",
-      "rom": "haru",
+      "rom": "SHIュN / haru",
       "en": "Musim Semi"
     },
     {
       "jp": "夏",
-      "rom": "natsu",
+      "rom": "KA / natsu",
       "en": "Musim Panas"
     },
     {
       "jp": "秋",
-      "rom": "aki",
+      "rom": "SHIュU / aki",
       "en": "Musim Gugur"
     },
     {
       "jp": "冬",
-      "rom": "fuyu",
+      "rom": "TOU / fuyu",
       "en": "Musim Dingin"
     },
     {
       "jp": "体",
-      "rom": "karada",
+      "rom": "TAI / karada",
       "en": "Tubuh"
     },
     {
       "jp": "心",
-      "rom": "kokoro",
+      "rom": "SHIN / kokoro",
       "en": "Hati / Jiwa"
     },
     {
       "jp": "首",
-      "rom": "kubi",
+      "rom": "SHIュ / kubi",
       "en": "Leher"
     },
     {
       "jp": "声",
-      "rom": "koe",
+      "rom": "SEI / koe",
       "en": "Suara"
     },
     {
       "jp": "自",
-      "rom": "mizuka",
+      "rom": "JI / SHI / mizuka(ra)",
       "en": "Diri Sendiri"
     },
     {
       "jp": "頭",
-      "rom": "atama",
+      "rom": "TOU / ZU / atama",
       "en": "Kepala"
     },
     {
       "jp": "顔",
-      "rom": "kao",
+      "rom": "GAN / kao",
       "en": "Wajah"
     },
     {
       "jp": "病",
-      "rom": "ya",
+      "rom": "BIョU / ya(mu)",
       "en": "Sakit"
     },
     {
       "jp": "院",
-      "rom": "イン",
+      "rom": "IN",
       "en": "Institusi"
     },
     {
       "jp": "医",
-      "rom": "イ",
+      "rom": "I",
       "en": "Medis / Dokter"
     },
     {
       "jp": "薬",
-      "rom": "kusuri",
+      "rom": "YAKU / kusuri",
       "en": "Obat"
     },
     {
       "jp": "度",
-      "rom": "ta",
+      "rom": "DO / TAKU / ta(bi)",
       "en": "Derajat / Kali"
     },
     {
       "jp": "力",
-      "rom": "chikara",
+      "rom": "RIョKU / RIKI / chikara",
       "en": "Kekuatan"
     }
   ],
   "society_business": [
     {
       "jp": "民",
-      "rom": "tami",
+      "rom": "MIN / tami",
       "en": "Rakyat / Warga"
     },
     {
       "jp": "作",
-      "rom": "つく",
+      "rom": "SAKU / SA / tsuku(ru)",
       "en": "Membuat"
     },
     {
       "jp": "仕",
-      "rom": "tsuka",
+      "rom": "SHI / tsuka(eru)",
       "en": "Melayani"
     },
     {
       "jp": "事",
-      "rom": "koto",
+      "rom": "JI / koto",
       "en": "Hal / Tugas"
     },
     {
       "jp": "品",
-      "rom": "shina",
+      "rom": "HIN / shina",
       "en": "Barang"
     },
     {
       "jp": "業",
-      "rom": "waza",
+      "rom": "GIョU / waza",
       "en": "Industri"
     },
     {
       "jp": "長",
-      "rom": "naga",
+      "rom": "CHIョU / naga(i)",
       "en": "Panjang / Kepala"
     },
     {
-      "jp": "强",
-      "rom": "tsuyo",
+      "jp": "強",
+      "rom": "KIョU / tsuyo(i)",
       "en": "Kuat"
     },
     {
       "jp": "新",
-      "rom": "atara",
+      "rom": "SHIN / atara(shii)",
       "en": "Baru"
     },
     {
       "jp": "古",
-      "rom": "furu",
+      "rom": "KO / furu(i)",
       "en": "Lama"
     },
     {
       "jp": "安",
-      "rom": "yasu",
+      "rom": "AN / yasu(i)",
       "en": "Murah / Aman"
     },
     {
       "jp": "高",
-      "rom": "taka",
+      "rom": "KOU / taka(i)",
       "en": "Tinggi / Mahal"
     },
     {
       "jp": "同",
-      "rom": "onaji",
+      "rom": "DOU / onaji",
       "en": "Sama"
     },
     {
       "jp": "主",
-      "rom": "nushi",
+      "rom": "SHIュ / nushi",
       "en": "Pemilik / Utama"
     },
     {
       "jp": "代",
-      "rom": "ka",
+      "rom": "DAI / TAI / ka(waru)",
       "en": "Era / Mengganti"
     },
     {
       "jp": "用",
-      "rom": "mochi",
+      "rom": "YOU / mochi(iru)",
       "en": "Menggunakan / Urusan"
     },
     {
       "jp": "理",
-      "rom": "リ",
+      "rom": "RI",
       "en": "Alasan / Kebenaran"
     },
     {
       "jp": "物",
-      "rom": "mono",
+      "rom": "BUTSU / MOTSU / mono",
       "en": "Benda"
     },
     {
       "jp": "特",
-      "rom": "トク",
+      "rom": "TOKU",
       "en": "Khusus"
     },
     {
       "jp": "売",
-      "rom": "u",
+      "rom": "BAI / u(ru)",
       "en": "Menjual"
     }
   ],
   "school_action": [
     {
       "jp": "考",
-      "rom": "kanga",
+      "rom": "KOU / kanga(eru)",
       "en": "Berpikir"
     },
     {
       "jp": "教",
-      "rom": "oshi",
+      "rom": "KIョU / oshi(eru)",
       "en": "Mengajar"
     },
     {
       "jp": "室",
-      "rom": "muro",
+      "rom": "SHITSU / muro",
       "en": "Ruangan"
     },
     {
       "jp": "文",
-      "rom": "fumi",
+      "rom": "BUN / MON / fumi",
       "en": "Kalimat"
     },
     {
       "jp": "字",
-      "rom": "aza",
+      "rom": "JI / aza",
       "en": "Huruf"
     },
     {
       "jp": "音",
-      "rom": "oto",
+      "rom": "ON / oto",
       "en": "Bunyi"
     },
     {
       "jp": "楽",
-      "rom": "tano",
+      "rom": "GAKU / RAKU / tano(shii)",
       "en": "Senang / Musik"
     },
     {
       "jp": "林",
-      "rom": "hayashi",
+      "rom": "RIN / hayashi",
       "en": "Hutan Kecil"
     },
     {
       "jp": "森",
-      "rom": "mori",
+      "rom": "SHIN / mori",
       "en": "Hutan Lebat"
     },
     {
       "jp": "親",
-      "rom": "oya / shita",
+      "rom": "SHIN / oya / shita(shii)",
       "en": "Orang Tua / Dekat"
     },
     {
       "jp": "少",
-      "rom": "suku / suko",
+      "rom": "SHIョU / suku(nai) / suko(shi)",
       "en": "Sedikit"
     },
     {
       "jp": "多",
-      "rom": "oo",
+      "rom": "TA / oo(i)",
       "en": "Banyak"
     },
     {
       "jp": "近",
-      "rom": "chika",
+      "rom": "KIN / chika(i)",
       "en": "Dekat"
     },
     {
       "jp": "遠",
-      "rom": "too",
+      "rom": "EN / too(i)",
       "en": "Jauh"
     },
     {
       "jp": "犬",
-      "rom": "inu",
+      "rom": "KEN / inu",
       "en": "Anjing"
     },
     {
       "jp": "牛",
-      "rom": "ushi",
+      "rom": "GIュU / ushi",
       "en": "Sapi"
     },
     {
       "jp": "鳥",
-      "rom": "tori",
+      "rom": "CHIョU / tori",
       "en": "Burung"
     },
     {
       "jp": "風",
-      "rom": "kaze",
+      "rom": "FUU / kaze",
       "en": "Angin"
     },
     {
       "jp": "台",
-      "rom": "ダイ / タイ",
+      "rom": "DAI / TAI",
       "en": "Landasan / Unit"
     },
     {
       "jp": "世",
-      "rom": "yo",
+      "rom": "SEI / SE / yo",
       "en": "Dunia / Generasi"
     }
   ]
@@ -977,408 +977,408 @@ const KANJI_N3_DATABASE = {
   "society": [
     {
       "jp": "政",
-      "rom": "matsuri",
+      "rom": "SEI / matsuri",
       "en": "Politik"
     },
     {
       "jp": "治",
-      "rom": "osama",
+      "rom": "JI / CHI / osa(maru)",
       "en": "Memerintah"
     },
     {
       "jp": "経",
-      "rom": "he",
+      "rom": "KEI / he(ru)",
       "en": "Ekonomi / Lewat"
     },
     {
       "jp": "済",
-      "rom": "su",
+      "rom": "SAI / su(mu)",
       "en": "Selesai"
     },
     {
       "jp": "法",
-      "rom": "ホウ",
+      "rom": "HOU",
       "en": "Hukum"
     },
     {
       "jp": "律",
-      "rom": "リツ",
+      "rom": "RITSU",
       "en": "Aturan"
     },
     {
       "jp": "際",
-      "rom": "kiwa",
+      "rom": "SAI / kiwa",
       "en": "Batas / Internasional"
     },
     {
       "jp": "関",
-      "rom": "seki",
+      "rom": "KAN / seki",
       "en": "Hubungan"
     },
     {
       "jp": "係",
-      "rom": "kaka",
+      "rom": "KEI / kaka(ri)",
       "en": "Penanggung Jawab"
     },
     {
       "jp": "義",
-      "rom": "ギ",
+      "rom": "GI",
       "en": "Keadilan / Makna"
     },
     {
       "jp": "議",
-      "rom": "ギ",
+      "rom": "GI",
       "en": "Diskusi / Parlemen"
     },
     {
       "jp": "党",
-      "rom": "トウ",
+      "rom": "TOU",
       "en": "Partai Politik"
     },
     {
       "jp": "都",
-      "rom": "miako",
+      "rom": "TO / TSU / miyako",
       "en": "Metropolis / Kota"
     },
     {
       "jp": "府",
-      "rom": "フ",
+      "rom": "FU",
       "en": "Prefektur Kotamadya"
     },
     {
       "jp": "県",
-      "rom": "ケン",
+      "rom": "KEN",
       "en": "Prefektur Provinsi"
     },
     {
       "jp": "区",
-      "rom": "ク",
+      "rom": "KU",
       "en": "Distrik / Wilayah"
     },
     {
       "jp": "諸",
-      "rom": "ショ",
+      "rom": "SHIョ",
       "en": "Berbagai / Banyak"
     },
     {
       "jp": "権",
-      "rom": "ケン / ゴン",
+      "rom": "KEN / GON",
       "en": "Kekuasaan / Hak"
     },
     {
       "jp": "財",
-      "rom": "ザイ / サイ",
+      "rom": "ZAI / SAI",
       "en": "Harta / Kekayaan"
     },
     {
       "jp": "障",
-      "rom": "sawa",
+      "rom": "SHIョU / sawa(ru)",
       "en": "Rintangan / Hambatan"
     }
   ],
   "business_science": [
     {
       "jp": "研",
-      "rom": "to",
+      "rom": "KEN / to(gu)",
       "en": "Meneliti"
     },
     {
       "jp": "究",
-      "rom": "kiwa",
+      "rom": "KIュU / kiwa(meru)",
       "en": "Menyelidiki"
     },
     {
       "jp": "科",
-      "rom": "カ",
+      "rom": "KA",
       "en": "Sains / Bidang"
     },
     {
       "jp": "数",
-      "rom": "kazu",
+      "rom": "SUU / kazu",
       "en": "Angka"
     },
     {
       "jp": "算",
-      "rom": "サン",
+      "rom": "SAN",
       "en": "Berhitung"
     },
     {
       "jp": "組",
-      "rom": "kumi",
+      "rom": "SO / kumi",
       "en": "Kelompok / Kelas"
     },
     {
       "jp": "設",
-      "rom": "mou",
+      "rom": "SETSU / mou(keru)",
       "en": "Mendirikan"
     },
     {
       "jp": "建",
-      "rom": "ta",
+      "rom": "KEN / ta(teru)",
       "en": "Membangun"
     },
     {
       "jp": "築",
-      "rom": "kizu",
+      "rom": "CHIKU / kizu(ku)",
       "en": "Konstruksi"
     },
     {
       "jp": "造",
-      "rom": "tsuku",
+      "rom": "ZOU / tsuku(ru)",
       "en": "Membuat"
     },
     {
       "jp": "術",
-      "rom": "sube",
+      "rom": "JIュTSU / sube",
       "en": "Teknik / Seni"
     },
     {
       "jp": "技",
-      "rom": "waza",
+      "rom": "GI / waza",
       "en": "Keterampilan"
     },
     {
       "jp": "複",
-      "rom": "フク",
+      "rom": "FUKU",
       "en": "Ganda / Kompleks"
     },
     {
-      "jp": "册",
-      "rom": "サツ / サク",
+      "jp": "冊",
+      "rom": "SATSU / SAKU",
       "en": "Counter Buku / Jilid"
     },
     {
       "jp": "製",
-      "rom": "セイ",
+      "rom": "SEI",
       "en": "Buatan / Pabrik"
     },
     {
       "jp": "輸",
-      "rom": "ユ",
+      "rom": "YU",
       "en": "Mengangkut / Kirim"
     },
     {
       "jp": "貿",
-      "rom": "ボウ",
+      "rom": "ボU",
       "en": "Perdagangan"
     },
     {
       "jp": "易",
-      "rom": "yasa",
+      "rom": "EKI / I / yasa(shii)",
       "en": "Mudah / Barter"
     },
     {
       "jp": "企",
-      "rom": "kuwada",
+      "rom": "KI / kuwada(teru)",
       "en": "Merencanakan"
     },
     {
       "jp": "創",
-      "rom": "haji",
+      "rom": "SOU / haji(meru)",
       "en": "Menciptakan"
     }
   ],
   "mind_emotion": [
     {
       "jp": "想",
-      "rom": "omo",
+      "rom": "SOU / omo(u)",
       "en": "Ide / Pikiran"
     },
     {
       "jp": "念",
-      "rom": "ネン",
+      "rom": "NEN",
       "en": "Perasaan"
     },
     {
       "jp": "感",
-      "rom": "カン",
+      "rom": "KAN",
       "en": "Indra / Perasaan"
     },
     {
       "jp": "情",
-      "rom": "nasa",
+      "rom": "JIョU / nasa(ke)",
       "en": "Emosi"
     },
     {
       "jp": "信",
-      "rom": "シン",
+      "rom": "SHIN",
       "en": "Percaya"
     },
     {
       "jp": "愛",
-      "rom": "アイ",
+      "rom": "AI",
       "en": "Cinta"
     },
     {
       "jp": "悲",
-      "rom": "kana",
+      "rom": "HI / kana(shii)",
       "en": "Sedih"
     },
     {
       "jp": "怒",
-      "rom": "oko",
+      "rom": "DO / oko(ru)",
       "en": "Marah"
     },
     {
       "jp": "望",
-      "rom": "nozo",
+      "rom": "ボU / nozo(mu)",
       "en": "Berharap"
     },
     {
       "jp": "欲",
-      "rom": "ho",
+      "rom": "YOKU / ho(shii)",
       "en": "Ingin / Hasrat"
     },
     {
       "jp": "願",
-      "rom": "nega",
+      "rom": "GAN / nega(u)",
       "en": "Memohon"
     },
     {
       "jp": "恐",
-      "rom": "kowa / oso",
+      "rom": "KIョU / kowa(i) / oso(reru)",
       "en": "Takut / Ngeri"
     },
     {
       "jp": "悩",
-      "rom": "nayo",
+      "rom": "NOU / naya(mu)",
       "en": "Khawatir / Cemas"
     },
     {
       "jp": "憎",
-      "rom": "niga",
+      "rom": "ZOU / niku(mu)",
       "en": "Benci"
     },
     {
       "jp": "恥",
-      "rom": "ha",
+      "rom": "CHI / ha(zukashii)",
       "en": "Malu"
     },
     {
       "jp": "意",
-      "rom": "イ",
+      "rom": "I",
       "en": "Maksud / Pikiran"
     },
     {
       "jp": "志",
-      "rom": "kokorozashi",
+      "rom": "SHI / kokorozashi",
       "en": "Kehendak / Aspirasi"
     },
     {
       "jp": "憶",
-      "rom": "オク",
+      "rom": "OKU",
       "en": "Ingat / Memori"
     },
     {
       "jp": "忘",
-      "rom": "wasu",
+      "rom": "ボU / wasu(reru)",
       "en": "Lupa"
     },
     {
       "jp": "恋",
-      "rom": "koi",
+      "rom": "REN / koi",
       "en": "Cinta / Asmara"
     }
   ],
   "action_state": [
     {
       "jp": "選",
-      "rom": "era",
+      "rom": "SEN / era(bu)",
       "en": "Memilih"
     },
     {
       "jp": "決",
-      "rom": "ki",
+      "rom": "KETSU / ki(meru)",
       "en": "Memutuskan"
     },
     {
       "jp": "認",
-      "rom": "mito",
+      "rom": "NIN / mito(meru)",
       "en": "Mengakui"
     },
     {
       "jp": "表",
-      "rom": "omote",
+      "rom": "HIョU / omote",
       "en": "Tabel / Ungkapan"
     },
     {
       "jp": "現",
-      "rom": "arawa",
+      "rom": "GEN / arawa(reru)",
       "en": "Muncul / Nyata"
     },
     {
       "jp": "調",
-      "rom": "shirabe",
+      "rom": "CHIョU / shira(beru)",
       "en": "Meneliti / Nada"
     },
     {
       "jp": "査",
-      "rom": "サ",
+      "rom": "SA",
       "en": "Memeriksa"
     },
     {
       "jp": "確",
-      "rom": "tashi",
+      "rom": "KA防 / tashi(ka)",
       "en": "Pasti / Yakin"
     },
     {
       "jp": "果",
-      "rom": "ha",
+      "rom": "KA / ha(teru)",
       "en": "Hasil / Buah"
     },
     {
       "jp": "連",
-      "rom": "tsu",
+      "rom": "REN / tsu(reru)",
       "en": "Menghubungkan"
     },
     {
       "jp": "絡",
-      "rom": "kara",
+      "rom": "RAKU / kara(mu)",
       "en": "Keterikatan"
     },
     {
       "jp": "戦",
-      "rom": "tataka",
+      "rom": "SEN / tataka(u)",
       "en": "Perang / Tarung"
     },
     {
       "jp": "争",
-      "rom": "araso",
+      "rom": "SOU / araso(u)",
       "en": "Berjuang / Rebut"
     },
     {
       "jp": "幸",
-      "rom": "shiawa",
+      "rom": "KOU / shiawa(se)",
       "en": "Bahagia"
     },
     {
       "jp": "福",
-      "rom": "フク",
+      "rom": "FUKU",
       "en": "Keberuntungan"
     },
     {
       "jp": "難",
-      "rom": "muzuka",
+      "rom": "NAN / muzuka(shii)",
       "en": "Sulit / Bencana"
     },
     {
       "jp": "若",
-      "rom": "waka",
+      "rom": "JIャKU / waka(i)",
       "en": "Muda"
     },
     {
       "jp": "老",
-      "rom": "o",
+      "rom": "ROU / o(iru)",
       "en": "Tua / Lansia"
     },
     {
       "jp": "忙",
-      "rom": "isoga",
+      "rom": "ボU / isoga(shii)",
       "en": "Sibuk"
     },
     {
       "jp": "降",
-      "rom": "o / fu",
+      "rom": "KOU / o(riru) / fu(ru)",
       "en": "Turun"
     }
   ]
@@ -1397,6 +1397,11 @@ export function WritingView(container) {
   let ctx = null;
   let lastX = 0;
   let lastY = 0;
+  let lastMidX = 0;
+  let lastMidY = 0;
+  let currentWidth = 8;
+  let lastTime = 0;
+  let undoStack = []; // Stack for canvas snapshots to support Undo
 
   let showGuide = false; // Toggles trace helper overlay (low opacity)
   let isComparing = false; // Toggles full comparison overlay
@@ -1634,7 +1639,7 @@ export function WritingView(container) {
           </button>
         </div>
         <button class="btn btn-primary" data-type="kanji" data-key="all" style="width: 100%; padding: 14px; font-weight: 800; margin-top: 6px;">
-          Latih Semua Kanji N5 (39 Huruf)
+          Latih Semua Kanji N5 (80 Huruf)
         </button>
       `;
     } else if (activeTab === 'kanji-n4') {
@@ -1659,7 +1664,7 @@ export function WritingView(container) {
           </button>
         </div>
         <button class="btn btn-primary" data-type="kanji-n4" data-key="all" style="width: 100%; padding: 14px; font-weight: 800; margin-top: 6px;">
-          Latih Semua Kanji N4 (42 Huruf)
+          Latih Semua Kanji N4 (80 Huruf)
         </button>
       `;
     } else if (activeTab === 'kanji-n3') {
@@ -1684,7 +1689,7 @@ export function WritingView(container) {
           </button>
         </div>
         <button class="btn btn-primary" data-type="kanji-n3" data-key="all" style="width: 100%; padding: 14px; font-weight: 800; margin-top: 6px;">
-          Latih Semua Kanji N3 (38 Huruf)
+          Latih Semua Kanji N3 (80 Huruf)
         </button>
       `;
     }
@@ -1836,6 +1841,7 @@ export function WritingView(container) {
     document.getElementById('btn-back-menu').addEventListener('click', () => {
       sessionQueue = [];
       currentIndex = 0;
+      undoStack = [];
       renderLayout();
     });
   };
@@ -1846,18 +1852,22 @@ export function WritingView(container) {
 
     if (!isComparing) {
       controls.innerHTML = `
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-          <button id="btn-clear-canvas" class="btn btn-secondary btn-lg" style="height: 48px; font-weight: 700;">
-            <i data-lucide="trash-2" style="width: 16px; height: 16px; margin-right: 6px;"></i> Hapus
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
+          <button id="btn-clear-canvas" class="btn btn-secondary btn-lg" style="height: 48px; font-weight: 700; padding: 0 4px; font-size: var(--text-xs); display: flex; align-items: center; justify-content: center; gap: 4px;">
+            <i data-lucide="trash-2" style="width: 14px; height: 14px;"></i> Hapus
           </button>
           
-          <button id="btn-toggle-hint" class="btn btn-secondary btn-lg" style="height: 48px; font-weight: 700; background: ${showGuide ? 'var(--accent-dim)' : 'transparent'}; border-color: ${showGuide ? 'var(--accent)' : 'var(--border)'}; color: ${showGuide ? 'var(--accent-bright)' : 'var(--text-main)'};">
-            <i data-lucide="${showGuide ? 'eye-off' : 'eye'}" style="width: 16px; height: 16px; margin-right: 6px;"></i> Petunjuk
+          <button id="btn-undo-canvas" class="btn btn-secondary btn-lg" style="height: 48px; font-weight: 700; padding: 0 4px; font-size: var(--text-xs); display: flex; align-items: center; justify-content: center; gap: 4px;" ${undoStack.length === 0 ? 'disabled' : ''}>
+            <i data-lucide="undo" style="width: 14px; height: 14px;"></i> Urung
+          </button>
+          
+          <button id="btn-toggle-hint" class="btn btn-secondary btn-lg" style="height: 48px; font-weight: 700; padding: 0 4px; font-size: var(--text-xs); display: flex; align-items: center; justify-content: center; gap: 4px; background: ${showGuide ? 'var(--accent-dim)' : 'transparent'}; border-color: ${showGuide ? 'var(--accent)' : 'var(--border)'}; color: ${showGuide ? 'var(--accent-bright)' : 'var(--text-main)'};">
+            <i data-lucide="${showGuide ? 'eye-off' : 'eye'}" style="width: 14px; height: 14px;"></i> Petunjuk
           </button>
         </div>
 
-        <button id="btn-compare-canvas" class="btn btn-primary btn-lg" style="height: 52px; font-weight: 800; width: 100%; border-radius: var(--radius-md);">
-          <i data-lucide="columns" style="width: 18px; height: 18px; margin-right: 6px;"></i> Bandingkan Coretan
+        <button id="btn-compare-canvas" class="btn btn-primary btn-lg" style="height: 52px; font-weight: 800; width: 100%; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 4px;">
+          <i data-lucide="columns" style="width: 18px; height: 18px;"></i> Bandingkan Coretan
         </button>
       `;
 
@@ -1865,6 +1875,19 @@ export function WritingView(container) {
 
       // Bind drawing view actions
       document.getElementById('btn-clear-canvas').addEventListener('click', clearCanvas);
+      
+      document.getElementById('btn-undo-canvas').addEventListener('click', () => {
+        if (undoStack.length === 0) return;
+        const previousState = undoStack.pop();
+        if (canvas && ctx && previousState) {
+          ctx.putImageData(previousState, 0, 0);
+        }
+        // Update Undo button state dynamically
+        const undoBtn = document.getElementById('btn-undo-canvas');
+        if (undoBtn && undoStack.length === 0) {
+          undoBtn.setAttribute('disabled', 'true');
+        }
+      });
       
       document.getElementById('btn-toggle-hint').addEventListener('click', () => {
         showGuide = !showGuide;
@@ -1918,6 +1941,7 @@ export function WritingView(container) {
 
         isComparing = false;
         showGuide = false;
+        undoStack = []; // Reset undo stack for the retried target
         clearCanvas();
         renderPracticeScreen();
       });
@@ -1927,6 +1951,7 @@ export function WritingView(container) {
         currentIndex++;
         isComparing = false;
         showGuide = false;
+        undoStack = []; // Reset undo stack for the next character
         renderLayout();
       });
     }
@@ -1970,6 +1995,7 @@ export function WritingView(container) {
     document.getElementById('btn-restart-writing').addEventListener('click', () => {
       sessionQueue = [];
       currentIndex = 0;
+      undoStack = [];
       renderLayout();
     });
   };
@@ -1983,16 +2009,24 @@ export function WritingView(container) {
     ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Set high-fidelity anti-alias lines
-    ctx.lineWidth = 14;
-    ctx.lineCap = 'round';
-    ctx.lineJoin = 'round';
+    // 1. HIGH-DPI RESOLUTION SUPPORT (Retina / Ultra-Sharp Line rendering)
+    const rect = canvas.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
     
-    // Ink color: dynamically maps to var(--text-main) color theme
-    const themeColor = getComputedStyle(document.documentElement).getPropertyValue('--text-main').trim() || '#ffffff';
-    ctx.strokeStyle = themeColor;
+    // Scale backing store physically, keep style layout matching container
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    
+    // Reset transform to identity, then scale
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.scale(dpr, dpr);
 
-    // Relative mouse/finger coordinate solver
+    // Ink color solver that reads current CSS variables dynamically
+    const getThemeColor = () => {
+      return getComputedStyle(document.documentElement).getPropertyValue('--text-main').trim() || '#ffffff';
+    };
+
+    // Relative mouse/finger coordinate solver (Viewport to canvas matrix)
     const getCoords = (e) => {
       const rect = canvas.getBoundingClientRect();
       let clientX, clientY;
@@ -2000,62 +2034,157 @@ export function WritingView(container) {
       if (e.touches && e.touches.length > 0) {
         clientX = e.touches[0].clientX;
         clientY = e.touches[0].clientY;
-      } else {
+      } else if (e.clientX !== undefined) {
         clientX = e.clientX;
         clientY = e.clientY;
+      } else {
+        return [0, 0];
       }
 
-      // Proportional math mapping screen layout viewport to 640x640 canvas matrix
-      const x = (clientX - rect.left) * (canvas.width / rect.width);
-      const y = (clientY - rect.top) * (canvas.height / rect.height);
+      const x = clientX - rect.left;
+      const y = clientY - rect.top;
       return [x, y];
     };
 
     const startDrawing = (e) => {
       if (isComparing) return; // Prevent writing during active overlay review
       isDrawing = true;
-      const [x, y] = getCoords(e);
-      [lastX, lastY] = [x, y];
       
-      // Draw single touch dot fallback
+      // Save snapshot for Undo functionality before drawing
+      undoStack.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+      if (undoStack.length > 25) undoStack.shift();
+      const undoBtn = document.getElementById('btn-undo-canvas');
+      if (undoBtn) undoBtn.removeAttribute('disabled');
+
+      const [x, y] = getCoords(e);
+      lastX = x;
+      lastY = y;
+      lastMidX = x;
+      lastMidY = y;
+      
+      // Reset width and time
+      currentWidth = 8;
+      lastTime = performance.now();
+
+      const themeColor = getThemeColor();
+      ctx.fillStyle = themeColor;
+      ctx.strokeStyle = themeColor;
+      
+      // Draw smooth calligraphic starting dot
       ctx.beginPath();
-      ctx.arc(x, y, ctx.lineWidth / 2, 0, Math.PI * 2);
-      ctx.fillStyle = ctx.strokeStyle;
+      ctx.arc(x, y, currentWidth / 2, 0, Math.PI * 2);
       ctx.fill();
-      ctx.beginPath();
-      ctx.moveTo(x, y);
     };
 
+    // SMOOTH PATH INTERPOLATION (Bezier Quadratic Curve smoothing + LERP brush width + Velocity/Pressure Dynamics)
     const draw = (e) => {
       if (!isDrawing || isComparing) return;
       e.preventDefault(); // Stop mobile screen scrolling gestures while writing
       
       const [x, y] = getCoords(e);
-      ctx.lineTo(x, y);
+      
+      // Calculate velocity & target width
+      const dist = Math.hypot(x - lastX, y - lastY);
+      const now = performance.now();
+      const timeDiff = now - lastTime || 16;
+      const velocity = dist / timeDiff;
+      lastTime = now;
+
+      let targetWidth;
+      // Utilize stylus pressure sensitivity if available
+      if (e.pressure && e.pressure > 0 && e.pressure !== 0.5 && e.pointerType !== 'mouse') {
+        targetWidth = 4 + e.pressure * 10; // Stylus range: 4px to 14px
+      } else {
+        // Slower movement = thicker calligraphic ink line, faster movement = thinner tapered line
+        const speedFactor = Math.min(2.5, velocity); // clamp speed factor
+        targetWidth = 12 - speedFactor * 3.2; // Finger/mouse range: 4px to 12px
+      }
+
+      // Smooth the brush width transition using LERP (Low-pass filter)
+      currentWidth = currentWidth + (targetWidth - currentWidth) * 0.25;
+
+      const midX = (lastX + x) / 2;
+      const midY = (lastY + y) / 2;
+
+      const themeColor = getThemeColor();
+      ctx.strokeStyle = themeColor;
+      ctx.fillStyle = themeColor;
+      
+      // Slight organic calligraphic glow for natural calligraphic brush aesthetics
+      ctx.shadowBlur = 0.8;
+      ctx.shadowColor = themeColor;
+
+      ctx.beginPath();
+      ctx.moveTo(lastMidX, lastMidY);
+      ctx.quadraticCurveTo(lastX, lastY, midX, midY);
+      
+      ctx.lineWidth = currentWidth;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
       ctx.stroke();
-      [lastX, lastY] = [x, y];
+
+      lastX = x;
+      lastY = y;
+      lastMidX = midX;
+      lastMidY = midY;
     };
 
     const stopDrawing = () => {
+      if (!isDrawing) return;
       isDrawing = false;
+      
+      // Finish the final segment to the release point
+      if (ctx && (lastMidX !== lastX || lastMidY !== lastY)) {
+        const themeColor = getThemeColor();
+        ctx.strokeStyle = themeColor;
+        ctx.fillStyle = themeColor;
+        ctx.shadowBlur = 0.8;
+        ctx.shadowColor = themeColor;
+
+        ctx.beginPath();
+        ctx.moveTo(lastMidX, lastMidY);
+        ctx.lineTo(lastX, lastY);
+        ctx.lineWidth = currentWidth;
+        ctx.lineCap = 'round';
+        ctx.stroke();
+      }
       ctx.beginPath();
     };
 
-    // Bind Mouse Events
-    canvas.addEventListener('mousedown', startDrawing);
-    canvas.addEventListener('mousemove', draw);
-    canvas.addEventListener('mouseup', stopDrawing);
-    canvas.addEventListener('mouseleave', stopDrawing);
+    // Unified Modern Pointer Events with full robust fallback compatibility
+    if (window.PointerEvent) {
+      canvas.addEventListener('pointerdown', startDrawing);
+      canvas.addEventListener('pointermove', draw);
+      canvas.addEventListener('pointerup', stopDrawing);
+      canvas.addEventListener('pointercancel', stopDrawing);
+      canvas.addEventListener('pointerleave', stopDrawing);
+    } else {
+      // Mouse events fallback
+      canvas.addEventListener('mousedown', startDrawing);
+      canvas.addEventListener('mousemove', draw);
+      canvas.addEventListener('mouseup', stopDrawing);
+      canvas.addEventListener('mouseleave', stopDrawing);
 
-    // Bind Touchscreen Mobile Touch Events
-    canvas.addEventListener('touchstart', startDrawing, { passive: false });
-    canvas.addEventListener('touchmove', draw, { passive: false });
-    canvas.addEventListener('touchend', stopDrawing);
+      // Touch events fallback
+      canvas.addEventListener('touchstart', startDrawing, { passive: false });
+      canvas.addEventListener('touchmove', draw, { passive: false });
+      canvas.addEventListener('touchend', stopDrawing);
+    }
   };
 
   const clearCanvas = () => {
     if (!canvas || !ctx) return;
+    
+    // Save state before clearing, so clear can be undone!
+    undoStack.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+    if (undoStack.length > 25) undoStack.shift();
+    const undoBtn = document.getElementById('btn-undo-canvas');
+    if (undoBtn) undoBtn.removeAttribute('disabled');
+
+    ctx.save();
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.restore();
   };
 
   // ── MOUNT ENTRY POINT ──────────────────────────────────────────────────────

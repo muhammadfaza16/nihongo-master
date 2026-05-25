@@ -142,49 +142,49 @@ const KANJI_N5_LIBRARY = {
       "jp": "三",
       "meaning": "Tiga",
       "on": "サン",
-      "kun": "みっ(tsu)",
+      "kun": "みっ(つ)",
       "example": "三角 (sankaku) = Segitiga"
     },
     {
       "jp": "四",
       "meaning": "Empat",
       "on": "シ",
-      "kun": "よっ(tsu)、よ",
+      "kun": "よっ(つ)、よ",
       "example": "四月 (shigatsu) = April"
     },
     {
       "jp": "五",
       "meaning": "Lima",
       "on": "ゴ",
-      "kun": "いつ(tsu)",
+      "kun": "いつ(つ)",
       "example": "五十 (gojuu) = Lima puluh"
     },
     {
       "jp": "六",
       "meaning": "Enam",
       "on": "ロク",
-      "kun": "むっ(tsu)",
+      "kun": "むっ(つ)",
       "example": "六月 (rokugatsu) = Juni"
     },
     {
       "jp": "七",
       "meaning": "Tujuh",
       "on": "シチ",
-      "kun": "なな(tsu)",
+      "kun": "なな(つ)",
       "example": "七夕 (tanabata) = Festival bintang"
     },
     {
       "jp": "八",
       "meaning": "Delapan",
       "on": "ハチ",
-      "kun": "やっ(tsu)",
+      "kun": "やっ(つ)",
       "example": "八月 (hachigatsu) = Agustus"
     },
     {
       "jp": "九",
       "meaning": "Sembilan",
       "on": "ク、キュウ",
-      "kun": "ここの(tsu)",
+      "kun": "ここの(つ)",
       "example": "九月 (kugatsu) = September"
     },
     {
@@ -219,7 +219,7 @@ const KANJI_N5_LIBRARY = {
       "jp": "円",
       "meaning": "Yen / Lingkaran",
       "on": "エン",
-      "kun": "maru(i)",
+      "kun": "まる(い)",
       "example": "千円 (senen) = Seribu yen"
     },
     {
@@ -233,14 +233,14 @@ const KANJI_N5_LIBRARY = {
       "jp": "月",
       "meaning": "Bulan / Rembulan",
       "on": "ゲツ、ガツ",
-      "kun": "tsuki",
+      "kun": "つき",
       "example": "月曜日 (getsuyōbi) = Senin"
     },
     {
       "jp": "日",
       "meaning": "Hari / Matahari",
       "on": "ニチ、ジツ",
-      "kun": "hi、ka",
+      "kun": "ひ、か",
       "example": "日曜日 (nichiyōbi) = Minggu"
     },
     {
@@ -254,14 +254,14 @@ const KANJI_N5_LIBRARY = {
       "jp": "分",
       "meaning": "Menit / Bagian",
       "on": "フン、プン、ブン",
-      "kun": "wa(karu)",
+      "kun": "わ(かる)",
       "example": "五分 (gofun) = Lima menit"
     },
     {
       "jp": "半",
       "meaning": "Setengah",
       "on": "ハン",
-      "kun": "naka(ba)",
+      "kun": "なか(ば)",
       "example": "三時半 (sanji-han) = Setengah empat"
     }
   ],
@@ -270,140 +270,140 @@ const KANJI_N5_LIBRARY = {
       "jp": "山",
       "meaning": "Gunung",
       "on": "サン",
-      "kun": "yama",
+      "kun": "やま",
       "example": "富士山 (Fujisan) = Gunung Fuji"
     },
     {
       "jp": "川",
       "meaning": "Sungai",
       "on": "セン",
-      "kun": "kawa",
+      "kun": "かわ",
       "example": "川口 (Kawaguchi) = Muara sungai"
     },
     {
       "jp": "海",
       "meaning": "Laut",
       "on": "カイ",
-      "kun": "umi",
+      "kun": "うみ",
       "example": "海水浴 (kaisuiyoku) = Mandi laut"
     },
     {
       "jp": "空",
       "meaning": "Langit / Kosong",
       "on": "クウ",
-      "kun": "sora、a(ku)",
+      "kun": "そら、あ(く)",
       "example": "空港 (kūkō) = Bandara"
     },
     {
       "jp": "木",
       "meaning": "Pohon / Kayu",
       "on": "モク、ボク",
-      "kun": "ki",
+      "kun": "き",
       "example": "木曜日 (mokuyōbi) = Kamis"
     },
     {
       "jp": "花",
       "meaning": "Bunga",
       "on": "カ",
-      "kun": "hana",
+      "kun": "はな",
       "example": "花見 (hanami) = Hanami sakura"
     },
     {
       "jp": "雨",
       "meaning": "Hujan",
       "on": "ウ",
-      "kun": "ame",
+      "kun": "あめ",
       "example": "大雨 (ōame) = Hujan deras"
     },
     {
       "jp": "火",
       "meaning": "Api",
       "on": "カ",
-      "kun": "hi",
+      "kun": "ひ",
       "example": "火曜日 (kayōbi) = Selasa"
     },
     {
       "jp": "水",
       "meaning": "Air",
       "on": "スイ",
-      "kun": "mizu",
+      "kun": "みず",
       "example": "水曜日 (suiyōbi) = Rabu"
     },
     {
       "jp": "土",
       "meaning": "Tanah",
       "on": "ド、ト",
-      "kun": "tsuchi",
+      "kun": "つち",
       "example": "土曜日 (doyōbi) = Sabtu"
     },
     {
       "jp": "金",
       "meaning": "Emas / Uang",
       "on": "キン、コン",
-      "kun": "kane、kana",
+      "kun": "かね、かな",
       "example": "金曜日 (kin'yōbi) = Jumat"
     },
     {
       "jp": "上",
       "meaning": "Atas",
       "on": "ジョウ、ショウ",
-      "kun": "ue、a(garu)",
+      "kun": "うえ、あ(がる)",
       "example": "上手 (jōzu) = Mahir"
     },
     {
       "jp": "下",
       "meaning": "Bawah",
       "on": "カ、ゲ",
-      "kun": "shita、sa(garu)",
+      "kun": "した、さ(がる)",
       "example": "地下 (chika) = Bawah tanah"
     },
     {
       "jp": "中",
       "meaning": "Tengah / Dalam",
       "on": "チュウ",
-      "kun": "naka",
+      "kun": "なか",
       "example": "中学校 (chūgakkō) = SMP"
     },
     {
       "jp": "外",
       "meaning": "Luar",
       "on": "ガイ、ゲ",
-      "kun": "soto",
+      "kun": "そと",
       "example": "外国 (gaikoku) = Luar negeri"
     },
     {
       "jp": "右",
       "meaning": "Kanan",
       "on": "ウ、ユウ",
-      "kun": "migi",
+      "kun": "みぎ",
       "example": "右折 (usetsu) = Belok kanan"
     },
     {
       "jp": "左",
       "meaning": "Kiri",
       "on": "サ",
-      "kun": "hidari",
+      "kun": "ひだり",
       "example": "左折 (sasetsu) = Belok kiri"
     },
     {
       "jp": "前",
       "meaning": "Depan / Sebelum",
       "on": "ゼン",
-      "kun": "mae",
+      "kun": "まえ",
       "example": "名前 (namae) = Nama"
     },
     {
       "jp": "後",
       "meaning": "Belakang / Sesudah",
       "on": "ゴ、コウ",
-      "kun": "ato、ushi(ro)",
+      "kun": "あと、うし(ろ)",
       "example": "午後 (gogo) = Sore/PM"
     },
     {
       "jp": "東",
       "meaning": "Timur",
       "on": "トウ",
-      "kun": "higashi",
+      "kun": "ひがし",
       "example": "東京 (Tōkyō) = Tokyo"
     }
   ],
@@ -412,70 +412,70 @@ const KANJI_N5_LIBRARY = {
       "jp": "人",
       "meaning": "Orang",
       "on": "ジン、ニン",
-      "kun": "hito",
+      "kun": "ひと",
       "example": "日本人 (Nihonjin) = Orang Jepang"
     },
     {
       "jp": "父",
       "meaning": "Ayah",
       "on": "フ",
-      "kun": "chichi、tou",
+      "kun": "ちち、とう",
       "example": "お父さん (otōsan) = Ayah"
     },
     {
       "jp": "母",
       "meaning": "Ibu",
       "on": "ボ",
-      "kun": "haha、kaa",
+      "kun": "はは、かあ",
       "example": "お母さん (okāsan) = Ibu"
     },
     {
       "jp": "子",
       "meaning": "Anak",
       "on": "シ、ス",
-      "kun": "ko",
+      "kun": "こ",
       "example": "子供 (kodomo) = Anak-anak"
     },
     {
       "jp": "男",
       "meaning": "Laki-laki",
       "on": "ダン、ナン",
-      "kun": "otoko",
+      "kun": "おとこ",
       "example": "男の子 (otoko no ko) = Anak laki-laki"
     },
     {
       "jp": "女",
       "meaning": "Perempuan",
       "on": "ジョ、ニョ",
-      "kun": "onna",
+      "kun": "おんな",
       "example": "女の子 (onna no ko) = Anak perempuan"
     },
     {
       "jp": "友",
       "meaning": "Teman",
       "on": "ユウ",
-      "kun": "tomo",
+      "kun": "とも",
       "example": "友達 (tomodachi) = Teman"
     },
     {
       "jp": "先",
       "meaning": "Dahulu / Depan",
       "on": "セン",
-      "kun": "saki",
+      "kun": "さき",
       "example": "先生 (sensei) = Guru"
     },
     {
       "jp": "生",
       "meaning": "Lahir / Hidup",
       "on": "セイ、ショウ",
-      "kun": "i(kiru)、u(mare)",
+      "kun": "い(きる)、う(まれ)",
       "example": "学生 (gakusei) = Pelajar"
     },
     {
       "jp": "名",
       "meaning": "Nama",
       "on": "メイ、ミョウ",
-      "kun": "na",
+      "kun": "な",
       "example": "名前 (namae) = Nama"
     },
     {
@@ -489,63 +489,63 @@ const KANJI_N5_LIBRARY = {
       "jp": "元",
       "meaning": "Asal / Sehat",
       "on": "ゲン、ガン",
-      "kun": "moto",
+      "kun": "もと",
       "example": "元気 (genki) = Sehat/Bugar"
     },
     {
       "jp": "西",
       "meaning": "Barat",
       "on": "セイ、サイ",
-      "kun": "nishi",
+      "kun": "にし",
       "example": "関西 (Kansai) = Wilayah Kansai"
     },
     {
       "jp": "南",
       "meaning": "Selatan",
       "on": "ナン",
-      "kun": "minami",
+      "kun": "みなみ",
       "example": "南口 (minamiguchi) = Pintu selatan"
     },
     {
       "jp": "北",
       "meaning": "Utara",
       "on": "ホク",
-      "kun": "kita",
+      "kun": "きた",
       "example": "北海道 (Hokkaidō) = Hokkaido"
     },
     {
       "jp": "本",
       "meaning": "Buku / Asal",
       "on": "ホン",
-      "kun": "moto",
+      "kun": "もと",
       "example": "日本語 (Nihongo) = Bahasa Jepang"
     },
     {
       "jp": "天",
       "meaning": "Langit / Surga",
       "on": "テン",
-      "kun": "ama",
+      "kun": "あま",
       "example": "天気 (tenki) = Cuaca"
     },
     {
       "jp": "口",
       "meaning": "Mulut",
       "on": "コウ、ク",
-      "kun": "kuchi、guchi",
+      "kun": "くち、ぐち",
       "example": "出口 (deguchi) = Pintu keluar"
     },
     {
       "jp": "目",
       "meaning": "Mata",
       "on": "モク、ボク",
-      "kun": "me",
+      "kun": "め",
       "example": "目的 (mokuteki) = Tujuan"
     },
     {
       "jp": "耳",
       "meaning": "Telinga",
       "on": "ジ",
-      "kun": "mimi",
+      "kun": "みみ",
       "example": "耳鳴り (miminari) = Telinga berdengung"
     }
   ],
@@ -554,14 +554,14 @@ const KANJI_N5_LIBRARY = {
       "jp": "国",
       "meaning": "Negara",
       "on": "コク、コッ",
-      "kun": "kuni",
+      "kun": "くに",
       "example": "外国人 (gaikokujin) = Orang asing"
     },
     {
       "jp": "店",
       "meaning": "Toko",
       "on": "テン",
-      "kun": "mise",
+      "kun": "みせ",
       "example": "書店 (shoten) = Toko buku"
     },
     {
@@ -582,21 +582,21 @@ const KANJI_N5_LIBRARY = {
       "jp": "車",
       "meaning": "Kendaraan / Roda",
       "on": "シャ",
-      "kun": "kuruma",
+      "kun": "くるま",
       "example": "自転車 (jitensha) = Sepeda"
     },
     {
       "jp": "道",
       "meaning": "Jalan",
       "on": "ドウ、トウ",
-      "kun": "michi",
+      "kun": "みち",
       "example": "北海道 (Hokkaidō) = Hokkaido"
     },
     {
       "jp": "学",
       "meaning": "Belajar",
       "on": "ガク、ガッ",
-      "kun": "mana(bu)",
+      "kun": "まな(ぶ)",
       "example": "大学 (daigaku) = Universitas"
     },
     {
@@ -610,84 +610,84 @@ const KANJI_N5_LIBRARY = {
       "jp": "会",
       "meaning": "Pertemuan / Bertemu",
       "on": "カイ、エ",
-      "kun": "a(u)",
+      "kun": "あ(う)",
       "example": "会社 (kaisha) = Perusahaan"
     },
     {
       "jp": "社",
       "meaning": "Perusahaan / Kuil",
       "on": "シャ",
-      "kun": "yashiro",
+      "kun": "やしろ",
       "example": "会社員 (kaishain) = Karyawan"
     },
     {
       "jp": "入",
       "meaning": "Masuk",
       "on": "ニュウ",
-      "kun": "hai(ru)、i(reru)",
+      "kun": "はい(る)、い(れる)",
       "example": "入口 (iriguchi) = Pintu masuk"
     },
     {
       "jp": "出",
       "meaning": "Keluar",
       "on": "シュツ",
-      "kun": "de(ru)、da(su)",
+      "kun": "で(る)、だ(す)",
       "example": "出口 (deguchi) = Pintu keluar"
     },
     {
       "jp": "立",
       "meaning": "Berdiri",
       "on": "リツ",
-      "kun": "ta(tsu)",
+      "kun": "た(つ)",
       "example": "起立 (kiritsu) = Berdiri"
     },
     {
       "jp": "休",
       "meaning": "Istirahat",
       "on": "キュウ",
-      "kun": "yasu(mu)",
+      "kun": "やす(む)",
       "example": "休み (yasumi) = Liburan"
     },
     {
       "jp": "買",
       "meaning": "Membeli",
       "on": "バイ",
-      "kun": "ka(u)",
+      "kun": "か(う)",
       "example": "買い物 (kaimono) = Belanja"
     },
     {
       "jp": "何",
       "meaning": "Apa",
       "on": "カ",
-      "kun": "nani、nan",
+      "kun": "なに、なん",
       "example": "何か (nanika) = Sesuatu"
     },
     {
       "jp": "手",
       "meaning": "Tangan",
       "on": "シュ",
-      "kun": "te",
+      "kun": "て",
       "example": "歌手 (kashu) = Penyanyi"
     },
     {
       "jp": "足",
       "meaning": "Kaki / Cukup",
       "on": "ソク",
-      "kun": "ashi、ta(ru)",
+      "kun": "あし、た(る)",
       "example": "遠足 (ensoku) = Piknik/Karyawisata"
     },
     {
       "jp": "白",
       "meaning": "Putih",
       "on": "ハク、ビャク",
-      "kun": "shiro(i)",
+      "kun": "しろ(い)",
       "example": "面白い (omoshiroi) = Menarik"
     },
     {
       "jp": "赤",
       "meaning": "Merah",
       "on": "セキ、シャク",
-      "kun": "aka(i)",
+      "kun": "あか(い)",
       "example": "赤ちゃん (akachan) = Bayi"
     }
   ]
@@ -700,42 +700,42 @@ const KANJI_N4_LIBRARY = {
       "jp": "開",
       "meaning": "Membuka",
       "on": "カイ",
-      "kun": "a(keru)、ひら(ku)",
+      "kun": "あ(ける)、ひら(く)",
       "example": "開会 (kaikai) = Pembukaan rapat"
     },
     {
       "jp": "閉",
       "meaning": "Menutup",
       "on": "ヘイ",
-      "kun": "し(meru)、と(じる)",
+      "kun": "し(める)、と(じる)",
       "example": "閉会 (heikai) = Penutupan rapat"
     },
     {
       "jp": "帰",
       "meaning": "Pulang",
       "on": "キ",
-      "kun": "かえ(ru)",
+      "kun": "かえ(る)",
       "example": "帰国 (kikoku) = Pulang ke tanah air"
     },
     {
       "jp": "歩",
       "meaning": "Berjalan",
       "on": "ホ",
-      "kun": "ある(ku)",
+      "kun": "ある(く)",
       "example": "歩道 (hodou) = Trotoar/Jalan kaki"
     },
     {
       "jp": "走",
       "meaning": "Berlari",
       "on": "ソウ",
-      "kun": "はし(ru)",
+      "kun": "はし(る)",
       "example": "走者 (sousha) = Pelari"
     },
     {
       "jp": "止",
       "meaning": "Berhenti",
       "on": "シ",
-      "kun": "to(maru)",
+      "kun": "と(まる)",
       "example": "中止 (chuushi) = Penghentian/Batal"
     },
     {
@@ -749,84 +749,84 @@ const KANJI_N4_LIBRARY = {
       "jp": "送",
       "meaning": "Mengirim",
       "on": "ソウ",
-      "kun": "oku(ru)",
+      "kun": "おく(る)",
       "example": "送信 (soushin) = Pengiriman pesan"
     },
     {
       "jp": "急",
       "meaning": "Cepat / Tergesa",
       "on": "キュウ",
-      "kun": "iso(gu)",
+      "kun": "いそ(ぐ)",
       "example": "急行 (kyuukou) = Kereta cepat"
     },
     {
       "jp": "引",
       "meaning": "Menarik",
       "on": "イン",
-      "kun": "hi(ku)",
+      "kun": "ひ(く)",
       "example": "引き出し (hikidashi) = Laci"
     },
     {
       "jp": "押",
       "meaning": "Mendorong",
-      "on": "おう",
-      "kun": "o(su)",
+      "on": "オウ",
+      "kun": "お(す)",
       "example": "押し入れ (oshiire) = Lemari dinding"
     },
     {
       "jp": "使",
       "meaning": "Menggunakan",
       "on": "シ",
-      "kun": "tsuka(u)",
+      "kun": "つか(う)",
       "example": "使用 (shiyou) = Penggunaan"
     },
     {
       "jp": "始",
       "meaning": "Memulai",
       "on": "シ",
-      "kun": "haji(meru)",
+      "kun": "はじ(める)",
       "example": "開始 (kaishi) = Permulaan"
     },
     {
       "jp": "終",
       "meaning": "Selesai",
       "on": "シュウ",
-      "kun": "o(waru)",
+      "kun": "お(わる)",
       "example": "終電 (shuuden) = Kereta terakhir"
     },
     {
       "jp": "借",
       "meaning": "Meminjam",
       "on": "シャク",
-      "kun": "ka(riru)",
+      "kun": "か(りる)",
       "example": "借金 (shakkin) = Utang"
     },
     {
       "jp": "貸",
       "meaning": "Meminjamkan",
       "on": "タイ",
-      "kun": "ka(su)",
+      "kun": "か(す)",
       "example": "貸し出し (kashidashi) = Peminjaman"
     },
     {
       "jp": "待",
       "meaning": "Menunggu",
       "on": "タイ",
-      "kun": "ma(tsu)",
+      "kun": "ま(つ)",
       "example": "待合室 (machiaishitsu) = Ruang tunggu"
     },
     {
       "jp": "持",
       "meaning": "Membawa / Memiliki",
       "on": "ジ",
-      "kun": "mo(tsu)",
+      "kun": "も(つ)",
       "example": "気持ち (kimochi) = Perasaan"
     },
     {
       "jp": "住",
       "meaning": "Tinggal / Menetap",
       "on": "ジュウ",
-      "kun": "su(mu)",
+      "kun": "す(む)",
       "example": "住所 (juusho) = Alamat"
     },
     {
@@ -842,105 +842,105 @@ const KANJI_N4_LIBRARY = {
       "jp": "朝",
       "meaning": "Pagi",
       "on": "チョウ",
-      "kun": "asa",
+      "kun": "あさ",
       "example": "朝食 (choushoku) = Makan pagi"
     },
     {
       "jp": "昼",
       "meaning": "Siang",
       "on": "チュウ",
-      "kun": "hiru",
+      "kun": "ひる",
       "example": "昼食 (chuushoku) = Makan siang"
     },
     {
       "jp": "夜",
       "meaning": "Malam",
       "on": "ヤ",
-      "kun": "yoru",
+      "kun": "よる",
       "example": "夜食 (yashoku) = Camilan malam"
     },
     {
       "jp": "春",
       "meaning": "Musim Semi",
       "on": "シュン",
-      "kun": "haru",
+      "kun": "はる",
       "example": "春休み (haruyasumi) = Libur musim semi"
     },
     {
       "jp": "夏",
       "meaning": "Musim Panas",
       "on": "カ",
-      "kun": "natsu",
+      "kun": "なつ",
       "example": "夏休み (natsuyasumi) = Libur musim panas"
     },
     {
       "jp": "秋",
       "meaning": "Musim Gugur",
       "on": "シュウ",
-      "kun": "aki",
+      "kun": "あき",
       "example": "秋分 (shuubun) = Ekuinoks musim gugur"
     },
     {
       "jp": "冬",
       "meaning": "Musim Dingin",
       "on": "トウ",
-      "kun": "fuyu",
+      "kun": "ふゆ",
       "example": "冬休み (fuyuyasumi) = Libur musim dingin"
     },
     {
       "jp": "体",
       "meaning": "Tubuh",
       "on": "タイ",
-      "kun": "karada",
+      "kun": "からだ",
       "example": "体力 (tairyoku) = Kekuatan fisik"
     },
     {
       "jp": "心",
       "meaning": "Hati / Jiwa",
       "on": "シン",
-      "kun": "kokoro",
+      "kun": "こころ",
       "example": "安心 (anshin) = Lega/Tenang"
     },
     {
       "jp": "首",
       "meaning": "Leher",
       "on": "シュ",
-      "kun": "kubi",
+      "kun": "くび",
       "example": "首都 (shuto) = Ibu kota"
     },
     {
       "jp": "声",
       "meaning": "Suara",
       "on": "セイ",
-      "kun": "koe",
+      "kun": "こえ",
       "example": "発声 (hassei) = Vokalisasi/Ucap"
     },
     {
       "jp": "自",
       "meaning": "Diri Sendiri",
       "on": "ジ、シ",
-      "kun": "mizuka(ra)",
+      "kun": "みずか(ra)",
       "example": "自転車 (jitensha) = Sepeda"
     },
     {
       "jp": "頭",
       "meaning": "Kepala",
       "on": "トウ、ズ",
-      "kun": "atama",
+      "kun": "あたま",
       "example": "頭痛 (zutsuu) = Sakit kepala"
     },
     {
       "jp": "顔",
       "meaning": "Wajah",
       "on": "ガン",
-      "kun": "kao",
+      "kun": "かお",
       "example": "笑顔 (egao) = Wajah tersenyum"
     },
     {
       "jp": "病",
       "meaning": "Sakit",
       "on": "ビョウ",
-      "kun": "ya(mu)",
+      "kun": "や(む)",
       "example": "病院 (byouin) = Rumah sakit"
     },
     {
@@ -961,21 +961,21 @@ const KANJI_N4_LIBRARY = {
       "jp": "薬",
       "meaning": "Obat",
       "on": "ヤク",
-      "kun": "kusuri",
+      "kun": "くすり",
       "example": "薬局 (yakkyoku) = Apotek"
     },
     {
       "jp": "度",
       "meaning": "Derajat / Kali",
       "on": "ド、タク",
-      "kun": "ta(bi)",
+      "kun": "た(び)",
       "example": "一度 (ichido) = Satu kali"
     },
     {
       "jp": "力",
       "meaning": "Kekuatan",
       "on": "リョク、リキ",
-      "kun": "chikara",
+      "kun": "ちから",
       "example": "協力 (kyouryoku) = Kerja sama"
     }
   ],
@@ -984,112 +984,112 @@ const KANJI_N4_LIBRARY = {
       "jp": "民",
       "meaning": "Rakyat / Warga",
       "on": "ミン",
-      "kun": "tami",
+      "kun": "たみ",
       "example": "市民 (shimin) = Warga kota"
     },
     {
       "jp": "作",
       "meaning": "Membuat",
       "on": "サク、サ",
-      "kun": "つく(ru)",
+      "kun": "つく(る)",
       "example": "作文 (sakubun) = Karangan/Esai"
     },
     {
       "jp": "仕",
       "meaning": "Melayani",
       "on": "シ",
-      "kun": "tsuka(eru)",
+      "kun": "つか(える)",
       "example": "仕事 (shigoto) = Pekerjaan"
     },
     {
       "jp": "事",
       "meaning": "Hal / Tugas",
       "on": "ジ",
-      "kun": "koto",
+      "kun": "こと",
       "example": "事故 (jiko) = Kecelakaan"
     },
     {
       "jp": "品",
       "meaning": "Barang",
       "on": "ヒン",
-      "kun": "shina",
+      "kun": "しな",
       "example": "作品 (sakuhin) = Karya seni"
     },
     {
       "jp": "業",
       "meaning": "Industri",
       "on": "ギョウ",
-      "kun": "waza",
+      "kun": "わざ",
       "example": "授業 (jugyou) = Pelajaran di kelas"
     },
     {
       "jp": "長",
       "meaning": "Panjang / Kepala",
       "on": "チョウ",
-      "kun": "naga(i)",
+      "kun": "なが(い)",
       "example": "社長 (shachou) = Direktur utama"
     },
     {
-      "jp": "强",
+      "jp": "強",
       "meaning": "Kuat",
       "on": "キョウ",
-      "kun": "tsuyo(i)",
+      "kun": "つよ(い)",
       "example": "勉強 (benkyou) = Belajar"
     },
     {
       "jp": "新",
       "meaning": "Baru",
       "on": "シン",
-      "kun": "atara(shii)",
+      "kun": "あたら(しい)",
       "example": "新聞 (shinbun) = Koran/Surat kabar"
     },
     {
       "jp": "古",
       "meaning": "Lama",
       "on": "コ",
-      "kun": "furu(i)",
+      "kun": "ふる(い)",
       "example": "中古 (chuuko) = Barang bekas"
     },
     {
       "jp": "安",
       "meaning": "Murah / Aman",
       "on": "アン",
-      "kun": "yasu(i)",
+      "kun": "やす(い)",
       "example": "安全 (anzen) = Aman/Keselamatan"
     },
     {
       "jp": "高",
       "meaning": "Tinggi / Mahal",
       "on": "コウ",
-      "kun": "taka(i)",
+      "kun": "たか(い)",
       "example": "高校 (kōkō) = SMA"
     },
     {
       "jp": "同",
       "meaning": "Sama",
       "on": "ドウ",
-      "kun": "onaji",
+      "kun": "おなじ",
       "example": "同時に (doujini) = Sekaligus/Bersamaan"
     },
     {
       "jp": "主",
       "meaning": "Pemilik / Utama",
       "on": "シュ",
-      "kun": "nushi",
+      "kun": "ぬし",
       "example": "主人 (shujin) = Suami/Tuan"
     },
     {
       "jp": "代",
       "meaning": "Era / Mengganti",
       "on": "ダイ、タイ",
-      "kun": "ka(waru)",
+      "kun": "か(わる)",
       "example": "時代 (jidai) = Era/Zaman"
     },
     {
       "jp": "用",
       "meaning": "Menggunakan / Urusan",
       "on": "ヨウ",
-      "kun": "mochi(iru)",
+      "kun": "もち(いる)",
       "example": "用意 (youi) = Persiapan"
     },
     {
@@ -1103,7 +1103,7 @@ const KANJI_N4_LIBRARY = {
       "jp": "物",
       "meaning": "Benda",
       "on": "ブツ、モツ",
-      "kun": "mono",
+      "kun": "もの",
       "example": "荷物 (nimotsu) = Barang bawaan"
     },
     {
@@ -1117,7 +1117,7 @@ const KANJI_N4_LIBRARY = {
       "jp": "売",
       "meaning": "Menjual",
       "on": "バイ",
-      "kun": "u(ru)",
+      "kun": "う(る)",
       "example": "売店 (baiten) = Kios/Toko kecil"
     }
   ],
@@ -1126,126 +1126,126 @@ const KANJI_N4_LIBRARY = {
       "jp": "考",
       "meaning": "Berpikir",
       "on": "コウ",
-      "kun": "kanga(eru)",
+      "kun": "かんが(える)",
       "example": "思考 (shikou) = Pemikiran"
     },
     {
       "jp": "教",
       "meaning": "Mengajar",
       "on": "キョウ",
-      "kun": "oshi(eru)",
+      "kun": "おし(える)",
       "example": "教室 (kyoushitsu) = Ruang kelas"
     },
     {
       "jp": "室",
       "meaning": "Ruangan",
       "on": "シツ",
-      "kun": "muro",
+      "kun": "むろ",
       "example": "和室 (washitsu) = Kamar gaya Jepang"
     },
     {
       "jp": "文",
       "meaning": "Kalimat",
       "on": "ブン、モン",
-      "kun": "fumi",
+      "kun": "ふみ",
       "example": "文学 (bungaku) = Kesusastraan"
     },
     {
       "jp": "字",
       "meaning": "Huruf",
       "on": "ジ",
-      "kun": "aza",
+      "kun": "あざ",
       "example": "漢字 (kanji) = Aksara Kanji"
     },
     {
       "jp": "音",
       "meaning": "Bunyi",
       "on": "オン",
-      "kun": "oto",
+      "kun": "おと",
       "example": "音楽 (ongaku) = Musik"
     },
     {
       "jp": "楽",
       "meaning": "Senang / Musik",
       "on": "ガク、ラク",
-      "kun": "tano(shii)",
+      "kun": "たの(しい)",
       "example": "楽観 (rakkan) = Optimis"
     },
     {
       "jp": "林",
       "meaning": "Hutan Kecil",
       "on": "リン",
-      "kun": "hayashi",
+      "kun": "はやし",
       "example": "小林 (Kobayashi) = Nama marga Jepang"
     },
     {
       "jp": "森",
       "meaning": "Hutan Lebat",
       "on": "シン",
-      "kun": "mori",
+      "kun": "もり",
       "example": "森林 (shinrin) = Hutan rimba"
     },
     {
       "jp": "親",
       "meaning": "Orang Tua / Dekat",
       "on": "シン",
-      "kun": "oya、shita(shii)",
+      "kun": "おや、した(しい)",
       "example": "両親 (ryoushin) = Kedua orang tua"
     },
     {
       "jp": "少",
       "meaning": "Sedikit",
       "on": "ショウ",
-      "kun": "suku(nai)、suko(shi)",
+      "kun": "すく(ない)、すこ(し)",
       "example": "少々 (shoushou) = Sedikit/Sebentar"
     },
     {
       "jp": "多",
       "meaning": "Banyak",
       "on": "タ",
-      "kun": "oo(i)",
+      "kun": "おお(い)",
       "example": "多分 (tabun) = Mungkin"
     },
     {
       "jp": "近",
       "meaning": "Dekat",
       "on": "キン",
-      "kun": "chika(i)",
+      "kun": "ちか(い)",
       "example": "近所 (kinjo) = Tetangga/Dekat rumah"
     },
     {
       "jp": "遠",
       "meaning": "Jauh",
       "on": "エン",
-      "kun": "too(i)",
+      "kun": "とお(い)",
       "example": "遠足 (ensoku) = Piknik"
     },
     {
       "jp": "犬",
       "meaning": "Anjing",
       "on": "ケン",
-      "kun": "inu",
+      "kun": "いぬ",
       "example": "子犬 (koinu) = Anak anjing"
     },
     {
       "jp": "牛",
       "meaning": "Sapi",
       "on": "ギュウ",
-      "kun": "ushi",
+      "kun": "うし",
       "example": "牛肉 (gyuuniku) = Daging sapi"
     },
     {
       "jp": "鳥",
       "meaning": "Burung",
       "on": "チョウ",
-      "kun": "tori",
+      "kun": "とり",
       "example": "小鳥 (kotori) = Burung kecil"
     },
     {
       "jp": "風",
       "meaning": "Angin",
       "on": "フウ",
-      "kun": "kaze",
+      "kun": "かぜ",
       "example": "台風 (taifu) = Topan"
     },
     {
@@ -1259,7 +1259,7 @@ const KANJI_N4_LIBRARY = {
       "jp": "世",
       "meaning": "Dunia / Generasi",
       "on": "セイ、セ",
-      "kun": "yo",
+      "kun": "よ",
       "example": "世界 (sekai) = Dunia"
     }
   ]
@@ -1272,28 +1272,28 @@ const KANJI_N3_LIBRARY = {
       "jp": "政",
       "meaning": "Politik",
       "on": "セイ",
-      "kun": "matsuri",
+      "kun": "まつり",
       "example": "政治 (seiji) = Politik"
     },
     {
       "jp": "治",
       "meaning": "Memerintah",
       "on": "ジ、チ",
-      "kun": "osama(ru)",
+      "kun": "おさ(まる)",
       "example": "治療 (chiryou) = Pengobatan/Terapi"
     },
     {
       "jp": "経",
       "meaning": "Ekonomi / Lewat",
       "on": "ケイ",
-      "kun": "he(ru)",
+      "kun": "へ(る)",
       "example": "経済 (keizai) = Ekonomi"
     },
     {
       "jp": "済",
       "meaning": "Selesai",
       "on": "サイ",
-      "kun": "su(mu)",
+      "kun": "す(む)",
       "example": "経済 (keizai) = Ekonomi"
     },
     {
@@ -1314,21 +1314,21 @@ const KANJI_N3_LIBRARY = {
       "jp": "際",
       "meaning": "Batas / Internasional",
       "on": "サイ",
-      "kun": "kiwa",
+      "kun": "きわ",
       "example": "国際 (kokusai) = Internasional"
     },
     {
       "jp": "関",
       "meaning": "Hubungan",
       "on": "カン",
-      "kun": "seki",
+      "kun": "せき",
       "example": "関係 (kankei) = Hubungan/Koneksi"
     },
     {
       "jp": "係",
       "meaning": "Penanggung Jawab",
       "on": "ケイ",
-      "kun": "kaka(ri)",
+      "kun": "かか(り)",
       "example": "係員 (kakariin) = Petugas/Staf"
     },
     {
@@ -1356,7 +1356,7 @@ const KANJI_N3_LIBRARY = {
       "jp": "都",
       "meaning": "Metropolis / Kota",
       "on": "ト、ツ",
-      "kun": "miako",
+      "kun": "みやこ",
       "example": "都市 (toshi) = Kota besar"
     },
     {
@@ -1405,7 +1405,7 @@ const KANJI_N3_LIBRARY = {
       "jp": "障",
       "meaning": "Rintangan / Hambatan",
       "on": "ショウ",
-      "kun": "sawa(ru)",
+      "kun": "さわ(る)",
       "example": "障害 (shougai) = Hambatan/Disabilitas"
     }
   ],
@@ -1414,14 +1414,14 @@ const KANJI_N3_LIBRARY = {
       "jp": "研",
       "meaning": "Meneliti",
       "on": "ケン",
-      "kun": "to(gu)",
+      "kun": "と(ぐ)",
       "example": "研究 (kenkyuu) = Penelitian"
     },
     {
       "jp": "究",
       "meaning": "Menyelidiki",
       "on": "キュウ",
-      "kun": "kiwa(meru)",
+      "kun": "きわ(める)",
       "example": "研究 (kenkyuu) = Penelitian"
     },
     {
@@ -1435,7 +1435,7 @@ const KANJI_N3_LIBRARY = {
       "jp": "数",
       "meaning": "Angka",
       "on": "スウ",
-      "kun": "kazu",
+      "kun": "かず",
       "example": "数学 (suugaku) = Matematika"
     },
     {
@@ -1449,49 +1449,49 @@ const KANJI_N3_LIBRARY = {
       "jp": "組",
       "meaning": "Kelompok / Kelas",
       "on": "ソ",
-      "kun": "kumi",
+      "kun": "くみ",
       "example": "番組 (bangumi) = Acara TV"
     },
     {
       "jp": "設",
       "meaning": "Mendirikan",
       "on": "セツ",
-      "kun": "mou(keru)",
+      "kun": "もう(ける)",
       "example": "設計 (sekkei) = Perancangan/Desain"
     },
     {
       "jp": "建",
       "meaning": "Membangun",
       "on": "ケン",
-      "kun": "ta(teru)",
+      "kun": "た(てる)",
       "example": "建物 (tatemono) = Bangunan"
     },
     {
       "jp": "築",
       "meaning": "Konstruksi",
       "on": "チク",
-      "kun": "kizu(ku)",
+      "kun": "きず(く)",
       "example": "建築 (kenchiku) = Arsitektur"
     },
     {
       "jp": "造",
       "meaning": "Membuat",
       "on": "ゾウ",
-      "kun": "tsuku(ru)",
+      "kun": "つく(る)",
       "example": "製造 (seizou) = Manufaktur"
     },
     {
       "jp": "術",
       "meaning": "Teknik / Seni",
       "on": "ジュツ",
-      "kun": "sube",
+      "kun": "すべ",
       "example": "技術 (gijutsu) = Teknologi/Keterampilan"
     },
     {
       "jp": "技",
       "meaning": "Keterampilan",
       "on": "ギ",
-      "kun": "waza",
+      "kun": "わざ",
       "example": "技術 (gijutsu) = Teknologi/Keterampilan"
     },
     {
@@ -1502,7 +1502,7 @@ const KANJI_N3_LIBRARY = {
       "example": "複数 (fukusuu) = Jamak/Ganda"
     },
     {
-      "jp": "册",
+      "jp": "冊",
       "meaning": "Counter Buku / Jilid",
       "on": "サツ、サク",
       "kun": "—",
@@ -1533,21 +1533,21 @@ const KANJI_N3_LIBRARY = {
       "jp": "易",
       "meaning": "Mudah / Barter",
       "on": "エキ、イ",
-      "kun": "yasa(shii)",
+      "kun": "やさ(しい)",
       "example": "容易 (youi) = Mudah"
     },
     {
       "jp": "企",
       "meaning": "Merencanakan",
       "on": "キ",
-      "kun": "kuwada(teru)",
+      "kun": "くわだ(てる)",
       "example": "企業 (kigyou) = Perusahaan/Bisnis"
     },
     {
       "jp": "創",
       "meaning": "Menciptakan",
       "on": "ソウ",
-      "kun": "haji(meru)",
+      "kun": "はじ(める)",
       "example": "創造 (souzou) = Kreasi/Penciptaan"
     }
   ],
@@ -1556,7 +1556,7 @@ const KANJI_N3_LIBRARY = {
       "jp": "想",
       "meaning": "Ide / Pikiran",
       "on": "ソウ",
-      "kun": "omo(u)",
+      "kun": "おmo(u)",
       "example": "想像 (souzou) = Imajinasi"
     },
     {
@@ -1577,7 +1577,7 @@ const KANJI_N3_LIBRARY = {
       "jp": "情",
       "meaning": "Emosi",
       "on": "ジョウ",
-      "kun": "nasa(ke)",
+      "kun": "なさ(け)",
       "example": "情報 (jouhou) = Informasi"
     },
     {
@@ -1598,63 +1598,63 @@ const KANJI_N3_LIBRARY = {
       "jp": "悲",
       "meaning": "Sedih",
       "on": "ヒ",
-      "kun": "kana(shii)",
+      "kun": "かな(しい)",
       "example": "悲劇 (higeki) = Tragedi"
     },
     {
       "jp": "怒",
       "meaning": "Marah",
       "on": "ド",
-      "kun": "oko(ru)",
+      "kun": "おこ(る)",
       "example": "怒気 (doki) = Kemarahan"
     },
     {
       "jp": "望",
       "meaning": "Berharap",
       "on": "ボウ",
-      "kun": "nozo(mu)",
+      "kun": "のぞ(む)",
       "example": "希望 (kibou) = Harapan"
     },
     {
       "jp": "欲",
       "meaning": "Ingin / Hasrat",
       "on": "ヨク",
-      "kun": "ho(shii)",
+      "kun": "ほ(しい)",
       "example": "食欲 (shokuyoku) = Nafsu makan"
     },
     {
       "jp": "願",
       "meaning": "Memohon",
       "on": "ガン",
-      "kun": "nega(u)",
+      "kun": "ねが(う)",
       "example": "お願い (onegai) = Permintaan/Tolong"
     },
     {
       "jp": "恐",
       "meaning": "Takut / Ngeri",
       "on": "キョウ",
-      "kun": "kowa(i)、oso(reru)",
+      "kun": "こわ(い)、おそ(れる)",
       "example": "恐竜 (kyouryuu) = Dinosaurus"
     },
     {
       "jp": "悩",
       "meaning": "Khawatir / Cemas",
       "on": "ノウ",
-      "kun": "nayo(mu)",
+      "kun": "なや(む)",
       "example": "悩み (nayami) = Kekhawatiran/Masalah"
     },
     {
       "jp": "憎",
       "meaning": "Benci",
       "on": "ゾウ",
-      "kun": "niga(mu)",
+      "kun": "にく(む)",
       "example": "憎しみ (nikushimi) = Kebencian"
     },
     {
       "jp": "恥",
       "meaning": "Malu",
       "on": "チ",
-      "kun": "ha(zuka-shii)",
+      "kun": "は(ずかしい)",
       "example": "恥ずかしい (hazukashii) = Malu"
     },
     {
@@ -1668,7 +1668,7 @@ const KANJI_N3_LIBRARY = {
       "jp": "志",
       "meaning": "Kehendak / Aspirasi",
       "on": "シ",
-      "kun": "kokorozashi",
+      "kun": "こころざし",
       "example": "志望 (shibou) = Aspirasi/Cita-cita"
     },
     {
@@ -1682,14 +1682,14 @@ const KANJI_N3_LIBRARY = {
       "jp": "忘",
       "meaning": "Lupa",
       "on": "ボウ",
-      "kun": "wasu(reru)",
+      "kun": "わす(れる)",
       "example": "忘れ物 (wasuremono) = Barang tertinggal"
     },
     {
       "jp": "恋",
       "meaning": "Cinta / Asmara",
       "on": "レン",
-      "kun": "koi",
+      "kun": "こい",
       "example": "恋人 (koibito) = Pacar"
     }
   ],
@@ -1698,42 +1698,42 @@ const KANJI_N3_LIBRARY = {
       "jp": "選",
       "meaning": "Memilih",
       "on": "セン",
-      "kun": "era(bu)",
+      "kun": "えら(ぶ)",
       "example": "選手 (senshu) = Atlet/Pemain"
     },
     {
       "jp": "決",
       "meaning": "Memutuskan",
       "on": "ケツ",
-      "kun": "ki(meru)",
+      "kun": "き(める)",
       "example": "決定 (kettei) = Keputusan"
     },
     {
       "jp": "認",
       "meaning": "Mengakui",
       "on": "ニン",
-      "kun": "mito(meru)",
+      "kun": "みto(meru)",
       "example": "確認 (kakunin) = Konfirmasi"
     },
     {
       "jp": "表",
       "meaning": "Tabel / Ungkapan",
       "on": "ヒョウ",
-      "kun": "omote",
+      "kun": "おもて",
       "example": "発表 (happyou) = Presentasi/Pengumuman"
     },
     {
       "jp": "現",
       "meaning": "Muncul / Nyata",
       "on": "ゲン",
-      "kun": "arawa(reru)",
+      "kun": "あらわ(れる)",
       "example": "Present (genzai) = Saat ini"
     },
     {
       "jp": "調",
       "meaning": "Meneliti / Nada",
       "on": "チョウ",
-      "kun": "shirabe(ru)",
+      "kun": "しら(べる)",
       "example": "調査 (chousa) = Investigasi"
     },
     {
@@ -1747,49 +1747,49 @@ const KANJI_N3_LIBRARY = {
       "jp": "確",
       "meaning": "Pasti / Yakin",
       "on": "カ防",
-      "kun": "tashi(ka)",
+      "kun": "たし(か)",
       "example": "確認 (kakunin) = Konfirmasi"
     },
     {
       "jp": "果",
       "meaning": "Hasil / Buah",
       "on": "カ",
-      "kun": "ha(teru)",
+      "kun": "は(てる)",
       "example": "結果 (kekka) = Hasil"
     },
     {
       "jp": "連",
       "meaning": "Menghubungkan",
       "on": "レン",
-      "kun": "tsu(reru)",
+      "kun": "つ(れる)",
       "example": "連絡 (renraku) = Hubungi/Kontak"
     },
     {
       "jp": "絡",
       "meaning": "Keterikatan",
       "on": "ラク",
-      "kun": "kara(mu)",
+      "kun": "から(む)",
       "example": "連絡 (renraku) = Hubungi/Kontak"
     },
     {
       "jp": "戦",
       "meaning": "Perang / Tarung",
       "on": "セン",
-      "kun": "tataka(u)",
+      "kun": "たたか(う)",
       "example": "戦争 (sensou) = Perang"
     },
     {
       "jp": "争",
       "meaning": "Berjuang / Rebut",
       "on": "ソウ",
-      "kun": "araso(u)",
+      "kun": "あらそ(う)",
       "example": "戦争 (sensou) = Perang"
     },
     {
       "jp": "幸",
       "meaning": "Bahagia",
       "on": "コウ",
-      "kun": "shiawa(se)",
+      "kun": "しあわ(せ)",
       "example": "幸せ (shiawase) = Bahagia"
     },
     {
@@ -1810,21 +1810,21 @@ const KANJI_N3_LIBRARY = {
       "jp": "若",
       "meaning": "Muda",
       "on": "ジャク",
-      "kun": "waka(i)",
+      "kun": "わか(i)",
       "example": "若者 (wakamono) = Kaum muda"
     },
     {
       "jp": "老",
       "meaning": "Tua / Lansia",
       "on": "ロウ",
-      "kun": "o(iru)",
+      "kun": "お(いる)",
       "example": "老人 (roujin) = Orang tua"
     },
     {
       "jp": "忙",
       "meaning": "Sibuk",
       "on": "ボウ",
-      "kun": "isoga(shii)",
+      "kun": "いそが(しい)",
       "example": "忙しい (isogashii) = Sibuk"
     },
     {
@@ -2076,13 +2076,13 @@ export function KanjiView(container) {
         
         <div class="kanji-catalog-readings">
           <div style="margin-bottom: 5px; display: flex; align-items: baseline; gap: 8px;">
-            <strong style="font-size: 0.65rem; color: var(--text-muted); min-width: 16px;">音:</strong>
+            <strong style="font-size: 0.65rem; color: var(--text-muted); min-width: 24px; flex-shrink: 0;">音:</strong>
             <span style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; color: var(--text-main); word-break: break-all;">
               ${item.on}<span style="font-size: 0.65rem; font-weight: 500; color: var(--text-muted); font-family: var(--font-sans);">${onRomaji}</span>
             </span>
           </div>
           <div style="margin-bottom: 8px; display: flex; align-items: baseline; gap: 8px;">
-            <strong style="font-size: 0.65rem; color: var(--text-muted); min-width: 16px;">訓:</strong>
+            <strong style="font-size: 0.65rem; color: var(--text-muted); min-width: 24px; flex-shrink: 0;">訓:</strong>
             <span style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; color: var(--text-main); word-break: break-all;">
               ${item.kun}<span style="font-size: 0.65rem; font-weight: 500; color: var(--text-muted); font-family: var(--font-sans);">${kunRomaji}</span>
             </span>

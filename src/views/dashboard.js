@@ -3,6 +3,56 @@ import { MNN_DATA } from '../data/chapter_data.js';
 import { getState, getLevel, isUnitCompleted } from '../store.js';
 import { getDueCount } from '../srs.js';
 
+function getDailyMissionTitle(plan) {
+  if (plan.level === 'N5') {
+    return 'Misi Harian: Fondasi Dasar (N5)';
+  } else if (plan.level === 'N4') {
+    return 'Misi Harian: Akselerasi Menengah (N4)';
+  } else {
+    return 'Misi Harian: Speedrun N3 Master';
+  }
+}
+
+function getDailyMissionDesc(plan, nextChapter) {
+  if (plan.level === 'N5') {
+    if (nextChapter.id <= 25) {
+      return `Target hari ini: Pelajari tata bahasa <strong>Bab ${nextChapter.id}</strong> di Grammar Digest dan rampungkan Buku Kerjanya.`;
+    } else {
+      return `Selamat! Target dasar selesai. Evaluasi kesiapan Anda dengan menempuh <strong>Simulasi Ujian N5</strong>.`;
+    }
+  } else if (plan.level === 'N4') {
+    if (nextChapter.id <= 25) {
+      return `Bentuk fondasi N5 yang kuat sebelum N4. Target hari ini: Selesaikan tata bahasa dasar <strong>Bab ${nextChapter.id}</strong>.`;
+    } else if (nextChapter.id <= 50) {
+      return `Target akselerasi N4 hari ini: Kuasai materi kalimat menengah <strong>Bab ${nextChapter.id}</strong>.`;
+    } else {
+      return `Hebat! Kurikulum selesai. Uji kemampuan Anda dengan menempuh <strong>Simulasi Ujian N4</strong>.`;
+    }
+  } else {
+    // N3 Target
+    if (nextChapter.id <= 25) {
+      return `Speedrun N3! Selesaikan fondasi dasar Anda hari ini: Kuasai tata bahasa dasar <strong>Bab ${nextChapter.id}</strong>.`;
+    } else if (nextChapter.id <= 50) {
+      return `Akselerasi N4 ke N3! Selesaikan tata bahasa menengah hari ini: Pelajari <strong>Bab ${nextChapter.id}</strong>.`;
+    } else {
+      return `Target N3 Tercapai! Mari ukur keberhasilan belajar Anda di <strong>Simulasi Ujian N3</strong>.`;
+    }
+  }
+}
+
+function getDailyMissionHash(plan, nextChapter) {
+  if (plan.level === 'N5') {
+    if (nextChapter.id <= 25) return `#/chapter/${nextChapter.id}`;
+    return `#/exam/N5`;
+  } else if (plan.level === 'N4') {
+    if (nextChapter.id <= 50) return `#/chapter/${nextChapter.id}`;
+    return `#/exam/N4`;
+  } else {
+    if (nextChapter.id <= 50) return `#/chapter/${nextChapter.id}`;
+    return `#/exam/N3`;
+  }
+}
+
 export function DashboardView(container) {
   renderTopbar('MinnaMaster Dashboard');
 
@@ -445,6 +495,31 @@ export function DashboardView(container) {
           </div>
         </div>
       </div>
+
+      <!-- Guided Study Plan Mission Banner (Only if active) -->
+      ${state.studyPlan?.active ? `
+      <div class="card" style="padding: 24px; border-color: var(--border-bright); background: radial-gradient(circle at 100% 100%, var(--bg-hover) 0%, var(--bg-card) 100%); display: flex; flex-direction: column; gap: 16px; position: relative;">
+        <!-- Title Badge Row -->
+        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; border-bottom: 1px solid var(--border); padding-bottom: 12px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="background: var(--text-main); color: var(--bg-main); font-size: 0.68rem; font-weight: 800; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em;">Mode Target</div>
+            <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-secondary);">${state.studyPlan.level} — Rencana ${state.studyPlan.duration} Bulan</span>
+          </div>
+          <span style="font-size: 0.72rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 4px;">
+            <i data-lucide="compass" style="width: 14px; height: 14px;"></i> Misi Hari Ini
+          </span>
+        </div>
+        
+        <!-- Mission Content Row -->
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 250px;">
+            <h3 style="font-size: 1.15rem; font-weight: 900; color: var(--text-main); margin-bottom: 4px; letter-spacing: -0.01em;">${getDailyMissionTitle(state.studyPlan)}</h3>
+            <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5;">${getDailyMissionDesc(state.studyPlan, nextChapter)}</p>
+          </div>
+          <button class="btn btn-primary" onclick="window.location.hash='${getDailyMissionHash(state.studyPlan, nextChapter)}'" style="padding: 12px 24px; font-size: 0.78rem; font-weight: 800; border-radius: var(--radius-md); text-transform: uppercase; letter-spacing: 0.05em;">Selesaikan Misi</button>
+        </div>
+      </div>
+      ` : ''}
 
       <!-- Quick Resume Box -->
       <a class="resume-card" href="#/chapter/${nextChapter.id}">
