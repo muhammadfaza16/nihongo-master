@@ -413,6 +413,37 @@ body {
 }
 .page-back-btn:hover { color: var(--text-main); }
 
+/* ── Premium Loader & Spinner ─────────────────────── */
+.premium-loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 16px;
+  gap: 16px;
+  min-height: 280px;
+  width: 100%;
+}
+.premium-spinner {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--border-bright);
+  border-top: 2px solid var(--text-main);
+  border-radius: 50%;
+  animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+.premium-loader-text {
+  font-size: var(--text-2xs);
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 .display-toggles {
   display: flex;
   background: var(--bg-elevated);

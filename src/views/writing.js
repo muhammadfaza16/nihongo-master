@@ -1507,6 +1507,7 @@ export function WritingView(container) {
       </div>
     `;
 
+    renderBackBtn(container, '#/', 'Dashboard');
     renderSelectionGrid();
     bindSelectionEvents();
   };

@@ -308,6 +308,20 @@ export function renderBackBtn(container, url, label) {
   if (window.lucide) lucide.createIcons({ root: bar });
 }
 
+/**
+ * Render a premium theme-matching loader inside a container.
+ * @param {HTMLElement} container - The container element to populate
+ * @param {string} text - Description text shown under the spinner
+ */
+export function renderLoader(container, text = 'Memuat Data') {
+  container.innerHTML = `
+    <div class="premium-loader-container fade-in">
+      <div class="premium-spinner"></div>
+      <div class="premium-loader-text">${text}</div>
+    </div>
+  `;
+}
+
 
 
 // ── Chapter keyboard navigation ──────────────────────

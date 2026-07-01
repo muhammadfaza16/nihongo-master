@@ -1,4 +1,4 @@
-import { renderTopbar, showToast } from '../components/layout.js';
+import { renderTopbar, showToast, renderLoader } from '../components/layout.js';
 import { loadChapter } from '../data/chapter_index.js';
 import { saveChapterExamResult } from '../store.js';
 
@@ -7,7 +7,7 @@ export function ExamView(container, params) {
 
   renderTopbar(`Mondaishuu — Bab ${chapterId}`, false, `#/chapter/${chapterId}`);
 
-  container.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:200px;color:var(--text-muted);"><span style="font-size:0.9rem;font-weight:600;">Memuat ujian bab ${chapterId}...</span></div>`;
+  renderLoader(container, `Memuat Ujian Bab ${chapterId}...`);
 
   loadChapter(chapterId).then(chapter => {
     if (!chapter) {

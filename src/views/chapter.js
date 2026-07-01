@@ -1,4 +1,4 @@
-import { renderTopbar, getDisplayMode, navigateChapter, showToast, renderBackBtn } from '../components/layout.js';
+import { renderTopbar, getDisplayMode, navigateChapter, showToast, renderBackBtn, renderLoader } from '../components/layout.js';
 import { loadChapter, MNN_INDEX } from '../data/chapter_index.js';
 import { addSRSItem, removeSRSItem, getSRSItemStatus } from '../srs.js';
 import { speakJP } from '../audio.js';
@@ -38,10 +38,7 @@ export function ChapterView(container, params) {
   renderTopbar(`Bab ${chapterId} — Minna no Nihongo`, true);
 
   // Show loading skeleton while chapter data loads
-  container.innerHTML = `
-    <div style="display:flex;align-items:center;justify-content:center;height:200px;color:var(--text-muted);">
-      <span style="font-size:0.9rem;font-weight:600;">Memuat bab ${chapterId}...</span>
-    </div>`;
+  renderLoader(container, `Memuat Bab ${chapterId}...`);
 
   loadChapter(chapterId).then(chapterData => {
     if (!chapterData) {

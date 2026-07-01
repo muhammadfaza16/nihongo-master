@@ -1,11 +1,11 @@
-import { renderTopbar, renderBackBtn } from '../components/layout.js';
+import { renderTopbar, renderBackBtn, renderLoader } from '../components/layout.js';
 import { getDueItems, gradeReview } from '../srs.js';
 import { addXP } from '../store.js';
 // registry.js is dynamically imported only when this view mounts (lazy)
 
 export async function ReviewView(container) {
   renderTopbar('SRS Review', false, '#/');
-  renderBackBtn(container, '#/', 'Dashboard');
+  renderLoader(container, 'Memuat Sesi Review...');
 
   // Lazy-load registry only when user visits Review view
   const { findItemById } = await import('../data/registry.js');
@@ -31,6 +31,7 @@ export async function ReviewView(container) {
         </button>
       </div>
     `;
+    renderBackBtn(container, '#/', 'Dashboard');
     if (window.lucide) lucide.createIcons({ root: container });
     return;
   }
@@ -92,6 +93,7 @@ export async function ReviewView(container) {
           </button>
         </div>
       `;
+      renderBackBtn(container, '#/', 'Dashboard');
       if (window.lucide) lucide.createIcons({ root: container });
       return;
     }
@@ -160,6 +162,7 @@ export async function ReviewView(container) {
       </div>
     `;
 
+    renderBackBtn(container, '#/', 'Dashboard');
     if (window.lucide) lucide.createIcons({ root: container });
 
     const cardEl = document.getElementById('srs-card');

@@ -1,4 +1,4 @@
-import { renderTopbar, showToast } from '../components/layout.js';
+import { renderTopbar, showToast, renderBackBtn, renderLoader } from '../components/layout.js';
 import { loadChapter } from '../data/chapter_index.js';
 import { addXP } from '../store.js';
 
@@ -7,7 +7,7 @@ export function WorkbookView(container, params) {
 
   renderTopbar(`Kaite Oboeru — Bab ${chapterId}`, false, `#/chapter/${chapterId}`);
 
-  container.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:200px;color:var(--text-muted);"><span style="font-size:0.9rem;font-weight:600;">Memuat workbook bab ${chapterId}...</span></div>`;
+  renderLoader(container, `Memuat Workbook Bab ${chapterId}...`);
 
   loadChapter(chapterId).then(chapter => {
     if (!chapter) {
