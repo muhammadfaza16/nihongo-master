@@ -1,63 +1,6 @@
-import { renderTopbar } from '../components/layout.js';
+import { renderTopbar, renderBackBtn } from '../components/layout.js';
+import { KANA_MAP, KANA_DOUBLE_MAP } from '../data/kana.js';
 
-// ── KANA TO ROMAJI CONVERTER FOR BEGINNERS ────────────────────────────────────
-const KANA_MAP = {
-  'あ': 'a', 'い': 'i', 'う': 'u', 'え': 'e', 'お': 'o',
-  'か': 'ka', 'き': 'ki', 'く': 'ku', 'け': 'ke', 'こ': 'ko',
-  'さ': 'sa', 'し': 'shi', 'す': 'su', 'せ': 'se', 'そ': 'so',
-  'た': 'ta', 'ち': 'chi', 'つ': 'tsu', 'て': 'te', 'と': 'to',
-  'な': 'na', 'に': 'ni', 'ぬ': 'nu', 'ね': 'ne', 'の': 'no',
-  'は': 'ha', 'ひ': 'hi', 'ふ': 'fu', 'へ': 'he', 'ほ': 'ho',
-  'ま': 'ma', 'み': 'mi', 'む': 'mu', 'め': 'me', 'も': 'mo',
-  'や': 'ya', 'ゆ': 'yu', 'よ': 'yo',
-  'ら': 'ra', 'り': 'ri', 'る': 'ru', 'れ': 're', 'ろ': 'ro',
-  'わ': 'wa', 'を': 'wo', 'ん': 'n',
-  'が': 'ga', 'ぎ': 'gi', 'ぐ': 'gu', 'げ': 'ge', 'ご': 'go',
-  'ざ': 'za', 'じ': 'ji', 'ず': 'zu', 'ぜ': 'ze', 'ぞ': 'zo',
-  'だ': 'da', 'ぢ': 'ji', 'づ': 'zu', 'で': 'de', 'ど': 'do',
-  'ば': 'ba', 'び': 'bi', 'ぶ': 'bu', 'べ': 'be', 'ぼ': 'bo',
-  'ぱ': 'pa', 'ぴ': 'pi', 'ぷ': 'pu', 'ぺ': 'pe', 'ぽ': 'po',
-  'ア': 'a', 'イ': 'i', 'ウ': 'u', 'エ': 'e', 'オ': 'o',
-  'カ': 'ka', 'キ': 'ki', 'ク': 'ku', 'ケ': 'ke', 'コ': 'ko',
-  'サ': 'sa', 'シ': 'shi', 'ス': 'su', 'セ': 'se', 'ソ': 'so',
-  'タ': 'ta', 'チ': 'chi', 'ツ': 'tsu', 'テ': 'te', 'ト': 'to',
-  'ナ': 'na', 'ニ': 'ni', 'ヌ': 'nu', 'ネ': 'ne', 'ノ': 'no',
-  'ハ': 'ha', 'ヒ': 'hi', 'フ': 'fu', 'ヘ': 'he', 'ホ': 'ho',
-  'マ': 'ma', 'ミ': 'mi', 'ム': 'mu', 'メ': 'me', 'モ': 'mo',
-  'ヤ': 'ya', 'ユ': 'yu', 'ヨ': 'yo',
-  'ラ': 'ra', 'リ': 'ri', 'ル': 'ru', 'レ': 're', 'ロ': 'ro',
-  'ワ': 'wa', 'ヲ': 'wo', 'ン': 'n',
-  'ガ': 'ga', 'ギ': 'gi', 'グ': 'gu', 'ゲ': 'ge', 'ゴ': 'go',
-  'ザ': 'za', 'ジ': 'ji', 'ズ': 'zu', 'ゼ': 'ze', 'ゾ': 'zo',
-  'ダ': 'da', 'ヂ': 'ji', 'ヅ': 'zu', 'デ': 'de', 'ド': 'do',
-  'バ': 'ba', 'ビ': 'bi', 'ブ': 'bu', 'ベ': 'be', 'ボ': 'bo',
-  'パ': 'pa', 'ピ': 'pi', 'プ': 'pu', 'ペ': 'pe', 'ポ': 'po',
-};
-
-const KANA_DOUBLE_MAP = {
-  'きゃ': 'kya', 'きゅ': 'kyu', 'きょ': 'kyo',
-  'しゃ': 'sha', 'しゅ': 'shu', 'しょ': 'sho',
-  'ちゃ': 'cha', 'ちゅ': 'chu', 'ちょ': 'cho',
-  'にゃ': 'nya', 'にゅ': 'nyu', 'にょ': 'nyo',
-  'ひゃ': 'hya', 'ひゅ': 'hyu', 'ひょ': 'hyo',
-  'みゃ': 'mya', 'みゅ': 'myu', 'みょ': 'myo',
-  'りゃ': 'rya', 'りゅ': 'ryu', 'りょ': 'ryo',
-  'ぎゃ': 'gya', 'ぎゅ': 'gyu', 'ぎょ': 'gyo',
-  'じゃ': 'ja', 'じゅ': 'ju', 'じょ': 'jo',
-  'びゃ': 'bya', 'びゅ': 'byu', 'びょ': 'byo',
-  'ぴゃ': 'pya', 'ぴゅ': 'pyu', 'ぴょ': 'pyo',
-  'キャ': 'kya', 'キュ': 'kyu', 'キョ': 'kyo',
-  'シャ': 'sha', 'シュ': 'shu', 'ショ': 'sho',
-  'チャ': 'cha', 'チュ': 'chu', 'チョ': 'cho',
-  'ニャ': 'nya', 'ニュ': 'nyu', 'ニョ': 'nyo',
-  'ヒャ': 'hya', 'ヒュ': 'hyu', 'ヒょ': 'hyo',
-  'ミャ': 'mya', 'ミュ': 'myu', 'ミョ': 'myo',
-  'リャ': 'rya', 'リュ': 'ryu', 'リョ': 'ryo',
-  'ギャ': 'gya', 'ギュ': 'gyu', 'ギョ': 'gyo',
-  'ジャ': 'ja', 'ジュ': 'ju', 'ジョ': 'jo',
-  'ビャ': 'bya', 'ビュ': 'byu', 'ビョ': 'byo',
-  'ピャ': 'pya', 'ピュ': 'pyu', 'ピョ': 'pyo',
-};
 
 function toRomaji(str) {
   if (!str || str === '—') return '—';
@@ -1839,7 +1782,8 @@ const KANJI_N3_LIBRARY = {
 
 // ── COMPONENT VIEW ──────────────────────────────────────────────────────────
 export function KanjiView(container) {
-  renderTopbar('🏮 Kanji Hub');
+  renderTopbar('Kanji Hub', false, '#/');
+  renderBackBtn(container, '#/', 'Dashboard');
 
   let activeSubTab = 'theory'; // 'theory' | 'kamus'
   let activeLevel = 'N5'; // 'N5' | 'N4' | 'N3'
@@ -1899,7 +1843,7 @@ export function KanjiView(container) {
                   Cara baca adaptasi Tiongkok kuno. Biasanya ditulis dalam kamus menggunakan huruf **Katakana**.
                 </p>
                 <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600;">
-                  💡 <strong>Kapan dipakai?</strong> Ketika Kanji bergabung dengan Kanji lain membentuk kata majemuk (*Jukugo*).<br>
+                  <strong>Kapan dipakai?</strong> Ketika Kanji bergabung dengan Kanji lain membentuk kata majemuk (*Jukugo*).<br>
                   <em>Contoh: 水曜日 (sui-yōbi - Rabu)</em>
                 </div>
               </div>
@@ -1910,14 +1854,14 @@ export function KanjiView(container) {
                   Cara baca asli bahasa Jepang. Biasanya ditulis dalam kamus menggunakan huruf **Hiragana**.
                 </p>
                 <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600;">
-                  💡 <strong>Kapan dipakai?</strong> Ketika Kanji berdiri sendiri sebagai kata tunggal, atau berakhiran huruf Hiragana (*Okurigana*).<br>
+                  <strong>Kapan dipakai?</strong> Ketika Kanji berdiri sendiri sebagai kata tunggal, atau berakhiran huruf Hiragana (*Okurigana*).<br>
                   <em>Contoh: 水 (mizu - air)</em>
                 </div>
               </div>
             </div>
 
             <div style="font-size: 0.8rem; color: var(--text-secondary); background: var(--bg-hover); padding: 12px 16px; border-radius: var(--radius-sm); border: 1px solid var(--border); line-height: 1.5;">
-              📌 <strong>Aturan Emas:</strong> Jika Anda melihat gabungan Kanji seperti <strong>火山</strong>, bacalah menggunakan Onyomi: <em>kazan</em> (gunung berapi). Namun jika Kanji berdiri sendiri seperti <strong>山</strong>, bacalah menggunakan Kunyomi: <em>yama</em> (gunung).
+              <strong>Aturan Emas:</strong> Jika Anda melihat gabungan Kanji seperti <strong>火山</strong>, bacalah menggunakan Onyomi: <em>kazan</em> (gunung berapi). Namun jika Kanji berdiri sendiri seperti <strong>山</strong>, bacalah menggunakan Kunyomi: <em>yama</em> (gunung).
             </div>
           </div>
 
@@ -2088,12 +2032,12 @@ export function KanjiView(container) {
             </span>
           </div>
           <div style="margin-top: 8px; font-size: 0.68rem; color: var(--text-secondary); border-top: 1px dotted var(--border); padding-top: 6px; line-height: 1.35;">
-            💬 ${item.example}
+            <span style="color: var(--text-muted); font-weight: 700;">Contoh:</span> ${item.example}
           </div>
         </div>
 
-        <button class="kanji-catalog-btn" onclick="window.location.hash='#/writing?char=${encodeURIComponent(item.jp)}'" aria-label="Latih nulis kanji ${item.jp}">
-          <i data-lucide="edit-3" style="width: 13px; height: 13px;"></i> Latih Nulis
+        <button class="kanji-catalog-btn" onclick="window.location.hash='#/writing?char=${encodeURIComponent(item.jp)}'" aria-label="Latih menulis kanji ${item.jp}">
+          <i data-lucide="edit-3" style="width: 13px; height: 13px;"></i> Latih Menulis
         </button>
       </div>
       `;

@@ -18,8 +18,10 @@ export function addSRSItem(id, type) {
     easeFactor: 2.5,
     repetitions: 0,
   };
+  _invalidateDueCache();
   setState({ srsItems: [...s.srsItems, item] });
 }
+
 
 /**
  * Grade a review (SM-2 algorithm)
@@ -61,20 +63,34 @@ export function gradeReview(id, quality) {
   item.nextReview = next.toISOString();
 
   items[idx] = item;
+  _invalidateDueCache();
   setState({ srsItems: items });
+}
+
+
+// ── Due-items cache (60s TTL) ─────────────────────────────────────────────
+let _dueCache = null;
+let _dueCacheTime = 0;
+const DUE_CACHE_TTL = 60_000;
+
+function _invalidateDueCache() {
+  _dueCache = null;
+  _dueCacheTime = 0;
 }
 
 /**
  * Get items due for review today
  */
 export function getDueItems(type = null) {
-  const s = getState();
-  const now = new Date();
-  return s.srsItems.filter(item => {
-    if (type && item.type !== type) return false;
-    return new Date(item.nextReview) <= now;
-  });
+  const now = Date.now();
+  if (!_dueCache || now - _dueCacheTime > DUE_CACHE_TTL) {
+    const s = getState();
+    _dueCache = s.srsItems.filter(item => new Date(item.nextReview).getTime() <= now);
+    _dueCacheTime = now;
+  }
+  return type ? _dueCache.filter(item => item.type === type) : _dueCache;
 }
+
 
 /**
  * Get count of items due today
@@ -102,3 +118,29 @@ export function getSRSStats() {
     }
   };
 }
+
+/**
+ * Get the SRS status of an item
+ * @param {string} id - item ID
+ * @returns {'new' | 'learning' | 'mastered' | null}
+ */
+export function getSRSItemStatus(id) {
+  const s = getState();
+  const item = s.srsItems.find(i => i.id === id);
+  if (!item) return null;
+  if (item.repetitions >= 5) return 'mastered';
+  if (item.repetitions === 0) return 'new';
+  return 'learning';
+}
+
+/**
+ * Remove an item from the SRS queue
+ * @param {string} id - item ID
+ */
+export function removeSRSItem(id) {
+  const s = getState();
+  const filtered = s.srsItems.filter(item => item.id !== id);
+  _invalidateDueCache();
+  setState({ srsItems: filtered });
+}
+

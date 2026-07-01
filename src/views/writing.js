@@ -1,16 +1,11 @@
-import { renderTopbar, showToast } from '../components/layout.js';
+import { renderTopbar, showToast, renderBackBtn } from '../components/layout.js';
+import { speakJP } from '../audio.js';
 
 // Setup window.playAudio for standalone loading fallback
 if (!window.playAudio) {
-  window.playAudio = (text) => {
-    if (!('speechSynthesis' in window)) return;
-    window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'ja-JP';
-    utterance.rate = 0.8;
-    window.speechSynthesis.speak(utterance);
-  };
+  window.playAudio = (text) => speakJP(text, 0.8);
 }
+
 
 // ── CHARACTER DATABASES ──────────────────────────────────────────────────────
 const HIRAGANA_DATABASE = {
@@ -1386,7 +1381,8 @@ const KANJI_N3_DATABASE = {
 
 // ── COMPONENT VIEW ──────────────────────────────────────────────────────────
 export function WritingView(container) {
-  renderTopbar('❖ Latihan Menulis');
+  renderTopbar('❖ Latihan Menulis', false, '#/');
+  renderBackBtn(container, '#/', 'Dashboard');
 
   // Application session states
   let activeTab = 'hiragana'; // 'hiragana' | 'katakana' | 'kanji' | 'kanji-n4' | 'kanji-n3'
@@ -1822,15 +1818,15 @@ export function WritingView(container) {
               </button>
               <!-- Vermilion Red -->
               <button id="btn-color-vermilion" class="brush-color-btn" title="Shu (Merah)" style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid ${brushColorPreset === 'vermilion' ? 'var(--accent)' : 'var(--border)'}; background: ${brushColorPreset === 'vermilion' ? 'var(--accent-dim)' : 'transparent'}; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s;">
-                <div style="width: 12px; height: 12px; border-radius: 50%; background: #d84315;"></div>
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--red);"></div>
               </button>
               <!-- Indigo Blue -->
               <button id="btn-color-indigo" class="brush-color-btn" title="Ai (Biru)" style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid ${brushColorPreset === 'indigo' ? 'var(--accent)' : 'var(--border)'}; background: ${brushColorPreset === 'indigo' ? 'var(--accent-dim)' : 'transparent'}; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s;">
-                <div style="width: 12px; height: 12px; border-radius: 50%; background: #1565c0;"></div>
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--blue);"></div>
               </button>
               <!-- Bamboo Green -->
               <button id="btn-color-bamboo" class="brush-color-btn" title="Take (Hijau)" style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid ${brushColorPreset === 'bamboo' ? 'var(--accent)' : 'var(--border)'}; background: ${brushColorPreset === 'bamboo' ? 'var(--accent-dim)' : 'transparent'}; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s;">
-                <div style="width: 12px; height: 12px; border-radius: 50%; background: #2e7d32;"></div>
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--green);"></div>
               </button>
             </div>
           </div>
@@ -2052,7 +2048,7 @@ export function WritingView(container) {
           <i data-lucide="award" style="width:48px;height:48px;"></i>
         </div>
         
-        <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 8px;">Latihan Selesai! 🎉</h2>
+        <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 8px;">Latihan Selesai!</h2>
         <p style="color: var(--text-secondary); font-size: var(--text-md); margin-bottom: 28px; line-height: 1.5; max-width: 360px; margin-left: auto; margin-right: auto;">
           Hebat! Anda telah menyelesaikan latihan menulis deliberate untuk kategori karakter ini secara sukses. Ingatan kinestetik Anda semakin kuat!
         </p>

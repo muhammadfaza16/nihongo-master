@@ -1,8 +1,9 @@
-import { renderTopbar, showToast } from '../components/layout.js';
+import { renderTopbar, showToast, renderBackBtn } from '../components/layout.js';
 import { getState, updateSettings, updateStudyPlan } from '../store.js';
 
 export function SettingsView(container) {
-  renderTopbar('Pengaturan');
+  renderTopbar('Pengaturan', false, '#/');
+  renderBackBtn(container, '#/', 'Dashboard');
   const s = getState();
   const st = s.settings;
 

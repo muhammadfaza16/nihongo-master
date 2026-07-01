@@ -1,16 +1,17 @@
-import { renderTopbar } from '../components/layout.js';
+import { renderTopbar, renderBackBtn } from '../components/layout.js';
 import { CURRICULUM } from '../data/curriculum.js';
 import { DATA_REGISTRY } from '../data/registry.js';
 
 export function HandbookView(container) {
-  renderTopbar('Buku Panduan JLPT N5-N3');
+  renderTopbar('Buku Panduan JLPT', false, '#/');
+  renderBackBtn(container, '#/', 'Dashboard');
   
   let html = `
     <div class="handbook-container" style="max-width: 900px; margin: 0 auto; background: var(--bg-card); padding: 40px; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;">
         <div>
           <h1 style="font-size: 2.5rem; color: var(--primary); margin-bottom: 8px;">日本語 Handbook</h1>
-          <p style="color: var(--text-secondary); font-size: 1.1rem;">Panduan Lengkap JLPT N5, N4, dan N3</p>
+          <p style="color: var(--text-secondary); font-size: 1.1rem;">Panduan Lengkap JLPT</p>
         </div>
         <button class="btn btn-primary" onclick="window.print()">
           <i data-lucide="printer" style="width:18px;height:18px;"></i> Cetak PDF
@@ -79,52 +80,6 @@ export function HandbookView(container) {
     });
     html += `</div>`;
   });
-
-  html += `
-      </div>
-    </div>
-    
-    <style>
-      @media print {
-        * {
-          animation: none !important;
-          transition: none !important;
-          transform: none !important;
-        }
-        html, body, #app, .main-content, .page-content {
-          overflow: visible !important;
-          height: auto !important;
-          min-height: auto !important;
-          display: block !important;
-          position: static !important;
-          margin: 0 !important;
-          padding: 0 !important;
-        }
-        body { background: white !important; color: black !important; }
-        .sidebar, .topbar { display: none !important; }
-        .handbook-container { 
-          border: none !important; 
-          background: white !important;
-          padding: 0 !important;
-          max-width: 100% !important;
-          margin: 0 !important;
-          box-shadow: none !important;
-        }
-        h1, h2, h3, h4, td, th, p { color: black !important; margin-top: 0 !important; }
-        .hb-level { margin-top: 0 !important; padding-top: 0 !important; }
-        .hb-phase { border-left-color: #333 !important; }
-        .hb-unit { margin-bottom: 24px !important; }
-        table { page-break-inside: auto !important; }
-        table th, table td, table tr { border-color: #ccc !important; }
-        tr { background: white !important; page-break-inside: avoid; page-break-after: auto; }
-        button { display: none !important; }
-        
-        /* Ensure pages don't get cut arbitrarily */
-        h2, h3, h4 { page-break-after: avoid !important; }
-        thead { display: table-header-group !important; }
-      }
-    </style>
-  `;
 
   container.innerHTML = html;
   

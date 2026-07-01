@@ -2,34 +2,24 @@ import { renderSidebar, initTheme, initGlobalTooltips } from './components/layou
 import { initRouter, registerRoute } from './router.js';
 
 import { DashboardView }  from './views/dashboard.js';
-import { ChapterView }    from './views/chapter.js';
-import { MinnaView }      from './views/minna.js';
-import { ReviewView }     from './views/review.js';
-import { CurriculumView } from './views/curriculum.js';
-import { GlossaryView }   from './views/glossary.js';
-import { WorkbookView }   from './views/workbook.js';
-import { ExamView }       from './views/exam.js';
-import { WritingView }    from './views/writing.js';
-import { KanjiView }      from './views/kanji.js';
 
 // Apply theme immediately (before DOM ready) to avoid flash
 initTheme();
 
 function initApp() {
-  if (typeof lucide === 'undefined') { setTimeout(initApp, 80); return; }
-
   // Register routes
   registerRoute('/dashboard',   DashboardView);
   registerRoute('/',            DashboardView); // alias for bottom nav #/
-  registerRoute('/chapter/:id', ChapterView);
-  registerRoute('/minna',       MinnaView);
-  registerRoute('/review',      ReviewView);
-  registerRoute('/writing',     WritingView);
-  registerRoute('/kanji',       KanjiView);
-  registerRoute('/curriculum',  CurriculumView);
-  registerRoute('/glossary',    GlossaryView);
-  registerRoute('/workbook/:id',WorkbookView);
-  registerRoute('/exam/:id',    ExamView);
+  registerRoute('/chapter/:id', (container, params) => import('./views/chapter.js').then(m => m.ChapterView(container, params)));
+  registerRoute('/guide',       (container, params) => import('./views/preface.js').then(m => m.PrefaceView(container, params)));
+  registerRoute('/minna',       (container, params) => import('./views/minna.js').then(m => m.MinnaView(container, params)));
+  registerRoute('/review',      (container, params) => import('./views/review.js').then(m => m.ReviewView(container, params)));
+  registerRoute('/writing',     (container, params) => import('./views/writing.js').then(m => m.WritingView(container, params)));
+  registerRoute('/kanji',       (container, params) => import('./views/kanji.js').then(m => m.KanjiView(container, params)));
+  registerRoute('/curriculum',  (container, params) => import('./views/curriculum.js').then(m => m.CurriculumView(container, params)));
+  registerRoute('/glossary',    (container, params) => import('./views/glossary.js').then(m => m.GlossaryView(container, params)));
+  registerRoute('/workbook/:id',(container, params) => import('./views/workbook.js').then(m => m.WorkbookView(container, params)));
+  registerRoute('/exam/:id',    (container, params) => import('./views/exam.js').then(m => m.ExamView(container, params)));
 
   // Render static layout
   renderSidebar();
@@ -37,16 +27,8 @@ function initApp() {
 
   // Start router (default to dashboard)
   initRouter('/dashboard');
-
-  // Initial rendering of static icons (e.g. bottom-nav icons)
-  if (window.lucide) {
-    lucide.createIcons();
-  }
-
-  // Refresh Lucide icons on every route change
-  window.addEventListener('hashchange', () => {
-    setTimeout(() => { if (window.lucide) lucide.createIcons(); }, 60);
-  });
 }
 
+// Lucide is deferred — DOMContentLoaded fires after defer scripts are executed
 document.addEventListener('DOMContentLoaded', initApp);
+

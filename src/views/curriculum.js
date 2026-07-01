@@ -1,6 +1,8 @@
-import { renderTopbar, showToast } from '../components/layout.js';
+import { renderTopbar, showToast, renderBackBtn } from '../components/layout.js';
 import { CURRICULUM } from '../data/curriculum.js';
-import { isUnitCompleted } from '../store.js';
+import { isUnitCompleted, isChapterQuizPassed, isChapterExamPassed, getState } from '../store.js';
+import { addSRSItem } from '../srs.js';
+import { MNN_DATA } from '../data/chapter_data.js';
 
 const phaseEmojis = {
   'fase-aksara': '✦',
@@ -15,17 +17,18 @@ const phaseEmojis = {
 };
 
 export function CurriculumView(container) {
-  renderTopbar('Peta Kurikulum');
+  renderTopbar('Peta Kurikulum', false, '#/');
+  renderBackBtn(container, '#/', 'Dashboard');
 
   // Read initial track filter from URL parameter
-  let initialTrack = 'all';
+  let activeTrack = 'all';
   const hash = window.location.hash;
   if (hash.includes('?')) {
     const query = hash.split('?')[1];
     const urlParams = new URLSearchParams(query);
     const track = urlParams.get('track');
     if (['minna1', 'minna2', 'pra-mnn'].includes(track)) {
-      initialTrack = track;
+      activeTrack = track;
     }
   }
 
@@ -33,9 +36,8 @@ export function CurriculumView(container) {
     <div class="fade-in" style="max-width: 900px; margin: 0 auto; padding-bottom: 60px;">
       
       <!-- Hero Header -->
-      <div style="background: linear-gradient(135deg, var(--accent-dim), transparent); border: 1px solid var(--border-accent); border-radius: var(--radius-xl); padding: 36px 24px; margin-bottom: 32px; text-align: center; position: relative; overflow: hidden;">
-        <div style="position: absolute; top: -50px; left: 50%; transform: translateX(-50%); width: 250px; height: 250px; background: radial-gradient(circle, var(--accent-glow), transparent 70%); pointer-events: none;"></div>
-        <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--text-main); margin-bottom: 12px; letter-spacing: var(--tracking-tight); text-transform: uppercase;">Peta Kurikulum <span style="border-bottom: 3px solid var(--text-main); padding-bottom: 2px;">JLPT</span> 🇯🇵</h2>
+      <div style="background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 36px 24px; margin-bottom: 32px; text-align: center; position: relative; overflow: hidden;">
+        <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--text-main); margin-bottom: 12px; letter-spacing: var(--tracking-tight); text-transform: uppercase;">Peta Kurikulum <span style="border-bottom: 3px solid var(--text-main); padding-bottom: 2px;">JLPT</span></h2>
         <p style="color: var(--text-secondary); max-width: 520px; margin: 0 auto; font-size: 0.95rem; line-height: 1.6; font-weight: 500;">
           Jalur belajar bahasa Jepang terstruktur. Pilih tab di bawah untuk memfilter fase belajar atau lihat seluruh kurikulum sekaligus.
         </p>
@@ -43,75 +45,15 @@ export function CurriculumView(container) {
 
       <!-- Track Filters -->
       <div style="display: flex; justify-content: center; gap: 8px; margin-bottom: 36px; flex-wrap: wrap;" class="no-print">
-        <button class="filter-tab-btn ${initialTrack === 'all' ? 'active' : ''}" data-track="all" style="height: 38px;">Semua</button>
-        <button class="filter-tab-btn ${initialTrack === 'pra-mnn' ? 'active' : ''}" data-track="pra-mnn" style="height: 38px;">Pra-Minna</button>
-        <button class="filter-tab-btn ${initialTrack === 'minna1' ? 'active' : ''}" data-track="minna1" style="height: 38px;">Minna I (N5)</button>
-        <button class="filter-tab-btn ${initialTrack === 'minna2' ? 'active' : ''}" data-track="minna2" style="height: 38px;">Minna II (N4)</button>
+        <button class="filter-tab-btn ${activeTrack === 'all' ? 'active' : ''}" data-track="all" style="height: 38px;">Semua</button>
+        <button class="filter-tab-btn ${activeTrack === 'pra-mnn' ? 'active' : ''}" data-track="pra-mnn" style="height: 38px;">Pra-Minna</button>
+        <button class="filter-tab-btn ${activeTrack === 'minna1' ? 'active' : ''}" data-track="minna1" style="height: 38px;">Minna I (N5)</button>
+        <button class="filter-tab-btn ${activeTrack === 'minna2' ? 'active' : ''}" data-track="minna2" style="height: 38px;">Minna II (N4)</button>
       </div>
 
       <!-- Timeline Container -->
       <div id="curriculum-timeline"></div>
     </div>
-    
-    <style>
-      .mission-btn {
-        padding: 10px 8px; 
-        font-size: 0.75rem; 
-        font-weight: 700; 
-        background: var(--bg-elevated); 
-        border: 1px solid var(--border); 
-        color: var(--text-main); 
-        border-radius: var(--radius-sm); 
-        cursor: pointer; 
-        display: flex; 
-        align-items: center; 
-        justify-content: center;
-        gap: 6px; 
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        text-transform: uppercase;
-        letter-spacing: 0.02em;
-      }
-      .mission-btn:hover {
-        background: var(--bg-hover) !important;
-        border-color: var(--border-bright) !important;
-        transform: translateY(-1px);
-      }
-      .mission-btn:active {
-        transform: translateY(1px);
-      }
-      .bento-card {
-        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      .bento-card:hover {
-        border-color: var(--border-bright) !important;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2) !important;
-      }
-      
-      /* Filter button active styles matching design system */
-      .filter-tab-btn {
-        background: transparent;
-        border: 1px solid var(--border);
-        color: var(--text-muted);
-        padding: 8px 16px;
-        font-size: 0.8rem;
-        font-weight: 700;
-        border-radius: 99px;
-        cursor: pointer;
-        transition: all 0.2s;
-        text-transform: uppercase;
-        letter-spacing: 0.02em;
-      }
-      .filter-tab-btn:hover {
-        border-color: var(--border-bright);
-        color: var(--text-main);
-      }
-      .filter-tab-btn.active {
-        background: var(--text-main);
-        border-color: var(--text-main);
-        color: var(--bg-main);
-      }
-    </style>
   `;
 
   const timelineContainer = document.getElementById('curriculum-timeline');
@@ -134,7 +76,7 @@ export function CurriculumView(container) {
         html += `
           <!-- Minna no Nihongo II Premium Divider -->
           <div style="margin-top: 56px; margin-bottom: 48px; border-top: 1px solid var(--border-bright); padding-top: 40px; text-align: center; position: relative;">
-            <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--bg-main); padding: 4px 24px; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: var(--tracking-widest); border: 1px solid var(--border-bright); border-radius: 99px; color: var(--text-main);">
+            <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--bg-main); padding: 4px 24px; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: var(--tracking-widest); border: 1px solid var(--border-bright); border-radius: var(--radius-sm); color: var(--text-main);">
               Minna no Nihongo II
             </div>
             <h2 style="font-size: 2rem; font-weight: 900; letter-spacing: var(--tracking-tight); margin-bottom: 12px; color: var(--text-main);">
@@ -151,7 +93,7 @@ export function CurriculumView(container) {
       html += `
         <div style="margin-bottom: 48px;" class="fade-in">
           <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
-            <div style="width: 50px; height: 50px; border-radius: 12px; background: var(--text-main); color: var(--bg-main); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 800; box-shadow: var(--shadow-md); flex-shrink: 0;">
+            <div style="width: 50px; height: 50px; border-radius: var(--radius-sm); background: var(--text-main); color: var(--bg-main); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 800; border: 1px solid var(--border-accent); flex-shrink: 0;">
               ${level.levelId === 'pra-mnn' ? 'L1' : level.levelId === 'shokyu-1' ? 'L2' : 'L3'}
             </div>
             <div>
@@ -166,14 +108,12 @@ export function CurriculumView(container) {
       `;
 
       level.phases.forEach(phase => {
-        const emoji = phaseEmojis[phase.phaseId] || '📚';
         html += `
             <div style="position: relative;">
               <!-- Timeline Dot -->
               <div style="position: absolute; left: -41px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg-main); border: 3px solid var(--text-main);"></div>
               
               <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--text-main); margin-bottom: 6px; letter-spacing: -0.01em; text-transform: uppercase; display: flex; align-items: center; gap: 8px;">
-                <span>${emoji}</span>
                 <span>${phase.title}</span>
               </h3>
               ${phase.desc ? `<p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 16px; font-weight: 500;">${phase.desc}</p>` : ''}
@@ -189,6 +129,42 @@ export function CurriculumView(container) {
           if (unit.type === 'kana') { icon = 'type'; }
           if (unit.type === 'grammar') { icon = 'puzzle'; }
           const isChap = !isNaN(unit.id);
+
+          // Detailed modality completion status
+          const isTheoryDone = localStorage.getItem(`nihongo_master_theory_ch${unit.id}`) === 'true';
+          const isQuizDone = isChapterQuizPassed(unit.id);
+          const isWorkbookDone = (() => {
+            try {
+              const saved = localStorage.getItem(`nihongo_master_workbook_ch${unit.id}`);
+              if (saved) {
+                const parsed = JSON.parse(saved);
+                return !!parsed.xpAwarded;
+              }
+            } catch {}
+            return false;
+          })();
+          const isExamDone = isChapterExamPassed(unit.id);
+
+          // Get SRS active vocab progress
+          let srsHtml = '';
+          if (isChap) {
+            const chId = parseInt(unit.id);
+            const chapterData = MNN_DATA.find(c => c.id === chId);
+            const chapterVocab = chapterData ? (chapterData.vocab || []) : [];
+            const srsItems = getState().srsItems || [];
+            const activeSrsCount = chapterVocab.filter(v => srsItems.some(item => item.id === `vocab-${v.kana || v.kanji || v.rom}`)).length;
+            
+            srsHtml = `
+              <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700; margin-top: 4px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                <span>SRS: <strong style="color: var(--text-main); font-variant-numeric: tabular-nums;">${activeSrsCount}/${chapterVocab.length}</strong></span>
+                ${chapterVocab.length > 0 && activeSrsCount < chapterVocab.length ? `
+                  <button class="curriculum-sync-srs-btn no-print" data-chapter-id="${unit.id}" style="background: transparent; border: none; padding: 0; color: var(--text-main); font-weight: 800; cursor: pointer; text-decoration: underline; font-size: 0.72rem;">
+                    [+ Antrekan Semua]
+                  </button>
+                ` : ''}
+              </div>
+            `;
+          }
           
           html += `
                 <div class="bento-card ${completed ? 'completed' : ''}" style="padding: 20px; display: flex; flex-direction: column; gap: 12px; border: 1px solid ${completed ? 'var(--border-accent)' : 'var(--border)'}; background: ${completed ? 'var(--accent-dim)' : 'var(--bg-card)'};">
@@ -202,21 +178,22 @@ export function CurriculumView(container) {
                   <div>
                     <div style="font-weight: 800; color: var(--text-main); font-size: 1.05rem; line-height: 1.35; margin-bottom: 6px;">${unit.title}</div>
                     ${unit.desc ? `<div style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; font-weight: 500;">${unit.desc}</div>` : ''}
+                    ${srsHtml}
                   </div>
                   
                   ${isChap ? `
                   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px;">
-                    <button class="mission-btn" data-route="#/chapter/${unit.id}">
-                      <i data-lucide="book-open" style="width:13px;height:13px;color:var(--text-main);"></i> Teori
+                    <button class="mission-btn ${isTheoryDone ? 'completed' : ''}" data-route="#/chapter/${unit.id}" style="${isTheoryDone ? 'opacity: 0.8; border-color: var(--border-accent);' : ''}">
+                      <i data-lucide="${isTheoryDone ? 'check-circle' : 'book-open'}" style="width:13px;height:13px;color:var(--text-main);"></i> Teori
                     </button>
-                    <button class="mission-btn" data-route="#/chapter/${unit.id}?tab=practice">
-                      <i data-lucide="dumbbell" style="width:13px;height:13px;color:var(--text-main);"></i> Latihan
+                    <button class="mission-btn ${isQuizDone ? 'completed' : ''}" data-route="#/chapter/${unit.id}?tab=practice" style="${isQuizDone ? 'opacity: 0.8; border-color: var(--border-accent);' : ''}">
+                      <i data-lucide="${isQuizDone ? 'check-circle' : 'dumbbell'}" style="width:13px;height:13px;color:var(--text-main);"></i> Latihan
                     </button>
-                    <button class="mission-btn" data-route="#/workbook/${unit.id}">
-                      <i data-lucide="pen-tool" style="width:13px;height:13px;color:var(--text-main);"></i> Workbook
+                    <button class="mission-btn ${isWorkbookDone ? 'completed' : ''}" data-route="#/workbook/${unit.id}" style="${isWorkbookDone ? 'opacity: 0.8; border-color: var(--border-accent);' : ''}">
+                      <i data-lucide="${isWorkbookDone ? 'check-circle' : 'pen-tool'}" style="width:13px;height:13px;color:var(--text-main);"></i> Workbook
                     </button>
-                    <button class="mission-btn" data-route="#/exam/${unit.id}">
-                      <i data-lucide="award" style="width:13px;height:13px;color:var(--text-main);"></i> Ujian
+                    <button class="mission-btn ${isExamDone ? 'completed' : ''}" data-route="#/exam/${unit.id}" style="${isExamDone ? 'opacity: 0.8; border-color: var(--border-accent);' : ''}">
+                      <i data-lucide="${isExamDone ? 'check-circle' : 'award'}" style="width:13px;height:13px;color:var(--text-main);"></i> Ujian
                     </button>
                   </div>
                   ` : `
@@ -261,10 +238,31 @@ export function CurriculumView(container) {
         }
       });
     });
+
+    // Bind quick SRS sync buttons
+    timelineContainer.querySelectorAll('.curriculum-sync-srs-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const chId = parseInt(btn.dataset.chapterId);
+        const chapterData = MNN_DATA.find(c => c.id === chId);
+        if (chapterData && chapterData.vocab) {
+          chapterData.vocab.forEach(v => {
+            addSRSItem(`vocab-${v.kana || v.kanji || v.rom}`, 'vocab');
+          });
+          if (typeof showToast !== 'undefined') {
+            showToast(`Berhasil memasukkan ${chapterData.vocab.length} kosakata Bab ${chId} ke antrean SRS!`, 'success');
+          } else {
+            alert(`Berhasil memasukkan ${chapterData.vocab.length} kosakata Bab ${chId} ke antrean SRS!`);
+          }
+          // Re-render to update counts
+          renderTimeline(activeTrack);
+        }
+      });
+    });
   };
 
   // Initial Timeline Render
-  renderTimeline(initialTrack);
+  renderTimeline(activeTrack);
 
   // Bind filter tab click events
   container.querySelectorAll('.filter-tab-btn').forEach(btn => {
@@ -284,7 +282,8 @@ export function CurriculumView(container) {
       });
 
       // Re-render the timeline
-      renderTimeline(selectedTrack);
+      activeTrack = selectedTrack;
+      renderTimeline(activeTrack);
     });
   });
 

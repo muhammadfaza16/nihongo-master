@@ -1,18 +1,26 @@
 import { renderTopbar, showToast } from '../components/layout.js';
-import { MNN_DATA } from '../data/chapter_data.js';
+import { loadChapter } from '../data/chapter_index.js';
 import { addXP } from '../store.js';
 
 export function WorkbookView(container, params) {
   const chapterId = parseInt(params.id);
-  const chapter = MNN_DATA.find(c => c.id === chapterId);
 
-  renderTopbar(`Kaite Oboeru - Bab ${chapterId}`);
+  renderTopbar(`Kaite Oboeru — Bab ${chapterId}`, false, `#/chapter/${chapterId}`);
 
-  if (!chapter) {
-    container.innerHTML = `<div style="padding:40px;text-align:center;">Bab tidak ditemukan.</div>`;
-    return;
-  }
+  container.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:200px;color:var(--text-muted);"><span style="font-size:0.9rem;font-weight:600;">Memuat workbook bab ${chapterId}...</span></div>`;
 
+  loadChapter(chapterId).then(chapter => {
+    if (!chapter) {
+      container.innerHTML = `<div style="padding:40px;text-align:center;">Bab tidak ditemukan.</div>`;
+      return;
+    }
+    _initWorkbookView(container, params, chapter, chapterId);
+  }).catch(err => {
+    container.innerHTML = `<div style="padding:40px;text-align:center;color:var(--red);">Gagal memuat workbook: ${err.message}</div>`;
+  });
+}
+
+function _initWorkbookView(container, params, chapter, chapterId) {
   let backTrack = 'all';
   if (chapterId === 0) {
     backTrack = 'pra-mnn';
@@ -42,7 +50,7 @@ export function WorkbookView(container, params) {
           <div style="margin-bottom: 16px;">
             <span style="background: transparent; color: var(--text-main); border: 1px solid var(--text-main); padding: 4px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">Workbook Mode</span>
           </div>
-          <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">Misi Menulis: Bab ${chapter.id}</h2>
+          <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">Latihan Menulis: Bab ${chapter.id}</h2>
           <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
             Modul ini mereplikasi buku <em>Kaite Oboeru</em> (Sentence Pattern Workbook).
           </p>
@@ -125,305 +133,6 @@ export function WorkbookView(container, params) {
     const progressPercent = Math.round((attemptedCount / totalQuestions) * 100);
 
     let html = `
-      <style>
-        .workbook-wrapper {
-          max-width: 1000px;
-          margin: 0 auto;
-          padding-bottom: 80px;
-        }
-        
-        /* Overview Dashboard styles */
-        .overview-hero {
-          background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
-          border: 1px solid var(--border-accent);
-          border-radius: var(--radius-xl);
-          padding: 32px;
-          margin-bottom: 32px;
-          box-shadow: var(--shadow-sm);
-        }
-        .overview-hero-tag {
-          background: var(--text-main);
-          color: var(--bg-main);
-          padding: 4px 12px;
-          border-radius: 99px;
-          font-size: 0.72rem;
-          font-weight: 800;
-          text-transform: uppercase;
-          letter-spacing: 0.08em;
-          display: inline-block;
-          margin-bottom: 16px;
-        }
-        .overview-stats {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 16px;
-          margin-top: 24px;
-          padding-top: 24px;
-          border-top: 1px solid var(--border);
-        }
-        .overview-stat-item {
-          display: flex;
-          flex-direction: column;
-          gap: 4px;
-        }
-        .overview-stat-val {
-          font-size: 1.5rem;
-          font-weight: 900;
-          color: var(--text-main);
-          font-variant-numeric: tabular-nums;
-        }
-        .overview-stat-lbl {
-          font-size: 0.72rem;
-          color: var(--text-muted);
-          font-weight: 700;
-          text-transform: uppercase;
-        }
-        
-        /* Overview List */
-        .overview-list-title {
-          font-size: 1.1rem;
-          font-weight: 800;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          color: var(--text-secondary);
-          margin-bottom: 16px;
-        }
-        .overview-grid {
-          display: flex;
-          flex-direction: column;
-          gap: 12px;
-        }
-        .overview-card {
-          background: var(--bg-card);
-          border: 1px solid var(--border);
-          border-radius: var(--radius-lg);
-          padding: 20px 24px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 20px;
-          cursor: pointer;
-          transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .overview-card:hover {
-          border-color: var(--text-main);
-          transform: translateY(-1px);
-          background: var(--bg-hover);
-        }
-        .overview-card-info {
-          display: flex;
-          flex-direction: column;
-          gap: 6px;
-          flex-grow: 1;
-        }
-        .overview-card-meta {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          font-size: 0.72rem;
-          font-weight: 700;
-          color: var(--text-muted);
-        }
-        .overview-card-num {
-          font-family: monospace;
-          background: var(--bg-elevated);
-          border: 1px solid var(--border);
-          padding: 2px 6px;
-          border-radius: var(--radius-sm);
-          color: var(--text-main);
-        }
-        .overview-card-pattern {
-          color: var(--text-secondary);
-        }
-        .overview-card-cue {
-          font-size: 1.1rem;
-          font-weight: 800;
-          color: var(--text-main);
-          margin: 2px 0;
-        }
-        .overview-card-desc {
-          font-size: 0.82rem;
-          color: var(--text-muted);
-        }
-        
-        /* Status Badges */
-        .status-badge {
-          display: flex;
-          align-items: center;
-          gap: 6px;
-          font-size: 0.72rem;
-          font-weight: 800;
-          text-transform: uppercase;
-          letter-spacing: 0.02em;
-          padding: 4px 10px;
-          border-radius: 99px;
-          white-space: nowrap;
-        }
-        .status-badge.unattempted {
-          border: 1px solid var(--border);
-          color: var(--text-muted);
-        }
-        .status-badge.correct {
-          border: 1px solid var(--border-accent);
-          background: var(--accent-dim);
-          color: var(--text-main);
-        }
-        .status-badge.incorrect {
-          border: 1px solid var(--border-bright);
-          color: var(--text-secondary);
-        }
-
-        /* Split Layout (Practice Mode) */
-        .workbook-split-layout {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 24px;
-        }
-        @media (min-width: 992px) {
-          .workbook-split-layout {
-            grid-template-columns: 290px 1fr;
-            gap: 32px;
-          }
-        }
-        
-        /* Sidebar styles */
-        .workbook-sidebar {
-          background: var(--bg-card);
-          border: 1px solid var(--border);
-          border-radius: var(--radius-lg);
-          padding: 20px;
-          display: flex;
-          flex-direction: column;
-          gap: 16px;
-          position: sticky;
-          top: 88px;
-          max-height: calc(100vh - 120px);
-          overflow-y: auto;
-        }
-        .sidebar-title {
-          font-size: 0.85rem;
-          font-weight: 800;
-          color: var(--text-muted);
-          text-transform: uppercase;
-          letter-spacing: 0.08em;
-          padding-bottom: 8px;
-          border-bottom: 1px solid var(--border);
-        }
-        .sidebar-progress-container {
-          display: flex;
-          flex-direction: column;
-          gap: 6px;
-        }
-        .sidebar-progress-bar {
-          height: 6px;
-          background: var(--bg-elevated);
-          border-radius: 3px;
-          overflow: hidden;
-        }
-        .sidebar-progress-fill {
-          height: 100%;
-          background: var(--text-main);
-          border-radius: 3px;
-          transition: width 0.3s ease;
-        }
-        .sidebar-list {
-          display: flex;
-          flex-direction: column;
-          gap: 6px;
-        }
-        .sidebar-item {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 12px;
-          padding: 10px 12px;
-          border-radius: var(--radius-md);
-          border: 1px solid transparent;
-          cursor: pointer;
-          transition: all 0.2s;
-          text-align: left;
-          background: transparent;
-          color: var(--text-secondary);
-          width: 100%;
-        }
-        .sidebar-item:hover {
-          background: var(--bg-hover);
-          color: var(--text-main);
-        }
-        .sidebar-item.active {
-          background: var(--bg-elevated);
-          border-color: var(--border-accent);
-          color: var(--text-main);
-          font-weight: 700;
-        }
-        .sidebar-item-label {
-          font-size: 0.8rem;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          flex-grow: 1;
-        }
-        .sidebar-item-icon {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-shrink: 0;
-        }
-        
-        /* Mobile quick chips */
-        .mobile-chips-container {
-          display: flex;
-          gap: 8px;
-          overflow-x: auto;
-          padding: 4px 0 12px;
-          margin-bottom: 8px;
-          border-bottom: 1px dashed var(--border);
-        }
-        @media (min-width: 992px) {
-          .mobile-chips-container {
-            display: none;
-          }
-        }
-        .mobile-chip {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 36px;
-          height: 36px;
-          border-radius: 50%;
-          border: 1px solid var(--border);
-          font-size: 0.85rem;
-          font-weight: 700;
-          cursor: pointer;
-          flex-shrink: 0;
-          transition: all 0.2s;
-          background: var(--bg-card);
-          color: var(--text-muted);
-        }
-        .mobile-chip.active {
-          background: var(--text-main);
-          border-color: var(--text-main);
-          color: var(--bg-main);
-        }
-        .mobile-chip.correct {
-          border-color: var(--border-accent);
-          background: var(--accent-dim);
-          color: var(--text-main);
-        }
-        .mobile-chip.correct.active {
-          background: var(--text-main);
-          color: var(--bg-main);
-        }
-        .mobile-chip.incorrect {
-          border-color: var(--border-bright);
-          color: var(--text-secondary);
-        }
-        .mobile-chip.incorrect.active {
-          background: var(--text-main);
-          color: var(--bg-main);
-        }
-      </style>
-      
       <div class="workbook-wrapper fade-in">
     `;
 
@@ -449,14 +158,14 @@ export function WorkbookView(container, params) {
           <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap;">
             <div>
               <span class="overview-hero-tag">Kaite Oboeru</span>
-              <h2 style="font-size: 1.8rem; font-weight: 900; color: var(--text-main); margin-bottom: 8px; letter-spacing: -0.02em;">Misi Menulis: Bab ${chapter.id}</h2>
+              <h2 style="font-size: 1.8rem; font-weight: 900; color: var(--text-main); margin-bottom: 8px; letter-spacing: -0.02em;">Latihan Menulis: Bab ${chapter.id}</h2>
               <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.5; max-width: 580px;">
                 Tulis ulang pola kalimat standard dari buku <em>Kaite Oboeru</em> berdasarkan petunjuk kata yang disediakan. Mode ini melatih struktur partikel dan kemampuan menulis kalimat bahasa Jepang Anda secara akurat.
               </p>
             </div>
             
             <button id="btn-start-practice" class="resume-btn" style="background: var(--text-main); color: var(--bg-main); border: none; padding: 12px 28px; font-size: 0.85rem; font-weight: 800; border-radius: var(--radius-md); text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
-              ${attemptedCount === 0 ? 'Mulai Misi' : attemptedCount === totalQuestions ? 'Buka Kembali Misi' : 'Lanjutkan Misi'}
+              ${attemptedCount === 0 ? 'Mulai Latihan' : attemptedCount === totalQuestions ? 'Buka Kembali Latihan' : 'Lanjutkan Latihan'}
             </button>
           </div>
 
@@ -480,7 +189,7 @@ export function WorkbookView(container, params) {
         <!-- Overview List -->
         <div>
           <div class="overview-list-title">
-            Daftar Misi Menulis
+            Daftar Latihan Menulis
           </div>
           <div class="overview-grid">
             ${questionsState.map((q, idx) => {
@@ -502,7 +211,7 @@ export function WorkbookView(container, params) {
                 <div class="overview-card" data-index="${idx}">
                   <div class="overview-card-info">
                     <div class="overview-card-meta">
-                      <span class="overview-card-num">MISI ${idx + 1}</span>
+                      <span class="overview-card-num">SOAL ${idx + 1}</span>
                       <span class="overview-card-pattern"><i data-lucide="book-open" style="width: 12px; height: 12px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> ${q.pattern}</span>
                     </div>
                     <div class="overview-card-cue">${q.question}</div>
@@ -533,11 +242,11 @@ export function WorkbookView(container, params) {
           
           <!-- LEFT COLUMN: SIDEBAR INDEX (Desktop) -->
           <div class="workbook-sidebar">
-            <span class="sidebar-title">Indeks Misi</span>
+            <span class="sidebar-title">Indeks Soal</span>
             
             <div class="sidebar-progress-container">
               <div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:700; color:var(--text-secondary);">
-                <span>Progres Misi</span>
+                <span>Progres Soal</span>
                 <span>${correctCount}/${totalQuestions} Selesai</span>
               </div>
               <div class="sidebar-progress-bar">
@@ -561,7 +270,7 @@ export function WorkbookView(container, params) {
                 return `
                   <button class="sidebar-item ${isActive ? 'active' : ''}" data-index="${idx}">
                     <span class="sidebar-item-label" style="${isActive ? 'font-weight: 800;' : ''}">
-                      Misi ${idx + 1}: ${q.pattern}
+                      Soal ${idx + 1}: ${q.pattern}
                     </span>
                     <span class="sidebar-item-icon ${statusClass}">
                       <i data-lucide="${statusIcon}" style="width:14px;height:14px;"></i>
@@ -589,7 +298,7 @@ export function WorkbookView(container, params) {
               <span>/</span>
               <button id="btn-breadcrumb-overview" style="background:none; border:none; padding:0; font-size: inherit; font-weight:inherit; color: var(--text-muted); cursor:pointer; text-transform:uppercase; letter-spacing:inherit; transition: color 0.2s;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'">Workbook</button>
               <span>/</span>
-              <span style="color: var(--text-main);">${isCompletedScreen ? 'Hasil Misi' : `Misi ${currentIndex + 1}`}</span>
+              <span style="color: var(--text-main);">${isCompletedScreen ? 'Hasil Latihan' : `Soal ${currentIndex + 1}`}</span>
             </div>
 
             <!-- Mobile Quick Timeline Chips -->
@@ -635,14 +344,14 @@ export function WorkbookView(container, params) {
     return `
       <!-- Question Info Row -->
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-        <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Misi Menulis ${index + 1} dari ${total}</span>
+        <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Latihan Menulis ${index + 1} dari ${total}</span>
         <button id="btn-back-to-overview-link" style="background:none; border:none; padding:0; color:var(--text-muted); font-size:0.75rem; font-weight:700; text-transform:uppercase; cursor:pointer;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'">
-          <i data-lucide="list" style="width:12px;height:12px;display:inline-block;vertical-align:middle;margin-right:2px;"></i> Lihat Semua Misi
+          <i data-lucide="list" style="width:12px;height:12px;display:inline-block;vertical-align:middle;margin-right:2px;"></i> Lihat Semua Soal
         </button>
       </div>
 
       <!-- Question Card -->
-      <div style="background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
+      <div style="background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 24px;">
         
         <!-- Instruction -->
         <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 18px; border-left: 2px solid var(--text-main); padding-left: 12px; line-height: 1.5;">
@@ -708,7 +417,7 @@ export function WorkbookView(container, params) {
               ` : ''}
 
               <button id="btn-next" style="background: var(--text-main); color: var(--bg-main); border: none; padding: 12px 28px; font-size: 0.9rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
-                ${index + 1 === total ? 'Selesaikan Misi' : 'Misi Selanjutnya'}
+                ${index + 1 === total ? 'Selesaikan Latihan' : 'Soal Selanjutnya'}
               </button>
             `}
           </div>
@@ -718,9 +427,9 @@ export function WorkbookView(container, params) {
 
       <!-- Result Feedback Card -->
       ${isChecked ? `
-        <div class="fade-in" style="background: var(--bg-card); border: 1px solid ${isCorrect ? 'var(--border-accent)' : 'var(--text-muted)'}; border-radius: var(--radius-lg); padding: 24px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.01);">
+        <div class="fade-in" style="background: var(--bg-card); border: 1px solid ${isCorrect ? 'var(--border-accent)' : 'var(--text-muted)'}; border-radius: var(--radius-lg); padding: 24px; margin-bottom: 24px;">
           <div style="display: flex; align-items: flex-start; gap: 16px;">
-            <div style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid ${isCorrect ? 'var(--text-main)' : 'var(--text-muted)'}; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; background: ${isCorrect ? 'var(--bg-elevated)' : 'transparent'};">
+            <div style="width: 32px; height: 32px; border-radius: var(--radius-sm); border: 1px solid ${isCorrect ? 'var(--text-main)' : 'var(--text-muted)'}; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; background: ${isCorrect ? 'var(--bg-elevated)' : 'transparent'};">
               <i data-lucide="${isCorrect ? 'check' : 'x'}" style="width: 18px; height: 18px; color: var(--text-main);"></i>
             </div>
             <div style="flex-grow: 1;">
@@ -767,9 +476,9 @@ export function WorkbookView(container, params) {
       `;
     } else {
       xpStatusHTML = `
-        <div style="display:inline-flex; align-items:center; gap:6px; background:var(--bg-elevated); border:1px solid var(--border); padding:6px 16px; border-radius:99px; font-size:0.85rem; font-weight:700; color:var(--text-muted); margin-top:16px;">
+        <div style="display:inline-flex; align-items:center; gap:6px; background:var(--bg-elevated); border:1px solid var(--border); padding:6px 16px; border-radius:var(--radius-sm); font-size:0.85rem; font-weight:700; color:var(--text-muted); margin-top:16px;">
           <i data-lucide="check" style="width:14px; height:14px;"></i>
-          Misi Selesai
+          Latihan Selesai
         </div>
       `;
     }
@@ -777,12 +486,12 @@ export function WorkbookView(container, params) {
     const hasIncorrect = questionsState.some(q => q.status === 'incorrect');
 
     return `
-      <div class="fade-in" style="background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 48px 32px; text-align: center; box-shadow: 0 4px 24px rgba(0,0,0,0.02);">
-        <div style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--text-main); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; background: var(--bg-elevated);">
+      <div class="fade-in" style="background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 48px 32px; text-align: center;">
+        <div style="width: 80px; height: 80px; border-radius: var(--radius-sm); border: 2px solid var(--text-main); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; background: var(--bg-elevated);">
           <i data-lucide="award" style="width: 40px; height: 40px; color: var(--text-main);"></i>
         </div>
         
-        <h2 style="font-size: 2rem; font-weight: 900; color: var(--text-main); margin-bottom: 8px; letter-spacing: -0.03em;">Misi Menulis Selesai</h2>
+        <h2 style="font-size: 2rem; font-weight: 900; color: var(--text-main); margin-bottom: 8px; letter-spacing: -0.03em;">Latihan Menulis Selesai</h2>
         <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; max-width: 450px; margin: 0 auto 24px;">
           Selamat! Anda telah mengulas latihan pola kalimat <em>Kaite Oboeru</em> untuk <strong>Bab ${chapter.id}</strong>.
         </p>
@@ -805,7 +514,7 @@ export function WorkbookView(container, params) {
         ${hasIncorrect ? `
           <div style="margin: 24px auto 32px; max-width: 420px; padding: 14px 18px; border: 1px dashed var(--border); border-radius: var(--radius-md); background: var(--bg-elevated); font-size: 0.8rem; color: var(--text-secondary); line-height: 1.45; text-align: left;">
             <i data-lucide="help-circle" style="width: 14px; height: 14px; display:inline-block; vertical-align:middle; margin-right:4px; color:var(--text-main);"></i>
-            <strong>Tip Belajar:</strong> Terdapat soal yang belum terjawab benar. Anda dapat meninjau dan mengulang kembali soal tersebut secara mandiri dengan mengklik tombol misi bertanda silang merah di sidebar kiri!
+            <strong>Tip Belajar:</strong> Terdapat soal yang belum terjawab benar. Anda dapat meninjau dan mengulang kembali soal tersebut secara mandiri dengan mengklik tombol latihan bertanda silang merah di sidebar kiri!
           </div>
         ` : `
           <div style="margin: 24px auto 32px; max-width: 420px; padding: 14px 18px; border: 1px solid var(--border-accent); border-radius: var(--radius-md); background: var(--accent-dim); font-size: 0.8rem; color: var(--text-main); line-height: 1.45; text-align: center; font-weight:700;">
@@ -823,7 +532,10 @@ export function WorkbookView(container, params) {
           <button id="btn-back-chapter" style="background: transparent; color: var(--text-main); border: 1px solid var(--text-main); padding: 12px 24px; font-size: 0.88rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
             Kembali ke Bab ${chapter.id}
           </button>
-          <button id="btn-back-curriculum" style="background: var(--text-main); color: var(--bg-main); border: none; padding: 12px 24px; font-size: 0.88rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
+          <button id="btn-start-exam" style="background: var(--text-main); color: var(--bg-main); border: none; padding: 12px 24px; font-size: 0.88rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
+            Lanjutkan ke Ujian Bab
+          </button>
+          <button id="btn-back-curriculum" style="background: transparent; color: var(--text-main); border: 1px solid var(--text-main); padding: 12px 24px; font-size: 0.88rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
             Kembali ke Kurikulum
           </button>
         </div>
@@ -945,6 +657,10 @@ export function WorkbookView(container, params) {
 
       container.querySelector('#btn-back-curriculum')?.addEventListener('click', () => {
         window.location.hash = '#/curriculum';
+      });
+
+      container.querySelector('#btn-start-exam')?.addEventListener('click', () => {
+        window.location.hash = `#/exam/${chapter.id}`;
       });
 
       return;

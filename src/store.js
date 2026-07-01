@@ -26,6 +26,9 @@ const defaultState = {
   // Exam results: { level, score, sections, date }
   examResults: [],
 
+  // Chapter exam passes: [chapterId]
+  passedChapterExams: [],
+
   // Achievements unlocked
   achievements: [],
 
@@ -57,21 +60,30 @@ function loadState() {
     if (saved) {
       const parsed = JSON.parse(saved);
       state = { ...defaultState, ...parsed, settings: { ...defaultState.settings, ...(parsed.settings || {}) } };
+      // Normalize completedUnits to strings
+      state.completedUnits = (state.completedUnits || []).map(String);
     } else {
       state = { ...defaultState };
     }
   } catch {
     state = { ...defaultState };
   }
+  // Rebuild lookup Set after every load
+  _completedSet = new Set(state.completedUnits);
 }
 
+let _saveTimer = null;
 function saveState() {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-  } catch (e) {
-    console.warn('Failed to save state:', e);
-  }
+  clearTimeout(_saveTimer);
+  _saveTimer = setTimeout(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch (e) {
+      console.warn('Failed to save state:', e);
+    }
+  }, 300);
 }
+
 
 // Event system for reactive updates
 const listeners = new Map();
@@ -87,6 +99,9 @@ export function emit(event, data) {
   }
 }
 
+// Set for O(1) unit completion lookups (rebuilt on loadState)
+let _completedSet = new Set();
+
 export function getState() {
   if (!state) loadState();
   return state;
@@ -95,6 +110,10 @@ export function getState() {
 export function setState(updates) {
   if (!state) loadState();
   Object.assign(state, updates);
+  // Keep Set in sync when completedUnits changes
+  if (updates.completedUnits) {
+    _completedSet = new Set(updates.completedUnits.map(String));
+  }
   saveState();
   emit('stateChanged', state);
 }
@@ -150,16 +169,18 @@ export function logActivity(minutes) {
 }
 
 export function completeUnit(unitId) {
-  const s = getState();
-  if (!s.completedUnits.includes(unitId)) {
-    setState({ completedUnits: [...s.completedUnits, unitId] });
+  const id = String(unitId);
+  if (!_completedSet.has(id)) {
+    const s = getState();
+    setState({ completedUnits: [...s.completedUnits, id] });
     addXP(50);
-    emit('unitCompleted', unitId);
+    emit('unitCompleted', id);
   }
 }
 
 export function isUnitCompleted(unitId) {
-  return getState().completedUnits.includes(unitId);
+  if (!state) loadState();
+  return _completedSet.has(String(unitId));
 }
 
 export function isUnitUnlocked(unitId, prerequisiteId) {
@@ -169,8 +190,10 @@ export function isUnitUnlocked(unitId, prerequisiteId) {
 
 export function saveQuizResult(unitId, score, total) {
   const s = getState();
-  const result = { unitId, score, total, date: new Date().toISOString() };
-  setState({ quizHistory: [...s.quizHistory, result] });
+  const result = { unitId: String(unitId), score, total, date: new Date().toISOString() };
+  // Cap quizHistory at last 200 entries
+  const capped = [...s.quizHistory, result].slice(-200);
+  setState({ quizHistory: capped });
   
   // Pass threshold = 70%
   if (score / total >= 0.7) {
@@ -185,6 +208,31 @@ export function saveExamResult(level, score, total, sections) {
   const result = { level, score, total, sections, date: new Date().toISOString() };
   setState({ examResults: [...s.examResults, result] });
   addXP(score * 5);
+}
+
+export function saveChapterExamResult(chapterId, score, passed) {
+  const s = getState();
+  const passedExams = s.passedChapterExams || [];
+  const alreadyPassed = passedExams.includes(chapterId);
+  
+  if (passed) {
+    if (!alreadyPassed) {
+      setState({ passedChapterExams: [...passedExams, chapterId] });
+      addXP(50); // 50 XP award for passing a chapter exam
+    }
+    completeUnit(chapterId.toString());
+  }
+  updateStreak();
+}
+
+export function isChapterExamPassed(chapterId) {
+  return (getState().passedChapterExams || []).includes(chapterId);
+}
+
+export function isChapterQuizPassed(chapterId) {
+  const s = getState();
+  // check if any quiz result in quizHistory matches chapterId and score >= 70%
+  return s.quizHistory.some(q => q.unitId === chapterId.toString() && (q.score / q.total) >= 0.7);
 }
 
 // ===== Achievements =====

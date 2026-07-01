@@ -1,17 +1,26 @@
 import { renderTopbar, showToast } from '../components/layout.js';
-import { MNN_DATA } from '../data/chapter_data.js';
+import { loadChapter } from '../data/chapter_index.js';
+import { saveChapterExamResult } from '../store.js';
 
 export function ExamView(container, params) {
   const chapterId = parseInt(params.id);
-  const chapter = MNN_DATA.find(c => c.id === chapterId);
 
-  renderTopbar(`Mondaishuu - Bab ${chapterId}`);
+  renderTopbar(`Mondaishuu — Bab ${chapterId}`, false, `#/chapter/${chapterId}`);
 
-  if (!chapter) {
-    container.innerHTML = `<div style="padding:40px;text-align:center;">Bab tidak ditemukan.</div>`;
-    return;
-  }
+  container.innerHTML = `<div style="display:flex;align-items:center;justify-content:center;height:200px;color:var(--text-muted);"><span style="font-size:0.9rem;font-weight:600;">Memuat ujian bab ${chapterId}...</span></div>`;
 
+  loadChapter(chapterId).then(chapter => {
+    if (!chapter) {
+      container.innerHTML = `<div style="padding:40px;text-align:center;">Bab tidak ditemukan.</div>`;
+      return;
+    }
+    _initExamView(container, params, chapter, chapterId);
+  }).catch(err => {
+    container.innerHTML = `<div style="padding:40px;text-align:center;color:var(--red);">Gagal memuat ujian: ${err.message}</div>`;
+  });
+}
+
+function _initExamView(container, params, chapter, chapterId) {
   let backTrack = 'all';
   if (chapterId === 0) {
     backTrack = 'pra-mnn';
@@ -391,7 +400,7 @@ export function ExamView(container, params) {
           </div>
 
           <!-- Reading Passage Box -->
-          <div style="padding: 24px; background: var(--bg-elevated); border: 1px solid var(--border-accent); border-radius: var(--radius-md); font-family: var(--font-jp); font-size: 1.15rem; font-weight: 500; color: var(--text-main); line-height: 2; letter-spacing: 0.02em; white-space: pre-line; margin-bottom: 32px; box-shadow: inset 0 2px 8px rgba(0,0,0,0.2);">
+          <div style="padding: 24px; background: var(--bg-elevated); border: 1px solid var(--border-accent); border-radius: var(--radius-md); font-family: var(--font-jp-serif) !important; font-size: 1.15rem; font-weight: 500; color: var(--text-main); line-height: 2; letter-spacing: 0.02em; white-space: pre-line; margin-bottom: 32px;">
             ${part.text}
           </div>
 
@@ -573,6 +582,9 @@ export function ExamView(container, params) {
     const finalScore = Math.round((correctCount / totalQuestions) * 100);
     const passed = finalScore >= 80;
 
+    // Persist chapter exam results and award XP
+    saveChapterExamResult(chapter.id, finalScore, passed);
+
     let html = `
       <div class="fade-in" style="max-width: 700px; margin: 0 auto; padding-bottom: 80px;">
         <!-- Breadcrumb Navigation -->
@@ -671,13 +683,22 @@ export function ExamView(container, params) {
 
         <!-- Footer Actions -->
         <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-          <button id="btn-retake-exam" style="flex: 1; min-width: 140px; background: transparent; color: var(--text-main); border: 1px solid var(--text-main); padding: 14px; font-size: 0.95rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
-            Ulangi Ujian
-          </button>
+          ${passed && chapter.id + 1 <= 50 ? `
+            <button id="btn-next-chapter-grad" style="flex: 2; min-width: 180px; background: var(--text-main); color: var(--bg-main); border: none; padding: 14px; font-size: 0.95rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
+              Lanjutkan ke Bab ${chapter.id + 1}
+            </button>
+            <button id="btn-retake-exam" style="flex: 1; min-width: 140px; background: transparent; color: var(--text-main); border: 1px solid var(--text-main); padding: 14px; font-size: 0.95rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
+              Ulangi Ujian
+            </button>
+          ` : `
+            <button id="btn-retake-exam" style="flex: 2; min-width: 180px; background: var(--text-main); color: var(--bg-main); border: none; padding: 14px; font-size: 0.95rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
+              Ulangi Ujian
+            </button>
+          `}
           <button id="btn-back-chapter-grad" style="flex: 1; min-width: 140px; background: transparent; color: var(--text-main); border: 1px solid var(--text-main); padding: 14px; font-size: 0.95rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
             Kembali ke Bab ${chapter.id}
           </button>
-          <button id="btn-back-curriculum-grad" style="flex: 1; min-width: 140px; background: var(--text-main); color: var(--bg-main); border: none; padding: 14px; font-size: 0.95rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
+          <button id="btn-back-curriculum-grad" style="flex: 1; min-width: 140px; background: transparent; color: var(--text-main); border: 1px solid var(--text-main); padding: 14px; font-size: 0.95rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
             Kembali ke Kurikulum
           </button>
         </div>
@@ -702,6 +723,12 @@ export function ExamView(container, params) {
     container.querySelector('#btn-back-curriculum-grad').addEventListener('click', () => {
       window.location.hash = '#/curriculum';
     });
+
+    if (passed && chapter.id + 1 <= 50) {
+      container.querySelector('#btn-next-chapter-grad')?.addEventListener('click', () => {
+        window.location.hash = `#/chapter/${chapter.id + 1}`;
+      });
+    }
   }
 
   function renderStep() {

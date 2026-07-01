@@ -1,9 +1,15 @@
 // Simple hash-based SPA router
-const routes = {};
+// Routes compiled at registration time — regex not rebuilt on every navigation
+const _routes = []; // [{ regex, paramNames, handler }]
+const _exactRoutes = {}; // path → handler for O(1) exact matches
 let currentRoute = null;
 
 export function registerRoute(path, handler) {
-  routes[path] = handler;
+  _exactRoutes[path] = handler;
+  // Compile regex once
+  const regex = new RegExp('^' + path.replace(/:([^/]+)/g, '([^/]+)') + '$');
+  const paramNames = [...path.matchAll(/:([^/]+)/g)].map(m => m[1]);
+  _routes.push({ regex, paramNames, handler });
 }
 
 export function navigate(path) {
@@ -16,26 +22,36 @@ export function getCurrentRoute() {
 
 export function initRouter(defaultRoute = '/dashboard') {
   function handleRoute() {
+    // Maintain internal session history stack for user journey-based back navigation
+    if (!window._appHistory) {
+      window._appHistory = [];
+    }
+    const currentHash = window.location.hash || '#/';
+    const len = window._appHistory.length;
+    if (len > 1 && window._appHistory[len - 2] === currentHash) {
+      window._appHistory.pop();
+    } else if (len === 0 || window._appHistory[len - 1] !== currentHash) {
+      window._appHistory.push(currentHash);
+    }
+
     // Strip the leading '#', then normalise '/' and '' → defaultRoute
     let hash = window.location.hash.slice(1); // e.g. '/chapter/3', '/', ''
     if (!hash || hash === '/') hash = defaultRoute;
-    
+
     // Strip query string for route matching
     const qIndex = hash.indexOf('?');
     const path = qIndex !== -1 ? hash.slice(0, qIndex) : hash;
     currentRoute = path;
 
-    let handler = routes[path];
+    let handler = _exactRoutes[path];
     let params  = {};
 
     if (!handler) {
-      for (const pattern of Object.keys(routes)) {
-        const regex = new RegExp('^' + pattern.replace(/:([^/]+)/g, '([^/]+)') + '$');
-        const match = path.match(regex);
+      for (const route of _routes) {
+        const match = path.match(route.regex);
         if (match) {
-          handler = routes[pattern];
-          const names = [...pattern.matchAll(/:([^/]+)/g)].map(m => m[1]);
-          names.forEach((name, i) => { params[name] = match[i + 1]; });
+          handler = route.handler;
+          route.paramNames.forEach((name, i) => { params[name] = match[i + 1]; });
           break;
         }
       }

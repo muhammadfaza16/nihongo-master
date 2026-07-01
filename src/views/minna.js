@@ -1,9 +1,10 @@
-import { renderTopbar } from '../components/layout.js';
+import { renderTopbar, renderBackBtn } from '../components/layout.js';
 import { MNN_DATA } from '../data/chapter_data.js';
 import { createAudioButton } from '../audio.js';
 
 export function MinnaView(container) {
-  renderTopbar('Grammar Digest (Minna)');
+  renderTopbar('Grammar Digest (Minna)', false, '#/');
+  renderBackBtn(container, '#/', 'Dashboard');
 
   // Dynamically map and build complete MINNA_LESSONS from unified MNN_DATA (DRY & covers all 51 chapters!)
   const labelMap = { romaji: 'Rom', furigana: 'Furi', kana: 'Kana' };
@@ -66,7 +67,7 @@ export function MinnaView(container) {
       <!-- Printable Document Format (Hidden on Screen) -->
       <div class="print-only-doc" style="display: none;">
         <div style="text-align: center; margin-bottom: 40px; border-bottom: 2px solid #000; padding-bottom: 20px;">
-          <h1 style="font-size: 2.5rem; color: #000; margin-bottom: 10px;">Minna no Nihongo - Deep Digest</h1>
+          <h1 style="font-size: 2.5rem; color: #000; margin-bottom: 10px;">Nihongo Master - Catatan Tata Bahasa</h1>
           <p style="color: #333; font-size: 1.2rem;">Panduan Komprehensif Tata Bahasa Lengkap</p>
         </div>
   `;
@@ -107,31 +108,6 @@ export function MinnaView(container) {
   });
 
   html += `
-      </div>
-    </div>
-
-    <style>
-      @media print {
-        .no-print, .sidebar, .topbar {
-          display: none !important;
-        }
-        .print-only-doc {
-          display: block !important;
-        }
-        body, html, #app, .main-content, .page-content {
-          background: white !important;
-          color: black !important;
-          overflow: visible !important;
-          height: auto !important;
-          padding: 0 !important;
-          margin: 0 !important;
-        }
-        .minna-container {
-          max-width: 100% !important;
-          padding: 0 !important;
-        }
-      }
-    </style>
   `;
 
   container.innerHTML = html;
@@ -220,9 +196,9 @@ export function MinnaView(container) {
                   </div>
                   
                   ${pt.nuance ? `
-                  <div style="background: rgba(245, 158, 11, 0.08); border-left: 3px solid #f59e0b; padding: 12px 16px; border-radius: 0 var(--radius-md) var(--radius-md) 0; border-top: 1px solid rgba(245, 158, 11, 0.15); border-right: 1px solid rgba(245, 158, 11, 0.15); border-bottom: 1px solid rgba(245, 158, 11, 0.15);">
-                    <div style="font-size: var(--text-2xs); font-weight: 700; color: #f59e0b; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; text-transform: uppercase; letter-spacing: var(--tracking-wide);">
-                      <i data-lucide="alert-circle" style="width:14px;height:14px;"></i> Nuansa & Pengecualian
+                  <div style="background: var(--amber-dim); border-left: 3px solid var(--amber); padding: 12px 16px; border-radius: 0 var(--radius-md) var(--radius-md) 0; border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+                    <div style="font-size: var(--text-2xs); font-weight: 700; color: var(--amber); margin-bottom: 4px; display: flex; align-items: center; gap: 6px; text-transform: uppercase; letter-spacing: var(--tracking-wide);">
+                      <i data-lucide="alert-circle" style="width:14px;height:14px;"></i> Nuansa &amp; Pengecualian
                     </div>
                     <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 0; line-height: var(--leading-normal);">${pt.nuance}</p>
                   </div>

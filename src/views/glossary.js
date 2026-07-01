@@ -1,4 +1,4 @@
-// ── Glosarium Istilah Jepang (Glossary) untuk Pemula 📚
+// ── Glosarium Istilah Jepang (Glossary) untuk Pemula
 
 const GLOSSARY_TERMS = [
   {
@@ -147,14 +147,17 @@ const GLOSSARY_TERMS = [
   }
 ];
 
+import { renderTopbar, renderBackBtn } from '../components/layout.js';
+
 export function GlossaryView(container) {
+  renderTopbar('Glosarium Istilah', false, '#/');
   let currentCategory = 'all';
   let searchQuery = '';
 
   container.innerHTML = `
     <!-- HEADER -->
     <div style="margin-bottom: 24px; display: flex; gap: 16px; align-items: flex-start;">
-      <div style="width: 52px; height: 52px; border-radius: var(--radius-lg); background: var(--accent); color: var(--bg-main); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px var(--accent-glow); flex-shrink: 0;">
+      <div style="width: 52px; height: 52px; border-radius: var(--radius-sm); background: var(--accent); color: var(--bg-main); display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-accent); flex-shrink: 0;">
         <i data-lucide="help-circle" style="width: 24px; height: 24px;"></i>
       </div>
       <div>
@@ -187,6 +190,8 @@ export function GlossaryView(container) {
     <div id="glossary-cards-container" class="bento-grid stagger" style="gap: 12px;"></div>
   `;
 
+  renderBackBtn(container, '#/', 'Dashboard');
+
   const cardsContainer = container.querySelector('#glossary-cards-container');
   const searchInput = container.querySelector('#glossary-search-input');
   const tabButtons = container.querySelectorAll('.glossary-tab-btn');
@@ -197,9 +202,9 @@ export function GlossaryView(container) {
     if (catId === 'writing') {
       colorStyle = 'background: var(--accent-dim); color: var(--accent-bright); border: 1px solid var(--border-accent);';
     } else if (catId === 'grammar') {
-      colorStyle = 'background: var(--green-dim); color: var(--green); border: 1px solid rgba(52, 211, 153, 0.25);';
+      colorStyle = 'background: var(--green-dim); color: var(--green); border: 1px solid var(--green-dim);';
     } else {
-      colorStyle = 'background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(251, 191, 36, 0.25);';
+      colorStyle = 'background: var(--amber-dim); color: var(--amber); border: 1px solid var(--amber-dim);';
     }
     return `
       <span style="font-size: var(--text-2xs); font-weight: 700; text-transform: uppercase; letter-spacing: var(--tracking-wider); padding: 3px 8px; border-radius: 99px; ${colorStyle}">
@@ -265,7 +270,7 @@ export function GlossaryView(container) {
           </div>
 
           <!-- Bottom Section: Concrete Example -->
-          <div class="formula-block" style="margin-bottom: 0; padding: 8px 12px; border-radius: var(--radius-xs); border-color: rgba(255,255,255,0.03); border-left-color: var(--accent); font-family: var(--font-sans); font-size: var(--text-2xs); font-weight: 600;">
+          <div class="formula-block" style="margin-bottom: 0; padding: 8px 12px; border-radius: var(--radius-xs); border-color: var(--border); border-left-color: var(--accent); font-family: var(--font-sans); font-size: var(--text-2xs); font-weight: 600;">
             ${item.example}
           </div>
 

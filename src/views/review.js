@@ -1,11 +1,15 @@
-import { renderTopbar } from '../components/layout.js';
+import { renderTopbar, renderBackBtn } from '../components/layout.js';
 import { getDueItems, gradeReview } from '../srs.js';
 import { addXP } from '../store.js';
-import { findItemById } from '../data/registry.js';
+// registry.js is dynamically imported only when this view mounts (lazy)
 
-export function ReviewView(container) {
-  renderTopbar('Review Harian (SRS)');
-  
+export async function ReviewView(container) {
+  renderTopbar('SRS Review', false, '#/');
+  renderBackBtn(container, '#/', 'Dashboard');
+
+  // Lazy-load registry only when user visits Review view
+  const { findItemById } = await import('../data/registry.js');
+
   const dueItems = getDueItems();
   let currentIndex = 0;
   let isFlipped = false;
@@ -42,16 +46,16 @@ export function ReviewView(container) {
         let badgeColor = '';
         let badgeText = '';
         if (item.grade === 0) {
-          badgeColor = 'background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.3);';
+          badgeColor = 'background: var(--red-dim); color: var(--red); border: 1px solid var(--red-dim);';
           badgeText = 'Lupa';
         } else if (item.grade === 2) {
-          badgeColor = 'background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3);';
+          badgeColor = 'background: var(--amber-dim); color: var(--amber); border: 1px solid var(--amber-dim);';
           badgeText = 'Susah';
         } else if (item.grade === 4) {
-          badgeColor = 'background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3);';
+          badgeColor = 'background: var(--green-dim); color: var(--green); border: 1px solid var(--green-dim);';
           badgeText = 'Ingat';
         } else {
-          badgeColor = 'background: rgba(59, 130, 246, 0.15); color: #3b82f6; border: 1px solid rgba(59, 130, 246, 0.3);';
+          badgeColor = 'background: var(--bg-elevated); color: var(--blue); border: 1px solid var(--border);';
           badgeText = 'Mudah';
         }
 
@@ -173,21 +177,21 @@ export function ReviewView(container) {
         <div style="display: flex; flex-direction: column; width: 100%; gap: 14px;">
           <div style="text-align: center; font-size: var(--text-xs); color: var(--text-muted); font-weight: 600;">Seberapa baik kamu mengingat kartu ini?</div>
           <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; width: 100%;">
-            <button class="btn btn-grade" data-q="0" style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); color: #ef4444; flex-direction: column; padding: 10px 4px; height: 60px;">
+            <button class="btn btn-grade" data-q="0" style="background: var(--red-dim); border: 1px solid var(--border); color: var(--red); flex-direction: column; padding: 10px 4px; height: 60px;">
               <span style="font-size: var(--text-xs); font-weight: 800;">Lupa</span>
-              <span style="font-size: var(--text-2xs); opacity: 0.8; margin-top: 2px;">Grade 0</span>
+              <span style="font-size: var(--text-2xs); opacity: 0.6; margin-top: 2px;">Grade 0</span>
             </button>
-            <button class="btn btn-grade" data-q="2" style="background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); color: #f59e0b; flex-direction: column; padding: 10px 4px; height: 60px;">
+            <button class="btn btn-grade" data-q="2" style="background: var(--amber-dim); border: 1px solid var(--border); color: var(--amber); flex-direction: column; padding: 10px 4px; height: 60px;">
               <span style="font-size: var(--text-xs); font-weight: 800;">Susah</span>
-              <span style="font-size: var(--text-2xs); opacity: 0.8; margin-top: 2px;">Grade 2</span>
+              <span style="font-size: var(--text-2xs); opacity: 0.6; margin-top: 2px;">Grade 2</span>
             </button>
-            <button class="btn btn-grade" data-q="4" style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); color: #10b981; flex-direction: column; padding: 10px 4px; height: 60px;">
+            <button class="btn btn-grade" data-q="4" style="background: var(--green-dim); border: 1px solid var(--border); color: var(--green); flex-direction: column; padding: 10px 4px; height: 60px;">
               <span style="font-size: var(--text-xs); font-weight: 800;">Ingat</span>
-              <span style="font-size: var(--text-2xs); opacity: 0.8; margin-top: 2px;">Grade 4</span>
+              <span style="font-size: var(--text-2xs); opacity: 0.6; margin-top: 2px;">Grade 4</span>
             </button>
-            <button class="btn btn-grade" data-q="5" style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); color: #3b82f6; flex-direction: column; padding: 10px 4px; height: 60px;">
+            <button class="btn btn-grade" data-q="5" style="background: var(--bg-elevated); border: 1px solid var(--border); color: var(--blue); flex-direction: column; padding: 10px 4px; height: 60px;">
               <span style="font-size: var(--text-xs); font-weight: 800;">Mudah</span>
-              <span style="font-size: var(--text-2xs); opacity: 0.8; margin-top: 2px;">Grade 5</span>
+              <span style="font-size: var(--text-2xs); opacity: 0.6; margin-top: 2px;">Grade 5</span>
             </button>
           </div>
         </div>

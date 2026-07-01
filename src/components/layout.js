@@ -1,4 +1,4 @@
-import { MNN_DATA } from '../data/chapter_data.js';
+import { MNN_INDEX } from '../data/chapter_index.js';
 
 // ── Sidebar open/close (mobile) ──────────────────────
 export function openSidebar() {
@@ -22,10 +22,11 @@ export function renderSidebar() {
   const sidebar = document.getElementById('sidebar');
   if (!sidebar) return;
 
-  const sorted = [...MNN_DATA].sort((a, b) => a.id - b.id);
+  const sorted = [...MNN_INDEX].sort((a, b) => a.id - b.id);
 
   const topNav = [
     { icon: 'layout-dashboard', label: 'Dashboard',    hash: '#/',          id: 'nav-dashboard' },
+    { icon: 'compass',          label: 'Panduan Belajar', hash: '#/guide',   id: 'nav-guide'     },
     { icon: 'book-open',        label: 'Deep Digest',  hash: '#/minna',     id: 'nav-minna'     },
     { icon: 'repeat-2',         label: 'SRS Review',   hash: '#/review',    id: 'nav-review'    },
     { icon: 'pen-tool',         label: 'Latihan Menulis',hash: '#/writing', id: 'nav-writing'   },
@@ -39,22 +40,15 @@ export function renderSidebar() {
       <i data-lucide="x" style="width:16px;height:16px;"></i>
     </button>
 
-    <div class="brand" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <div class="brand-icon">語</div>
-        <div class="brand-text">
-          <h1>Minna<span style="color:var(--text-muted);font-weight:500;">Master</span></h1>
-          <p>JLPT N5 → N3</p>
-        </div>
+    <div class="brand" style="margin-bottom: 24px; padding: 0 4px; display: flex; align-items: center; gap: 10px;">
+      <div class="brand-icon">語</div>
+      <div class="brand-text">
+        <h1>Nihongo<span style="color:var(--text-muted);font-weight:500;">Master</span></h1>
       </div>
-      
-      <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Ganti tema (Alt+T)" style="background: var(--bg-elevated); border: 1px solid var(--border); color: var(--text-main); width: 32px; height: 32px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; flex-shrink: 0;">
-        <i data-lucide="${currentTheme === 'dark' ? 'sun' : 'moon'}" style="width: 15px; height: 15px;"></i>
-      </button>
     </div>
 
-    <div class="nav-section-label">Menu</div>
-    <div class="nav-menu" style="margin-bottom:16px;">
+    <div class="nav-section-label">Menu Utama</div>
+    <div class="nav-menu" style="margin-bottom:16px; flex: 1;">
       ${topNav.map(n => `
         <a class="nav-item" id="${n.id}"
            aria-label="${n.label}"
@@ -66,26 +60,11 @@ export function renderSidebar() {
       `).join('')}
     </div>
 
-    <div class="nav-section-label">Daftar Bab</div>
-    <div class="nav-menu">
-      ${sorted.map(ch => {
-        const short = ch.title.includes(':')
-          ? ch.title.split(':').slice(1).join(':').trim()
-          : ch.title;
-        return `
-          <a class="nav-item"
-             data-chapter-id="${ch.id}"
-             data-tooltip="Bab ${ch.id}: ${short}"
-             aria-label="Bab ${ch.id}: ${short}"
-             style="${ch.locked ? 'opacity:.3;pointer-events:none;' : 'cursor:pointer;'}"
-             onclick="${ch.locked ? '' : `window.location.hash='#/chapter/${ch.id}'; window._closeSidebarMobile();`}"
-             role="button" tabindex="${ch.locked ? -1 : 0}">
-            <span class="nav-badge">${ch.id}</span>
-            <span class="nav-label" style="font-size:.79rem;">${short}</span>
-            ${ch.locked ? '<i data-lucide="lock" style="width:10px;height:10px;margin-left:auto;color:var(--text-faint);flex-shrink:0;"></i>' : ''}
-          </a>
-        `;
-      }).join('')}
+    <div style="margin-top: auto; padding: 12px 6px 0; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;">
+      <span style="font-size: var(--text-2xs); font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: var(--tracking-wider);">Tampilan</span>
+      <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Ganti tema (Alt+T)" style="background: var(--bg-elevated); border: 1px solid var(--border); color: var(--text-main); width: 32px; height: 32px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; flex-shrink: 0;">
+        <i data-lucide="${currentTheme === 'dark' ? 'sun' : 'moon'}" style="width: 15px; height: 15px;"></i>
+      </button>
     </div>
   `;
 
@@ -115,6 +94,7 @@ export function updateSidebarActive() {
 
   const map = {
     '#/':          'nav-dashboard',
+    '#/guide':     'nav-guide',
     '#/minna':     'nav-minna',
     '#/review':    'nav-review',
     '#/writing':   'nav-writing',
@@ -160,18 +140,14 @@ export function toggleTheme() {
 export let currentDisplayMode = localStorage.getItem('minna_display_mode') || 'furigana';
 export function getDisplayMode() { return currentDisplayMode; }
 
-export function renderTopbar(title = 'Minna no Nihongo') {
+export function renderTopbar(title = 'Minna no Nihongo', showDisplayToggles = false, backUrl = null) {
   const topbar = document.getElementById('topbar');
   if (!topbar) return;
 
   const isDark = currentTheme === 'dark';
   const labelMap = { romaji: 'Rom', furigana: 'Furi', kana: 'Kana' };
   
-  topbar.innerHTML = `
-    <button class="topbar-menu-btn" id="topbar-menu-btn" aria-label="Buka menu">
-      <i data-lucide="menu" style="width:17px;height:17px;"></i>
-    </button>
-    <div class="topbar-title">${title}</div>
+  const toggleHtml = showDisplayToggles ? `
     <div class="display-toggles desktop-only">
       <button class="toggle-btn ${currentDisplayMode==='romaji'   ? 'active':''}" data-mode="romaji">Rom</button>
       <button class="toggle-btn ${currentDisplayMode==='furigana' ? 'active':''}" data-mode="furigana">Furi</button>
@@ -197,82 +173,145 @@ export function renderTopbar(title = 'Minna no Nihongo') {
         </button>
       </div>
     </div>
-  `;
+  ` : '';
 
-  const menuBtn = document.getElementById('display-dropdown-btn');
-  const dropdownContainer = document.getElementById('display-dropdown-container');
-  const dropdownMenu = document.getElementById('display-dropdown-menu');
+  // Left slot: hamburger only (back nav now lives inside page content)
+  const leftSlot = `<button class="topbar-menu-btn" id="topbar-menu-btn" aria-label="Buka menu">
+         <i data-lucide="menu" style="width:17px;height:17px;"></i>
+       </button>`;
+
+  topbar.innerHTML = `
+    ${leftSlot}
+    <div class="topbar-title">${title}</div>
+    ${toggleHtml}
+  `;
 
   document.getElementById('topbar-menu-btn')?.addEventListener('click', openSidebar);
 
-  // Synced state change handler
-  const setDisplayMode = (mode) => {
-    currentDisplayMode = mode;
-    localStorage.setItem('minna_display_mode', mode);
+  if (showDisplayToggles) {
+    const menuBtn = document.getElementById('display-dropdown-btn');
+    const dropdownContainer = document.getElementById('display-dropdown-container');
+    const dropdownMenu = document.getElementById('display-dropdown-menu');
 
-    // Sync desktop buttons
+    // Synced state change handler
+    const setDisplayMode = (mode) => {
+      currentDisplayMode = mode;
+      localStorage.setItem('minna_display_mode', mode);
+
+      // Sync desktop buttons
+      topbar.querySelectorAll('.toggle-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.mode === mode);
+      });
+
+      // Sync mobile dropdown label
+      const labelEl = document.getElementById('display-dropdown-val');
+      if (labelEl) labelEl.textContent = labelMap[mode] || 'Furi';
+
+      // Sync active checkmark in custom dropdown items
+      topbar.querySelectorAll('.dropdown-item').forEach(item => {
+        item.classList.toggle('active', item.dataset.mode === mode);
+      });
+
+      window.dispatchEvent(new CustomEvent('displayModeChanged', { detail: { mode } }));
+    };
+
+    // Wire desktop buttons
     topbar.querySelectorAll('.toggle-btn').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.mode === mode);
+      btn.addEventListener('click', e => {
+        setDisplayMode(e.currentTarget.dataset.mode);
+      });
     });
 
-    // Sync mobile dropdown label
-    const labelEl = document.getElementById('display-dropdown-val');
-    if (labelEl) labelEl.textContent = labelMap[mode] || 'Furi';
-
-    // Sync active checkmark in custom dropdown items
-    topbar.querySelectorAll('.dropdown-item').forEach(item => {
-      item.classList.toggle('active', item.dataset.mode === mode);
-    });
-
-    window.dispatchEvent(new CustomEvent('displayModeChanged', { detail: { mode } }));
-  };
-
-  // Wire desktop buttons
-  topbar.querySelectorAll('.toggle-btn').forEach(btn => {
-    btn.addEventListener('click', e => {
-      setDisplayMode(e.currentTarget.dataset.mode);
-    });
-  });
-
-  // Wire custom dropdown button toggle
-  menuBtn?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const isOpen = dropdownContainer.classList.toggle('open');
-    dropdownMenu.classList.toggle('show', isOpen);
-  });
-
-  // Wire custom dropdown items
-  topbar.querySelectorAll('.dropdown-item').forEach(item => {
-    item.addEventListener('click', (e) => {
+    // Wire custom dropdown button toggle
+    menuBtn?.addEventListener('click', (e) => {
       e.stopPropagation();
-      setDisplayMode(e.currentTarget.dataset.mode);
-      dropdownContainer.classList.remove('open');
-      dropdownMenu.classList.remove('show');
+      const isOpen = dropdownContainer.classList.toggle('open');
+      dropdownMenu.classList.toggle('show', isOpen);
     });
-  });
 
-  // Close dropdown when clicking outside
-  const closeOutside = (e) => {
-    if (dropdownContainer && !dropdownContainer.contains(e.target)) {
-      dropdownContainer.classList.remove('open');
-      dropdownMenu.classList.remove('show');
-    }
-  };
-  window.addEventListener('click', closeOutside);
+    // Wire custom dropdown items
+    topbar.querySelectorAll('.dropdown-item').forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.stopPropagation();
+        setDisplayMode(e.currentTarget.dataset.mode);
+        dropdownContainer.classList.remove('open');
+        dropdownMenu.classList.remove('show');
+      });
+    });
 
-  // Clean up outside click event listener on route change
-  window.addEventListener('hashchange', function cleanup() {
-    window.removeEventListener('click', closeOutside);
-    window.removeEventListener('hashchange', cleanup);
-  });
+    // Close dropdown when clicking outside
+    const closeOutside = (e) => {
+      if (dropdownContainer && !dropdownContainer.contains(e.target)) {
+        dropdownContainer.classList.remove('open');
+        dropdownMenu.classList.remove('show');
+      }
+    };
+    window.addEventListener('click', closeOutside);
+
+    // Clean up outside click event listener on route change
+    window.addEventListener('hashchange', function cleanup() {
+      window.removeEventListener('click', closeOutside);
+      window.removeEventListener('hashchange', cleanup);
+    });
+  }
 
   if (window.lucide) lucide.createIcons({ root: topbar });
+}
+
+// ── Back Navigation (inside page content) ──────────────
+function getHashLabel(hash, defaultLabel) {
+  if (!hash) return defaultLabel;
+  const path = hash.split('?')[0];
+  if (path === '#/' || path === '#/dashboard') return 'Dashboard';
+  if (path === '#/curriculum') return 'Kurikulum';
+  if (path === '#/guide') return 'Panduan';
+  if (path === '#/minna') return 'Tata Bahasa';
+  if (path === '#/review') return 'Review';
+  if (path === '#/writing') return 'Latihan Menulis';
+  if (path === '#/kanji') return 'Kanji Hub';
+  if (path === '#/glossary') return 'Glosarium';
+  if (path === '#/settings') return 'Pengaturan';
+  if (path === '#/handbook') return 'Buku Panduan';
+  if (path.startsWith('#/chapter/')) {
+    const id = path.split('/').pop();
+    return `Bab ${id}`;
+  }
+  return defaultLabel || 'Kembali';
+}
+
+/**
+ * Prepend a slim back-navigation bar to a container element.
+ * @param {HTMLElement} container - The page content root element
+ * @param {string} url  - The default hash URL to navigate to (fallback)
+ * @param {string} label - The default human-readable destination label (fallback)
+ */
+export function renderBackBtn(container, url, label) {
+  const bar = document.createElement('div');
+  bar.className = 'page-back-bar';
+
+  let backUrl = url;
+  let backLabel = label;
+
+  // Resolve back URL and label dynamically from the user's journey stack
+  if (window._appHistory && window._appHistory.length > 1) {
+    backUrl = window._appHistory[window._appHistory.length - 2];
+    backLabel = getHashLabel(backUrl, label);
+  }
+
+  bar.innerHTML = `
+    <button class="page-back-btn" onclick="window.location.hash='${backUrl}'" aria-label="Kembali ke ${backLabel}">
+      <i data-lucide="chevron-left" style="width:15px;height:15px;flex-shrink:0;"></i>
+      <span>Kembali ke ${backLabel}</span>
+    </button>
+  `;
+  container.prepend(bar);
+  if (window.lucide) lucide.createIcons({ root: bar });
 }
 
 
 
 // ── Chapter keyboard navigation ──────────────────────
-const _sorted = [...MNN_DATA].sort((a, b) => a.id - b.id);
+const _sorted = [...MNN_INDEX].sort((a, b) => a.id - b.id);
 const _unlocked = _sorted.filter(c => !c.locked);
 
 export function navigateChapter(dir /* 'prev' | 'next' */) {
