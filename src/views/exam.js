@@ -117,9 +117,9 @@ function _initExamView(container, params, chapter, chapterId) {
 
   function renderLanding() {
     let html = `
-      <div class="fade-in" style="max-width: 700px; margin: 0 auto; padding-bottom: 80px;">
+      <div class="exam-container page-container-standard fade-in" style="padding-bottom: 60px;">
         <!-- Breadcrumb Navigation -->
-        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: var(--tracking-wider); color: var(--text-muted);">
           <a href="#/curriculum?track=${backTrack}" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; gap: 6px;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'">
             <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i>
             Kurikulum
@@ -131,12 +131,12 @@ function _initExamView(container, params, chapter, chapterId) {
         </div>
 
         <!-- Header Info -->
-        <div style="background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 40px; margin-bottom: 24px; text-align: center; box-shadow: var(--shadow-md);">
+        <div style="background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 36px 24px; margin-bottom: 24px; text-align: center; box-shadow: var(--shadow-md);">
           <div style="margin-bottom: 16px;">
-            <span style="background: transparent; color: var(--text-main); border: 1px solid var(--text-main); padding: 4px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">Mondaishuu • Bab ${chapter.id}</span>
+            <span style="background: transparent; color: var(--text-main); border: 1px solid var(--text-main); padding: 4px 12px; border-radius: 99px; font-size: var(--text-2xs); font-weight: 700; text-transform: uppercase; letter-spacing: var(--tracking-widest);">Mondaishuu • Bab ${chapter.id}</span>
           </div>
-          <h2 style="font-size: 2rem; font-weight: 800; color: var(--text-main); margin-bottom: 12px; letter-spacing: -0.02em;">Ujian Akhir (Mondaishuu)</h2>
-          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.6; max-width: 540px; margin: 0 auto 32px;">
+          <h2 style="font-size: var(--text-2xl); font-weight: 800; color: var(--text-main); margin-bottom: 12px; letter-spacing: var(--tracking-tight);">Ujian Akhir (Mondaishuu)</h2>
+          <p style="color: var(--text-secondary); font-size: var(--text-xs); line-height: var(--leading-relaxed); max-width: 540px; margin: 0 auto 32px;">
             Uji pemahaman mendalam Anda terhadap tata bahasa, partikel, profil buku, dan pemahaman bacaan Bab ${chapter.id} secara komprehensif tanpa kompromi.
           </p>
           

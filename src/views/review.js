@@ -108,7 +108,7 @@ export async function ReviewView(container) {
 
     // Build the flashcard UI using the custom srs-container & flip-card CSS classes
     container.innerHTML = `
-      <div class="srs-container fade-in">
+      <div class="srs-container page-container-standard fade-in">
         <!-- Progress Bar -->
         <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 24px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">

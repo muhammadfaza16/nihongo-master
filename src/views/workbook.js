@@ -133,7 +133,7 @@ function _initWorkbookView(container, params, chapter, chapterId) {
     const progressPercent = Math.round((attemptedCount / totalQuestions) * 100);
 
     let html = `
-      <div class="workbook-wrapper fade-in">
+      <div class="workbook-wrapper page-container-standard fade-in">
     `;
 
     if (viewMode === 'overview') {
@@ -142,7 +142,7 @@ function _initWorkbookView(container, params, chapter, chapterId) {
       // ────────────────────────────────────────────────────────
       html += `
         <!-- Breadcrumb Navigation -->
-        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: var(--tracking-wider); color: var(--text-muted);">
           <a href="#/curriculum?track=${backTrack}" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; gap: 6px;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'">
             <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i>
             Kurikulum
@@ -158,8 +158,8 @@ function _initWorkbookView(container, params, chapter, chapterId) {
           <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap;">
             <div>
               <span class="overview-hero-tag">Kaite Oboeru</span>
-              <h2 style="font-size: 1.8rem; font-weight: 900; color: var(--text-main); margin-bottom: 8px; letter-spacing: -0.02em;">Latihan Menulis: Bab ${chapter.id}</h2>
-              <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.5; max-width: 580px;">
+              <h2 style="font-size: var(--text-2xl); font-weight: 900; color: var(--text-main); margin-bottom: 8px; letter-spacing: var(--tracking-tight);">Latihan Menulis: Bab ${chapter.id}</h2>
+              <p style="color: var(--text-secondary); font-size: var(--text-xs); line-height: var(--leading-relaxed); max-width: 580px;">
                 Tulis ulang pola kalimat standard dari buku <em>Kaite Oboeru</em> berdasarkan petunjuk kata yang disediakan. Mode ini melatih struktur partikel dan kemampuan menulis kalimat bahasa Jepang Anda secara akurat.
               </p>
             </div>

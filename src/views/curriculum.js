@@ -2,7 +2,7 @@ import { renderTopbar, showToast, renderBackBtn } from '../components/layout.js'
 import { CURRICULUM } from '../data/curriculum.js';
 import { isUnitCompleted, isChapterQuizPassed, isChapterExamPassed, getState } from '../store.js';
 import { addSRSItem } from '../srs.js';
-import { MNN_DATA } from '../data/chapter_data.js';
+import { MNN_INDEX, VOCAB_TO_CHAPTER, loadChapter } from '../data/chapter_index.js';
 
 const phaseEmojis = {
   'fase-aksara': '✦',
@@ -33,18 +33,18 @@ export function CurriculumView(container) {
   }
 
   container.innerHTML = `
-    <div class="fade-in" style="max-width: 900px; margin: 0 auto; padding-bottom: 60px;">
+    <div class="curriculum-container page-container-standard fade-in" style="padding-bottom: 60px;">
       
       <!-- Hero Header -->
-      <div style="background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 36px 24px; margin-bottom: 32px; text-align: center; position: relative; overflow: hidden;">
-        <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--text-main); margin-bottom: 12px; letter-spacing: var(--tracking-tight); text-transform: uppercase;">Peta Kurikulum <span style="border-bottom: 3px solid var(--text-main); padding-bottom: 2px;">JLPT</span></h2>
-        <p style="color: var(--text-secondary); max-width: 520px; margin: 0 auto; font-size: 0.95rem; line-height: 1.6; font-weight: 500;">
+      <div style="background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 24px 20px; margin-bottom: 20px; text-align: center; position: relative; overflow: hidden;">
+        <h2 style="font-size: var(--text-2xl); font-weight: 900; color: var(--text-main); margin-bottom: 8px; letter-spacing: var(--tracking-tight); text-transform: uppercase;">Peta Kurikulum <span style="border-bottom: 3px solid var(--text-main); padding-bottom: 2px;">JLPT</span></h2>
+        <p style="color: var(--text-secondary); max-width: 540px; margin: 0 auto; font-size: var(--text-xs); line-height: var(--leading-relaxed); font-weight: 500;">
           Jalur belajar bahasa Jepang terstruktur. Pilih tab di bawah untuk memfilter fase belajar atau lihat seluruh kurikulum sekaligus.
         </p>
       </div>
 
       <!-- Track Filters -->
-      <div style="display: flex; justify-content: center; gap: 8px; margin-bottom: 36px; flex-wrap: wrap;" class="no-print">
+      <div style="display: flex; justify-content: center; gap: 8px; margin-bottom: 24px; flex-wrap: wrap;" class="no-print">
         <button class="filter-tab-btn ${activeTrack === 'all' ? 'active' : ''}" data-track="all" style="height: 38px;">Semua</button>
         <button class="filter-tab-btn ${activeTrack === 'pra-mnn' ? 'active' : ''}" data-track="pra-mnn" style="height: 38px;">Pra-Minna</button>
         <button class="filter-tab-btn ${activeTrack === 'minna1' ? 'active' : ''}" data-track="minna1" style="height: 38px;">Minna I (N5)</button>
@@ -75,14 +75,14 @@ export function CurriculumView(container) {
       if (track === 'all' && level.levelId === 'shokyu-2') {
         html += `
           <!-- Minna no Nihongo II Premium Divider -->
-          <div style="margin-top: 56px; margin-bottom: 48px; border-top: 1px solid var(--border-bright); padding-top: 40px; text-align: center; position: relative;">
-            <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--bg-main); padding: 4px 24px; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: var(--tracking-widest); border: 1px solid var(--border-bright); border-radius: var(--radius-sm); color: var(--text-main);">
+          <div style="margin-top: 36px; margin-bottom: 28px; border-top: 1px solid var(--border-bright); padding-top: 28px; text-align: center; position: relative;">
+            <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--bg-main); padding: 4px 24px; font-size: var(--text-xs); font-weight: 800; text-transform: uppercase; letter-spacing: var(--tracking-widest); border: 1px solid var(--border-bright); border-radius: var(--radius-sm); color: var(--text-main);">
               Minna no Nihongo II
             </div>
-            <h2 style="font-size: 2rem; font-weight: 900; letter-spacing: var(--tracking-tight); margin-bottom: 12px; color: var(--text-main);">
+            <h2 style="font-size: var(--text-xl); font-weight: 900; letter-spacing: var(--tracking-tight); margin-bottom: 8px; color: var(--text-main);">
               JALUR MENENGAH (N4) ✦
             </h2>
-            <p style="color: var(--text-secondary); font-size: 0.95rem; max-width: 580px; margin: 0 auto; line-height: 1.6; font-weight: 500;">
+            <p style="color: var(--text-secondary); font-size: var(--text-xs); max-width: 580px; margin: 0 auto; line-height: var(--leading-relaxed); font-weight: 500;">
               Selamat datang di Bagian Kedua (Bab 26 - 50). Di sini Anda akan menguasai tata bahasa tingkat menengah-ke bawah (N4) untuk percakapan sehari-hari dan bisnis yang lebih natural, sopan (keigo), dan ekspresif.
             </p>
           </div>
@@ -91,7 +91,7 @@ export function CurriculumView(container) {
 
       // Level Title Row
       html += `
-        <div style="margin-bottom: 48px;" class="fade-in">
+        <div style="margin-bottom: 32px;" class="fade-in">
           <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
             <div style="width: 50px; height: 50px; border-radius: var(--radius-sm); background: var(--text-main); color: var(--bg-main); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 800; border: 1px solid var(--border-accent); flex-shrink: 0;">
               ${level.levelId === 'pra-mnn' ? 'L1' : level.levelId === 'shokyu-1' ? 'L2' : 'L3'}
@@ -145,25 +145,36 @@ export function CurriculumView(container) {
           })();
           const isExamDone = isChapterExamPassed(unit.id);
 
-          // Get SRS active vocab progress
+          // Get SRS active vocab progress and override title/desc with real JSON index
           let srsHtml = '';
+          let unitTitle = unit.title;
+          let unitDesc = unit.desc;
           if (isChap) {
             const chId = parseInt(unit.id);
-            const chapterData = MNN_DATA.find(c => c.id === chId);
-            const chapterVocab = chapterData ? (chapterData.vocab || []) : [];
-            const srsItems = getState().srsItems || [];
-            const activeSrsCount = chapterVocab.filter(v => srsItems.some(item => item.id === `vocab-${v.kana || v.kanji || v.rom}`)).length;
-            
-            srsHtml = `
-              <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700; margin-top: 4px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-                <span>SRS: <strong style="color: var(--text-main); font-variant-numeric: tabular-nums;">${activeSrsCount}/${chapterVocab.length}</strong></span>
-                ${chapterVocab.length > 0 && activeSrsCount < chapterVocab.length ? `
-                  <button class="curriculum-sync-srs-btn no-print" data-chapter-id="${unit.id}" style="background: transparent; border: none; padding: 0; color: var(--text-main); font-weight: 800; cursor: pointer; text-decoration: underline; font-size: 0.72rem;">
-                    [+ Antrekan Semua]
-                  </button>
-                ` : ''}
-              </div>
-            `;
+            const indexCh = MNN_INDEX.find(c => c.id === chId);
+            if (indexCh) {
+              unitTitle = indexCh.title;
+              unitDesc = indexCh.desc;
+              
+              const vocabCount = indexCh.vocabCount || 0;
+              const srsItems = getState().srsItems || [];
+              const activeSrsCount = srsItems.filter(item => {
+                if (item.type !== 'vocab') return false;
+                const key = item.id.replace('vocab-', '');
+                return VOCAB_TO_CHAPTER[key] === chId;
+              }).length;
+
+              srsHtml = `
+                <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700; margin-top: 4px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+                  <span>SRS: <strong style="color: var(--text-main); font-variant-numeric: tabular-nums;">${activeSrsCount}/${vocabCount}</strong></span>
+                  ${vocabCount > 0 && activeSrsCount < vocabCount ? `
+                    <button class="curriculum-sync-srs-btn no-print" data-chapter-id="${unit.id}" style="background: transparent; border: none; padding: 0; color: var(--text-main); font-weight: 800; cursor: pointer; text-decoration: underline; font-size: 0.72rem;">
+                      [+ Antrekan Semua]
+                    </button>
+                  ` : ''}
+                </div>
+              `;
+            }
           }
           
           html += `
@@ -176,8 +187,8 @@ export function CurriculumView(container) {
                     ${completed ? `<i data-lucide="check-circle" style="width: 18px; height: 18px; color: var(--text-main);"></i>` : ''}
                   </div>
                   <div>
-                    <div style="font-weight: 800; color: var(--text-main); font-size: 1.05rem; line-height: 1.35; margin-bottom: 6px;">${unit.title}</div>
-                    ${unit.desc ? `<div style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; font-weight: 500;">${unit.desc}</div>` : ''}
+                    <div style="font-weight: 800; color: var(--text-main); font-size: 1.05rem; line-height: 1.35; margin-bottom: 6px;">${unitTitle}</div>
+                    ${unitDesc ? `<div style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; font-weight: 500;">${unitDesc}</div>` : ''}
                     ${srsHtml}
                   </div>
                   
@@ -239,24 +250,31 @@ export function CurriculumView(container) {
       });
     });
 
-    // Bind quick SRS sync buttons
+    // Bind quick SRS sync buttons (lazy-loaded on click)
     timelineContainer.querySelectorAll('.curriculum-sync-srs-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         const chId = parseInt(btn.dataset.chapterId);
-        const chapterData = MNN_DATA.find(c => c.id === chId);
-        if (chapterData && chapterData.vocab) {
-          chapterData.vocab.forEach(v => {
-            addSRSItem(`vocab-${v.kana || v.kanji || v.rom}`, 'vocab');
-          });
-          if (typeof showToast !== 'undefined') {
-            showToast(`Berhasil memasukkan ${chapterData.vocab.length} kosakata Bab ${chId} ke antrean SRS!`, 'success');
-          } else {
-            alert(`Berhasil memasukkan ${chapterData.vocab.length} kosakata Bab ${chId} ke antrean SRS!`);
+        btn.disabled = true;
+        btn.textContent = '[⏳ Mengantre...]';
+        loadChapter(chId).then(chapterData => {
+          if (chapterData && chapterData.vocab) {
+            chapterData.vocab.forEach(v => {
+              addSRSItem(`vocab-${v.kana || v.kanji || v.rom}`, 'vocab');
+            });
+            if (typeof showToast !== 'undefined') {
+              showToast(`Berhasil memasukkan ${chapterData.vocab.length} kosakata Bab ${chId} ke antrean SRS!`, 'success');
+            } else {
+              alert(`Berhasil memasukkan ${chapterData.vocab.length} kosakata Bab ${chId} ke antrean SRS!`);
+            }
+            // Re-render to update counts
+            renderTimeline(activeTrack);
           }
-          // Re-render to update counts
-          renderTimeline(activeTrack);
-        }
+        }).catch(err => {
+          console.error('[Curriculum] Gagal memuat data bab untuk sinkronisasi SRS:', err);
+          btn.disabled = false;
+          btn.textContent = '[+ Antrekan Semua]';
+        });
       });
     });
   };

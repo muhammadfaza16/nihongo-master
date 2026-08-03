@@ -155,39 +155,41 @@ export function GlossaryView(container) {
   let searchQuery = '';
 
   container.innerHTML = `
-    <!-- HEADER -->
-    <div style="margin-bottom: 24px; display: flex; gap: 16px; align-items: flex-start;">
-      <div style="width: 52px; height: 52px; border-radius: var(--radius-sm); background: var(--accent); color: var(--bg-main); display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-accent); flex-shrink: 0;">
-        <i data-lucide="help-circle" style="width: 24px; height: 24px;"></i>
+    <div class="glossary-container page-container-standard fade-in" style="padding-bottom: 60px;">
+      <!-- HEADER -->
+      <div style="margin-bottom: 20px; display: flex; gap: 16px; align-items: flex-start;">
+        <div style="width: 52px; height: 52px; border-radius: var(--radius-sm); background: var(--accent); color: var(--bg-main); display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-accent); flex-shrink: 0;">
+          <i data-lucide="help-circle" style="width: 24px; height: 24px;"></i>
+        </div>
+        <div>
+          <h2 style="font-size: var(--text-2xl); font-weight: 800; color: var(--text-main); margin-bottom: 4px; letter-spacing: var(--tracking-tight); line-height: var(--leading-tight);">Glosarium Istilah ✦</h2>
+          <p style="color: var(--text-secondary); font-size: var(--text-xs); line-height: var(--leading-relaxed);">Panduan lengkap istilah dasar bahasa Jepang dan sistem aplikasi untuk memudahkan langkah awal belajar pemula.</p>
+        </div>
       </div>
-      <div>
-        <h2 style="font-size: var(--text-2xl); font-weight: 800; color: var(--text-main); margin-bottom: 4px; letter-spacing: var(--tracking-tight); line-height: var(--leading-tight);">Glosarium Istilah ✦</h2>
-        <p style="color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-normal);">Panduan lengkap istilah dasar bahasa Jepang dan sistem aplikasi untuk memudahkan langkah awal belajar pemula.</p>
+
+      <!-- SEARCH & FILTERS CONTROLS -->
+      <div class="card" style="padding: 16px; margin-bottom: 18px; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 14px;">
+        
+        <!-- Search Bar -->
+        <div style="position: relative; display: flex; align-items: center; width: 100%;">
+          <i data-lucide="search" style="position: absolute; left: 14px; width: 18px; height: 18px; color: var(--text-muted); pointer-events: none;"></i>
+          <input type="text" id="glossary-search-input" placeholder="Cari istilah, romaji, kanji, atau definisi..." 
+            style="width: 100%; padding: 12px 16px 12px 42px; background: var(--bg-input); border: 1px solid var(--border); border-radius: var(--radius-md); color: var(--text-main); font-size: var(--text-sm); outline: none; transition: all 0.15s ease;"
+          />
+        </div>
+
+        <!-- Kategori Tabs -->
+        <div class="tabs" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; display: flex; gap: 6px; overflow-x: auto;">
+          <button class="tab-btn glossary-tab-btn active" data-cat="all" style="padding: 8px 14px; font-size: var(--text-xs); border-radius: var(--radius-sm);">Semua</button>
+          <button class="tab-btn glossary-tab-btn" data-cat="writing" style="padding: 8px 14px; font-size: var(--text-xs); border-radius: var(--radius-sm);">Aksara & Tulisan</button>
+          <button class="tab-btn glossary-tab-btn" data-cat="grammar" style="padding: 8px 14px; font-size: var(--text-xs); border-radius: var(--radius-sm);">Tata Bahasa</button>
+          <button class="tab-btn glossary-tab-btn" data-cat="learning" style="padding: 8px 14px; font-size: var(--text-xs); border-radius: var(--radius-sm);">Sistem Belajar</button>
+        </div>
       </div>
+
+      <!-- CARDS GRID CONTAINER -->
+      <div id="glossary-cards-container" class="bento-grid stagger" style="gap: 12px;"></div>
     </div>
-
-    <!-- SEARCH & FILTERS CONTROLS -->
-    <div class="card" style="padding: 16px; margin-bottom: 24px; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 14px;">
-      
-      <!-- Search Bar -->
-      <div style="position: relative; display: flex; align-items: center; width: 100%;">
-        <i data-lucide="search" style="position: absolute; left: 14px; width: 18px; height: 18px; color: var(--text-muted); pointer-events: none;"></i>
-        <input type="text" id="glossary-search-input" placeholder="Cari istilah, romaji, kanji, atau definisi..." 
-          style="width: 100%; padding: 12px 16px 12px 42px; background: var(--bg-input); border: 1px solid var(--border); border-radius: var(--radius-md); color: var(--text-main); font-size: var(--text-sm); outline: none; transition: all 0.15s ease;"
-        />
-      </div>
-
-      <!-- Kategori Tabs -->
-      <div class="tabs" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; display: flex; gap: 6px; overflow-x: auto;">
-        <button class="tab-btn glossary-tab-btn active" data-cat="all" style="padding: 8px 14px; font-size: var(--text-xs); border-radius: var(--radius-sm);">Semua</button>
-        <button class="tab-btn glossary-tab-btn" data-cat="writing" style="padding: 8px 14px; font-size: var(--text-xs); border-radius: var(--radius-sm);">Aksara & Tulisan</button>
-        <button class="tab-btn glossary-tab-btn" data-cat="grammar" style="padding: 8px 14px; font-size: var(--text-xs); border-radius: var(--radius-sm);">Tata Bahasa</button>
-        <button class="tab-btn glossary-tab-btn" data-cat="learning" style="padding: 8px 14px; font-size: var(--text-xs); border-radius: var(--radius-sm);">Sistem Belajar</button>
-      </div>
-    </div>
-
-    <!-- CARDS GRID CONTAINER -->
-    <div id="glossary-cards-container" class="bento-grid stagger" style="gap: 12px;"></div>
   `;
 
   renderBackBtn(container, '#/', 'Dashboard');

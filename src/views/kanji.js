@@ -1790,18 +1790,18 @@ export function KanjiView(container) {
 
   const renderLayout = () => {
     container.innerHTML = `
-      <div style="max-width: 800px; margin: 0 auto; padding: 12px 16px;" class="fade-in">
+      <div class="kanji-hub-container page-container-standard fade-in" style="padding: 12px 16px;">
         
         <!-- Header Section -->
-        <div style="text-align: center; margin-bottom: 24px; border-bottom: 1px solid var(--border); padding-bottom: 20px;">
-          <h2 style="font-size: 1.6rem; font-weight: 800; color: var(--text-main); margin-bottom: 6px; letter-spacing: -0.02em;">Kanal Kanji Masterclass Hub</h2>
-          <p style="color: var(--text-muted); font-size: 0.85rem; max-width: 500px; margin: 0 auto; line-height: 1.5;">
+        <div style="text-align: center; margin-bottom: 18px; border-bottom: 1px solid var(--border); padding-bottom: 16px;">
+          <h2 style="font-size: var(--text-2xl); font-weight: 800; color: var(--text-main); margin-bottom: 6px; letter-spacing: var(--tracking-tight);">Kanal Kanji Masterclass Hub</h2>
+          <p style="color: var(--text-secondary); font-size: var(--text-xs); max-width: 540px; margin: 0 auto; line-height: var(--leading-relaxed);">
             Pelajari hukum dasar penulisan Kanji, kuasai perbedaan cara baca Onyomi/Kunyomi, dan latih Kanji N5/N4/N3 Anda langsung di layar sentuh.
           </p>
         </div>
 
         <!-- Mode Tabs -->
-        <div style="display: flex; gap: 4px; background: var(--bg-hover); padding: 4px; border-radius: var(--radius-md); margin-bottom: 28px; max-width: 400px; margin-left: auto; margin-right: auto;">
+        <div style="display: flex; gap: 4px; background: var(--bg-hover); padding: 4px; border-radius: var(--radius-md); margin-bottom: 20px; max-width: 400px; margin-left: auto; margin-right: auto;">
           <button class="tab-btn sub-tab-btn ${activeSubTab === 'theory' ? 'active' : ''}" data-target="theory" style="flex: 1; padding: 8px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm); font-size: var(--text-xs); cursor: pointer;">Teori & Aturan</button>
           <button class="tab-btn sub-tab-btn ${activeSubTab === 'kamus' ? 'active' : ''}" data-target="kamus" style="flex: 1; padding: 8px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm); font-size: var(--text-xs); cursor: pointer;">Katalog Kanji</button>
         </div>
@@ -1824,7 +1824,7 @@ export function KanjiView(container) {
 
     if (activeSubTab === 'theory') {
       contentArea.innerHTML = `
-        <div style="display: flex; flex-direction: column; gap: 32px;" class="fade-in">
+        <div style="display: flex; flex-direction: column; gap: 20px;" class="fade-in">
           
           <!-- Theory 1: Onyomi vs Kunyomi -->
           <div class="card" style="padding: 24px;">

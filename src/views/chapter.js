@@ -238,8 +238,9 @@ function _initChapterView(container, chapterId, chapterData, params) {
     }
 
     let html = `
-      <!-- Breadcrumb Navigation -->
-      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+      <div class="chapter-container page-container-standard fade-in" style="padding-bottom: 60px;">
+        <!-- Breadcrumb Navigation -->
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
         <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">
           <a href="#/curriculum?track=${backTrack}" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'">
             Kurikulum
@@ -260,7 +261,7 @@ function _initChapterView(container, chapterId, chapterData, params) {
       </div>
 
       <!-- Chapter Nav Bar -->
-      <div class="chapter-nav-bar" style="margin-bottom: 20px;">
+      <div class="chapter-nav-bar" style="margin-bottom: 16px;">
         <button class="chapter-nav-btn" id="ch-prev-btn" ${!prevCh ? 'disabled' : ''}
           aria-label="${prevCh ? 'Bab ' + prevCh.id : 'Sudah bab pertama'}">
           <i data-lucide="chevron-left" style="width:15px;height:15px;"></i>
@@ -285,13 +286,13 @@ function _initChapterView(container, chapterId, chapterData, params) {
         </div>
       </div>
 
-      <div style="margin-bottom:28px;">
+      <div style="margin-bottom:20px;">
         <h2 style="font-size:var(--text-xl);font-weight:800;color:var(--text-main);margin-bottom:6px;letter-spacing:var(--tracking-tight);line-height:var(--leading-tight);">${chapterData.title}</h2>
         <p style="color:var(--text-secondary);font-size:var(--text-sm);line-height:var(--leading-normal);">${chapterData.desc}</p>
       </div>
 
       <!-- TABS -->
-      <div class="tabs" style="margin-bottom: 24px;">
+      <div class="tabs" style="margin-bottom: 20px;">
         ${chapterId === 0 ? `
           <button class="tab-btn ${activeTab === 'kana' ? 'active' : ''}" data-tab="kana">Huruf</button>
           <button class="tab-btn ${activeTab === 'pelafalan' ? 'active' : ''}" data-tab="pelafalan">Pelafalan</button>
@@ -935,6 +936,7 @@ function _initChapterView(container, chapterId, chapterData, params) {
     }
 
     html += `</div>`; // Close tab-content
+    html += `</div>`; // Close chapter-container
 
     container.innerHTML = html;
     renderBackBtn(container, '#/curriculum', 'Kurikulum');

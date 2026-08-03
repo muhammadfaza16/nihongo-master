@@ -5,37 +5,37 @@ export function PrefaceView(container) {
   renderBackBtn(container, '#/', 'Dashboard');
 
   container.innerHTML = `
-    <div class="fade-in" style="max-width: 800px; margin: 0 auto; padding-bottom: 80px; font-family: var(--font-serif);">
+    <div class="preface-container page-container-standard fade-in" style="padding-bottom: 60px; font-family: var(--font-serif);">
       
       <!-- Editorial Header -->
-      <div style="text-align: center; margin-bottom: 48px; border-bottom: 1px solid var(--border); padding-bottom: 32px;">
-        <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.12em; font-family: var(--font-sans);">
+      <div style="text-align: center; margin-bottom: 28px; border-bottom: 1px solid var(--border); padding-bottom: 20px;">
+        <span style="font-size: var(--text-2xs); font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: var(--tracking-widest); font-family: var(--font-sans);">
           Panduan Awal Pembelajaran
         </span>
-        <h1 style="font-size: 2.5rem; font-weight: 900; color: var(--text-main); margin-top: 8px; margin-bottom: 16px; letter-spacing: var(--tracking-tight); line-height: var(--leading-tight);">
+        <h1 style="font-size: var(--text-2xl); font-weight: 900; color: var(--text-main); margin-top: 8px; margin-bottom: 14px; letter-spacing: var(--tracking-tight); line-height: var(--leading-tight);">
           Jalan Pintas Menuju Penguasaan Bahasa Jepang
         </h1>
-        <p style="color: var(--text-secondary); max-width: 580px; margin: 0 auto; font-size: 1.05rem; line-height: 1.6; font-style: italic;">
+        <p style="color: var(--text-secondary); max-width: 580px; margin: 0 auto; font-size: var(--text-sm); line-height: var(--leading-relaxed); font-style: italic;">
           "Penguasaan bahasa bukanlah tentang sekadar menghafal aturan secara pasif, melainkan tentang transformasi cara berpikir melalui latihan yang terarah."
         </p>
       </div>
 
       <!-- Transformation Section -->
-      <div style="margin-bottom: 40px;">
-        <h2 style="font-size: 1.3rem; font-weight: 800; color: var(--text-main); margin-bottom: 16px; border-left: 3px solid var(--text-main); padding-left: 12px; font-family: var(--font-sans); text-transform: uppercase; letter-spacing: -0.01em;">
+      <div style="margin-bottom: 28px;">
+        <h2 style="font-size: var(--text-lg); font-weight: 800; color: var(--text-main); margin-bottom: 14px; border-left: 3px solid var(--text-main); padding-left: 12px; font-family: var(--font-sans); text-transform: uppercase; letter-spacing: -0.01em;">
           I. Transformasi yang Anda Tuju
         </h2>
-        <p style="font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 16px;">
+        <p style="font-size: var(--text-base); line-height: var(--leading-relaxed); color: var(--text-secondary); margin-bottom: 14px;">
           Tujuan akhir dari perjalanan ini adalah kemampuan untuk memahami, membaca, dan menyusun kalimat bahasa Jepang secara spontan dan alami. Bahasa baru mengubah cara kita memandang dunia.
         </p>
-        <p style="font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 16px;">
+        <p style="font-size: var(--text-base); line-height: var(--leading-relaxed); color: var(--text-secondary); margin-bottom: 14px;">
           Untuk mencapai kelancaran tersebut, proses belajar tidak boleh hanya menjadi tontonan pasif. Dibutuhkan ruang latihan yang terstruktur dan terfokus untuk membantu Anda menguji pemahaman, melatih ingatan aktif, dan membangun insting tata bahasa yang kokoh.
         </p>
       </div>
 
       <!-- The 4 Pillars Section -->
-      <div style="margin-bottom: 40px;">
-        <h2 style="font-size: 1.3rem; font-weight: 800; color: var(--text-main); margin-bottom: 16px; border-left: 3px solid var(--text-main); padding-left: 12px; font-family: var(--font-sans); text-transform: uppercase; letter-spacing: -0.01em;">
+      <div style="margin-bottom: 28px;">
+        <h2 style="font-size: var(--text-lg); font-weight: 800; color: var(--text-main); margin-bottom: 14px; border-left: 3px solid var(--text-main); padding-left: 12px; font-family: var(--font-sans); text-transform: uppercase; letter-spacing: -0.01em;">
           II. Metodologi Latihan Terarah
         </h2>
         <p style="font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 24px;">

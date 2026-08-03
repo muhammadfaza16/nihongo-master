@@ -1486,14 +1486,14 @@ export function WritingView(container) {
   // Screen 1: Selection Tab Lists
   const renderSelectionScreen = () => {
     container.innerHTML = `
-      <div style="max-width: 600px; margin: 0 auto; padding: 12px 16px;" class="fade-in">
-        <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--text-main); margin-bottom: 6px; letter-spacing: -0.01em;">Latihan Menulis Deliberate</h2>
-        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 24px; line-height: 1.5;">
+      <div class="writing-container page-container-standard fade-in" style="padding: 12px 16px;">
+        <h2 style="font-size: var(--text-2xl); font-weight: 800; color: var(--text-main); margin-bottom: 6px; letter-spacing: var(--tracking-tight);">Latihan Menulis Deliberate</h2>
+        <p style="color: var(--text-secondary); font-size: var(--text-xs); margin-bottom: 18px; line-height: var(--leading-relaxed);">
           Pilih kategori karakter di bawah ini untuk melatih ingatan motorik dan stroke order Anda pada touchscreen mobile secara terarah.
         </p>
 
         <!-- Dynamic Sub Tabs -->
-        <div style="display: flex; gap: 4px; background: var(--bg-hover); padding: 4px; border-radius: var(--radius-md); margin-bottom: 20px; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+        <div style="display: flex; gap: 4px; background: var(--bg-hover); padding: 4px; border-radius: var(--radius-md); margin-bottom: 16px; overflow-x: auto; -webkit-overflow-scrolling: touch;">
           <button class="tab-btn selection-tab ${activeTab === 'hiragana' ? 'active' : ''}" data-target="hiragana" style="flex: 1; padding: 10px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm); white-space: nowrap; min-width: 75px;">Hiragana</button>
           <button class="tab-btn selection-tab ${activeTab === 'katakana' ? 'active' : ''}" data-target="katakana" style="flex: 1; padding: 10px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm); white-space: nowrap; min-width: 75px;">Katakana</button>
           <button class="tab-btn selection-tab ${activeTab === 'kanji' ? 'active' : ''}" data-target="kanji" style="flex: 1; padding: 10px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm); white-space: nowrap; min-width: 75px;">Kanji N5</button>
@@ -1501,7 +1501,7 @@ export function WritingView(container) {
           <button class="tab-btn selection-tab ${activeTab === 'kanji-n3' ? 'active' : ''}" data-target="kanji-n3" style="flex: 1; padding: 10px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm); white-space: nowrap; min-width: 75px;">Kanji N3</button>
         </div>
 
-        <div id="selection-grid-container" style="display: flex; flex-direction: column; gap: 24px;">
+        <div id="selection-grid-container" style="display: flex; flex-direction: column; gap: 18px;">
           <!-- Active categories will render dynamically here -->
         </div>
       </div>

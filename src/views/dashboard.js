@@ -91,7 +91,7 @@ export function DashboardView(container) {
   else if (hour >= 15 && hour < 18) timeGreeting = 'Sore';
 
   container.innerHTML = `
-    <div class="dashboard-wrapper fade-in">
+    <div class="dashboard-wrapper page-container-standard fade-in">
       
       <!-- Premium Minimalist Header -->
       <div class="dash-header">

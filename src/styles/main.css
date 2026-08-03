@@ -5,15 +5,15 @@
 
 /* ── Design Tokens ─────────────────────────────────── */
 :root {
-  --bg-main:     #121212;
-  --bg-card:     #1A1A1A;
-  --bg-card-rgb: 26, 26, 26;
-  --bg-sidebar:  #121212;
-  --bg-elevated: #222222;
-  --bg-hover:    #2C2C2C;
-  --bg-input:    #121212;
+  --bg-main:     #121214;
+  --bg-card:     #1C1C20;
+  --bg-card-rgb: 28, 28, 32;
+  --bg-sidebar:  #161619;
+  --bg-elevated: #24242A;
+  --bg-hover:    #2E2E36;
+  --bg-input:    #161619;
 
-  --accent:       #E1E1E1;
+  --accent:       #E4E4E7;
   --accent-bright:#FFFFFF;
   --radius-xl: 4px;
   --radius-lg: 3px;
@@ -21,27 +21,27 @@
   --radius-sm: 2px;
   --radius-xs: 0px;
 
-  --accent-dim:   #222222;
-  --accent-glow:  #2C2C2C;
+  --accent-dim:   #272730;
+  --accent-glow:  #2E2E36;
   --accent-shadow: none;
   --accent-shadow-hover: none;
 
-  --green:      #81C784;
-  --green-dim:  #152B18;
-  --red:        #E57373;
-  --red-dim:    #2E1818;
-  --amber:      #FFB74D;
-  --amber-dim:  #2E2214;
-  --blue:       #64B5F6;
+  --green:      #4ADE80;
+  --green-dim:  #142E1B;
+  --red:        #F87171;
+  --red-dim:    #32171A;
+  --amber:      #FBBF24;
+  --amber-dim:  #332412;
+  --blue:       #60A5FA;
 
-  --text-main:      #E1E1E1;
-  --text-secondary: #A0A0A0;
-  --text-muted:     #777777;
-  --text-faint:     #333333;
+  --text-main:      #F4F4F5;
+  --text-secondary: #C4C4C7;
+  --text-muted:     #949498;
+  --text-faint:     #52525B;
 
-  --border:        #2C2C2C;
-  --border-bright: #444444;
-  --border-accent: #666666;
+  --border:        #2B2B32;
+  --border-bright: #42424E;
+  --border-accent: #686878;
 
   --shadow-sm:     none;
   --shadow-md:     none;
@@ -55,16 +55,17 @@
   --font-jp-serif:'BIZ UDMincho', 'Noto Serif JP', 'Hiragino Mincho ProN', 'Meiryo', serif;
   --font-mono:    'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
 
-  /* Modular type scale (Optimized scale for premium mobile-first accessibility) */
-  --text-2xs:  0.75rem;   /* Ditingkatkan dari 0.65rem (12px — label, badge, romaji) */
-  --text-xs:   0.82rem;   /* Ditingkatkan dari 0.72rem (13px — deskripsi penjelas, caption) */
-  --text-sm:   0.90rem;   /* Ditingkatkan dari 0.82rem (14.4px — isi bodi sekunder, nav menu) */
-  --text-base: 1.0rem;    /* Ditingkatkan dari 0.9rem (16px — isi bodi utama) */
-  --text-md:   1.12rem;   /* Ditingkatkan dari 1.0rem (18px — judul kartu, label tab) */
-  --text-lg:   1.25rem;   /* Ditingkatkan dari 1.15rem (20px — judul seksi) */
-  --text-xl:   1.45rem;   /* Ditingkatkan dari 1.35rem (23.2px — judul halaman) */
-  --text-2xl:  1.75rem;   /* Ditingkatkan dari 1.6rem (28px — judul hero) */
-  --text-3xl:  2.25rem;   /* Ditingkatkan dari 2.0rem (36px — tampilan display besar) */
+  /* Modular type scale (Harmonized 1.2 Major-Third typographic step scale) */
+  --text-3xs:  0.70rem;   /* 11.2px — Micro badges, footers, meta timestamps */
+  --text-2xs:  0.75rem;   /* 12.0px — Badges, input labels, romaji tags */
+  --text-xs:   0.85rem;   /* 13.6px — Captions, helper subtext, secondary notes */
+  --text-sm:   0.925rem;  /* 14.8px — Nav items, sub-body text, button labels */
+  --text-base: 1.0rem;    /* 16.0px — Primary body text, main reading size */
+  --text-md:   1.15rem;   /* 18.4px — Subheaders, card titles, tab items */
+  --text-lg:   1.35rem;   /* 21.6px — Section headers, modal titles */
+  --text-xl:   1.65rem;   /* 26.4px — Page main titles */
+  --text-2xl:  2.0rem;    /* 32.0px — Hero titles, major key stats */
+  --text-3xl:  2.5rem;    /* 40.0px — Major display headings & Japanese focus characters */
 
   /* Tracking (letter-spacing) */
   --tracking-tight:  -0.03em;
@@ -85,6 +86,14 @@
   --sidebar-width:   268px;
   --topbar-height:   56px;
 
+  /* Layout & Section Dimensions */
+  --container-max-width: 1040px;
+  --section-spacing-desktop: 24px;
+  --section-spacing-mobile:  18px;
+  --card-gap:                16px;
+  --card-padding-desktop:    20px 22px;
+  --card-padding-mobile:     16px;
+
   /* Safe area (notch/home indicator) */
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-top:    env(safe-area-inset-top, 0px);
@@ -94,37 +103,37 @@
    LIGHT THEME
    ══════════════════════════════════════════════════════ */
 [data-theme="light"] {
-  --bg-main:     #FBFBF9;
+  --bg-main:     #F8F9FA;
   --bg-card:     #FFFFFF;
   --bg-card-rgb: 255, 255, 255;
-  --bg-sidebar:  #F5F5F0;
-  --bg-elevated: #EAEAE5;
-  --bg-hover:    #E0E0DB;
-  --bg-input:    #FBFBF9;
+  --bg-sidebar:  #F1F3F5;
+  --bg-elevated: #E9ECEF;
+  --bg-hover:    #DEE2E6;
+  --bg-input:    #FFFFFF;
 
-  --accent:       #111111;
+  --accent:       #18181B;
   --accent-bright:#000000;
-  --accent-dim:   #EAEAE5;
-  --accent-glow:  #E0E0DB;
+  --accent-dim:   #E4E4E7;
+  --accent-glow:  #D4D4D8;
   --accent-shadow: none;
   --accent-shadow-hover: none;
 
-  --green:      #2E7D32;
-  --green-dim:  #E2F2E9;
-  --red:        #C62828;
-  --red-dim:    #FCE8E6;
-  --amber:      #EF6C00;
-  --amber-dim:  #FEF7E0;
-  --blue:       #1565C0;
+  --green:      #166534;
+  --green-dim:  #DCFCE7;
+  --red:        #991B1B;
+  --red-dim:    #FEE2E2;
+  --amber:      #9A3412;
+  --amber-dim:  #FEF3C7;
+  --blue:       #1E40AF;
 
-  --text-main:      #111111;
-  --text-secondary: #333333;
-  --text-muted:     #555555;
-  --text-faint:     #888888;
+  --text-main:      #09090B;
+  --text-secondary: #27272A;
+  --text-muted:     #52525B;
+  --text-faint:     #71717A;
 
-  --border:        #D0D0CA;
-  --border-bright: #A0A09A;
-  --border-accent: #111111;
+  --border:        #E0E0E6;
+  --border-bright: #C4C4D0;
+  --border-accent: #18181B;
 
   --shadow-sm:     none;
   --shadow-md:     none;
@@ -613,6 +622,48 @@ body {
   .page-content {
     padding: 28px 32px 40px;
   }
+}
+
+/* ── Unified Layout Containers & Section Ratios ──────── */
+.page-container-standard {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  width: 100%;
+}
+.page-header-block {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.page-header-title {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+}
+.page-header-desc {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  max-width: 680px;
+}
+.section-block {
+  margin-bottom: var(--section-spacing-desktop);
+}
+@media (max-width: 767px) {
+  .section-block {
+    margin-bottom: var(--section-spacing-mobile);
+  }
+}
+.section-header-title {
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: var(--tracking-snug);
+  line-height: var(--leading-snug);
+  margin-bottom: 12px;
 }
 
 /* ══════════════════════════════════════════════════════
@@ -1652,12 +1703,17 @@ body {
 
 /* ─── Dashboard View ─────────────────────────────────── */
 .dashboard-wrapper {
-  max-width: 960px;
+  max-width: var(--container-max-width);
   margin: 0 auto;
   padding-bottom: 60px;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: var(--section-spacing-desktop);
+}
+@media (max-width: 767px) {
+  .dashboard-wrapper {
+    gap: var(--section-spacing-mobile);
+  }
 }
 .dash-header {
   display: flex;
@@ -1845,7 +1901,19 @@ body {
 }
 
 /* ─── Workbook View ─────────────────────────────────── */
-.workbook-wrapper { max-width: 1000px; margin: 0 auto; padding-bottom: 80px; }
+.workbook-wrapper { 
+  max-width: var(--container-max-width); 
+  margin: 0 auto; 
+  padding-bottom: 60px; 
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-spacing-desktop);
+}
+@media (max-width: 767px) {
+  .workbook-wrapper {
+    gap: var(--section-spacing-mobile);
+  }
+}
 .overview-hero {
   background: var(--bg-card); border: 1px solid var(--border-accent);
   border-radius: var(--radius-lg); padding: 32px; margin-bottom: 32px;
