@@ -1,5 +1,8 @@
 import { MNN_INDEX } from '../data/chapter_index.js';
 
+const SUN_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>`;
+const MOON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`;
+
 // ── Sidebar open/close (mobile) ──────────────────────
 export function openSidebar() {
   document.getElementById('sidebar')?.classList.add('open');
@@ -22,48 +25,70 @@ export function renderSidebar() {
   const sidebar = document.getElementById('sidebar');
   if (!sidebar) return;
 
-  const sorted = [...MNN_INDEX].sort((a, b) => a.id - b.id);
-
-  const topNav = [
-    { icon: 'layout-dashboard', label: 'Dashboard',    hash: '#/',          id: 'nav-dashboard' },
-    { icon: 'compass',          label: 'Panduan Belajar', hash: '#/guide',   id: 'nav-guide'     },
-    { icon: 'book-open',        label: 'Deep Digest',  hash: '#/minna',     id: 'nav-minna'     },
-    { icon: 'repeat-2',         label: 'SRS Review',   hash: '#/review',    id: 'nav-review'    },
-    { icon: 'pen-tool',         label: 'Latihan Menulis',hash: '#/writing', id: 'nav-writing'   },
-    { icon: 'languages',        label: 'Kanji Hub',    hash: '#/kanji',     id: 'nav-kanji'     },
-    { icon: 'clipboard-list',   label: 'Kurikulum',    hash: '#/curriculum',id: 'nav-curriculum'},
-    { icon: 'help-circle',      label: 'Glosarium',    hash: '#/glossary',  id: 'nav-glossary'  },
+  const mainNav = [
+    { icon: 'layout-dashboard', label: 'Dashboard',      hash: '#/',           id: 'nav-dashboard',  color: '#7C7BF0', bg: 'rgba(124,123,240,0.12)', border: 'rgba(124,123,240,0.25)' },
+    { icon: 'clipboard-list',   label: 'Peta Kurikulum', hash: '#/curriculum', id: 'nav-curriculum', color: '#38BDF8', bg: 'rgba(56,189,248,0.12)',  border: 'rgba(56,189,248,0.25)' },
+    { icon: 'compass',          label: 'Panduan Belajar',hash: '#/guide',      id: 'nav-guide',      color: '#34D399', bg: 'rgba(52,211,153,0.12)',  border: 'rgba(52,211,153,0.25)' },
   ];
+
+  const moduleNav = [
+    { icon: 'book-open',   label: 'Grammar Digest',    hash: '#/minna',    id: 'nav-minna',    color: '#38BDF8', bg: 'rgba(56,189,248,0.12)',   border: 'rgba(56,189,248,0.25)' },
+    { icon: 'repeat-2',   label: 'SRS Review',         hash: '#/review',   id: 'nav-review',   color: '#F87171', bg: 'rgba(248,113,113,0.12)',  border: 'rgba(248,113,113,0.25)' },
+    { icon: 'pen-tool',   label: 'Latihan Menulis',    hash: '#/writing',  id: 'nav-writing',  color: '#FBBF24', bg: 'rgba(251,191,36,0.12)',   border: 'rgba(251,191,36,0.25)' },
+    { icon: 'languages',  label: 'Kanji Hub',          hash: '#/kanji',    id: 'nav-kanji',    color: '#A78BFA', bg: 'rgba(167,139,250,0.12)',  border: 'rgba(167,139,250,0.25)' },
+    { icon: 'help-circle',label: 'Glosarium Istilah',  hash: '#/glossary', id: 'nav-glossary', color: '#34D399', bg: 'rgba(52,211,153,0.12)',   border: 'rgba(52,211,153,0.25)' },
+  ];
+
+  const renderNavItem = (n) => `
+    <a class="nav-item" id="${n.id}"
+       aria-label="${n.label}"
+       onclick="window.location.hash='${n.hash}'; window._closeSidebarMobile();"
+       style="cursor:pointer;" role="button" tabindex="0">
+      <span class="nav-icon-badge" style="background:${n.bg}; border:1px solid ${n.border}; color:${n.color};">
+        <i data-lucide="${n.icon}" style="width:13px;height:13px;"></i>
+      </span>
+      <span class="nav-label">${n.label}</span>
+    </a>
+  `;
 
   sidebar.innerHTML = `
     <button class="sidebar-close-btn" id="sidebar-close-btn" aria-label="Tutup menu">
       <i data-lucide="x" style="width:16px;height:16px;"></i>
     </button>
 
-    <div class="brand" style="margin-bottom: 24px; padding: 0 4px; display: flex; align-items: center; gap: 10px;">
-      <div class="brand-icon">語</div>
+    <!-- Brand Header -->
+    <div class="brand" style="margin-bottom: 20px; padding: 4px 6px; display: flex; align-items: center; gap: 10px;">
+      <div class="brand-icon" style="width: 34px; height: 34px; border-radius: var(--radius-md); background: rgba(124,123,240,0.15); border: 1px solid rgba(124,123,240,0.3); color: #A5B4FC; display: flex; align-items: center; justify-content: center; font-family: var(--font-jp); font-weight: 700; font-size: 1.05rem; flex-shrink: 0;">語</div>
       <div class="brand-text">
-        <h1>Nihongo<span style="color:var(--text-muted);font-weight:500;">Master</span></h1>
+        <h1 style="font-size: 15px; font-weight: 700; color: var(--text-main); margin: 0; line-height: 1.2; letter-spacing: -0.01em;">
+          Nihongo<span style="color: var(--text-muted); font-weight: 500;">Master</span>
+        </h1>
+        <span style="font-size: 10px; color: var(--text-muted); font-weight: 500; letter-spacing: 0.04em;">JLPT N5–N4</span>
       </div>
     </div>
 
-    <div class="nav-section-label">Menu Utama</div>
-    <div class="nav-menu" style="margin-bottom:16px; flex: 1;">
-      ${topNav.map(n => `
-        <a class="nav-item" id="${n.id}"
-           aria-label="${n.label}"
-           onclick="window.location.hash='${n.hash}'; window._closeSidebarMobile();"
-           style="cursor:pointer;" role="button" tabindex="0">
-          <i data-lucide="${n.icon}" style="width:15px;height:15px;flex-shrink:0;"></i>
-          <span class="nav-label">${n.label}</span>
-        </a>
-      `).join('')}
-    </div>
+    <div style="display: flex; flex-direction: column; gap: 12px; flex: 1;">
+      <!-- Group 1: Navigation Utama -->
+      <div>
+        <div class="nav-section-label">Utama</div>
+        <div class="nav-menu">
+          ${mainNav.map(renderNavItem).join('')}
+        </div>
+      </div>
 
-    <div style="margin-top: auto; padding: 12px 6px 0; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;">
+      <!-- Group 2: Modul Belajar -->
+      <div>
+        <div class="nav-section-label">Modul Belajar</div>
+        <div class="nav-menu">
+          ${moduleNav.map(renderNavItem).join('')}
+        </div>
+      </div>
+    </div>
+    <!-- Sidebar Footer -->
+    <div style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;">
       <span style="font-size: var(--text-2xs); font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: var(--tracking-wider);">Tampilan</span>
-      <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Ganti tema (Alt+T)" style="background: var(--bg-elevated); border: 1px solid var(--border); color: var(--text-main); width: 32px; height: 32px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s; -webkit-tap-highlight-color: transparent; margin: 0; padding: 0; flex-shrink: 0;">
-        <i data-lucide="${currentTheme === 'dark' ? 'sun' : 'moon'}" style="width: 15px; height: 15px;"></i>
+      <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Ganti tema" style="background: var(--bg-elevated); border: 1px solid var(--border); color: var(--text-main); width: 32px; height: 32px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.15s ease; flex-shrink: 0; padding: 0;">
+        ${currentTheme === 'dark' ? SUN_SVG : MOON_SVG}
       </button>
     </div>
   `;
@@ -122,18 +147,18 @@ export function initTheme() {
   document.documentElement.setAttribute('data-theme', currentTheme);
 }
 
+export function updateThemeBtnUI() {
+  const btn = document.getElementById('theme-toggle-btn');
+  if (!btn) return;
+  const isDark = currentTheme === 'dark';
+  btn.innerHTML = isDark ? SUN_SVG : MOON_SVG;
+}
+
 export function toggleTheme() {
   currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
   localStorage.setItem('minna_theme', currentTheme);
   document.documentElement.setAttribute('data-theme', currentTheme);
-  // Update the icon in topbar
-  const btn = document.getElementById('theme-toggle-btn');
-  if (btn) {
-    btn.innerHTML = currentTheme === 'dark'
-      ? '<i data-lucide="sun" style="width:16px;height:16px;"></i>'
-      : '<i data-lucide="moon" style="width:16px;height:16px;"></i>';
-    if (window.lucide) lucide.createIcons({ root: btn });
-  }
+  updateThemeBtnUI();
 }
 
 // ── Display mode ─────────────────────────────────────

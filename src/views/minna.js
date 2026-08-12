@@ -3,7 +3,7 @@ import { MNN_INDEX, loadChapter } from '../data/chapter_index.js';
 import { createAudioButton } from '../audio.js';
 
 export function MinnaView(container) {
-  renderTopbar('Grammar Digest (Minna)', false, '#/');
+  renderTopbar('Grammar Handbook (Minna)', false, '#/');
   renderBackBtn(container, '#/', 'Dashboard');
 
   let fullLessonsData = null;

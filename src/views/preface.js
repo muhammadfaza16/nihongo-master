@@ -93,7 +93,7 @@ export function PrefaceView(container) {
         <div style="border: 1px solid var(--border); padding: 20px; background: var(--bg-card); border-radius: var(--radius-md); display: flex; flex-direction: column; gap: 16px;">
           
           <div style="display: flex; gap: 14px; align-items: flex-start;">
-            <span style="font-size: var(--text-3xs); font-weight: 600; background: var(--bg-elevated); border: 1px solid var(--border); padding: 3px 10px; border-radius: 99px; color: var(--text-main); flex-shrink: 0; margin-top: 2px;">
+            <span style="font-size: var(--text-3xs); font-weight: 600; background: var(--bg-elevated); border: 1px solid var(--border); padding: 2px 7px; border-radius: 99px; color: var(--text-muted); flex-shrink: 0; margin-top: 3px; white-space: nowrap;">
               Fase 1
             </span>
             <div>
@@ -107,7 +107,7 @@ export function PrefaceView(container) {
           <div style="border-left: 1px dashed var(--border); margin-left: 24px; height: 12px;"></div>
 
           <div style="display: flex; gap: 14px; align-items: flex-start;">
-            <span style="font-size: var(--text-3xs); font-weight: 600; background: var(--bg-elevated); border: 1px solid var(--border); padding: 3px 10px; border-radius: 99px; color: var(--text-main); flex-shrink: 0; margin-top: 2px;">
+            <span style="font-size: var(--text-3xs); font-weight: 600; background: var(--bg-elevated); border: 1px solid var(--border); padding: 2px 7px; border-radius: 99px; color: var(--text-muted); flex-shrink: 0; margin-top: 3px; white-space: nowrap;">
               Fase 2
             </span>
             <div>
@@ -121,7 +121,7 @@ export function PrefaceView(container) {
           <div style="border-left: 1px dashed var(--border); margin-left: 24px; height: 12px;"></div>
 
           <div style="display: flex; gap: 14px; align-items: flex-start;">
-            <span style="font-size: var(--text-3xs); font-weight: 600; background: var(--bg-elevated); border: 1px solid var(--border); padding: 3px 10px; border-radius: 99px; color: var(--text-main); flex-shrink: 0; margin-top: 2px;">
+            <span style="font-size: var(--text-3xs); font-weight: 600; background: var(--bg-elevated); border: 1px solid var(--border); padding: 2px 7px; border-radius: 99px; color: var(--text-muted); flex-shrink: 0; margin-top: 3px; white-space: nowrap;">
               Fase 3
             </span>
             <div>

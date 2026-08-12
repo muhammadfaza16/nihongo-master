@@ -6,7 +6,7 @@ import { getDueCount } from '../srs.js';
 function getDailyMissionDesc(plan, nextChapter) {
   if (plan.level === 'N5') {
     if (nextChapter.id <= 25) {
-      return `Target hari ini: Pelajari tata bahasa <strong>Bab ${nextChapter.id}</strong> di Grammar Digest dan rampungkan Buku Kerjanya.`;
+      return `Target hari ini: Pelajari tata bahasa <strong>Bab ${nextChapter.id}</strong> di Grammar Handbook dan rampungkan Buku Kerjanya.`;
     } else {
       return `Selamat! Target dasar selesai. Evaluasi kesiapan Anda dengan menempuh <strong>Simulasi Ujian N5</strong>.`;
     }
@@ -79,36 +79,72 @@ export function DashboardView(container) {
   else if (hour >= 11 && hour < 15) timeGreeting = 'Siang';
   else if (hour >= 15 && hour < 18) timeGreeting = 'Sore';
 
-  // Build Activity Heatmap HTML (90 days)
+  // Build GitHub-style Activity Heatmap (52 weeks)
   const today = new Date();
+  today.setHours(0, 0, 0, 0);
   const activityLog = state.activityLog || {};
-  const days = [];
   let activeDaysCount = 0;
-  for (let i = 90; i >= 0; i--) {
-    const d = new Date(today);
-    d.setDate(d.getDate() - i);
-    days.push(d);
+
+  // Go back exactly 52 weeks from today, then back to the nearest Sunday
+  const endDate = new Date(today);
+  const startDate = new Date(today);
+  startDate.setDate(startDate.getDate() - 364); // 52 weeks back
+  // Align start to Sunday (day 0)
+  const startDow = startDate.getDay(); // 0=Sun
+  startDate.setDate(startDate.getDate() - startDow);
+
+  // Build flat array of all days
+  const allDays = [];
+  for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
+    allDays.push(new Date(d));
   }
 
+  // Track month label positions (which column each month starts)
+  const monthLabels = {}; // colIndex -> monthName
+  allDays.forEach((d, i) => {
+    const col = Math.floor(i / 7);
+    const isFirstOfMonth = d.getDate() === 1;
+    if (isFirstOfMonth && !Object.values(monthLabels).length || isFirstOfMonth) {
+      const monthName = d.toLocaleDateString('id-ID', { month: 'short' });
+      if (!monthLabels[col]) monthLabels[col] = monthName;
+    }
+  });
+
+  const totalCols = Math.ceil(allDays.length / 7);
+
+  // Build month header HTML
+  let monthHeaderHtml = '';
+  for (let col = 0; col < totalCols; col++) {
+    const label = monthLabels[col] || '';
+    monthHeaderHtml += `<div class="heatmap-month-label" style="grid-column: ${col + 1}">${label}</div>`;
+  }
+
+  // Build cells HTML
   let heatmapCellsHtml = '';
-  days.forEach(d => {
+  allDays.forEach((d, i) => {
     const dateStr = d.toISOString().split('T')[0];
     const mins = activityLog[dateStr] || 0;
-    if (mins > 0) activeDaysCount++;
+    const isFuture = d > today;
+    if (mins > 0 && !isFuture) activeDaysCount++;
 
-    let colorStyle = 'background: var(--bg-elevated); border-color: var(--border);';
-    if (mins > 0 && mins < 15) {
-      colorStyle = 'background: rgba(99, 102, 241, 0.22); border-color: rgba(99, 102, 241, 0.35);';
-    } else if (mins >= 15 && mins < 30) {
-      colorStyle = 'background: rgba(99, 102, 241, 0.45); border-color: rgba(99, 102, 241, 0.6);';
-    } else if (mins >= 30 && mins < 60) {
-      colorStyle = 'background: rgba(99, 102, 241, 0.75); border-color: rgba(99, 102, 241, 0.9);';
-    } else if (mins >= 60) {
-      colorStyle = 'background: var(--accent-bright, #818CF8); border-color: var(--accent-bright, #818CF8);';
+    let colorStyle;
+    if (isFuture) {
+      colorStyle = 'background: transparent; border-color: transparent;';
+    } else if (mins === 0) {
+      colorStyle = 'background: var(--bg-elevated); border-color: var(--border);';
+    } else if (mins < 15) {
+      colorStyle = 'background: rgba(124, 123, 240, 0.2); border-color: rgba(124, 123, 240, 0.35);';
+    } else if (mins < 30) {
+      colorStyle = 'background: rgba(124, 123, 240, 0.45); border-color: rgba(124, 123, 240, 0.6);';
+    } else if (mins < 60) {
+      colorStyle = 'background: rgba(124, 123, 240, 0.75); border-color: rgba(124, 123, 240, 0.9);';
+    } else {
+      colorStyle = 'background: #7C7BF0; border-color: #6366F1; box-shadow: 0 0 6px rgba(124,123,240,0.6);';
     }
 
-    const dateFormatted = d.toLocaleDateString('id-ID', { month: 'short', day: 'numeric' });
-    heatmapCellsHtml += `<div class="heatmap-cell" title="${dateFormatted}: ${mins > 0 ? `${mins} menit belajar` : 'Tidak ada aktivitas'}" style="${colorStyle}"></div>`;
+    const dateFormatted = d.toLocaleDateString('id-ID', { weekday: 'short', month: 'short', day: 'numeric' });
+    const tooltip = isFuture ? '' : `${dateFormatted}: ${mins > 0 ? `${mins} menit belajar` : 'Tidak ada aktivitas'}`;
+    heatmapCellsHtml += `<div class="heatmap-cell" title="${tooltip}" style="${colorStyle}"></div>`;
   });
 
   // Calculate stats for Bento Grid
@@ -275,41 +311,46 @@ export function DashboardView(container) {
         </div>
       </div>
 
-      <!-- Activity Heatmap Section (Linear / GitHub Style) -->
+      <!-- Activity Heatmap Section (GitHub Contribution Graph Style) -->
       <div class="heatmap-section">
         <div class="heatmap-header">
           <div class="heatmap-title-block">
             <span class="heatmap-title">Aktivitas Belajar</span>
-            <span class="heatmap-subtitle-tag">${activeDaysCount} Hari Aktif (90 Hari)</span>
+            <span class="heatmap-subtitle-tag">${activeDaysCount} kontribusi dalam setahun terakhir</span>
           </div>
         </div>
         
         <div class="heatmap-wrapper">
           <div class="heatmap-weekdays">
+            <span></span>
             <span>Sen</span>
-            <span>Sel</span>
+            <span></span>
             <span>Rab</span>
-            <span>Kam</span>
+            <span></span>
             <span>Jum</span>
-            <span>Sab</span>
-            <span>Min</span>
+            <span></span>
           </div>
           <div class="heatmap-grid-scroll">
+            <!-- Month labels -->
+            <div class="heatmap-month-row">
+              ${monthHeaderHtml}
+            </div>
+            <!-- Day cells -->
             <div class="heatmap-cells-container">
               ${heatmapCellsHtml}
             </div>
           </div>
         </div>
 
-        <!-- Subtle Bottom Legend -->
-        <div class="heatmap-legend" style="display: flex; justify-content: flex-end; align-items: center; gap: 6px; font-size: 10px; color: var(--text-muted); opacity: 0.75; margin-top: 2px;">
-          <span>Sedikit</span>
+        <!-- Legend -->
+        <div class="heatmap-legend">
+          <span>Kurang</span>
           <div class="heatmap-legend-cells">
             <div class="heatmap-legend-box" style="background: var(--bg-elevated); border-color: var(--border);"></div>
-            <div class="heatmap-legend-box" style="background: rgba(99, 102, 241, 0.22); border-color: rgba(99, 102, 241, 0.35);"></div>
-            <div class="heatmap-legend-box" style="background: rgba(99, 102, 241, 0.45); border-color: rgba(99, 102, 241, 0.6);"></div>
-            <div class="heatmap-legend-box" style="background: rgba(99, 102, 241, 0.75); border-color: rgba(99, 102, 241, 0.9);"></div>
-            <div class="heatmap-legend-box" style="background: #6366F1; border-color: #4F46E5;"></div>
+            <div class="heatmap-legend-box" style="background: rgba(124, 123, 240, 0.2); border-color: rgba(124, 123, 240, 0.35);"></div>
+            <div class="heatmap-legend-box" style="background: rgba(124, 123, 240, 0.45); border-color: rgba(124, 123, 240, 0.6);"></div>
+            <div class="heatmap-legend-box" style="background: rgba(124, 123, 240, 0.75); border-color: rgba(124, 123, 240, 0.9);"></div>
+            <div class="heatmap-legend-box" style="background: #7C7BF0; border-color: #6366F1;"></div>
           </div>
           <span>Banyak</span>
         </div>
@@ -317,10 +358,12 @@ export function DashboardView(container) {
 
       <!-- Bento Stats Grid (Mobile Optimized 2-Col Grid) -->
       <div>
-        <div class="tracks-title">Statistik & Pencapaian</div>
+        <div class="tracks-title">Statistik &amp; Pencapaian</div>
         <div class="stats-bento-grid">
           <div class="stat-card-bento">
-            <div class="stat-bento-icon-wrapper"><i data-lucide="book-open" style="width: 14px; height: 14px;"></i></div>
+            <div class="stat-bento-icon-wrapper" style="color: var(--blue);">
+              <i data-lucide="book-open" style="width: 15px; height: 15px;"></i>
+            </div>
             <div>
               <div class="stat-bento-val">${totalVocab}</div>
               <div class="stat-bento-lbl">Kosakata (SRS)</div>
@@ -328,7 +371,9 @@ export function DashboardView(container) {
           </div>
           
           <div class="stat-card-bento">
-            <div class="stat-bento-icon-wrapper"><i data-lucide="pen-tool" style="width: 14px; height: 14px;"></i></div>
+            <div class="stat-bento-icon-wrapper" style="color: var(--indigo);">
+              <i data-lucide="pen-tool" style="width: 15px; height: 15px;"></i>
+            </div>
             <div>
               <div class="stat-bento-val">${totalKanji}</div>
               <div class="stat-bento-lbl">Kanji (SRS)</div>
@@ -336,7 +381,9 @@ export function DashboardView(container) {
           </div>
           
           <div class="stat-card-bento">
-            <div class="stat-bento-icon-wrapper" style="color: var(--accent);"><i data-lucide="award" style="width: 14px; height: 14px;"></i></div>
+            <div class="stat-bento-icon-wrapper" style="color: var(--amber);">
+              <i data-lucide="award" style="width: 15px; height: 15px;"></i>
+            </div>
             <div>
               <div class="stat-card-val stat-bento-val">${masteredItems}</div>
               <div class="stat-bento-lbl">Terkuasai</div>
@@ -344,7 +391,9 @@ export function DashboardView(container) {
           </div>
           
           <div class="stat-card-bento">
-            <div class="stat-bento-icon-wrapper" style="color: var(--accent);"><i data-lucide="check-circle" style="width: 14px; height: 14px;"></i></div>
+            <div class="stat-bento-icon-wrapper" style="color: var(--green);">
+              <i data-lucide="check-circle" style="width: 15px; height: 15px;"></i>
+            </div>
             <div>
               <div class="stat-bento-val">${avgQuiz}%</div>
               <div class="stat-bento-lbl">Akurasi Ujian</div>
@@ -352,7 +401,9 @@ export function DashboardView(container) {
           </div>
           
           <div class="stat-card-bento">
-            <div class="stat-bento-icon-wrapper" style="color: var(--accent);"><i data-lucide="clock" style="width: 14px; height: 14px;"></i></div>
+            <div class="stat-bento-icon-wrapper" style="color: var(--red);">
+              <i data-lucide="clock" style="width: 15px; height: 15px;"></i>
+            </div>
             <div>
               <div class="stat-bento-val">${studyHours}h</div>
               <div class="stat-bento-lbl">Jam Belajar</div>
@@ -366,18 +417,18 @@ export function DashboardView(container) {
         <div class="tools-title">Peralatan Belajar</div>
         <div class="tools-grid">
           <a class="tool-card" href="#/minna">
-            <div class="tool-icon-wrapper">
-              <i data-lucide="book-open" style="width: 16px; height: 16px;"></i>
+            <div class="tool-icon-wrapper" style="color: var(--blue);">
+              <i data-lucide="book-open" style="width: 15px; height: 15px;"></i>
             </div>
             <div>
-              <span class="tool-title">Grammar Digest</span>
+              <span class="tool-title">Grammar Handbook</span>
               <p class="tool-desc">Referensi lengkap tata bahasa Minna no Nihongo.</p>
             </div>
           </a>
 
           <a class="tool-card" href="#/kanji">
-            <div class="tool-icon-wrapper">
-              <i data-lucide="languages" style="width: 16px; height: 16px;"></i>
+            <div class="tool-icon-wrapper" style="color: var(--indigo);">
+              <i data-lucide="languages" style="width: 15px; height: 15px;"></i>
             </div>
             <div>
               <span class="tool-title">Kanji Hub</span>
@@ -386,8 +437,8 @@ export function DashboardView(container) {
           </a>
 
           <a class="tool-card" href="#/writing">
-            <div class="tool-icon-wrapper">
-              <i data-lucide="pen-tool" style="width: 16px; height: 16px;"></i>
+            <div class="tool-icon-wrapper" style="color: var(--amber);">
+              <i data-lucide="pen-tool" style="width: 15px; height: 15px;"></i>
             </div>
             <div>
               <span class="tool-title">Latihan Menulis</span>
@@ -396,8 +447,8 @@ export function DashboardView(container) {
           </a>
 
           <a class="tool-card" href="#/glossary">
-            <div class="tool-icon-wrapper">
-              <i data-lucide="help-circle" style="width: 16px; height: 16px;"></i>
+            <div class="tool-icon-wrapper" style="color: var(--green);">
+              <i data-lucide="help-circle" style="width: 15px; height: 15px;"></i>
             </div>
             <div>
               <span class="tool-title">Glosarium</span>
