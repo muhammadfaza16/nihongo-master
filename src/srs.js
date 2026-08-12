@@ -1,5 +1,21 @@
 // Spaced Repetition System (SM-2 algorithm variant)
-import { getState, setState } from './store.js';
+import { getState, setState, on } from './store.js';
+
+let _srsIdSet = null;
+
+function _ensureSRSIdSet() {
+  if (_srsIdSet === null) {
+    const s = getState();
+    _srsIdSet = new Set(s.srsItems.map(item => item.id));
+    
+    // Keep it in sync if state is externally modified
+    on('stateChanged', (newState) => {
+      if (newState.srsItems.length !== _srsIdSet.size) {
+        _srsIdSet = new Set(newState.srsItems.map(item => item.id));
+      }
+    });
+  }
+}
 
 /**
  * Add an item to the SRS queue
@@ -7,8 +23,10 @@ import { getState, setState } from './store.js';
  * @param {string} type - "vocab" | "kanji" | "grammar"
  */
 export function addSRSItem(id, type) {
+  _ensureSRSIdSet();
+  if (_srsIdSet.has(id)) return; // already exists
+
   const s = getState();
-  if (s.srsItems.find(item => item.id === id)) return; // already exists
 
   const item = {
     id,
@@ -19,6 +37,7 @@ export function addSRSItem(id, type) {
     repetitions: 0,
   };
   _invalidateDueCache();
+  _srsIdSet.add(id);
   setState({ srsItems: [...s.srsItems, item] });
 }
 
@@ -141,6 +160,8 @@ export function removeSRSItem(id) {
   const s = getState();
   const filtered = s.srsItems.filter(item => item.id !== id);
   _invalidateDueCache();
+  _ensureSRSIdSet();
+  _srsIdSet.delete(id);
   setState({ srsItems: filtered });
 }
 

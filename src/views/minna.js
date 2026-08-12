@@ -39,28 +39,36 @@ export function MinnaView(container) {
 
   // Shell HTML
   let html = `
-    <div class="minna-container page-container-standard" style="padding-bottom: 60px;">
-      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 20px;" class="no-print">
-        <div>
-          <div style="font-size: var(--text-2xs); color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: var(--tracking-widest); margin-bottom: 6px;">
-            Referensi Akademik
+    <div class="minna-container page-container-standard fade-in" style="padding-bottom: 60px;">
+      
+      <!-- Minimalist Responsive Header Block -->
+      <div class="no-print" style="margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 16px;">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+            <span style="font-size: var(--text-3xs); font-weight: 600; color: var(--text-muted); letter-spacing: var(--tracking-wide);">
+              Referensi Tata Bahasa (Bab 0 – 50)
+            </span>
+            <button id="btn-print-doc" class="btn btn-secondary no-print" style="padding: 5px 12px; font-size: var(--text-3xs); border-radius: var(--radius-sm); margin-left: auto; flex-shrink: 0;">
+              <i data-lucide="printer" style="width:13px;height:13px;"></i> Cetak PDF
+            </button>
           </div>
-          <h2 style="font-size: var(--text-2xl); font-weight: 800; color: var(--text-main); margin-bottom: 8px; letter-spacing: var(--tracking-tight);">Minna no Nihongo: Deep Digest</h2>
-          <p style="color: var(--text-secondary); font-size: var(--text-xs); max-width: 650px; line-height: var(--leading-relaxed); margin: 0;">
-            Ekstraksi komprehensif tata bahasa lengkap dari Bab 0 sampai 50. Format ringkas ini dirancang agar Anda dapat memahami pola kalimat, rumus, dan nuansa secara cepat dan mendalam.
+          
+          <h2 style="font-size: var(--text-lg); font-weight: 700; color: var(--text-main); margin: 0; letter-spacing: var(--tracking-tight); line-height: 1.3;">
+            Minna no Nihongo: Deep Digest
+          </h2>
+          
+          <p style="color: var(--text-secondary); font-size: var(--text-xs); line-height: 1.5; margin: 0; max-width: 680px;">
+            Ekstraksi komprehensif pola kalimat, rumus konjugasi, dan nuansa tata bahasa Jepang.
           </p>
         </div>
-        <button id="btn-print-doc" class="btn btn-secondary no-print" style="padding: 10px 18px; height: fit-content; flex-shrink: 0; margin-left: 16px;">
-          <i data-lucide="printer" style="width:16px;height:16px;"></i> Cetak PDF
-        </button>
       </div>
 
-      <!-- Search Bar -->
-      <div class="no-print" style="position: relative; margin-bottom: 20px;">
-        <input type="text" id="grammar-search" placeholder="Cari pola kalimat, rumus, penjelasan, atau arti..." class="fill-input" style="padding-left: 44px; height: 48px; border-radius: var(--radius-md); font-weight: 600; width: 100%;">
-        <i data-lucide="search" style="position: absolute; left: 16px; top: 15px; width: 18px; height: 18px; color: var(--text-muted);"></i>
-        <button id="search-clear" style="position: absolute; right: 16px; top: 14px; background: transparent; border: none; color: var(--text-muted); cursor: pointer; display: none;">
-          <i data-lucide="x" style="width: 18px; height: 18px;"></i>
+      <!-- Spotlight Style Search Bar -->
+      <div class="no-print" style="position: relative; margin-bottom: 16px;">
+        <input type="text" id="grammar-search" placeholder="Cari pola, rumus, atau arti..." class="fill-input" style="padding-left: 38px; padding-right: 36px; height: 40px; border-radius: var(--radius-sm); font-size: var(--text-xs); width: 100%; background: var(--bg-card); border: 1px solid var(--border);">
+        <i data-lucide="search" style="position: absolute; left: 12px; top: 11px; width: 16px; height: 16px; color: var(--text-muted);"></i>
+        <button id="search-clear" style="position: absolute; right: 10px; top: 10px; background: transparent; border: none; color: var(--text-muted); cursor: pointer; display: none; padding: 2px;">
+          <i data-lucide="x" style="width: 16px; height: 16px;"></i>
         </button>
       </div>
 
@@ -84,7 +92,6 @@ export function MinnaView(container) {
   const printBtn = document.getElementById('btn-print-doc');
   const printDocContainer = document.getElementById('print-only-doc');
 
-  // Track expanded cards
   const expandedChapters = new Set();
   const loadedChapters = new Map(); // id -> html string
 
@@ -92,7 +99,7 @@ export function MinnaView(container) {
     let grammarHtml = '';
     const points = chapterData.grammar || [];
     if (points.length === 0) {
-      return `<div style="color:var(--text-muted);font-size:var(--text-sm);text-align:center;padding:20px;">Tidak ada tata bahasa pada bab ini.</div>`;
+      return `<div style="color:var(--text-muted);font-size:var(--text-xs);text-align:center;padding:16px;">Tidak ada tata bahasa pada bab ini.</div>`;
     }
     
     points.forEach((pt, idx) => {
@@ -102,58 +109,80 @@ export function MinnaView(container) {
       const explanation = pt.desc || '';
       const bullets = pt.points || [];
       const nativeNote = pt.native_note || '';
-      
-      // Match examples
       const patterns = chapterData.patterns || [];
       
       grammarHtml += `
-        <div style="padding: 24px 0; border-bottom: ${idx < points.length - 1 ? '1px solid var(--border)' : 'none'};">
-          <div style="display: flex; flex-wrap: wrap; gap: 24px;">
-            <!-- Kiri: Pola & Penjelasan -->
-            <div style="flex: 1.2; min-width: 280px;">
-              <div style="margin-bottom: 16px;">
-                <span style="display: inline-block; background: var(--accent-dim); color: var(--accent-bright); padding: 4px 10px; border-radius: var(--radius-xs); font-size: var(--text-2xs); font-weight: 700; margin-bottom: 10px; border: 1px solid var(--border-accent);">Pola ${idx + 1}</span>
-                <div style="font-family: var(--font-jp); font-size: 1.6rem; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">${patternClean}</div>
-                <code style="font-size: var(--text-sm); color: var(--accent-bright); background: var(--bg-elevated); padding: 6px 12px; border-radius: var(--radius-sm); font-weight: 600; display: inline-block; border-left: 3px solid var(--accent); border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); font-family: var(--font-mono);">${formula}</code>
-              </div>
-              
-              <div style="margin-bottom: 16px;">
-                <div style="font-size: var(--text-2xs); font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: var(--tracking-wide);">Penjelasan Logika</div>
-                <p style="font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-relaxed); margin: 0; font-weight: 700;">${explanation}</p>
-                ${bullets.length > 0 ? `
-                <ul style="padding-left: 20px; color: var(--text-secondary); display: flex; flex-direction: column; gap: 6px; font-size: var(--text-sm); margin-top: 8px;">
-                  ${bullets.map(bullet => `<li style="line-height: 1.5;">${bullet}</li>`).join('')}
-                </ul>
-                ` : ''}
-              </div>
-              
-              ${nativeNote ? `
-              <div style="background: var(--amber-dim); border-left: 3px solid var(--amber); padding: 12px 16px; border-radius: 0 var(--radius-md) var(--radius-md) 0; border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-                <div style="font-size: var(--text-2xs); font-weight: 700; color: var(--amber); margin-bottom: 4px; display: flex; align-items: center; gap: 6px; text-transform: uppercase; letter-spacing: var(--tracking-wide);">
-                  <i data-lucide="alert-circle" style="width:14px;height:14px;"></i> Nuansa &amp; Pengecualian
-                </div>
-                <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 0; line-height: var(--leading-normal);">${nativeNote}</p>
-              </div>
-              ` : ''}
+        <div style="padding: 18px 0; border-bottom: ${idx < points.length - 1 ? '1px solid var(--border)' : 'none'};">
+          
+          <!-- Kindle Pattern Header -->
+          <div style="margin-bottom: 10px;">
+            <div style="font-size: var(--text-3xs); font-weight: 600; color: var(--accent); margin-bottom: 2px;">
+              Pola ${idx + 1}
             </div>
+            <h4 style="font-size: var(--text-sm); font-weight: 600; color: var(--text-main); line-height: 1.4; margin: 0; letter-spacing: -0.01em;">
+              ${patternClean}
+            </h4>
+          </div>
 
-            <!-- Kanan: Contoh -->
-            <div style="flex: 1; min-width: 280px;">
-              <div style="font-size: var(--text-2xs); font-weight: 700; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase; letter-spacing: var(--tracking-wide);">Contoh Penggunaan</div>
-              <div style="display: flex; flex-direction: column; gap: 10px;">
-                ${patterns.map((ex, exIdx) => `
-                  <div style="background: var(--bg-elevated); padding: 14px 16px; border-radius: var(--radius-md); border: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; transition: border-color 0.2s;" class="vocab-card-item">
-                    <div style="min-width: 0; flex: 1;">
-                      <div style="font-family: var(--font-jp); font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 4px; line-height: 1.3;">${ex.jp}</div>
-                      <div style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 4px; font-family: var(--font-sans);">${ex.rom}</div>
-                      <div style="font-size: 0.88rem; color: var(--accent-bright); font-weight: 600; line-height: 1.3;">&rarr; ${ex.en}</div>
-                    </div>
-                    <div id="audio-btn-${chId}-${idx}-${exIdx}" style="margin-left: 12px; flex-shrink: 0; margin-top: 2px;"></div>
+          <!-- Warm Kindle Formula Card -->
+          ${formula && formula !== '—' ? `
+          <div style="background: var(--bg-hover); border-left: 3px solid var(--accent); padding: 8px 12px; border-radius: 0 var(--radius-xs) var(--radius-xs) 0; margin-bottom: 14px;">
+            <div style="font-size: var(--text-3xs); color: var(--text-muted); font-weight: 600; margin-bottom: 2px;">Rumus Kalimat</div>
+            <div style="font-size: var(--text-xs); color: var(--text-main); font-weight: 600; line-height: 1.45; font-family: var(--font-sans);">${formula}</div>
+          </div>
+          ` : ''}
+          
+          <!-- Kindle Explanation Paragraph -->
+          <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: var(--leading-relaxed); margin: 0 0 12px 0; font-weight: 400;">
+            ${explanation}
+          </p>
+
+          <!-- Kindle Dash Bullets -->
+          ${bullets.length > 0 ? `
+          <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px;">
+            ${bullets.map(b => {
+              const cleanBullet = b
+                .replace(/\bHIRAGANA\b/g, 'Hiragana')
+                .replace(/\bKATAKANA\b/g, 'Katakana')
+                .replace(/\bKANJI\b/g, 'Kanji')
+                .replace(/\bPENTING\b/g, 'Penting');
+              return `
+                <div style="display: flex; gap: 8px; font-size: var(--text-xs); color: var(--text-secondary); line-height: var(--leading-relaxed);">
+                  <span style="color: var(--text-muted); font-weight: 600; flex-shrink: 0;">—</span>
+                  <div>${cleanBullet}</div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+          ` : ''}
+          
+          <!-- Nuance Callout -->
+          ${nativeNote ? `
+          <div style="background: var(--amber-dim); border-left: 3px solid var(--amber); padding: 10px 14px; border-radius: 0 var(--radius-xs) var(--radius-xs) 0; margin-bottom: 14px;">
+            <div style="font-size: var(--text-3xs); font-weight: 600; color: var(--amber); margin-bottom: 2px; display: flex; align-items: center; gap: 6px;">
+              <i data-lucide="alert-circle" style="width:13px;height:13px;"></i> Catatan Penggunaan
+            </div>
+            <p style="font-size: var(--text-xs); color: var(--text-secondary); margin: 0; line-height: 1.5;">${nativeNote}</p>
+          </div>
+          ` : ''}
+
+          <!-- Kindle Example Cards List -->
+          <div style="margin-top: 14px; border-top: 1px dashed var(--border); padding-top: 12px;">
+            <div style="font-size: var(--text-3xs); font-weight: 600; color: var(--text-muted); margin-bottom: 10px;">Contoh Kalimat</div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              ${patterns.map((ex, exIdx) => `
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 10px 14px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm);" class="kindle-example-card">
+                  <div style="min-width: 0; flex: 1;">
+                    <div style="font-family: var(--font-jp); font-size: var(--text-base); font-weight: 600; color: var(--text-main); line-height: 1.4; margin-bottom: 2px;">${ex.jp}</div>
+                    <div style="font-size: var(--text-3xs); color: var(--text-muted); font-family: var(--font-sans); margin-bottom: 4px;">${ex.rom}</div>
+                    <div style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.4;">${ex.en}</div>
                   </div>
-                `).join('')}
-              </div>
+                  <div id="audio-btn-${chId}-${idx}-${exIdx}" style="flex-shrink: 0; margin-top: 2px;"></div>
+                </div>
+              `).join('')}
             </div>
           </div>
+
         </div>
       `;
     });
@@ -167,37 +196,41 @@ export function MinnaView(container) {
       patterns.forEach((ex, exIdx) => {
         const btnContainer = document.getElementById(`audio-btn-${chId}-${idx}-${exIdx}`);
         if (btnContainer && !btnContainer.hasChildNodes()) {
-          btnContainer.appendChild(createAudioButton(ex.jp, '1.25rem'));
+          btnContainer.appendChild(createAudioButton(ex.jp, '1.0rem'));
         }
       });
     });
   }
 
-  // Render initial collapsed view
+  // Render initial collapsed view (Single Fluid Borderless Card Container)
   const renderIndexList = () => {
-    let indexHtml = '';
-    MNN_INDEX.forEach(ch => {
-      const cleanTitle = ch.title.includes(':') ? ch.title.split(':').slice(1).join(':').trim() : ch.title;
+    let indexHtml = `
+      <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;" class="fade-in">
+    `;
+
+    MNN_INDEX.forEach((ch, index) => {
       const isExpanded = expandedChapters.has(ch.id);
+      const isLast = index === MNN_INDEX.length - 1;
       
       indexHtml += `
-        <div class="card lesson-accordion-card fade-in" id="lesson-card-${ch.id}" style="padding: 0; overflow: hidden; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); margin-bottom: 12px;">
-          <div class="lesson-header" data-chapter-id="${ch.id}" style="padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; background: var(--bg-elevated); cursor: pointer; transition: background 0.15s ease;">
-            <div>
-              <div style="font-size: var(--text-2xs); color: var(--text-muted); font-weight: 700; margin-bottom: 4px; letter-spacing: var(--tracking-wider); text-transform: uppercase;">BAB ${ch.id}</div>
-              <h3 style="font-size: var(--text-md); font-weight: 800; color: var(--text-main); margin: 0;">${cleanTitle}</h3>
+        <div class="lesson-accordion-row" id="lesson-card-${ch.id}" style="border-bottom: ${isLast ? 'none' : '1px solid var(--border)'};">
+          <div class="lesson-header" data-chapter-id="${ch.id}" style="padding: 11px 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: background 0.15s ease;">
+            <div style="min-width: 0; flex: 1;">
+              <h3 style="font-size: var(--text-xs); font-weight: 500; color: var(--text-main); margin: 0; line-height: 1.4; letter-spacing: -0.01em;">${ch.title}</h3>
             </div>
-            <div style="display: flex; align-items: center; gap: 12px; flex-shrink: 0;">
-              <span style="font-size: var(--text-2xs); color: var(--text-muted); font-weight: 700; background: var(--bg-hover); padding: 3px 8px; border-radius: 12px; border: 1px solid var(--border); font-variant-numeric: tabular-nums;">${ch.vocabCount} Kosakata</span>
-              <i data-lucide="chevron-down" class="lesson-chevron" style="width: 18px; height: 18px; color: var(--text-muted); transition: transform 0.2s; transform: ${isExpanded ? 'rotate(180deg)' : 'none'};"></i>
+            <div style="display: flex; align-items: center; gap: 10px; flex-shrink: 0; margin-left: 12px;">
+              <span style="font-size: var(--text-3xs); color: var(--text-muted); font-weight: 500;">${ch.vocabCount} Kosakata</span>
+              <i data-lucide="chevron-down" class="lesson-chevron" style="width: 14px; height: 14px; color: var(--text-muted); transition: transform 0.2s; transform: ${isExpanded ? 'rotate(180deg)' : 'none'};"></i>
             </div>
           </div>
-          <div class="lesson-details" id="lesson-details-${ch.id}" style="display: ${isExpanded ? 'block' : 'none'}; padding: 0 24px 24px; border-top: 1px solid var(--border); background: var(--bg-card);">
+          <div class="lesson-details" id="lesson-details-${ch.id}" style="display: ${isExpanded ? 'block' : 'none'}; padding: 12px 18px 16px; border-top: 1px solid var(--border); background: var(--bg-elevated);">
             <!-- Loaded dynamically -->
           </div>
         </div>
       `;
     });
+
+    indexHtml += `</div>`;
     
     listContainer.innerHTML = indexHtml;
     if (window.lucide) lucide.createIcons({ root: listContainer });
@@ -230,12 +263,14 @@ export function MinnaView(container) {
               if (window.lucide) lucide.createIcons({ root: details });
             }).catch(err => {
               console.error('[Minna Digest] Failed to load chapter grammar details:', err);
-              details.innerHTML = `<div style="color:var(--red);font-size:var(--text-sm);padding:20px;">Gagal memuat tata bahasa.</div>`;
+              details.innerHTML = `<div style="color:var(--red);font-size:var(--text-xs);padding:12px;">Gagal memuat tata bahasa.</div>`;
             });
           } else {
-            // Already loaded, just re-mount audio buttons if needed
+            // Already loaded, restore HTML and re-mount audio buttons
+            details.innerHTML = loadedChapters.get(chId);
             loadChapter(chId).then(chapterData => {
               mountAudioButtons(chId, chapterData);
+              if (window.lucide) lucide.createIcons({ root: details });
             });
           }
         }
@@ -278,10 +313,10 @@ export function MinnaView(container) {
 
       if (filteredLessons.length === 0) {
         listContainer.innerHTML = `
-          <div style="text-align: center; padding: 48px 16px; border: 1px dashed var(--border); border-radius: var(--radius-lg); background: var(--bg-card);" class="fade-in">
-            <i data-lucide="search-code" style="width: 40px; height: 40px; color: var(--text-muted); margin-bottom: 12px;"></i>
-            <div style="font-weight: 700; font-size: var(--text-md); color: var(--text-main); margin-bottom: 4px;">Pola Tidak Ditemukan</div>
-            <div style="color: var(--text-secondary); font-size: var(--text-sm);">Kata kunci "${query}" tidak cocok dengan pola tata bahasa mana pun.</div>
+          <div style="text-align: center; padding: 40px 16px; border: 1px dashed var(--border); border-radius: var(--radius-md); background: var(--bg-card);" class="fade-in">
+            <i data-lucide="search-code" style="width: 36px; height: 36px; color: var(--text-muted); margin-bottom: 10px;"></i>
+            <div style="font-weight: 700; font-size: var(--text-sm); color: var(--text-main); margin-bottom: 4px;">Pola Tidak Ditemukan</div>
+            <div style="color: var(--text-secondary); font-size: var(--text-xs);">Kata kunci "${query}" tidak cocok dengan pola tata bahasa mana pun.</div>
           </div>
         `;
         if (window.lucide) lucide.createIcons({ root: listContainer });
@@ -289,16 +324,14 @@ export function MinnaView(container) {
       }
 
       filteredLessons.forEach(lesson => {
-        const cleanTitle = lesson.title.includes(':') ? lesson.title.split(':').slice(1).join(':').trim() : lesson.title;
         contentHtml += `
-          <div class="card fade-in" style="border-left: 4px solid var(--accent); padding: 0; overflow: hidden; background: var(--bg-card); margin-bottom: 16px;">
-            <div style="padding: 20px 24px; background: var(--bg-elevated); border-bottom: 1px solid var(--border);">
-              <div style="font-size: var(--text-2xs); color: var(--text-muted); font-weight: 700; margin-bottom: 4px; letter-spacing: var(--tracking-wider); text-transform: uppercase;">BAB ${lesson.id}</div>
-              <h3 style="font-size: var(--text-lg); font-weight: 800; margin-bottom: 8px; color: var(--text-main);">${cleanTitle}</h3>
-              <p style="color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-relaxed); margin: 0;">${lesson.intro}</p>
+          <div class="card fade-in" style="border-left: 3px solid var(--accent); padding: 0; overflow: hidden; background: var(--bg-card); margin-bottom: 14px;">
+            <div style="padding: 14px 18px; background: var(--bg-elevated); border-bottom: 1px solid var(--border);">
+              <h3 style="font-size: var(--text-sm); font-weight: 700; margin-bottom: 4px; color: var(--text-main);">${lesson.title}</h3>
+              <p style="color: var(--text-secondary); font-size: var(--text-xs); line-height: 1.5; margin: 0;">${lesson.intro}</p>
             </div>
             
-            <div style="display: flex; flex-direction: column; gap: 0; padding: 0 24px;">
+            <div style="display: flex; flex-direction: column; gap: 0; padding: 0 18px;">
         `;
 
         lesson.points.forEach((pt, idx) => {
@@ -306,48 +339,52 @@ export function MinnaView(container) {
           const nativeNote = pt.nuance || '';
           
           contentHtml += `
-              <div style="padding: 24px 0; border-bottom: ${idx < lesson.points.length - 1 ? '1px solid var(--border)' : 'none'};">
-                <div style="display: flex; flex-wrap: wrap; gap: 24px;">
+              <div style="padding: 16px 0; border-bottom: ${idx < lesson.points.length - 1 ? '1px solid var(--border)' : 'none'};">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
                   <!-- Kiri: Pola & Penjelasan -->
-                  <div style="flex: 1.2; min-width: 280px;">
-                    <div style="margin-bottom: 16px;">
-                      <span style="display: inline-block; background: var(--accent-dim); color: var(--accent-bright); padding: 4px 10px; border-radius: var(--radius-xs); font-size: var(--text-2xs); font-weight: 700; margin-bottom: 10px; border: 1px solid var(--border-accent);">Pola ${idx + 1}</span>
-                      <div style="font-family: var(--font-jp); font-size: 1.6rem; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">${pt.pattern}</div>
-                      <code style="font-size: var(--text-sm); color: var(--accent-bright); background: var(--bg-elevated); padding: 6px 12px; border-radius: var(--radius-sm); font-weight: 600; display: inline-block; border-left: 3px solid var(--accent); border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); font-family: var(--font-mono);">${formula}</code>
+                  <div>
+                    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 6px;">
+                      <span style="font-size: var(--text-3xs); font-weight: 600; color: var(--accent); background: var(--accent-dim); padding: 2px 8px; border-radius: 99px; border: 1px solid var(--border-accent);">Pola ${idx + 1}</span>
+                      <h4 style="font-family: var(--font-jp); font-size: var(--text-md); font-weight: 700; color: var(--text-main); margin: 0;">${pt.pattern}</h4>
+                    </div>
+
+                    <div style="margin-bottom: 8px;">
+                      <code style="font-size: var(--text-xs); color: var(--text-main); background: var(--bg-elevated); padding: 4px 10px; border-radius: var(--radius-xs); border: 1px solid var(--border); font-family: var(--font-mono); font-weight: 600; display: inline-block;">${formula}</code>
                     </div>
                     
-                    <div style="margin-bottom: 16px;">
-                      <div style="font-size: var(--text-2xs); font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: var(--tracking-wide);">Penjelasan Logika</div>
-                      <p style="font-size: var(--text-sm); color: var(--text-secondary); line-height: var(--leading-relaxed); margin: 0; font-weight: 700;">${pt.explanation}</p>
+                    <div style="margin-bottom: 10px;">
+                      <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5; margin: 0; font-weight: 500;">${pt.explanation}</p>
                       ${pt.points && pt.points.length > 0 ? `
-                      <ul style="padding-left: 20px; color: var(--text-secondary); display: flex; flex-direction: column; gap: 6px; font-size: var(--text-sm); margin-top: 8px;">
-                        ${pt.points.map(bullet => `<li style="line-height: 1.5;">${bullet}</li>`).join('')}
+                      <ul style="padding-left: 16px; color: var(--text-secondary); display: flex; flex-direction: column; gap: 3px; font-size: var(--text-xs); margin-top: 6px;">
+                        ${pt.points.map(bullet => `<li style="line-height: 1.45;">${bullet}</li>`).join('')}
                       </ul>
                       ` : ''}
                     </div>
                     
                     ${nativeNote ? `
-                    <div style="background: var(--amber-dim); border-left: 3px solid var(--amber); padding: 12px 16px; border-radius: 0 var(--radius-md) var(--radius-md) 0; border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-                      <div style="font-size: var(--text-2xs); font-weight: 700; color: var(--amber); margin-bottom: 4px; display: flex; align-items: center; gap: 6px; text-transform: uppercase; letter-spacing: var(--tracking-wide);">
-                        <i data-lucide="alert-circle" style="width:14px;height:14px;"></i> Nuansa &amp; Pengecualian
+                    <div style="background: var(--amber-dim); border-left: 3px solid var(--amber); padding: 8px 12px; border-radius: 0 var(--radius-xs) var(--radius-xs) 0;">
+                      <div style="font-size: var(--text-3xs); font-weight: 600; color: var(--amber); margin-bottom: 2px; display: flex; align-items: center; gap: 4px; text-transform: uppercase; letter-spacing: var(--tracking-wide);">
+                        <i data-lucide="alert-circle" style="width:12px;height:12px;"></i> Catatan
                       </div>
-                      <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 0; line-height: var(--leading-normal);">${nativeNote}</p>
+                      <p style="font-size: var(--text-xs); color: var(--text-secondary); margin: 0; line-height: 1.45;">${nativeNote}</p>
                     </div>
                     ` : ''}
                   </div>
 
-                  <!-- Kanan: Contoh -->
-                  <div style="flex: 1; min-width: 280px;">
-                    <div style="font-size: var(--text-2xs); font-weight: 700; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase; letter-spacing: var(--tracking-wide);">Contoh Penggunaan</div>
-                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                  <!-- Kanan: Contoh Penggunaan (Compact List) -->
+                  <div>
+                    <div style="font-size: var(--text-3xs); font-weight: 600; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: var(--tracking-wide);">Contoh Kalimat</div>
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
                       ${pt.examples.map((ex, exIdx) => `
-                        <div style="background: var(--bg-elevated); padding: 14px 16px; border-radius: var(--radius-md); border: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; transition: border-color 0.2s;" class="vocab-card-item">
+                        <div style="background: var(--bg-elevated); padding: 8px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 10px;" class="example-row-sleek">
                           <div style="min-width: 0; flex: 1;">
-                            <div style="font-family: var(--font-jp); font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 4px; line-height: 1.3;">${ex.jp}</div>
-                            <div style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 4px; font-family: var(--font-sans);">${ex.rom}</div>
-                            <div style="font-size: 0.88rem; color: var(--accent-bright); font-weight: 600; line-height: 1.3;">&rarr; ${ex.id}</div>
+                            <div style="display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 2px;">
+                              <span style="font-family: var(--font-jp); font-size: var(--text-sm); font-weight: 600; color: var(--text-main);">${ex.jp}</span>
+                              <span style="font-size: var(--text-3xs); color: var(--text-muted); font-family: var(--font-sans);">${ex.rom}</span>
+                            </div>
+                            <div style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.35;">${ex.en}</div>
                           </div>
-                          <div id="audio-btn-${lesson.id}-${idx}-${exIdx}" style="margin-left: 12px; flex-shrink: 0; margin-top: 2px;"></div>
+                          <div id="audio-btn-${lesson.id}-${idx}-${exIdx}" style="flex-shrink: 0;"></div>
                         </div>
                       `).join('')}
                     </div>
@@ -371,7 +408,7 @@ export function MinnaView(container) {
           pt.examples.forEach((ex, exIdx) => {
             const btnContainer = document.getElementById(`audio-btn-${lesson.id}-${idx}-${exIdx}`);
             if (btnContainer) {
-              btnContainer.appendChild(createAudioButton(ex.jp, '1.25rem'));
+              btnContainer.appendChild(createAudioButton(ex.jp, '1.1rem'));
             }
           });
         });

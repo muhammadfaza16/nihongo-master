@@ -1,3 +1,4 @@
+// NOTE: curriculum.js should stay in sync with chapter_index.js
 export const CURRICULUM = [
   {
     "levelId": "pra-mnn",

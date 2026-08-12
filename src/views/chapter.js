@@ -2,6 +2,7 @@ import { renderTopbar, getDisplayMode, navigateChapter, showToast, renderBackBtn
 import { loadChapter, MNN_INDEX } from '../data/chapter_index.js';
 import { addSRSItem, removeSRSItem, getSRSItemStatus } from '../srs.js';
 import { speakJP } from '../audio.js';
+import { isUnitCompleted } from '../store.js';
 
 window._showPremiumToast = showToast;
 
@@ -52,6 +53,26 @@ export function ChapterView(container, params) {
 }
 
 function _initChapterView(container, chapterId, chapterData, params) {
+  if (chapterId >= 1) {
+    const prevChapterId = chapterId - 1;
+    if (!isUnitCompleted(prevChapterId.toString()) && !isUnitCompleted(prevChapterId)) {
+      container.innerHTML = `
+        <div class="page-container-standard fade-in" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 70vh; text-align: center;">
+          <i data-lucide="lock" style="width: 64px; height: 64px; color: var(--text-muted); margin-bottom: 24px;"></i>
+          <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--text-main); margin-bottom: 12px;">Bab Terkunci</h2>
+          <p style="color: var(--text-secondary); margin-bottom: 24px; max-width: 400px; line-height: 1.6;">
+            Untuk mengakses <strong>${chapterData.title}</strong>, Anda harus menyelesaikan Bab ${prevChapterId} terlebih dahulu.
+          </p>
+          <a href="#/chapter/${prevChapterId}" class="btn btn-primary" style="padding: 12px 24px; border-radius: var(--radius-md); font-weight: 800; text-transform: uppercase;">
+            Ke Bab ${prevChapterId}
+          </a>
+        </div>
+      `;
+      if (window.lucide) lucide.createIcons({ root: container });
+      return;
+    }
+  }
+
   // Persist theory read flag in localStorage
   localStorage.setItem(`nihongo_master_theory_ch${chapterId}`, 'true');
 
@@ -91,18 +112,18 @@ function _initChapterView(container, chapterId, chapterData, params) {
         ['あ a', 'い i', 'う u', 'え e', 'お o'],
         ['か ka', 'き ki', 'く ku', 'け ke', 'こ ko'],
         ['さ sa', 'し shi', 'す su', 'せ se', 'そ so'],
-        ['た ta', 'ち chi', 'つ tsu', 'て te', 'ot to'], // 'と to'
+        ['た ta', 'ち chi', 'つ tsu', 'て te', 'と to'],
         ['な na', 'に ni', 'ぬ nu', 'ね ne', 'の no'],
         ['は ha', 'ひ hi', 'ふ fu', 'へ he', 'ほ ho'],
         ['ま ma', 'み mi', 'む mu', 'め me', 'も mo'],
         ['や ya', '', 'ゆ yu', '', 'よ yo'],
-        ['ら ra', 'ri ri', 'る ru', 'れ re', 'ろ ro'],
+        ['ら ra', 'り ri', 'る ru', 'れ re', 'ろ ro'],
         ['わ wa', '', '', '', 'を wo'],
         ['ん n', '', '', '', '']
       ];
       
       const hiraDaku = [
-        ['g ga', 'ぎ gi', 'ぐ gu', 'げ ge', 'ご go'], // 'が ga'
+        ['が ga', 'ぎ gi', 'ぐ gu', 'げ ge', 'ご go'],
         ['ざ za', 'じ ji', 'ず zu', 'ぜ ze', 'ぞ zo'],
         ['だ da', 'ぢ ji', 'づ zu', 'で de', 'ど do'],
         ['ば ba', 'び bi', 'ぶ bu', 'べ be', 'ぼ bo'],

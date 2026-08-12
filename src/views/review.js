@@ -47,17 +47,23 @@ export async function ReviewView(container) {
         let badgeColor = '';
         let badgeText = '';
         if (item.grade === 0) {
-          badgeColor = 'background: var(--red-dim); color: var(--red); border: 1px solid var(--red-dim);';
-          badgeText = 'Lupa';
+          badgeColor = 'background: var(--red-dim, #ffe5e5); color: var(--red, #ef4444); border: 1px solid var(--border);';
+          badgeText = 'Lupa Total';
+        } else if (item.grade === 1) {
+          badgeColor = 'background: var(--orange-dim, #ffedd5); color: var(--orange, #f97316); border: 1px solid var(--border);';
+          badgeText = 'Hampir Ingat';
         } else if (item.grade === 2) {
-          badgeColor = 'background: var(--amber-dim); color: var(--amber); border: 1px solid var(--amber-dim);';
+          badgeColor = 'background: var(--amber-dim, #fef3c7); color: var(--amber, #f59e0b); border: 1px solid var(--border);';
           badgeText = 'Susah';
+        } else if (item.grade === 3) {
+          badgeColor = 'background: var(--lime-dim, #ecfccb); color: var(--lime, #84cc16); border: 1px solid var(--border);';
+          badgeText = 'Lumayan';
         } else if (item.grade === 4) {
-          badgeColor = 'background: var(--green-dim); color: var(--green); border: 1px solid var(--green-dim);';
+          badgeColor = 'background: var(--green-dim, #dcfce7); color: var(--green, #22c55e); border: 1px solid var(--border);';
           badgeText = 'Ingat';
         } else {
-          badgeColor = 'background: var(--bg-elevated); color: var(--blue); border: 1px solid var(--border);';
-          badgeText = 'Mudah';
+          badgeColor = 'background: var(--bg-elevated); color: var(--blue, #3b82f6); border: 1px solid var(--border);';
+          badgeText = 'Mudah Sekali';
         }
 
         return `
@@ -179,21 +185,29 @@ export async function ReviewView(container) {
       actionArea.innerHTML = `
         <div style="display: flex; flex-direction: column; width: 100%; gap: 14px;">
           <div style="text-align: center; font-size: var(--text-xs); color: var(--text-muted); font-weight: 600;">Seberapa baik kamu mengingat kartu ini?</div>
-          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; width: 100%;">
-            <button class="btn btn-grade" data-q="0" style="background: var(--red-dim); border: 1px solid var(--border); color: var(--red); flex-direction: column; padding: 10px 4px; height: 60px;">
-              <span style="font-size: var(--text-xs); font-weight: 800;">Lupa</span>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 100%;">
+            <button class="btn btn-grade" data-q="0" style="background: var(--red-dim, #ffe5e5); border: 1px solid var(--border); color: var(--red, #ef4444); flex-direction: column; padding: 10px 4px; height: 60px;">
+              <span style="font-size: var(--text-xs); font-weight: 800;">Lupa Total</span>
               <span style="font-size: var(--text-2xs); opacity: 0.6; margin-top: 2px;">Grade 0</span>
             </button>
-            <button class="btn btn-grade" data-q="2" style="background: var(--amber-dim); border: 1px solid var(--border); color: var(--amber); flex-direction: column; padding: 10px 4px; height: 60px;">
+            <button class="btn btn-grade" data-q="1" style="background: var(--orange-dim, #ffedd5); border: 1px solid var(--border); color: var(--orange, #f97316); flex-direction: column; padding: 10px 4px; height: 60px;">
+              <span style="font-size: var(--text-xs); font-weight: 800;">Hampir Ingat</span>
+              <span style="font-size: var(--text-2xs); opacity: 0.6; margin-top: 2px;">Grade 1</span>
+            </button>
+            <button class="btn btn-grade" data-q="2" style="background: var(--amber-dim, #fef3c7); border: 1px solid var(--border); color: var(--amber, #f59e0b); flex-direction: column; padding: 10px 4px; height: 60px;">
               <span style="font-size: var(--text-xs); font-weight: 800;">Susah</span>
               <span style="font-size: var(--text-2xs); opacity: 0.6; margin-top: 2px;">Grade 2</span>
             </button>
-            <button class="btn btn-grade" data-q="4" style="background: var(--green-dim); border: 1px solid var(--border); color: var(--green); flex-direction: column; padding: 10px 4px; height: 60px;">
+            <button class="btn btn-grade" data-q="3" style="background: var(--lime-dim, #ecfccb); border: 1px solid var(--border); color: var(--lime, #84cc16); flex-direction: column; padding: 10px 4px; height: 60px;">
+              <span style="font-size: var(--text-xs); font-weight: 800;">Lumayan</span>
+              <span style="font-size: var(--text-2xs); opacity: 0.6; margin-top: 2px;">Grade 3</span>
+            </button>
+            <button class="btn btn-grade" data-q="4" style="background: var(--green-dim, #dcfce7); border: 1px solid var(--border); color: var(--green, #22c55e); flex-direction: column; padding: 10px 4px; height: 60px;">
               <span style="font-size: var(--text-xs); font-weight: 800;">Ingat</span>
               <span style="font-size: var(--text-2xs); opacity: 0.6; margin-top: 2px;">Grade 4</span>
             </button>
-            <button class="btn btn-grade" data-q="5" style="background: var(--bg-elevated); border: 1px solid var(--border); color: var(--blue); flex-direction: column; padding: 10px 4px; height: 60px;">
-              <span style="font-size: var(--text-xs); font-weight: 800;">Mudah</span>
+            <button class="btn btn-grade" data-q="5" style="background: var(--bg-elevated); border: 1px solid var(--border); color: var(--blue, #3b82f6); flex-direction: column; padding: 10px 4px; height: 60px;">
+              <span style="font-size: var(--text-xs); font-weight: 800;">Mudah Sekali</span>
               <span style="font-size: var(--text-2xs); opacity: 0.6; margin-top: 2px;">Grade 5</span>
             </button>
           </div>

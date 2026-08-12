@@ -3,16 +3,6 @@ import { MNN_INDEX } from '../data/chapter_index.js';
 import { getState, getLevel, isUnitCompleted } from '../store.js';
 import { getDueCount } from '../srs.js';
 
-function getDailyMissionTitle(plan) {
-  if (plan.level === 'N5') {
-    return 'Target Harian: Fondasi Dasar (N5)';
-  } else if (plan.level === 'N4') {
-    return 'Target Harian: Menengah (N4)';
-  } else {
-    return 'Target Harian: Jalur Cepat (N3)';
-  }
-}
-
 function getDailyMissionDesc(plan, nextChapter) {
   if (plan.level === 'N5') {
     if (nextChapter.id <= 25) {
@@ -29,7 +19,6 @@ function getDailyMissionDesc(plan, nextChapter) {
       return `Hebat! Kurikulum selesai. Uji kemampuan Anda dengan menempuh <strong>Simulasi Ujian N4</strong>.`;
     }
   } else {
-    // N3 Target
     if (nextChapter.id <= 25) {
       return `Jalur cepat N3! Selesaikan fondasi dasar Anda hari ini: Kuasai tata bahasa dasar <strong>Bab ${nextChapter.id}</strong>.`;
     } else if (nextChapter.id <= 50) {
@@ -90,15 +79,62 @@ export function DashboardView(container) {
   else if (hour >= 11 && hour < 15) timeGreeting = 'Siang';
   else if (hour >= 15 && hour < 18) timeGreeting = 'Sore';
 
+  // Build Activity Heatmap HTML (90 days)
+  const today = new Date();
+  const activityLog = state.activityLog || {};
+  const days = [];
+  let activeDaysCount = 0;
+  for (let i = 90; i >= 0; i--) {
+    const d = new Date(today);
+    d.setDate(d.getDate() - i);
+    days.push(d);
+  }
+
+  let heatmapCellsHtml = '';
+  days.forEach(d => {
+    const dateStr = d.toISOString().split('T')[0];
+    const mins = activityLog[dateStr] || 0;
+    if (mins > 0) activeDaysCount++;
+
+    let colorStyle = 'background: var(--bg-elevated); border-color: var(--border);';
+    if (mins > 0 && mins < 15) {
+      colorStyle = 'background: rgba(99, 102, 241, 0.22); border-color: rgba(99, 102, 241, 0.35);';
+    } else if (mins >= 15 && mins < 30) {
+      colorStyle = 'background: rgba(99, 102, 241, 0.45); border-color: rgba(99, 102, 241, 0.6);';
+    } else if (mins >= 30 && mins < 60) {
+      colorStyle = 'background: rgba(99, 102, 241, 0.75); border-color: rgba(99, 102, 241, 0.9);';
+    } else if (mins >= 60) {
+      colorStyle = 'background: var(--accent-bright, #818CF8); border-color: var(--accent-bright, #818CF8);';
+    }
+
+    const dateFormatted = d.toLocaleDateString('id-ID', { month: 'short', day: 'numeric' });
+    heatmapCellsHtml += `<div class="heatmap-cell" title="${dateFormatted}: ${mins > 0 ? `${mins} menit belajar` : 'Tidak ada aktivitas'}" style="${colorStyle}"></div>`;
+  });
+
+  // Calculate stats for Bento Grid
+  const srsItems = state.srsItems || [];
+  const totalVocab = srsItems.filter(i => i.type === 'vocab').length;
+  const totalKanji = srsItems.filter(i => i.type === 'kanji').length;
+  const masteredItems = srsItems.filter(i => i.repetitions >= 5).length;
+  
+  const qh = state.quizHistory || [];
+  let avgQuiz = 0;
+  if (qh.length > 0) {
+    const totalScore = qh.reduce((acc, q) => acc + (q.score / q.total), 0);
+    avgQuiz = Math.round((totalScore / qh.length) * 100);
+  }
+  
+  const studyHours = (totalMinutes / 60).toFixed(1);
+
   container.innerHTML = `
     <div class="dashboard-wrapper page-container-standard fade-in">
       
-      <!-- Premium Minimalist Header -->
+      <!-- Minimalist Header -->
       <div class="dash-header">
         <div class="profile-info">
           <span class="profile-greeting">Selamat ${timeGreeting}</span>
           <div class="profile-title-name">Halo, Selamat Belajar!</div>
-          <span class="profile-level-badge">${levelInfo.nameId} (${levelInfo.name})</span>
+          <span class="profile-level-badge">${levelInfo.nameId} &middot; ${levelInfo.name}</span>
         </div>
 
         <div class="compact-stats">
@@ -134,20 +170,20 @@ export function DashboardView(container) {
         </div>
       </div>
 
-      <!-- Guided Study Plan Target (Sleek Alert) -->
+      <!-- Guided Study Plan Target -->
       ${state.studyPlan?.active ? `
       <div class="target-banner">
-        <div style="display: flex; align-items: center; gap: 10px;">
+        <div class="target-banner-content">
           <i data-lucide="compass" style="width: 18px; height: 18px; color: var(--text-main); flex-shrink: 0;"></i>
-          <span style="font-size: var(--text-xs); font-weight: 700; color: var(--text-secondary);">
+          <span>
             Target belajar <strong>${state.studyPlan.level}</strong> (${state.studyPlan.duration} Bulan): ${getDailyMissionDesc(state.studyPlan, nextChapter)}
           </span>
         </div>
-        <button class="btn btn-primary" onclick="window.location.hash='${getDailyMissionHash(state.studyPlan, nextChapter)}'" style="font-size: var(--text-2xs); font-weight: 800; padding: 6px 12px; border-radius: var(--radius-sm); flex-shrink:0; text-transform: uppercase;">Mulai Belajar</button>
+        <button class="btn btn-primary target-banner-btn" onclick="window.location.hash='${getDailyMissionHash(state.studyPlan, nextChapter)}'">Mulai Belajar</button>
       </div>
       ` : ''}
 
-      <!-- Fokus Belajar Hari Ini (Unified Focus Area) -->
+      <!-- Fokus Belajar Hari Ini -->
       <div class="focus-container">
         <div class="focus-title">Fokus Belajar Hari Ini</div>
         
@@ -166,7 +202,7 @@ export function DashboardView(container) {
               </p>
             </div>
             
-            <button class="btn ${dueCount > 0 ? 'btn-primary' : 'btn-secondary'}" onclick="window.location.hash='#/review'" style="width: 100%; font-size: var(--text-xs); font-weight: 800; padding: 10px 16px; border-radius: var(--radius-sm); text-transform: uppercase;">
+            <button class="btn ${dueCount > 0 ? 'btn-primary' : 'btn-secondary'}" onclick="window.location.hash='#/review'" style="width: 100%; font-size: var(--text-xs); font-weight: 700; padding: 10px 16px; border-radius: var(--radius-sm);">
               ${dueCount > 0 ? 'Mulai Review Sekarang' : 'Buka Halaman Review'}
             </button>
           </div>
@@ -179,15 +215,15 @@ export function DashboardView(container) {
               <p class="activity-desc">${nextChapter.desc}</p>
             </div>
             
-            <button class="btn btn-primary" onclick="window.location.hash='#/chapter/${nextChapter.id}'" style="width: 100%; font-size: var(--text-xs); font-weight: 800; padding: 10px 16px; border-radius: var(--radius-sm); text-transform: uppercase;">
+            <button class="btn btn-primary" onclick="window.location.hash='#/chapter/${nextChapter.id}'" style="width: 100%; font-size: var(--text-xs); font-weight: 700; padding: 10px 16px; border-radius: var(--radius-sm);">
               Pelajari Bab ${nextChapter.id}
             </button>
           </div>
         </div>
         
-        <!-- Practice & Exam quicklinks for the chapter -->
+        <!-- Practice & Exam quicklinks -->
         <div class="focus-subactions">
-          <span style="font-size: var(--text-2xs); font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Latihan Bab ${nextChapter.id}:</span>
+          <span class="subaction-label">Latihan Bab ${nextChapter.id}:</span>
           <div class="subaction-links">
             <a href="#/workbook/${nextChapter.id}" class="subaction-link">
               <i data-lucide="edit-3" style="width: 13px; height: 13px;"></i>
@@ -213,11 +249,11 @@ export function DashboardView(container) {
               <span class="track-prog-lbl">${minna1Completed} / ${minna1Chapters.length} Bab Selesai</span>
             </div>
             <div class="progress-ring-container">
-              <svg class="progress-ring" width="60" height="60">
-                <circle class="progress-ring-bg" stroke-width="4" fill="transparent" r="26" cx="30" cy="30"/>
-                <circle class="progress-ring-circle" stroke-width="4" fill="transparent" r="26" cx="30" cy="30" stroke-dasharray="163.36" stroke-dashoffset="${163.36 - (minna1ProgressPercent / 100) * 163.36}"/>
+              <svg class="progress-ring" width="52" height="52">
+                <circle class="progress-ring-bg" stroke-width="4" fill="transparent" r="22" cx="26" cy="26"/>
+                <circle class="progress-ring-circle" stroke-width="4" fill="transparent" r="22" cx="26" cy="26" stroke-dasharray="138.23" stroke-dashoffset="${138.23 - (minna1ProgressPercent / 100) * 138.23}"/>
               </svg>
-              <div style="position: absolute; font-size: var(--text-xs); font-weight: 800; color: var(--text-main); font-variant-numeric: tabular-nums;">${minna1ProgressPercent}%</div>
+              <div style="position: absolute; font-size: var(--text-2xs); font-weight: 800; color: var(--text-main); font-variant-numeric: tabular-nums;">${minna1ProgressPercent}%</div>
             </div>
           </a>
 
@@ -229,13 +265,99 @@ export function DashboardView(container) {
               <span class="track-prog-lbl">${minna2Completed} / ${minna2Chapters.length} Bab Selesai</span>
             </div>
             <div class="progress-ring-container">
-              <svg class="progress-ring" width="60" height="60">
-                <circle class="progress-ring-bg" stroke-width="4" fill="transparent" r="26" cx="30" cy="30"/>
-                <circle class="progress-ring-circle" stroke-width="4" fill="transparent" r="26" cx="30" cy="30" stroke-dasharray="163.36" stroke-dashoffset="${163.36 - (minna2ProgressPercent / 100) * 163.36}"/>
+              <svg class="progress-ring" width="52" height="52">
+                <circle class="progress-ring-bg" stroke-width="4" fill="transparent" r="22" cx="26" cy="26"/>
+                <circle class="progress-ring-circle" stroke-width="4" fill="transparent" r="22" cx="26" cy="26" stroke-dasharray="138.23" stroke-dashoffset="${138.23 - (minna2ProgressPercent / 100) * 138.23}"/>
               </svg>
-              <div style="position: absolute; font-size: var(--text-xs); font-weight: 800; color: var(--text-main); font-variant-numeric: tabular-nums;">${minna2ProgressPercent}%</div>
+              <div style="position: absolute; font-size: var(--text-2xs); font-weight: 800; color: var(--text-main); font-variant-numeric: tabular-nums;">${minna2ProgressPercent}%</div>
             </div>
           </a>
+        </div>
+      </div>
+
+      <!-- Activity Heatmap Section (Linear / GitHub Style) -->
+      <div class="heatmap-section">
+        <div class="heatmap-header">
+          <div class="heatmap-title-block">
+            <span class="heatmap-title">Aktivitas Belajar</span>
+            <span class="heatmap-subtitle-tag">${activeDaysCount} Hari Aktif (90 Hari)</span>
+          </div>
+        </div>
+        
+        <div class="heatmap-wrapper">
+          <div class="heatmap-weekdays">
+            <span>Sen</span>
+            <span>Sel</span>
+            <span>Rab</span>
+            <span>Kam</span>
+            <span>Jum</span>
+            <span>Sab</span>
+            <span>Min</span>
+          </div>
+          <div class="heatmap-grid-scroll">
+            <div class="heatmap-cells-container">
+              ${heatmapCellsHtml}
+            </div>
+          </div>
+        </div>
+
+        <!-- Subtle Bottom Legend -->
+        <div class="heatmap-legend" style="display: flex; justify-content: flex-end; align-items: center; gap: 6px; font-size: 10px; color: var(--text-muted); opacity: 0.75; margin-top: 2px;">
+          <span>Sedikit</span>
+          <div class="heatmap-legend-cells">
+            <div class="heatmap-legend-box" style="background: var(--bg-elevated); border-color: var(--border);"></div>
+            <div class="heatmap-legend-box" style="background: rgba(99, 102, 241, 0.22); border-color: rgba(99, 102, 241, 0.35);"></div>
+            <div class="heatmap-legend-box" style="background: rgba(99, 102, 241, 0.45); border-color: rgba(99, 102, 241, 0.6);"></div>
+            <div class="heatmap-legend-box" style="background: rgba(99, 102, 241, 0.75); border-color: rgba(99, 102, 241, 0.9);"></div>
+            <div class="heatmap-legend-box" style="background: #6366F1; border-color: #4F46E5;"></div>
+          </div>
+          <span>Banyak</span>
+        </div>
+      </div>
+
+      <!-- Bento Stats Grid (Mobile Optimized 2-Col Grid) -->
+      <div>
+        <div class="tracks-title">Statistik & Pencapaian</div>
+        <div class="stats-bento-grid">
+          <div class="stat-card-bento">
+            <div class="stat-bento-icon-wrapper"><i data-lucide="book-open" style="width: 14px; height: 14px;"></i></div>
+            <div>
+              <div class="stat-bento-val">${totalVocab}</div>
+              <div class="stat-bento-lbl">Kosakata (SRS)</div>
+            </div>
+          </div>
+          
+          <div class="stat-card-bento">
+            <div class="stat-bento-icon-wrapper"><i data-lucide="pen-tool" style="width: 14px; height: 14px;"></i></div>
+            <div>
+              <div class="stat-bento-val">${totalKanji}</div>
+              <div class="stat-bento-lbl">Kanji (SRS)</div>
+            </div>
+          </div>
+          
+          <div class="stat-card-bento">
+            <div class="stat-bento-icon-wrapper" style="color: var(--accent);"><i data-lucide="award" style="width: 14px; height: 14px;"></i></div>
+            <div>
+              <div class="stat-card-val stat-bento-val">${masteredItems}</div>
+              <div class="stat-bento-lbl">Terkuasai</div>
+            </div>
+          </div>
+          
+          <div class="stat-card-bento">
+            <div class="stat-bento-icon-wrapper" style="color: var(--accent);"><i data-lucide="check-circle" style="width: 14px; height: 14px;"></i></div>
+            <div>
+              <div class="stat-bento-val">${avgQuiz}%</div>
+              <div class="stat-bento-lbl">Akurasi Ujian</div>
+            </div>
+          </div>
+          
+          <div class="stat-card-bento">
+            <div class="stat-bento-icon-wrapper" style="color: var(--accent);"><i data-lucide="clock" style="width: 14px; height: 14px;"></i></div>
+            <div>
+              <div class="stat-bento-val">${studyHours}h</div>
+              <div class="stat-bento-lbl">Jam Belajar</div>
+            </div>
+          </div>
         </div>
       </div>
 

@@ -1790,20 +1790,25 @@ export function KanjiView(container) {
 
   const renderLayout = () => {
     container.innerHTML = `
-      <div class="kanji-hub-container page-container-standard fade-in" style="padding: 12px 16px;">
+      <div class="kanji-hub-container page-container-standard fade-in" style="padding-bottom: 60px;">
         
         <!-- Header Section -->
-        <div style="text-align: center; margin-bottom: 18px; border-bottom: 1px solid var(--border); padding-bottom: 16px;">
-          <h2 style="font-size: var(--text-2xl); font-weight: 800; color: var(--text-main); margin-bottom: 6px; letter-spacing: var(--tracking-tight);">Kanal Kanji Masterclass Hub</h2>
-          <p style="color: var(--text-secondary); font-size: var(--text-xs); max-width: 540px; margin: 0 auto; line-height: var(--leading-relaxed);">
-            Pelajari hukum dasar penulisan Kanji, kuasai perbedaan cara baca Onyomi/Kunyomi, dan latih Kanji N5/N4/N3 Anda langsung di layar sentuh.
+        <div style="margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 16px;">
+          <span style="font-size: var(--text-3xs); font-weight: 600; color: var(--text-muted); letter-spacing: var(--tracking-wide);">
+            Panduan Teori & Katalog 240+ Kanji
+          </span>
+          <h2 style="font-size: var(--text-lg); font-weight: 700; color: var(--text-main); margin: 2px 0 6px 0; letter-spacing: var(--tracking-tight);">
+            Kanji Hub & Reference
+          </h2>
+          <p style="color: var(--text-secondary); font-size: var(--text-xs); line-height: 1.5; margin: 0; max-width: 680px;">
+            Kuasai hukum dasar penulisan Kanji, pahami perbedaan cara baca Onyomi & Kunyomi, serta jelajahi katalog Kanji N5–N3.
           </p>
         </div>
 
         <!-- Mode Tabs -->
-        <div style="display: flex; gap: 4px; background: var(--bg-hover); padding: 4px; border-radius: var(--radius-md); margin-bottom: 20px; max-width: 400px; margin-left: auto; margin-right: auto;">
-          <button class="tab-btn sub-tab-btn ${activeSubTab === 'theory' ? 'active' : ''}" data-target="theory" style="flex: 1; padding: 8px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm); font-size: var(--text-xs); cursor: pointer;">Teori & Aturan</button>
-          <button class="tab-btn sub-tab-btn ${activeSubTab === 'kamus' ? 'active' : ''}" data-target="kamus" style="flex: 1; padding: 8px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm); font-size: var(--text-xs); cursor: pointer;">Katalog Kanji</button>
+        <div style="display: flex; gap: 4px; background: var(--bg-elevated); padding: 4px; border-radius: var(--radius-md); border: 1px solid var(--border); margin-bottom: 20px; max-width: 360px;">
+          <button class="tab-btn sub-tab-btn ${activeSubTab === 'theory' ? 'active' : ''}" data-target="theory" style="flex: 1; padding: 7px 0; text-align: center; font-weight: 500; border-radius: var(--radius-sm); font-size: var(--text-xs); cursor: pointer;">Teori & Aturan</button>
+          <button class="tab-btn sub-tab-btn ${activeSubTab === 'kamus' ? 'active' : ''}" data-target="kamus" style="flex: 1; padding: 7px 0; text-align: center; font-weight: 500; border-radius: var(--radius-sm); font-size: var(--text-xs); cursor: pointer;">Katalog Kanji</button>
         </div>
 
         <!-- Tab Contents -->
@@ -1936,33 +1941,20 @@ export function KanjiView(container) {
       // Catalog Tab: Levels selective render
       contentArea.innerHTML = `
         <div class="fade-in">
-          <!-- Level Selector Pills -->
-          <div style="display: flex; gap: 8px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap;">
-            <button class="level-pill-btn" data-level="N5" style="cursor: pointer; border-radius: 99px; padding: 6px 18px; font-size: var(--text-xs); font-weight: 700; border: 1px solid var(--border); transition: all 0.15s; background: ${activeLevel === 'N5' ? 'var(--text-main)' : 'var(--bg-card)'}; color: ${activeLevel === 'N5' ? 'var(--bg-main)' : 'var(--text-main)'};">N5 (Dasar)</button>
-            <button class="level-pill-btn" data-level="N4" style="cursor: pointer; border-radius: 99px; padding: 6px 18px; font-size: var(--text-xs); font-weight: 700; border: 1px solid var(--border); transition: all 0.15s; background: ${activeLevel === 'N4' ? 'var(--text-main)' : 'var(--bg-card)'}; color: ${activeLevel === 'N4' ? 'var(--bg-main)' : 'var(--text-main)'};">N4 (Lanjutan I)</button>
-            <button class="level-pill-btn" data-level="N3" style="cursor: pointer; border-radius: 99px; padding: 6px 18px; font-size: var(--text-xs); font-weight: 700; border: 1px solid var(--border); transition: all 0.15s; background: ${activeLevel === 'N3' ? 'var(--text-main)' : 'var(--bg-card)'}; color: ${activeLevel === 'N3' ? 'var(--bg-main)' : 'var(--text-main)'};">N3 (Lanjutan II)</button>
+          <!-- Level Selector Segmented Control -->
+          <div style="display: flex; gap: 4px; justify-content: center; background: var(--bg-elevated); padding: 4px; border-radius: var(--radius-md); border: 1px solid var(--border); margin-bottom: 12px; max-width: 360px; margin-left: auto; margin-right: auto;">
+            <button class="level-pill-btn ${activeLevel === 'N5' ? 'active' : ''}" data-level="N5" style="flex: 1; padding: 6px 12px; font-size: var(--text-xs); font-weight: 500; border-radius: var(--radius-sm); cursor: pointer; border: none;">N5 (80 Kanji)</button>
+            <button class="level-pill-btn ${activeLevel === 'N4' ? 'active' : ''}" data-level="N4" style="flex: 1; padding: 6px 12px; font-size: var(--text-xs); font-weight: 500; border-radius: var(--radius-sm); cursor: pointer; border: none;">N4 (80 Kanji)</button>
+            <button class="level-pill-btn ${activeLevel === 'N3' ? 'active' : ''}" data-level="N3" style="flex: 1; padding: 6px 12px; font-size: var(--text-xs); font-weight: 500; border-radius: var(--radius-sm); cursor: pointer; border: none;">N3 (80 Kanji)</button>
           </div>
 
-          <!-- Legend / Panduan Cara Baca -->
-          <div style="background: var(--bg-hover); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 14px 16px; margin-bottom: 24px; font-size: 0.8rem; line-height: 1.5; color: var(--text-secondary);">
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-weight: 800; color: var(--text-main); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em;">
-              <i data-lucide="info" style="width: 15px; height: 15px; color: var(--text-main);"></i>
-              Panduan Cara Baca Kanji
-            </div>
-            <div style="display: grid; grid-template-columns: 1fr; gap: 8px;">
-              <div style="display: flex; gap: 6px; align-items: baseline;">
-                <strong style="color: var(--text-main); min-width: 80px; display: inline-block;">音 (Onyomi):</strong>
-                <span>Cara baca Cina. Dipakai saat Kanji <strong>bergabung</strong> dengan Kanji lain (*Jukugo*).</span>
-              </div>
-              <div style="display: flex; gap: 6px; align-items: baseline; border-top: 1px dashed var(--border); padding-top: 8px; margin-top: 2px;">
-                <strong style="color: var(--text-main); min-width: 80px; display: inline-block;">訓 (Kunyomi):</strong>
-                <span>Cara baca Jepang asli. Dipakai saat Kanji <strong>berdiri sendiri</strong> (tunggal).</span>
-              </div>
-            </div>
+          <!-- Micro Hint -->
+          <div style="text-align: center; font-size: var(--text-3xs); color: var(--text-muted); margin-bottom: 24px;">
+            <span style="color: var(--accent); font-weight: 600;">音 (Onyomi)</span> = Cara Baca Tiongkok &nbsp;·&nbsp; <span style="color: var(--text-muted); font-weight: 600;">訓 (Kunyomi)</span> = Cara Baca Jepang
           </div>
 
           <!-- Dynamic List Wrapper -->
-          <div id="level-catalog-container" style="display: flex; flex-direction: column; gap: 36px;">
+          <div id="level-catalog-container" style="display: flex; flex-direction: column; gap: 28px;">
             <!-- Rendered dynamically -->
           </div>
         </div>
@@ -2009,35 +2001,38 @@ export function KanjiView(container) {
   };
 
   const renderCatalogSection = (title, list) => {
+    // Format title: "I. KANJI ANGKA & WAKTU (20 Kanji)" -> "Angka & Waktu"
+    const cleanTitle = title.replace(/^[I|V|X]+\.\s*KANJI\s*/i, '').replace(/\s*\(\d+\s*Kanji\)/i, '').trim();
+
     const cardsHtml = list.map(item => {
-      const onRomaji = item.on !== '—' ? ` (${toRomaji(item.on)})` : '';
-      const kunRomaji = item.kun !== '—' ? ` (${toRomaji(item.kun)})` : '';
+      const onText = item.on !== '—' ? item.on : '—';
+      const kunText = item.kun !== '—' ? item.kun : '—';
 
       return `
       <div class="kanji-catalog-card">
-        <div class="kanji-catalog-char">${item.jp}</div>
-        <div class="kanji-catalog-meaning">${item.meaning}</div>
+        <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+          <div class="kanji-catalog-char">${item.jp}</div>
+          <div class="kanji-catalog-meaning">${item.meaning}</div>
+        </div>
         
         <div class="kanji-catalog-readings">
-          <div style="margin-bottom: 5px; display: flex; align-items: baseline; gap: 8px;">
-            <strong style="font-size: 0.65rem; color: var(--text-muted); min-width: 24px; flex-shrink: 0;">音:</strong>
-            <span style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; color: var(--text-main); word-break: break-all;">
-              ${item.on}<span style="font-size: 0.65rem; font-weight: 500; color: var(--text-muted); font-family: var(--font-sans);">${onRomaji}</span>
-            </span>
+          <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 3px;">
+            <span style="font-size: 11px; font-weight: 600; color: var(--accent); min-width: 18px;">音</span>
+            <span style="font-size: 12px; color: var(--text-main); font-weight: 500;">${onText}</span>
           </div>
-          <div style="margin-bottom: 8px; display: flex; align-items: baseline; gap: 8px;">
-            <strong style="font-size: 0.65rem; color: var(--text-muted); min-width: 24px; flex-shrink: 0;">訓:</strong>
-            <span style="font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; color: var(--text-main); word-break: break-all;">
-              ${item.kun}<span style="font-size: 0.65rem; font-weight: 500; color: var(--text-muted); font-family: var(--font-sans);">${kunRomaji}</span>
-            </span>
+          <div style="display: flex; align-items: baseline; gap: 6px; margin-bottom: 8px;">
+            <span style="font-size: 11px; font-weight: 600; color: var(--text-muted); min-width: 18px;">訓</span>
+            <span style="font-size: 12px; color: var(--text-secondary); font-weight: 400;">${kunText}</span>
           </div>
-          <div style="margin-top: 8px; font-size: 0.68rem; color: var(--text-secondary); border-top: 1px dotted var(--border); padding-top: 6px; line-height: 1.35;">
-            <span style="color: var(--text-muted); font-weight: 700;">Contoh:</span> ${item.example}
+          ${item.example ? `
+          <div style="font-size: 11px; color: var(--text-muted); line-height: 1.35; padding-top: 6px; border-top: 1px solid var(--border);">
+            ${item.example}
           </div>
+          ` : ''}
         </div>
 
         <button class="kanji-catalog-btn" onclick="window.location.hash='#/writing?char=${encodeURIComponent(item.jp)}'" aria-label="Latih menulis kanji ${item.jp}">
-          <i data-lucide="edit-3" style="width: 13px; height: 13px;"></i> Latih Menulis
+          <i data-lucide="edit-3" style="width: 12px; height: 12px;"></i> Latih Menulis
         </button>
       </div>
       `;
@@ -2045,8 +2040,8 @@ export function KanjiView(container) {
 
     return `
       <div>
-        <h3 style="font-size: 0.85rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 2px solid var(--border); padding-bottom: 8px; margin-bottom: 16px;">
-          ${title}
+        <h3 style="font-size: var(--text-xs); font-weight: 600; color: var(--text-muted); letter-spacing: var(--tracking-wide); border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: 14px;">
+          ${cleanTitle} (${list.length} Kanji)
         </h3>
         <div class="kanji-catalog-grid">
           ${cardsHtml}

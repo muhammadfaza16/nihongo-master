@@ -5,132 +5,129 @@ export function PrefaceView(container) {
   renderBackBtn(container, '#/', 'Dashboard');
 
   container.innerHTML = `
-    <div class="preface-container page-container-standard fade-in" style="padding-bottom: 60px; font-family: var(--font-serif);">
+    <div class="preface-container page-container-standard fade-in" style="padding-bottom: 60px;">
       
-      <!-- Editorial Header -->
-      <div style="text-align: center; margin-bottom: 28px; border-bottom: 1px solid var(--border); padding-bottom: 20px;">
-        <span style="font-size: var(--text-2xs); font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: var(--tracking-widest); font-family: var(--font-sans);">
+      <!-- Minimalist Editorial Header -->
+      <div style="text-align: center; margin-bottom: 36px; border-bottom: 1px solid var(--border); padding-bottom: 28px;">
+        <span style="font-size: var(--text-3xs); font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: var(--tracking-wider); background: var(--bg-elevated); padding: 4px 12px; border-radius: 99px; border: 1px solid var(--border); display: inline-block; margin-bottom: 12px;">
           Panduan Awal Pembelajaran
         </span>
-        <h1 style="font-size: var(--text-2xl); font-weight: 900; color: var(--text-main); margin-top: 8px; margin-bottom: 14px; letter-spacing: var(--tracking-tight); line-height: var(--leading-tight);">
+        <h1 style="font-size: var(--text-xl); font-weight: 700; color: var(--text-main); margin-bottom: 12px; letter-spacing: var(--tracking-tight); line-height: 1.3;">
           Jalan Pintas Menuju Penguasaan Bahasa Jepang
         </h1>
-        <p style="color: var(--text-secondary); max-width: 580px; margin: 0 auto; font-size: var(--text-sm); line-height: var(--leading-relaxed); font-style: italic;">
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto; font-size: var(--text-xs); line-height: var(--leading-normal); font-style: italic;">
           "Penguasaan bahasa bukanlah tentang sekadar menghafal aturan secara pasif, melainkan tentang transformasi cara berpikir melalui latihan yang terarah."
         </p>
       </div>
 
-      <!-- Transformation Section -->
-      <div style="margin-bottom: 28px;">
-        <h2 style="font-size: var(--text-lg); font-weight: 800; color: var(--text-main); margin-bottom: 14px; border-left: 3px solid var(--text-main); padding-left: 12px; font-family: var(--font-sans); text-transform: uppercase; letter-spacing: -0.01em;">
-          I. Transformasi yang Anda Tuju
+      <!-- Section I: Metodologi 4 Pilar -->
+      <div style="margin-bottom: 36px;">
+        <h2 style="font-size: var(--text-md); font-weight: 700; color: var(--text-main); margin-bottom: 16px; letter-spacing: var(--tracking-tight); display: flex; align-items: center; gap: 8px;">
+          <i data-lucide="compass" style="width: 18px; height: 18px; color: var(--text-muted);"></i>
+          I. Metodologi 4 Pilar Latihan Terarah
         </h2>
-        <p style="font-size: var(--text-base); line-height: var(--leading-relaxed); color: var(--text-secondary); margin-bottom: 14px;">
-          Tujuan akhir dari perjalanan ini adalah kemampuan untuk memahami, membaca, dan menyusun kalimat bahasa Jepang secara spontan dan alami. Bahasa baru mengubah cara kita memandang dunia.
-        </p>
-        <p style="font-size: var(--text-base); line-height: var(--leading-relaxed); color: var(--text-secondary); margin-bottom: 14px;">
-          Untuk mencapai kelancaran tersebut, proses belajar tidak boleh hanya menjadi tontonan pasif. Dibutuhkan ruang latihan yang terstruktur dan terfokus untuk membantu Anda menguji pemahaman, melatih ingatan aktif, dan membangun insting tata bahasa yang kokoh.
-        </p>
-      </div>
-
-      <!-- The 4 Pillars Section -->
-      <div style="margin-bottom: 28px;">
-        <h2 style="font-size: var(--text-lg); font-weight: 800; color: var(--text-main); margin-bottom: 14px; border-left: 3px solid var(--text-main); padding-left: 12px; font-family: var(--font-sans); text-transform: uppercase; letter-spacing: -0.01em;">
-          II. Metodologi Latihan Terarah
-        </h2>
-        <p style="font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 24px;">
-          Setiap sesi latihan di platform ini dirancang secara berjenjang untuk memastikan pemahaman teoritis Anda berubah menjadi kemampuan aplikatif:
+        <p style="font-size: var(--text-xs); line-height: var(--leading-normal); color: var(--text-secondary); margin-bottom: 20px;">
+          Setiap sesi latihan di platform ini dirancang secara berjenjang untuk memastikan pemahaman teoritis Anda berubah menjadi kemampuan aplikatif yang spontan:
         </p>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px;">
           
-          <div style="border: 1px solid var(--border); padding: 20px; background: var(--bg-card); border-radius: var(--radius-lg);">
-            <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--text-main); margin-bottom: 8px; font-family: var(--font-sans); display: flex; align-items: center; gap: 8px;">
-              <i data-lucide="book-open" style="width: 18px; height: 18px; color: var(--text-main);"></i> 1. Pemahaman Konseptual (Teori)
-            </h3>
-            <p style="font-size: 0.88rem; line-height: 1.5; color: var(--text-secondary);">
-              Mempelajari aturan kalimat dan arti kosakata baru secara terstruktur. Ini adalah fondasi logika sebelum melangkah lebih jauh.
+          <div style="border: 1px solid var(--border); padding: 18px; background: var(--bg-card); border-radius: var(--radius-md); display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--text-main); font-size: var(--text-sm);">
+              <div style="width: 32px; height: 32px; border-radius: var(--radius-sm); background: var(--bg-elevated); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--text-main);">
+                <i data-lucide="book-open" style="width: 16px; height: 16px;"></i>
+              </div>
+              1. Konsep (Teori)
+            </div>
+            <p style="font-size: var(--text-xs); line-height: 1.5; color: var(--text-secondary); margin: 0;">
+              Mempelajari aturan kalimat dan arti kosakata secara terstruktur sebagai fondasi logika awal.
             </p>
           </div>
 
-          <div style="border: 1px solid var(--border); padding: 20px; background: var(--bg-card); border-radius: var(--radius-lg);">
-            <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--text-main); margin-bottom: 8px; font-family: var(--font-sans); display: flex; align-items: center; gap: 8px;">
-              <i data-lucide="layers" style="width: 18px; height: 18px; color: var(--text-main);"></i> 2. Retensi Jangka Panjang (SRS)
-            </h3>
-            <p style="font-size: 0.88rem; line-height: 1.5; color: var(--text-secondary);">
-              Pengulangan terjadwal untuk menantang ingatan Anda tepat sebelum informasi tersebut memudar dari ingatan.
+          <div style="border: 1px solid var(--border); padding: 18px; background: var(--bg-card); border-radius: var(--radius-md); display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--text-main); font-size: var(--text-sm);">
+              <div style="width: 32px; height: 32px; border-radius: var(--radius-sm); background: var(--bg-elevated); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--text-main);">
+                <i data-lucide="layers" style="width: 16px; height: 16px;"></i>
+              </div>
+              2. Retensi (SRS)
+            </div>
+            <p style="font-size: var(--text-xs); line-height: 1.5; color: var(--text-secondary); margin: 0;">
+              Pengulangan algoritma SM-2 ter-jadwal untuk menantang ingatan tepat sebelum memudar.
             </p>
           </div>
 
-          <div style="border: 1px solid var(--border); padding: 20px; background: var(--bg-card); border-radius: var(--radius-lg);">
-            <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--text-main); margin-bottom: 8px; font-family: var(--font-sans); display: flex; align-items: center; gap: 8px;">
-              <i data-lucide="edit-3" style="width: 18px; height: 18px; color: var(--text-main);"></i> 3. Produksi Aktif (Buku Kerja)
-            </h3>
-            <p style="font-size: 0.88rem; line-height: 1.5; color: var(--text-secondary);">
-              Latihan menulis dan merangkai kalimat secara mandiri. Memaksa otak memformulasikan bahasa secara mandiri tanpa bantuan pilihan ganda.
+          <div style="border: 1px solid var(--border); padding: 18px; background: var(--bg-card); border-radius: var(--radius-md); display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--text-main); font-size: var(--text-sm);">
+              <div style="width: 32px; height: 32px; border-radius: var(--radius-sm); background: var(--bg-elevated); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--text-main);">
+                <i data-lucide="edit-3" style="width: 16px; height: 16px;"></i>
+              </div>
+              3. Produksi (Workbook)
+            </div>
+            <p style="font-size: var(--text-xs); line-height: 1.5; color: var(--text-secondary); margin: 0;">
+              Latihan menulis dan merangkai kalimat mandiri tanpa ketergantungan pada pilihan ganda.
             </p>
           </div>
 
-          <div style="border: 1px solid var(--border); padding: 20px; background: var(--bg-card); border-radius: var(--radius-lg);">
-            <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--text-main); margin-bottom: 8px; font-family: var(--font-sans); display: flex; align-items: center; gap: 8px;">
-              <i data-lucide="award" style="width: 18px; height: 18px; color: var(--text-main);"></i> 4. Pengukuran Objektif (Ujian)
-            </h3>
-            <p style="font-size: 0.88rem; line-height: 1.5; color: var(--text-secondary);">
-              Evaluasi komprehensif berbatas waktu untuk membuktikan bahwa Anda telah benar-benar menguasai seluruh materi dalam bab terkait.
+          <div style="border: 1px solid var(--border); padding: 18px; background: var(--bg-card); border-radius: var(--radius-md); display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--text-main); font-size: var(--text-sm);">
+              <div style="width: 32px; height: 32px; border-radius: var(--radius-sm); background: var(--bg-elevated); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--text-main);">
+                <i data-lucide="award" style="width: 16px; height: 16px;"></i>
+              </div>
+              4. Evaluasi (Ujian)
+            </div>
+            <p style="font-size: var(--text-xs); line-height: 1.5; color: var(--text-secondary); margin: 0;">
+              Ujian komprehensif berbatas waktu untuk membuktikan penguasaan riil materi bab.
             </p>
           </div>
 
         </div>
       </div>
 
-      <!-- Study Roadmap Section -->
-      <div style="margin-bottom: 40px;">
-        <h2 style="font-size: 1.3rem; font-weight: 800; color: var(--text-main); margin-bottom: 16px; border-left: 3px solid var(--text-main); padding-left: 12px; font-family: var(--font-sans); text-transform: uppercase; letter-spacing: -0.01em;">
-          III. Peta Jalan Menuju Sasaran (Roadmap)
+      <!-- Section II: Roadmap 3 Fase -->
+      <div style="margin-bottom: 36px;">
+        <h2 style="font-size: var(--text-md); font-weight: 700; color: var(--text-main); margin-bottom: 16px; letter-spacing: var(--tracking-tight); display: flex; align-items: center; gap: 8px;">
+          <i data-lucide="map" style="width: 18px; height: 18px; color: var(--text-muted);"></i>
+          II. Peta Jalan Kurikulum (Roadmap)
         </h2>
-        <p style="font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 24px;">
-          Langkah belajar Anda diatur dalam jalur yang terstruktur agar proses adaptasi otak berjalan mulus:
-        </p>
 
-        <!-- Timeline Chart -->
-        <div style="border: 1px solid var(--border); padding: 24px; background: var(--bg-card); border-radius: var(--radius-lg); display: flex; flex-direction: column; gap: 20px;">
+        <div style="border: 1px solid var(--border); padding: 20px; background: var(--bg-card); border-radius: var(--radius-md); display: flex; flex-direction: column; gap: 16px;">
           
-          <div style="display: flex; gap: 16px; align-items: flex-start;">
-            <div style="font-family: var(--font-sans); font-weight: 900; font-size: 0.9rem; background: var(--bg-elevated); border: 1px solid var(--border); padding: 4px 10px; border-radius: var(--radius-sm); min-width: 90px; text-align: center;">
+          <div style="display: flex; gap: 14px; align-items: flex-start;">
+            <span style="font-size: var(--text-3xs); font-weight: 600; background: var(--bg-elevated); border: 1px solid var(--border); padding: 3px 10px; border-radius: 99px; color: var(--text-main); flex-shrink: 0; margin-top: 2px;">
               Fase 1
-            </div>
+            </span>
             <div>
-              <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--text-main); margin-bottom: 4px;">Keakraban Aksara (Pra-Minna)</h4>
-              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.45;">
-                Menguasai sistem penulisan dasar Hiragana dan Katakana sebagai prasyarat wajib untuk membaca tulisan Jepang asli.
+              <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--text-main); margin-bottom: 4px;">Keakraban Aksara (Pra-Minna)</h4>
+              <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5; margin: 0;">
+                Menguasai sistem penulisan Hiragana dan Katakana sebagai prasyarat membaca tulisan Jepang asli tanpa Romaji.
               </p>
             </div>
           </div>
 
-          <div style="width: 1px; height: 16px; background: var(--border); margin-left: 45px;"></div>
+          <div style="border-left: 1px dashed var(--border); margin-left: 24px; height: 12px;"></div>
 
-          <div style="display: flex; gap: 16px; align-items: flex-start;">
-            <div style="font-family: var(--font-sans); font-weight: 900; font-size: 0.9rem; background: var(--bg-elevated); border: 1px solid var(--border); padding: 4px 10px; border-radius: var(--radius-sm); min-width: 90px; text-align: center;">
+          <div style="display: flex; gap: 14px; align-items: flex-start;">
+            <span style="font-size: var(--text-3xs); font-weight: 600; background: var(--bg-elevated); border: 1px solid var(--border); padding: 3px 10px; border-radius: 99px; color: var(--text-main); flex-shrink: 0; margin-top: 2px;">
               Fase 2
-            </div>
+            </span>
             <div>
-              <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--text-main); margin-bottom: 4px;">Interaksi Dasar (Bab 1 - 25 • Setara JLPT N5)</h4>
-              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.45;">
-                Membangun kosakata dasar, pengenalan kata kerja dan kata sifat, serta pembentukan pola kalimat sederhana sehari-hari.
+              <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--text-main); margin-bottom: 4px;">Interaksi Dasar (Bab 1 – 25 • Setara N5)</h4>
+              <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5; margin: 0;">
+                Membangun fondasi tata bahasa dasar, konjugasi kata kerja, dan 800 kosakata utama percakapan sehari-hari.
               </p>
             </div>
           </div>
 
-          <div style="width: 1px; height: 16px; background: var(--border); margin-left: 45px;"></div>
+          <div style="border-left: 1px dashed var(--border); margin-left: 24px; height: 12px;"></div>
 
-          <div style="display: flex; gap: 16px; align-items: flex-start;">
-            <div style="font-family: var(--font-sans); font-weight: 900; font-size: 0.9rem; background: var(--bg-elevated); border: 1px solid var(--border); padding: 4px 10px; border-radius: var(--radius-sm); min-width: 90px; text-align: center;">
+          <div style="display: flex; gap: 14px; align-items: flex-start;">
+            <span style="font-size: var(--text-3xs); font-weight: 600; background: var(--bg-elevated); border: 1px solid var(--border); padding: 3px 10px; border-radius: 99px; color: var(--text-main); flex-shrink: 0; margin-top: 2px;">
               Fase 3
-            </div>
+            </span>
             <div>
-              <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--text-main); margin-bottom: 4px;">Komunikasi Menengah (Bab 26 - 50 • Setara JLPT N4)</h4>
-              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.45;">
-                Memahami konjugasi lanjutan, kalimat pengandaian, ungkapan kemungkinan, bentuk pasif-kausatif, serta tatakrama bahasa hormat (Keigo).
+              <h4 style="font-size: var(--text-sm); font-weight: 700; color: var(--text-main); margin-bottom: 4px;">Komunikasi Menengah (Bab 26 – 50 • Setara N4)</h4>
+              <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5; margin: 0;">
+                Kuasai kalimat pengandaian (~ndesu), pasif-kausatif, ungkapan kemungkinan, dan bahasa hormat (Keigo).
               </p>
             </div>
           </div>
@@ -138,77 +135,53 @@ export function PrefaceView(container) {
         </div>
       </div>
 
-      <!-- The Daily Loop -->
-      <div style="margin-bottom: 40px;">
-        <h2 style="font-size: 1.3rem; font-weight: 800; color: var(--text-main); margin-bottom: 16px; border-left: 3px solid var(--text-main); padding-left: 12px; font-family: var(--font-sans); text-transform: uppercase; letter-spacing: -0.01em;">
-          IV. Siklus Pembelajaran Harian
+      <!-- Section III: Strategi Taktis -->
+      <div style="margin-bottom: 36px;">
+        <h2 style="font-size: var(--text-md); font-weight: 700; color: var(--text-main); margin-bottom: 16px; letter-spacing: var(--tracking-tight); display: flex; align-items: center; gap: 8px;">
+          <i data-lucide="zap" style="width: 18px; height: 18px; color: var(--text-muted);"></i>
+          III. Strategi Taktis Memaksimalkan Platform
         </h2>
-        <p style="font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 16px;">
-          Konsistensi adalah kunci utama keberhasilan. Berikut langkah terarah untuk latihan Anda setiap harinya:
-        </p>
 
-        <ol style="padding-left: 20px; color: var(--text-secondary); display: flex; flex-direction: column; gap: 12px; font-size: 0.95rem; line-height: 1.6;">
-          <li>
-            <strong style="color: var(--text-main);">Identifikasi Target</strong>: Periksa bab aktif yang sedang Anda pelajari di Dashboard.
-          </li>
-          <li>
-            <strong style="color: var(--text-main);">Pahami Pola Tata Bahasa</strong>: Bacalah bagian Teori tata bahasa dan dengarkan pengucapan kosakata bab tersebut.
-          </li>
-          <li>
-            <strong style="color: var(--text-main);">Integrasikan ke SRS</strong>: Masukkan kata-kata baru ke antrean SRS untuk memulai jadwal pengulangan berkala.
-          </li>
-          <li>
-            <strong style="color: var(--text-main);">Latih Konstruksi Kalimat</strong>: Kerjakan Buku Kerja untuk menguji kemampuan menyusun kalimat Jepang secara mandiri.
-          </li>
-          <li>
-            <strong style="color: var(--text-main);">Uji Hasil Belajar</strong>: Selesaikan Ujian Bab untuk memvalidasi kemajuan Anda sebelum beralih ke bab selanjutnya.
-          </li>
-        </ol>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="border: 1px solid var(--border); padding: 14px 16px; background: var(--bg-card); border-radius: var(--radius-md); display: flex; gap: 12px; align-items: flex-start;">
+            <i data-lucide="check-circle-2" style="width: 16px; height: 16px; color: var(--accent); flex-shrink: 0; margin-top: 2px;"></i>
+            <div style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5;">
+              <strong style="color: var(--text-main);">Active Recall Tanpa Mencontek</strong>: Paksa otak merangkai kalimat di Workbook dari ingatan sebelum melihat petunjuk untuk mempercepat pembentukan memori.
+            </div>
+          </div>
+
+          <div style="border: 1px solid var(--border); padding: 14px 16px; background: var(--bg-card); border-radius: var(--radius-md); display: flex; gap: 12px; align-items: flex-start;">
+            <i data-lucide="check-circle-2" style="width: 16px; height: 16px; color: var(--accent); flex-shrink: 0; margin-top: 2px;"></i>
+            <div style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5;">
+              <strong style="color: var(--text-main);">Disiplin Antrean SRS Harian</strong>: Sediakan 5–10 menit setiap hari untuk ulasan SRS di Dashboard agar interval algoritma SM-2 bekerja dengan presisi tinggi.
+            </div>
+          </div>
+
+          <div style="border: 1px solid var(--border); padding: 14px 16px; background: var(--bg-card); border-radius: var(--radius-md); display: flex; gap: 12px; align-items: flex-start;">
+            <i data-lucide="check-circle-2" style="width: 16px; height: 16px; color: var(--accent); flex-shrink: 0; margin-top: 2px;"></i>
+            <div style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5;">
+              <strong style="color: var(--text-main);">Memori Kinestetik Kanji</strong>: Gunakan fitur Kanvas Menulis Kanji untuk mengaitkan gerakan motorik tangan dengan bentuk karakter visual.
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- How to Get the Best Out of This Platform -->
-      <div style="margin-bottom: 48px;">
-        <h2 style="font-size: 1.3rem; font-weight: 800; color: var(--text-main); margin-bottom: 16px; border-left: 3px solid var(--text-main); padding-left: 12px; font-family: var(--font-sans); text-transform: uppercase; letter-spacing: -0.01em;">
-          V. Cara Memaksimalkan Platform Ini
-        </h2>
-        <p style="font-size: 1rem; line-height: 1.7; color: var(--text-secondary); margin-bottom: 16px;">
-          Untuk mendapatkan hasil latihan terarah yang paling optimal dari ruang latihan ini, terapkan strategi taktis berikut dalam rutinitas Anda:
-        </p>
-
-        <ul style="padding-left: 20px; color: var(--text-secondary); display: flex; flex-direction: column; gap: 16px; font-size: 0.95rem; line-height: 1.6; list-style-type: square;">
-          <li>
-            <strong style="color: var(--text-main);">Terapkan Penarikan Aktif (Active Recall) Tanpa Mencontek</strong>:<br>
-            Saat melatih pola kalimat di Buku Kerja (Workbook), paksa otak Anda merangkai kalimat dari ingatan sebelum melihat terjemahan atau petunjuk. Proses "kesulitan yang diinginkan" ini memperkuat ingatan jauh lebih cepat daripada mencocokkan pilihan kata secara pasif.
-          </li>
-          <li>
-            <strong style="color: var(--text-main);">Disiplin Harian pada Antrean SRS</strong>:<br>
-            Efektivitas algoritma pengulangan berjarak (SRS) bergantung penuh pada konsistensi. Jika kartu tinjauan dibiarkan menumpuk, algoritma SM-2 kehilangan presisinya. Sediakan waktu 5-10 menit setiap hari khusus untuk menyelesaikan antrean review Anda di Dashboard.
-          </li>
-          <li>
-            <strong style="color: var(--text-main);">Manfaatkan Memori Kinestetik (Menulis Kanji)</strong>:<br>
-            Jangan abaikan tombol pintas menulis (<i data-lucide="edit-3" style="width: 14px; height: 14px; display: inline-block; vertical-align: middle; color: var(--text-main);"></i>) yang muncul di samping kosakata bab. Latihlah coretan tangan Anda langsung pada Kanvas Menulis. Mengaitkan gerakan motorik tangan dengan karakter visual Kanji terbukti melipatgandakan kecepatan pengenalan huruf.
-          </li>
-          <li>
-            <strong style="color: var(--text-main);">Simulasikan Ujian Secara Mandiri</strong>:<br>
-            Anggap Ujian Bab sebagai tolok ukur kesiapan riil Anda sebelum melangkah ke materi tingkat lanjut. Kerjakan ujian tanpa membuka bantuan catatan kamus, tanpa navigasi ke tab lain, dan patuhi batas waktu yang telah ditentukan.
-          </li>
-        </ul>
-      </div>
-
-      <!-- Action Row -->
-      <div style="text-align: center; border-top: 1px solid var(--border); padding-top: 36px;">
-        <h3 style="font-size: 1.2rem; font-weight: 800; color: var(--text-main); margin-bottom: 12px; font-family: var(--font-sans);">
-          Mulailah Latihan Terarah Anda
-        </h3>
-        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.5;">
-          Kemajuan Anda sepenuhnya ditentukan oleh setiap keputusan kecil untuk berlatih hari ini.
-        </p>
+      <!-- Action Footer -->
+      <div style="text-align: center; border-top: 1px solid var(--border); padding-top: 32px; display: flex; flex-direction: column; align-items: center; gap: 16px;">
+        <div>
+          <h3 style="font-size: var(--text-md); font-weight: 700; color: var(--text-main); margin-bottom: 4px;">
+            Mulailah Latihan Terarah Anda
+          </h3>
+          <p style="color: var(--text-muted); font-size: var(--text-xs); max-width: 440px; margin: 0 auto; line-height: 1.5;">
+            Setiap sesi latihan kecil hari ini adalah langkah pasti menuju kelancaran berbahasa Jepang.
+          </p>
+        </div>
         
         <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-          <a href="#/dashboard" class="btn btn-primary" style="padding: 12px 28px; font-size: 0.9rem; font-weight: 800; border-radius: var(--radius-md); text-decoration: none;">
+          <a href="#/dashboard" class="btn btn-primary" style="padding: 10px 24px; font-size: var(--text-xs);">
             Buka Dashboard Utama
           </a>
-          <a href="#/curriculum" class="btn btn-secondary" style="padding: 12px 28px; font-size: 0.9rem; font-weight: 800; border-radius: var(--radius-md); text-decoration: none;">
+          <a href="#/curriculum" class="btn btn-secondary" style="padding: 10px 24px; font-size: var(--text-xs);">
             Buka Peta Kurikulum
           </a>
         </div>

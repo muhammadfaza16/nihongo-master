@@ -1486,19 +1486,26 @@ export function WritingView(container) {
   // Screen 1: Selection Tab Lists
   const renderSelectionScreen = () => {
     container.innerHTML = `
-      <div class="writing-container page-container-standard fade-in" style="padding: 12px 16px;">
-        <h2 style="font-size: var(--text-2xl); font-weight: 800; color: var(--text-main); margin-bottom: 6px; letter-spacing: var(--tracking-tight);">Latihan Menulis Deliberate</h2>
-        <p style="color: var(--text-secondary); font-size: var(--text-xs); margin-bottom: 18px; line-height: var(--leading-relaxed);">
-          Pilih kategori karakter di bawah ini untuk melatih ingatan motorik dan stroke order Anda pada touchscreen mobile secara terarah.
-        </p>
+      <div class="writing-container page-container-standard fade-in" style="padding-bottom: 60px;">
+        <div style="margin-bottom: 18px;">
+          <span style="font-size: var(--text-3xs); font-weight: 600; color: var(--text-muted); letter-spacing: var(--tracking-wide);">
+            Praktik Menulis & Stroke Order
+          </span>
+          <h2 style="font-size: var(--text-lg); font-weight: 700; color: var(--text-main); margin: 2px 0 6px 0; letter-spacing: var(--tracking-tight);">
+            Latihan Menulis Kana & Kanji
+          </h2>
+          <p style="color: var(--text-secondary); font-size: var(--text-xs); line-height: 1.5; margin: 0; max-width: 620px;">
+            Pilih paket karakter di bawah ini untuk melatih ingatan motorik dan tata urutan goresan (*stroke order*) pada layar sentuh.
+          </p>
+        </div>
 
         <!-- Dynamic Sub Tabs -->
-        <div style="display: flex; gap: 4px; background: var(--bg-hover); padding: 4px; border-radius: var(--radius-md); margin-bottom: 16px; overflow-x: auto; -webkit-overflow-scrolling: touch;">
-          <button class="tab-btn selection-tab ${activeTab === 'hiragana' ? 'active' : ''}" data-target="hiragana" style="flex: 1; padding: 10px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm); white-space: nowrap; min-width: 75px;">Hiragana</button>
-          <button class="tab-btn selection-tab ${activeTab === 'katakana' ? 'active' : ''}" data-target="katakana" style="flex: 1; padding: 10px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm); white-space: nowrap; min-width: 75px;">Katakana</button>
-          <button class="tab-btn selection-tab ${activeTab === 'kanji' ? 'active' : ''}" data-target="kanji" style="flex: 1; padding: 10px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm); white-space: nowrap; min-width: 75px;">Kanji N5</button>
-          <button class="tab-btn selection-tab ${activeTab === 'kanji-n4' ? 'active' : ''}" data-target="kanji-n4" style="flex: 1; padding: 10px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm); white-space: nowrap; min-width: 75px;">Kanji N4</button>
-          <button class="tab-btn selection-tab ${activeTab === 'kanji-n3' ? 'active' : ''}" data-target="kanji-n3" style="flex: 1; padding: 10px 0; text-align: center; font-weight: 700; border-radius: var(--radius-sm); white-space: nowrap; min-width: 75px;">Kanji N3</button>
+        <div style="display: flex; gap: 4px; background: var(--bg-elevated); padding: 4px; border-radius: var(--radius-md); border: 1px solid var(--border); margin-bottom: 20px; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+          <button class="tab-btn selection-tab ${activeTab === 'hiragana' ? 'active' : ''}" data-target="hiragana" style="flex: 1; padding: 8px 14px; font-size: var(--text-xs); font-weight: 500; border-radius: var(--radius-sm); white-space: nowrap; text-align: center; min-width: 75px; border: none; cursor: pointer;">Hiragana</button>
+          <button class="tab-btn selection-tab ${activeTab === 'katakana' ? 'active' : ''}" data-target="katakana" style="flex: 1; padding: 8px 14px; font-size: var(--text-xs); font-weight: 500; border-radius: var(--radius-sm); white-space: nowrap; text-align: center; min-width: 75px; border: none; cursor: pointer;">Katakana</button>
+          <button class="tab-btn selection-tab ${activeTab === 'kanji' ? 'active' : ''}" data-target="kanji" style="flex: 1; padding: 8px 14px; font-size: var(--text-xs); font-weight: 500; border-radius: var(--radius-sm); white-space: nowrap; text-align: center; min-width: 75px; border: none; cursor: pointer;">Kanji N5</button>
+          <button class="tab-btn selection-tab ${activeTab === 'kanji-n4' ? 'active' : ''}" data-target="kanji-n4" style="flex: 1; padding: 8px 14px; font-size: var(--text-xs); font-weight: 500; border-radius: var(--radius-sm); white-space: nowrap; text-align: center; min-width: 75px; border: none; cursor: pointer;">Kanji N4</button>
+          <button class="tab-btn selection-tab ${activeTab === 'kanji-n3' ? 'active' : ''}" data-target="kanji-n3" style="flex: 1; padding: 8px 14px; font-size: var(--text-xs); font-weight: 500; border-radius: var(--radius-sm); white-space: nowrap; text-align: center; min-width: 75px; border: none; cursor: pointer;">Kanji N3</button>
         </div>
 
         <div id="selection-grid-container" style="display: flex; flex-direction: column; gap: 18px;">

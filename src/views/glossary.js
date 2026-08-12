@@ -156,39 +156,41 @@ export function GlossaryView(container) {
 
   container.innerHTML = `
     <div class="glossary-container page-container-standard fade-in" style="padding-bottom: 60px;">
-      <!-- HEADER -->
-      <div style="margin-bottom: 20px; display: flex; gap: 16px; align-items: flex-start;">
-        <div style="width: 52px; height: 52px; border-radius: var(--radius-sm); background: var(--accent); color: var(--bg-main); display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-accent); flex-shrink: 0;">
-          <i data-lucide="help-circle" style="width: 24px; height: 24px;"></i>
-        </div>
-        <div>
-          <h2 style="font-size: var(--text-2xl); font-weight: 800; color: var(--text-main); margin-bottom: 4px; letter-spacing: var(--tracking-tight); line-height: var(--leading-tight);">Glosarium Istilah ✦</h2>
-          <p style="color: var(--text-secondary); font-size: var(--text-xs); line-height: var(--leading-relaxed);">Panduan lengkap istilah dasar bahasa Jepang dan sistem aplikasi untuk memudahkan langkah awal belajar pemula.</p>
-        </div>
+      <!-- Minimalist Header Block -->
+      <div style="margin-bottom: 18px; border-bottom: 1px solid var(--border); padding-bottom: 16px;">
+        <span style="font-size: var(--text-3xs); font-weight: 600; color: var(--text-muted); letter-spacing: var(--tracking-wide);">
+          Referensi & Glosarium Pemula
+        </span>
+        <h2 style="font-size: var(--text-lg); font-weight: 700; color: var(--text-main); margin: 2px 0 6px 0; letter-spacing: var(--tracking-tight);">
+          Glosarium Istilah Bahasa Jepang
+        </h2>
+        <p style="color: var(--text-secondary); font-size: var(--text-xs); line-height: 1.5; margin: 0; max-width: 680px;">
+          Panduan istilah dasar aksara, tata bahasa, dan sistem belajar untuk mempermudah pemahaman langkah awal Anda.
+        </p>
       </div>
 
       <!-- SEARCH & FILTERS CONTROLS -->
-      <div class="card" style="padding: 16px; margin-bottom: 18px; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 22px;">
         
         <!-- Search Bar -->
         <div style="position: relative; display: flex; align-items: center; width: 100%;">
-          <i data-lucide="search" style="position: absolute; left: 14px; width: 18px; height: 18px; color: var(--text-muted); pointer-events: none;"></i>
+          <i data-lucide="search" style="position: absolute; left: 12px; width: 15px; height: 15px; color: var(--text-muted); pointer-events: none;"></i>
           <input type="text" id="glossary-search-input" placeholder="Cari istilah, romaji, kanji, atau definisi..." 
-            style="width: 100%; padding: 12px 16px 12px 42px; background: var(--bg-input); border: 1px solid var(--border); border-radius: var(--radius-md); color: var(--text-main); font-size: var(--text-sm); outline: none; transition: all 0.15s ease;"
+            style="width: 100%; padding: 8px 14px 8px 34px; background: var(--bg-input); border: 1px solid var(--border); border-radius: var(--radius-md); color: var(--text-main); font-size: var(--text-xs); outline: none; transition: all 0.15s ease;"
           />
         </div>
 
-        <!-- Kategori Tabs -->
-        <div class="tabs" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; display: flex; gap: 6px; overflow-x: auto;">
-          <button class="tab-btn glossary-tab-btn active" data-cat="all" style="padding: 8px 14px; font-size: var(--text-xs); border-radius: var(--radius-sm);">Semua</button>
-          <button class="tab-btn glossary-tab-btn" data-cat="writing" style="padding: 8px 14px; font-size: var(--text-xs); border-radius: var(--radius-sm);">Aksara & Tulisan</button>
-          <button class="tab-btn glossary-tab-btn" data-cat="grammar" style="padding: 8px 14px; font-size: var(--text-xs); border-radius: var(--radius-sm);">Tata Bahasa</button>
-          <button class="tab-btn glossary-tab-btn" data-cat="learning" style="padding: 8px 14px; font-size: var(--text-xs); border-radius: var(--radius-sm);">Sistem Belajar</button>
+        <!-- Segmented Kategori Tabs -->
+        <div style="display: flex; gap: 4px; background: var(--bg-elevated); padding: 4px; border-radius: var(--radius-md); border: 1px solid var(--border); overflow-x: auto; -webkit-overflow-scrolling: touch;">
+          <button class="filter-tab-btn glossary-tab-btn active" data-cat="all" style="flex: 1; min-width: 65px;">Semua</button>
+          <button class="filter-tab-btn glossary-tab-btn" data-cat="writing" style="flex: 1; min-width: 110px;">Aksara & Tulisan</button>
+          <button class="filter-tab-btn glossary-tab-btn" data-cat="grammar" style="flex: 1; min-width: 95px;">Tata Bahasa</button>
+          <button class="filter-tab-btn glossary-tab-btn" data-cat="learning" style="flex: 1; min-width: 100px;">Sistem Belajar</button>
         </div>
       </div>
 
       <!-- CARDS GRID CONTAINER -->
-      <div id="glossary-cards-container" class="bento-grid stagger" style="gap: 12px;"></div>
+      <div id="glossary-cards-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px;"></div>
     </div>
   `;
 
@@ -198,18 +200,10 @@ export function GlossaryView(container) {
   const searchInput = container.querySelector('#glossary-search-input');
   const tabButtons = container.querySelectorAll('.glossary-tab-btn');
 
-  // Badge rendering helper based on category
-  function getCategoryBadge(catId, catName) {
-    let colorStyle = '';
-    if (catId === 'writing') {
-      colorStyle = 'background: var(--accent-dim); color: var(--accent-bright); border: 1px solid var(--border-accent);';
-    } else if (catId === 'grammar') {
-      colorStyle = 'background: var(--green-dim); color: var(--green); border: 1px solid var(--green-dim);';
-    } else {
-      colorStyle = 'background: var(--amber-dim); color: var(--amber); border: 1px solid var(--amber-dim);';
-    }
+  // Quiet category badge
+  function getCategoryBadge(catName) {
     return `
-      <span style="font-size: var(--text-2xs); font-weight: 700; text-transform: uppercase; letter-spacing: var(--tracking-wider); padding: 3px 8px; border-radius: 99px; ${colorStyle}">
+      <span style="font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: var(--radius-xs); border: 1px solid var(--border); background: var(--bg-hover); color: var(--text-muted); flex-shrink: 0;">
         ${catName}
       </span>
     `;
@@ -218,10 +212,7 @@ export function GlossaryView(container) {
   // Render cards based on query and filters
   function performRender() {
     const filtered = GLOSSARY_TERMS.filter(item => {
-      // Category Match
       const matchesCat = (currentCategory === 'all' || item.catId === currentCategory);
-
-      // Search Query Match
       const q = searchQuery.toLowerCase().trim();
       const matchesSearch = !q || 
         item.term.toLowerCase().includes(q) ||
@@ -236,43 +227,43 @@ export function GlossaryView(container) {
     if (filtered.length === 0) {
       cardsContainer.style.display = 'block';
       cardsContainer.innerHTML = `
-        <div style="text-align: center; padding: 60px 20px; border: 1px dashed var(--border); border-radius: var(--radius-lg); background: var(--bg-card); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;">
-          <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--bg-elevated); display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
-            <i data-lucide="search-x" style="width: 22px; height: 22px;"></i>
+        <div style="text-align: center; padding: 48px 20px; border: 1px dashed var(--border); border-radius: var(--radius-lg); background: var(--bg-card); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
+          <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--bg-hover); display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
+            <i data-lucide="search-x" style="width: 18px; height: 18px;"></i>
           </div>
           <div>
-            <h4 style="font-size: var(--text-md); font-weight: 700; color: var(--text-main); margin-bottom: 4px;">Istilah tidak ditemukan</h4>
-            <p style="font-size: var(--text-sm); color: var(--text-muted); max-width: 320px; margin: 0 auto; line-height: var(--leading-normal);">Tidak ada kecocokan hasil untuk "${searchQuery}". Coba gunakan kata kunci atau kategori lainnya!</p>
+            <h4 style="font-size: var(--text-sm); font-weight: 600; color: var(--text-main); margin-bottom: 2px;">Istilah tidak ditemukan</h4>
+            <p style="font-size: var(--text-xs); color: var(--text-muted); max-width: 300px; margin: 0 auto; line-height: 1.4;">Tidak ada hasil untuk "${searchQuery}". Coba kata kunci lain!</p>
           </div>
         </div>
       `;
     } else {
       cardsContainer.style.display = 'grid';
       cardsContainer.innerHTML = filtered.map(item => `
-        <div class="bento-card" style="cursor: default; pointer-events: auto; transform: none; display: flex; flex-direction: column; height: 100%; gap: 12px; justify-content: space-between; border-radius: var(--radius-md);">
+        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 14px; transition: border-color 0.15s ease;" class="glossary-term-card">
           
-          <div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
             <!-- Top Section: Term Title and Category Badge -->
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;">
               <div>
-                <h3 style="font-size: var(--text-md); font-weight: 800; color: var(--text-main); margin-bottom: 2px;">
+                <h3 style="font-size: 15px; font-weight: 600; color: var(--text-main); margin: 0 0 2px 0; letter-spacing: -0.01em;">
                   ${item.term}
                 </h3>
-                <span class="text-jp" style="font-size: var(--text-xs); color: var(--text-secondary); font-weight: 500;">
+                <span class="text-jp" style="font-size: 12px; color: var(--text-muted); font-weight: 400;">
                   ${item.jp} (${item.rom})
                 </span>
               </div>
-              ${getCategoryBadge(item.catId, item.cat)}
+              ${getCategoryBadge(item.cat)}
             </div>
 
-            <!-- Definition Text -->
-            <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: var(--leading-relaxed); margin-top: 4px;">
+            <!-- Kindle Reading Definition Text -->
+            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; font-weight: 400; margin: 0;">
               ${item.desc}
             </p>
           </div>
 
-          <!-- Bottom Section: Concrete Example -->
-          <div class="formula-block" style="margin-bottom: 0; padding: 8px 12px; border-radius: var(--radius-xs); border-color: var(--border); border-left-color: var(--accent); font-family: var(--font-sans); font-size: var(--text-2xs); font-weight: 600;">
+          <!-- Kindle Warm Formula Card Example -->
+          <div style="background: var(--bg-hover); border-left: 3px solid var(--accent); border-radius: var(--radius-xs); padding: 8px 12px; font-size: 12px; color: var(--text-main); line-height: 1.5; font-weight: 400;">
             ${item.example}
           </div>
 

@@ -35,20 +35,25 @@ export function CurriculumView(container) {
   container.innerHTML = `
     <div class="curriculum-container page-container-standard fade-in" style="padding-bottom: 60px;">
       
-      <!-- Hero Header -->
-      <div style="background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 24px 20px; margin-bottom: 20px; text-align: center; position: relative; overflow: hidden;">
-        <h2 style="font-size: var(--text-2xl); font-weight: 900; color: var(--text-main); margin-bottom: 8px; letter-spacing: var(--tracking-tight); text-transform: uppercase;">Peta Kurikulum <span style="border-bottom: 3px solid var(--text-main); padding-bottom: 2px;">JLPT</span></h2>
-        <p style="color: var(--text-secondary); max-width: 540px; margin: 0 auto; font-size: var(--text-xs); line-height: var(--leading-relaxed); font-weight: 500;">
-          Jalur belajar bahasa Jepang terstruktur. Pilih tab di bawah untuk memfilter fase belajar atau lihat seluruh kurikulum sekaligus.
+      <!-- Minimalist Header Block -->
+      <div style="margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 16px;">
+        <span style="font-size: var(--text-3xs); font-weight: 600; color: var(--text-muted); letter-spacing: var(--tracking-wide);">
+          Peta Belajar Terstruktur (Bab 0 – 50)
+        </span>
+        <h2 style="font-size: var(--text-lg); font-weight: 700; color: var(--text-main); margin: 2px 0 6px 0; letter-spacing: var(--tracking-tight);">
+          Peta Kurikulum JLPT
+        </h2>
+        <p style="color: var(--text-secondary); font-size: var(--text-xs); line-height: 1.5; margin: 0; max-width: 680px;">
+          Jalur pembelajaran bahasa Jepang terstruktur. Pantau status penyelesaian teori, latihan, workbook, dan ujian di setiap bab.
         </p>
       </div>
 
-      <!-- Track Filters -->
-      <div style="display: flex; justify-content: center; gap: 8px; margin-bottom: 24px; flex-wrap: wrap;" class="no-print">
-        <button class="filter-tab-btn ${activeTrack === 'all' ? 'active' : ''}" data-track="all" style="height: 38px;">Semua</button>
-        <button class="filter-tab-btn ${activeTrack === 'pra-mnn' ? 'active' : ''}" data-track="pra-mnn" style="height: 38px;">Pra-Minna</button>
-        <button class="filter-tab-btn ${activeTrack === 'minna1' ? 'active' : ''}" data-track="minna1" style="height: 38px;">Minna I (N5)</button>
-        <button class="filter-tab-btn ${activeTrack === 'minna2' ? 'active' : ''}" data-track="minna2" style="height: 38px;">Minna II (N4)</button>
+      <!-- Segmented Track Filters -->
+      <div style="display: flex; gap: 4px; background: var(--bg-elevated); padding: 4px; border-radius: var(--radius-md); border: 1px solid var(--border); margin-bottom: 24px; max-width: 440px; overflow-x: auto; -webkit-overflow-scrolling: touch;" class="no-print">
+        <button class="filter-tab-btn ${activeTrack === 'all' ? 'active' : ''}" data-track="all" style="flex: 1; min-width: 70px;">Semua</button>
+        <button class="filter-tab-btn ${activeTrack === 'pra-mnn' ? 'active' : ''}" data-track="pra-mnn" style="flex: 1; min-width: 80px;">Pra-Minna</button>
+        <button class="filter-tab-btn ${activeTrack === 'minna1' ? 'active' : ''}" data-track="minna1" style="flex: 1; min-width: 95px;">Minna I (N5)</button>
+        <button class="filter-tab-btn ${activeTrack === 'minna2' ? 'active' : ''}" data-track="minna2" style="flex: 1; min-width: 95px;">Minna II (N4)</button>
       </div>
 
       <!-- Timeline Container -->
@@ -76,11 +81,11 @@ export function CurriculumView(container) {
         html += `
           <!-- Minna no Nihongo II Premium Divider -->
           <div style="margin-top: 36px; margin-bottom: 28px; border-top: 1px solid var(--border-bright); padding-top: 28px; text-align: center; position: relative;">
-            <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--bg-main); padding: 4px 24px; font-size: var(--text-xs); font-weight: 800; text-transform: uppercase; letter-spacing: var(--tracking-widest); border: 1px solid var(--border-bright); border-radius: var(--radius-sm); color: var(--text-main);">
+            <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--bg-main); padding: 4px 24px; font-size: var(--text-xs); font-weight: 800; border: 1px solid var(--border-bright); border-radius: var(--radius-sm); color: var(--text-main);">
               Minna no Nihongo II
             </div>
             <h2 style="font-size: var(--text-xl); font-weight: 900; letter-spacing: var(--tracking-tight); margin-bottom: 8px; color: var(--text-main);">
-              JALUR MENENGAH (N4) ✦
+              Jalur Menengah (N4) ✦
             </h2>
             <p style="color: var(--text-secondary); font-size: var(--text-xs); max-width: 580px; margin: 0 auto; line-height: var(--leading-relaxed); font-weight: 500;">
               Selamat datang di Bagian Kedua (Bab 26 - 50). Di sini Anda akan menguasai tata bahasa tingkat menengah-ke bawah (N4) untuk percakapan sehari-hari dan bisnis yang lebih natural, sopan (keigo), dan ekspresif.
@@ -92,45 +97,39 @@ export function CurriculumView(container) {
       // Level Title Row
       html += `
         <div style="margin-bottom: 32px;" class="fade-in">
-          <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
-            <div style="width: 50px; height: 50px; border-radius: var(--radius-sm); background: var(--text-main); color: var(--bg-main); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 800; border: 1px solid var(--border-accent); flex-shrink: 0;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+            <div style="width: 34px; height: 34px; border-radius: var(--radius-sm); background: var(--bg-card); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: var(--text-xs); font-weight: 700; border: 1px solid var(--border); flex-shrink: 0;">
               ${level.levelId === 'pra-mnn' ? 'L1' : level.levelId === 'shokyu-1' ? 'L2' : 'L3'}
             </div>
             <div>
-              <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--text-main); letter-spacing: -0.02em;">
+              <h2 style="font-size: var(--text-base); font-weight: 700; color: var(--text-main); margin: 0; letter-spacing: -0.01em;">
                 ${level.title.includes('—') ? level.title.split('—')[1].trim() : level.title}
               </h2>
-              ${level.desc ? `<div style="font-size: 0.9rem; color: var(--text-muted); font-weight: 500; margin-top: 2px;">${level.desc}</div>` : ''}
+              ${level.desc ? `<div style="font-size: var(--text-xs); color: var(--text-muted); font-weight: 400; margin-top: 1px;">${level.desc}</div>` : ''}
             </div>
           </div>
           
-          <div style="margin-left: 24px; border-left: 2px dashed var(--border); padding-left: 32px; display: flex; flex-direction: column; gap: 32px; position: relative;">
+          <div class="curriculum-level-tree">
       `;
 
       level.phases.forEach(phase => {
         html += `
-            <div style="position: relative;">
-              <!-- Timeline Dot -->
-              <div style="position: absolute; left: -41px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg-main); border: 3px solid var(--text-main);"></div>
-              
-              <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--text-main); margin-bottom: 6px; letter-spacing: -0.01em; text-transform: uppercase; display: flex; align-items: center; gap: 8px;">
-                <span>${phase.title}</span>
+          <div style="margin-bottom: 24px;">
+            <div style="margin-bottom: 10px;">
+              <h3 style="font-size: var(--text-sm); font-weight: 600; color: var(--text-main); margin: 0; letter-spacing: -0.01em;">
+                ${phase.title}
               </h3>
-              ${phase.desc ? `<p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 16px; font-weight: 500;">${phase.desc}</p>` : ''}
-              
-              <div class="bento-grid" style="margin-top: 16px; gap: 16px;">
+              ${phase.desc ? `<p style="color: var(--text-muted); font-size: var(--text-xs); margin: 2px 0 0 0; font-weight: 400; line-height: 1.4;">${phase.desc}</p>` : ''}
+            </div>
+            
+            <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;">
         `;
 
-        phase.units.forEach(unit => {
+        phase.units.forEach((unit, unitIdx) => {
+          const isLast = unitIdx === phase.units.length - 1;
           const completed = isUnitCompleted(unit.id);
-          
-          let icon = 'book-open';
-          let typeColor = 'var(--text-muted)';
-          if (unit.type === 'kana') { icon = 'type'; }
-          if (unit.type === 'grammar') { icon = 'puzzle'; }
           const isChap = !isNaN(unit.id);
 
-          // Detailed modality completion status
           const isTheoryDone = localStorage.getItem(`nihongo_master_theory_ch${unit.id}`) === 'true';
           const isQuizDone = isChapterQuizPassed(unit.id);
           const isWorkbookDone = (() => {
@@ -145,8 +144,9 @@ export function CurriculumView(container) {
           })();
           const isExamDone = isChapterExamPassed(unit.id);
 
-          // Get SRS active vocab progress and override title/desc with real JSON index
-          let srsHtml = '';
+          let srsText = false;
+          let activeSrsCount = 0;
+          let vocabCount = 0;
           let unitTitle = unit.title;
           let unitDesc = unit.desc;
           if (isChap) {
@@ -155,70 +155,86 @@ export function CurriculumView(container) {
             if (indexCh) {
               unitTitle = indexCh.title;
               unitDesc = indexCh.desc;
-              
-              const vocabCount = indexCh.vocabCount || 0;
+              vocabCount = indexCh.vocabCount || 0;
               const srsItems = getState().srsItems || [];
-              const activeSrsCount = srsItems.filter(item => {
+              activeSrsCount = srsItems.filter(item => {
                 if (item.type !== 'vocab') return false;
                 const key = item.id.replace('vocab-', '');
                 return VOCAB_TO_CHAPTER[key] === chId;
               }).length;
-
-              srsHtml = `
-                <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 700; margin-top: 4px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
-                  <span>SRS: <strong style="color: var(--text-main); font-variant-numeric: tabular-nums;">${activeSrsCount}/${vocabCount}</strong></span>
-                  ${vocabCount > 0 && activeSrsCount < vocabCount ? `
-                    <button class="curriculum-sync-srs-btn no-print" data-chapter-id="${unit.id}" style="background: transparent; border: none; padding: 0; color: var(--text-main); font-weight: 800; cursor: pointer; text-decoration: underline; font-size: 0.72rem;">
-                      [+ Antrekan Semua]
-                    </button>
-                  ` : ''}
-                </div>
-              `;
+              srsText = true;
             }
           }
           
           html += `
-                <div class="bento-card ${completed ? 'completed' : ''}" style="padding: 20px; display: flex; flex-direction: column; gap: 12px; border: 1px solid ${completed ? 'var(--border-accent)' : 'var(--border)'}; background: ${completed ? 'var(--accent-dim)' : 'var(--bg-card)'};">
-                  <div style="display: flex; align-items: center; justify-content: space-between;">
-                    <span style="font-size: 0.7rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; display: flex; align-items: center; gap: 4px; background: var(--bg-elevated); padding: 3px 10px; border-radius: 12px; border: 1px solid var(--border);">
-                      <i data-lucide="${icon}" style="width: 12px; height: 12px;"></i>
-                      ${unit.type}
-                    </span>
-                    ${completed ? `<i data-lucide="check-circle" style="width: 18px; height: 18px; color: var(--text-main);"></i>` : ''}
-                  </div>
-                  <div>
-                    <div style="font-weight: 800; color: var(--text-main); font-size: 1.05rem; line-height: 1.35; margin-bottom: 6px;">${unitTitle}</div>
-                    ${unitDesc ? `<div style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.4; font-weight: 500;">${unitDesc}</div>` : ''}
-                    ${srsHtml}
-                  </div>
-                  
-                  ${isChap ? `
-                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px;">
-                    <button class="mission-btn ${isTheoryDone ? 'completed' : ''}" data-route="#/chapter/${unit.id}" style="${isTheoryDone ? 'opacity: 0.8; border-color: var(--border-accent);' : ''}">
-                      <i data-lucide="${isTheoryDone ? 'check-circle' : 'book-open'}" style="width:13px;height:13px;color:var(--text-main);"></i> Teori
-                    </button>
-                    <button class="mission-btn ${isQuizDone ? 'completed' : ''}" data-route="#/chapter/${unit.id}?tab=practice" style="${isQuizDone ? 'opacity: 0.8; border-color: var(--border-accent);' : ''}">
-                      <i data-lucide="${isQuizDone ? 'check-circle' : 'dumbbell'}" style="width:13px;height:13px;color:var(--text-main);"></i> Latihan
-                    </button>
-                    <button class="mission-btn ${isWorkbookDone ? 'completed' : ''}" data-route="#/workbook/${unit.id}" style="${isWorkbookDone ? 'opacity: 0.8; border-color: var(--border-accent);' : ''}">
-                      <i data-lucide="${isWorkbookDone ? 'check-circle' : 'pen-tool'}" style="width:13px;height:13px;color:var(--text-main);"></i> Workbook
-                    </button>
-                    <button class="mission-btn ${isExamDone ? 'completed' : ''}" data-route="#/exam/${unit.id}" style="${isExamDone ? 'opacity: 0.8; border-color: var(--border-accent);' : ''}">
-                      <i data-lucide="${isExamDone ? 'check-circle' : 'award'}" style="width:13px;height:13px;color:var(--text-main);"></i> Ujian
-                    </button>
-                  </div>
-                  ` : `
-                  <button class="mission-btn" data-route="#/chapter/0?tab=kana" style="margin-top: 8px; width: 100%; display: flex; justify-content: center; gap: 6px;">
-                    <i data-lucide="type" style="width:14px;height:14px;color:var(--text-main);"></i> Pelajari Kana Interaktif
-                  </button>
-                  `}
+            <div style="padding: 16px 18px; border-bottom: ${isLast ? 'none' : '1px solid var(--border)'}; transition: background 0.15s ease;" class="curriculum-unit-row">
+              
+              <!-- Clickable Row Header: Title, SRS Tag & Chevron Dropdown -->
+              <div class="curriculum-row-toggle" data-unit-id="${unit.id}" style="display: flex; justify-content: space-between; align-items: center; gap: 12px; cursor: pointer; user-select: none;">
+                <div style="min-width: 0; flex: 1; display: flex; align-items: center; gap: 6px;">
+                  <h4 style="font-size: 14px; font-weight: 500; color: var(--text-main); margin: 0; line-height: 1.4; letter-spacing: -0.01em;">${unitTitle}</h4>
+                  ${completed ? `<i data-lucide="check-circle" style="width: 14px; height: 14px; color: var(--accent); flex-shrink: 0;"></i>` : ''}
                 </div>
+
+                <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
+                  ${srsText ? `
+                    <span style="font-size: 11px; color: var(--text-muted); font-weight: 400; font-variant-numeric: tabular-nums;">
+                      SRS ${activeSrsCount}/${vocabCount}
+                    </span>
+                  ` : ''}
+                  <i data-lucide="chevron-down" class="row-chevron" style="width: 14px; height: 14px; color: var(--text-muted); transition: transform 0.2s ease;"></i>
+                </div>
+              </div>
+
+              <!-- Collapsible Detail Info Drawer (Hidden by default, expands on click) -->
+              <div class="curriculum-row-detail" style="display: none; padding-top: 10px; margin-top: 10px; border-top: 1px solid var(--border);">
+                ${unitDesc ? `
+                  <p style="color: var(--text-secondary); font-size: 13px; margin: 0 0 10px 0; line-height: 1.6; font-weight: 400;">
+                    ${unitDesc}
+                  </p>
+                ` : ''}
+
+                ${isChap ? `
+                  <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; background: var(--bg-hover); padding: 8px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border); font-size: 12px;">
+                    <span style="color: var(--text-secondary); font-weight: 400;">Kosakata SRS: <strong style="color: var(--text-main);">${activeSrsCount}/${vocabCount}</strong> kata terdaftar</span>
+                    ${vocabCount > 0 && activeSrsCount < vocabCount ? `
+                      <button class="curriculum-sync-srs-btn no-print" data-chapter-id="${unit.id}" style="background: transparent; border: none; padding: 0; color: var(--accent); font-weight: 600; cursor: pointer; font-size: 11px;">
+                        + Antrekan Semua
+                      </button>
+                    ` : `<span style="color: var(--accent); font-size: 11px; font-weight: 500;">✓ Terantre</span>`}
+                  </div>
+                ` : ''}
+              </div>
+
+              <!-- Kindle Soft Action Buttons Row -->
+              ${isChap ? `
+              <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; width: 100%; margin-top: 10px;">
+                <button class="mission-btn ${isTheoryDone ? 'completed' : ''}" data-route="#/chapter/${unit.id}" style="${isTheoryDone ? 'opacity: 0.8; border-color: var(--border);' : ''}">
+                  <i data-lucide="${isTheoryDone ? 'check-circle' : 'book-open'}" style="width:12px;height:12px;opacity:0.75;"></i> Teori
+                </button>
+                <button class="mission-btn ${isQuizDone ? 'completed' : ''}" data-route="#/chapter/${unit.id}?tab=practice" style="${isQuizDone ? 'opacity: 0.8; border-color: var(--border);' : ''}">
+                  <i data-lucide="${isQuizDone ? 'check-circle' : 'dumbbell'}" style="width:12px;height:12px;opacity:0.75;"></i> Latihan
+                </button>
+                <button class="mission-btn ${isWorkbookDone ? 'completed' : ''}" data-route="#/workbook/${unit.id}" style="${isWorkbookDone ? 'opacity: 0.8; border-color: var(--border);' : ''}">
+                  <i data-lucide="${isWorkbookDone ? 'check-circle' : 'pen-tool'}" style="width:12px;height:12px;opacity:0.75;"></i> Workbook
+                </button>
+                <button class="mission-btn ${isExamDone ? 'completed' : ''}" data-route="#/exam/${unit.id}" style="${isExamDone ? 'opacity: 0.8; border-color: var(--border);' : ''}">
+                  <i data-lucide="${isExamDone ? 'check-circle' : 'award'}" style="width:12px;height:12px;opacity:0.75;"></i> Ujian
+                </button>
+              </div>
+              ` : `
+              <button class="mission-btn" data-route="#/chapter/0?tab=kana" style="width: 100%; display: flex; justify-content: center; gap: 6px; padding: 8px; margin-top: 10px;">
+                <i data-lucide="type" style="width:13px;height:13px;opacity:0.75;"></i> Pelajari Kana Interaktif
+              </button>
+              `}
+
+            </div>
           `;
         });
 
         html += `
-              </div>
             </div>
+          </div>
         `;
       });
 
@@ -232,6 +248,21 @@ export function CurriculumView(container) {
 
     // Rebind Lucide icons
     if (window.lucide) lucide.createIcons({ root: timelineContainer });
+
+    // Bind Accordion Row Toggle Events
+    timelineContainer.querySelectorAll('.curriculum-row-toggle').forEach(rowHeader => {
+      rowHeader.addEventListener('click', () => {
+        const row = rowHeader.closest('.curriculum-unit-row');
+        const detail = row.querySelector('.curriculum-row-detail');
+        const chevron = rowHeader.querySelector('.row-chevron');
+        
+        const isHidden = detail.style.display === 'none';
+        detail.style.display = isHidden ? 'block' : 'none';
+        if (chevron) {
+          chevron.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+      });
+    });
 
     // Rebind mission-btn click event listeners
     timelineContainer.querySelectorAll('.mission-btn').forEach(btn => {

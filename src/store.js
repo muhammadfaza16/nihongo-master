@@ -29,6 +29,7 @@ const defaultState = {
   // Chapter exam passes: [chapterId]
   passedChapterExams: [],
 
+
   // Achievements unlocked
   achievements: [],
 
@@ -60,16 +61,18 @@ function loadState() {
     if (saved) {
       const parsed = JSON.parse(saved);
       state = { ...defaultState, ...parsed, settings: { ...defaultState.settings, ...(parsed.settings || {}) } };
-      // Normalize completedUnits to strings
+      // Normalize completedUnits and passedChapterExams to strings
       state.completedUnits = (state.completedUnits || []).map(String);
+      state.passedChapterExams = (state.passedChapterExams || []).map(String);
     } else {
       state = { ...defaultState };
     }
   } catch {
     state = { ...defaultState };
   }
-  // Rebuild lookup Set after every load
+  // Rebuild lookup Sets after every load
   _completedSet = new Set(state.completedUnits);
+  _passedExamSet = new Set(state.passedChapterExams);
 }
 
 let _saveTimer = null;
@@ -77,7 +80,15 @@ function saveState() {
   clearTimeout(_saveTimer);
   _saveTimer = setTimeout(() => {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      const serialized = JSON.stringify(state);
+      localStorage.setItem(STORAGE_KEY, serialized);
+      
+      // Monitor quota (assume UTF-16, 2 bytes per char, typical limit 5MB)
+      const usedBytes = serialized.length * 2;
+      const warningLimit = 4.5 * 1024 * 1024; // 4.5 MB
+      if (usedBytes >= warningLimit) {
+        emit('storageWarning', { usedBytes });
+      }
     } catch (e) {
       console.warn('Failed to save state:', e);
     }
@@ -99,8 +110,9 @@ export function emit(event, data) {
   }
 }
 
-// Set for O(1) unit completion lookups (rebuilt on loadState)
+// Set for O(1) unit completion and exam passes lookups (rebuilt on loadState)
 let _completedSet = new Set();
+let _passedExamSet = new Set();
 
 export function getState() {
   if (!state) loadState();
@@ -110,9 +122,12 @@ export function getState() {
 export function setState(updates) {
   if (!state) loadState();
   Object.assign(state, updates);
-  // Keep Set in sync when completedUnits changes
+  // Keep Sets in sync when arrays change
   if (updates.completedUnits) {
     _completedSet = new Set(updates.completedUnits.map(String));
+  }
+  if (updates.passedChapterExams) {
+    _passedExamSet = new Set(updates.passedChapterExams.map(String));
   }
   saveState();
   emit('stateChanged', state);
@@ -130,6 +145,40 @@ export function updateStudyPlan(updates) {
   state.studyPlan = { ...state.studyPlan, ...updates };
   saveState();
   emit('studyPlanChanged', state.studyPlan);
+}
+
+export function getStorageInfo() {
+  let usedBytes = 0;
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY) || '';
+    usedBytes = saved.length * 2;
+  } catch (e) {}
+  const estimatedLimitBytes = 5 * 1024 * 1024;
+  return {
+    usedBytes,
+    estimatedLimitBytes,
+    percentUsed: usedBytes / estimatedLimitBytes
+  };
+}
+
+export function pruneOldActivityLog(keepDays) {
+  const s = getState();
+  const log = { ...s.activityLog };
+  const cutoff = new Date();
+  cutoff.setDate(cutoff.getDate() - keepDays);
+  const cutoffStr = cutoff.toISOString().split('T')[0];
+  
+  let changed = false;
+  for (const date in log) {
+    if (date < cutoffStr) {
+      delete log[date];
+      changed = true;
+    }
+  }
+  
+  if (changed) {
+    setState({ activityLog: log });
+  }
 }
 
 // ===== Progress helpers =====
@@ -212,21 +261,23 @@ export function saveExamResult(level, score, total, sections) {
 
 export function saveChapterExamResult(chapterId, score, passed) {
   const s = getState();
+  const idStr = String(chapterId);
   const passedExams = s.passedChapterExams || [];
-  const alreadyPassed = passedExams.includes(chapterId);
+  const alreadyPassed = _passedExamSet.has(idStr);
   
   if (passed) {
     if (!alreadyPassed) {
-      setState({ passedChapterExams: [...passedExams, chapterId] });
+      setState({ passedChapterExams: [...passedExams, idStr] });
       addXP(50); // 50 XP award for passing a chapter exam
     }
-    completeUnit(chapterId.toString());
+    completeUnit(idStr);
   }
   updateStreak();
 }
 
 export function isChapterExamPassed(chapterId) {
-  return (getState().passedChapterExams || []).includes(chapterId);
+  if (!state) loadState();
+  return _passedExamSet.has(String(chapterId));
 }
 
 export function isChapterQuizPassed(chapterId) {
