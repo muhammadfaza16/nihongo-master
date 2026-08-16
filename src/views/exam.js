@@ -1,6 +1,7 @@
 import { renderTopbar, showToast, renderLoader } from '../components/layout.js';
 import { loadChapter } from '../data/chapter_index.js';
 import { saveChapterExamResult } from '../store.js';
+import { getUnitDetails } from '../data/curriculum.js';
 
 export function ExamView(container, params) {
   const chapterId = parseInt(params.id);
@@ -21,6 +22,7 @@ export function ExamView(container, params) {
 }
 
 function _initExamView(container, params, chapter, chapterId) {
+  const unitDetails = getUnitDetails(chapterId);
   let backTrack = 'all';
   if (chapterId === 0) {
     backTrack = 'pra-mnn';
@@ -41,16 +43,17 @@ function _initExamView(container, params, chapter, chapterId) {
     container.innerHTML = `
       <div class="fade-in" style="max-width: 800px; margin: 0 auto; padding-bottom: 80px;">
         <!-- Breadcrumb Navigation -->
-        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">
-          <a href="#/curriculum?track=${backTrack}" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; gap: 6px;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'">
-            <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i>
-            Kurikulum
-          </a>
-          <span>/</span>
-          <a href="#/chapter/${chapterId}" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'">Bab ${chapterId}</a>
-          <span>/</span>
-          <span style="color: var(--text-main);">Ujian</span>
-        </div>
+        <nav class="app-breadcrumb" aria-label="Breadcrumb">
+          <a href="#/curriculum">Kurikulum</a>
+          ${unitDetails ? `
+            <span class="breadcrumb-separator">/</span>
+            <a href="#/phase/${unitDetails.phaseId}">${unitDetails.phaseTitle}</a>
+          ` : ''}
+          <span class="breadcrumb-separator">/</span>
+          <a href="#/chapter/${chapterId}">Bab ${chapterId}</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Ujian Evaluasi</span>
+        </nav>
         
         <div style="background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 32px; text-align: center;">
           <div style="margin-bottom: 16px;">
@@ -119,16 +122,17 @@ function _initExamView(container, params, chapter, chapterId) {
     let html = `
       <div class="exam-container page-container-standard fade-in" style="padding-bottom: 60px;">
         <!-- Breadcrumb Navigation -->
-        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: var(--tracking-wider); color: var(--text-muted);">
-          <a href="#/curriculum?track=${backTrack}" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; gap: 6px;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'">
-            <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i>
-            Kurikulum
-          </a>
-          <span>/</span>
-          <a href="#/chapter/${chapter.id}" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'">Bab ${chapter.id}</a>
-          <span>/</span>
-          <span style="color: var(--text-main);">Ujian</span>
-        </div>
+        <nav class="app-breadcrumb" aria-label="Breadcrumb">
+          <a href="#/curriculum">Kurikulum</a>
+          ${unitDetails ? `
+            <span class="breadcrumb-separator">/</span>
+            <a href="#/phase/${unitDetails.phaseId}">${unitDetails.phaseTitle}</a>
+          ` : ''}
+          <span class="breadcrumb-separator">/</span>
+          <a href="#/chapter/${chapter.id}">Bab ${chapter.id}</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Ujian Evaluasi</span>
+        </nav>
 
         <!-- Header Info -->
         <div style="background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 36px 24px; margin-bottom: 24px; text-align: center; box-shadow: var(--shadow-md);">

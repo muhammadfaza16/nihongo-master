@@ -43,28 +43,10 @@ export async function ReviewView(container) {
       addXP(totalXP);
 
       // Generate HTML for reviewed items list
+      const gradeLabels = ['Lupa Total', 'Hampir Ingat', 'Susah', 'Lumayan', 'Ingat', 'Mudah Sekali'];
       const itemsHtml = sessionHistory.map(item => {
-        let badgeColor = '';
-        let badgeText = '';
-        if (item.grade === 0) {
-          badgeColor = 'background: var(--red-dim, #ffe5e5); color: var(--red, #ef4444); border: 1px solid var(--border);';
-          badgeText = 'Lupa Total';
-        } else if (item.grade === 1) {
-          badgeColor = 'background: var(--orange-dim, #ffedd5); color: var(--orange, #f97316); border: 1px solid var(--border);';
-          badgeText = 'Hampir Ingat';
-        } else if (item.grade === 2) {
-          badgeColor = 'background: var(--amber-dim, #fef3c7); color: var(--amber, #f59e0b); border: 1px solid var(--border);';
-          badgeText = 'Susah';
-        } else if (item.grade === 3) {
-          badgeColor = 'background: var(--lime-dim, #ecfccb); color: var(--lime, #84cc16); border: 1px solid var(--border);';
-          badgeText = 'Lumayan';
-        } else if (item.grade === 4) {
-          badgeColor = 'background: var(--green-dim, #dcfce7); color: var(--green, #22c55e); border: 1px solid var(--border);';
-          badgeText = 'Ingat';
-        } else {
-          badgeColor = 'background: var(--bg-elevated); color: var(--blue, #3b82f6); border: 1px solid var(--border);';
-          badgeText = 'Mudah Sekali';
-        }
+        const gradeIdx = Math.min(Math.max(item.grade || 0, 0), 5);
+        const badgeText = gradeLabels[gradeIdx];
 
         return `
           <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); margin-bottom: 8px;">
@@ -72,7 +54,7 @@ export async function ReviewView(container) {
               <div style="font-family: var(--font-jp); font-size: 1.15rem; font-weight: 700; color: var(--text-main);">${item.vocab}</div>
               <div style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">${item.meaning}</div>
             </div>
-            <span style="font-size: var(--text-2xs); font-weight: 700; padding: 4px 10px; border-radius: 99px; ${badgeColor}">${badgeText}</span>
+            <span class="srs-result-badge grade-${gradeIdx}">${badgeText}</span>
           </div>
         `;
       }).join('');

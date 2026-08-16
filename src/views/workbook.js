@@ -1,6 +1,7 @@
 import { renderTopbar, showToast, renderBackBtn, renderLoader } from '../components/layout.js';
 import { loadChapter } from '../data/chapter_index.js';
 import { addXP } from '../store.js';
+import { getUnitDetails } from '../data/curriculum.js';
 
 export function WorkbookView(container, params) {
   const chapterId = parseInt(params.id);
@@ -21,6 +22,7 @@ export function WorkbookView(container, params) {
 }
 
 function _initWorkbookView(container, params, chapter, chapterId) {
+  const unitDetails = getUnitDetails(chapterId);
   let backTrack = 'all';
   if (chapterId === 0) {
     backTrack = 'pra-mnn';
@@ -35,16 +37,17 @@ function _initWorkbookView(container, params, chapter, chapterId) {
     container.innerHTML = `
       <div class="fade-in" style="max-width: 800px; margin: 0 auto; padding-bottom: 80px;">
         <!-- Breadcrumb Navigation -->
-        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">
-          <a href="#/curriculum?track=${backTrack}" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; gap: 6px;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'">
-            <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i>
-            Kurikulum
-          </a>
-          <span>/</span>
-          <a href="#/chapter/${chapterId}" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'">Bab ${chapterId}</a>
-          <span>/</span>
-          <span style="color: var(--text-main);">Workbook</span>
-        </div>
+        <nav class="app-breadcrumb" aria-label="Breadcrumb">
+          <a href="#/curriculum">Kurikulum</a>
+          ${unitDetails ? `
+            <span class="breadcrumb-separator">/</span>
+            <a href="#/phase/${unitDetails.phaseId}">${unitDetails.phaseTitle}</a>
+          ` : ''}
+          <span class="breadcrumb-separator">/</span>
+          <a href="#/chapter/${chapterId}">Bab ${chapterId}</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Buku Kerja (Kaite Oboeru)</span>
+        </nav>
 
         <div style="background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 32px; text-align: center;">
           <div style="margin-bottom: 16px;">
@@ -142,16 +145,17 @@ function _initWorkbookView(container, params, chapter, chapterId) {
       // ────────────────────────────────────────────────────────
       html += `
         <!-- Breadcrumb Navigation -->
-        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; font-size: var(--text-xs); font-weight: 700; text-transform: uppercase; letter-spacing: var(--tracking-wider); color: var(--text-muted);">
-          <a href="#/curriculum?track=${backTrack}" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; gap: 6px;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'">
-            <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i>
-            Kurikulum
-          </a>
-          <span>/</span>
-          <a href="#/chapter/${chapter.id}" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'">Bab ${chapter.id}</a>
-          <span>/</span>
-          <span style="color: var(--text-main);">Workbook</span>
-        </div>
+        <nav class="app-breadcrumb" aria-label="Breadcrumb">
+          <a href="#/curriculum">Kurikulum</a>
+          ${unitDetails ? `
+            <span class="breadcrumb-separator">/</span>
+            <a href="#/phase/${unitDetails.phaseId}">${unitDetails.phaseTitle}</a>
+          ` : ''}
+          <span class="breadcrumb-separator">/</span>
+          <a href="#/chapter/${chapter.id}">Bab ${chapter.id}</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Buku Kerja (Kaite Oboeru)</span>
+        </nav>
 
         <!-- Overview Hero Box -->
         <div class="overview-hero">
@@ -350,73 +354,99 @@ function _initWorkbookView(container, params, chapter, chapterId) {
         </button>
       </div>
 
-      <!-- Question Card -->
-      <div style="background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 24px;">
+      <!-- Question Card (Unified with Feedback State) -->
+      <div style="background: var(--bg-card); border: 1px solid ${isChecked ? (isCorrect ? 'var(--border-accent)' : 'rgba(248,113,113,0.4)') : 'var(--border)'}; border-radius: var(--radius-lg); padding: var(--space-5); margin-bottom: var(--space-5); transition: border-color 0.2s ease;">
         
         <!-- Instruction -->
-        <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 18px; border-left: 2px solid var(--text-main); padding-left: 12px; line-height: 1.5;">
+        <div style="font-size: var(--text-xs); color: var(--text-secondary); margin-bottom: var(--space-4); border-left: 2px solid var(--text-main); padding-left: var(--space-3); line-height: 1.5;">
           ${item.instruction}
         </div>
 
         <!-- Pattern Tag -->
-        <div style="margin-bottom: 24px;">
-          <span style="font-size: 0.75rem; font-weight: 700; font-family: monospace; background: var(--bg-elevated); border: 1px solid var(--border); padding: 4px 8px; border-radius: var(--radius-sm); color: var(--text-main);">
+        <div style="margin-bottom: var(--space-4);">
+          <span style="font-size: var(--text-3xs); font-weight: 700; font-family: monospace; background: var(--bg-elevated); border: 1px solid var(--border); padding: 4px 8px; border-radius: var(--radius-sm); color: var(--text-main);">
             Pola: ${item.pattern}
           </span>
         </div>
 
         <!-- The Cues -->
-        <div style="margin-bottom: 32px; text-align: center; padding: 24px; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-md);">
-          <div style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">Petunjuk Kata</div>
-          <div style="font-size: 1.5rem; font-weight: 800; color: var(--text-main); letter-spacing: -0.01em;">
+        <div style="margin-bottom: var(--space-5); text-align: center; padding: var(--space-4); background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-md);">
+          <div style="font-size: var(--text-3xs); color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em;">Petunjuk Kata</div>
+          <div style="font-size: var(--text-xl); font-weight: 800; color: var(--text-main); letter-spacing: -0.01em;">
             ${item.question}
           </div>
         </div>
 
         <!-- Input Area -->
-        <div style="margin-bottom: 24px;">
-          <label for="wb-user-input" style="display: block; font-size: 0.85rem; font-weight: 700; color: var(--text-main); margin-bottom: 8px;">Ketikan Kalimat Lengkap Anda (Hiragana/Kanji):</label>
+        <div style="margin-bottom: var(--space-4);">
+          <label for="wb-user-input" style="display: block; font-size: var(--text-xs); font-weight: 700; color: var(--text-main); margin-bottom: var(--space-2);">Ketikan Kalimat Lengkap Anda (Hiragana/Kanji):</label>
           <input type="text" id="wb-user-input" placeholder="Ketik kalimat lengkap di sini..." autocomplete="off" 
-            style="width: 100%; padding: 14px 18px; font-size: 1.1rem; border-radius: var(--radius-md); border: 1px solid var(--border-accent); background: var(--bg-elevated); color: var(--text-main); font-family: inherit; transition: all 0.2s;"
+            style="width: 100%; padding: 12px 16px; font-size: var(--text-base); border-radius: var(--radius-md); border: 1px solid var(--border-accent); background: var(--bg-elevated); color: var(--text-main); font-family: inherit; transition: all 0.2s;"
             value="${item.userAnswer || ''}"
             ${isChecked ? 'disabled' : ''} />
         </div>
 
+        <!-- Inline Result Feedback (Unified inside card) -->
+        ${isChecked ? `
+          <div class="fade-in" style="padding: var(--space-3) var(--space-4); background: var(--bg-elevated); border-radius: var(--radius-md); border-left: 3px solid ${isCorrect ? 'var(--green)' : 'var(--red)'}; margin-bottom: var(--space-4);">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: ${(isCorrect || revealAnswer) ? '8px' : '0'};">
+              <i data-lucide="${isCorrect ? 'check-circle' : 'alert-circle'}" style="width: 16px; height: 16px; color: ${isCorrect ? 'var(--green)' : 'var(--red)'}; flex-shrink: 0;"></i>
+              <span style="font-size: var(--text-xs); font-weight: 700; color: var(--text-main);">
+                ${isCorrect ? 'Luar Biasa! Jawaban Anda Tepat.' : revealAnswer ? 'Kunci Jawaban Buku Cetak:' : 'Kurang Tepat. Ketikan Anda mengandung ketidakcocokan partikel atau ejaan.'}
+              </span>
+            </div>
+            
+            ${(isCorrect || revealAnswer) ? `
+              <div style="padding-top: var(--space-2); border-top: 1px dashed var(--border);">
+                <div style="font-size: var(--text-md); font-weight: 700; color: var(--text-main); font-family: var(--font-jp);">
+                  ${item.correct}
+                </div>
+                <div style="font-size: var(--text-3xs); font-family: monospace; color: var(--text-muted); margin-top: 2px;">
+                  ${item.romaji}
+                </div>
+                <div style="font-size: var(--text-xs); color: var(--text-secondary); margin-top: 4px;">
+                  = "${item.translation}"
+                </div>
+              </div>
+            ` : ''}
+          </div>
+        ` : ''}
+
         <!-- Action Buttons -->
-        <div style="display: flex; gap: 12px; justify-content: space-between; align-items:center; flex-wrap:wrap;">
+        <div style="display: flex; gap: var(--space-3); justify-content: space-between; align-items:center; flex-wrap:wrap;">
           
           <!-- Prev / Next Card shortcuts -->
           <div style="display:flex; gap:8px;">
-            <button id="btn-prev-quest" class="filter-tab-btn" style="padding: 10px 14px;" ${index === 0 ? 'disabled style="opacity: 0.3; cursor: default;"' : ''}>
+            <button id="btn-prev-quest" class="filter-tab-btn" style="padding: 8px 12px;" ${index === 0 ? 'disabled style="opacity: 0.3; cursor: default;"' : ''}>
               <i data-lucide="chevron-left" style="width:16px;height:16px;"></i>
             </button>
-            <button id="btn-next-quest" class="filter-tab-btn" style="padding: 10px 14px;" ${index === total - 1 ? 'disabled style="opacity: 0.3; cursor: default;"' : ''}>
+            <button id="btn-next-quest" class="filter-tab-btn" style="padding: 8px 12px;" ${index === total - 1 ? 'disabled style="opacity: 0.3; cursor: default;"' : ''}>
               <i data-lucide="chevron-right" style="width:16px;height:16px;"></i>
             </button>
           </div>
 
-          <div style="display: flex; gap: 12px;">
+          <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
             ${!isChecked ? `
-              <button id="btn-check" style="background: var(--text-main); color: var(--bg-main); border: none; padding: 12px 28px; font-size: 0.9rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+              <button id="btn-check" class="btn btn-primary" style="padding: 10px 24px; font-size: var(--text-xs); font-weight: 700; border-radius: var(--radius-sm);">
                 Periksa Jawaban
               </button>
             ` : `
               ${!isCorrect && !revealAnswer ? `
-                <button id="btn-reveal" style="background: transparent; color: var(--text-main); border: 1px solid var(--text-main); padding: 12px 20px; font-size: 0.9rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
+                <button id="btn-reveal" class="btn btn-secondary" style="padding: 10px 16px; font-size: var(--text-xs); font-weight: 700; border-radius: var(--radius-sm);">
                   Lihat Kunci Jawaban
                 </button>
-                <button id="btn-retry" style="background: transparent; color: var(--text-muted); border: 1px solid var(--border); padding: 12px 20px; font-size: 0.9rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--text-muted)'; this.style.color='var(--text-main)'" onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--text-muted)'">
-                  <i data-lucide="refresh-cw" style="width:14px;height:14px;display:inline-block;vertical-align:middle;margin-right:4px;"></i> Coba Lagi
+                <button id="btn-retry" class="btn btn-secondary" style="padding: 10px 16px; font-size: var(--text-xs); font-weight: 700; border-radius: var(--radius-sm);">
+                  <i data-lucide="refresh-cw" style="width:13px;height:13px;margin-right:4px;"></i> Coba Lagi
                 </button>
               ` : ''}
               
               ${!isCorrect && revealAnswer ? `
-                <button id="btn-retry" style="background: transparent; color: var(--text-muted); border: 1px solid var(--border); padding: 12px 20px; font-size: 0.9rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--text-muted)'; this.style.color='var(--text-main)'" onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--text-muted)'">
-                  <i data-lucide="refresh-cw" style="width:14px;height:14px;display:inline-block;vertical-align:middle;margin-right:4px;"></i> Ulangi Soal
+                <button id="btn-retry" class="btn btn-secondary" style="padding: 10px 16px; font-size: var(--text-xs); font-weight: 700; border-radius: var(--radius-sm);">
+                  <i data-lucide="refresh-cw" style="width:13px;height:13px;margin-right:4px;"></i> Ulangi Soal
                 </button>
               ` : ''}
 
-              <button id="btn-next" style="background: var(--text-main); color: var(--bg-main); border: none; padding: 12px 28px; font-size: 0.9rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+              <button id="btn-next" class="btn btn-primary" style="padding: 10px 24px; font-size: var(--text-xs); font-weight: 700; border-radius: var(--radius-sm);">
                 ${index + 1 === total ? 'Selesaikan Latihan' : 'Soal Selanjutnya'}
               </button>
             `}
@@ -424,37 +454,6 @@ function _initWorkbookView(container, params, chapter, chapterId) {
         </div>
 
       </div>
-
-      <!-- Result Feedback Card -->
-      ${isChecked ? `
-        <div class="fade-in" style="background: var(--bg-card); border: 1px solid ${isCorrect ? 'var(--border-accent)' : 'var(--text-muted)'}; border-radius: var(--radius-lg); padding: 24px; margin-bottom: 24px;">
-          <div style="display: flex; align-items: flex-start; gap: 16px;">
-            <div style="width: 32px; height: 32px; border-radius: var(--radius-sm); border: 1px solid ${isCorrect ? 'var(--text-main)' : 'var(--text-muted)'}; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; background: ${isCorrect ? 'var(--bg-elevated)' : 'transparent'};">
-              <i data-lucide="${isCorrect ? 'check' : 'x'}" style="width: 18px; height: 18px; color: var(--text-main);"></i>
-            </div>
-            <div style="flex-grow: 1;">
-              <h4 style="font-size: 1.05rem; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">
-                ${isCorrect ? 'Luar Biasa! Jawaban Anda Tepat.' : revealAnswer ? 'Kunci Jawaban Buku Cetak' : 'Kurang Tepat. Ketikan Anda mengandung ketidakcocokan partikel atau ejaan.'}
-              </h4>
-              
-              ${(isCorrect || revealAnswer) ? `
-                <div style="margin-top: 16px; padding: 16px; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-md);">
-                  <div style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em;">Jawaban Buku Cetak</div>
-                  <div style="font-size: 1.35rem; font-weight: 900; color: var(--text-main); margin-bottom: 8px; letter-spacing: -0.01em;">
-                    ${item.correct}
-                  </div>
-                  <div style="font-size: 0.85rem; font-family: monospace; color: var(--text-secondary); margin-bottom: 8px;">
-                    ${item.romaji}
-                  </div>
-                  <div style="font-size: 0.85rem; color: var(--text-muted); border-top: 1px dashed var(--border); padding-top: 8px; margin-top: 8px;">
-                    = "${item.translation}"
-                  </div>
-                </div>
-              ` : ''}
-            </div>
-          </div>
-        </div>
-      ` : ''}
     `;
   }
 

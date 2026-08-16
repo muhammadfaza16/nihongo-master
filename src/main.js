@@ -16,7 +16,9 @@ function initApp() {
   registerRoute('/review',      (container, params) => import('./views/review.js').then(m => m.ReviewView(container, params)));
   registerRoute('/writing',     (container, params) => import('./views/writing.js').then(m => m.WritingView(container, params)));
   registerRoute('/kanji',       (container, params) => import('./views/kanji.js').then(m => m.KanjiView(container, params)));
-  registerRoute('/curriculum',  (container, params) => import('./views/curriculum.js').then(m => m.CurriculumView(container, params)));
+  registerRoute('/curriculum',        (container, params) => import('./views/curriculum.js').then(m => m.CurriculumView(container, params)));
+  registerRoute('/curriculum/:track', (container, params) => import('./views/curriculum.js').then(m => m.CurriculumView(container, params)));
+  registerRoute('/phase/:id',         (container, params) => import('./views/phase.js').then(m => m.PhaseView(container, params)));
   registerRoute('/glossary',    (container, params) => import('./views/glossary.js').then(m => m.GlossaryView(container, params)));
   registerRoute('/workbook/:id',(container, params) => import('./views/workbook.js').then(m => m.WorkbookView(container, params)));
   registerRoute('/exam/:id',    (container, params) => import('./views/exam.js').then(m => m.ExamView(container, params)));

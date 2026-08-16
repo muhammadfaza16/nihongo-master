@@ -2,8 +2,8 @@
 export const MNN_INDEX = [
   {
     "id": 0,
-    "title": "Chapter 0: Fondasi Nol Besar (Sistem Tulisan & Pelafalan)",
-    "desc": "Sebelum menyentuh Bab 1 Minna No Nihongo, Anda WAJIB menguasai sistem tulisan (Hiragana & Katakana) serta aturan dasar pelafalan bahasa Jepang.",
+    "title": "Bab 0: Fondasi Aksara & Pelafalan",
+    "desc": "Penguasaan sistem penulisan Hiragana & Katakana, aturan pelafalan khusus, serta ungkapan salam dasar bahasa Jepang.",
     "locked": false,
     "vocabCount": 5
   },
@@ -11,175 +11,175 @@ export const MNN_INDEX = [
     "id": 1,
     "title": "Lesson 1: Anatomi Kalimat Dasar",
     "desc": "Membedah tuntas Bab 1 Minna No Nihongo: Subjek, Predikat, dan Partikel Penanda (Wa, Ka, Mo, No). Kami tidak memotong isi buku; semua variasi Renshuu A, B, dan C diakomodasi di sini.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 43
   },
   {
     "id": 2,
     "title": "Lesson 2: Kata Tunjuk Benda (Kore, Sore, Are)",
     "desc": "Membedah Bab 2 Minna No Nihongo. Anda akan belajar cara menunjuk benda di sekitar Anda, menyatakan kepemilikan mutlak, serta meminta konfirmasi fakta.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 42
   },
   {
     "id": 3,
     "title": "Lesson 3: Kata Tunjuk Tempat (Koko, Soko, Asoko)",
     "desc": "Membedah Bab 3 Minna No Nihongo. Anda akan belajar menanyakan letak suatu tempat, menanyakan harga barang, asal perusahaan pembuat barang, serta tingkatan kesopanan penunjuk arah.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 40
   },
   {
     "id": 4,
     "title": "Lesson 4: Waktu & Aktivitas Dasar (Masu Form)",
     "desc": "Mempelajari cara menyebutkan jam, hari, dan memperkenalkan Kata Kerja formal (Masu-Form) untuk rutinitas masa kini dan masa lalu.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 46
   },
   {
     "id": 5,
     "title": "Lesson 5: Pergerakan (Pergi, Datang, Pulang)",
     "desc": "Mempelajari kata kerja perpindahan arah (ikimasu, kimasu, kaerimasu) beserta partikel tujuan (e), kendaraan (de), dan kawan perjalanan (to).",
-    "locked": true,
+    "locked": false,
     "vocabCount": 34
   },
   {
     "id": 6,
     "title": "Lesson 6: Kata Kerja Transitif & Objek (Partikel O)",
     "desc": "Membedah Bab 6. Anda akan belajar bagaimana menunjuk objek penderita yang dikenai pekerjaan (makan nasi, minum air), menyatakan tempat terjadinya aktivitas, serta mengajak orang lain.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 44
   },
   {
     "id": 7,
     "title": "Lesson 7: Alat (De) & Transaksi Memberi/Menerima",
     "desc": "Membedah Bab 7. Anda akan belajar menggunakan partikel 'DE' sebagai alat/metode, dan fenomena memberi (Agemasu) serta menerima (Moraimasu) dalam budaya Jepang.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 37
   },
   {
     "id": 8,
     "title": "Lesson 8: Kata Sifat (I-Adjective & Na-Adjective)",
     "desc": "Membedah Bab 8. Anda akan belajar dua jenis kata sifat bahasa Jepang beserta seluruh aturan konjugasinya (positif, negatif, lampau), cara mendeskripsikan benda, dan cara bertanya pendapat seseorang.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 45
   },
   {
     "id": 9,
     "title": "Lesson 9: Suka, Bisa, Mengerti (Ga + Adjective)",
     "desc": "Membedah Bab 9. Anda belajar menyatakan kegemaran (Suki/Kirai), kemampuan (Jouzu/Heta), pemahaman (Wakarimasu), dan cara memberikan alasan dengan KARA. Bab ini memperkenalkan partikel GA yang krusial.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 35
   },
   {
     "id": 10,
     "title": "Lesson 10: Ada / Berada (Arimasu & Imasu)",
     "desc": "Membedah Bab 10. Anda belajar kata kerja keberadaan: Arimasu (benda mati) vs Imasu (makhluk hidup), kosakata posisi (atas, bawah, dalam, antara), serta dua pola kalimat penting untuk menanyakan 'Ada apa?' vs 'Ada di mana?'.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 37
   },
   {
     "id": 11,
     "title": "Lesson 11: Kata Bantu Bilangan (Counter/Satuan)",
     "desc": "Membedah Bab 11. Anda belajar menghitung benda, orang, dan durasi dengan satuan khusus (counter) yang berbeda-beda tergantung bentuk objeknya. Juga belajar menanyakan durasi dan frekuensi.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 37
   },
   {
     "id": 12,
     "title": "Lesson 12: Perbandingan (Motto, Ichiban)",
     "desc": "Membedah Bab 12. Anda belajar membandingkan dua benda (comparative) atau lebih (superlative), menyatakan yang paling, dan menanyakan preferensi antara pilihan.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 30
   },
   {
     "id": 13,
     "title": "Lesson 13: Keinginan & Tujuan (Tai-Form)",
     "desc": "Membedah Bab 13. Anda belajar mengekspresikan keinginan (ingin melakukan/ingin benda), menyatakan tujuan pergi ke suatu tempat, dan kata tak-tentu (sesuatu, ke suatu tempat).",
-    "locked": true,
+    "locked": false,
     "vocabCount": 30
   },
   {
     "id": 14,
     "title": "Lesson 14: Te-Form & Permintaan (Kudasai)",
     "desc": "BAB TERPENTING di seluruh MNN! Anda belajar mengubah kata kerja ke Bentuk-Te (Te-Form), yang menjadi fondasi MUTLAK dari hampir semua konjugasi lanjutan: sedang berlangsung, izin, larangan, dan sambungan kalimat.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 30
   },
   {
     "id": 15,
     "title": "Lesson 15: Te-Form Sambung & Izin",
     "desc": "Membedah Bab 15. Memperluas Te-Form untuk menghubungkan beberapa aksi berurutan, mendeskripsikan keadaan permanen (tinggal, tahu), dan menyambung kata sifat.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 30
   },
   {
     "id": 16,
     "title": "Lesson 16: Setelah (Te-kara) & Deskripsi Fisik",
     "desc": "Membedah Bab 16. Belajar menyatakan urutan mutlak ('setelah melakukan A, baru B'), mendeskripsikan ciri-ciri fisik seseorang dengan pola WA-GA, dan aturan partikel naik/turun kendaraan.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 30
   },
   {
     "id": 17,
     "title": "Lesson 17: Nai-Form & Kewajiban (Harus)",
     "desc": "Membedah Bab 17. Pengenalan NAI-FORM (Bentuk Negatif Kasual) — bentuk ketiga setelah Te-Form dan Dict-Form. Dipakai untuk larangan sopan, kewajiban (harus), dan ketiadaan kewajiban (tidak usah).",
-    "locked": true,
+    "locked": false,
     "vocabCount": 30
   },
   {
     "id": 18,
     "title": "Lesson 18: Dictionary-Form & Kemampuan",
     "desc": "Membedah Bab 18. Pengenalan Bentuk Kamus (Jisho-kei) — bentuk dasar kata kerja di kamus. Digunakan untuk menyatakan kebisaan (koto ga dekimasu), hobi (koto desu), dan urutan waktu 'Sebelum' (mae ni).",
-    "locked": true,
+    "locked": false,
     "vocabCount": 30
   },
   {
     "id": 19,
     "title": "Lesson 19: Ta-Form & Pengalaman",
     "desc": "Membedah Bab 19. Memperkenalkan Ta-Form (Bentuk Lampau Kasual) — bentuk ke-5. Digunakan untuk menceritakan pengalaman hidup (pernah), mendaftar aktivitas acak (tari-tari), dan menyatakan perubahan keadaan (narimasu).",
-    "locked": true,
+    "locked": false,
     "vocabCount": 30
   },
   {
     "id": 20,
     "title": "Lesson 20: Plain Form (Bentuk Kasual)",
     "desc": "Membedah Bab 20. TITIK BALIK BESAR. Anda membuang 'Desu/Masu' dan belajar cara orang Jepang berbicara santai (Futsukei). Juga FONDASI penting karena hampir semua tata bahasa N4/N3 membutuhkan Plain Form.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 30
   },
   {
     "id": 21,
     "title": "Lesson 21: Opini & Kutipan (To Omoimasu)",
     "desc": "Membedah Bab 21. Belajar cara mengungkapkan pendapat pribadi ('Saya pikir...') dan mengutip perkataan orang lain ('Dia berkata bahwa...'). Keduanya menggunakan Plain Form sebagai pondasi.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 30
   },
   {
     "id": 22,
     "title": "Lesson 22: Klausa Modifikasi (Menjelaskan Kata Benda)",
     "desc": "Membedah Bab 22. Di sinilah grammar Jepang menjadi 'terbalik' dari bahasa Indonesia/Inggris. Anda belajar menjelaskan kata benda menggunakan KESELURUHAN KALIMAT (Relative Clauses).",
-    "locked": true,
+    "locked": false,
     "vocabCount": 30
   },
   {
     "id": 23,
     "title": "Lesson 23: Toki (Saat) & Kondisional To",
     "desc": "Membedah Bab 23. Anda belajar menyatakan 'Ketika/Saat' terjadi sesuatu (Toki), dan penggunaan 'To' untuk hubungan sebab-akibat yang absolut (Jika A ditekan, maka pasti B keluar).",
-    "locked": true,
+    "locked": false,
     "vocabCount": 30
   },
   {
     "id": 24,
     "title": "Lesson 24: Memberi & Menerima (Kuremasu)",
     "desc": "Membedah Bab 24. Fokus pada sistem transaksi kebaikan hati Jepang: Agemasu (Memberi keluar), Moraimasu (Menerima), dan Kuremasu (Orang lain memberi ke SAYA).",
-    "locked": true,
+    "locked": false,
     "vocabCount": 30
   },
   {
     "id": 25,
     "title": "Lesson 25: Kondisional (Tara) & Konsesi (Temo)",
     "desc": "Membedah Bab 25 (BAB TERAKHIR SHOKYU I!). Anda akan belajar menyatakan 'Jika/Kalau' (Tara) untuk pengandaian, dan 'Meskipun/Walaupun' (Temo). Kedua pola ini sangat luas pemakaiannya.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 30
   },
   {
@@ -193,168 +193,168 @@ export const MNN_INDEX = [
     "id": 27,
     "title": "Lesson 27: Keigo — Bahasa Hormat (尊敬語 & 謙譲語)",
     "desc": "Bab krusial untuk komunikasi profesional di Jepang. Anda akan belajar dua pilar Keigo: Sonkeigo (meninggikan lawan bicara) dan Kenjōgo (merendahkan diri sendiri). Pola ini wajib dikuasai untuk lingkungan kerja formal.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   },
   {
     "id": 28,
     "title": "Lesson 28: Bentuk Pasif (受身形) — Pendalaman",
     "desc": "Mendalami penggunaan bentuk pasif dalam konteks yang lebih luas: pasif yang menguntungkan, pasif yang merugikan, dan pasif impersonal dalam teks formal/berita.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   },
   {
     "id": 29,
     "title": "Lesson 29: Hearsay vs Inference (〜そうです / 〜ようです)",
     "desc": "Membedakan dua pola dugaan penting: そうです untuk menyampaikan informasi dari sumber lain ('katanya ~'), dan ようです untuk menyatakan kesimpulan berdasarkan observasi langsung ('tampaknya ~'). Juga dibahas: らしいです.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   },
   {
     "id": 30,
     "title": "Lesson 30: Kondisional Ba-Form (〜ば / 〜れば)",
     "desc": "Mempelajari bentuk kondisional ば (ba-form) yang menyatakan 'jika/kalau A, maka B'. Dibandingkan dengan tara-form dan to-form untuk memahami nuansa perbedaannya.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   },
   {
     "id": 31,
     "title": "Lesson 31: Permintaan Formal (〜ていただけませんか)",
     "desc": "Mempelajari cara meminta bantuan secara sangat sopan menggunakan 〜ていただけませんか dan 〜てくださいませんか, serta perbedaan tingkat kesopanannya.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   },
   {
     "id": 32,
     "title": "Lesson 32: 〜ので vs 〜のに (Alasan vs Kontras)",
     "desc": "Memahami perbedaan halus antara 〜ので (alasan/karena — lebih halus dari から) dan 〜のに (meskipun/padahal — mengekspresikan kejutan atau kekecewaan).",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   },
   {
     "id": 33,
     "title": "Lesson 33: 〜ために vs 〜ように (Tujuan)",
     "desc": "Membedakan dua pola tujuan yang sering tertukar: 〜ために (untuk/demi — dengan kata kerja kemauan) dan 〜ように (agar/supaya — dengan kata kerja potensial atau negatif).",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   },
   {
     "id": 34,
     "title": "Lesson 34: 〜ようになります / 〜ようにします",
     "desc": "Menguasai dua pola perubahan penting: 〜ようになります (perubahan yang terjadi secara gradual — akhirnya bisa/tidak lagi) dan 〜ようにします (usaha aktif untuk membiasakan diri).",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   },
   {
     "id": 35,
     "title": "Lesson 35: 〜てほしいです / 〜といいです",
     "desc": "Mempelajari cara menyatakan keinginan agar orang lain melakukan sesuatu (〜てほしいです) dan harapan yang bersifat umum atau untuk diri sendiri (〜といいです / 〜といいのですが).",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   },
   {
     "id": 36,
     "title": "Lesson 36: Penyesalan & Persiapan (〜てしまう / 〜ておく)",
     "desc": "Mempelajari cara menyatakan penyelesaian suatu tindakan dengan penyesalan menggunakan 〜てしまう (atau kasual 〜ちゃう), serta persiapan tindakan sebelum suatu waktu dengan 〜ておく (atau kasual 〜とく).",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   },
   {
     "id": 37,
     "title": "Lesson 37: Aksi Bersamaan & Urutan (〜ながら / 〜てから vs あとで)",
     "desc": "Mempelajari cara menyatakan dua aksi yang dilakukan bersamaan dengan 〜ながら, serta perbedaan antara 〜てから (segera setelah) dan 〜あとで (setelah beberapa waktu).",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   },
   {
     "id": 38,
     "title": "Lesson 38: Dua Bentuk Potensial (〜ことができます vs V-potential)",
     "desc": "Menguasai perbedaan dua ekspresi untuk menyatakan 'bisa/kemampuan': bentuk panjang (〜ことができます) yang lebih formal dan tertulis, dan bentuk pendek (kata kerja potensial) yang lebih kasual dan lisan.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   },
   {
     "id": 39,
     "title": "Lesson 39: Keputusan Pribadi & Sosial (〜ことにする / 〜ことになる)",
     "desc": "Mempelajari perbedaan antara 〜ことにする (memutuskan sendiri untuk melakukan sesuatu) dan 〜ことになる (telah diputuskan oleh keadaan luar/orang lain).",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   },
   {
     "id": 40,
     "title": "Lesson 40: Kondisi Tetap & Kelalaian (〜まま / 〜っぱなし)",
     "desc": "Mempelajari cara menyatakan kondisi yang dibiarkan tetap tidak berubah menggunakan 〜まま, serta kelalaian membiarkan sesuatu berantakan atau menyala dengan 〜っぱなし.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   },
   {
     "id": 41,
     "title": "Lesson 41: Definisi & Kabar (〜という / 〜というのは / 〜ということ)",
     "desc": "Mempelajari cara mendefinisikan suatu istilah menggunakan 〜というのは, menyebut nama sesuatu dengan 〜という, serta mengubah kalimat/kabar menjadi kata benda dengan 〜ということ.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   },
   {
     "id": 42,
     "title": "Lesson 42: Konsekuensi & Alasan Moral (〜わけです / 〜わけではありません / 〜わけにはいきません)",
     "desc": "Mempelajari cara menyatakan kesimpulan logis (〜わけです), menyangkal anggapan mutlak (〜わけではありません), serta menyatakan ketidakmungkinan karena norma sosial/moral (〜わけにはいきません).",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   },
   {
     "id": 43,
     "title": "Lesson 43: Hubungan Aksi & Sudut Pandang (〜に対して / 〜について / 〜にとって)",
     "desc": "Mempelajari perbedaan penting antara 〜に対して (sikap terhadap target), 〜について (topik bahasan), dan 〜にとって (sudut pandang/perspektif subjek).",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   },
   {
     "id": 44,
     "title": "Lesson 44: Kausalitas & Sumber Informasi (〜によって / 〜によると)",
     "desc": "Mempelajari empat kegunaan pola 〜によって (pelaku pasif, metode, penyebab, variasi) serta cara menyampaikan sumber informasi resmi menggunakan 〜によると.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   },
   {
     "id": 45,
     "title": "Lesson 45: Pola Pembatasan (〜だけ / 〜しか〜ない / 〜ばかり)",
     "desc": "Mempelajari tiga ekspresi pembatasan: 〜だけ (hanya - umum), 〜しか〜ない (hanya - nuansa negatif/kurang), dan 〜ばかり (hanya/melulu - mendominasi/mengkritik).",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   },
   {
     "id": 46,
     "title": "Lesson 46: Syarat Mutlak & Penekanan (〜さえ〜ば / 〜さえ)",
     "desc": "Mempelajari cara menyatakan satu-satunya syarat agar suatu hal terwujud dengan 〜さえ〜ば (asalkan), serta memberikan penekanan ekstrem dengan 〜さえ (bahkan).",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   },
   {
     "id": 47,
     "title": "Lesson 47: Kalimat Majemuk Tingkat Lanjut (〜上で / 〜上に / 〜上は)",
     "desc": "Mempelajari struktur sambungan formal: 〜上で (setelah melakukan persiapan), 〜上に (selain itu/ditambah lagi), dan 〜上は (karena sudah/kini setelah).",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   },
   {
     "id": 48,
     "title": "Lesson 48: Ekspresi Pertentangan Formal (〜ものの / 〜とはいえ / 〜ながらも)",
     "desc": "Mempelajari ungkapan pertentangan yang lebih formal: 〜ものの (meskipun - tertulis), 〜とはいえ (walaupun dikatakan demikian), dan 〜ながらも (meskipun berada dalam kondisi).",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   },
   {
     "id": 49,
     "title": "Lesson 49: Kejadian Formal & Antisipasi (〜にあたって / 〜を前に)",
     "desc": "Mempelajari ungkapan upacara formal: 〜にあたって (pada kesempatan penting/dalam rangka) dan 〜を前に (menjelang/di hadapan peristiwa besar).",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   },
   {
     "id": 50,
     "title": "Lesson 50: Review Komprehensif Minna no Nihongo II (MNN II)",
     "desc": "Bab final Minna no Nihongo II. Melakukan review menyeluruh pola tata bahasa utama N4-N3 (Lessons 26-50), serta perayaan kelulusan perjalanan belajar Anda.",
-    "locked": true,
+    "locked": false,
     "vocabCount": 15
   }
 ];
@@ -492,7 +492,7 @@ export const VOCAB_TO_CHAPTER = {
   "おきます": 4,
   "ねます": 4,
   "はたらきます": 4,
-  "やすみます": 26,
+  "やすみます": 4,
   "べんきょうします": 4,
   "おわります": 4,
   "デパート": 4,
@@ -530,7 +530,7 @@ export const VOCAB_TO_CHAPTER = {
   "かようび": 4,
   "すいようび": 4,
   "もくようび": 4,
-  "きんようび": 26,
+  "きんようび": 4,
   "どようび": 4,
   "にちようび": 20,
   "なんようび": 4,
@@ -971,8 +971,8 @@ export const VOCAB_TO_CHAPTER = {
   "こくさい〜": 18,
   "おいのり": 18,
   "かちょう": 18,
-  "ぶちょう": 26,
-  "しゃちょう": 26,
+  "ぶちょう": 18,
+  "しゃちょう": 18,
   "へえ": 18,
   "なかなか": 18,
   "ぼくじょう": 18,
@@ -1001,7 +1001,7 @@ export const VOCAB_TO_CHAPTER = {
   "もうすぐ": 19,
   "おかげさまで": 19,
   "かんぱい": 19,
-  "じつは": 19,
+  "じつは": 26,
   "なんかいも": 19,
   "しかし": 19,
   "むり": 19,
@@ -1048,7 +1048,7 @@ export const VOCAB_TO_CHAPTER = {
   "ニュース": 44,
   "いけん": 21,
   "はなし": 21,
-  "つたえます": 26,
+  "つたえます": 21,
   "しんじます": 21,
   "はんたいします": 21,
   "さんせいします": 21,
@@ -1109,7 +1109,7 @@ export const VOCAB_TO_CHAPTER = {
   "ぜんぶ": 24,
   "じぶんで": 34,
   "てつだいます": 24,
-  "とどけます": 24,
+  "とどけます": 26,
   "おれい": 24,
   "むすめ": 24,
   "むすこ": 24,
@@ -1128,32 +1128,36 @@ export const VOCAB_TO_CHAPTER = {
   "とどきます": 25,
   "すぎます": 25,
   "とし": 25,
-  "こうちょう（せんせい）": 26,
-  "かかり（のひと）": 26,
-  "はやめます": 30,
-  "もうします": 27,
-  "うかがいます": 27,
-  "いただきます": 27,
-  "もうしわけございません": 26,
-  "さっそく": 31,
-  "すみませんが": 26,
-  "ざんぎょう（します）": 26,
-  "とりあえず": 32,
-  "めいわく（な）": 26,
+  "おくれます": 32,
+  "ひろいます": 28,
+  "れんらくします": 26,
+  "わすれもの": 26,
+  "せいさん": 26,
+  "そうだん": 47,
+  "おいわい": 50,
+  "けしき": 26,
+  "インフルエンザ": 26,
+  "つごう": 26,
+  "さんかします": 26,
+  "もうしこみます": 26,
+  "どうしたんですか": 26,
+  "ちょっと…": 26,
   "いらっしゃいます": 27,
   "おっしゃいます": 27,
   "なさいます": 27,
   "めしあがります": 27,
   "ごらんになります": 27,
+  "もうします": 27,
   "まいります": 27,
   "いたします": 27,
   "はいけんします": 27,
+  "うかがいます": 27,
+  "いただきます": 27,
   "さしあげます": 27,
   "くださいます": 27,
   "お〜になります": 27,
   "ほうこく（します）": 31,
   "しじします": 28,
-  "ひろいます": 28,
   "ほめます": 28,
   "しかられます": 28,
   "ぬすまれます": 28,
@@ -1178,6 +1182,7 @@ export const VOCAB_TO_CHAPTER = {
   "きぶん": 29,
   "さいきん": 29,
   "うわさ": 29,
+  "はやめます": 30,
   "おおきくなります": 30,
   "かならず": 30,
   "まなびます": 30,
@@ -1202,6 +1207,7 @@ export const VOCAB_TO_CHAPTER = {
   "しょるい": 31,
   "とりつぎ": 31,
   "めいわく": 31,
+  "さっそく": 31,
   "じじょう": 32,
   "りゆう": 42,
   "わけ": 42,
@@ -1210,11 +1216,11 @@ export const VOCAB_TO_CHAPTER = {
   "ふしぎ（な）": 32,
   "しんゆう": 32,
   "やくそく": 32,
-  "おくれます": 32,
   "まじめ（な）": 32,
   "きょうかしょ": 32,
   "つかれています": 32,
   "たいした": 32,
+  "とりあえず": 32,
   "もくひょう": 33,
   "ゆめ": 50,
   "しょうらい": 33,
@@ -1380,7 +1386,6 @@ export const VOCAB_TO_CHAPTER = {
   "うえに": 47,
   "うえは": 47,
   "けいやく": 47,
-  "そうだん": 47,
   "びじん": 47,
   "せいかく": 47,
   "じじつ": 48,
@@ -1403,7 +1408,6 @@ export const VOCAB_TO_CHAPTER = {
   "しあい": 49,
   "せんしゅ": 49,
   "せいじん": 49,
-  "おいわい": 50,
   "そつぎょう（します）": 50,
   "かんどう（します）": 50,
   "かんしゃ（します）": 50,

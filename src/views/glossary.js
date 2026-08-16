@@ -200,10 +200,10 @@ export function GlossaryView(container) {
   const searchInput = container.querySelector('#glossary-search-input');
   const tabButtons = container.querySelectorAll('.glossary-tab-btn');
 
-  // Quiet category badge
+  // Quiet category badge (subtle text tag, no heavy box)
   function getCategoryBadge(catName) {
     return `
-      <span style="font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: var(--radius-xs); border: 1px solid var(--border); background: var(--bg-hover); color: var(--text-muted); flex-shrink: 0;">
+      <span style="font-size: var(--text-3xs); font-weight: 500; color: var(--text-muted); flex-shrink: 0;">
         ${catName}
       </span>
     `;
@@ -227,7 +227,7 @@ export function GlossaryView(container) {
     if (filtered.length === 0) {
       cardsContainer.style.display = 'block';
       cardsContainer.innerHTML = `
-        <div style="text-align: center; padding: 48px 20px; border: 1px dashed var(--border); border-radius: var(--radius-lg); background: var(--bg-card); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
+        <div style="text-align: center; padding: var(--space-7) var(--space-4); border: 1px dashed var(--border); border-radius: var(--radius-lg); background: var(--bg-card); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
           <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--bg-hover); display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
             <i data-lucide="search-x" style="width: 18px; height: 18px;"></i>
           </div>
@@ -240,16 +240,16 @@ export function GlossaryView(container) {
     } else {
       cardsContainer.style.display = 'grid';
       cardsContainer.innerHTML = filtered.map(item => `
-        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px; display: flex; flex-direction: column; justify-content: space-between; gap: 14px; transition: border-color 0.15s ease;" class="glossary-term-card">
+        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4); display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-3); transition: border-color 0.15s ease;" class="glossary-term-card">
           
-          <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div style="display: flex; flex-direction: column; gap: var(--space-2);">
             <!-- Top Section: Term Title and Category Badge -->
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 10px;">
               <div>
-                <h3 style="font-size: 15px; font-weight: 600; color: var(--text-main); margin: 0 0 2px 0; letter-spacing: -0.01em;">
+                <h3 style="font-size: var(--text-base); font-weight: 600; color: var(--text-main); margin: 0 0 2px 0; letter-spacing: -0.01em;">
                   ${item.term}
                 </h3>
-                <span class="text-jp" style="font-size: 12px; color: var(--text-muted); font-weight: 400;">
+                <span class="text-jp" style="font-size: var(--text-xs); color: var(--text-muted); font-weight: 400;">
                   ${item.jp} (${item.rom})
                 </span>
               </div>
@@ -257,13 +257,13 @@ export function GlossaryView(container) {
             </div>
 
             <!-- Kindle Reading Definition Text -->
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; font-weight: 400; margin: 0;">
+            <p style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.6; font-weight: 400; margin: 0;">
               ${item.desc}
             </p>
           </div>
 
-          <!-- Kindle Warm Formula Card Example -->
-          <div style="background: var(--bg-hover); border-left: 3px solid var(--accent); border-radius: var(--radius-xs); padding: 8px 12px; font-size: 12px; color: var(--text-main); line-height: 1.5; font-weight: 400;">
+          <!-- Clean Minimalist Example (Decluttered) -->
+          <div style="border-left: 2px solid var(--accent); padding-left: var(--space-3); font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.5; font-weight: 400; margin-top: var(--space-1);">
             ${item.example}
           </div>
 

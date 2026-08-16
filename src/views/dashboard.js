@@ -75,9 +75,17 @@ export function DashboardView(container) {
 
   const hour = new Date().getHours();
   let timeGreeting = 'Malam';
-  if (hour >= 4 && hour < 11) timeGreeting = 'Pagi';
-  else if (hour >= 11 && hour < 15) timeGreeting = 'Siang';
-  else if (hour >= 15 && hour < 18) timeGreeting = 'Sore';
+  let jpGreeting = 'Konbanwa (こんばんは)';
+  if (hour >= 4 && hour < 11) {
+    timeGreeting = 'Pagi';
+    jpGreeting = 'Ohayou (おはよう)';
+  } else if (hour >= 11 && hour < 15) {
+    timeGreeting = 'Siang';
+    jpGreeting = 'Konnichiwa (こんにちは)';
+  } else if (hour >= 15 && hour < 18) {
+    timeGreeting = 'Sore';
+    jpGreeting = 'Konnichiwa (こんにちは)';
+  }
 
   // Build GitHub-style Activity Heatmap (52 weeks)
   const today = new Date();
@@ -163,54 +171,59 @@ export function DashboardView(container) {
   const studyHours = (totalMinutes / 60).toFixed(1);
 
   container.innerHTML = `
-    <div class="dashboard-wrapper page-container-standard fade-in">
+    <div class="dashboard-wrapper page-container-standard fade-in" style="display: flex; flex-direction: column; gap: 24px;">
       
-      <!-- Minimalist Header -->
-      <div class="dash-header">
-        <div class="profile-info">
-          <span class="profile-greeting">Selamat ${timeGreeting}</span>
-          <div class="profile-title-name">Halo, Selamat Belajar!</div>
-          <span class="profile-level-badge">${levelInfo.nameId} &middot; ${levelInfo.name}</span>
+      <!-- Streamlined Header with Unified Stats Capsule -->
+      <div class="dash-overview-header">
+        <div class="dash-user-meta">
+          <div class="dash-greeting-row">
+            <span class="dash-time-tag">${jpGreeting}</span>
+          </div>
+          <h1 class="dash-main-title">Siap lanjut belajar hari ini?</h1>
         </div>
 
-        <div class="compact-stats">
-          <div class="c-stat-item">
-            <div class="c-stat-icon">
-              <i data-lucide="star" style="width: 16px; height: 16px;"></i>
+        <div class="dash-stats-capsule">
+          <div class="dash-stat-segment" title="Streak Belajar Aktif">
+            <div class="dash-stat-icon-wrap streak">
+              <i data-lucide="flame" style="width: 18px; height: 18px; ${streak > 0 ? 'fill: currentColor;' : ''}"></i>
             </div>
-            <div class="c-stat-meta">
-              <span class="c-stat-val">${xp}</span>
-              <span class="c-stat-lbl">Total XP</span>
-            </div>
-          </div>
-          
-          <div class="c-stat-item">
-            <div class="c-stat-icon" style="color: ${streak > 0 ? 'var(--amber)' : 'var(--text-muted)'};">
-              <i data-lucide="flame" style="width: 16px; height: 16px; fill: ${streak > 0 ? 'currentColor' : 'none'};"></i>
-            </div>
-            <div class="c-stat-meta">
-              <span class="c-stat-val">${streak} Hari</span>
-              <span class="c-stat-lbl">Streak</span>
+            <div class="dash-stat-text">
+              <span class="dash-stat-num">${streak} Hari</span>
+              <span class="dash-stat-name">Streak</span>
             </div>
           </div>
           
-          <div class="c-stat-item">
-            <div class="c-stat-icon">
-              <i data-lucide="clock" style="width: 16px; height: 16px;"></i>
+          <div class="dash-stat-divider"></div>
+
+          <div class="dash-stat-segment" title="Total Pengalaman Belajar">
+            <div class="dash-stat-icon-wrap xp">
+              <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
             </div>
-            <div class="c-stat-meta">
-              <span class="c-stat-val">${totalMinutes}m</span>
-              <span class="c-stat-lbl">Durasi</span>
+            <div class="dash-stat-text">
+              <span class="dash-stat-num">${xp}</span>
+              <span class="dash-stat-name">Total XP</span>
+            </div>
+          </div>
+
+          <div class="dash-stat-divider"></div>
+
+          <div class="dash-stat-segment" title="Total Waktu Belajar">
+            <div class="dash-stat-icon-wrap time">
+              <i data-lucide="clock" style="width: 18px; height: 18px;"></i>
+            </div>
+            <div class="dash-stat-text">
+              <span class="dash-stat-num">${totalMinutes}m</span>
+              <span class="dash-stat-name">Durasi</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Guided Study Plan Target -->
+      <!-- Guided Study Plan Target (if active) -->
       ${state.studyPlan?.active ? `
       <div class="target-banner">
         <div class="target-banner-content">
-          <i data-lucide="compass" style="width: 18px; height: 18px; color: var(--text-main); flex-shrink: 0;"></i>
+          <i data-lucide="compass" style="width: 18px; height: 18px; color: var(--accent-bright); flex-shrink: 0;"></i>
           <span>
             Target belajar <strong>${state.studyPlan.level}</strong> (${state.studyPlan.duration} Bulan): ${getDailyMissionDesc(state.studyPlan, nextChapter)}
           </span>
@@ -219,104 +232,120 @@ export function DashboardView(container) {
       </div>
       ` : ''}
 
-      <!-- Fokus Belajar Hari Ini -->
-      <div class="focus-container">
-        <div class="focus-title">Fokus Belajar Hari Ini</div>
-        
-        <div class="focus-activities">
-          <!-- SRS Activity Panel -->
-          <div class="activity-panel">
-            <div class="activity-info">
-              <span class="activity-tag ${dueCount > 0 ? 'tag-srs' : 'tag-srs-done'}">
-                ${dueCount > 0 ? 'Review Tertunda' : 'Selesai'}
-              </span>
-              <h4 class="activity-title">Ulas Kosakata (SRS)</h4>
-              <p class="activity-desc">
-                ${dueCount > 0 
-                  ? `Ada <strong>${dueCount}</strong> kosakata yang perlu diulas hari ini agar tidak lupa.` 
-                  : 'Hebat! Semua kosakata Anda telah tersimpan dengan aman di memori jangka panjang.'}
-              </p>
-            </div>
-            
-            <button class="btn ${dueCount > 0 ? 'btn-primary' : 'btn-secondary'}" onclick="window.location.hash='#/review'" style="width: 100%; font-size: var(--text-xs); font-weight: 700; padding: 10px 16px; border-radius: var(--radius-sm);">
-              ${dueCount > 0 ? 'Mulai Review Sekarang' : 'Buka Halaman Review'}
-            </button>
+      <!-- Centerpiece: Hero Learning Card -->
+      <div class="hero-learning-card">
+        <div class="hero-learning-top">
+          <div class="hero-tag-group">
+            <span class="hero-pill-badge">Bab ${nextChapter.id}</span>
           </div>
-          
-          <!-- Chapter Activity Panel -->
-          <div class="activity-panel">
-            <div class="activity-info">
-              <span class="activity-tag tag-lesson">Pelajaran Aktif</span>
-              <h4 class="activity-title">Bab ${nextChapter.id}: ${nextChapter.title.includes(':') ? nextChapter.title.split(':').slice(1).join(':').trim() : nextChapter.title}</h4>
-              <p class="activity-desc">${nextChapter.desc}</p>
-            </div>
-            
-            <button class="btn btn-primary" onclick="window.location.hash='#/chapter/${nextChapter.id}'" style="width: 100%; font-size: var(--text-xs); font-weight: 700; padding: 10px 16px; border-radius: var(--radius-sm);">
-              Pelajari Bab ${nextChapter.id}
-            </button>
+          ${dueCount > 0 ? `
+            <a href="#/review" class="hero-srs-pill" title="Mulai Ulas Kosakata">
+              <span>${dueCount} Kosakata Siap Diulas &rarr;</span>
+            </a>
+          ` : `
+            <span class="hero-srs-pill done">
+              <span>SRS Selesai</span>
+            </span>
+          `}
+        </div>
+
+        <div class="hero-main-content">
+          <div class="hero-chapter-title">
+            ${nextChapter.title.includes(':') ? nextChapter.title.split(':').slice(1).join(':').trim() : nextChapter.title}
+          </div>
+          <div class="hero-chapter-desc">
+            ${nextChapter.id === 0 || nextChapter.id === '0' 
+              ? 'Fondasi penulisan Hiragana, Katakana, dan aturan pelafalan bahasa Jepang.' 
+              : (nextChapter.desc ? nextChapter.desc.split('.')[0].trim() + '.' : 'Pelajari pola tata bahasa dan kosakata baru bab ini.')}
           </div>
         </div>
-        
-        <!-- Practice & Exam quicklinks -->
-        <div class="focus-subactions">
-          <span class="subaction-label">Latihan Bab ${nextChapter.id}:</span>
-          <div class="subaction-links">
-            <a href="#/workbook/${nextChapter.id}" class="subaction-link">
+
+        <div class="hero-actions-bar">
+          <a href="#/chapter/${nextChapter.id}" class="btn btn-primary hero-cta-btn">
+            <i data-lucide="play" style="width: 14px; height: 14px; fill: currentColor;"></i>
+            Lanjutkan Belajar
+          </a>
+          <div class="hero-subactions">
+            <a href="#/workbook/${nextChapter.id}" class="hero-subaction-btn">
               <i data-lucide="edit-3" style="width: 13px; height: 13px;"></i>
-              Buku Kerja Bab
+              Buku Kerja
             </a>
-            <a href="#/exam/${nextChapter.id}" class="subaction-link">
+            <a href="#/exam/${nextChapter.id}" class="hero-subaction-btn">
               <i data-lucide="award" style="width: 13px; height: 13px;"></i>
-              Simulasi Ujian Bab
+              Simulasi Ujian
             </a>
           </div>
         </div>
       </div>
 
-      <!-- Tracks Row -->
+      <!-- Jalur Kurikulum Section -->
       <div>
-        <div class="tracks-title">Kemajuan Jalur Belajar</div>
-        <div class="tracks-row">
-          <a class="track-card" href="#/curriculum?track=minna1">
-            <div class="track-meta">
-              <span class="track-level">Level N5 (Dasar)</span>
-              <span class="track-name">Minna no Nihongo I</span>
-              <p class="track-desc">Kuasai Hiragana, Katakana, tata bahasa dasar, dan 800 kosakata utama.</p>
-              <span class="track-prog-lbl">${minna1Completed} / ${minna1Chapters.length} Bab Selesai</span>
+        <div class="dash-section-header">
+          <div class="dash-section-title">Kemajuan Jalur Belajar</div>
+          <a href="#/curriculum" style="font-size: 11px; font-weight: 700; color: var(--accent-bright); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+            Lihat Peta Lengkap &rarr;
+          </a>
+        </div>
+        <div class="dash-tracks-grid">
+          <a class="dash-track-card" href="#/curriculum?track=minna1">
+            <div class="dash-track-top">
+              <div>
+                <span class="dash-track-badge n5">Level N5 &middot; Dasar</span>
+                <div class="dash-track-name">Minna no Nihongo I</div>
+                <div class="dash-track-desc">Hiragana, Katakana, tata bahasa dasar &amp; 800 kosakata utama.</div>
+              </div>
+              <i data-lucide="chevron-right" style="width: 16px; height: 16px; color: var(--text-muted); flex-shrink: 0;"></i>
             </div>
-            <div class="progress-ring-container">
-              <svg class="progress-ring" width="52" height="52">
-                <circle class="progress-ring-bg" stroke-width="4" fill="transparent" r="22" cx="26" cy="26"/>
-                <circle class="progress-ring-circle" stroke-width="4" fill="transparent" r="22" cx="26" cy="26" stroke-dasharray="138.23" stroke-dashoffset="${138.23 - (minna1ProgressPercent / 100) * 138.23}"/>
-              </svg>
-              <div style="position: absolute; font-size: var(--text-2xs); font-weight: 800; color: var(--text-main); font-variant-numeric: tabular-nums;">${minna1ProgressPercent}%</div>
+            <div class="dash-track-progress">
+              <div class="dash-track-prog-meta">
+                <span>${minna1Completed} / ${minna1Chapters.length} Bab Selesai</span>
+                <span>${minna1ProgressPercent}%</span>
+              </div>
+              <div class="dash-track-bar">
+                <div class="dash-track-fill" style="width: ${minna1ProgressPercent}%;"></div>
+              </div>
             </div>
           </a>
 
-          <a class="track-card" href="#/curriculum?track=minna2">
-            <div class="track-meta">
-              <span class="track-level">Level N4 (Menengah)</span>
-              <span class="track-name">Minna no Nihongo II</span>
-              <p class="track-desc">Bentuk pasif, kausatif, syarat kondisional, keigo, dan 1.500 kosakata baru.</p>
-              <span class="track-prog-lbl">${minna2Completed} / ${minna2Chapters.length} Bab Selesai</span>
+          <a class="dash-track-card" href="#/curriculum?track=minna2">
+            <div class="dash-track-top">
+              <div>
+                <span class="dash-track-badge n4">Level N4 &middot; Menengah</span>
+                <div class="dash-track-name">Minna no Nihongo II</div>
+                <div class="dash-track-desc">Bentuk pasif, kausatif, syarat kondisional, keigo &amp; 1.500 kosakata.</div>
+              </div>
+              <i data-lucide="chevron-right" style="width: 16px; height: 16px; color: var(--text-muted); flex-shrink: 0;"></i>
             </div>
-            <div class="progress-ring-container">
-              <svg class="progress-ring" width="52" height="52">
-                <circle class="progress-ring-bg" stroke-width="4" fill="transparent" r="22" cx="26" cy="26"/>
-                <circle class="progress-ring-circle" stroke-width="4" fill="transparent" r="22" cx="26" cy="26" stroke-dasharray="138.23" stroke-dashoffset="${138.23 - (minna2ProgressPercent / 100) * 138.23}"/>
-              </svg>
-              <div style="position: absolute; font-size: var(--text-2xs); font-weight: 800; color: var(--text-main); font-variant-numeric: tabular-nums;">${minna2ProgressPercent}%</div>
+            <div class="dash-track-progress">
+              <div class="dash-track-prog-meta">
+                <span>${minna2Completed} / ${minna2Chapters.length} Bab Selesai</span>
+                <span>${minna2ProgressPercent}%</span>
+              </div>
+              <div class="dash-track-bar">
+                <div class="dash-track-fill" style="width: ${minna2ProgressPercent}%;"></div>
+              </div>
             </div>
           </a>
         </div>
       </div>
 
-      <!-- Activity Heatmap Section (GitHub Contribution Graph Style) -->
+      <!-- Activity Heatmap Section -->
       <div class="heatmap-section">
         <div class="heatmap-header">
           <div class="heatmap-title-block">
             <span class="heatmap-title">Aktivitas Belajar</span>
-            <span class="heatmap-subtitle-tag">${activeDaysCount} kontribusi dalam setahun terakhir</span>
+            <span class="heatmap-subtitle-tag">${activeDaysCount} Hari Aktif (Setahun Terakhir)</span>
+          </div>
+          <div class="heatmap-legend">
+            <span>Kurang</span>
+            <div class="heatmap-legend-cells">
+              <div class="heatmap-legend-box" style="background: var(--bg-elevated); border-color: var(--border);"></div>
+              <div class="heatmap-legend-box" style="background: rgba(124, 123, 240, 0.2); border-color: rgba(124, 123, 240, 0.35);"></div>
+              <div class="heatmap-legend-box" style="background: rgba(124, 123, 240, 0.45); border-color: rgba(124, 123, 240, 0.6);"></div>
+              <div class="heatmap-legend-box" style="background: rgba(124, 123, 240, 0.75); border-color: rgba(124, 123, 240, 0.9);"></div>
+              <div class="heatmap-legend-box" style="background: #7C7BF0; border-color: #6366F1;"></div>
+            </div>
+            <span>Banyak</span>
           </div>
         </div>
         
@@ -331,128 +360,134 @@ export function DashboardView(container) {
             <span></span>
           </div>
           <div class="heatmap-grid-scroll">
-            <!-- Month labels -->
             <div class="heatmap-month-row">
               ${monthHeaderHtml}
             </div>
-            <!-- Day cells -->
             <div class="heatmap-cells-container">
               ${heatmapCellsHtml}
             </div>
           </div>
         </div>
-
-        <!-- Legend -->
-        <div class="heatmap-legend">
-          <span>Kurang</span>
-          <div class="heatmap-legend-cells">
-            <div class="heatmap-legend-box" style="background: var(--bg-elevated); border-color: var(--border);"></div>
-            <div class="heatmap-legend-box" style="background: rgba(124, 123, 240, 0.2); border-color: rgba(124, 123, 240, 0.35);"></div>
-            <div class="heatmap-legend-box" style="background: rgba(124, 123, 240, 0.45); border-color: rgba(124, 123, 240, 0.6);"></div>
-            <div class="heatmap-legend-box" style="background: rgba(124, 123, 240, 0.75); border-color: rgba(124, 123, 240, 0.9);"></div>
-            <div class="heatmap-legend-box" style="background: #7C7BF0; border-color: #6366F1;"></div>
-          </div>
-          <span>Banyak</span>
-        </div>
       </div>
 
-      <!-- Bento Stats Grid (Mobile Optimized 2-Col Grid) -->
+      <!-- Modern Statistics & Achievements Grid -->
       <div>
-        <div class="tracks-title">Statistik &amp; Pencapaian</div>
-        <div class="stats-bento-grid">
-          <div class="stat-card-bento">
-            <div class="stat-bento-icon-wrapper" style="color: var(--blue);">
-              <i data-lucide="book-open" style="width: 15px; height: 15px;"></i>
+        <div class="dash-section-header">
+          <div class="dash-section-title">Statistik &amp; Pencapaian</div>
+        </div>
+        <div class="dash-metrics-grid">
+          <div class="dash-metric-card">
+            <div class="dash-metric-head">
+              <span class="dash-metric-lbl">Kosakata SRS</span>
+              <i data-lucide="book-open" class="dash-metric-ico" style="color: var(--blue);"></i>
             </div>
-            <div>
-              <div class="stat-bento-val">${totalVocab}</div>
-              <div class="stat-bento-lbl">Kosakata (SRS)</div>
-            </div>
-          </div>
-          
-          <div class="stat-card-bento">
-            <div class="stat-bento-icon-wrapper" style="color: var(--indigo);">
-              <i data-lucide="pen-tool" style="width: 15px; height: 15px;"></i>
-            </div>
-            <div>
-              <div class="stat-bento-val">${totalKanji}</div>
-              <div class="stat-bento-lbl">Kanji (SRS)</div>
+            <div class="dash-metric-body">
+              <span class="dash-metric-val">${totalVocab}</span>
+              <span class="dash-metric-unit">kata</span>
             </div>
           </div>
           
-          <div class="stat-card-bento">
-            <div class="stat-bento-icon-wrapper" style="color: var(--amber);">
-              <i data-lucide="award" style="width: 15px; height: 15px;"></i>
+          <div class="dash-metric-card">
+            <div class="dash-metric-head">
+              <span class="dash-metric-lbl">Kanji SRS</span>
+              <i data-lucide="languages" class="dash-metric-ico" style="color: var(--indigo);"></i>
             </div>
-            <div>
-              <div class="stat-card-val stat-bento-val">${masteredItems}</div>
-              <div class="stat-bento-lbl">Terkuasai</div>
-            </div>
-          </div>
-          
-          <div class="stat-card-bento">
-            <div class="stat-bento-icon-wrapper" style="color: var(--green);">
-              <i data-lucide="check-circle" style="width: 15px; height: 15px;"></i>
-            </div>
-            <div>
-              <div class="stat-bento-val">${avgQuiz}%</div>
-              <div class="stat-bento-lbl">Akurasi Ujian</div>
+            <div class="dash-metric-body">
+              <span class="dash-metric-val">${totalKanji}</span>
+              <span class="dash-metric-unit">karakter</span>
             </div>
           </div>
           
-          <div class="stat-card-bento">
-            <div class="stat-bento-icon-wrapper" style="color: var(--red);">
-              <i data-lucide="clock" style="width: 15px; height: 15px;"></i>
+          <div class="dash-metric-card">
+            <div class="dash-metric-head">
+              <span class="dash-metric-lbl">Terkuasai</span>
+              <i data-lucide="award" class="dash-metric-ico" style="color: var(--amber);"></i>
             </div>
-            <div>
-              <div class="stat-bento-val">${studyHours}h</div>
-              <div class="stat-bento-lbl">Jam Belajar</div>
+            <div class="dash-metric-body">
+              <span class="dash-metric-val">${masteredItems}</span>
+              <span class="dash-metric-unit">item (5x+)</span>
+            </div>
+          </div>
+          
+          <div class="dash-metric-card">
+            <div class="dash-metric-head">
+              <span class="dash-metric-lbl">Akurasi Ujian</span>
+              <i data-lucide="check-circle" class="dash-metric-ico" style="color: var(--green);"></i>
+            </div>
+            <div class="dash-metric-body">
+              <span class="dash-metric-val">${avgQuiz}%</span>
+              <span class="dash-metric-unit">skor</span>
+            </div>
+          </div>
+          
+          <div class="dash-metric-card dash-metric-card-wide">
+            <div class="dash-metric-head">
+              <span class="dash-metric-lbl">Total Belajar</span>
+              <i data-lucide="clock" class="dash-metric-ico" style="color: var(--text-muted);"></i>
+            </div>
+            <div class="dash-metric-body">
+              <span class="dash-metric-val">${studyHours}h</span>
+              <span class="dash-metric-unit">durasi</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Bento Peralatan Pendukung -->
+      <!-- Quick Access Tools Hub -->
       <div>
-        <div class="tools-title">Peralatan Belajar</div>
-        <div class="tools-grid">
-          <a class="tool-card" href="#/minna">
-            <div class="tool-icon-wrapper" style="color: var(--blue);">
-              <i data-lucide="book-open" style="width: 15px; height: 15px;"></i>
+        <div class="dash-section-header">
+          <div class="dash-section-title">Peralatan Belajar</div>
+        </div>
+        <div class="dash-tools-grid">
+          <a class="dash-tool-card" href="#/minna">
+            <div class="dash-tool-head">
+              <div class="dash-tool-icon-wrap" style="color: var(--blue);">
+                <i data-lucide="book-open" style="width: 17px; height: 17px;"></i>
+              </div>
+              <i data-lucide="arrow-up-right" class="dash-tool-arrow"></i>
             </div>
-            <div>
-              <span class="tool-title">Grammar Handbook</span>
-              <p class="tool-desc">Referensi lengkap tata bahasa Minna no Nihongo.</p>
-            </div>
-          </a>
-
-          <a class="tool-card" href="#/kanji">
-            <div class="tool-icon-wrapper" style="color: var(--indigo);">
-              <i data-lucide="languages" style="width: 15px; height: 15px;"></i>
-            </div>
-            <div>
-              <span class="tool-title">Kanji Hub</span>
-              <p class="tool-desc">Kamus kanji, arti, cara baca, dan urutan guratan.</p>
+            <div class="dash-tool-body">
+              <div class="dash-tool-title">Tata Bahasa</div>
+              <div class="dash-tool-desc">Referensi pola kalimat Bunpou Bab 1–50.</div>
             </div>
           </a>
 
-          <a class="tool-card" href="#/writing">
-            <div class="tool-icon-wrapper" style="color: var(--amber);">
-              <i data-lucide="pen-tool" style="width: 15px; height: 15px;"></i>
+          <a class="dash-tool-card" href="#/kanji">
+            <div class="dash-tool-head">
+              <div class="dash-tool-icon-wrap" style="color: var(--indigo);">
+                <i data-lucide="languages" style="width: 17px; height: 17px;"></i>
+              </div>
+              <i data-lucide="arrow-up-right" class="dash-tool-arrow"></i>
             </div>
-            <div>
-              <span class="tool-title">Latihan Menulis</span>
-              <p class="tool-desc">Latih penulisan Hiragana, Katakana, dan Kanji di layar.</p>
+            <div class="dash-tool-body">
+              <div class="dash-tool-title">Kanji Hub</div>
+              <div class="dash-tool-desc">Bank kanji N5–N3 &amp; kosakata turunan.</div>
             </div>
           </a>
 
-          <a class="tool-card" href="#/glossary">
-            <div class="tool-icon-wrapper" style="color: var(--green);">
-              <i data-lucide="help-circle" style="width: 15px; height: 15px;"></i>
+          <a class="dash-tool-card" href="#/writing">
+            <div class="dash-tool-head">
+              <div class="dash-tool-icon-wrap" style="color: var(--amber);">
+                <i data-lucide="pen-tool" style="width: 17px; height: 17px;"></i>
+              </div>
+              <i data-lucide="arrow-up-right" class="dash-tool-arrow"></i>
             </div>
-            <div>
-              <span class="tool-title">Glosarium</span>
-              <p class="tool-desc">Daftar pencarian kosakata lengkap beserta partikel.</p>
+            <div class="dash-tool-body">
+              <div class="dash-tool-title">Latihan Menulis</div>
+              <div class="dash-tool-desc">Kanvas interaktif kaligrafi Kana &amp; Kanji.</div>
+            </div>
+          </a>
+
+          <a class="dash-tool-card" href="#/glossary">
+            <div class="dash-tool-head">
+              <div class="dash-tool-icon-wrap" style="color: var(--green);">
+                <i data-lucide="bookmark" style="width: 17px; height: 17px;"></i>
+              </div>
+              <i data-lucide="arrow-up-right" class="dash-tool-arrow"></i>
+            </div>
+            <div class="dash-tool-body">
+              <div class="dash-tool-title">Glosarium</div>
+              <div class="dash-tool-desc">Kamus cepat kosakata, partikel &amp; istilah.</div>
             </div>
           </a>
         </div>

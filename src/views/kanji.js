@@ -1805,10 +1805,10 @@ export function KanjiView(container) {
           </p>
         </div>
 
-        <!-- Mode Tabs -->
-        <div style="display: flex; gap: 4px; background: var(--bg-elevated); padding: 4px; border-radius: var(--radius-md); border: 1px solid var(--border); margin-bottom: 20px; max-width: 360px;">
-          <button class="tab-btn sub-tab-btn ${activeSubTab === 'theory' ? 'active' : ''}" data-target="theory" style="flex: 1; padding: 7px 0; text-align: center; font-weight: 500; border-radius: var(--radius-sm); font-size: var(--text-xs); cursor: pointer;">Teori & Aturan</button>
-          <button class="tab-btn sub-tab-btn ${activeSubTab === 'kamus' ? 'active' : ''}" data-target="kamus" style="flex: 1; padding: 7px 0; text-align: center; font-weight: 500; border-radius: var(--radius-sm); font-size: var(--text-xs); cursor: pointer;">Katalog Kanji</button>
+        <!-- Mode Tabs (Segmented Control) -->
+        <div class="segmented-control" style="margin-bottom: var(--space-4); max-width: 340px; width: 100%;">
+          <button class="segmented-btn sub-tab-btn ${activeSubTab === 'theory' ? 'active' : ''}" data-target="theory">Teori &amp; Aturan</button>
+          <button class="segmented-btn sub-tab-btn ${activeSubTab === 'kamus' ? 'active' : ''}" data-target="kamus">Katalog Kanji</button>
         </div>
 
         <!-- Tab Contents -->
@@ -1845,10 +1845,10 @@ export function KanjiView(container) {
               <div style="background: var(--bg-main); padding: 16px; border-radius: var(--radius-sm); border-left: 3px solid var(--accent);">
                 <h4 style="font-weight: 800; font-size: 0.9rem; color: var(--text-main); margin-bottom: 4px;">音読み (Onyomi)</h4>
                 <p style="color: var(--text-muted); font-size: 0.78rem; line-height: 1.4; margin-bottom: 8px;">
-                  Cara baca adaptasi Tiongkok kuno. Biasanya ditulis dalam kamus menggunakan huruf **Katakana**.
+                  Cara baca adaptasi Tiongkok kuno. Biasanya ditulis dalam kamus menggunakan huruf <strong>Katakana</strong>.
                 </p>
                 <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600;">
-                  <strong>Kapan dipakai?</strong> Ketika Kanji bergabung dengan Kanji lain membentuk kata majemuk (*Jukugo*).<br>
+                  <strong>Kapan dipakai?</strong> Ketika Kanji bergabung dengan Kanji lain membentuk kata majemuk (<em>Jukugo</em>).<br>
                   <em>Contoh: 水曜日 (sui-yōbi - Rabu)</em>
                 </div>
               </div>
@@ -1856,10 +1856,10 @@ export function KanjiView(container) {
               <div style="background: var(--bg-main); padding: 16px; border-radius: var(--radius-sm); border-left: 3px solid var(--border-bright);">
                 <h4 style="font-weight: 800; font-size: 0.9rem; color: var(--text-main); margin-bottom: 4px;">訓読み (Kunyomi)</h4>
                 <p style="color: var(--text-muted); font-size: 0.78rem; line-height: 1.4; margin-bottom: 8px;">
-                  Cara baca asli bahasa Jepang. Biasanya ditulis dalam kamus menggunakan huruf **Hiragana**.
+                  Cara baca asli bahasa Jepang. Biasanya ditulis dalam kamus menggunakan huruf <strong>Hiragana</strong>.
                 </p>
                 <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600;">
-                  <strong>Kapan dipakai?</strong> Ketika Kanji berdiri sendiri sebagai kata tunggal, atau berakhiran huruf Hiragana (*Okurigana*).<br>
+                  <strong>Kapan dipakai?</strong> Ketika Kanji berdiri sendiri sebagai kata tunggal, atau berakhiran huruf Hiragana (<em>Okurigana</em>).<br>
                   <em>Contoh: 水 (mizu - air)</em>
                 </div>
               </div>
@@ -1942,10 +1942,12 @@ export function KanjiView(container) {
       contentArea.innerHTML = `
         <div class="fade-in">
           <!-- Level Selector Segmented Control -->
-          <div style="display: flex; gap: 4px; justify-content: center; background: var(--bg-elevated); padding: 4px; border-radius: var(--radius-md); border: 1px solid var(--border); margin-bottom: 12px; max-width: 360px; margin-left: auto; margin-right: auto;">
-            <button class="level-pill-btn ${activeLevel === 'N5' ? 'active' : ''}" data-level="N5" style="flex: 1; padding: 6px 12px; font-size: var(--text-xs); font-weight: 500; border-radius: var(--radius-sm); cursor: pointer; border: none;">N5 (80 Kanji)</button>
-            <button class="level-pill-btn ${activeLevel === 'N4' ? 'active' : ''}" data-level="N4" style="flex: 1; padding: 6px 12px; font-size: var(--text-xs); font-weight: 500; border-radius: var(--radius-sm); cursor: pointer; border: none;">N4 (80 Kanji)</button>
-            <button class="level-pill-btn ${activeLevel === 'N3' ? 'active' : ''}" data-level="N3" style="flex: 1; padding: 6px 12px; font-size: var(--text-xs); font-weight: 500; border-radius: var(--radius-sm); cursor: pointer; border: none;">N3 (80 Kanji)</button>
+          <div style="display: flex; justify-content: center; margin-bottom: var(--space-3);">
+            <div class="segmented-control" style="max-width: 360px; width: 100%;">
+              <button class="segmented-btn level-pill-btn ${activeLevel === 'N5' ? 'active' : ''}" data-level="N5">N5 (80 Kanji)</button>
+              <button class="segmented-btn level-pill-btn ${activeLevel === 'N4' ? 'active' : ''}" data-level="N4">N4 (80 Kanji)</button>
+              <button class="segmented-btn level-pill-btn ${activeLevel === 'N3' ? 'active' : ''}" data-level="N3">N3 (80 Kanji)</button>
+            </div>
           </div>
 
           <!-- Micro Hint -->
@@ -2075,12 +2077,8 @@ export function KanjiView(container) {
 
         activeLevel = target.getAttribute('data-level');
 
-        container.querySelectorAll('.level-pill-btn').forEach(b => {
-          b.style.background = 'var(--bg-card)';
-          b.style.color = 'var(--text-main)';
-        });
-        target.style.background = 'var(--text-main)';
-        target.style.color = 'var(--bg-main)';
+        container.querySelectorAll('.level-pill-btn').forEach(b => b.classList.remove('active'));
+        target.classList.add('active');
 
         renderCatalogList();
       });

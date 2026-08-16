@@ -25,18 +25,23 @@ export function renderSidebar() {
   const sidebar = document.getElementById('sidebar');
   if (!sidebar) return;
 
-  const mainNav = [
-    { icon: 'layout-dashboard', label: 'Dashboard',      hash: '#/',           id: 'nav-dashboard',  color: '#7C7BF0', bg: 'rgba(124,123,240,0.12)', border: 'rgba(124,123,240,0.25)' },
-    { icon: 'clipboard-list',   label: 'Peta Kurikulum', hash: '#/curriculum', id: 'nav-curriculum', color: '#38BDF8', bg: 'rgba(56,189,248,0.12)',  border: 'rgba(56,189,248,0.25)' },
-    { icon: 'compass',          label: 'Panduan Belajar',hash: '#/guide',      id: 'nav-guide',      color: '#34D399', bg: 'rgba(52,211,153,0.12)',  border: 'rgba(52,211,153,0.25)' },
+  // Conceptual Navigation Groups
+  const studyNav = [
+    { icon: 'layout-dashboard', label: 'Dashboard',      hash: '#/',           id: 'nav-dashboard' },
+    { icon: 'map',              label: 'Peta Kurikulum', hash: '#/curriculum', id: 'nav-curriculum', badge: '50 Bab' },
+    { icon: 'compass',          label: 'Panduan Belajar',hash: '#/guide',      id: 'nav-guide' },
   ];
 
-  const moduleNav = [
-    { icon: 'book-open',   label: 'Grammar Digest',    hash: '#/minna',    id: 'nav-minna',    color: '#38BDF8', bg: 'rgba(56,189,248,0.12)',   border: 'rgba(56,189,248,0.25)' },
-    { icon: 'repeat-2',   label: 'SRS Review',         hash: '#/review',   id: 'nav-review',   color: '#F87171', bg: 'rgba(248,113,113,0.12)',  border: 'rgba(248,113,113,0.25)' },
-    { icon: 'pen-tool',   label: 'Latihan Menulis',    hash: '#/writing',  id: 'nav-writing',  color: '#FBBF24', bg: 'rgba(251,191,36,0.12)',   border: 'rgba(251,191,36,0.25)' },
-    { icon: 'languages',  label: 'Kanji Hub',          hash: '#/kanji',    id: 'nav-kanji',    color: '#A78BFA', bg: 'rgba(167,139,250,0.12)',  border: 'rgba(167,139,250,0.25)' },
-    { icon: 'help-circle',label: 'Glosarium Istilah',  hash: '#/glossary', id: 'nav-glossary', color: '#34D399', bg: 'rgba(52,211,153,0.12)',   border: 'rgba(52,211,153,0.25)' },
+  const practiceNav = [
+    { icon: 'zap',              label: 'SRS Flashcards', hash: '#/review',     id: 'nav-review' },
+    { icon: 'pen-tool',         label: 'Latihan Menulis',hash: '#/writing',    id: 'nav-writing' },
+    { icon: 'award',            label: 'Simulasi Ujian', hash: '#/exam/N5',    id: 'nav-exam', badge: 'JLPT' },
+  ];
+
+  const referenceNav = [
+    { icon: 'book-open',        label: 'Tata Bahasa',    hash: '#/minna',      id: 'nav-minna' },
+    { icon: 'languages',        label: 'Kanji Hub',      hash: '#/kanji',      id: 'nav-kanji' },
+    { icon: 'bookmark',         label: 'Glosarium',      hash: '#/glossary',   id: 'nav-glossary' },
   ];
 
   const renderNavItem = (n) => `
@@ -44,10 +49,11 @@ export function renderSidebar() {
        aria-label="${n.label}"
        onclick="window.location.hash='${n.hash}'; window._closeSidebarMobile();"
        style="cursor:pointer;" role="button" tabindex="0">
-      <span class="nav-icon-badge" style="background:${n.bg}; border:1px solid ${n.border}; color:${n.color};">
-        <i data-lucide="${n.icon}" style="width:13px;height:13px;"></i>
+      <span class="nav-icon-badge">
+        <i data-lucide="${n.icon}" style="width:14px;height:14px;"></i>
       </span>
       <span class="nav-label">${n.label}</span>
+      ${n.badge ? `<span class="nav-item-badge">${n.badge}</span>` : ''}
     </a>
   `;
 
@@ -57,8 +63,8 @@ export function renderSidebar() {
     </button>
 
     <!-- Brand Header -->
-    <div class="brand" style="margin-bottom: 20px; padding: 4px 6px; display: flex; align-items: center; gap: 10px;">
-      <div class="brand-icon" style="width: 34px; height: 34px; border-radius: var(--radius-md); background: rgba(124,123,240,0.15); border: 1px solid rgba(124,123,240,0.3); color: #A5B4FC; display: flex; align-items: center; justify-content: center; font-family: var(--font-jp); font-weight: 700; font-size: 1.05rem; flex-shrink: 0;">語</div>
+    <div class="brand" style="margin-bottom: 18px; padding: 4px 6px; display: flex; align-items: center; gap: 10px;">
+      <div class="brand-icon">語</div>
       <div class="brand-text">
         <h1 style="font-size: 15px; font-weight: 700; color: var(--text-main); margin: 0; line-height: 1.2; letter-spacing: -0.01em;">
           Nihongo<span style="color: var(--text-muted); font-weight: 500;">Master</span>
@@ -67,27 +73,39 @@ export function renderSidebar() {
       </div>
     </div>
 
-    <div style="display: flex; flex-direction: column; gap: 12px; flex: 1;">
-      <!-- Group 1: Navigation Utama -->
+    <div style="display: flex; flex-direction: column; gap: 14px; flex: 1; overflow-y: auto;">
+      <!-- Group: Pembelajaran -->
       <div>
-        <div class="nav-section-label">Utama</div>
+        <div class="nav-section-label">Pembelajaran</div>
         <div class="nav-menu">
-          ${mainNav.map(renderNavItem).join('')}
+          ${studyNav.map(renderNavItem).join('')}
         </div>
       </div>
 
-      <!-- Group 2: Modul Belajar -->
+      <!-- Group: Latihan & Keterampilan -->
       <div>
-        <div class="nav-section-label">Modul Belajar</div>
+        <div class="nav-section-label">Latihan & Keterampilan</div>
         <div class="nav-menu">
-          ${moduleNav.map(renderNavItem).join('')}
+          ${practiceNav.map(renderNavItem).join('')}
+        </div>
+      </div>
+
+      <!-- Group: Katalog & Referensi -->
+      <div>
+        <div class="nav-section-label">Katalog & Referensi</div>
+        <div class="nav-menu">
+          ${referenceNav.map(renderNavItem).join('')}
         </div>
       </div>
     </div>
+
     <!-- Sidebar Footer -->
     <div style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;">
-      <span style="font-size: var(--text-2xs); font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: var(--tracking-wider);">Tampilan</span>
-      <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Ganti tema" style="background: var(--bg-elevated); border: 1px solid var(--border); color: var(--text-main); width: 32px; height: 32px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.15s ease; flex-shrink: 0; padding: 0;">
+      <div style="display: flex; flex-direction: column;">
+        <span style="font-size: 11px; font-weight: 700; color: var(--text-main);">Minna no Nihongo</span>
+        <span style="font-size: 9px; color: var(--text-muted); font-weight: 600;">Edisi Belajar Lengkap</span>
+      </div>
+      <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Ganti tema" title="Ganti Tema (Gelap / Terang)" style="background: var(--bg-elevated); border: 1px solid var(--border); color: var(--text-main); width: 32px; height: 32px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.15s ease; flex-shrink: 0; padding: 0;">
         ${currentTheme === 'dark' ? SUN_SVG : MOON_SVG}
       </button>
     </div>
@@ -118,25 +136,26 @@ export function updateSidebarActive() {
   document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
 
   const map = {
-    '#/':          'nav-dashboard',
-    '#/guide':     'nav-guide',
-    '#/minna':     'nav-minna',
-    '#/review':    'nav-review',
-    '#/writing':   'nav-writing',
-    '#/kanji':     'nav-kanji',
-    '#/curriculum':'nav-curriculum',
-    '#/glossary':  'nav-glossary',
+    '#/':           'nav-dashboard',
+    '#/dashboard':  'nav-dashboard',
+    '#/curriculum': 'nav-curriculum',
+    '#/guide':      'nav-guide',
+    '#/review':     'nav-review',
+    '#/writing':    'nav-writing',
+    '#/minna':      'nav-minna',
+    '#/kanji':      'nav-kanji',
+    '#/glossary':   'nav-glossary',
+    '#/exam/N5':    'nav-exam',
+    '#/exam/N4':    'nav-exam',
+    '#/exam/N3':    'nav-exam',
   };
 
   if (map[hash]) {
     document.getElementById(map[hash])?.classList.add('active');
-  } else if (hash.startsWith('#/chapter/')) {
-    const id = parseInt(hash.split('/').pop());
-    const el = document.querySelector(`[data-chapter-id="${id}"]`);
-    if (el) {
-      el.classList.add('active');
-      el.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-    }
+  } else if (hash.startsWith('#/phase/') || hash.startsWith('#/chapter/') || hash.startsWith('#/workbook/')) {
+    document.getElementById('nav-curriculum')?.classList.add('active');
+  } else if (hash.startsWith('#/exam/')) {
+    document.getElementById('nav-exam')?.classList.add('active');
   }
 }
 
@@ -165,39 +184,28 @@ export function toggleTheme() {
 export let currentDisplayMode = localStorage.getItem('minna_display_mode') || 'furigana';
 export function getDisplayMode() { return currentDisplayMode; }
 
-export function renderTopbar(title = 'Minna no Nihongo', showDisplayToggles = false, backUrl = null) {
+const DISPLAY_MODES = ['furigana', 'kana', 'romaji'];
+const DISPLAY_MODE_LABELS = {
+  furigana: 'Furi',
+  kana: 'Kana',
+  romaji: 'Rom'
+};
+const DISPLAY_MODE_TOAST_NAMES = {
+  furigana: 'Furigana (Kanji + Bacaan)',
+  kana: 'Huruf Kana (Tanpa Romaji)',
+  romaji: 'Romaji (Alfabet Latin)'
+};
+
+export function renderTopbar(title = 'Nihongo Master', showDisplayToggles = false, backUrl = null) {
   const topbar = document.getElementById('topbar');
   if (!topbar) return;
 
-  const isDark = currentTheme === 'dark';
-  const labelMap = { romaji: 'Rom', furigana: 'Furi', kana: 'Kana' };
-  
   const toggleHtml = showDisplayToggles ? `
-    <div class="display-toggles desktop-only">
-      <button class="toggle-btn ${currentDisplayMode==='romaji'   ? 'active':''}" data-mode="romaji">Rom</button>
-      <button class="toggle-btn ${currentDisplayMode==='furigana' ? 'active':''}" data-mode="furigana">Furi</button>
-      <button class="toggle-btn ${currentDisplayMode==='kana'     ? 'active':''}" data-mode="kana">Kana</button>
-    </div>
-    <div class="display-dropdown-container mobile-only" id="display-dropdown-container">
-      <button class="display-dropdown-btn" id="display-dropdown-btn" aria-label="Mode Tampilan">
-        <span class="display-dropdown-val" id="display-dropdown-val">${labelMap[currentDisplayMode] || 'Furi'}</span>
-        <i data-lucide="chevron-down" class="dropdown-chevron" style="width: 10px; height: 10px;"></i>
-      </button>
-      <div class="display-dropdown-menu" id="display-dropdown-menu">
-        <button class="dropdown-item ${currentDisplayMode==='romaji'?'active':''}" data-mode="romaji">
-          <span>Romaji</span>
-          <i data-lucide="check" class="check-icon" style="width: 12px; height: 12px;"></i>
-        </button>
-        <button class="dropdown-item ${currentDisplayMode==='furigana'?'active':''}" data-mode="furigana">
-          <span>Furigana</span>
-          <i data-lucide="check" class="check-icon" style="width: 12px; height: 12px;"></i>
-        </button>
-        <button class="dropdown-item ${currentDisplayMode==='kana'?'active':''}" data-mode="kana">
-          <span>Kana</span>
-          <i data-lucide="check" class="check-icon" style="width: 12px; height: 12px;"></i>
-        </button>
-      </div>
-    </div>
+    <button class="topbar-display-toggler" id="topbar-display-toggler" title="Klik untuk berganti mode tampilan (Furi → Kana → Rom)" aria-label="Mode Tampilan Teks">
+      <span class="toggle-badge">文</span>
+      <span class="toggle-label" id="topbar-display-val">${DISPLAY_MODE_LABELS[currentDisplayMode] || 'Furi'}</span>
+      <i data-lucide="refresh-cw" class="toggle-icon" style="width: 10px; height: 10px;"></i>
+    </button>
   ` : '';
 
   // Left slot: hamburger only (back nav now lives inside page content)
@@ -214,69 +222,19 @@ export function renderTopbar(title = 'Minna no Nihongo', showDisplayToggles = fa
   document.getElementById('topbar-menu-btn')?.addEventListener('click', openSidebar);
 
   if (showDisplayToggles) {
-    const menuBtn = document.getElementById('display-dropdown-btn');
-    const dropdownContainer = document.getElementById('display-dropdown-container');
-    const dropdownMenu = document.getElementById('display-dropdown-menu');
-
-    // Synced state change handler
-    const setDisplayMode = (mode) => {
-      currentDisplayMode = mode;
-      localStorage.setItem('minna_display_mode', mode);
-
-      // Sync desktop buttons
-      topbar.querySelectorAll('.toggle-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.mode === mode);
-      });
-
-      // Sync mobile dropdown label
-      const labelEl = document.getElementById('display-dropdown-val');
-      if (labelEl) labelEl.textContent = labelMap[mode] || 'Furi';
-
-      // Sync active checkmark in custom dropdown items
-      topbar.querySelectorAll('.dropdown-item').forEach(item => {
-        item.classList.toggle('active', item.dataset.mode === mode);
-      });
-
-      window.dispatchEvent(new CustomEvent('displayModeChanged', { detail: { mode } }));
-    };
-
-    // Wire desktop buttons
-    topbar.querySelectorAll('.toggle-btn').forEach(btn => {
-      btn.addEventListener('click', e => {
-        setDisplayMode(e.currentTarget.dataset.mode);
-      });
-    });
-
-    // Wire custom dropdown button toggle
-    menuBtn?.addEventListener('click', (e) => {
+    const togglerBtn = document.getElementById('topbar-display-toggler');
+    togglerBtn?.addEventListener('click', (e) => {
       e.stopPropagation();
-      const isOpen = dropdownContainer.classList.toggle('open');
-      dropdownMenu.classList.toggle('show', isOpen);
-    });
+      const currentIdx = DISPLAY_MODES.indexOf(currentDisplayMode);
+      const nextMode = DISPLAY_MODES[(currentIdx + 1) % DISPLAY_MODES.length];
 
-    // Wire custom dropdown items
-    topbar.querySelectorAll('.dropdown-item').forEach(item => {
-      item.addEventListener('click', (e) => {
-        e.stopPropagation();
-        setDisplayMode(e.currentTarget.dataset.mode);
-        dropdownContainer.classList.remove('open');
-        dropdownMenu.classList.remove('show');
-      });
-    });
+      currentDisplayMode = nextMode;
+      localStorage.setItem('minna_display_mode', nextMode);
 
-    // Close dropdown when clicking outside
-    const closeOutside = (e) => {
-      if (dropdownContainer && !dropdownContainer.contains(e.target)) {
-        dropdownContainer.classList.remove('open');
-        dropdownMenu.classList.remove('show');
-      }
-    };
-    window.addEventListener('click', closeOutside);
+      const labelEl = document.getElementById('topbar-display-val');
+      if (labelEl) labelEl.textContent = DISPLAY_MODE_LABELS[nextMode] || 'Furi';
 
-    // Clean up outside click event listener on route change
-    window.addEventListener('hashchange', function cleanup() {
-      window.removeEventListener('click', closeOutside);
-      window.removeEventListener('hashchange', cleanup);
+      window.dispatchEvent(new CustomEvent('displayModeChanged', { detail: { mode: nextMode } }));
     });
   }
 
@@ -351,47 +309,23 @@ export function renderLoader(container, text = 'Memuat Data') {
 
 // ── Chapter keyboard navigation ──────────────────────
 const _sorted = [...MNN_INDEX].sort((a, b) => a.id - b.id);
-const _unlocked = _sorted.filter(c => !c.locked);
 
 export function navigateChapter(dir /* 'prev' | 'next' */) {
   const hash = window.location.hash;
   const match = hash.match(/\/chapter\/(\d+)/);
   const curId = match ? parseInt(match[1]) : null;
 
-  const idx = curId !== null ? _unlocked.findIndex(c => c.id === curId) : -1;
+  const idx = curId !== null ? _sorted.findIndex(c => c.id === curId) : -1;
 
   let target;
   if (dir === 'next') {
-    target = idx === -1 ? _unlocked[0] : _unlocked[idx + 1];
+    target = idx === -1 ? _sorted[0] : _sorted[idx + 1];
   } else {
-    target = idx <= 0 ? null : _unlocked[idx - 1];
+    target = idx <= 0 ? null : _sorted[idx - 1];
   }
 
   if (!target) return;
   window.location.hash = `#/chapter/${target.id}`;
-  _showJumpToast(target);
-}
-
-let _toastTimer = null;
-function _showJumpToast(ch) {
-  // Remove existing toast
-  document.querySelectorAll('.chapter-jump-toast').forEach(t => t.remove());
-  if (_toastTimer) clearTimeout(_toastTimer);
-
-  const short = ch.title.includes(':') ? ch.title.split(':').slice(1).join(':').trim() : ch.title;
-  const el = document.createElement('div');
-  el.className = 'chapter-jump-toast';
-  el.innerHTML = `
-    <span style="color:var(--accent-bright);font-variant-numeric:tabular-nums;">BAB ${ch.id}</span>
-    <span style="color:var(--text-muted);">—</span>
-    <span>${short}</span>
-  `;
-  document.body.appendChild(el);
-
-  _toastTimer = setTimeout(() => {
-    el.classList.add('hiding');
-    setTimeout(() => el.remove(), 220);
-  }, 1800);
 }
 
 // ── Keyboard shortcuts ───────────────────────────────

@@ -232,9 +232,8 @@ export function isUnitCompleted(unitId) {
   return _completedSet.has(String(unitId));
 }
 
-export function isUnitUnlocked(unitId, prerequisiteId) {
-  if (!prerequisiteId) return true;
-  return isUnitCompleted(prerequisiteId);
+export function isUnitUnlocked() {
+  return true;
 }
 
 export function saveQuizResult(unitId, score, total) {

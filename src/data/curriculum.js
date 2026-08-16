@@ -1,26 +1,19 @@
-// NOTE: curriculum.js should stay in sync with chapter_index.js
 export const CURRICULUM = [
   {
     "levelId": "pra-mnn",
     "title": "LEVEL 1 — Pra-MNN (Dasar)",
-    "desc": "Penguasaan sistem penulisan Jepang sebelum masuk ke materi tata bahasa.",
+    "desc": "Penguasaan sistem penulisan dan pelafalan sebelum masuk ke materi tata bahasa.",
     "phases": [
       {
         "phaseId": "fase-aksara",
-        "title": "Fase 1: Aksara Jepang Dasar",
-        "desc": "Kuasai Hiragana dan Katakana sebagai fondasi membaca seluruh materi.",
+        "title": "Fase 1: Fondasi Aksara & Pelafalan",
+        "desc": "Hiragana, Katakana, aturan pelafalan khusus, dan ungkapan salam dasar.",
         "units": [
           {
-            "id": "hiragana",
-            "title": "Huruf Hiragana",
+            "id": "0",
+            "title": "Bab 0: Fondasi Aksara & Pelafalan",
             "type": "kana",
-            "desc": "46 karakter dasar Jepang."
-          },
-          {
-            "id": "katakana",
-            "title": "Huruf Katakana",
-            "type": "kana",
-            "desc": "Untuk kata serapan asing."
+            "desc": "46 Hiragana, 46 Katakana, Bunyi Khusus (Choon/Sokuon), dan Salam Dasar."
           }
         ]
       }
@@ -148,15 +141,34 @@ export const CURRICULUM = [
   }
 ];
 
+export function getPhaseDetails(phaseId) {
+  for (const level of CURRICULUM) {
+    for (const phase of level.phases) {
+      if (phase.phaseId === phaseId) {
+        return { ...phase, levelId: level.levelId, levelTitle: level.title, levelDesc: level.desc };
+      }
+    }
+  }
+  return null;
+}
+
 export function getUnitDetails(unitId) {
+  const targetId = String(unitId);
   for (const level of CURRICULUM) {
     for (const phase of level.phases) {
       for (const unit of phase.units) {
-        if (unit.id === unitId) {
-          return { ...unit, levelId: level.levelId, phaseTitle: phase.title };
+        if (String(unit.id) === targetId) {
+          return {
+            ...unit,
+            phaseId: phase.phaseId,
+            phaseTitle: phase.title,
+            levelId: level.levelId,
+            levelTitle: level.title
+          };
         }
       }
     }
   }
   return null;
 }
+

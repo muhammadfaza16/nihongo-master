@@ -1,9 +1,10 @@
 import { renderTopbar, renderBackBtn, renderLoader } from '../components/layout.js';
 import { MNN_INDEX, loadChapter } from '../data/chapter_index.js';
 import { createAudioButton } from '../audio.js';
+import { getState } from '../store.js';
 
 export function MinnaView(container) {
-  renderTopbar('Grammar Handbook (Minna)', false, '#/');
+  renderTopbar('Referensi Tata Bahasa', false, '#/');
   renderBackBtn(container, '#/', 'Dashboard');
 
   let fullLessonsData = null;
@@ -37,39 +38,64 @@ export function MinnaView(container) {
     return fullLessonsData;
   }
 
+  // Determine default segment based on user progress
+  const _state = getState();
+  const _completedUnits = _state.completedUnits || [];
+  const _lastCompletedId = _completedUnits
+    .map(u => parseInt(u))
+    .filter(n => !isNaN(n))
+    .sort((a, b) => b - a)[0] ?? 0;
+  const _defaultSegment = _lastCompletedId >= 26 ? 'n4' : 'n5';
+
   // Shell HTML
   let html = `
     <div class="minna-container page-container-standard fade-in" style="padding-bottom: 60px;">
       
-      <!-- Minimalist Responsive Header Block -->
+      <!-- Header Block — Reframed as Quick Lookup Reference -->
       <div class="no-print" style="margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 16px;">
         <div style="display: flex; flex-direction: column; gap: 6px;">
           <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
-            <span style="font-size: var(--text-3xs); font-weight: 600; color: var(--text-muted); letter-spacing: var(--tracking-wide);">
-              Referensi Tata Bahasa (Bab 0 – 50)
-            </span>
+            <!-- FIX 4: Label eksplisit yang membedakan fungsi dari tab Tata Bahasa di Studi Bab -->
+            <div style="display: flex; align-items: center; gap: 7px;">
+              <i data-lucide="search" style="width:13px;height:13px;color:var(--accent);flex-shrink:0;"></i>
+              <span style="font-size: var(--text-3xs); font-weight: 700; color: var(--accent); letter-spacing: var(--tracking-wide); text-transform: uppercase;">Cari Cepat — Referensi Ringkas</span>
+            </div>
             <button id="btn-print-doc" class="btn btn-secondary no-print" style="padding: 5px 12px; font-size: var(--text-3xs); border-radius: var(--radius-sm); margin-left: auto; flex-shrink: 0;">
               <i data-lucide="printer" style="width:13px;height:13px;"></i> Cetak PDF
             </button>
           </div>
           
           <h2 style="font-size: var(--text-lg); font-weight: 700; color: var(--text-main); margin: 0; letter-spacing: var(--tracking-tight); line-height: 1.3;">
-            Minna no Nihongo: Deep Digest
+            Referensi Tata Bahasa Minna no Nihongo
           </h2>
           
           <p style="color: var(--text-secondary); font-size: var(--text-xs); line-height: 1.5; margin: 0; max-width: 680px;">
-            Ekstraksi komprehensif pola kalimat, rumus konjugasi, dan nuansa tata bahasa Jepang.
+            Rumus &amp; contoh kalimat ringkas per pola. Untuk penjelasan mendalam, buka tab <strong>Tata Bahasa</strong> di dalam <a href="#/chapter/1" style="color:var(--accent);text-decoration:none;">Studi Bab</a>.
           </p>
         </div>
       </div>
 
-      <!-- Spotlight Style Search Bar -->
-      <div class="no-print" style="position: relative; margin-bottom: 16px;">
-        <input type="text" id="grammar-search" placeholder="Cari pola, rumus, atau arti..." class="fill-input" style="padding-left: 38px; padding-right: 36px; height: 40px; border-radius: var(--radius-sm); font-size: var(--text-xs); width: 100%; background: var(--bg-card); border: 1px solid var(--border);">
+      <!-- Search Bar (global, override segmen) -->
+      <div class="no-print" style="position: relative; margin-bottom: 14px;">
+        <input type="text" id="grammar-search" placeholder="Cari pola, rumus, atau arti... (lintas semua bab)" class="fill-input" style="padding-left: 38px; padding-right: 36px; height: 40px; border-radius: var(--radius-sm); font-size: var(--text-xs); width: 100%; background: var(--bg-card); border: 1px solid var(--border);">
         <i data-lucide="search" style="position: absolute; left: 12px; top: 11px; width: 16px; height: 16px; color: var(--text-muted);"></i>
         <button id="search-clear" style="position: absolute; right: 10px; top: 10px; background: transparent; border: none; color: var(--text-muted); cursor: pointer; display: none; padding: 2px;">
           <i data-lucide="x" style="width: 16px; height: 16px;"></i>
         </button>
+      </div>
+
+      <!-- FIX 3: Segmented Control N5 / N4 (filter accordion, tidak filter search) -->
+      <div class="no-print" id="segment-control-wrapper" style="display: flex; gap: 6px; margin-bottom: 14px;">
+        <button class="segment-btn ${_defaultSegment === 'n5' ? 'segment-btn-active' : ''}" data-segment="n5"
+          style="flex:1; padding: 7px 0; border-radius: var(--radius-sm); font-size: var(--text-xs); font-weight: 600; cursor: pointer;
+            border: 1px solid var(--border); transition: all 0.15s ease;
+            background: ${_defaultSegment === 'n5' ? 'var(--accent)' : 'var(--bg-elevated)'};
+            color: ${_defaultSegment === 'n5' ? '#fff' : 'var(--text-secondary)'};">N5 — Bab 0–25</button>
+        <button class="segment-btn ${_defaultSegment === 'n4' ? 'segment-btn-active' : ''}" data-segment="n4"
+          style="flex:1; padding: 7px 0; border-radius: var(--radius-sm); font-size: var(--text-xs); font-weight: 600; cursor: pointer;
+            border: 1px solid var(--border); transition: all 0.15s ease;
+            background: ${_defaultSegment === 'n4' ? 'var(--accent)' : 'var(--bg-elevated)'};
+            color: ${_defaultSegment === 'n4' ? '#fff' : 'var(--text-secondary)'};">N4 — Bab 26–50</button>
       </div>
 
       <!-- Lessons List Container -->
@@ -91,7 +117,9 @@ export function MinnaView(container) {
   const clearBtn = document.getElementById('search-clear');
   const printBtn = document.getElementById('btn-print-doc');
   const printDocContainer = document.getElementById('print-only-doc');
+  const segmentWrapper = document.getElementById('segment-control-wrapper');
 
+  let activeSegment = _defaultSegment;
   const expandedChapters = new Set();
   const loadedChapters = new Map(); // id -> html string
 
@@ -166,15 +194,15 @@ export function MinnaView(container) {
           </div>
           ` : ''}
 
-          <!-- Kindle Example Cards List -->
-          <div style="margin-top: 14px; border-top: 1px dashed var(--border); padding-top: 12px;">
-            <div style="font-size: var(--text-3xs); font-weight: 600; color: var(--text-muted); margin-bottom: 10px;">Contoh Kalimat</div>
-            <div style="display: flex; flex-direction: column; gap: 10px;">
+          <!-- Kindle Example Cards List (Decluttered to Clean Rows) -->
+          <div style="margin-top: var(--space-4); padding-top: var(--space-3);">
+            <div style="font-size: var(--text-3xs); font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: var(--tracking-wide); margin-bottom: var(--space-2);">Contoh Kalimat</div>
+            <div style="display: flex; flex-direction: column; gap: var(--space-2);">
               ${patterns.map((ex, exIdx) => `
-                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 10px 14px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm);" class="kindle-example-card">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-3); padding: var(--space-2) 0; border-bottom: ${exIdx < patterns.length - 1 ? '1px solid var(--border)' : 'none'};" class="kindle-example-card">
                   <div style="min-width: 0; flex: 1;">
                     <div style="font-family: var(--font-jp); font-size: var(--text-base); font-weight: 600; color: var(--text-main); line-height: 1.4; margin-bottom: 2px;">${ex.jp}</div>
-                    <div style="font-size: var(--text-3xs); color: var(--text-muted); font-family: var(--font-sans); margin-bottom: 4px;">${ex.rom}</div>
+                    <div style="font-size: var(--text-3xs); color: var(--text-muted); font-family: var(--font-sans); margin-bottom: 2px;">${ex.rom}</div>
                     <div style="font-size: var(--text-xs); color: var(--text-secondary); line-height: 1.4;">${ex.en}</div>
                   </div>
                   <div id="audio-btn-${chId}-${idx}-${exIdx}" style="flex-shrink: 0; margin-top: 2px;"></div>
@@ -203,14 +231,22 @@ export function MinnaView(container) {
   }
 
   // Render initial collapsed view (Single Fluid Borderless Card Container)
-  const renderIndexList = () => {
+  // activeSegment: 'n5' (bab 0-25) | 'n4' (bab 26-50)
+  const renderIndexList = (seg = activeSegment) => {
+    // Filter chapters by segment
+    const segChapters = MNN_INDEX.filter(ch => {
+      if (seg === 'n5') return ch.id <= 25;
+      if (seg === 'n4') return ch.id >= 26;
+      return true;
+    });
+
     let indexHtml = `
       <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;" class="fade-in">
     `;
 
-    MNN_INDEX.forEach((ch, index) => {
+    segChapters.forEach((ch, index) => {
       const isExpanded = expandedChapters.has(ch.id);
-      const isLast = index === MNN_INDEX.length - 1;
+      const isLast = index === segChapters.length - 1;
       
       indexHtml += `
         <div class="lesson-accordion-row" id="lesson-card-${ch.id}" style="border-bottom: ${isLast ? 'none' : '1px solid var(--border)'};">
@@ -422,6 +458,20 @@ export function MinnaView(container) {
     }
   };
 
+  // Segment button wiring (FIX 3)
+  segmentWrapper?.querySelectorAll('.segment-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeSegment = btn.dataset.segment;
+      // Update visual state
+      segmentWrapper.querySelectorAll('.segment-btn').forEach(b => {
+        const isActive = b.dataset.segment === activeSegment;
+        b.style.background = isActive ? 'var(--accent)' : 'var(--bg-elevated)';
+        b.style.color = isActive ? '#fff' : 'var(--text-secondary)';
+      });
+      renderIndexList(activeSegment);
+    });
+  });
+
   // Run initial render of collapsed list
   renderIndexList();
 
@@ -430,8 +480,12 @@ export function MinnaView(container) {
     const val = e.target.value;
     if (val) {
       clearBtn.style.display = 'block';
+      // Hide segment control while searching (search is global)
+      if (segmentWrapper) segmentWrapper.style.display = 'none';
     } else {
       clearBtn.style.display = 'none';
+      // Restore segment control
+      if (segmentWrapper) segmentWrapper.style.display = 'flex';
     }
     performSearch(val);
   });
@@ -439,6 +493,7 @@ export function MinnaView(container) {
   clearBtn.addEventListener('click', () => {
     searchInput.value = '';
     clearBtn.style.display = 'none';
+    if (segmentWrapper) segmentWrapper.style.display = 'flex';
     searchInput.focus();
     performSearch('');
   });

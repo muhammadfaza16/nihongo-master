@@ -3,6 +3,7 @@ import { loadChapter, MNN_INDEX } from '../data/chapter_index.js';
 import { addSRSItem, removeSRSItem, getSRSItemStatus } from '../srs.js';
 import { speakJP } from '../audio.js';
 import { isUnitCompleted } from '../store.js';
+import { getUnitDetails } from '../data/curriculum.js';
 
 window._showPremiumToast = showToast;
 
@@ -36,7 +37,7 @@ export function ChapterView(container, params) {
   const parsed = parseInt(params.id);
   const chapterId = isNaN(parsed) ? 1 : parsed;
 
-  renderTopbar(`Bab ${chapterId} — Minna no Nihongo`, true);
+  renderTopbar(`Bab ${chapterId}`, true);
 
   // Show loading skeleton while chapter data loads
   renderLoader(container, `Memuat Bab ${chapterId}...`);
@@ -53,25 +54,7 @@ export function ChapterView(container, params) {
 }
 
 function _initChapterView(container, chapterId, chapterData, params) {
-  if (chapterId >= 1) {
-    const prevChapterId = chapterId - 1;
-    if (!isUnitCompleted(prevChapterId.toString()) && !isUnitCompleted(prevChapterId)) {
-      container.innerHTML = `
-        <div class="page-container-standard fade-in" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 70vh; text-align: center;">
-          <i data-lucide="lock" style="width: 64px; height: 64px; color: var(--text-muted); margin-bottom: 24px;"></i>
-          <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--text-main); margin-bottom: 12px;">Bab Terkunci</h2>
-          <p style="color: var(--text-secondary); margin-bottom: 24px; max-width: 400px; line-height: 1.6;">
-            Untuk mengakses <strong>${chapterData.title}</strong>, Anda harus menyelesaikan Bab ${prevChapterId} terlebih dahulu.
-          </p>
-          <a href="#/chapter/${prevChapterId}" class="btn btn-primary" style="padding: 12px 24px; border-radius: var(--radius-md); font-weight: 800; text-transform: uppercase;">
-            Ke Bab ${prevChapterId}
-          </a>
-        </div>
-      `;
-      if (window.lucide) lucide.createIcons({ root: container });
-      return;
-    }
-  }
+  // Persist theory read flag in localStorage
 
   // Persist theory read flag in localStorage
   localStorage.setItem(`nihongo_master_theory_ch${chapterId}`, 'true');
@@ -83,8 +66,8 @@ function _initChapterView(container, chapterId, chapterData, params) {
     const query = hash.split('?')[1];
     const urlParams = new URLSearchParams(query);
     const urlTab = urlParams.get('tab');
-    const validTabsForZero = ['kana', 'pelafalan', 'vocab_salam', 'practice'];
-    const validTabsForOthers = ['vocab', 'grammar', 'conversation', 'practice'];
+    const validTabsForZero = ['kana', 'pelafalan', 'vocab_salam'];
+    const validTabsForOthers = ['vocab', 'grammar', 'conversation'];
     const isValid = chapterId === 0 ? validTabsForZero.includes(urlTab) : validTabsForOthers.includes(urlTab);
     if (isValid) {
       activeTab = urlTab;
@@ -94,6 +77,7 @@ function _initChapterView(container, chapterId, chapterData, params) {
   // Active state for flashcard
   let activeVocabIndex = 0;
   let isVocabFlipped = false;
+  let selectedKanaScript = 'hiragana';
 
   // Helper to format Japanese text based on global display mode
   const formatJP = (item) => {
@@ -194,17 +178,26 @@ function _initChapterView(container, chapterId, chapterData, params) {
       kataYoon[4][2] = 'ヒョ hyo';
       kataYoon[7][2] = 'ギョ gyo';
 
-      const renderGrid = (title, grid, cols = 5) => `
-        <div style="margin-bottom: 16px;">
-          <h4 style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">${title}</h4>
-          <div style="display: grid; grid-template-columns: repeat(${cols}, 1fr); gap: 6px;">
+      const isHira = selectedKanaScript === 'hiragana';
+      const activeGojuon = isHira ? hira : kata;
+      const activeDakuon = isHira ? hiraDaku : kataDaku;
+      const activeYoon = isHira ? hiraYoon : kataYoon;
+
+      const renderGrid = (badge, title, desc, grid, cols = 5) => `
+        <div class="kana-group-section">
+          <div class="kana-group-head">
+            <span class="kana-group-badge">${badge}</span>
+            <span style="font-size: 13px; font-weight: 700; color: var(--text-main);">${title}</span>
+            ${desc ? `<span class="kana-group-desc">· ${desc}</span>` : ''}
+          </div>
+          <div class="kana-grid ${cols === 3 ? 'kana-grid-3' : 'kana-grid-5'}">
             ${grid.flat().map(cell => {
-              if (!cell) return `<div style="background: transparent;"></div>`;
+              if (!cell) return `<div style="visibility: hidden;"></div>`;
               const [jp, rom] = cell.split(' ');
               return `
-                <div onclick="window.playAudio('${jp}')" class="kana-cell">
-                  <div class="kana-char">${jp}</div>
-                  <div class="kana-rom">${rom}</div>
+                <div onclick="window.playAudio('${jp}')" class="kana-cell" title="${jp} (${rom})">
+                  <span class="kana-char">${jp}</span>
+                  <span class="kana-rom">${rom}</span>
                 </div>
               `;
             }).join('')}
@@ -213,30 +206,22 @@ function _initChapterView(container, chapterId, chapterData, params) {
       `;
 
       return `
-        <div class="card" style="margin-bottom: 24px; background: var(--bg-hover); border: none;">
-          <h2 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 4px; color: var(--text-main); letter-spacing: -0.02em;">Tabel Huruf Kana Komprehensif</h2>
-          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Klik pada huruf untuk mendengarkan pelafalannya.</p>
-          
-          <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--text-main); border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: 16px;">Hiragana (ひらがな)</h3>
-          <div class="kana-layout-grid">
-            <div>
-              ${renderGrid('Dasar (Gojuon)', hira, 5)}
-              ${renderGrid('Turunan (Dakuon/Handakuon)', hiraDaku, 5)}
+        <div class="card" style="margin-bottom: 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 22px;">
+          <div class="kana-top-bar">
+            <div class="kana-top-info">
+              <h2>Tabel Huruf Kana Komprehensif</h2>
+              <p>Ketuk kotak huruf untuk mendengarkan audio pelafalan aslinya.</p>
             </div>
-            <div>
-              ${renderGrid('Kombinasi (Yoon)', hiraYoon, 3)}
+            <div class="kana-script-tabs">
+              <button class="kana-script-btn ${selectedKanaScript === 'hiragana' ? 'active' : ''}" data-script="hiragana">Hiragana (ひらがな)</button>
+              <button class="kana-script-btn ${selectedKanaScript === 'katakana' ? 'active' : ''}" data-script="katakana">Katakana (カタカナ)</button>
             </div>
           </div>
-
-          <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--text-main); border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: 16px; margin-top: 24px;">Katakana (カタカナ)</h3>
-          <div class="kana-layout-grid">
-            <div>
-              ${renderGrid('Dasar (Gojuon)', kata, 5)}
-              ${renderGrid('Turunan (Dakuon/Handakuon)', kataDaku, 5)}
-            </div>
-            <div>
-              ${renderGrid('Kombinasi (Yoon)', kataYoon, 3)}
-            </div>
+          
+          <div class="kana-sections-container" style="margin-top: 18px;">
+            ${renderGrid('Dasar', 'Gojuon · 46 Huruf', 'Vokal A-I-U-E-O & Konsonan Utama', activeGojuon, 5)}
+            ${renderGrid('Turunan', 'Dakuon & Handakuon · 25 Huruf', 'Bunyi Ten-ten (゛) & Maru (゜)', activeDakuon, 5)}
+            ${renderGrid('Kombinasi', 'Yoon · 33 Bunyi', 'Kombinasi Konsonan + ya/yu/yo kecil', activeYoon, 3)}
           </div>
         </div>
       `;
@@ -244,10 +229,9 @@ function _initChapterView(container, chapterId, chapterData, params) {
 
     // Chapter nav helpers
     const sorted = [...MNN_INDEX].sort((a, b) => a.id - b.id);
-    const unlocked = sorted.filter(c => !c.locked);
-    const curIdx = unlocked.findIndex(c => c.id === chapterId);
-    const prevCh = curIdx > 0 ? unlocked[curIdx - 1] : null;
-    const nextCh = curIdx < unlocked.length - 1 ? unlocked[curIdx + 1] : null;
+    const curIdx = sorted.findIndex(c => c.id === chapterId);
+    const prevCh = curIdx > 0 ? sorted[curIdx - 1] : null;
+    const nextCh = curIdx < sorted.length - 1 ? sorted[curIdx + 1] : null;
 
     let backTrack = 'all';
     if (chapterId === 0) {
@@ -258,73 +242,42 @@ function _initChapterView(container, chapterId, chapterData, params) {
       backTrack = 'minna2';
     }
 
+    const unitDetails = getUnitDetails(chapterId);
+    const chapterCleanTitle = chapterData && chapterData.title ? chapterData.title.replace(/^Bab\s*\d+\s*:\s*/i, '').trim() : '';
+
     let html = `
       <div class="chapter-container page-container-standard fade-in" style="padding-bottom: 60px;">
         <!-- Breadcrumb Navigation -->
-      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
-        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">
-          <a href="#/curriculum?track=${backTrack}" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'">
-            Kurikulum
-          </a>
-          <span>/</span>
-          <span style="color: var(--text-main);">Bab ${chapterId}</span>
-        </div>
-        
-        <!-- Practice / Exam Buttons Header Row -->
-        <div style="display: flex; gap: 8px;">
-          <a href="#/workbook/${chapterId}" class="btn btn-secondary" style="font-size: var(--text-2xs); padding: 8px 14px; border-radius: var(--radius-sm); text-transform: uppercase; font-weight: 800; letter-spacing: 0.02em;">
-            <i data-lucide="edit-3" style="width: 12px; height: 12px; margin-right: 4px;"></i> Buku Kerja
-          </a>
-          <a href="#/exam/${chapterId}" class="btn btn-secondary" style="font-size: var(--text-2xs); padding: 8px 14px; border-radius: var(--radius-sm); text-transform: uppercase; font-weight: 800; letter-spacing: 0.02em;">
-            <i data-lucide="award" style="width: 12px; height: 12px; margin-right: 4px;"></i> Ujian Bab
-          </a>
-        </div>
+      <div style="margin-bottom: 16px;">
+        <nav class="phase-breadcrumb" aria-label="Breadcrumb">
+          <a href="#/curriculum">← Kurikulum</a>
+          ${unitDetails && unitDetails.phaseId !== 'fase-aksara' && chapterId !== 0 ? `
+            <span class="phase-crumb-sep">/</span>
+            <a href="#/phase/${unitDetails.phaseId}">${unitDetails.phaseTitle.replace(/^Fase \d+:\s*/, '')}</a>
+          ` : ''}
+          <span class="phase-crumb-sep">/</span>
+          <span style="color: var(--text-main); font-weight: 600;">${chapterId === 0 ? 'Bab 0 (Fondasi Aksara)' : `Bab ${chapterId}`}</span>
+        </nav>
       </div>
 
-      <!-- Chapter Nav Bar -->
-      <div class="chapter-nav-bar" style="margin-bottom: 16px;">
-        <button class="chapter-nav-btn" id="ch-prev-btn" ${!prevCh ? 'disabled' : ''}
-          aria-label="${prevCh ? 'Bab ' + prevCh.id : 'Sudah bab pertama'}">
-          <i data-lucide="chevron-left" style="width:15px;height:15px;"></i>
-          <span class="kbd-hint">[</span>
-        </button>
+      <div style="margin-bottom: 22px;">
+        <h1 style="font-size: 1.5rem; font-weight: 750; color: var(--text-main); margin-bottom: 6px; letter-spacing: -0.025em; line-height: 1.25;">${chapterData.title}</h1>
+        <p style="color: var(--text-secondary); font-size: 13.5px; line-height: 1.55; margin: 0; max-width: 600px;">${chapterData.desc}</p>
+      </div>
 
-        <select class="chapter-picker" id="chapter-picker" aria-label="Pilih bab">
-          ${unlocked.map(c => {
-            const short = c.title.includes(':') ? c.title.split(':').slice(1).join(':').trim() : c.title;
-            return `<option value="${c.id}" ${c.id === chapterId ? 'selected' : ''}>Bab ${c.id} — ${short}</option>`;
-          }).join('')}
-        </select>
-
-        <button class="chapter-nav-btn" id="ch-next-btn" ${!nextCh ? 'disabled' : ''}
-          aria-label="${nextCh ? 'Bab ' + nextCh.id : 'Sudah bab terakhir'}">
-          <span class="kbd-hint">]</span>
-          <i data-lucide="chevron-right" style="width:15px;height:15px;"></i>
-        </button>
-
-        <div class="chapter-kbd-hint">
-          <kbd>←</kbd><kbd>→</kbd> pindah bab
+      <!-- STICKY TABS (Segmented Control) -->
+      <div class="chapter-tabs-sticky-wrap">
+        <div class="segmented-control" style="width: 100%; max-width: 480px;">
+          ${chapterId === 0 ? `
+            <button class="segmented-btn tab-btn ${activeTab === 'kana' ? 'active' : ''}" data-tab="kana">Huruf Kana</button>
+            <button class="segmented-btn tab-btn ${activeTab === 'pelafalan' ? 'active' : ''}" data-tab="pelafalan">Pelafalan</button>
+            <button class="segmented-btn tab-btn ${activeTab === 'vocab_salam' ? 'active' : ''}" data-tab="vocab_salam">Ungkapan Salam</button>
+          ` : `
+            <button class="segmented-btn tab-btn ${activeTab === 'vocab' ? 'active' : ''}" data-tab="vocab">Kosakata</button>
+            <button class="segmented-btn tab-btn ${activeTab === 'grammar' ? 'active' : ''}" data-tab="grammar">Tata Bahasa</button>
+            <button class="segmented-btn tab-btn ${activeTab === 'conversation' ? 'active' : ''}" data-tab="conversation">Percakapan</button>
+          `}
         </div>
-      </div>
-
-      <div style="margin-bottom:20px;">
-        <h2 style="font-size:var(--text-xl);font-weight:800;color:var(--text-main);margin-bottom:6px;letter-spacing:var(--tracking-tight);line-height:var(--leading-tight);">${chapterData.title}</h2>
-        <p style="color:var(--text-secondary);font-size:var(--text-sm);line-height:var(--leading-normal);">${chapterData.desc}</p>
-      </div>
-
-      <!-- TABS -->
-      <div class="tabs" style="margin-bottom: 20px;">
-        ${chapterId === 0 ? `
-          <button class="tab-btn ${activeTab === 'kana' ? 'active' : ''}" data-tab="kana">Huruf</button>
-          <button class="tab-btn ${activeTab === 'pelafalan' ? 'active' : ''}" data-tab="pelafalan">Pelafalan</button>
-          <button class="tab-btn ${activeTab === 'vocab_salam' ? 'active' : ''}" data-tab="vocab_salam">Salam</button>
-          <button class="tab-btn ${activeTab === 'practice' ? 'active' : ''}" data-tab="practice">Latihan</button>
-        ` : `
-          <button class="tab-btn ${activeTab === 'vocab'        ? 'active' : ''}" data-tab="vocab">Kosakata</button>
-          <button class="tab-btn ${activeTab === 'grammar'      ? 'active' : ''}" data-tab="grammar">Tata Bahasa</button>
-          <button class="tab-btn ${activeTab === 'conversation' ? 'active' : ''}" data-tab="conversation">Percakapan</button>
-          <button class="tab-btn ${activeTab === 'practice'     ? 'active' : ''}" data-tab="practice">Latihan</button>
-        `}
       </div>
 
       <div class="tab-content">
@@ -338,23 +291,19 @@ function _initChapterView(container, chapterId, chapterData, params) {
     // TAB: PELAFALAN (Only for Chapter 0)
     if (activeTab === 'pelafalan' && chapterId === 0) {
       html += `
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; align-items: start; margin-bottom: 24px;">
-          <div style="display: flex; flex-direction: column; gap: 20px;">
-            <h3 style="font-size: var(--text-md); font-weight: 800; color: var(--text-main); margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
-              <i data-lucide="book-open" style="width: 18px; height: 18px;"></i>
-              Aturan Pelafalan Dasar
-            </h3>
-            ${chapterData.grammar.map((g, idx) => `
-              <div class="card" style="border-left: 3px solid var(--accent); padding: 16px; background: var(--bg-card); border-top-right-radius: var(--radius-md); border-bottom-right-radius: var(--radius-md);">
-                <div style="font-size: var(--text-2xs); font-weight: 800; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase;">Aturan ${idx + 1}</div>
-                <h4 style="font-size: 0.98rem; font-weight: 800; color: var(--text-main); margin-bottom: 6px;">${g.title}</h4>
-                <p style="color: var(--text-secondary); font-size: 0.82rem; margin-bottom: 12px; line-height: 1.5;">${g.desc}</p>
-                <ul style="padding-left: 18px; color: var(--text-main); display: flex; flex-direction: column; gap: 6px; font-size: 0.82rem;">
-                  ${g.points.map(pt => `<li style="line-height: 1.5; color: var(--text-secondary); list-style-type: square;"><span style="color: var(--text-main);">${pt}</span></li>`).join('')}
-                </ul>
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px;">
+          ${chapterData.grammar.map((g, idx) => `
+            <div class="card" style="padding: 16px 18px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); display: flex; flex-direction: column; gap: 8px;">
+              <div>
+                <span class="chapter-rule-badge">Aturan ${idx + 1}</span>
               </div>
-            `).join('')}
-          </div>
+              <h3 style="font-size: 14.5px; font-weight: 700; color: var(--text-main); margin: 0; line-height: 1.35;">${g.title}</h3>
+              <p style="color: var(--text-secondary); font-size: 12.5px; margin: 0; line-height: 1.5;">${g.desc}</p>
+              <ul style="padding-left: 18px; margin: 4px 0 0 0; display: flex; flex-direction: column; gap: 6px; font-size: 12.5px;">
+                ${g.points.map(pt => `<li style="line-height: 1.5; color: var(--text-secondary);"><span style="color: var(--text-main);">${pt}</span></li>`).join('')}
+              </ul>
+            </div>
+          `).join('')}
         </div>
       `;
     }
@@ -411,30 +360,29 @@ function _initChapterView(container, chapterId, chapterData, params) {
         </div>
 
         <!-- High-density Reference List -->
-        <div class="vocab-card-list-title" style="margin-top: 24px; border-bottom: 1px solid var(--border); padding-bottom: 8px;">
-          <span>Daftar Salam Aisatsu</span>
-          <span>${vocabList.length} Ungkapan</span>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 24px; padding-bottom: 8px; border-bottom: 1px solid var(--border);">
+          <span style="font-size: var(--text-xs); font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: var(--tracking-wider);">
+            Daftar Salam Aisatsu • ${vocabList.length} Ungkapan
+          </span>
         </div>
         
-        <table class="vocab-list-table">
-          <tbody>
-            ${vocabList.map((v, vIdx) => `
-              <tr class="vocab-list-row" data-vocab-idx="${vIdx}">
-                <td class="vocab-list-cell vocab-list-cell-jp">
-                  ${v.kana}
-                </td>
-                <td class="vocab-list-cell vocab-list-cell-translation">
-                  ${v.en} <span style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono); margin-left: 6px;">(${v.rom})</span>
-                </td>
-                <td class="vocab-list-cell vocab-list-cell-action">
-                  <button class="vocab-list-play-btn" data-vocab-text="${v.kana}" style="width: 28px; height: 28px; border-radius: 50%; background: var(--bg-elevated); color: var(--text-secondary); display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--border); cursor: pointer; transition: all 0.2s;">
+        <div class="vocab-list-group">
+          ${vocabList.map((v, vIdx) => `
+            <div class="vocab-list-item vocab-list-row" data-vocab-idx="${vIdx}">
+              <div class="vocab-item-top">
+                <div class="vocab-item-jp">${v.kana}</div>
+                <div class="vocab-item-actions">
+                  <button class="vocab-list-play-btn" data-vocab-text="${v.kana}" style="width: 28px; height: 28px; border-radius: var(--radius-sm); background: var(--bg-elevated); color: var(--text-secondary); display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--border); cursor: pointer; transition: all 0.2s;" title="Dengarkan Suara">
                     <i data-lucide="volume-2" style="width: 12px; height: 12px;"></i>
                   </button>
-                </td>
-              </tr>
-            `).join('')}
-          </tbody>
-        </table>
+                </div>
+              </div>
+              <div class="vocab-item-meaning">
+                ${v.en} <span style="font-size: var(--text-3xs); color: var(--text-muted); font-family: var(--font-mono); margin-left: 6px;">(${v.rom})</span>
+              </div>
+            </div>
+          `).join('')}
+        </div>
 
         <!-- Aisatsu Dialogue (Kaiwa) styled in Chat bubble format -->
         <div class="vocab-card-list-title" style="margin-top: 36px; border-bottom: 1px solid var(--border); padding-bottom: 8px;">
@@ -534,74 +482,74 @@ function _initChapterView(container, chapterId, chapterData, params) {
         </div>
         
         <!-- High-density Reference List -->
-        <div class="vocab-card-list-title" style="margin-top: 24px; border-bottom: 1px solid var(--border); padding-bottom: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-          <span>Daftar Kosakata Bab ${chapterId} (${vocabList.length} Kata)</span>
-          <button id="btn-chapter-sync-all-srs" style="background: var(--text-main); color: var(--bg-main); border: none; padding: 6px 12px; border-radius: var(--radius-sm); font-size: 0.72rem; font-weight: 800; cursor: pointer; display: flex; align-items: center; gap: 4px;">
-            <i data-lucide="bookmark" style="width:12px;height:12px;"></i> Antrekan Semua ke SRS
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 24px; padding-bottom: 8px; border-bottom: 1px solid var(--border); flex-wrap: wrap;">
+          <span style="font-size: var(--text-xs); font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: var(--tracking-wider);">
+            Daftar Kosakata Bab ${chapterId} • ${vocabList.length} Kata
+          </span>
+          <button id="btn-chapter-sync-all-srs" class="btn btn-secondary" style="font-size: var(--text-3xs); padding: 5px 12px; border-radius: var(--radius-sm); font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
+            <i data-lucide="layers" style="width: 12px; height: 12px; color: var(--accent);"></i> Antrekan Semua ke SRS
           </button>
         </div>
         
-        <table class="vocab-list-table">
-          <tbody>
-            ${vocabList.map((v, vIdx) => {
-              const itemId = `vocab-${v.kana || v.kanji || v.rom}`;
-              const srsStatus = getSRSItemStatus(itemId);
-              
-              const kanjis = (v.kanji || '').split('').filter(c => c >= '\u4e00' && c <= '\u9faf');
-              let writingLinksHtml = '';
-              if (kanjis.length > 0) {
-                writingLinksHtml = `<div style="display: flex; gap: 4px; margin-top: 4px; flex-wrap: wrap;">`;
-                kanjis.forEach(kj => {
-                  writingLinksHtml += `
-                    <a href="#/writing?char=${encodeURIComponent(kj)}" class="no-print" style="font-size: 0.68rem; color: var(--text-muted); text-decoration: none; border: 1px solid var(--border); padding: 1px 4px; border-radius: var(--radius-sm); display: inline-flex; align-items: center; gap: 2px;">
-                      <i data-lucide="edit-3" style="width: 10px; height: 10px;"></i> Tulis ${kj}
-                    </a>
-                  `;
-                });
-                writingLinksHtml += `</div>`;
-              }
-              
-              let srsActionHtml = '';
-              if (!srsStatus) {
-                srsActionHtml = `
-                  <button class="vocab-row-srs-btn add no-print" data-vocab-id="${itemId}" title="Masukkan ke Antrean SRS" style="background: transparent; border: 1px solid var(--border); color: var(--text-muted); padding: 4px 8px; border-radius: var(--radius-sm); font-size: 0.72rem; cursor: pointer; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
-                    <i data-lucide="bookmark-plus" style="width:11px;height:11px;"></i> Antrekan
-                  </button>
-                `;
-              } else if (srsStatus === 'learning' || srsStatus === 'new') {
-                srsActionHtml = `
-                  <button class="vocab-row-srs-btn remove no-print" data-vocab-id="${itemId}" title="Hapus dari SRS" style="background: var(--text-main); border: 1px solid var(--text-main); color: var(--bg-main); padding: 4px 8px; border-radius: var(--radius-sm); font-size: 0.72rem; cursor: pointer; font-weight: 800; display: inline-flex; align-items: center; gap: 4px;">
-                    <i data-lucide="bookmark" style="width:11px;height:11px;"></i> Belajar
-                  </button>
-                `;
-              } else if (srsStatus === 'mastered') {
-                srsActionHtml = `
-                  <button class="vocab-row-srs-btn remove no-print" data-vocab-id="${itemId}" title="Hapus dari SRS" style="background: var(--text-main); border: 1px solid var(--text-main); color: var(--bg-main); padding: 4px 8px; border-radius: var(--radius-sm); font-size: 0.72rem; cursor: pointer; font-weight: 800; display: inline-flex; align-items: center; gap: 4px;">
-                    <i data-lucide="check" style="width:11px;height:11px;"></i> Hafal
-                  </button>
-                `;
-              }
+        <div class="vocab-list-group">
+          ${vocabList.map((v, vIdx) => {
+            const itemId = `vocab-${v.kana || v.kanji || v.rom}`;
+            const srsStatus = getSRSItemStatus(itemId);
+            
+            const kanjis = (v.kanji || '').split('').filter(c => c >= '\u4e00' && c <= '\u9faf');
+            let writingLinksHtml = '';
+            if (kanjis.length > 0) {
+              writingLinksHtml = `
+                <div class="vocab-item-kanji-bar">
+                  <span style="font-size: var(--text-3xs); color: var(--text-muted); font-weight: 600;">Tulis:</span>
+                  ${kanjis.map(kj => `
+                    <button class="vocab-kanji-chip no-print kanji-write-btn" data-kanji="${kj}" data-word="${v.kanji || ''}" data-meaning="${(v.en || v.id || '').replace(/"/g, '&quot;')}" onclick="event.stopPropagation();">
+                      <i data-lucide="pen-tool" style="width: 9px; height: 9px;"></i> ${kj}
+                    </button>
+                  `).join('')}
+                </div>
+              `;
+            }
+            
+            let srsActionHtml = '';
+            if (!srsStatus) {
+              srsActionHtml = `
+                <button class="vocab-row-srs-btn add no-print" data-vocab-id="${itemId}" title="Masukkan ke Antrean SRS" style="background: var(--bg-elevated); border: 1px solid var(--border); color: var(--text-muted); padding: 4px 10px; border-radius: var(--radius-sm); font-size: var(--text-3xs); cursor: pointer; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
+                  <i data-lucide="plus" style="width:11px;height:11px;"></i> Antrekan
+                </button>
+              `;
+            } else if (srsStatus === 'learning' || srsStatus === 'new') {
+              srsActionHtml = `
+                <button class="vocab-row-srs-btn remove no-print" data-vocab-id="${itemId}" title="Hapus dari SRS" style="background: var(--accent-dim); border: 1px solid var(--border-accent); color: var(--accent); padding: 4px 10px; border-radius: var(--radius-sm); font-size: var(--text-3xs); cursor: pointer; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
+                  <i data-lucide="bookmark" style="width:11px;height:11px;"></i> Belajar
+                </button>
+              `;
+            } else if (srsStatus === 'mastered') {
+              srsActionHtml = `
+                <button class="vocab-row-srs-btn remove no-print" data-vocab-id="${itemId}" title="Hapus dari SRS" style="background: var(--green-dim); border: 1px solid rgba(52,211,153,0.3); color: var(--green); padding: 4px 10px; border-radius: var(--radius-sm); font-size: var(--text-3xs); cursor: pointer; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
+                  <i data-lucide="check" style="width:11px;height:11px;"></i> Hafal
+                </button>
+              `;
+            }
 
-              return `
-                <tr class="vocab-list-row" data-vocab-idx="${vIdx}">
-                  <td class="vocab-list-cell vocab-list-cell-jp">
-                    ${formatJP(v)}
-                    ${writingLinksHtml}
-                  </td>
-                  <td class="vocab-list-cell vocab-list-cell-translation">
-                    ${v.en}
-                  </td>
-                  <td class="vocab-list-cell vocab-list-cell-action" style="white-space: nowrap; display: flex; gap: 8px; justify-content: flex-end; align-items: center;">
+            return `
+              <div class="vocab-list-item vocab-list-row" data-vocab-idx="${vIdx}">
+                <div class="vocab-item-top">
+                  <div class="vocab-item-jp">${formatJP(v)}</div>
+                  <div class="vocab-item-actions">
                     ${srsActionHtml}
-                    <button class="vocab-list-play-btn" data-vocab-text="${v.kana || v.kanji || v.rom}" style="width: 28px; height: 28px; border-radius: 50%; background: var(--bg-elevated); color: var(--text-secondary); display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--border); cursor: pointer; transition: all 0.2s;">
+                    <button class="vocab-list-play-btn" data-vocab-text="${v.kana || v.kanji || v.rom}" style="width: 28px; height: 28px; border-radius: var(--radius-sm); background: var(--bg-elevated); color: var(--text-secondary); display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--border); cursor: pointer; transition: all 0.2s;" title="Dengarkan Suara">
                       <i data-lucide="volume-2" style="width: 12px; height: 12px;"></i>
                     </button>
-                  </td>
-                </tr>
-              `;
-            }).join('')}
-          </tbody>
-        </table>
+                  </div>
+                </div>
+                
+                <div class="vocab-item-meaning">${v.en}</div>
+                ${writingLinksHtml}
+              </div>
+            `;
+          }).join('')}
+        </div>
       `;
     }
 
@@ -882,85 +830,37 @@ function _initChapterView(container, chapterId, chapterData, params) {
       html += `</div>`;
     }
 
-    // TAB: PRACTICE (Latihan Quizzes)
-    if (activeTab === 'practice') {
-      html += `
-        <div style="max-width: 600px; margin: 0 auto; padding-bottom: 24px;">
-          <div style="text-align: center; margin-bottom: 20px;">
-            <span style="font-size: var(--text-2xs); font-weight: 800; color: var(--text-main); background: var(--accent-dim); border: 1px solid var(--border); padding: 4px 12px; border-radius: 99px; text-transform: uppercase; letter-spacing: 0.05em;">
-              Latihan Pemahaman (Renshuu A/B)
-            </span>
-          </div>
-      `;
-
-      if (!chapterData.practice || chapterData.practice.length === 0) {
-        html += `
-          <div style="text-align: center; color: var(--text-muted); padding: 40px;">
-            <p>Tidak ada latihan kuis untuk bab ini.</p>
-          </div>
-        `;
-      } else {
-        html += `<div style="display: flex; flex-direction: column; gap: 20px;">`;
-        
-        chapterData.practice.forEach((q, i) => {
-          if (q.type === 'mcq') {
-            html += `
-              <div class="card" style="padding: 18px; border: 1px solid var(--border); border-radius: var(--radius-lg); position: relative; box-shadow: var(--shadow-sm); background: var(--bg-card);">
-                <div style="font-size: 0.7rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Pilihan Ganda • Q${i+1}</div>
-                <div style="font-weight: 800; color: var(--text-main); margin-bottom: 16px; font-size: 1.0rem; line-height: 1.45; font-family: var(--font-jp);">${q.question}</div>
-                <div style="display: flex; flex-direction: column; gap: 8px;">
-                  ${q.options.map(opt => {
-                    const checkJs = `
-                      const isCorrect = ${opt.correct ? 'true' : 'false'};
-                      if (isCorrect) {
-                        window._showPremiumToast('Benar! Kerja bagus.', 'success');
-                      } else {
-                        window._showPremiumToast('Kurang tepat. Coba lagi.', 'error');
-                      }
-                    `;
-                    return `
-                      <button class="btn btn-secondary" style="justify-content: flex-start; text-align: left; padding: 10px 14px; font-size: 0.85rem; border-radius: var(--radius-md); transition: all 0.2s; border: 1px solid var(--border); width: 100%; cursor: pointer;" onclick="${checkJs.replace(/\s+/g, ' ')}">
-                        ${opt.text}
-                      </button>
-                    `;
-                  }).join('')}
-                </div>
-              </div>
-            `;
-          } else if (q.type === 'fill') {
-            const checkInputJs = `
-              const v = document.getElementById('ans-${i}').value.trim().toLowerCase();
-              const expected = '${q.answer.toLowerCase().replace(/'/g, "\\'")}';
-              if (v === expected) {
-                window._showPremiumToast('Luar biasa, jawaban tepat.', 'success');
-              } else {
-                window._showPremiumToast('Belum tepat. Coba periksa ejaan Anda.', 'error');
-              }
-            `;
-            html += `
-              <div class="card" style="padding: 18px; border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); background: var(--bg-card);">
-                <div style="font-size: 0.7rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">Isian Singkat • Q${i+1}</div>
-                <div style="font-weight: 800; color: var(--text-main); margin-bottom: 16px; font-size: 1.0rem; line-height: 1.45; white-space: pre-line;">${q.question}</div>
-                <div style="display: flex; gap: 8px; align-items: center;">
-                  <input type="text" placeholder="Ketik jawaban Anda..." id="ans-${i}" style="flex: 1; padding: 10px 14px; border-radius: var(--radius-md); border: 1px solid var(--border); background: var(--bg-input); color: var(--text-main); font-size: 0.85rem; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='var(--text-main)'" onblur="this.style.borderColor='var(--border)'" />
-                  <button class="btn btn-primary" style="padding: 10px 18px; border-radius: var(--radius-md); font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.78rem;" onclick="${checkInputJs.replace(/\s+/g, ' ')}">Periksa</button>
-                </div>
-              </div>
-            `;
-          }
-        });
-        
-        html += `</div>`;
-      }
-      
-      html += `</div>`;
-    }
-
     html += `</div>`; // Close tab-content
+
+    // Sticky Floating Action Button (Stack Icon in Bottom-Right)
+    html += `
+      <button class="chapter-fab-btn" id="chapter-fab-btn" aria-label="Daftar Bab" title="Buka Daftar 50 Bab Belajar">
+        <i data-lucide="layers" style="width: 19px; height: 19px;"></i>
+      </button>
+    `;
+
+    // Chapter Picker Clean Modal (Direct list of all 50 chapters)
+    html += `
+      <div class="modal-overlay" id="chapter-picker-modal" style="display: none;">
+        <div class="modal-box ch-picker-modal-box">
+          <div class="ch-modal-header">
+            <div>
+              <div class="ch-modal-title">Pilih Bab Belajar</div>
+              <div class="ch-modal-sub">Minna no Nihongo (50 Bab Lengkap)</div>
+            </div>
+            <button class="modal-close-btn" id="ch-modal-close-btn" aria-label="Tutup">
+              <i data-lucide="x" style="width: 16px; height: 16px;"></i>
+            </button>
+          </div>
+
+          <div class="ch-modal-list-scroll" id="ch-modal-list"></div>
+        </div>
+      </div>
+    `;
+
     html += `</div>`; // Close chapter-container
 
     container.innerHTML = html;
-    renderBackBtn(container, '#/curriculum', 'Kurikulum');
 
     // Attach Event Listeners
     
@@ -972,13 +872,83 @@ function _initChapterView(container, chapterId, chapterData, params) {
       });
     });
 
-    // Chapter nav: prev / next buttons
-    container.querySelector('#ch-prev-btn')?.addEventListener('click', () => navigateChapter('prev'));
-    container.querySelector('#ch-next-btn')?.addEventListener('click', () => navigateChapter('next'));
+    // Kana Script switching (Hiragana <-> Katakana)
+    container.querySelectorAll('.kana-script-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const script = e.currentTarget.getAttribute('data-script');
+        if (script && script !== selectedKanaScript) {
+          selectedKanaScript = script;
+          renderContent();
+        }
+      });
+    });
 
-    // Chapter picker dropdown
-    container.querySelector('#chapter-picker')?.addEventListener('change', e => {
-      window.location.hash = `#/chapter/${e.target.value}`;
+    // Wire Chapter Picker Modal (Triggered by bottom-right Stack FAB)
+    const fabBtn = container.querySelector('#chapter-fab-btn');
+    const pickerModal = container.querySelector('#chapter-picker-modal');
+    const modalCloseBtn = container.querySelector('#ch-modal-close-btn');
+    const listContainer = container.querySelector('#ch-modal-list');
+
+    const renderModalChapterList = () => {
+      const groups = [
+        { name: 'Pra-MNN · Fondasi Aksara', chapters: sorted.filter(c => c.id === 0) },
+        { name: 'Shokyu I · JLPT N5 (Bab 1 – 25)', chapters: sorted.filter(c => c.id >= 1 && c.id <= 25) },
+        { name: 'Shokyu II · JLPT N4 (Bab 26 – 50)', chapters: sorted.filter(c => c.id >= 26 && c.id <= 50) }
+      ];
+
+      return groups.map(g => `
+        <div>
+          <div class="ch-modal-group-title">${g.name}</div>
+          <div class="ch-modal-items-list">
+            ${g.chapters.map(c => {
+              const isCurrent = c.id === chapterId;
+              const isDone = isUnitCompleted(c.id);
+              const cleanTitle = c.title.includes(':') ? c.title.split(':').slice(1).join(':').trim() : c.title;
+              return `
+                <a href="#/chapter/${c.id}" class="ch-modal-item ${isCurrent ? 'is-current' : ''}" data-ch-id="${c.id}">
+                  <div class="ch-modal-num">BAB ${c.id}</div>
+                  <div class="ch-modal-content">
+                    <div class="ch-modal-item-title">${cleanTitle}</div>
+                    ${c.desc ? `<div class="ch-modal-item-desc">${c.desc}</div>` : ''}
+                  </div>
+                  <div>
+                    ${isCurrent ? '<span style="font-size: 10.5px; font-weight: 750; color: var(--accent);">Aktif</span>' : isDone ? '<span style="font-size: 11px; font-weight: 600; color: var(--green);">✓ Selesai</span>' : '<i data-lucide="chevron-right" style="width: 14px; height: 14px; color: var(--text-muted);"></i>'}
+                  </div>
+                </a>
+              `;
+            }).join('')}
+          </div>
+        </div>
+      `).join('');
+    };
+
+    const openChapterModal = () => {
+      if (!pickerModal || !listContainer) return;
+      listContainer.innerHTML = renderModalChapterList();
+      if (window.lucide) lucide.createIcons({ root: listContainer });
+      pickerModal.style.display = 'flex';
+      
+      // Wire item clicks to close modal immediately upon selecting
+      listContainer.querySelectorAll('.ch-modal-item').forEach(item => {
+        item.addEventListener('click', () => {
+          pickerModal.style.display = 'none';
+        });
+      });
+
+      setTimeout(() => {
+        const cur = listContainer.querySelector('.ch-modal-item.is-current');
+        if (cur) cur.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      }, 50);
+    };
+
+    const closeChapterModal = () => {
+      if (pickerModal) pickerModal.style.display = 'none';
+    };
+
+    fabBtn?.addEventListener('click', openChapterModal);
+    modalCloseBtn?.addEventListener('click', closeChapterModal);
+    pickerModal?.addEventListener('click', (e) => {
+      if (e.target === pickerModal) closeChapterModal();
     });
 
     // Wire vocab flashcard flips & navigation (only if on vocab tab)
@@ -1060,6 +1030,17 @@ function _initChapterView(container, chapterId, chapterData, params) {
     });
 
     if (window.lucide) lucide.createIcons({ root: container });
+
+    // ── Quick Kanji Writing Modal ───────────────────────────────────────────
+    container.querySelectorAll('.kanji-write-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const kanji = btn.dataset.kanji;
+        const word  = btn.dataset.word;
+        const meaning = btn.dataset.meaning;
+        showKanjiWritingModal(kanji, word, meaning, chapterId);
+      });
+    });
   };
 
   // Listen to global display mode changes
@@ -1078,8 +1059,8 @@ function _initChapterView(container, chapterId, chapterData, params) {
     }
     
     const validTabs = chapterId === 0 
-      ? ['kana', 'pelafalan', 'vocab_salam', 'practice'] 
-      : ['vocab', 'grammar', 'conversation', 'practice'];
+      ? ['kana', 'pelafalan', 'vocab_salam'] 
+      : ['vocab', 'grammar', 'conversation'];
       
     if (validTabs.includes(targetTab)) {
       activeTab = targetTab;
@@ -1099,3 +1080,197 @@ function _initChapterView(container, chapterId, chapterData, params) {
   // Initial render
   renderContent();
 }
+
+// ── Quick Kanji Writing Modal ─────────────────────────────────────────────────
+function showKanjiWritingModal(kanji, word, meaning, chapterId) {
+  const modalRoot = document.getElementById('modal-root');
+  if (!modalRoot) return;
+
+  // State
+  let qCanvas = null, qCtx = null;
+  let qDrawing = false, qShowGuide = false;
+  let qUndoStack = [];
+  let qLastX = 0, qLastY = 0, qLastMidX = 0, qLastMidY = 0;
+  let qCurrentWidth = 8, qLastTime = 0;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'modal-overlay kanji-modal-overlay';
+  overlay.innerHTML = `
+    <div class="modal-box kanji-modal-box">
+      <!-- Header -->
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="font-size:2rem; font-family:var(--font-jp); font-weight:800; line-height:1; color:var(--text-main);">${kanji}</span>
+          <div>
+            <div style="font-size:var(--text-sm); font-weight:700; color:var(--text-main); line-height:1.2;">${word || kanji}</div>
+            ${meaning ? `<div style="font-size:var(--text-xs); color:var(--text-secondary); margin-top:2px;">${meaning}</div>` : ''}
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; gap:6px;">
+          <button id="qw-audio" title="Dengarkan Suara" style="width:32px; height:32px; border-radius:50%; background:var(--bg-hover); border:1px solid var(--border); cursor:pointer; display:flex; align-items:center; justify-content:center;">
+            <i data-lucide="volume-2" style="width:14px; height:14px;"></i>
+          </button>
+          <button id="qw-close" style="width:32px; height:32px; border-radius:50%; background:var(--bg-hover); border:1px solid var(--border); cursor:pointer; display:flex; align-items:center; justify-content:center;">
+            <i data-lucide="x" style="width:14px; height:14px;"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Canvas area -->
+      <div class="kanji-modal-canvas-wrap">
+        <div class="genkouyoushi-grid genkouyoushi-grid-diagonal"></div>
+        <div id="qw-guide" class="writing-guide-overlay" style="font-size:min(46vw, 220px);">${kanji}</div>
+        <canvas id="qw-canvas" class="writing-canvas" style="touch-action:none;"></canvas>
+      </div>
+
+      <!-- Controls -->
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-top:12px;">
+        <button id="qw-clear" class="btn btn-secondary" style="height:40px; font-size:var(--text-xs); font-weight:700; display:flex; align-items:center; justify-content:center; gap:4px;">
+          <i data-lucide="trash-2" style="width:13px; height:13px;"></i> Hapus
+        </button>
+        <button id="qw-undo" class="btn btn-secondary" style="height:40px; font-size:var(--text-xs); font-weight:700; display:flex; align-items:center; justify-content:center; gap:4px;" disabled>
+          <i data-lucide="undo" style="width:13px; height:13px;"></i> Urung
+        </button>
+        <button id="qw-guide-btn" class="btn btn-secondary" style="height:40px; font-size:var(--text-xs); font-weight:700; display:flex; align-items:center; justify-content:center; gap:4px;">
+          <i data-lucide="eye" style="width:13px; height:13px;"></i> Panduan
+        </button>
+      </div>
+
+      <!-- Footer -->
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-top:10px; gap:8px;">
+        <a href="#/writing?char=${encodeURIComponent(kanji)}&fromChapter=${chapterId}" id="qw-open-full" style="font-size:var(--text-xs); color:var(--text-muted); display:flex; align-items:center; gap:4px; text-decoration:none; font-weight:600;">
+          <i data-lucide="maximize-2" style="width:11px; height:11px;"></i> Buka Kanvas Penuh
+        </a>
+        <button id="qw-done" class="btn btn-primary" style="height:38px; padding:0 20px; font-size:var(--text-xs); font-weight:800;">
+          Selesai
+        </button>
+      </div>
+    </div>
+  `;
+
+  function close() { overlay.remove(); }
+
+  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+  overlay.querySelector('#qw-close').addEventListener('click', close);
+  overlay.querySelector('#qw-done').addEventListener('click', close);
+  overlay.querySelector('#qw-open-full').addEventListener('click', close);
+  overlay.querySelector('#qw-audio').addEventListener('click', () => window.playAudio && window.playAudio(kanji));
+
+  // Guide toggle
+  overlay.querySelector('#qw-guide-btn').addEventListener('click', () => {
+    qShowGuide = !qShowGuide;
+    const guideEl = overlay.querySelector('#qw-guide');
+    const guideBtn = overlay.querySelector('#qw-guide-btn');
+    if (qShowGuide) {
+      guideEl.classList.add('show-guide');
+      guideBtn.style.background = 'var(--accent-dim)';
+      guideBtn.style.borderColor = 'var(--accent)';
+      guideBtn.style.color = 'var(--accent-bright)';
+    } else {
+      guideEl.classList.remove('show-guide');
+      guideBtn.style.background = '';
+      guideBtn.style.borderColor = '';
+      guideBtn.style.color = '';
+    }
+  });
+
+  modalRoot.appendChild(overlay);
+  if (window.lucide) lucide.createIcons({ root: overlay });
+
+  // Setup canvas after DOM insertion
+  requestAnimationFrame(() => {
+    qCanvas = overlay.querySelector('#qw-canvas');
+    if (!qCanvas) return;
+    qCtx = qCanvas.getContext('2d');
+    if (!qCtx) return;
+
+    const rect = qCanvas.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+    qCanvas.width = rect.width * dpr;
+    qCanvas.height = rect.height * dpr;
+    qCtx.setTransform(1, 0, 0, 1, 0, 0);
+    qCtx.scale(dpr, dpr);
+
+    const getColor = () => getComputedStyle(document.documentElement).getPropertyValue('--text-main').trim() || '#ffffff';
+
+    const getCoords = (e) => {
+      const r = qCanvas.getBoundingClientRect();
+      const src = (e.touches && e.touches[0]) ? e.touches[0] : e;
+      return [src.clientX - r.left, src.clientY - r.top];
+    };
+
+    const qClearCanvas = () => {
+      qUndoStack.push(qCtx.getImageData(0, 0, qCanvas.width, qCanvas.height));
+      if (qUndoStack.length > 20) qUndoStack.shift();
+      const undoBtn = overlay.querySelector('#qw-undo');
+      if (undoBtn) undoBtn.removeAttribute('disabled');
+      qCtx.save();
+      qCtx.setTransform(1, 0, 0, 1, 0, 0);
+      qCtx.clearRect(0, 0, qCanvas.width, qCanvas.height);
+      qCtx.restore();
+    };
+
+    overlay.querySelector('#qw-clear').addEventListener('click', qClearCanvas);
+    overlay.querySelector('#qw-undo').addEventListener('click', () => {
+      if (!qUndoStack.length) return;
+      qCtx.putImageData(qUndoStack.pop(), 0, 0);
+      const undoBtn = overlay.querySelector('#qw-undo');
+      if (undoBtn && qUndoStack.length === 0) undoBtn.setAttribute('disabled', 'true');
+    });
+
+    const startQ = (e) => {
+      qDrawing = true;
+      qUndoStack.push(qCtx.getImageData(0, 0, qCanvas.width, qCanvas.height));
+      if (qUndoStack.length > 20) qUndoStack.shift();
+      const undoBtn = overlay.querySelector('#qw-undo');
+      if (undoBtn) undoBtn.removeAttribute('disabled');
+      const [x, y] = getCoords(e);
+      qLastX = x; qLastY = y; qLastMidX = x; qLastMidY = y;
+      qCurrentWidth = 8; qLastTime = performance.now();
+      const col = getColor();
+      qCtx.fillStyle = col; qCtx.strokeStyle = col;
+      qCtx.beginPath(); qCtx.arc(x, y, 4, 0, Math.PI * 2); qCtx.fill();
+    };
+    const drawQ = (e) => {
+      if (!qDrawing) return;
+      e.preventDefault();
+      const [x, y] = getCoords(e);
+      const dist = Math.hypot(x - qLastX, y - qLastY);
+      const now = performance.now();
+      const vel = dist / ((now - qLastTime) || 16);
+      qLastTime = now;
+      const target = 12 - Math.min(2.5, vel) * 3.2;
+      qCurrentWidth = qCurrentWidth + (target - qCurrentWidth) * 0.25;
+      const midX = (qLastX + x) / 2, midY = (qLastY + y) / 2;
+      const col = getColor();
+      qCtx.strokeStyle = col; qCtx.fillStyle = col;
+      qCtx.shadowBlur = 0.8; qCtx.shadowColor = col;
+      qCtx.beginPath();
+      qCtx.moveTo(qLastMidX, qLastMidY);
+      qCtx.quadraticCurveTo(qLastX, qLastY, midX, midY);
+      qCtx.lineWidth = qCurrentWidth;
+      qCtx.lineCap = 'round'; qCtx.lineJoin = 'round';
+      qCtx.stroke();
+      qLastX = x; qLastY = y; qLastMidX = midX; qLastMidY = midY;
+    };
+    const stopQ = () => { qDrawing = false; qCtx.beginPath(); };
+
+    if (window.PointerEvent) {
+      qCanvas.addEventListener('pointerdown', startQ);
+      qCanvas.addEventListener('pointermove', drawQ);
+      qCanvas.addEventListener('pointerup', stopQ);
+      qCanvas.addEventListener('pointercancel', stopQ);
+      qCanvas.addEventListener('pointerleave', stopQ);
+    } else {
+      qCanvas.addEventListener('mousedown', startQ);
+      qCanvas.addEventListener('mousemove', drawQ);
+      qCanvas.addEventListener('mouseup', stopQ);
+      qCanvas.addEventListener('mouseleave', stopQ);
+      qCanvas.addEventListener('touchstart', startQ, { passive: false });
+      qCanvas.addEventListener('touchmove', drawQ, { passive: false });
+      qCanvas.addEventListener('touchend', stopQ);
+    }
+  });
+}
+
+

@@ -1,5 +1,6 @@
 import { renderTopbar, showToast, renderBackBtn } from '../components/layout.js';
 import { speakJP } from '../audio.js';
+import { getUnitDetails } from '../data/curriculum.js';
 
 // Setup window.playAudio for standalone loading fallback
 if (!window.playAudio) {
@@ -1381,10 +1382,9 @@ const KANJI_N3_DATABASE = {
 
 // ── COMPONENT VIEW ──────────────────────────────────────────────────────────
 export function WritingView(container) {
-  renderTopbar('❖ Latihan Menulis', false, '#/');
-  renderBackBtn(container, '#/', 'Dashboard');
-
   // Application session states
+  let fromChapter = null;
+  let unitDetails = null;
   let activeTab = 'hiragana'; // 'hiragana' | 'katakana' | 'kanji' | 'kanji-n4' | 'kanji-n3'
   let sessionQueue = []; // Queue of active characters in the session
   let currentIndex = 0;
@@ -1395,10 +1395,10 @@ export function WritingView(container) {
   let lastY = 0;
   let lastMidX = 0;
   let lastMidY = 0;
-  let currentWidth = 8;
+  let currentWidth = 3;
   let lastTime = 0;
   let undoStack = []; // Stack for canvas snapshots to support Undo
-  let brushSizePreset = 'medium'; // 'thin' | 'medium' | 'thick' brush size selector
+  let brushSizePreset = 'ultra-thin'; // 'ultra-thin' | 'thin' | 'medium' | 'thick' | 'extra-thick' brush size selector
   let brushColorPreset = 'default'; // 'default' | 'vermilion' | 'indigo' | 'bamboo' brush ink color selector
 
   let showGuide = false; // Toggles trace helper overlay (low opacity)
@@ -1410,7 +1410,11 @@ export function WritingView(container) {
   if (qIndex !== -1) {
     const query = hash.slice(qIndex + 1);
     const params = new URLSearchParams(query);
-    const charParam = params.get('char');
+    const charParam = decodeURIComponent(params.get('char') || '').trim();
+    fromChapter = params.get('fromChapter');
+    if (fromChapter) {
+      unitDetails = getUnitDetails(fromChapter);
+    }
     if (charParam) {
       let foundItem = null;
       // Search in Kanji N5
@@ -1462,6 +1466,16 @@ export function WritingView(container) {
         });
       }
 
+      // Dynamic fallback for any Kanji or Kana character from curriculum!
+      if (!foundItem) {
+        foundItem = {
+          jp: charParam,
+          rom: charParam,
+          en: `Latihan Menulis ${charParam}`
+        };
+        activeTab = 'kanji';
+      }
+
       if (foundItem) {
         sessionQueue = [foundItem];
         currentIndex = 0;
@@ -1485,31 +1499,28 @@ export function WritingView(container) {
 
   // Screen 1: Selection Tab Lists
   const renderSelectionScreen = () => {
+    renderTopbar('Latihan Menulis', false, '#/');
+
     container.innerHTML = `
       <div class="writing-container page-container-standard fade-in" style="padding-bottom: 60px;">
-        <div style="margin-bottom: 18px;">
-          <span style="font-size: var(--text-3xs); font-weight: 600; color: var(--text-muted); letter-spacing: var(--tracking-wide);">
-            Praktik Menulis & Stroke Order
-          </span>
-          <h2 style="font-size: var(--text-lg); font-weight: 700; color: var(--text-main); margin: 2px 0 6px 0; letter-spacing: var(--tracking-tight);">
-            Latihan Menulis Kana & Kanji
-          </h2>
-          <p style="color: var(--text-secondary); font-size: var(--text-xs); line-height: 1.5; margin: 0; max-width: 620px;">
-            Pilih paket karakter di bawah ini untuk melatih ingatan motorik dan tata urutan goresan (*stroke order*) pada layar sentuh.
-          </p>
+        <div class="writing-selection-header">
+          <div class="label">Deliberate Writing</div>
+          <h2>Latihan Menulis</h2>
+          <p>Pilih paket karakter untuk melatih urutan goresan (<em>stroke order</em>) dan memperkuat ingatan motorik.</p>
         </div>
 
-        <!-- Dynamic Sub Tabs -->
-        <div style="display: flex; gap: 4px; background: var(--bg-elevated); padding: 4px; border-radius: var(--radius-md); border: 1px solid var(--border); margin-bottom: 20px; overflow-x: auto; -webkit-overflow-scrolling: touch;">
-          <button class="tab-btn selection-tab ${activeTab === 'hiragana' ? 'active' : ''}" data-target="hiragana" style="flex: 1; padding: 8px 14px; font-size: var(--text-xs); font-weight: 500; border-radius: var(--radius-sm); white-space: nowrap; text-align: center; min-width: 75px; border: none; cursor: pointer;">Hiragana</button>
-          <button class="tab-btn selection-tab ${activeTab === 'katakana' ? 'active' : ''}" data-target="katakana" style="flex: 1; padding: 8px 14px; font-size: var(--text-xs); font-weight: 500; border-radius: var(--radius-sm); white-space: nowrap; text-align: center; min-width: 75px; border: none; cursor: pointer;">Katakana</button>
-          <button class="tab-btn selection-tab ${activeTab === 'kanji' ? 'active' : ''}" data-target="kanji" style="flex: 1; padding: 8px 14px; font-size: var(--text-xs); font-weight: 500; border-radius: var(--radius-sm); white-space: nowrap; text-align: center; min-width: 75px; border: none; cursor: pointer;">Kanji N5</button>
-          <button class="tab-btn selection-tab ${activeTab === 'kanji-n4' ? 'active' : ''}" data-target="kanji-n4" style="flex: 1; padding: 8px 14px; font-size: var(--text-xs); font-weight: 500; border-radius: var(--radius-sm); white-space: nowrap; text-align: center; min-width: 75px; border: none; cursor: pointer;">Kanji N4</button>
-          <button class="tab-btn selection-tab ${activeTab === 'kanji-n3' ? 'active' : ''}" data-target="kanji-n3" style="flex: 1; padding: 8px 14px; font-size: var(--text-xs); font-weight: 500; border-radius: var(--radius-sm); white-space: nowrap; text-align: center; min-width: 75px; border: none; cursor: pointer;">Kanji N3</button>
+        <!-- Sticky Script Tabs -->
+        <div class="writing-tabs-sticky-wrapper">
+          <div class="writing-tabs-bar">
+            <button class="writing-tab-btn selection-tab ${activeTab === 'hiragana' ? 'active' : ''}" data-target="hiragana">Hiragana</button>
+            <button class="writing-tab-btn selection-tab ${activeTab === 'katakana' ? 'active' : ''}" data-target="katakana">Katakana</button>
+            <button class="writing-tab-btn selection-tab ${activeTab === 'kanji' ? 'active' : ''}" data-target="kanji">Kanji N5</button>
+            <button class="writing-tab-btn selection-tab ${activeTab === 'kanji-n4' ? 'active' : ''}" data-target="kanji-n4">Kanji N4</button>
+            <button class="writing-tab-btn selection-tab ${activeTab === 'kanji-n3' ? 'active' : ''}" data-target="kanji-n3">Kanji N3</button>
+          </div>
         </div>
 
-        <div id="selection-grid-container" style="display: flex; flex-direction: column; gap: 18px;">
-          <!-- Active categories will render dynamically here -->
+        <div id="selection-grid-container" style="display: flex; flex-direction: column; gap: 16px;">
         </div>
       </div>
     `;
@@ -1527,180 +1538,196 @@ export function WritingView(container) {
 
     if (activeTab === 'hiragana') {
       html = `
-        <h3 style="font-size: 0.8rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: -8px;">Paket Huruf Hiragana</h3>
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-          <button class="char-select-card" data-type="hiragana" data-key="vowels">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">あいうえお</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Vokal Dasar</div>
+        <div class="writing-section-header">
+          <span class="writing-section-title">Paket Huruf Hiragana</span>
+          <span class="writing-section-badge">10 Paket • 46 Huruf</span>
+        </div>
+        <div class="writing-pack-grid">
+          <button class="writing-pack-card" data-type="hiragana" data-key="vowels">
+            <div class="pack-chars">あいうえお</div>
+            <div class="pack-label">Vokal Dasar</div>
           </button>
-          <button class="char-select-card" data-type="hiragana" data-key="k_row">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">かきくけこ</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Baris Ka</div>
+          <button class="writing-pack-card" data-type="hiragana" data-key="k_row">
+            <div class="pack-chars">かきくけこ</div>
+            <div class="pack-label">Baris Ka</div>
           </button>
-          <button class="char-select-card" data-type="hiragana" data-key="s_row">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">さしすせそ</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Baris Sa</div>
+          <button class="writing-pack-card" data-type="hiragana" data-key="s_row">
+            <div class="pack-chars">さしすせそ</div>
+            <div class="pack-label">Baris Sa</div>
           </button>
-          <button class="char-select-card" data-type="hiragana" data-key="t_row">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">たちつてと</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Baris Ta</div>
+          <button class="writing-pack-card" data-type="hiragana" data-key="t_row">
+            <div class="pack-chars">たちつてと</div>
+            <div class="pack-label">Baris Ta</div>
           </button>
-          <button class="char-select-card" data-type="hiragana" data-key="n_row">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">なにぬねの</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Baris Na</div>
+          <button class="writing-pack-card" data-type="hiragana" data-key="n_row">
+            <div class="pack-chars">なにぬねの</div>
+            <div class="pack-label">Baris Na</div>
           </button>
-          <button class="char-select-card" data-type="hiragana" data-key="h_row">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">はひふへほ</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Baris Ha</div>
+          <button class="writing-pack-card" data-type="hiragana" data-key="h_row">
+            <div class="pack-chars">はひふへほ</div>
+            <div class="pack-label">Baris Ha</div>
           </button>
-          <button class="char-select-card" data-type="hiragana" data-key="m_row">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">まみむめも</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Baris Ma</div>
+          <button class="writing-pack-card" data-type="hiragana" data-key="m_row">
+            <div class="pack-chars">まみむめも</div>
+            <div class="pack-label">Baris Ma</div>
           </button>
-          <button class="char-select-card" data-type="hiragana" data-key="y_row">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">や・ゆ・よ</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Baris Ya</div>
+          <button class="writing-pack-card" data-type="hiragana" data-key="y_row">
+            <div class="pack-chars">や・ゆ・よ</div>
+            <div class="pack-label">Baris Ya</div>
           </button>
-          <button class="char-select-card" data-type="hiragana" data-key="r_row">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">らりるれろ</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Baris Ra</div>
+          <button class="writing-pack-card" data-type="hiragana" data-key="r_row">
+            <div class="pack-chars">らりるれろ</div>
+            <div class="pack-label">Baris Ra</div>
           </button>
-          <button class="char-select-card" data-type="hiragana" data-key="w_row">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">わ・を・ん</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Baris Wa & N</div>
+          <button class="writing-pack-card" data-type="hiragana" data-key="w_row">
+            <div class="pack-chars">わ・を・ん</div>
+            <div class="pack-label">Baris Wa & N</div>
           </button>
         </div>
-        <button class="btn btn-primary" data-type="hiragana" data-key="all" style="width: 100%; padding: 14px; font-weight: 800; margin-top: 6px;">
-          Latih Semua Hiragana (46 Huruf)
+        <button class="btn btn-primary writing-pack-all-btn" data-type="hiragana" data-key="all">
+          <i data-lucide="edit-3" style="width: 15px; height: 15px;"></i> Latih Semua Hiragana (46 Huruf)
         </button>
       `;
     } else if (activeTab === 'katakana') {
       html = `
-        <h3 style="font-size: 0.8rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: -8px;">Paket Huruf Katakana</h3>
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-          <button class="char-select-card" data-type="katakana" data-key="vowels">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">アイウエオ</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Vokal Dasar</div>
+        <div class="writing-section-header">
+          <span class="writing-section-title">Paket Huruf Katakana</span>
+          <span class="writing-section-badge">10 Paket • 46 Huruf</span>
+        </div>
+        <div class="writing-pack-grid">
+          <button class="writing-pack-card" data-type="katakana" data-key="vowels">
+            <div class="pack-chars">アイウエオ</div>
+            <div class="pack-label">Vokal Dasar</div>
           </button>
-          <button class="char-select-card" data-type="katakana" data-key="k_row">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">カキクケコ</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Baris Ka</div>
+          <button class="writing-pack-card" data-type="katakana" data-key="k_row">
+            <div class="pack-chars">カキクケコ</div>
+            <div class="pack-label">Baris Ka</div>
           </button>
-          <button class="char-select-card" data-type="katakana" data-key="s_row">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">サシスセソ</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Baris Sa</div>
+          <button class="writing-pack-card" data-type="katakana" data-key="s_row">
+            <div class="pack-chars">サシスセソ</div>
+            <div class="pack-label">Baris Sa</div>
           </button>
-          <button class="char-select-card" data-type="katakana" data-key="t_row">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">タチツテト</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Baris Ta</div>
+          <button class="writing-pack-card" data-type="katakana" data-key="t_row">
+            <div class="pack-chars">タチツテト</div>
+            <div class="pack-label">Baris Ta</div>
           </button>
-          <button class="char-select-card" data-type="katakana" data-key="n_row">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">ナニヌネノ</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Baris Na</div>
+          <button class="writing-pack-card" data-type="katakana" data-key="n_row">
+            <div class="pack-chars">ナニヌネノ</div>
+            <div class="pack-label">Baris Na</div>
           </button>
-          <button class="char-select-card" data-type="katakana" data-key="h_row">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">ハヒフヘホ</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Baris Ha</div>
+          <button class="writing-pack-card" data-type="katakana" data-key="h_row">
+            <div class="pack-chars">ハヒフヘホ</div>
+            <div class="pack-label">Baris Ha</div>
           </button>
-          <button class="char-select-card" data-type="katakana" data-key="m_row">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">マミムメモ</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Baris Ma</div>
+          <button class="writing-pack-card" data-type="katakana" data-key="m_row">
+            <div class="pack-chars">マミムメモ</div>
+            <div class="pack-label">Baris Ma</div>
           </button>
-          <button class="char-select-card" data-type="katakana" data-key="y_row">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">ヤ・ユ・ヨ</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Baris Ya</div>
+          <button class="writing-pack-card" data-type="katakana" data-key="y_row">
+            <div class="pack-chars">ヤ・ユ・ヨ</div>
+            <div class="pack-label">Baris Ya</div>
           </button>
-          <button class="char-select-card" data-type="katakana" data-key="r_row">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">ラリルレロ</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Baris Ra</div>
+          <button class="writing-pack-card" data-type="katakana" data-key="r_row">
+            <div class="pack-chars">ラリルレロ</div>
+            <div class="pack-label">Baris Ra</div>
           </button>
-          <button class="char-select-card" data-type="katakana" data-key="w_row">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">ワ・ヲ・ン</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Baris Wa & N</div>
+          <button class="writing-pack-card" data-type="katakana" data-key="w_row">
+            <div class="pack-chars">ワ・ヲ・ン</div>
+            <div class="pack-label">Baris Wa & N</div>
           </button>
         </div>
-        <button class="btn btn-primary" data-type="katakana" data-key="all" style="width: 100%; padding: 14px; font-weight: 800; margin-top: 6px;">
-          Latih Semua Katakana (46 Huruf)
+        <button class="btn btn-primary writing-pack-all-btn" data-type="katakana" data-key="all">
+          <i data-lucide="edit-3" style="width: 15px; height: 15px;"></i> Latih Semua Katakana (46 Huruf)
         </button>
       `;
     } else if (activeTab === 'kanji') {
       html = `
-        <h3 style="font-size: 0.8rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: -8px;">Kategori Kanji N5</h3>
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-          <button class="char-select-card" data-type="kanji" data-key="numbers_time">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">一二三四五</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Angka & Waktu</div>
+        <div class="writing-section-header">
+          <span class="writing-section-title">Kategori Kanji N5</span>
+          <span class="writing-section-badge">4 Kategori • 80 Kanji</span>
+        </div>
+        <div class="writing-pack-grid">
+          <button class="writing-pack-card" data-type="kanji" data-key="numbers_time">
+            <div class="pack-chars">一二三四五</div>
+            <div class="pack-label">Angka & Waktu</div>
           </button>
-          <button class="char-select-card" data-type="kanji" data-key="nature_places">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">日月火水木</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Alam & Tempat</div>
+          <button class="writing-pack-card" data-type="kanji" data-key="nature_places">
+            <div class="pack-chars">日月火水木</div>
+            <div class="pack-label">Alam & Tempat</div>
           </button>
-          <button class="char-select-card" data-type="kanji" data-key="people_family">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">人子男女手</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Orang & Keluarga</div>
+          <button class="writing-pack-card" data-type="kanji" data-key="people_family">
+            <div class="pack-chars">人子男女手</div>
+            <div class="pack-label">Orang & Keluarga</div>
           </button>
-          <button class="char-select-card" data-type="kanji" data-key="places_buildings">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">国店駅電車</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Tempat & Bangunan</div>
+          <button class="writing-pack-card" data-type="kanji" data-key="places_buildings">
+            <div class="pack-chars">国店駅電車</div>
+            <div class="pack-label">Tempat & Bangunan</div>
           </button>
         </div>
-        <button class="btn btn-primary" data-type="kanji" data-key="all" style="width: 100%; padding: 14px; font-weight: 800; margin-top: 6px;">
-          Latih Semua Kanji N5 (80 Huruf)
+        <button class="btn btn-primary writing-pack-all-btn" data-type="kanji" data-key="all">
+          <i data-lucide="edit-3" style="width: 15px; height: 15px;"></i> Latih Semua Kanji N5 (80 Huruf)
         </button>
       `;
     } else if (activeTab === 'kanji-n4') {
       html = `
-        <h3 style="font-size: 0.8rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: -8px;">Kategori Kanji N4</h3>
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-          <button class="char-select-card" data-type="kanji-n4" data-key="movement">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">出入立開閉</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Gerakan</div>
+        <div class="writing-section-header">
+          <span class="writing-section-title">Kategori Kanji N4</span>
+          <span class="writing-section-badge">4 Kategori • 80 Kanji</span>
+        </div>
+        <div class="writing-pack-grid">
+          <button class="writing-pack-card" data-type="kanji-n4" data-key="movement">
+            <div class="pack-chars">出入立開閉</div>
+            <div class="pack-label">Gerakan</div>
           </button>
-          <button class="char-select-card" data-type="kanji-n4" data-key="time_body">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">朝昼夜春夏</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Waktu & Tubuh</div>
+          <button class="writing-pack-card" data-type="kanji-n4" data-key="time_body">
+            <div class="pack-chars">朝昼夜春夏</div>
+            <div class="pack-label">Waktu & Tubuh</div>
           </button>
-          <button class="char-select-card" data-type="kanji-n4" data-key="society_business">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">民使作仕事</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Masyarakat & Bisnis</div>
+          <button class="writing-pack-card" data-type="kanji-n4" data-key="society_business">
+            <div class="pack-chars">民使作仕事</div>
+            <div class="pack-label">Masyarakat & Bisnis</div>
           </button>
-          <button class="char-select-card" data-type="kanji-n4" data-key="school_action">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">考教室文字</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Sekolah & Aksi</div>
+          <button class="writing-pack-card" data-type="kanji-n4" data-key="school_action">
+            <div class="pack-chars">考教室文字</div>
+            <div class="pack-label">Sekolah & Aksi</div>
           </button>
         </div>
-        <button class="btn btn-primary" data-type="kanji-n4" data-key="all" style="width: 100%; padding: 14px; font-weight: 800; margin-top: 6px;">
-          Latih Semua Kanji N4 (80 Huruf)
+        <button class="btn btn-primary writing-pack-all-btn" data-type="kanji-n4" data-key="all">
+          <i data-lucide="edit-3" style="width: 15px; height: 15px;"></i> Latih Semua Kanji N4 (80 Huruf)
         </button>
       `;
     } else if (activeTab === 'kanji-n3') {
       html = `
-        <h3 style="font-size: 0.8rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); padding-bottom: 6px; margin-bottom: -8px;">Kategori Kanji N3</h3>
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-          <button class="char-select-card" data-type="kanji-n3" data-key="society">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">政治経済法</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Masyarakat</div>
+        <div class="writing-section-header">
+          <span class="writing-section-title">Kategori Kanji N3</span>
+          <span class="writing-section-badge">4 Kategori • 80 Kanji</span>
+        </div>
+        <div class="writing-pack-grid">
+          <button class="writing-pack-card" data-type="kanji-n3" data-key="society">
+            <div class="pack-chars">政治経済法</div>
+            <div class="pack-label">Masyarakat</div>
           </button>
-          <button class="char-select-card" data-type="kanji-n3" data-key="business_science">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">研究科数算</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Bisnis & Sains</div>
+          <button class="writing-pack-card" data-type="kanji-n3" data-key="business_science">
+            <div class="pack-chars">研究科数算</div>
+            <div class="pack-label">Bisnis & Sains</div>
           </button>
-          <button class="char-select-card" data-type="kanji-n3" data-key="mind_emotion">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">想念感情緒</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Pikiran & Emosi</div>
+          <button class="writing-pack-card" data-type="kanji-n3" data-key="mind_emotion">
+            <div class="pack-chars">想念感情緒</div>
+            <div class="pack-label">Pikiran & Emosi</div>
           </button>
-          <button class="char-select-card" data-type="kanji-n3" data-key="action_state">
-            <div style="font-size: 1.5rem; font-family: var(--font-jp); font-weight: 800; color: var(--accent-bright); margin-bottom: 4px;">選決認表現</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-main);">Aksi & Keadaan</div>
+          <button class="writing-pack-card" data-type="kanji-n3" data-key="action_state">
+            <div class="pack-chars">選決認表現</div>
+            <div class="pack-label">Aksi & Keadaan</div>
           </button>
         </div>
-        <button class="btn btn-primary" data-type="kanji-n3" data-key="all" style="width: 100%; padding: 14px; font-weight: 800; margin-top: 6px;">
-          Latih Semua Kanji N3 (80 Huruf)
+        <button class="btn btn-primary writing-pack-all-btn" data-type="kanji-n3" data-key="all">
+          <i data-lucide="edit-3" style="width: 15px; height: 15px;"></i> Latih Semua Kanji N3 (80 Huruf)
         </button>
       `;
     }
 
     grid.innerHTML = html;
+    if (window.lucide) lucide.createIcons({ root: grid });
   };
 
   const bindSelectionEvents = () => {
@@ -1751,7 +1778,7 @@ export function WritingView(container) {
       renderLayout();
     };
 
-    container.querySelectorAll('.char-select-card, .btn-primary').forEach(el => {
+    container.querySelectorAll('.writing-pack-card, .writing-pack-all-btn, .btn-primary').forEach(el => {
       el.addEventListener('click', (e) => {
         const target = e.target.closest('[data-type]');
         if (!target) return;
@@ -1771,107 +1798,118 @@ export function WritingView(container) {
       activeTab === 'kanji' ? 'Kanji N5' : 
       activeTab === 'kanji-n4' ? 'Kanji N4' : 'Kanji N3';
 
+    if (fromChapter) {
+      renderTopbar(`Tulis Kanji — Bab ${fromChapter}`, false, `#/chapter/${fromChapter}`);
+    } else {
+      renderTopbar('Latihan Menulis', false, '#/');
+    }
+
     container.innerHTML = `
-      <div class="writing-practice-container fade-in">
+      <div class="writing-practice-layout fade-in">
         
-        <!-- Upper Navigation & Meta -->
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
-          <button id="btn-back-menu" class="btn btn-secondary" style="padding: 6px 12px; font-size: var(--text-xs); height: 32px; display: flex; align-items: center; gap: 4px;">
-            <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i> Menu Latihan
-          </button>
-          
-          <div style="font-size: var(--text-2xs); font-weight: 800; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em; background: var(--bg-hover); padding: 4px 10px; border-radius: var(--radius-sm); border: 1px solid var(--border);">
-            ${categoryTitle}
+        ${fromChapter ? `
+          <!-- Deep-link from Minna / Chapter Mode -->
+          <div class="writing-meta-bar">
+            <a href="#/chapter/${fromChapter}" class="writing-back-btn">
+              <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i> Bab ${fromChapter}
+            </a>
+            <div class="writing-category-badge">Kosakata Bab ${fromChapter}</div>
           </div>
-        </div>
 
-        <!-- Upper Progress Bar -->
-        <div style="margin-bottom: 24px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; font-size: var(--text-xs); color: var(--text-secondary); font-weight: 600;">
-            <span>Huruf <strong>${currentIndex + 1}</strong> dari <strong>${sessionQueue.length}</strong></span>
-            <span>Sisa ${sessionQueue.length - currentIndex}</span>
+          <!-- Character info cue -->
+          <div class="writing-cue-card">
+            <div>
+              <div class="cue-tag">LATIHAN MENULIS</div>
+              <div class="cue-main-row">
+                <span class="cue-char">${char.jp}</span>
+                ${char.en ? `<span class="cue-meaning">· ${char.en}</span>` : ''}
+              </div>
+            </div>
+            <button id="btn-audio-pronounce" class="writing-cue-audio" title="Dengarkan Suara">
+              <i data-lucide="volume-2" style="width: 16px; height: 16px;"></i>
+            </button>
           </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: ${(currentIndex / sessionQueue.length) * 100}%"></div>
-          </div>
-        </div>
-
-        <!-- Dynamic Brush Settings Control Panel -->
-        <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 12px; margin-bottom: 16px; background: var(--bg-hover); padding: 10px 14px; border-radius: var(--radius-md); border: 1px solid var(--border); align-items: center;">
-          <!-- Brush Size Segment -->
-          <div style="display: flex; flex-direction: column; gap: 6px;">
-            <span style="font-size: var(--text-2xs); font-weight: 800; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">Ukuran Kuas</span>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <button id="btn-brush-thin" class="brush-size-btn" title="Tipis" style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid ${brushSizePreset === 'thin' ? 'var(--accent)' : 'var(--border)'}; background: ${brushSizePreset === 'thin' ? 'var(--accent-dim)' : 'transparent'}; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s;">
-                <div style="width: 3px; height: 3px; border-radius: 50%; background: ${brushSizePreset === 'thin' ? 'var(--accent-bright)' : 'var(--text-main)'};"></div>
-              </button>
-              
-              <button id="btn-brush-medium" class="brush-size-btn" title="Sedang" style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid ${brushSizePreset === 'medium' ? 'var(--accent)' : 'var(--border)'}; background: ${brushSizePreset === 'medium' ? 'var(--accent-dim)' : 'transparent'}; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s;">
-                <div style="width: 7px; height: 7px; border-radius: 50%; background: ${brushSizePreset === 'medium' ? 'var(--accent-bright)' : 'var(--text-main)'};"></div>
-              </button>
-              
-              <button id="btn-brush-thick" class="brush-size-btn" title="Tebal" style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid ${brushSizePreset === 'thick' ? 'var(--accent)' : 'var(--border)'}; background: ${brushSizePreset === 'thick' ? 'var(--accent-dim)' : 'transparent'}; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s;">
-                <div style="width: 12px; height: 12px; border-radius: 50%; background: ${brushSizePreset === 'thick' ? 'var(--accent-bright)' : 'var(--text-main)'};"></div>
-              </button>
+        ` : `
+          <!-- Standard Core Mode -->
+          <div class="writing-meta-bar">
+            <button id="btn-back-menu" class="writing-back-btn">
+              <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i> Menu
+            </button>
+            <div class="writing-meta-right">
+              <span class="writing-counter-pill">${currentIndex + 1} / ${sessionQueue.length}</span>
+              <div class="writing-category-badge">${categoryTitle}</div>
             </div>
           </div>
-          
-          <!-- Ink Color Segment -->
-          <div style="display: flex; flex-direction: column; gap: 6px; border-left: 1px solid var(--border); padding-left: 12px;">
-            <span style="font-size: var(--text-2xs); font-weight: 800; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.05em;">Warna Tinta</span>
-            <div style="display: flex; align-items: center; gap: 8px;">
-              <!-- Theme Default (Monochrome Split Circle) -->
-              <button id="btn-color-default" class="brush-color-btn" title="Default" style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid ${brushColorPreset === 'default' ? 'var(--accent)' : 'var(--border)'}; background: ${brushColorPreset === 'default' ? 'var(--accent-dim)' : 'transparent'}; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s;">
-                <div style="width: 12px; height: 12px; border-radius: 50%; background: linear-gradient(135deg, var(--text-main) 50%, var(--bg-hover) 50%); border: 1px solid var(--border-bright);"></div>
-              </button>
-              <!-- Vermilion Red -->
-              <button id="btn-color-vermilion" class="brush-color-btn" title="Shu (Merah)" style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid ${brushColorPreset === 'vermilion' ? 'var(--accent)' : 'var(--border)'}; background: ${brushColorPreset === 'vermilion' ? 'var(--accent-dim)' : 'transparent'}; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s;">
-                <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--red);"></div>
-              </button>
-              <!-- Indigo Blue -->
-              <button id="btn-color-indigo" class="brush-color-btn" title="Ai (Biru)" style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid ${brushColorPreset === 'indigo' ? 'var(--accent)' : 'var(--border)'}; background: ${brushColorPreset === 'indigo' ? 'var(--accent-dim)' : 'transparent'}; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s;">
-                <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--blue);"></div>
-              </button>
-              <!-- Bamboo Green -->
-              <button id="btn-color-bamboo" class="brush-color-btn" title="Take (Hijau)" style="width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid ${brushColorPreset === 'bamboo' ? 'var(--accent)' : 'var(--border)'}; background: ${brushColorPreset === 'bamboo' ? 'var(--accent-dim)' : 'transparent'}; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s;">
-                <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--green);"></div>
-              </button>
+
+          <!-- Slim Progress Track -->
+          <div class="writing-progress-track">
+            <div class="writing-progress-bar" style="width: ${((currentIndex + 1) / sessionQueue.length) * 100}%"></div>
+          </div>
+
+          <!-- Cue Prompt -->
+          <div class="writing-cue-card">
+            <div>
+              <div class="cue-tag">TULIS KARAKTER</div>
+              <div class="cue-main-row">
+                <span class="cue-char">${char.rom ? char.rom.toUpperCase() : char.jp}</span>
+                ${char.en ? `<span class="cue-meaning">(${char.en})</span>` : ''}
+              </div>
             </div>
+            <button id="btn-audio-pronounce" class="writing-cue-audio" aria-label="Putar Pengucapan" title="Putar Suara">
+              <i data-lucide="volume-2" style="width: 17px; height: 17px;"></i>
+            </button>
+          </div>
+        `}
+
+        <!-- Brush Toolbar -->
+        <div class="writing-toolbar">
+          <span class="toolbar-label">Kuas</span>
+          <div class="toolbar-group">
+            <button id="btn-brush-ultra-thin" class="toolbar-dot-btn ${brushSizePreset === 'ultra-thin' ? 'active' : ''}" title="Sangat Tipis (2px)">
+              <div class="dot-inner" style="width: 2.5px; height: 2.5px;"></div>
+            </button>
+            <button id="btn-brush-thin" class="toolbar-dot-btn ${brushSizePreset === 'thin' ? 'active' : ''}" title="Tipis (4px)">
+              <div class="dot-inner" style="width: 4.5px; height: 4.5px;"></div>
+            </button>
+            <button id="btn-brush-medium" class="toolbar-dot-btn ${brushSizePreset === 'medium' ? 'active' : ''}" title="Sedang (8px)">
+              <div class="dot-inner" style="width: 7px; height: 7px;"></div>
+            </button>
+            <button id="btn-brush-thick" class="toolbar-dot-btn ${brushSizePreset === 'thick' ? 'active' : ''}" title="Tebal (12px)">
+              <div class="dot-inner" style="width: 10px; height: 10px;"></div>
+            </button>
+            <button id="btn-brush-extra-thick" class="toolbar-dot-btn ${brushSizePreset === 'extra-thick' ? 'active' : ''}" title="Sangat Tebal (18px)">
+              <div class="dot-inner" style="width: 13.5px; height: 13.5px;"></div>
+            </button>
+          </div>
+          <div class="toolbar-sep"></div>
+          <span class="toolbar-label">Tinta</span>
+          <div class="toolbar-group">
+            <button id="btn-color-default" class="toolbar-color-btn ${brushColorPreset === 'default' ? 'active' : ''}" title="Default">
+              <div class="color-swatch" style="background: linear-gradient(135deg, var(--text-main) 50%, var(--bg-hover) 50%);"></div>
+            </button>
+            <button id="btn-color-vermilion" class="toolbar-color-btn ${brushColorPreset === 'vermilion' ? 'active' : ''}" title="Shu (Merah)">
+              <div class="color-swatch" style="background: var(--red);"></div>
+            </button>
+            <button id="btn-color-indigo" class="toolbar-color-btn ${brushColorPreset === 'indigo' ? 'active' : ''}" title="Ai (Biru)">
+              <div class="color-swatch" style="background: var(--blue);"></div>
+            </button>
+            <button id="btn-color-bamboo" class="toolbar-color-btn ${brushColorPreset === 'bamboo' ? 'active' : ''}" title="Take (Hijau)">
+              <div class="color-swatch" style="background: var(--green);"></div>
+            </button>
           </div>
         </div>
 
-        <!-- Practice Cue Display Card -->
-        <div class="card" style="padding: 16px 20px; text-align: center; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; background: var(--bg-hover); border: none;">
-          <div style="text-align: left;">
-            <div style="font-size: var(--text-xs); color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 2px;">Tulis Huruf Berikut:</div>
-            <div style="display: flex; align-items: baseline; gap: 8px;">
-              <h1 style="font-size: 1.8rem; font-weight: 800; color: var(--accent-bright); font-family: var(--font-mono);">${char.rom.toUpperCase()}</h1>
-              <span style="font-size: var(--text-xs); color: var(--text-secondary); font-weight: 600;">(${char.en})</span>
-            </div>
-          </div>
-          
-          <button id="btn-audio-pronounce" class="vocab-play-btn" style="width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center;" aria-label="Putar Pengucapan TTS">
-            <i data-lucide="volume-2" style="width: 20px; height: 20px;"></i>
-          </button>
-        </div>
-
-        <!-- HTML5 Genkouyoushi Writing Box -->
+        <!-- Canvas -->
         <div class="writing-canvas-container">
-          <!-- Guide Cross Overlay Grid -->
           <div class="genkouyoushi-grid genkouyoushi-grid-diagonal"></div>
-          
-          <!-- Large Character Guide (Tracing Overlay / Self Comparison Overlay) -->
           <div id="writing-guide" class="writing-guide-overlay ${showGuide ? 'show-guide' : ''} ${isComparing ? 'show-comparison' : ''}">
             ${char.jp}
           </div>
-          
-          <!-- Drawing Canvas -->
           <canvas id="writing-canvas" class="writing-canvas" width="640" height="640"></canvas>
         </div>
 
-        <!-- Action Control Area (Tactile Buttons) -->
-        <div id="writing-controls" style="display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
-          <!-- Contextual controls will render here dynamically based on isComparing state -->
+        <!-- Actions -->
+        <div id="writing-controls">
         </div>
 
       </div>
@@ -1891,41 +1929,25 @@ export function WritingView(container) {
     // Size picker logic
     const selectBrushSize = (preset) => {
       brushSizePreset = preset;
-      
-      document.querySelectorAll('.brush-size-btn').forEach(btn => {
-        btn.style.borderColor = 'var(--border)';
-        btn.style.background = 'transparent';
-        const inner = btn.querySelector('div');
-        if (inner) inner.style.background = 'var(--text-main)';
-      });
-      
+      document.querySelectorAll('.toolbar-dot-btn').forEach(btn => btn.classList.remove('active'));
       const activeBtn = document.getElementById(`btn-brush-${preset}`);
-      if (activeBtn) {
-        activeBtn.style.borderColor = 'var(--accent)';
-        activeBtn.style.background = 'var(--accent-dim)';
-        const inner = activeBtn.querySelector('div');
-        if (inner) inner.style.background = 'var(--accent-bright)';
-      }
+      if (activeBtn) activeBtn.classList.add('active');
     };
 
-    document.getElementById('btn-brush-thin').addEventListener('click', () => selectBrushSize('thin'));
-    document.getElementById('btn-brush-medium').addEventListener('click', () => selectBrushSize('medium'));
-    document.getElementById('btn-brush-thick').addEventListener('click', () => selectBrushSize('thick'));
+    const brushPresets = ['ultra-thin', 'thin', 'medium', 'thick', 'extra-thick'];
+    brushPresets.forEach(preset => {
+      const btn = document.getElementById(`btn-brush-${preset}`);
+      if (btn) {
+        btn.addEventListener('click', () => selectBrushSize(preset));
+      }
+    });
 
     // Color picker logic
     const selectBrushColor = (preset) => {
       brushColorPreset = preset;
-      
-      document.querySelectorAll('.brush-color-btn').forEach(btn => {
-        btn.style.borderColor = 'var(--border)';
-        btn.style.background = 'transparent';
-      });
-      
+      document.querySelectorAll('.toolbar-color-btn').forEach(btn => btn.classList.remove('active'));
       const activeBtn = document.getElementById(`btn-color-${preset}`);
-      if (activeBtn) {
-        activeBtn.style.borderColor = 'var(--accent)';
-        activeBtn.style.background = 'var(--accent-dim)';
-      }
+      if (activeBtn) activeBtn.classList.add('active');
     };
 
     document.getElementById('btn-color-default').addEventListener('click', () => selectBrushColor('default'));
@@ -1948,22 +1970,22 @@ export function WritingView(container) {
 
     if (!isComparing) {
       controls.innerHTML = `
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;">
-          <button id="btn-clear-canvas" class="btn btn-secondary btn-lg" style="height: 48px; font-weight: 700; padding: 0 4px; font-size: var(--text-xs); display: flex; align-items: center; justify-content: center; gap: 4px;">
+        <div class="writing-action-row">
+          <button id="btn-clear-canvas" class="writing-action-btn" title="Hapus Gambar">
             <i data-lucide="trash-2" style="width: 14px; height: 14px;"></i> Hapus
           </button>
           
-          <button id="btn-undo-canvas" class="btn btn-secondary btn-lg" style="height: 48px; font-weight: 700; padding: 0 4px; font-size: var(--text-xs); display: flex; align-items: center; justify-content: center; gap: 4px;" ${undoStack.length === 0 ? 'disabled' : ''}>
+          <button id="btn-undo-canvas" class="writing-action-btn" title="Urung Goresan Terakhir" ${undoStack.length === 0 ? 'disabled' : ''}>
             <i data-lucide="undo" style="width: 14px; height: 14px;"></i> Urung
           </button>
           
-          <button id="btn-toggle-hint" class="btn btn-secondary btn-lg" style="height: 48px; font-weight: 700; padding: 0 4px; font-size: var(--text-xs); display: flex; align-items: center; justify-content: center; gap: 4px; background: ${showGuide ? 'var(--accent-dim)' : 'transparent'}; border-color: ${showGuide ? 'var(--accent)' : 'var(--border)'}; color: ${showGuide ? 'var(--accent-bright)' : 'var(--text-main)'};">
+          <button id="btn-toggle-hint" class="writing-action-btn ${showGuide ? 'active-hint' : ''}" title="Tampilkan Panduan Trace">
             <i data-lucide="${showGuide ? 'eye-off' : 'eye'}" style="width: 14px; height: 14px;"></i> Petunjuk
           </button>
         </div>
 
-        <button id="btn-compare-canvas" class="btn btn-primary btn-lg" style="height: 52px; font-weight: 800; width: 100%; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 4px;">
-          <i data-lucide="columns" style="width: 18px; height: 18px;"></i> Bandingkan Coretan
+        <button id="btn-compare-canvas" class="btn btn-primary writing-compare-btn">
+          <i data-lucide="columns" style="width: 16px; height: 16px;"></i> Bandingkan Coretan
         </button>
       `;
 
@@ -1988,10 +2010,12 @@ export function WritingView(container) {
       document.getElementById('btn-toggle-hint').addEventListener('click', () => {
         showGuide = !showGuide;
         const guideEl = document.getElementById('writing-guide');
-        if (showGuide) {
-          guideEl.classList.add('show-guide');
-        } else {
-          guideEl.classList.remove('show-guide');
+        if (guideEl) {
+          if (showGuide) {
+            guideEl.classList.add('show-guide');
+          } else {
+            guideEl.classList.remove('show-guide');
+          }
         }
         renderControls(); // Redraw buttons for state changes
       });
@@ -1999,8 +2023,10 @@ export function WritingView(container) {
       document.getElementById('btn-compare-canvas').addEventListener('click', () => {
         isComparing = true;
         const guideEl = document.getElementById('writing-guide');
-        guideEl.classList.remove('show-guide');
-        guideEl.classList.add('show-comparison');
+        if (guideEl) {
+          guideEl.classList.remove('show-guide');
+          guideEl.classList.add('show-comparison');
+        }
         
         // Auto announce pronunciation for auditory confirmation upon comparison
         window.playAudio(sessionQueue[currentIndex].jp);
@@ -2011,17 +2037,17 @@ export function WritingView(container) {
     } else {
       // Comparison View (Evaluation Buttons)
       controls.innerHTML = `
-        <div style="text-align: center; font-size: var(--text-xs); color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">
-          Bandingkan lukisan Anda dengan referensi di atas
+        <div class="writing-eval-hint">
+          Bandingkan goresan Anda dengan referensi karakter di atas
         </div>
         
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; width: 100%;">
-          <button id="btn-practice-retry" class="btn btn-secondary btn-lg" style="height: 52px; font-weight: 700; border-color: var(--border-bright); background: var(--bg-hover);">
-            <i data-lucide="rotate-ccw" style="width: 18px; height: 18px; margin-right: 6px;"></i> Latih Lagi
+        <div class="writing-eval-row">
+          <button id="btn-practice-retry" class="btn btn-secondary">
+            <i data-lucide="rotate-ccw" style="width: 16px; height: 16px;"></i> Latih Lagi
           </button>
           
-          <button id="btn-practice-correct" class="btn btn-primary btn-lg" style="height: 52px; font-weight: 800; background: var(--text-main); color: var(--bg-main); border: none;">
-            <i data-lucide="check" style="width: 18px; height: 18px; margin-right: 6px;"></i> Cocok
+          <button id="btn-practice-correct" class="btn btn-primary">
+            <i data-lucide="check" style="width: 16px; height: 16px;"></i> Cocok
           </button>
         </div>
       `;
@@ -2050,34 +2076,45 @@ export function WritingView(container) {
 
   // Screen 3: Practice Completed Scorecard
   const renderCompletedScreen = () => {
+    renderTopbar('Latihan Menulis', false, '#/');
+
     container.innerHTML = `
-      <div style="max-width: 500px; margin: 60px auto; text-align: center; padding: 0 16px;" class="fade-in">
-        <div style="font-size: 5rem; margin-bottom: 24px; color: var(--accent-bright); display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 96px; border-radius: 50%; background: var(--accent-dim); border: 1px solid var(--border-accent);">
-          <i data-lucide="award" style="width:48px;height:48px;"></i>
+      <div style="max-width: 440px; margin: 40px auto 80px; text-align: center; padding: 0 16px;" class="fade-in">
+        <div class="writing-complete-hero">
+          <i data-lucide="award" style="width:40px;height:40px;"></i>
         </div>
         
-        <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 8px;">Latihan Selesai!</h2>
-        <p style="color: var(--text-secondary); font-size: var(--text-md); margin-bottom: 28px; line-height: 1.5; max-width: 360px; margin-left: auto; margin-right: auto;">
-          Hebat! Anda telah menyelesaikan latihan menulis deliberate untuk kategori karakter ini secara sukses. Ingatan kinestetik Anda semakin kuat!
+        <h2 style="font-size: var(--text-xl); font-weight: 800; color: var(--text-main); margin-bottom: 6px; letter-spacing: var(--tracking-tight);">Latihan Selesai!</h2>
+        <p style="color: var(--text-secondary); font-size: var(--text-xs); margin-bottom: 24px; line-height: 1.6; max-width: 340px; margin-left: auto; margin-right: auto;">
+          Hebat! Anda telah menyelesaikan latihan menulis deliberate untuk paket ini. Ingatan kinestetik Anda semakin kuat!
         </p>
 
-        <div style="background: var(--bg-hover); padding: 16px 20px; border-radius: var(--radius-md); margin-bottom: 32px; border: 1px solid var(--border); display: flex; align-items: center; justify-content: space-around;">
+        <div class="writing-stats-card">
           <div>
-            <div style="font-size: 1.6rem; font-weight: 800; color: var(--accent-bright);">${sessionQueue.length}</div>
-            <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Total Karakter</div>
+            <div class="stat-value">${sessionQueue.length}</div>
+            <div class="stat-label">Total Karakter</div>
           </div>
           
-          <div style="width: 1px; height: 40px; background: var(--border);"></div>
+          <div class="stat-divider"></div>
           
           <div>
-            <div style="font-size: 1.6rem; font-weight: 800; color: var(--accent-bright);">100%</div>
-            <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Keberhasilan</div>
+            <div class="stat-value">100%</div>
+            <div class="stat-label">Keberhasilan</div>
           </div>
         </div>
 
-        <button id="btn-restart-writing" class="btn btn-primary btn-lg" style="width: 100%; height: 50px; font-weight: 800; border-radius: var(--radius-md);">
-          Mulai Latihan Baru
-        </button>
+        ${fromChapter ? `
+          <a href="#/chapter/${fromChapter}" class="btn btn-primary btn-lg" style="width: 100%; height: 48px; font-weight: 800; border-radius: var(--radius-md); text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: var(--text-xs);">
+            <i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i> Kembali ke Materi Bab ${fromChapter}
+          </a>
+          <button id="btn-restart-writing" class="btn btn-secondary btn-lg" style="width: 100%; height: 44px; font-weight: 700; border-radius: var(--radius-md); margin-top: 10px; font-size: var(--text-xs);">
+            Latih Ulang Huruf ${sessionQueue[0] ? sessionQueue[0].jp : ''}
+          </button>
+        ` : `
+          <button id="btn-restart-writing" class="btn btn-primary btn-lg" style="width: 100%; height: 48px; font-weight: 800; border-radius: var(--radius-md); font-size: var(--text-xs);">
+            Mulai Latihan Baru
+          </button>
+        `}
       </div>
     `;
 
@@ -2161,8 +2198,9 @@ export function WritingView(container) {
       lastMidX = x;
       lastMidY = y;
       
-      // Reset width and time
-      currentWidth = brushSizePreset === 'thin' ? 4 : brushSizePreset === 'thick' ? 12 : 8;
+      // Reset width and time based on preset
+      const baseWidths = { 'ultra-thin': 3, 'thin': 5, 'medium': 8, 'thick': 12, 'extra-thick': 17 };
+      currentWidth = baseWidths[brushSizePreset] || 8;
       lastTime = performance.now();
 
       const activeColor = getActiveColor();
@@ -2192,22 +2230,30 @@ export function WritingView(container) {
       let targetWidth;
       // Utilize stylus pressure sensitivity if available
       if (e.pressure && e.pressure > 0 && e.pressure !== 0.5 && e.pointerType !== 'mouse') {
-        if (brushSizePreset === 'thin') {
-          targetWidth = 2 + e.pressure * 6; // Thin stylus: 2px to 8px
+        if (brushSizePreset === 'ultra-thin') {
+          targetWidth = 1.5 + e.pressure * 4; // 1.5px to 5.5px
+        } else if (brushSizePreset === 'thin') {
+          targetWidth = 2.5 + e.pressure * 6; // 2.5px to 8.5px
         } else if (brushSizePreset === 'thick') {
-          targetWidth = 6 + e.pressure * 16; // Thick stylus: 6px to 22px
+          targetWidth = 6 + e.pressure * 16; // 6px to 22px
+        } else if (brushSizePreset === 'extra-thick') {
+          targetWidth = 9 + e.pressure * 22; // 9px to 31px
         } else {
-          targetWidth = 4 + e.pressure * 10; // Medium stylus: 4px to 14px
+          targetWidth = 4 + e.pressure * 10; // 4px to 14px (Medium)
         }
       } else {
         // Slower movement = thicker calligraphic ink line, faster movement = thinner tapered line
         const speedFactor = Math.min(2.5, velocity); // clamp speed factor
-        if (brushSizePreset === 'thin') {
-          targetWidth = 8 - speedFactor * 2.2; // Thin finger/mouse: 2.5px to 8px
+        if (brushSizePreset === 'ultra-thin') {
+          targetWidth = 5.5 - speedFactor * 1.5; // 2px to 5.5px
+        } else if (brushSizePreset === 'thin') {
+          targetWidth = 8.5 - speedFactor * 2.2; // 3px to 8.5px
         } else if (brushSizePreset === 'thick') {
-          targetWidth = 18 - speedFactor * 4.8; // Thick finger/mouse: 6px to 18px
+          targetWidth = 19 - speedFactor * 5.0; // 6.5px to 19px
+        } else if (brushSizePreset === 'extra-thick') {
+          targetWidth = 26 - speedFactor * 7.0; // 8.5px to 26px
         } else {
-          targetWidth = 12 - speedFactor * 3.2; // Medium finger/mouse: 4px to 12px
+          targetWidth = 13 - speedFactor * 3.4; // 4.5px to 13px (Medium)
         }
       }
 

@@ -2,8 +2,8 @@
 export const MNN_DATA = [
   {
     "id": 0,
-    "title": "Chapter 0: Fondasi Nol Besar (Sistem Tulisan & Pelafalan)",
-    "desc": "Sebelum menyentuh Bab 1 Minna No Nihongo, Anda WAJIB menguasai sistem tulisan (Hiragana & Katakana) serta aturan dasar pelafalan bahasa Jepang.",
+    "title": "Bab 0: Fondasi Aksara & Pelafalan",
+    "desc": "Penguasaan sistem penulisan Hiragana & Katakana, aturan pelafalan khusus, serta ungkapan salam dasar bahasa Jepang.",
     "locked": false,
     "vocab": [
       {
@@ -18380,60 +18380,20 @@ export const MNN_DATA = [
   },
   {
     "id": 26,
-    "title": "Lesson 26: Kausatif — Menyuruh & Memberi Izin (させます)",
-    "desc": "Bab pembuka MNN II. Anda akan menguasai bentuk kausatif (させます/させません) untuk menyatakan 'menyuruh seseorang melakukan sesuatu' atau 'membiarkan seseorang melakukan sesuatu', serta penggunaannya dalam konteks formal.",
-    "locked": false,
+    "title": "Lesson 26: Penekanan & Klarifikasi (~んです)",
+    "desc": "Bab pembuka MNN II. Anda akan menguasai pola ~んです (~のです) untuk menjelaskan alasan, menegaskan kondisi, atau meminta penjelasan — serta penggunaannya sebagai pengantar sopan (~んですが) sebelum permintaan.",
+    "locked": true,
     "vocab": [
       {
         "id": "v26-1",
-        "rom": "Kōchō (sensei)",
-        "kana": "こうちょう（せんせい）",
-        "kanji": "校長（先生）",
-        "en": "Kepala sekolah",
+        "rom": "Okuremasu",
+        "kana": "おくれます",
+        "kanji": "遅れます",
+        "en": "Terlambat",
         "audio": ""
       },
       {
         "id": "v26-2",
-        "rom": "Shachō",
-        "kana": "しゃちょう",
-        "kanji": "社長",
-        "en": "Direktur / Presiden Direktur",
-        "audio": ""
-      },
-      {
-        "id": "v26-3",
-        "rom": "Buchō",
-        "kana": "ぶちょう",
-        "kanji": "部長",
-        "en": "Kepala bagian / Manager",
-        "audio": ""
-      },
-      {
-        "id": "v26-4",
-        "rom": "Kakari (no hito)",
-        "kana": "かかり（のひと）",
-        "kanji": "係（の人）",
-        "en": "Petugas / PIC",
-        "audio": ""
-      },
-      {
-        "id": "v26-5",
-        "rom": "Kinyōbi",
-        "kana": "きんようび",
-        "kanji": "金曜日",
-        "en": "Hari Jumat",
-        "audio": ""
-      },
-      {
-        "id": "v26-6",
-        "rom": "Hayameru",
-        "kana": "はやめます",
-        "kanji": "早めます",
-        "en": "Memajukan (jadwal, waktu)",
-        "audio": ""
-      },
-      {
-        "id": "v26-7",
         "rom": "Okurimasu",
         "kana": "おくります",
         "kanji": "送ります",
@@ -18441,177 +18401,224 @@ export const MNN_DATA = [
         "audio": ""
       },
       {
+        "id": "v26-3",
+        "rom": "Hiroimasu",
+        "kana": "ひろいます",
+        "kanji": "拾います",
+        "en": "Memungut / Menemukan",
+        "audio": ""
+      },
+      {
+        "id": "v26-4",
+        "rom": "Renraku shimasu",
+        "kana": "れんらくします",
+        "kanji": "連絡します",
+        "en": "Menghubungi / Kontak",
+        "audio": ""
+      },
+      {
+        "id": "v26-5",
+        "rom": "Todokemasu",
+        "kana": "とどけます",
+        "kanji": "届けます",
+        "en": "Menyerahkan / Mengirimkan",
+        "audio": ""
+      },
+      {
+        "id": "v26-6",
+        "rom": "Wasuremono",
+        "kana": "わすれもの",
+        "kanji": "忘れ物",
+        "en": "Barang tertinggal / Barang yang terlupa",
+        "audio": ""
+      },
+      {
+        "id": "v26-7",
+        "rom": "Seisan",
+        "kana": "せいさん",
+        "kanji": "生産",
+        "en": "Produksi",
+        "audio": ""
+      },
+      {
         "id": "v26-8",
-        "rom": "Tsutaemasu",
-        "kana": "つたえます",
-        "kanji": "伝えます",
-        "en": "Menyampaikan pesan",
+        "rom": "Yotei",
+        "kana": "よてい",
+        "kanji": "予定",
+        "en": "Rencana / Jadwal",
         "audio": ""
       },
       {
         "id": "v26-9",
-        "rom": "Yasumimasu",
-        "kana": "やすみます",
-        "kanji": "休みます",
-        "en": "Beristirahat / Absen",
+        "rom": "Soudan",
+        "kana": "そうだん",
+        "kanji": "相談",
+        "en": "Konsultasi / Diskusi",
         "audio": ""
       },
       {
         "id": "v26-10",
-        "rom": "Mōshimasu",
-        "kana": "もうします",
-        "kanji": "申します",
-        "en": "Saya bernama ~ (bentuk rendah hati)",
+        "rom": "Oiwai",
+        "kana": "おいわい",
+        "kanji": "お祝い",
+        "en": "Ucapan selamat / Perayaan",
         "audio": ""
       },
       {
         "id": "v26-11",
-        "rom": "Ukagaimasu",
-        "kana": "うかがいます",
-        "kanji": "伺います",
-        "en": "Mengunjungi / Menanyakan (rendah hati)",
+        "rom": "Keshiki",
+        "kana": "けしき",
+        "kanji": "景色",
+        "en": "Pemandangan",
         "audio": ""
       },
       {
         "id": "v26-12",
-        "rom": "Itadakimasu",
-        "kana": "いただきます",
-        "kanji": "いただきます",
-        "en": "Menerima / Memakan/minum (rendah hati)",
+        "rom": "Infuruenza",
+        "kana": "インフルエンザ",
+        "kanji": "",
+        "en": "Influenza / Flu berat",
         "audio": ""
       },
       {
         "id": "v26-13",
-        "rom": "Mōshiwake gozaimasen",
-        "kana": "もうしわけございません",
-        "kanji": "申し訳ございません",
-        "en": "Saya sangat minta maaf (sangat formal)",
+        "rom": "Jitsu wa",
+        "kana": "じつは",
+        "kanji": "実は",
+        "en": "Sebenarnya (pembuka kalimat penjelasan)",
         "audio": ""
       },
       {
         "id": "v26-14",
-        "rom": "Sassoku",
-        "kana": "さっそく",
-        "kanji": "早速",
-        "en": "Segera / Seketika",
+        "rom": "Tsugou",
+        "kana": "つごう",
+        "kanji": "都合",
+        "en": "Keadaan / Kondisi (waktu/jadwal)",
         "audio": ""
       },
       {
         "id": "v26-15",
-        "rom": "Sumimasen ga",
-        "kana": "すみませんが",
-        "kanji": "",
-        "en": "Mohon maaf, tapi~ / Permisi~",
+        "rom": "Sanka shimasu",
+        "kana": "さんかします",
+        "kanji": "参加します",
+        "en": "Mengikuti / Berpartisipasi",
         "audio": ""
       },
       {
         "id": "v26-16",
-        "rom": "Zangyō (shimasu)",
-        "kana": "ざんぎょう（します）",
-        "kanji": "残業（します）",
-        "en": "Lembur (kerja)",
+        "rom": "Moushikomimasu",
+        "kana": "もうしこみます",
+        "kanji": "申し込みます",
+        "en": "Mendaftar / Mengajukan permohonan",
         "audio": ""
       },
       {
         "id": "v26-17",
-        "rom": "Toriaezu",
-        "kana": "とりあえず",
+        "rom": "Doushitandesuka",
+        "kana": "どうしたんですか",
         "kanji": "",
-        "en": "Untuk sementara ini / Pertama-tama",
+        "en": "Ada apa? / Kenapa? (ungkapan penekanan)",
         "audio": ""
       },
       {
         "id": "v26-18",
-        "rom": "Meiwaku (na)",
-        "kana": "めいわく（な）",
-        "kanji": "迷惑（な）",
-        "en": "Merepotkan / Mengganggu",
+        "rom": "Chotto...",
+        "kana": "ちょっと…",
+        "kanji": "",
+        "en": "Sedikit... (eufemisme untuk menolak secara halus)",
         "audio": ""
       }
     ],
     "grammar": [
       {
         "id": "g26-1",
-        "title": "1. Bentuk Kausatif (Causative Form)",
-        "desc": "Digunakan untuk menyatakan 'A menyuruh/membiarkan B melakukan sesuatu'. Dibagi dua nuansa: menyuruh (paksa/wajib) atau membiarkan (izin).",
+        "title": "1. 〜んです / 〜のです (Penekanan / Penjelasan)",
+        "desc": "Digunakan untuk menjelaskan alasan, menegaskan suatu kondisi, atau meminta penjelasan. Dalam percakapan sehari-hari, ~のです sering disingkat menjadi ~んです.",
         "points": [
-          "Grup I (う-verb): ganti ～う → ～あせる. Contoh: kaku→ kakaseru, yomu→ yomaseru",
-          "Grup II (る-verb): ganti ～る → ～させる. Contoh: taberu→ tabesaseru, miru→ misaseru",
-          "Grup III (irregular): suru→ saseru, kuru→ kosaseru",
-          "Pola kalimat: [A は] [B に/を] [V-causative]。",
-          "Partikel B: Gunakan NI jika kata kerja intransitif (ikimasu, nemasu), gunakan WO jika transitif.",
-          "Contoh menyuruh: Sensei ga gakusei NI kanji wo KAKASEMASU (Guru menyuruh murid menulis kanji).",
-          "Contoh membiarkan: Haha wa watashi NI suki na koto wo SASETEKUREMASU (Ibu membiarkan saya melakukan hal yang saya suka)."
+          "Kata Kerja bentuk biasa + んです: 行くんです (ikundesu — saya pergi/akan pergi [karena ada alasan]).",
+          "Kata Sifat-i + んです: 高いんです (takaindesu — mahal [karena itu saya tidak beli]).",
+          "Kata Sifat-na + なんです: 好きなんです (sukinandesu — saya suka [sebenarnya]).",
+          "Kata Benda + なんです: 病気なんです (byouki nandesu — saya sakit [itu sebabnya tidak masuk]).",
+          "Bentuk negatif: 行かないんです, 高くないんです, 好きじゃないんです.",
+          "Bentuk lampau: 行ったんです, 高かったんです."
         ],
-        "formula": "う-V: ～わせます / る-V: ～させます / する: させます",
-        "native_note": "Dalam konteks pekerjaan, kausatif sering digunakan dalam frasa sopan 'Watashi ni yarasete kudasai' (Izinkan saya yang mengerjakan) — cara sopan menawarkan diri."
+        "formula": "V (bentuk biasa) + んです\nい-adj + んです\nな-adj + なんです\nN + なんです",
+        "native_note": "Jangan gunakan ~んです terlalu sering tanpa konteks. Jika tidak ada alasan khusus yang ingin ditegaskan, cukup gunakan ~ます/~です biasa. Pemakaian berlebihan bisa terdengar defensif atau memaksakan penjelasan."
       },
       {
         "id": "g26-2",
-        "title": "2. V-causative + てください / てもらいます",
-        "desc": "Menggabungkan bentuk kausatif dengan ekspresi izin atau permintaan.",
+        "title": "2. どうして〜んですか (Menanyakan Alasan dengan Penekanan)",
+        "desc": "Bentuk penekanan dari どうして〜ですか. Digunakan ketika pembicara melihat suatu keadaan dan ingin menanyakan alasan di baliknya secara lebih mendalam.",
         "points": [
-          "V-させてください: Memohon izin melakukan sesuatu untuk diri sendiri.",
-          "Contoh: Kyou hayaku kaerasete kudasai. (Tolong izinkan saya pulang cepat hari ini).",
-          "V-させてもらいます: Menerima izin dari atasan/seseorang untuk melakukan sesuatu.",
-          "Contoh: Raishuu yasumasetemoraimasu. (Saya akan mengambil izin minggu depan)."
+          "どうして 食べないんですか。(Kenapa kamu tidak makan? [saya ingin tahu alasannya]).",
+          "どうして 遅れたんですか。(Kenapa kamu terlambat? [jelaskan alasannya]).",
+          "Jawaban juga menggunakan んです: バスが 来なかったんです。(Karena busnya tidak datang).",
+          "Perhatikan: どうしたんですか (Ada apa?) — bentuk ta-form dari する, sering digunakan saat melihat seseorang dalam keadaan tidak biasa."
         ],
-        "formula": "V-causative form + てください / てもらいます"
+        "formula": "どうして + Kalimat bentuk biasa + んですか",
+        "native_note": "どうしたんですか menunjukkan kepedulian yang tulus. Ini menunjukkan bahwa pembicara memperhatikan kondisi lawan bicaranya dan ingin membantu."
+      },
+      {
+        "id": "g26-3",
+        "title": "3. 〜んですが、〜 (Pengantar Sopan untuk Permintaan)",
+        "desc": "Digunakan sebagai kalimat pengantar sebelum mengajukan permintaan, undangan, atau meminta nasihat. Memberikan kesan lebih sopan dan tidak langsung.",
+        "points": [
+          "日本語が わからないんですが、教えていただけませんか。(Saya tidak mengerti bahasa Jepang, bisakah Anda mengajarkan saya?).",
+          "カメラを 買いたいんですが、どこで 買ったらいいですか。(Saya ingin membeli kamera, sebaiknya beli di mana?).",
+          "日本語で 手紙を 書いたんですが、ちょっと 見ていただけませんか。(Saya menulis surat dalam bahasa Jepang, bisakah tolong dilihat sebentar?).",
+          "Sering diikuti dengan ~ていただけませんか (bisakah tolong...) atau ~たらいいですか (sebaiknya bagaimana)."
+        ],
+        "formula": "Kalimat + んですが、(permintaan / pertanyaan / undangan)",
+        "native_note": "Pola ini sangat penting untuk komunikasi profesional di Jepang. Langsung minta tolong tanpa pendahuluan (んですが) bisa dianggap terlalu kasar atau tidak sopan."
       }
     ],
     "patterns": [
       {
-        "jp": "部長は 田中さんを 残業させました。",
-        "rom": "Buchō wa Tanaka-san wo zangyō sasemashita.",
-        "en": "Manajer menyuruh Tanaka lembur."
+        "jp": "雨が 降っているんですか。",
+        "rom": "Ame ga futte irundesuka.",
+        "en": "Apakah sedang hujan? (bertanya sambil memastikan keadaan)"
       },
       {
-        "jp": "わたしに 説明させてください。",
-        "rom": "Watashi ni setsumei sasete kudasai.",
-        "en": "Izinkan saya yang menjelaskan."
+        "jp": "どうして 遅れたんですか。...バスが 来なかったんです。",
+        "rom": "Doushite okuretan desu ka. ...Basu ga konakattan desu.",
+        "en": "Kenapa terlambat? ...Karena busnya tidak datang."
       },
       {
-        "jp": "子供に 好きな スポーツを させています。",
-        "rom": "Kodomo ni sukina supōtsu wo sasete imasu.",
-        "en": "Membiarkan anak melakukan olahraga yang disukainya."
+        "jp": "カメラを 買いたいんですが、どこで 買ったらいいですか。",
+        "rom": "Kamera wo kaitain desu ga, doko de kattara ii desu ka.",
+        "en": "Saya ingin membeli kamera, sebaiknya beli di mana?"
       },
       {
-        "jp": "来週、休ませてもらいます。",
-        "rom": "Raishuu, yasumasete moraimasu.",
-        "en": "Minggu depan saya akan mengambil libur (mohon izin)."
+        "jp": "日本語で 手紙を 書いたんですが、ちょっと 見ていただけませんか。",
+        "rom": "Nihongo de tegami wo kaitan desu ga, chotto mite itadakemasen ka.",
+        "en": "Saya menulis surat dalam bahasa Jepang, bisakah tolong dilihat sebentar?"
       }
     ],
     "conversation": {
-      "title": "Di Tempat Kerja: Memohon Izin Absen",
+      "title": "Di Tempat Kerja: Meminta Izin Sakit",
       "dialogue": [
         {
-          "speaker": "Tanaka",
-          "jp": "課長、明日 休ませていただけませんか。",
-          "rom": "Kachō, ashita yasumasete itadakemasen ka.",
-          "en": "Pak, bolehkah saya izin tidak masuk besok?"
+          "speaker": "Jouishi (上司)",
+          "jp": "ミラーさん、どうしたんですか。",
+          "rom": "Miraa-san, doushitan desu ka.",
+          "en": "Saudara Miller, ada apa?"
         },
         {
-          "speaker": "Kachō",
-          "jp": "どうしたんですか。",
-          "rom": "Dō shitan desu ka.",
-          "en": "Ada apa memangnya?"
+          "speaker": "Miller",
+          "jp": "実は、インフルエンザなんです。今日は 休ませていただけませんか。",
+          "rom": "Jitsu wa, infuruenza nan desu. Kyou wa yasumasete itadakemasen ka.",
+          "en": "Sebenarnya, saya kena influenza. Bisakah izinkan saya libur hari ini?"
         },
         {
-          "speaker": "Tanaka",
-          "jp": "子供が 熱を 出しまして…。",
-          "rom": "Kodomo ga netsu wo dashimashite...",
-          "en": "Anak saya demam..."
+          "speaker": "Jouishi (上司)",
+          "jp": "それは 大変ですね。ゆっくり 休んでください。",
+          "rom": "Sore wa taihen desu ne. Yukkuri yasunde kudasai.",
+          "en": "Itu gawat ya. Beristirahatlah dengan tenang."
         },
         {
-          "speaker": "Kachō",
-          "jp": "そうですか。じゃ、しかたがないですね。いいですよ。",
-          "rom": "Sō desu ka. Ja, shikata ga nai desu ne. Ii desu yo.",
-          "en": "Begitu ya. Tidak ada cara lain dong. Oke boleh."
-        },
-        {
-          "speaker": "Tanaka",
+          "speaker": "Miller",
           "jp": "ありがとうございます。申し訳ございません。",
-          "rom": "Arigatō gozaimasu. Mōshiwake gozaimasen.",
+          "rom": "Arigatou gozaimasu. Moushiwake gozaimasen.",
           "en": "Terima kasih banyak. Saya sungguh minta maaf."
         }
       ]
@@ -18619,41 +18626,41 @@ export const MNN_DATA = [
     "practice": [
       {
         "type": "mcq",
-        "question": "Bentuk kausatif dari 'ikimasu' (pergi, Grup I) untuk 'menyuruh pergi' adalah:",
+        "question": "A: どうして 昨日 早く 帰ったんですか。\nB: 用事が (ある)______。\nPilih jawaban yang tepat:",
         "options": [
           {
-            "text": "いかせます",
+            "text": "あったんです",
             "correct": true
           },
           {
-            "text": "いきさせます",
+            "text": "ありました",
             "correct": false
           },
           {
-            "text": "いかれます",
+            "text": "あるんです",
             "correct": false
           }
         ]
       },
       {
         "type": "fill",
-        "question": "Terjemahkan: 'Izinkan saya yang menjawab (kotaeru)'.\nWatashi ni [   ].",
-        "answer": "kotaesasete kudasai"
+        "question": "Lengkapi: 'Saya ingin membeli kamera, sebaiknya beli di mana?'\nカメラを 買いたい[   ]、どこで 買ったらいいですか。",
+        "answer": "んですが"
       },
       {
         "type": "mcq",
-        "question": "Partikel yang digunakan untuk orang yang disuruh (B) dalam kausatif intransitif adalah:",
+        "question": "A: 頭が 痛いんですか。\nB: ええ、ちょっと (痛い)______。",
         "options": [
           {
-            "text": "を",
-            "correct": false
-          },
-          {
-            "text": "に",
+            "text": "痛いんです",
             "correct": true
           },
           {
-            "text": "で",
+            "text": "痛いです",
+            "correct": false
+          },
+          {
+            "text": "痛いなんです",
             "correct": false
           }
         ]
@@ -18661,20 +18668,38 @@ export const MNN_DATA = [
     ],
     "mini_kaiwa": [
       {
-        "title": "Menawarkan Diri di Rapat",
-        "situation": "Dalam rapat, seseorang menawarkan diri untuk presentasi",
+        "title": "Bertanya tentang Barang Bagus",
+        "situation": "Melihat tas teman yang bagus dan bertanya di mana membelinya",
         "dialogue": [
           {
             "speaker": "A",
-            "jp": "プレゼンは 誰が しますか。",
-            "rom": "Purezen wa dare ga shimasu ka.",
-            "en": "Siapa yang akan presentasi?"
+            "jp": "いい カバンですね。どこで 買ったんですか。",
+            "rom": "Ii kaban desu ne. Doko de kattan desu ka.",
+            "en": "Tas yang bagus ya. Beli di mana?"
           },
           {
             "speaker": "B",
-            "jp": "わたしに やらせてください。",
-            "rom": "Watashi ni yarasete kudasai.",
-            "en": "Izinkan saya yang melakukannya."
+            "jp": "新宿で 買いました。",
+            "rom": "Shinjuku de kaimashita.",
+            "en": "Beli di Shinjuku."
+          }
+        ]
+      },
+      {
+        "title": "Menolak Ajakan dengan Sopan",
+        "situation": "Diajak menonton film tapi ada urusan",
+        "dialogue": [
+          {
+            "speaker": "A",
+            "jp": "一緒に 映画を 見に 行きませんか。",
+            "rom": "Issho ni eiga wo mi ni ikimasen ka.",
+            "en": "Maukah pergi menonton film bersama?"
+          },
+          {
+            "speaker": "B",
+            "jp": "すみません、今日は ちょっと 用事が あるんです。",
+            "rom": "Sumimasen, kyou wa chotto youji ga arun desu.",
+            "en": "Maaf, hari ini saya ada sedikit urusan."
           }
         ]
       }
@@ -18682,188 +18707,188 @@ export const MNN_DATA = [
     "reibun": [
       {
         "id": "r26-1",
-        "jp": "部長は 山田さんを 大阪へ 出張させました。",
-        "rom": "Buchō wa Yamada-san wo Ōsaka e shutchō sasemashita.",
-        "en": "Manajer mengirim Yamada ke Osaka untuk perjalanan dinas."
+        "jp": "渡辺さんは 時々 大阪弁を 使いますね。大阪に 住んでいたんですか。",
+        "rom": "Watanabe-san wa tokidoki Ōsaka-ben wo tsukaimasu ne. Ōsaka ni sunde itan desu ka.",
+        "en": "Saudara Watanabe kadang menggunakan dialek Osaka ya. Apakah Anda pernah tinggal di Osaka?"
       },
       {
         "id": "r26-2",
-        "jp": "親は 子供に 自由に させています。",
-        "rom": "Oya wa kodomo ni jiyū ni sasete imasu.",
-        "en": "Orang tua membiarkan anaknya bebas (melakukan sesuka hati)."
+        "jp": "どうして 遅れたんですか。",
+        "rom": "Doushite okuretan desu ka.",
+        "en": "Kenapa kamu terlambat?"
       },
       {
         "id": "r26-3",
-        "jp": "少し 考えさせてください。",
-        "rom": "Sukoshi kangaesasete kudasai.",
-        "en": "Tolong izinkan saya berpikir sebentar."
+        "jp": "毎朝 新聞を 読みますか。...いいえ、時間がないんです。",
+        "rom": "Maiasa shinbun wo yomimasu ka. ...Iie, jikan ga nain desu.",
+        "en": "Apakah Anda membaca koran setiap pagi? ...Tidak, karena tidak ada waktu."
       },
       {
         "id": "r26-4",
-        "jp": "今日は 早く 帰らせていただきます。",
-        "rom": "Kyō wa hayaku kaerasete itadakimasu.",
-        "en": "Hari ini saya mohon izin untuk pulang lebih cepat."
+        "jp": "日本語で 手紙を 書いたんですが、ちょっと 見ていただけませんか。",
+        "rom": "Nihongo de tegami wo kaitan desu ga, chotto mite itadakemasen ka.",
+        "en": "Saya menulis surat dalam bahasa Jepang, bisakah tolong dilihat sebentar?"
       },
       {
         "id": "r26-5",
-        "jp": "その仕事は わたしに させてもらえませんか。",
-        "rom": "Sono shigoto wa watashi ni sasete moraemasen ka.",
-        "en": "Bolehkah saya yang mengerjakan pekerjaan itu?"
+        "jp": "カメラを 買いたいんですが、どこで 買ったらいいですか。",
+        "rom": "Kamera wo kaitain desu ga, doko de kattara ii desu ka.",
+        "en": "Saya ingin membeli kamera, sebaiknya beli di mana?"
       }
     ],
     "workbook": [
       {
         "id": "wb26-1",
-        "pattern": "V-causative form (Grup I)",
-        "instruction": "Ubah kata kerja berikut ke bentuk kausatif.",
-        "question": "Nomimasu → Causative",
-        "correct": "のませます",
-        "romaji": "nomasemasu",
-        "translation": "(Menyuruh/membiarkan minum)"
+        "pattern": "V(bentuk biasa) + んです",
+        "instruction": "Ubah kalimat biasa menjadi kalimat penekanan (~んです).",
+        "question": "食べません → 食べない______",
+        "correct": "食べないんです",
+        "romaji": "Tabenain desu.",
+        "translation": "(Saya tidak makan [ada alasannya].)"
       },
       {
         "id": "wb26-2",
-        "pattern": "V-causative form (Grup II)",
-        "instruction": "Ubah kata kerja berikut ke bentuk kausatif.",
-        "question": "Tabemasu → Causative",
-        "correct": "たべさせます",
-        "romaji": "tabesasemasu",
-        "translation": "(Menyuruh/membiarkan makan)"
+        "pattern": "どうして + V(bentuk biasa) + んですか",
+        "instruction": "Buat pertanyaan penekanan: 'Kenapa absen dari kantor?'",
+        "question": "どうして / 会社を休みました → どうして 会社を______か。",
+        "correct": "休んだんです",
+        "romaji": "Doushite kaisha wo yasundan desu ka.",
+        "translation": "Kenapa absen dari kantor?"
       },
       {
         "id": "wb26-3",
-        "pattern": "A は B に V-causative",
-        "instruction": "Buat kalimat kausatif: Manajer menyuruh karyawan lembur.",
-        "question": "Buchō / shain / zangyō",
-        "correct": "ぶちょうは しゃいんに ざんぎょうさせました。",
-        "romaji": "Buchō wa shain ni zangyō sasemashita.",
-        "translation": "Manajer menyuruh karyawan lembur."
+        "pattern": "い-adj + んです",
+        "instruction": "Jawab pertanyaan dengan penekanan menggunakan kata sifat-i.",
+        "question": "A: どうしたんですか。B: 頭が(痛い)______。",
+        "correct": "痛いんです",
+        "romaji": "Atama ga itain desu.",
+        "translation": "Kepala saya sakit (itu sebabnya)."
       },
       {
         "id": "wb26-4",
-        "pattern": "V-causative + てください",
-        "instruction": "Minta izin melakukan sesuatu: 'Izinkan saya mencoba'.",
-        "question": "Watashi ni / yatte / sasete / kudasai",
-        "correct": "わたしに やってみさせてください。",
-        "romaji": "Watashi ni yatte misasete kudasai.",
-        "translation": "Izinkan saya mencoba melakukannya."
+        "pattern": "N + なんです",
+        "instruction": "Jawab pertanyaan dengan kata benda + なんです.",
+        "question": "A: どうして 休むんですか。B: 実は、インフルエンザ______。",
+        "correct": "なんです",
+        "romaji": "Jitsu wa, infuruenza nan desu.",
+        "translation": "Sebenarnya, saya kena influenza."
       },
       {
         "id": "wb26-5",
-        "pattern": "V-causative + てもらいます",
-        "instruction": "Nyatakan mendapat izin dari atasan.",
-        "question": "Raishuu / yasumu / sasete / moraimasu",
-        "correct": "らいしゅう やすませてもらいます。",
-        "romaji": "Raishuu yasumasete moraimasu.",
-        "translation": "Minggu depan saya akan mengambil izin."
+        "pattern": "〜んですが、(permintaan)",
+        "instruction": "Buat kalimat pengantar sopan sebelum meminta tolong.",
+        "question": "日本語がわからない / 教えていただけませんか → ______が、教えていただけませんか。",
+        "correct": "日本語がわからないんです",
+        "romaji": "Nihongo ga wakaranain desu ga, oshiete itadakemasen ka.",
+        "translation": "Saya tidak mengerti bahasa Jepang, bisakah Anda mengajarkan saya?"
       }
     ],
     "exam": {
       "part1": [
         {
           "id": "ex26-1",
-          "sentence": "ぶちょうは やまださんを おおさかへ しゅっちょう [ ] ました。",
-          "correct": "させ",
-          "translation": "Manajer mengirim Yamada ke Osaka untuk dinas."
+          "sentence": "どうして きのう パーティーに [ ]んですか。",
+          "correct": "来なかった",
+          "translation": "Kenapa kemarin tidak datang ke pesta?"
         },
         {
           "id": "ex26-2",
-          "sentence": "すこし かんがえ [ ] てください。",
-          "correct": "させ",
-          "translation": "Tolong izinkan saya berpikir sebentar."
+          "sentence": "日本語が わからない [ ]が、えいごで はなしても いいですか。",
+          "correct": "んです",
+          "translation": "Saya tidak mengerti bahasa Jepang, bolehkah bicara dalam bahasa Inggris?"
         },
         {
           "id": "ex26-3",
-          "sentence": "こどもに すきな ことを [ ] ています。",
-          "correct": "させて",
-          "translation": "Membiarkan anak melakukan yang disukainya."
+          "sentence": "A: どうしたんですか。 B: ちょっと きぶんが わるい [ ]。",
+          "correct": "んです",
+          "translation": "A: Ada apa? B: Saya agak tidak enak badan."
         },
         {
           "id": "ex26-4",
-          "sentence": "きょう はやく かえら [ ] いただきます。",
-          "correct": "せて",
-          "translation": "Saya mohon izin pulang lebih cepat hari ini."
+          "sentence": "いい パソコンですね。どこで [ ]んですか。",
+          "correct": "買った",
+          "translation": "Komputer yang bagus ya. Beli di mana?"
         },
         {
           "id": "ex26-5",
-          "sentence": "その しごとは わたしに [ ] もらえませんか。",
-          "correct": "させて",
-          "translation": "Bolehkah saya yang mengerjakan pekerjaan itu?"
+          "sentence": "あしたから りょこうに いく [ ]が、カメラを かして いただけませんか。",
+          "correct": "んです",
+          "translation": "Besok saya akan pergi liburan, bisakah tolong pinjamkan kamera?"
         }
       ],
       "part2": [
         {
           "id": "ex26-6",
-          "question": "Bentuk kausatif dari 'kimasu' (datang) adalah:",
+          "question": "A: どうして たべないんですか。\nB: ______。",
           "options": [
             {
-              "text": "きさせます",
-              "correct": false
-            },
-            {
-              "text": "こさせます",
+              "text": "おなかが いっぱいなんです",
               "correct": true
             },
             {
-              "text": "こられます",
+              "text": "おなかが いっぱいです",
+              "correct": false
+            },
+            {
+              "text": "おなかが いっぱいからです",
               "correct": false
             }
           ]
         },
         {
           "id": "ex26-7",
-          "question": "Partikel mana yang digunakan untuk menandai orang yang 'disuruh' dalam kalimat kausatif dengan kata kerja transitif (makan, minum)?",
+          "question": "しやくしょへ いきたいんですが、______。",
           "options": [
             {
-              "text": "に",
-              "correct": false
-            },
-            {
-              "text": "を",
+              "text": "みちを おしえて いただけませんか",
               "correct": true
             },
             {
-              "text": "で",
+              "text": "どこですか",
+              "correct": false
+            },
+            {
+              "text": "みちが わかりますか",
               "correct": false
             }
           ]
         },
         {
           "id": "ex26-8",
-          "question": "'Watashi ni setsumei sasete kudasai' berarti:",
+          "question": "「実は、来月 けっこんするんです」の 'んです' の はたらきは：",
           "options": [
             {
-              "text": "Tolong jelaskan kepada saya",
-              "correct": false
-            },
-            {
-              "text": "Izinkan saya yang menjelaskan",
+              "text": "重要な事実を伝えている（説明）",
               "correct": true
             },
             {
-              "text": "Saya sudah menjelaskan",
+              "text": "質問している",
+              "correct": false
+            },
+            {
+              "text": "命令している",
               "correct": false
             }
           ]
         }
       ],
       "part3": {
-        "text": "たなかさんは きょう こどもが かぜを ひいて、かいしゃを やすみたいです。かちょうに 「やすませていただけませんか」と おねがいしました。かちょうは 「いいですよ。おだいじに」と いいました。たなかさんは ほっと しました。",
+        "text": "わたし：田中さん、どうしたんですか。\n田中：実は、きのう 買った パソコンが 動かないんです。\nわたし：それは 大変ですね。どこで 買ったんですか。\n田中：秋葉原で 買ったんですが、説明書が 英語で わからないんです。\nわたし：そうですか。わたしは 英語が わかりますから、ちょっと 見ましょうか。\n田中：本当ですか。ありがとうございます。",
         "questions": [
           {
             "id": "ex26-9",
-            "question": "たなかさんは びょうきで やすみたいです。",
+            "question": "田中さんは パソコンが こわれて こまっている。",
             "correct": "F"
           },
           {
             "id": "ex26-10",
-            "question": "たなかさんは かちょうに やすむ きょかを もとめました。",
+            "question": "田中さんは 秋葉原で パソコンを 買った。",
             "correct": "T"
           },
           {
             "id": "ex26-11",
-            "question": "かちょうは やすむことを きょかしませんでした。",
-            "correct": "F"
+            "question": "「わたし」は えいごの 説明書を 読んで あげる。",
+            "correct": "T"
           }
         ]
       }
