@@ -1574,7 +1574,7 @@ body {
   align-items: center !important;
 }
 
-/* ── Floating Chapter Switcher Action Button (High Contrast Navy FAB) ── */
+/* ── Floating Chapter Switcher Action Button (Signature Blue/Indigo Palette FAB) ── */
 .chapter-fab-btn {
   position: fixed;
   bottom: max(20px, calc(14px + var(--safe-bottom)));
@@ -1582,10 +1582,10 @@ body {
   width: 42px;
   height: 42px;
   border-radius: 9999px;
-  background: #1E2238;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: var(--accent);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #FFFFFF;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(124, 123, 240, 0.4), 0 2px 6px rgba(0, 0, 0, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1597,31 +1597,31 @@ body {
 }
 
 .chapter-fab-btn:hover {
-  background: #2D3352;
-  border-color: rgba(255, 255, 255, 0.3);
+  background: var(--accent-bright);
+  border-color: rgba(255, 255, 255, 0.35);
   color: #FFFFFF;
   transform: translateY(-2px) scale(1.06);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.55), 0 3px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 26px rgba(124, 123, 240, 0.55), 0 3px 8px rgba(0, 0, 0, 0.3);
 }
 
 .chapter-fab-btn:active {
   transform: scale(0.94);
 }
 
-/* Light Theme: Deep Solid Dark Navy contrasting with white page */
+/* Light Theme: Vibrant Blue/Indigo Accent matching app buttons & primary tokens */
 [data-theme="light"] .chapter-fab-btn {
-  background: #0F172A;
-  border: 1px solid #0F172A;
+  background: var(--accent);
+  border: 1px solid rgba(79, 70, 229, 0.3);
   color: #FFFFFF;
-  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.28), 0 2px 6px rgba(15, 23, 42, 0.15);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.35), 0 2px 6px rgba(79, 70, 229, 0.2);
 }
 
 [data-theme="light"] .chapter-fab-btn:hover {
-  background: #1E293B;
-  border-color: #1E293B;
+  background: var(--accent-bright);
+  border-color: rgba(79, 70, 229, 0.45);
   color: #FFFFFF;
   transform: translateY(-2px) scale(1.06);
-  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.36), 0 3px 8px rgba(15, 23, 42, 0.2);
+  box-shadow: 0 10px 26px rgba(79, 70, 229, 0.45), 0 3px 8px rgba(79, 70, 229, 0.25);
 }
 
 /* ── Chapter Picker Clean Modal ─────────────────────── */
