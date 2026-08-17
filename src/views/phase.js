@@ -27,7 +27,6 @@ export function PhaseView(container, params = {}) {
 
   const backUrl = '#/curriculum';
   renderTopbar(phase.title, false, backUrl);
-  renderBackBtn(container, '#/curriculum', 'Peta Kurikulum');
 
   // Calculate phase metrics
   const totalUnits = phase.units.length;
@@ -44,7 +43,6 @@ export function PhaseView(container, params = {}) {
     const isChap = !isNaN(unit.id);
 
     const isTheoryDone = localStorage.getItem(`nihongo_master_theory_ch${unit.id}`) === 'true';
-    const isQuizDone = isChapterQuizPassed(unit.id);
     const isWorkbookDone = (() => {
       try {
         const saved = localStorage.getItem(`nihongo_master_workbook_ch${unit.id}`);
@@ -57,14 +55,13 @@ export function PhaseView(container, params = {}) {
     let activeSrsCount = 0;
     let vocabCount = 0;
     let unitTitle = unit.title;
-    let unitDesc = unit.desc;
+    let grammarTag = unit.desc || '';
 
     if (isChap && unit.id !== 0 && unit.id !== '0') {
       const chId = parseInt(unit.id);
       const indexCh = MNN_INDEX.find(c => c.id === chId);
       if (indexCh) {
         unitTitle = indexCh.title;
-        unitDesc = indexCh.desc;
         vocabCount = indexCh.vocabCount || 0;
         const srsItems = getState().srsItems || [];
         activeSrsCount = srsItems.filter(item => {
@@ -76,73 +73,75 @@ export function PhaseView(container, params = {}) {
     }
 
     const completedActionsCount = (isTheoryDone ? 1 : 0) + (isWorkbookDone ? 1 : 0) + (isExamDone ? 1 : 0);
-    const unitBadgeLabel = `BAB ${unit.id}`;
+    const unitBadgeLabel = `BAB ${unit.id < 10 && unit.id > 0 ? '0' + unit.id : unit.id}`;
     const cleanTitle = unitTitle.includes(':') ? unitTitle.split(':').slice(1).join(':').trim() : unitTitle;
 
     unitsHtml += `
       <div class="phase-unit-card ${completed ? 'is-complete' : ''}">
         
-        <!-- Header Row: Chapter Label & Status -->
+        <!-- Header Row: Chapter Label, Grammar Tag & Status -->
         <div class="phase-unit-top">
-          <span class="phase-unit-num">${unitBadgeLabel}</span>
+          <div class="phase-unit-meta-left">
+            <span class="phase-unit-badge">${unitBadgeLabel}</span>
+            ${grammarTag ? `<span class="phase-unit-grammar-tag">${grammarTag}</span>` : ''}
+          </div>
           <span class="phase-unit-status ${completed ? 'done' : completedActionsCount > 0 ? 'active' : ''}">
-            ${completed ? '✓ Selesai' : completedActionsCount > 0 ? `${completedActionsCount}/3 Modul` : 'Belum Mulai'}
+            ${completed ? '✓ Selesai' : completedActionsCount > 0 ? `${completedActionsCount}/3 Selesai` : 'Belum Mulai'}
           </span>
         </div>
 
-        <!-- Title & Subtitle -->
-        <div class="phase-unit-info">
+        <!-- Title -->
+        <div class="phase-unit-body">
           <h3 class="phase-unit-title">${cleanTitle}</h3>
-          ${unitDesc ? `<p class="phase-unit-desc">${unitDesc}</p>` : ''}
         </div>
 
-        <!-- SRS Strip (if applicable) -->
-        ${isChap && unit.id !== 0 && unit.id !== '0' && vocabCount > 0 ? `
-          <div class="phase-unit-srs-strip">
-            <div class="phase-srs-info">
-              <i data-lucide="layers" style="width: 12px; height: 12px; color: var(--accent);"></i>
-              <span>Kosakata: <strong>${activeSrsCount}/${vocabCount}</strong> di SRS</span>
-            </div>
-            ${activeSrsCount < vocabCount ? `
-              <button class="phase-sync-srs-btn no-print" data-chapter-id="${unit.id}">
-                <i data-lucide="plus" style="width: 11px; height: 11px;"></i> Antrekan
+        <!-- Integrated Bottom: SRS Mini Chip & Module Action Buttons -->
+        <div class="phase-unit-actions-row">
+          ${isChap && unit.id !== 0 && unit.id !== '0' ? `
+            <div class="phase-action-grid">
+              <button class="phase-action-btn ${isTheoryDone ? 'completed' : ''}" data-route="#/chapter/${unit.id}">
+                <i data-lucide="${isTheoryDone ? 'check' : 'book-open'}" style="width: 12.5px; height: 12.5px;"></i>
+                <span>Materi</span>
               </button>
-            ` : `
-              <span class="phase-srs-synced">
-                <i data-lucide="check" style="width: 11px; height: 11px;"></i> Terantre
-              </span>
-            `}
-          </div>
-        ` : ''}
+              <button class="phase-action-btn ${isWorkbookDone ? 'completed' : ''}" data-route="#/workbook/${unit.id}">
+                <i data-lucide="${isWorkbookDone ? 'check' : 'pen-tool'}" style="width: 12.5px; height: 12.5px;"></i>
+                <span>Buku Kerja</span>
+              </button>
+              <button class="phase-action-btn ${isExamDone ? 'completed' : ''}" data-route="#/exam/${unit.id}">
+                <i data-lucide="${isExamDone ? 'check' : 'award'}" style="width: 12.5px; height: 12.5px;"></i>
+                <span>Ujian</span>
+              </button>
+            </div>
+          ` : `
+            <div class="phase-action-grid two-col">
+              <button class="phase-action-btn" data-route="#/chapter/0?tab=kana">
+                <i data-lucide="type" style="width: 12.5px; height: 12.5px;"></i>
+                <span>Huruf Kana</span>
+              </button>
+              <button class="phase-action-btn" data-route="#/chapter/0?tab=pelafalan">
+                <i data-lucide="volume-2" style="width: 12.5px; height: 12.5px;"></i>
+                <span>Pelafalan &amp; Salam</span>
+              </button>
+            </div>
+          `}
 
-        <!-- Apple Segmented Module Actions -->
-        ${isChap && unit.id !== 0 && unit.id !== '0' ? `
-          <div class="phase-action-grid">
-            <button class="phase-action-btn ${isTheoryDone ? 'completed' : ''}" data-route="#/chapter/${unit.id}">
-              <i data-lucide="${isTheoryDone ? 'check' : 'book-open'}" style="width: 13px; height: 13px;"></i>
-              <span>Materi</span>
-            </button>
-            <button class="phase-action-btn ${isWorkbookDone ? 'completed' : ''}" data-route="#/workbook/${unit.id}">
-              <i data-lucide="${isWorkbookDone ? 'check' : 'pen-tool'}" style="width: 13px; height: 13px;"></i>
-              <span>Buku Kerja</span>
-            </button>
-            <button class="phase-action-btn ${isExamDone ? 'completed' : ''}" data-route="#/exam/${unit.id}">
-              <i data-lucide="${isExamDone ? 'check' : 'award'}" style="width: 13px; height: 13px;"></i>
-              <span>Ujian</span>
-            </button>
-          </div>
-        ` : `
-          <div class="phase-action-grid two-col">
-            <button class="phase-action-btn" data-route="#/chapter/0?tab=kana">
-              <i data-lucide="type" style="width: 13px; height: 13px;"></i>
-              <span>Huruf Kana</span>
-            </button>
-            <button class="phase-action-btn" data-route="#/chapter/0?tab=pelafalan">
-              <i data-lucide="volume-2" style="width: 13px; height: 13px;"></i>
-              <span>Pelafalan &amp; Salam</span>
-            </button>
-          </div>
-        `}
+          ${isChap && unit.id !== 0 && unit.id !== '0' && vocabCount > 0 ? `
+            <div class="phase-srs-inline">
+              <span class="phase-srs-text">
+                <i data-lucide="layers" style="width: 11px; height: 11px;"></i> ${activeSrsCount}/${vocabCount} Kosakata SRS
+              </span>
+              ${activeSrsCount < vocabCount ? `
+                <button class="phase-sync-srs-btn no-print" data-chapter-id="${unit.id}">
+                  <i data-lucide="plus" style="width: 10px; height: 10px;"></i> Antrekan
+                </button>
+              ` : `
+                <span class="phase-srs-synced">
+                  <i data-lucide="check" style="width: 10px; height: 10px;"></i> Terantre
+                </span>
+              `}
+            </div>
+          ` : ''}
+        </div>
 
       </div>
     `;
@@ -151,7 +150,7 @@ export function PhaseView(container, params = {}) {
   container.innerHTML = `
     <div class="phase-page-container page-container-standard fade-in">
       
-      <!-- Kindle/Apple Style Editorial Header -->
+      <!-- Kindle/Apple Style Clean Header -->
       <header class="phase-page-header">
         <nav class="phase-breadcrumb" aria-label="Breadcrumb">
           <a href="#/curriculum">← Kurikulum</a>
@@ -160,14 +159,14 @@ export function PhaseView(container, params = {}) {
         </nav>
 
         <div class="phase-header-intro">
-          <h1 class="phase-header-title">${phase.title}</h1>
+          <div class="phase-header-title-row">
+            <h1 class="phase-header-title">${phase.title.replace(/^Fase \d+:\s*/, '')}</h1>
+            <span class="phase-header-badge">${completedUnitsCount}/${totalUnits} Bab Selesai</span>
+          </div>
           ${phase.desc ? `<p class="phase-header-desc">${phase.desc}</p>` : ''}
 
-          <div class="phase-header-meta-row">
-            <div class="phase-header-progress-bar">
-              <div class="phase-header-progress-fill" style="width: ${progressPercent}%;"></div>
-            </div>
-            <span class="phase-header-progress-val">${completedUnitsCount} dari ${totalUnits} bab selesai (${progressPercent}%)</span>
+          <div class="phase-header-progress-track">
+            <div class="phase-header-progress-fill" style="width: ${progressPercent}%;"></div>
           </div>
         </div>
       </header>

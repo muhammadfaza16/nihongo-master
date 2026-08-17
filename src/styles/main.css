@@ -3947,6 +3947,83 @@ body {
 }
 
 /* ── Phase View: Unit Cards & Apple Segmented Action Buttons ── */
+.phase-page-header {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.phase-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.phase-breadcrumb a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+.phase-breadcrumb a:hover {
+  color: var(--accent);
+}
+.phase-crumb-sep {
+  color: var(--border);
+}
+
+.phase-header-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.phase-header-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.phase-header-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.phase-header-badge {
+  font-size: 11px;
+  font-weight: 750;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+.phase-header-desc {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+.phase-header-progress-track {
+  width: 100%;
+  height: 3px;
+  background: var(--border);
+  border-radius: 99px;
+  margin-top: 4px;
+  overflow: hidden;
+}
+[data-theme="light"] .phase-header-progress-track {
+  background: #E2E8F0;
+}
+.phase-header-progress-fill {
+  height: 100%;
+  background: #4F46E5;
+  border-radius: 99px;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Phase Units List */
 .phase-units-container {
   display: flex;
   flex-direction: column;
@@ -3956,15 +4033,21 @@ body {
 .phase-unit-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 16px 18px;
+  border-radius: 14px;
+  padding: 14px 16px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  transition: border-color 0.15s ease, background 0.15s ease;
+  gap: 10px;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+[data-theme="light"] .phase-unit-card {
+  background: #FFFFFF;
+  border-color: #E2E8F0;
 }
 .phase-unit-card:hover {
   border-color: var(--border-bright);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
 .phase-unit-top {
@@ -3973,145 +4056,194 @@ body {
   align-items: center;
   gap: 8px;
 }
-.phase-unit-num {
-  font-size: 10.5px;
-  font-weight: 750;
-  color: var(--text-muted);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-variant-numeric: tabular-nums;
-}
-.phase-unit-status {
-  font-size: 10.5px;
-  font-weight: 600;
-  color: var(--text-muted);
-}
-.phase-unit-status.active {
-  color: var(--text-main);
-  font-weight: 700;
-}
-.phase-unit-status.done {
-  color: var(--green);
-  font-weight: 700;
-}
-
-.phase-unit-info {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-.phase-unit-title {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--text-main);
-  margin: 0;
-  letter-spacing: -0.01em;
-  line-height: 1.35;
-}
-.phase-unit-desc {
-  font-size: 12px;
-  color: var(--text-secondary);
-  line-height: 1.45;
-  margin: 0;
-}
-
-/* SRS Strip */
-.phase-unit-srs-strip {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 6px 10px;
-  font-size: 11px;
-}
-.phase-srs-info {
+.phase-unit-meta-left {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: var(--text-secondary);
+  flex-wrap: wrap;
 }
-.phase-srs-info strong {
-  color: var(--text-main);
+.phase-unit-badge {
+  font-size: 9.5px;
+  font-weight: 800;
+  color: #4F46E5;
+  background: rgba(79, 70, 229, 0.08);
+  padding: 2.5px 7px;
+  border-radius: 5px;
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+[data-theme="dark"] .phase-unit-badge {
+  background: rgba(99, 102, 241, 0.16);
+  color: #A5B4FC;
+}
+.phase-unit-grammar-tag {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  line-height: 1;
+}
+.phase-unit-status {
+  font-size: 10.5px;
   font-weight: 700;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.phase-unit-status.active {
+  color: #4F46E5;
+}
+[data-theme="dark"] .phase-unit-status.active {
+  color: #818CF8;
+}
+.phase-unit-status.done {
+  color: #16A34A;
+}
+[data-theme="dark"] .phase-unit-status.done {
+  color: #4ADE80;
+}
+
+.phase-unit-body {
+  margin: 0;
+}
+.phase-unit-title {
+  font-size: 14.5px;
+  font-weight: 750;
+  color: var(--text-main);
+  margin: 0;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+}
+
+/* Bottom Actions Row & SRS Inline */
+.phase-unit-actions-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 2px;
+}
+.phase-srs-inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 10.5px;
+  color: var(--text-muted);
+  padding: 0 2px;
+}
+.phase-srs-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
 }
 .phase-sync-srs-btn {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  padding: 3px 8px;
-  border-radius: var(--radius-xs);
-  color: var(--text-main);
+  padding: 2px 7px;
+  border-radius: 5px;
+  color: var(--text-secondary);
   font-size: 10px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
   transition: all 0.15s ease;
 }
+[data-theme="light"] .phase-sync-srs-btn {
+  background: #F1F5F9;
+  border-color: #E2E8F0;
+}
 .phase-sync-srs-btn:hover {
-  background: var(--bg-hover);
-  border-color: var(--border-bright);
+  background: rgba(79, 70, 229, 0.08);
+  border-color: #4F46E5;
+  color: #4F46E5;
 }
 .phase-srs-synced {
-  color: var(--green);
-  font-size: 10.5px;
-  font-weight: 600;
+  color: #16A34A;
+  font-size: 10px;
+  font-weight: 700;
   display: inline-flex;
   align-items: center;
   gap: 3px;
 }
 
-/* Apple Segmented Action Buttons Grid */
+/* Apple / Studio-Grade Segmented Unit Action Buttons */
 .phase-action-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  gap: 6px;
   width: 100%;
 }
 .phase-action-grid.two-col {
   grid-template-columns: repeat(2, 1fr);
 }
-@media (max-width: 480px) {
-  .phase-action-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
-  }
-}
+
 .phase-action-btn {
-  padding: 8px 10px;
-  font-size: 11.5px;
-  font-weight: 600;
-  background: var(--bg-elevated);
+  height: 34px;
+  padding: 0 6px;
+  font-size: 11px;
+  font-weight: 650;
+  background: var(--bg-card);
   border: 1px solid var(--border);
-  color: var(--text-main);
-  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  border-radius: 8px;
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
-  transition: all 0.15s ease;
+  gap: 4.5px;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
-  line-height: 1.2;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+  -webkit-tap-highlight-color: transparent;
+}
+[data-theme="light"] .phase-action-btn {
+  background: #F8FAFC;
+  border-color: #E2E8F0;
+  color: #334155;
 }
 .phase-action-btn:hover {
   background: var(--bg-hover);
   border-color: var(--border-bright);
+  color: var(--text-main);
   transform: translateY(-1px);
 }
+[data-theme="light"] .phase-action-btn:hover {
+  background: #F1F5F9;
+  border-color: #CBD5E1;
+  color: #0F172A;
+}
 .phase-action-btn:active {
-  transform: scale(0.985);
+  transform: scale(0.98);
 }
 .phase-action-btn.completed {
   background: var(--green-dim);
-  border-color: rgba(52, 211, 153, 0.25);
+  border-color: rgba(52, 211, 153, 0.3);
   color: var(--green);
+  font-weight: 700;
+}
+[data-theme="light"] .phase-action-btn.completed {
+  background: #F0FDF4;
+  border-color: #BBF7D0;
+  color: #15803D;
 }
 .phase-action-btn.completed:hover {
   border-color: var(--green);
+}
+[data-theme="light"] .phase-action-btn.completed:hover {
+  background: #DCFCE7;
+  border-color: #86EFAC;
+}
+
+@media (max-width: 375px) {
+  .phase-action-btn {
+    font-size: 10px;
+    padding: 0 3px;
+    gap: 3px;
+    height: 33px;
+  }
 }
 
 @media (max-width: 640px) {
