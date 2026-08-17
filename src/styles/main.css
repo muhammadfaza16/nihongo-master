@@ -3946,69 +3946,35 @@ body {
   color: var(--text-main);
 }
 
-/* ── Phase Detail View: Atmospheric Studio Roadmap & 3-Step Pipeline ── */
+/* ── Phase Detail View: Dashboard Quality Standard ── */
 .phase-page-wrap {
-  max-width: 680px;
+  width: 100%;
   margin: 0 auto;
-  padding: 4px 12px 60px;
+  padding: 0 0 40px;
 }
 
-/* Atmospheric Phase Hero Banner */
 .phase-hero-card {
-  position: relative;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 14px 16px;
-  margin-bottom: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+  margin-bottom: 14px;
 }
-[data-theme="light"] .phase-hero-card {
-  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
-  border-color: #E2E8F0;
-}
-[data-theme="dark"] .phase-hero-card {
-  background: linear-gradient(180deg, #161F30 0%, #0F172A 100%);
-  border-color: rgba(255, 255, 255, 0.08);
-}
-
-.phase-hero-watermark {
-  position: absolute;
-  right: 12px;
-  top: 6px;
-  font-family: var(--font-jp);
-  font-size: 4.5rem;
-  font-weight: 900;
-  line-height: 1;
-  color: var(--text-main);
-  opacity: 0.03;
-  pointer-events: none;
-  user-select: none;
-}
-[data-theme="dark"] .phase-hero-watermark {
-  opacity: 0.045;
-}
-
 .phase-hero-nav {
   display: flex;
   align-items: center;
   gap: 5px;
   font-size: 11px;
   color: var(--text-muted);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 .phase-nav-back {
   display: inline-flex;
   align-items: center;
-  gap: 3.5px;
+  gap: 4px;
   color: var(--text-secondary);
   font-weight: 700;
   text-decoration: none;
   transition: color 0.15s ease;
 }
 .phase-nav-back:hover {
-  color: #4F46E5;
+  color: var(--accent);
 }
 .phase-nav-sep {
   color: var(--border);
@@ -4016,84 +3982,6 @@ body {
 .phase-nav-level {
   color: var(--text-muted);
   font-weight: 600;
-}
-
-.phase-hero-content {
-  margin-bottom: 10px;
-}
-.phase-hero-meta-badge {
-  font-size: 9px;
-  font-weight: 800;
-  color: #4F46E5;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 3px;
-}
-[data-theme="dark"] .phase-hero-meta-badge {
-  color: #818CF8;
-}
-.phase-hero-title {
-  font-size: 1.35rem;
-  font-weight: 850;
-  color: var(--text-main);
-  margin: 0 0 3px 0;
-  letter-spacing: -0.025em;
-  line-height: 1.2;
-}
-.phase-hero-desc {
-  font-size: 12px;
-  color: var(--text-secondary);
-  line-height: 1.45;
-  margin: 0;
-  max-width: 520px;
-}
-
-/* Hero Progress Section */
-.phase-hero-progress-section {
-  padding-top: 8px;
-  border-top: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.phase-progress-meta-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  font-size: 10.5px;
-}
-.phase-progress-label {
-  font-size: 9.5px;
-  font-weight: 700;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-.phase-progress-val {
-  font-size: 10.5px;
-  font-weight: 600;
-  color: var(--text-secondary);
-  font-variant-numeric: tabular-nums;
-}
-.phase-progress-val strong {
-  color: var(--text-main);
-  font-weight: 800;
-}
-.phase-progress-track {
-  width: 100%;
-  height: 3.5px;
-  background: var(--border);
-  border-radius: 99px;
-  overflow: hidden;
-}
-[data-theme="light"] .phase-progress-track {
-  background: #E2E8F0;
-}
-.phase-progress-fill {
-  height: 100%;
-  background: #4F46E5;
-  border-radius: 99px;
-  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ── Phase Roadmap Chapter Cards ── */
@@ -4107,13 +3995,13 @@ body {
   position: relative;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 13px;
-  padding: 12px 14px;
+  border-radius: var(--radius-lg);
+  padding: 13px 15px;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
 }
 [data-theme="light"] .phase-card {
   background: #FFFFFF;
@@ -4126,12 +4014,12 @@ body {
 
 /* Card States */
 .phase-card.is-active-focus {
-  border-color: #4F46E5;
-  box-shadow: 0 0 0 1px #4F46E5, 0 4px 16px rgba(79, 70, 229, 0.06);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent), 0 4px 16px rgba(79, 70, 229, 0.08);
 }
 [data-theme="dark"] .phase-card.is-active-focus {
   border-color: #6366F1;
-  box-shadow: 0 0 0 1px #6366F1, 0 4px 16px rgba(99, 102, 241, 0.12);
+  box-shadow: 0 0 0 1px #6366F1, 0 4px 16px rgba(99, 102, 241, 0.15);
 }
 .phase-card.is-completed {
   border-color: rgba(34, 197, 94, 0.3);
@@ -4145,36 +4033,28 @@ body {
   gap: 8px;
   width: 100%;
 }
-.phase-badge-num {
-  font-family: var(--font-mono, monospace);
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: #4F46E5;
-  background: rgba(79, 70, 229, 0.08);
-  padding: 2px 6px;
-  border-radius: 4px;
+.phase-badge-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+.phase-topic-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   line-height: 1;
-  flex-shrink: 0;
-}
-[data-theme="dark"] .phase-badge-num {
-  background: rgba(99, 102, 241, 0.16);
-  color: #A5B4FC;
-}
-.is-completed .phase-badge-num {
-  background: rgba(34, 197, 94, 0.1);
-  color: #16A34A;
-}
-[data-theme="dark"] .is-completed .phase-badge-num {
-  background: rgba(34, 197, 94, 0.16);
-  color: #4ADE80;
 }
 
 .phase-badge-status {
   font-size: 10px;
   font-weight: 750;
   padding: 2px 7px;
-  border-radius: 99px;
+  border-radius: var(--radius-sm);
   display: inline-flex;
   align-items: center;
   gap: 3.5px;
@@ -4208,30 +4088,22 @@ body {
   color: #4F46E5;
 }
 
-/* Row 2: Full Width Chapter Title & Grammar Focus */
+/* Row 2: Full Width Chapter Title */
 .phase-card-title-group {
   display: flex;
   flex-direction: column;
-  gap: 1.5px;
 }
 .phase-card-title {
   font-size: 14.5px;
-  font-weight: 800;
+  font-weight: 750;
   color: var(--text-main);
   margin: 0;
   letter-spacing: -0.015em;
   line-height: 1.25;
   width: 100%;
 }
-.phase-card-focus-text {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text-secondary);
-  margin: 0;
-  line-height: 1.35;
-}
 
-/* Row 3: High-End Track Segmented Action Dock */
+/* Row 3: Segmented Module Pipeline Dock */
 .phase-segmented-dock {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -4239,7 +4111,7 @@ body {
   width: 100%;
   background: var(--bg-elevated);
   padding: 2.5px;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   border: 1px solid var(--border);
 }
 [data-theme="light"] .phase-segmented-dock {
@@ -4253,7 +4125,7 @@ body {
 .phase-dock-btn {
   height: 30px;
   padding: 0 4px;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   border: none;
   background: transparent;
   color: var(--text-secondary);
@@ -4331,7 +4203,7 @@ body {
   background: transparent;
   border: none;
   padding: 1px 3px;
-  color: #4F46E5;
+  color: var(--accent);
   font-size: 10px;
   font-weight: 750;
   cursor: pointer;

@@ -119,12 +119,15 @@ export function PhaseView(container, params = {}) {
     unitsHtml += `
       <div class="phase-card ${cardStateClass}">
         
-        <!-- Row 1: Chapter Meta Header -->
+        <!-- Top Row: Bab Badge, Grammar Focus & Status -->
         <div class="phase-card-top-bar">
-          <span class="phase-badge-num">BAB ${numDisplay}</span>
+          <div class="phase-badge-group">
+            <span class="hero-pill-badge">Bab ${numDisplay}</span>
+            ${grammarFocus ? `<span class="phase-topic-tag">${grammarFocus}</span>` : ''}
+          </div>
           <span class="phase-badge-status ${isCompleted ? 'done' : isCurrentActive ? 'active' : completedActionsCount > 0 ? 'progress' : ''}">
             ${isCompleted 
-              ? '<i data-lucide="check-circle-2" style="width: 11px; height: 11px;"></i> Selesai' 
+              ? '<i data-lucide="check" style="width: 11px; height: 11px;"></i> Selesai' 
               : isCurrentActive 
                 ? '<i data-lucide="play" style="width: 9px; height: 9px; fill: currentColor;"></i> Target Saat Ini' 
                 : completedActionsCount > 0 
@@ -133,13 +136,12 @@ export function PhaseView(container, params = {}) {
           </span>
         </div>
 
-        <!-- Row 2: Chapter Title & Grammar Focus Subtitle -->
+        <!-- Middle: Title -->
         <div class="phase-card-title-group">
           <h3 class="phase-card-title">${cleanTitle}</h3>
-          ${grammarFocus ? `<p class="phase-card-focus-text">${grammarFocus}</p>` : ''}
         </div>
 
-        <!-- Row 3: High-End Segmented Action Dock -->
+        <!-- Actions: 3-Module Dock with Dashboard Button DNA -->
         <div class="phase-segmented-dock ${isChap && unit.id !== 0 && unit.id !== '0' ? '' : 'two-col'}">
           ${isChap && unit.id !== 0 && unit.id !== '0' ? `
             <button class="phase-dock-btn ${isTheoryDone ? 'is-done' : (!isTheoryDone && isCurrentActive) ? 'is-next' : ''}" data-route="#/chapter/${unit.id}">
@@ -148,7 +150,7 @@ export function PhaseView(container, params = {}) {
             </button>
 
             <button class="phase-dock-btn ${isWorkbookDone ? 'is-done' : (isTheoryDone && !isWorkbookDone) ? 'is-next' : ''}" data-route="#/workbook/${unit.id}">
-              <i data-lucide="${isWorkbookDone ? 'check' : 'pen-tool'}" style="width: 12px; height: 12px;"></i>
+              <i data-lucide="${isWorkbookDone ? 'check' : 'edit-3'}" style="width: 12px; height: 12px;"></i>
               <span>Buku Kerja</span>
             </button>
 
@@ -168,10 +170,13 @@ export function PhaseView(container, params = {}) {
           `}
         </div>
 
-        <!-- Row 4: Clean Hairline Footer -->
+        <!-- Footer: SRS Counter and Sync -->
         ${isChap && unit.id !== 0 && unit.id !== '0' && vocabCount > 0 ? `
           <div class="phase-card-subfoot">
-            <span class="phase-subfoot-text"><i data-lucide="layers" style="width: 11px; height: 11px;"></i> ${vocabCount} Kosakata (${activeSrsCount} aktif di SRS)</span>
+            <span class="phase-subfoot-text">
+              <i data-lucide="layers" style="width: 11px; height: 11px;"></i>
+              ${vocabCount} Kosakata (${activeSrsCount} di SRS)
+            </span>
             ${activeSrsCount < vocabCount ? `
               <button class="phase-subfoot-sync-btn no-print" data-chapter-id="${unit.id}">+ Antrekan ke SRS</button>
             ` : `
@@ -189,32 +194,30 @@ export function PhaseView(container, params = {}) {
   container.innerHTML = `
     <div class="phase-page-wrap page-container-standard fade-in">
       
-      <!-- Atmospheric Phase Hero Banner -->
-      <section class="phase-hero-card">
-        <div class="phase-hero-watermark">段階</div>
-        
+      <!-- Dashboard-Style Atmospheric Hero Banner -->
+      <section class="hero-learning-card phase-hero-card">
         <nav class="phase-hero-nav" aria-label="Breadcrumb">
           <a href="#/curriculum" class="phase-nav-back">
-            <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i> Kurikulum
+            <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i> Peta Kurikulum
           </a>
           <span class="phase-nav-sep">/</span>
           <span class="phase-nav-level">${cleanLevelTitle}</span>
         </nav>
 
-        <div class="phase-hero-content">
-          <div class="phase-hero-meta-badge">${phaseTagLabel} • ${totalUnits} BAB PEMBELAJARAN</div>
-          <h1 class="phase-hero-title">${cleanPhaseTitle}</h1>
-          ${phase.desc ? `<p class="phase-hero-desc">${phase.desc}</p>` : ''}
+        <div class="hero-main-content">
+          <div class="dash-track-badge n5" style="align-self: flex-start; margin-bottom: 4px;">${phaseTagLabel} &middot; ${totalUnits} BAB</div>
+          <h1 class="hero-chapter-title" style="font-size: 1.35rem; margin: 0 0 4px 0;">${cleanPhaseTitle}</h1>
+          ${phase.desc ? `<p class="hero-chapter-desc" style="margin: 0;">${phase.desc}</p>` : ''}
         </div>
 
         <!-- Progress Gauge -->
-        <div class="phase-hero-progress-section">
-          <div class="phase-progress-meta-row">
-            <span class="phase-progress-label">Kemajuan Fase Ini</span>
-            <span class="phase-progress-val"><strong>${completedUnitsCount}</strong> dari ${totalUnits} Bab (${progressPercent}%)</span>
+        <div class="dash-track-progress" style="margin-top: 4px;">
+          <div class="dash-track-prog-meta">
+            <span>Kemajuan Fase</span>
+            <span><strong>${completedUnitsCount}</strong>/${totalUnits} Bab (${progressPercent}%)</span>
           </div>
-          <div class="phase-progress-track">
-            <div class="phase-progress-fill" style="width: ${progressPercent}%;"></div>
+          <div class="dash-track-prog-bar">
+            <div class="dash-track-prog-fill" style="width: ${progressPercent}%;"></div>
           </div>
         </div>
       </section>
