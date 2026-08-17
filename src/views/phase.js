@@ -32,7 +32,18 @@ export function PhaseView(container, params = {}) {
   const totalUnits = phase.units.length;
   let completedUnitsCount = 0;
   phase.units.forEach(u => {
-    if (isUnitCompleted(u.id)) completedUnitsCount++;
+    const isTheoryDone = localStorage.getItem(`nihongo_master_theory_ch${u.id}`) === 'true';
+    const isWorkbookDone = (() => {
+      try {
+        const saved = localStorage.getItem(`nihongo_master_workbook_ch${u.id}`);
+        if (saved) return !!JSON.parse(saved).xpAwarded;
+      } catch {}
+      return false;
+    })();
+    const isExamDone = isChapterExamPassed(u.id);
+    if (isUnitCompleted(u.id) || (isTheoryDone && isWorkbookDone && isExamDone)) {
+      completedUnitsCount++;
+    }
   });
   const progressPercent = totalUnits > 0 ? Math.round((completedUnitsCount / totalUnits) * 100) : 0;
   const cleanLevelTitle = phase.levelTitle.includes('—') ? phase.levelTitle.split('—')[1].trim() : phase.levelTitle;
@@ -41,7 +52,17 @@ export function PhaseView(container, params = {}) {
   // Identify the first unfinished unit to highlight as "Active Focus"
   let firstUnfinishedId = null;
   for (const u of phase.units) {
-    if (!isUnitCompleted(u.id)) {
+    const isTheoryDone = localStorage.getItem(`nihongo_master_theory_ch${u.id}`) === 'true';
+    const isWorkbookDone = (() => {
+      try {
+        const saved = localStorage.getItem(`nihongo_master_workbook_ch${u.id}`);
+        if (saved) return !!JSON.parse(saved).xpAwarded;
+      } catch {}
+      return false;
+    })();
+    const isExamDone = isChapterExamPassed(u.id);
+    const isDone = isUnitCompleted(u.id) || (isTheoryDone && isWorkbookDone && isExamDone);
+    if (!isDone) {
       firstUnfinishedId = u.id;
       break;
     }
@@ -49,10 +70,7 @@ export function PhaseView(container, params = {}) {
 
   let unitsHtml = '';
   phase.units.forEach((unit, idx) => {
-    const isCompleted = isUnitCompleted(unit.id);
     const isChap = !isNaN(unit.id);
-    const isCurrentActive = unit.id === firstUnfinishedId;
-
     const isTheoryDone = localStorage.getItem(`nihongo_master_theory_ch${unit.id}`) === 'true';
     const isWorkbookDone = (() => {
       try {
@@ -62,6 +80,8 @@ export function PhaseView(container, params = {}) {
       return false;
     })();
     const isExamDone = isChapterExamPassed(unit.id);
+    const isCompleted = isUnitCompleted(unit.id) || (isTheoryDone && isWorkbookDone && isExamDone);
+    const isCurrentActive = unit.id === firstUnfinishedId;
 
     let activeSrsCount = 0;
     let vocabCount = 0;
@@ -99,92 +119,63 @@ export function PhaseView(container, params = {}) {
     unitsHtml += `
       <div class="phase-card ${cardStateClass}">
         
-        <!-- Top Section: Chapter Index, Title, Grammar Pill & Status -->
-        <div class="phase-card-header">
-          <div class="phase-card-index-wrap">
-            <span class="phase-card-index">BAB ${numDisplay}</span>
-            ${isCurrentActive ? '<span class="phase-active-pulse" title="Fokus Belajar Saat Ini"></span>' : ''}
-          </div>
-
-          <div class="phase-card-main-info">
-            <div class="phase-card-title-row">
-              <h3 class="phase-card-title">${cleanTitle}</h3>
-              
-              <!-- Status Pill -->
-              <span class="phase-card-status-pill ${isCompleted ? 'done' : isCurrentActive ? 'active' : completedActionsCount > 0 ? 'progress' : ''}">
-                ${isCompleted 
-                  ? '<i data-lucide="check-circle" style="width: 12px; height: 12px;"></i> Selesai' 
-                  : isCurrentActive 
-                    ? '<i data-lucide="play" style="width: 10px; height: 10px; fill: currentColor;"></i> Target Saat Ini' 
-                    : completedActionsCount > 0 
-                      ? `${completedActionsCount}/3 Modul` 
-                      : 'Belum Mulai'}
-              </span>
-            </div>
-
-            ${grammarFocus ? `
-              <div class="phase-grammar-pills">
-                <span class="phase-grammar-pill">
-                  <i data-lucide="sparkles" style="width: 11px; height: 11px; color: var(--accent);"></i>
-                  ${grammarFocus}
-                </span>
-              </div>
-            ` : ''}
-          </div>
+        <!-- Row 1: Chapter Meta Header -->
+        <div class="phase-card-top-bar">
+          <span class="phase-badge-num">BAB ${numDisplay}</span>
+          <span class="phase-badge-status ${isCompleted ? 'done' : isCurrentActive ? 'active' : completedActionsCount > 0 ? 'progress' : ''}">
+            ${isCompleted 
+              ? '<i data-lucide="check-circle-2" style="width: 11px; height: 11px;"></i> Selesai' 
+              : isCurrentActive 
+                ? '<i data-lucide="play" style="width: 9px; height: 9px; fill: currentColor;"></i> Target Saat Ini' 
+                : completedActionsCount > 0 
+                  ? `${completedActionsCount}/3 Modul` 
+                  : 'Belum Mulai'}
+          </span>
         </div>
 
-        <!-- Stepped 3-Stage Learning Pipeline -->
-        <div class="phase-card-body">
+        <!-- Row 2: Chapter Title & Grammar Focus Subtitle -->
+        <div class="phase-card-title-group">
+          <h3 class="phase-card-title">${cleanTitle}</h3>
+          ${grammarFocus ? `<p class="phase-card-focus-text">${grammarFocus}</p>` : ''}
+        </div>
+
+        <!-- Row 3: High-End Segmented Action Dock -->
+        <div class="phase-segmented-dock ${isChap && unit.id !== 0 && unit.id !== '0' ? '' : 'two-col'}">
           ${isChap && unit.id !== 0 && unit.id !== '0' ? `
-            <div class="phase-pipeline-grid">
-              <!-- Step 1: Materi -->
-              <button class="phase-pipeline-btn ${isTheoryDone ? 'is-done' : (!isTheoryDone && isCurrentActive) ? 'is-next' : ''}" data-route="#/chapter/${unit.id}">
-                <i data-lucide="${isTheoryDone ? 'check' : 'book-open'}" style="width: 13px; height: 13px;"></i>
-                <span>1. Materi</span>
-              </button>
+            <button class="phase-dock-btn ${isTheoryDone ? 'is-done' : (!isTheoryDone && isCurrentActive) ? 'is-next' : ''}" data-route="#/chapter/${unit.id}">
+              <i data-lucide="${isTheoryDone ? 'check' : 'book-open'}" style="width: 12px; height: 12px;"></i>
+              <span>Materi</span>
+            </button>
 
-              <!-- Step 2: Buku Kerja -->
-              <button class="phase-pipeline-btn ${isWorkbookDone ? 'is-done' : (isTheoryDone && !isWorkbookDone) ? 'is-next' : ''}" data-route="#/workbook/${unit.id}">
-                <i data-lucide="${isWorkbookDone ? 'check' : 'pen-tool'}" style="width: 13px; height: 13px;"></i>
-                <span>2. Buku Kerja</span>
-              </button>
+            <button class="phase-dock-btn ${isWorkbookDone ? 'is-done' : (isTheoryDone && !isWorkbookDone) ? 'is-next' : ''}" data-route="#/workbook/${unit.id}">
+              <i data-lucide="${isWorkbookDone ? 'check' : 'pen-tool'}" style="width: 12px; height: 12px;"></i>
+              <span>Buku Kerja</span>
+            </button>
 
-              <!-- Step 3: Ujian -->
-              <button class="phase-pipeline-btn ${isExamDone ? 'is-done' : (isTheoryDone && isWorkbookDone && !isExamDone) ? 'is-next' : ''}" data-route="#/exam/${unit.id}">
-                <i data-lucide="${isExamDone ? 'check' : 'award'}" style="width: 13px; height: 13px;"></i>
-                <span>3. Ujian</span>
-              </button>
-            </div>
+            <button class="phase-dock-btn ${isExamDone ? 'is-done' : (isTheoryDone && isWorkbookDone && !isExamDone) ? 'is-next' : ''}" data-route="#/exam/${unit.id}">
+              <i data-lucide="${isExamDone ? 'check' : 'award'}" style="width: 12px; height: 12px;"></i>
+              <span>Ujian</span>
+            </button>
           ` : `
-            <div class="phase-pipeline-grid two-col">
-              <button class="phase-pipeline-btn is-next" data-route="#/chapter/0?tab=kana">
-                <i data-lucide="type" style="width: 14px; height: 14px;"></i>
-                <span>1. Aksara Kana (Hiragana/Katakana)</span>
-              </button>
-              <button class="phase-pipeline-btn" data-route="#/chapter/0?tab=pelafalan">
-                <i data-lucide="volume-2" style="width: 14px; height: 14px;"></i>
-                <span>2. Pelafalan &amp; Salam Dasar</span>
-              </button>
-            </div>
+            <button class="phase-dock-btn is-next" data-route="#/chapter/0?tab=kana">
+              <i data-lucide="type" style="width: 12px; height: 12px;"></i>
+              <span>Aksara Kana</span>
+            </button>
+            <button class="phase-dock-btn" data-route="#/chapter/0?tab=pelafalan">
+              <i data-lucide="volume-2" style="width: 12px; height: 12px;"></i>
+              <span>Pelafalan &amp; Salam</span>
+            </button>
           `}
         </div>
 
-        <!-- Card Footer: Integrated SRS Sync Tag -->
+        <!-- Row 4: Clean Hairline Footer -->
         ${isChap && unit.id !== 0 && unit.id !== '0' && vocabCount > 0 ? `
-          <div class="phase-card-footer">
-            <div class="phase-footer-srs-info">
-              <i data-lucide="layers" style="width: 12px; height: 12px; color: var(--accent);"></i>
-              <span>${vocabCount} Kosakata (${activeSrsCount} aktif di SRS)</span>
-            </div>
-
+          <div class="phase-card-subfoot">
+            <span class="phase-subfoot-text"><i data-lucide="layers" style="width: 11px; height: 11px;"></i> ${vocabCount} Kosakata (${activeSrsCount} aktif di SRS)</span>
             ${activeSrsCount < vocabCount ? `
-              <button class="phase-footer-srs-btn no-print" data-chapter-id="${unit.id}">
-                <i data-lucide="plus" style="width: 11px; height: 11px;"></i> Antrekan ke SRS
-              </button>
+              <button class="phase-subfoot-sync-btn no-print" data-chapter-id="${unit.id}">+ Antrekan ke SRS</button>
             ` : `
-              <span class="phase-footer-srs-synced">
-                <i data-lucide="check" style="width: 11px; height: 11px;"></i> Semua Terantre
-              </span>
+              <span class="phase-subfoot-synced"><i data-lucide="check" style="width: 10px; height: 10px;"></i> Terantre</span>
             `}
           </div>
         ` : ''}
@@ -239,7 +230,7 @@ export function PhaseView(container, params = {}) {
   if (window.lucide) lucide.createIcons({ root: container });
 
   // Wire Mission Buttons
-  container.querySelectorAll('.phase-pipeline-btn').forEach(btn => {
+  container.querySelectorAll('.phase-dock-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       const route = btn.dataset.route;
@@ -248,7 +239,7 @@ export function PhaseView(container, params = {}) {
   });
 
   // Wire SRS Sync All button
-  container.querySelectorAll('.phase-footer-srs-btn').forEach(btn => {
+  container.querySelectorAll('.phase-subfoot-sync-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       const chId = parseInt(btn.dataset.chapterId);

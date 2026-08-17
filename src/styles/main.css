@@ -3950,7 +3950,7 @@ body {
 .phase-page-wrap {
   max-width: 680px;
   margin: 0 auto;
-  padding: 8px 16px 80px;
+  padding: 4px 12px 60px;
 }
 
 /* Atmospheric Phase Hero Banner */
@@ -3958,11 +3958,11 @@ body {
   position: relative;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 20px 22px;
-  margin-bottom: 24px;
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
 }
 [data-theme="light"] .phase-hero-card {
   background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
@@ -3975,33 +3975,33 @@ body {
 
 .phase-hero-watermark {
   position: absolute;
-  right: 14px;
-  top: 10px;
+  right: 12px;
+  top: 6px;
   font-family: var(--font-jp);
-  font-size: 5.5rem;
+  font-size: 4.5rem;
   font-weight: 900;
   line-height: 1;
   color: var(--text-main);
-  opacity: 0.035;
+  opacity: 0.03;
   pointer-events: none;
   user-select: none;
 }
 [data-theme="dark"] .phase-hero-watermark {
-  opacity: 0.05;
+  opacity: 0.045;
 }
 
 .phase-hero-nav {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 11.5px;
+  gap: 5px;
+  font-size: 11px;
   color: var(--text-muted);
-  margin-bottom: 14px;
+  margin-bottom: 8px;
 }
 .phase-nav-back {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 3.5px;
   color: var(--text-secondary);
   font-weight: 700;
   text-decoration: none;
@@ -4019,58 +4019,58 @@ body {
 }
 
 .phase-hero-content {
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 .phase-hero-meta-badge {
-  font-size: 9.5px;
+  font-size: 9px;
   font-weight: 800;
   color: #4F46E5;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 6px;
+  margin-bottom: 3px;
 }
 [data-theme="dark"] .phase-hero-meta-badge {
   color: #818CF8;
 }
 .phase-hero-title {
-  font-size: 1.55rem;
+  font-size: 1.35rem;
   font-weight: 850;
   color: var(--text-main);
-  margin: 0 0 6px 0;
+  margin: 0 0 3px 0;
   letter-spacing: -0.025em;
   line-height: 1.2;
 }
 .phase-hero-desc {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--text-secondary);
-  line-height: 1.55;
+  line-height: 1.45;
   margin: 0;
   max-width: 520px;
 }
 
 /* Hero Progress Section */
 .phase-hero-progress-section {
-  padding-top: 14px;
+  padding-top: 8px;
   border-top: 1px solid var(--border);
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 .phase-progress-meta-row {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  font-size: 11px;
+  font-size: 10.5px;
 }
 .phase-progress-label {
-  font-size: 10.5px;
+  font-size: 9.5px;
   font-weight: 700;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
 .phase-progress-val {
-  font-size: 11.5px;
+  font-size: 10.5px;
   font-weight: 600;
   color: var(--text-secondary);
   font-variant-numeric: tabular-nums;
@@ -4081,7 +4081,7 @@ body {
 }
 .phase-progress-track {
   width: 100%;
-  height: 4px;
+  height: 3.5px;
   background: var(--border);
   border-radius: 99px;
   overflow: hidden;
@@ -4100,18 +4100,18 @@ body {
 .phase-roadmap-list {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
 }
 
 .phase-card {
   position: relative;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 16px 18px;
+  border-radius: 13px;
+  padding: 12px 14px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 8px;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
 }
@@ -4121,175 +4121,148 @@ body {
 }
 .phase-card:hover {
   border-color: var(--border-bright);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
 }
 
 /* Card States */
 .phase-card.is-active-focus {
   border-color: #4F46E5;
-  box-shadow: 0 0 0 1px #4F46E5, 0 8px 24px rgba(79, 70, 229, 0.08);
+  box-shadow: 0 0 0 1px #4F46E5, 0 4px 16px rgba(79, 70, 229, 0.06);
 }
 [data-theme="dark"] .phase-card.is-active-focus {
   border-color: #6366F1;
-  box-shadow: 0 0 0 1px #6366F1, 0 8px 24px rgba(99, 102, 241, 0.15);
+  box-shadow: 0 0 0 1px #6366F1, 0 4px 16px rgba(99, 102, 241, 0.12);
 }
 .phase-card.is-completed {
   border-color: rgba(34, 197, 94, 0.3);
 }
 
-/* Card Header */
-.phase-card-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-}
-.phase-card-index-wrap {
-  position: relative;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.phase-card-index {
-  font-family: var(--font-mono, monospace);
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: var(--text-secondary);
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  padding: 4px 8px;
-  border-radius: 6px;
-  line-height: 1;
-}
-[data-theme="light"] .phase-card-index {
-  background: #F1F5F9;
-  border-color: #E2E8F0;
-  color: #475569;
-}
-.is-active-focus .phase-card-index {
-  background: rgba(79, 70, 229, 0.1);
-  border-color: rgba(79, 70, 229, 0.3);
-  color: #4F46E5;
-}
-.is-completed .phase-card-index {
-  background: rgba(34, 197, 94, 0.1);
-  border-color: rgba(34, 197, 94, 0.3);
-  color: #16A34A;
-}
-
-.phase-active-pulse {
-  position: absolute;
-  top: -2px;
-  right: -2px;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #4F46E5;
-  box-shadow: 0 0 0 2px #FFFFFF;
-}
-[data-theme="dark"] .phase-active-pulse {
-  box-shadow: 0 0 0 2px #111827;
-}
-
-.phase-card-main-info {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.phase-card-title-row {
+/* Row 1: Top Bar (Badges & Status) */
+.phase-card-top-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
+  width: 100%;
+}
+.phase-badge-num {
+  font-family: var(--font-mono, monospace);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #4F46E5;
+  background: rgba(79, 70, 229, 0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+[data-theme="dark"] .phase-badge-num {
+  background: rgba(99, 102, 241, 0.16);
+  color: #A5B4FC;
+}
+.is-completed .phase-badge-num {
+  background: rgba(34, 197, 94, 0.1);
+  color: #16A34A;
+}
+[data-theme="dark"] .is-completed .phase-badge-num {
+  background: rgba(34, 197, 94, 0.16);
+  color: #4ADE80;
+}
+
+.phase-badge-status {
+  font-size: 10px;
+  font-weight: 750;
+  padding: 2px 7px;
+  border-radius: 99px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3.5px;
+  white-space: nowrap;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.phase-badge-status.active {
+  background: rgba(79, 70, 229, 0.08);
+  border-color: rgba(79, 70, 229, 0.25);
+  color: #4F46E5;
+}
+[data-theme="dark"] .phase-badge-status.active {
+  background: rgba(99, 102, 241, 0.16);
+  border-color: rgba(99, 102, 241, 0.35);
+  color: #A5B4FC;
+}
+.phase-badge-status.done {
+  background: #F0FDF4;
+  border-color: #BBF7D0;
+  color: #16A34A;
+}
+[data-theme="dark"] .phase-badge-status.done {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.25);
+  color: #4ADE80;
+}
+.phase-badge-status.progress {
+  color: #4F46E5;
+}
+
+/* Row 2: Full Width Chapter Title & Grammar Focus */
+.phase-card-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5px;
 }
 .phase-card-title {
-  font-size: 15px;
+  font-size: 14.5px;
   font-weight: 800;
   color: var(--text-main);
   margin: 0;
   letter-spacing: -0.015em;
   line-height: 1.25;
+  width: 100%;
 }
-
-.phase-card-status-pill {
-  font-size: 10px;
-  font-weight: 750;
-  padding: 3px 8px;
-  border-radius: 99px;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  white-space: nowrap;
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  color: var(--text-muted);
-}
-.phase-card-status-pill.active {
-  background: rgba(79, 70, 229, 0.08);
-  border-color: rgba(79, 70, 229, 0.25);
-  color: #4F46E5;
-}
-[data-theme="dark"] .phase-card-status-pill.active {
-  background: rgba(99, 102, 241, 0.16);
-  border-color: rgba(99, 102, 241, 0.35);
-  color: #A5B4FC;
-}
-.phase-card-status-pill.done {
-  background: #F0FDF4;
-  border-color: #BBF7D0;
-  color: #16A34A;
-}
-[data-theme="dark"] .phase-card-status-pill.done {
-  background: rgba(34, 197, 94, 0.12);
-  border-color: rgba(34, 197, 94, 0.25);
-  color: #4ADE80;
-}
-.phase-card-status-pill.progress {
-  color: #4F46E5;
-}
-
-.phase-grammar-pills {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-.phase-grammar-pill {
+.phase-card-focus-text {
   font-size: 11px;
-  color: var(--text-secondary);
   font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  line-height: 1.3;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.35;
 }
 
-/* ── Stepped 3-Stage Pipeline Buttons ── */
-.phase-pipeline-grid {
+/* Row 3: High-End Track Segmented Action Dock */
+.phase-segmented-dock {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
+  gap: 3px;
+  width: 100%;
+  background: var(--bg-elevated);
+  padding: 2.5px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
 }
-.phase-pipeline-grid.two-col {
+[data-theme="light"] .phase-segmented-dock {
+  background: #F1F5F9;
+  border-color: #E2E8F0;
+}
+.phase-segmented-dock.two-col {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.phase-pipeline-btn {
-  height: 35px;
-  padding: 0 8px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--bg-elevated);
+.phase-dock-btn {
+  height: 30px;
+  padding: 0 4px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
   color: var(--text-secondary);
-  font-size: 11.5px;
-  font-weight: 700;
+  font-size: 11px;
+  font-weight: 650;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 4px;
   cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
@@ -4297,108 +4270,89 @@ body {
   transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
   -webkit-tap-highlight-color: transparent;
 }
-[data-theme="light"] .phase-pipeline-btn {
-  background: #F8FAFC;
-  border-color: #E2E8F0;
-  color: #334155;
+[data-theme="light"] .phase-dock-btn {
+  color: #475569;
 }
-.phase-pipeline-btn:hover {
-  background: #F1F5F9;
-  border-color: #CBD5E1;
+.phase-dock-btn:hover {
+  background: rgba(255, 255, 255, 0.7);
   color: #0F172A;
-  transform: translateY(-1px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
-[data-theme="dark"] .phase-pipeline-btn:hover {
+[data-theme="dark"] .phase-dock-btn:hover {
   background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.16);
   color: #FFFFFF;
 }
-.phase-pipeline-btn:active {
+.phase-dock-btn:active {
   transform: scale(0.98);
 }
 
-/* Button Status Modifiers */
-.phase-pipeline-btn.is-done {
-  background: #F0FDF4;
-  border-color: #BBF7D0;
+/* Dock Button Status Modifiers */
+.phase-dock-btn.is-done {
+  background: #FFFFFF;
   color: #15803D;
   font-weight: 750;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
-[data-theme="dark"] .phase-pipeline-btn.is-done {
-  background: rgba(34, 197, 94, 0.12);
-  border-color: rgba(34, 197, 94, 0.25);
+[data-theme="dark"] .phase-dock-btn.is-done {
+  background: rgba(34, 197, 94, 0.16);
   color: #86EFAC;
 }
-.phase-pipeline-btn.is-done:hover {
-  background: #DCFCE7;
-  border-color: #86EFAC;
-}
 
-.phase-pipeline-btn.is-next {
-  background: rgba(79, 70, 229, 0.07);
-  border-color: rgba(79, 70, 229, 0.3);
+.phase-dock-btn.is-next {
+  background: #FFFFFF;
   color: #4F46E5;
   font-weight: 750;
+  box-shadow: 0 1px 4px rgba(79, 70, 229, 0.12);
 }
-[data-theme="dark"] .phase-pipeline-btn.is-next {
-  background: rgba(99, 102, 241, 0.14);
-  border-color: rgba(99, 102, 241, 0.35);
-  color: #A5B4FC;
-}
-.phase-pipeline-btn.is-next:hover {
-  background: rgba(79, 70, 229, 0.12);
-  border-color: #4F46E5;
+[data-theme="dark"] .phase-dock-btn.is-next {
+  background: rgba(99, 102, 241, 0.2);
+  color: #C7D2FE;
 }
 
-/* ── Card Footer: Integrated SRS Bar ── */
-.phase-card-footer {
+/* Row 4: Clean Hairline Subfoot */
+.phase-card-subfoot {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  padding-top: 10px;
+  gap: 8px;
+  padding-top: 6px;
   border-top: 1px solid var(--border);
-  font-size: 11px;
+  font-size: 10px;
 }
-.phase-footer-srs-info {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  color: var(--text-secondary);
-  font-size: 11px;
-  font-weight: 500;
-}
-.phase-footer-srs-btn {
-  background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  padding: 3px 9px;
-  border-radius: 6px;
-  color: var(--text-secondary);
-  font-size: 10.5px;
-  font-weight: 700;
-  cursor: pointer;
+.phase-subfoot-text {
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 550;
+}
+.phase-subfoot-sync-btn {
+  background: transparent;
+  border: none;
+  padding: 1px 3px;
+  color: #4F46E5;
+  font-size: 10px;
+  font-weight: 750;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 2.5px;
   transition: all 0.15s ease;
 }
-[data-theme="light"] .phase-footer-srs-btn {
-  background: #F1F5F9;
-  border-color: #E2E8F0;
-  color: #475569;
+[data-theme="dark"] .phase-subfoot-sync-btn {
+  color: #818CF8;
 }
-.phase-footer-srs-btn:hover {
-  background: rgba(79, 70, 229, 0.08);
-  border-color: #4F46E5;
-  color: #4F46E5;
+.phase-subfoot-sync-btn:hover {
+  text-decoration: underline;
 }
-.phase-footer-srs-synced {
+.phase-subfoot-synced {
   color: #16A34A;
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 700;
   display: inline-flex;
   align-items: center;
-  gap: 3px;
+  gap: 2.5px;
 }
 
 @media (max-width: 640px) {
