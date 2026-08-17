@@ -36,11 +36,22 @@ export function PhaseView(container, params = {}) {
   });
   const progressPercent = totalUnits > 0 ? Math.round((completedUnitsCount / totalUnits) * 100) : 0;
   const cleanLevelTitle = phase.levelTitle.includes('—') ? phase.levelTitle.split('—')[1].trim() : phase.levelTitle;
+  const cleanPhaseTitle = phase.title.includes(':') ? phase.title.split(':').slice(1).join(':').trim() : phase.title;
+
+  // Identify the first unfinished unit to highlight as "Active Focus"
+  let firstUnfinishedId = null;
+  for (const u of phase.units) {
+    if (!isUnitCompleted(u.id)) {
+      firstUnfinishedId = u.id;
+      break;
+    }
+  }
 
   let unitsHtml = '';
-  phase.units.forEach((unit) => {
-    const completed = isUnitCompleted(unit.id);
+  phase.units.forEach((unit, idx) => {
+    const isCompleted = isUnitCompleted(unit.id);
     const isChap = !isNaN(unit.id);
+    const isCurrentActive = unit.id === firstUnfinishedId;
 
     const isTheoryDone = localStorage.getItem(`nihongo_master_theory_ch${unit.id}`) === 'true';
     const isWorkbookDone = (() => {
@@ -55,7 +66,7 @@ export function PhaseView(container, params = {}) {
     let activeSrsCount = 0;
     let vocabCount = 0;
     let unitTitle = unit.title;
-    let grammarTag = unit.desc || '';
+    let grammarFocus = unit.desc || '';
 
     if (isChap && unit.id !== 0 && unit.id !== '0') {
       const chId = parseInt(unit.id);
@@ -73,106 +84,152 @@ export function PhaseView(container, params = {}) {
     }
 
     const completedActionsCount = (isTheoryDone ? 1 : 0) + (isWorkbookDone ? 1 : 0) + (isExamDone ? 1 : 0);
-    const unitBadgeLabel = `BAB ${unit.id < 10 && unit.id > 0 ? '0' + unit.id : unit.id}`;
+    const numDisplay = unit.id < 10 && unit.id >= 0 ? `0${unit.id}` : `${unit.id}`;
     const cleanTitle = unitTitle.includes(':') ? unitTitle.split(':').slice(1).join(':').trim() : unitTitle;
 
+    // Card State Classes
+    const cardStateClass = isCompleted 
+      ? 'is-completed' 
+      : isCurrentActive 
+        ? 'is-active-focus' 
+        : completedActionsCount > 0 
+          ? 'is-in-progress' 
+          : 'is-upcoming';
+
     unitsHtml += `
-      <div class="phase-unit-card ${completed ? 'is-complete' : ''}">
+      <div class="phase-card ${cardStateClass}">
         
-        <!-- Header Row: Chapter Label, Grammar Tag & Status -->
-        <div class="phase-unit-top">
-          <div class="phase-unit-meta-left">
-            <span class="phase-unit-badge">${unitBadgeLabel}</span>
-            ${grammarTag ? `<span class="phase-unit-grammar-tag">${grammarTag}</span>` : ''}
+        <!-- Top Section: Chapter Index, Title, Grammar Pill & Status -->
+        <div class="phase-card-header">
+          <div class="phase-card-index-wrap">
+            <span class="phase-card-index">BAB ${numDisplay}</span>
+            ${isCurrentActive ? '<span class="phase-active-pulse" title="Fokus Belajar Saat Ini"></span>' : ''}
           </div>
-          <span class="phase-unit-status ${completed ? 'done' : completedActionsCount > 0 ? 'active' : ''}">
-            ${completed ? '✓ Selesai' : completedActionsCount > 0 ? `${completedActionsCount}/3 Selesai` : 'Belum Mulai'}
-          </span>
+
+          <div class="phase-card-main-info">
+            <div class="phase-card-title-row">
+              <h3 class="phase-card-title">${cleanTitle}</h3>
+              
+              <!-- Status Pill -->
+              <span class="phase-card-status-pill ${isCompleted ? 'done' : isCurrentActive ? 'active' : completedActionsCount > 0 ? 'progress' : ''}">
+                ${isCompleted 
+                  ? '<i data-lucide="check-circle" style="width: 12px; height: 12px;"></i> Selesai' 
+                  : isCurrentActive 
+                    ? '<i data-lucide="play" style="width: 10px; height: 10px; fill: currentColor;"></i> Target Saat Ini' 
+                    : completedActionsCount > 0 
+                      ? `${completedActionsCount}/3 Modul` 
+                      : 'Belum Mulai'}
+              </span>
+            </div>
+
+            ${grammarFocus ? `
+              <div class="phase-grammar-pills">
+                <span class="phase-grammar-pill">
+                  <i data-lucide="sparkles" style="width: 11px; height: 11px; color: var(--accent);"></i>
+                  ${grammarFocus}
+                </span>
+              </div>
+            ` : ''}
+          </div>
         </div>
 
-        <!-- Title -->
-        <div class="phase-unit-body">
-          <h3 class="phase-unit-title">${cleanTitle}</h3>
-        </div>
-
-        <!-- Integrated Bottom: SRS Mini Chip & Module Action Buttons -->
-        <div class="phase-unit-actions-row">
+        <!-- Stepped 3-Stage Learning Pipeline -->
+        <div class="phase-card-body">
           ${isChap && unit.id !== 0 && unit.id !== '0' ? `
-            <div class="phase-action-grid">
-              <button class="phase-action-btn ${isTheoryDone ? 'completed' : ''}" data-route="#/chapter/${unit.id}">
-                <i data-lucide="${isTheoryDone ? 'check' : 'book-open'}" style="width: 12.5px; height: 12.5px;"></i>
-                <span>Materi</span>
+            <div class="phase-pipeline-grid">
+              <!-- Step 1: Materi -->
+              <button class="phase-pipeline-btn ${isTheoryDone ? 'is-done' : (!isTheoryDone && isCurrentActive) ? 'is-next' : ''}" data-route="#/chapter/${unit.id}">
+                <i data-lucide="${isTheoryDone ? 'check' : 'book-open'}" style="width: 13px; height: 13px;"></i>
+                <span>1. Materi</span>
               </button>
-              <button class="phase-action-btn ${isWorkbookDone ? 'completed' : ''}" data-route="#/workbook/${unit.id}">
-                <i data-lucide="${isWorkbookDone ? 'check' : 'pen-tool'}" style="width: 12.5px; height: 12.5px;"></i>
-                <span>Buku Kerja</span>
+
+              <!-- Step 2: Buku Kerja -->
+              <button class="phase-pipeline-btn ${isWorkbookDone ? 'is-done' : (isTheoryDone && !isWorkbookDone) ? 'is-next' : ''}" data-route="#/workbook/${unit.id}">
+                <i data-lucide="${isWorkbookDone ? 'check' : 'pen-tool'}" style="width: 13px; height: 13px;"></i>
+                <span>2. Buku Kerja</span>
               </button>
-              <button class="phase-action-btn ${isExamDone ? 'completed' : ''}" data-route="#/exam/${unit.id}">
-                <i data-lucide="${isExamDone ? 'check' : 'award'}" style="width: 12.5px; height: 12.5px;"></i>
-                <span>Ujian</span>
+
+              <!-- Step 3: Ujian -->
+              <button class="phase-pipeline-btn ${isExamDone ? 'is-done' : (isTheoryDone && isWorkbookDone && !isExamDone) ? 'is-next' : ''}" data-route="#/exam/${unit.id}">
+                <i data-lucide="${isExamDone ? 'check' : 'award'}" style="width: 13px; height: 13px;"></i>
+                <span>3. Ujian</span>
               </button>
             </div>
           ` : `
-            <div class="phase-action-grid two-col">
-              <button class="phase-action-btn" data-route="#/chapter/0?tab=kana">
-                <i data-lucide="type" style="width: 12.5px; height: 12.5px;"></i>
-                <span>Huruf Kana</span>
+            <div class="phase-pipeline-grid two-col">
+              <button class="phase-pipeline-btn is-next" data-route="#/chapter/0?tab=kana">
+                <i data-lucide="type" style="width: 14px; height: 14px;"></i>
+                <span>1. Aksara Kana (Hiragana/Katakana)</span>
               </button>
-              <button class="phase-action-btn" data-route="#/chapter/0?tab=pelafalan">
-                <i data-lucide="volume-2" style="width: 12.5px; height: 12.5px;"></i>
-                <span>Pelafalan &amp; Salam</span>
+              <button class="phase-pipeline-btn" data-route="#/chapter/0?tab=pelafalan">
+                <i data-lucide="volume-2" style="width: 14px; height: 14px;"></i>
+                <span>2. Pelafalan &amp; Salam Dasar</span>
               </button>
             </div>
           `}
-
-          ${isChap && unit.id !== 0 && unit.id !== '0' && vocabCount > 0 ? `
-            <div class="phase-srs-inline">
-              <span class="phase-srs-text">
-                <i data-lucide="layers" style="width: 11px; height: 11px;"></i> ${activeSrsCount}/${vocabCount} Kosakata SRS
-              </span>
-              ${activeSrsCount < vocabCount ? `
-                <button class="phase-sync-srs-btn no-print" data-chapter-id="${unit.id}">
-                  <i data-lucide="plus" style="width: 10px; height: 10px;"></i> Antrekan
-                </button>
-              ` : `
-                <span class="phase-srs-synced">
-                  <i data-lucide="check" style="width: 10px; height: 10px;"></i> Terantre
-                </span>
-              `}
-            </div>
-          ` : ''}
         </div>
+
+        <!-- Card Footer: Integrated SRS Sync Tag -->
+        ${isChap && unit.id !== 0 && unit.id !== '0' && vocabCount > 0 ? `
+          <div class="phase-card-footer">
+            <div class="phase-footer-srs-info">
+              <i data-lucide="layers" style="width: 12px; height: 12px; color: var(--accent);"></i>
+              <span>${vocabCount} Kosakata (${activeSrsCount} aktif di SRS)</span>
+            </div>
+
+            ${activeSrsCount < vocabCount ? `
+              <button class="phase-footer-srs-btn no-print" data-chapter-id="${unit.id}">
+                <i data-lucide="plus" style="width: 11px; height: 11px;"></i> Antrekan ke SRS
+              </button>
+            ` : `
+              <span class="phase-footer-srs-synced">
+                <i data-lucide="check" style="width: 11px; height: 11px;"></i> Semua Terantre
+              </span>
+            `}
+          </div>
+        ` : ''}
 
       </div>
     `;
   });
 
+  const phaseTagLabel = phase.title.includes(':') ? phase.title.split(':')[0].trim().toUpperCase() : 'FASE';
+
   container.innerHTML = `
-    <div class="phase-page-container page-container-standard fade-in">
+    <div class="phase-page-wrap page-container-standard fade-in">
       
-      <!-- Kindle/Apple Style Clean Header -->
-      <header class="phase-page-header">
-        <nav class="phase-breadcrumb" aria-label="Breadcrumb">
-          <a href="#/curriculum">← Kurikulum</a>
-          <span class="phase-crumb-sep">/</span>
-          <span>${cleanLevelTitle}</span>
+      <!-- Atmospheric Phase Hero Banner -->
+      <section class="phase-hero-card">
+        <div class="phase-hero-watermark">段階</div>
+        
+        <nav class="phase-hero-nav" aria-label="Breadcrumb">
+          <a href="#/curriculum" class="phase-nav-back">
+            <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i> Kurikulum
+          </a>
+          <span class="phase-nav-sep">/</span>
+          <span class="phase-nav-level">${cleanLevelTitle}</span>
         </nav>
 
-        <div class="phase-header-intro">
-          <div class="phase-header-title-row">
-            <h1 class="phase-header-title">${phase.title.replace(/^Fase \d+:\s*/, '')}</h1>
-            <span class="phase-header-badge">${completedUnitsCount}/${totalUnits} Bab Selesai</span>
-          </div>
-          ${phase.desc ? `<p class="phase-header-desc">${phase.desc}</p>` : ''}
+        <div class="phase-hero-content">
+          <div class="phase-hero-meta-badge">${phaseTagLabel} • ${totalUnits} BAB PEMBELAJARAN</div>
+          <h1 class="phase-hero-title">${cleanPhaseTitle}</h1>
+          ${phase.desc ? `<p class="phase-hero-desc">${phase.desc}</p>` : ''}
+        </div>
 
-          <div class="phase-header-progress-track">
-            <div class="phase-header-progress-fill" style="width: ${progressPercent}%;"></div>
+        <!-- Progress Gauge -->
+        <div class="phase-hero-progress-section">
+          <div class="phase-progress-meta-row">
+            <span class="phase-progress-label">Kemajuan Fase Ini</span>
+            <span class="phase-progress-val"><strong>${completedUnitsCount}</strong> dari ${totalUnits} Bab (${progressPercent}%)</span>
+          </div>
+          <div class="phase-progress-track">
+            <div class="phase-progress-fill" style="width: ${progressPercent}%;"></div>
           </div>
         </div>
-      </header>
+      </section>
 
-      <!-- Unit Cards List -->
-      <div class="phase-units-container">
+      <!-- Chapter Roadmap List -->
+      <div class="phase-roadmap-list">
         ${unitsHtml}
       </div>
 
@@ -182,7 +239,7 @@ export function PhaseView(container, params = {}) {
   if (window.lucide) lucide.createIcons({ root: container });
 
   // Wire Mission Buttons
-  container.querySelectorAll('.phase-action-btn').forEach(btn => {
+  container.querySelectorAll('.phase-pipeline-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       const route = btn.dataset.route;
@@ -191,12 +248,12 @@ export function PhaseView(container, params = {}) {
   });
 
   // Wire SRS Sync All button
-  container.querySelectorAll('.phase-sync-srs-btn').forEach(btn => {
+  container.querySelectorAll('.phase-footer-srs-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
       const chId = parseInt(btn.dataset.chapterId);
       btn.disabled = true;
-      btn.innerHTML = `<i data-lucide="loader" style="width: 12px; height: 12px; animation: spin 1s linear infinite;"></i> Mengantre...`;
+      btn.innerHTML = `<i data-lucide="loader" style="width: 11px; height: 11px; animation: spin 1s linear infinite;"></i> Mengantre...`;
       if (window.lucide) lucide.createIcons({ root: btn });
 
       loadChapter(chId).then(data => {

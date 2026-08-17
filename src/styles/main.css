@@ -3946,304 +3946,459 @@ body {
   color: var(--text-main);
 }
 
-/* ── Phase View: Unit Cards & Apple Segmented Action Buttons ── */
-.phase-page-header {
-  margin-bottom: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.phase-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  color: var(--text-muted);
-}
-.phase-breadcrumb a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.15s ease;
-}
-.phase-breadcrumb a:hover {
-  color: var(--accent);
-}
-.phase-crumb-sep {
-  color: var(--border);
+/* ── Phase Detail View: Atmospheric Studio Roadmap & 3-Step Pipeline ── */
+.phase-page-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 8px 16px 80px;
 }
 
-.phase-header-intro {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.phase-header-title-row {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.phase-header-title {
-  font-size: 1.45rem;
-  font-weight: 800;
-  color: var(--text-main);
-  margin: 0;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
-.phase-header-badge {
-  font-size: 11px;
-  font-weight: 750;
-  color: var(--text-muted);
-  font-variant-numeric: tabular-nums;
-}
-.phase-header-desc {
-  font-size: 12.5px;
-  color: var(--text-secondary);
-  line-height: 1.5;
-  margin: 0;
-}
-.phase-header-progress-track {
-  width: 100%;
-  height: 3px;
-  background: var(--border);
-  border-radius: 99px;
-  margin-top: 4px;
-  overflow: hidden;
-}
-[data-theme="light"] .phase-header-progress-track {
-  background: #E2E8F0;
-}
-.phase-header-progress-fill {
-  height: 100%;
-  background: #4F46E5;
-  border-radius: 99px;
-  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Phase Units List */
-.phase-units-container {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.phase-unit-card {
+/* Atmospheric Phase Hero Banner */
+.phase-hero-card {
+  position: relative;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 14px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  border-radius: 18px;
+  padding: 20px 22px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 }
-[data-theme="light"] .phase-unit-card {
-  background: #FFFFFF;
+[data-theme="light"] .phase-hero-card {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
   border-color: #E2E8F0;
 }
-.phase-unit-card:hover {
-  border-color: var(--border-bright);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+[data-theme="dark"] .phase-hero-card {
+  background: linear-gradient(180deg, #161F30 0%, #0F172A 100%);
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
-.phase-unit-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
+.phase-hero-watermark {
+  position: absolute;
+  right: 14px;
+  top: 10px;
+  font-family: var(--font-jp);
+  font-size: 5.5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--text-main);
+  opacity: 0.035;
+  pointer-events: none;
+  user-select: none;
 }
-.phase-unit-meta-left {
+[data-theme="dark"] .phase-hero-watermark {
+  opacity: 0.05;
+}
+
+.phase-hero-nav {
   display: flex;
   align-items: center;
   gap: 6px;
-  flex-wrap: wrap;
+  font-size: 11.5px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
 }
-.phase-unit-badge {
+.phase-nav-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-secondary);
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.phase-nav-back:hover {
+  color: #4F46E5;
+}
+.phase-nav-sep {
+  color: var(--border);
+}
+.phase-nav-level {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.phase-hero-content {
+  margin-bottom: 18px;
+}
+.phase-hero-meta-badge {
   font-size: 9.5px;
   font-weight: 800;
   color: #4F46E5;
-  background: rgba(79, 70, 229, 0.08);
-  padding: 2.5px 7px;
-  border-radius: 5px;
-  letter-spacing: 0.06em;
-  font-variant-numeric: tabular-nums;
-  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
 }
-[data-theme="dark"] .phase-unit-badge {
-  background: rgba(99, 102, 241, 0.16);
-  color: #A5B4FC;
+[data-theme="dark"] .phase-hero-meta-badge {
+  color: #818CF8;
 }
-.phase-unit-grammar-tag {
-  font-size: 11.5px;
+.phase-hero-title {
+  font-size: 1.55rem;
+  font-weight: 850;
+  color: var(--text-main);
+  margin: 0 0 6px 0;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+.phase-hero-desc {
+  font-size: 13px;
   color: var(--text-secondary);
-  font-weight: 600;
-  line-height: 1;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 520px;
 }
-.phase-unit-status {
+
+/* Hero Progress Section */
+.phase-hero-progress-section {
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.phase-progress-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 11px;
+}
+.phase-progress-label {
   font-size: 10.5px;
   font-weight: 700;
   color: var(--text-muted);
-  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
-.phase-unit-status.active {
-  color: #4F46E5;
+.phase-progress-val {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
 }
-[data-theme="dark"] .phase-unit-status.active {
-  color: #818CF8;
+.phase-progress-val strong {
+  color: var(--text-main);
+  font-weight: 800;
 }
-.phase-unit-status.done {
-  color: #16A34A;
+.phase-progress-track {
+  width: 100%;
+  height: 4px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
 }
-[data-theme="dark"] .phase-unit-status.done {
-  color: #4ADE80;
+[data-theme="light"] .phase-progress-track {
+  background: #E2E8F0;
+}
+.phase-progress-fill {
+  height: 100%;
+  background: #4F46E5;
+  border-radius: 99px;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.phase-unit-body {
-  margin: 0;
+/* ── Phase Roadmap Chapter Cards ── */
+.phase-roadmap-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
-.phase-unit-title {
-  font-size: 14.5px;
-  font-weight: 750;
+
+.phase-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+[data-theme="light"] .phase-card {
+  background: #FFFFFF;
+  border-color: #E2E8F0;
+}
+.phase-card:hover {
+  border-color: var(--border-bright);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+}
+
+/* Card States */
+.phase-card.is-active-focus {
+  border-color: #4F46E5;
+  box-shadow: 0 0 0 1px #4F46E5, 0 8px 24px rgba(79, 70, 229, 0.08);
+}
+[data-theme="dark"] .phase-card.is-active-focus {
+  border-color: #6366F1;
+  box-shadow: 0 0 0 1px #6366F1, 0 8px 24px rgba(99, 102, 241, 0.15);
+}
+.phase-card.is-completed {
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+/* Card Header */
+.phase-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.phase-card-index-wrap {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.phase-card-index {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+  border-radius: 6px;
+  line-height: 1;
+}
+[data-theme="light"] .phase-card-index {
+  background: #F1F5F9;
+  border-color: #E2E8F0;
+  color: #475569;
+}
+.is-active-focus .phase-card-index {
+  background: rgba(79, 70, 229, 0.1);
+  border-color: rgba(79, 70, 229, 0.3);
+  color: #4F46E5;
+}
+.is-completed .phase-card-index {
+  background: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.3);
+  color: #16A34A;
+}
+
+.phase-active-pulse {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4F46E5;
+  box-shadow: 0 0 0 2px #FFFFFF;
+}
+[data-theme="dark"] .phase-active-pulse {
+  box-shadow: 0 0 0 2px #111827;
+}
+
+.phase-card-main-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.phase-card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.phase-card-title {
+  font-size: 15px;
+  font-weight: 800;
   color: var(--text-main);
   margin: 0;
   letter-spacing: -0.015em;
   line-height: 1.25;
 }
 
-/* Bottom Actions Row & SRS Inline */
-.phase-unit-actions-row {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 2px;
-}
-.phase-srs-inline {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 6px;
-  font-size: 10.5px;
-  color: var(--text-muted);
-  padding: 0 2px;
-}
-.phase-srs-text {
+.phase-card-status-pill {
+  font-size: 10px;
+  font-weight: 750;
+  padding: 3px 8px;
+  border-radius: 99px;
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-weight: 500;
-}
-.phase-sync-srs-btn {
-  background: var(--bg-card);
+  white-space: nowrap;
+  background: var(--bg-elevated);
   border: 1px solid var(--border);
-  padding: 2px 7px;
-  border-radius: 5px;
-  color: var(--text-secondary);
-  font-size: 10px;
-  font-weight: 700;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  transition: all 0.15s ease;
+  color: var(--text-muted);
 }
-[data-theme="light"] .phase-sync-srs-btn {
-  background: #F1F5F9;
-  border-color: #E2E8F0;
-}
-.phase-sync-srs-btn:hover {
+.phase-card-status-pill.active {
   background: rgba(79, 70, 229, 0.08);
-  border-color: #4F46E5;
+  border-color: rgba(79, 70, 229, 0.25);
   color: #4F46E5;
 }
-.phase-srs-synced {
+[data-theme="dark"] .phase-card-status-pill.active {
+  background: rgba(99, 102, 241, 0.16);
+  border-color: rgba(99, 102, 241, 0.35);
+  color: #A5B4FC;
+}
+.phase-card-status-pill.done {
+  background: #F0FDF4;
+  border-color: #BBF7D0;
   color: #16A34A;
-  font-size: 10px;
-  font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  gap: 3px;
+}
+[data-theme="dark"] .phase-card-status-pill.done {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.25);
+  color: #4ADE80;
+}
+.phase-card-status-pill.progress {
+  color: #4F46E5;
 }
 
-/* Apple / Studio-Grade Segmented Unit Action Buttons */
-.phase-action-grid {
+.phase-grammar-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.phase-grammar-pill {
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  line-height: 1.3;
+}
+
+/* ── Stepped 3-Stage Pipeline Buttons ── */
+.phase-pipeline-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 6px;
-  width: 100%;
 }
-.phase-action-grid.two-col {
+.phase-pipeline-grid.two-col {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.phase-action-btn {
-  height: 34px;
-  padding: 0 6px;
-  font-size: 11px;
-  font-weight: 650;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  color: var(--text-secondary);
+.phase-pipeline-btn {
+  height: 35px;
+  padding: 0 8px;
   border-radius: 8px;
-  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  font-size: 11.5px;
+  font-weight: 700;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 4.5px;
-  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  gap: 5px;
+  cursor: pointer;
   text-decoration: none;
   white-space: nowrap;
   letter-spacing: -0.01em;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
   -webkit-tap-highlight-color: transparent;
 }
-[data-theme="light"] .phase-action-btn {
+[data-theme="light"] .phase-pipeline-btn {
   background: #F8FAFC;
   border-color: #E2E8F0;
   color: #334155;
 }
-.phase-action-btn:hover {
-  background: var(--bg-hover);
-  border-color: var(--border-bright);
-  color: var(--text-main);
-  transform: translateY(-1px);
-}
-[data-theme="light"] .phase-action-btn:hover {
+.phase-pipeline-btn:hover {
   background: #F1F5F9;
   border-color: #CBD5E1;
   color: #0F172A;
+  transform: translateY(-1px);
 }
-.phase-action-btn:active {
+[data-theme="dark"] .phase-pipeline-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #FFFFFF;
+}
+.phase-pipeline-btn:active {
   transform: scale(0.98);
 }
-.phase-action-btn.completed {
-  background: var(--green-dim);
-  border-color: rgba(52, 211, 153, 0.3);
-  color: var(--green);
-  font-weight: 700;
-}
-[data-theme="light"] .phase-action-btn.completed {
+
+/* Button Status Modifiers */
+.phase-pipeline-btn.is-done {
   background: #F0FDF4;
   border-color: #BBF7D0;
   color: #15803D;
+  font-weight: 750;
 }
-.phase-action-btn.completed:hover {
-  border-color: var(--green);
+[data-theme="dark"] .phase-pipeline-btn.is-done {
+  background: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.25);
+  color: #86EFAC;
 }
-[data-theme="light"] .phase-action-btn.completed:hover {
+.phase-pipeline-btn.is-done:hover {
   background: #DCFCE7;
   border-color: #86EFAC;
 }
 
-@media (max-width: 375px) {
-  .phase-action-btn {
-    font-size: 10px;
-    padding: 0 3px;
-    gap: 3px;
-    height: 33px;
-  }
+.phase-pipeline-btn.is-next {
+  background: rgba(79, 70, 229, 0.07);
+  border-color: rgba(79, 70, 229, 0.3);
+  color: #4F46E5;
+  font-weight: 750;
+}
+[data-theme="dark"] .phase-pipeline-btn.is-next {
+  background: rgba(99, 102, 241, 0.14);
+  border-color: rgba(99, 102, 241, 0.35);
+  color: #A5B4FC;
+}
+.phase-pipeline-btn.is-next:hover {
+  background: rgba(79, 70, 229, 0.12);
+  border-color: #4F46E5;
+}
+
+/* ── Card Footer: Integrated SRS Bar ── */
+.phase-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  font-size: 11px;
+}
+.phase-footer-srs-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 500;
+}
+.phase-footer-srs-btn {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  padding: 3px 9px;
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 10.5px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.15s ease;
+}
+[data-theme="light"] .phase-footer-srs-btn {
+  background: #F1F5F9;
+  border-color: #E2E8F0;
+  color: #475569;
+}
+.phase-footer-srs-btn:hover {
+  background: rgba(79, 70, 229, 0.08);
+  border-color: #4F46E5;
+  color: #4F46E5;
+}
+.phase-footer-srs-synced {
+  color: #16A34A;
+  font-size: 10.5px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
 }
 
 @media (max-width: 640px) {
