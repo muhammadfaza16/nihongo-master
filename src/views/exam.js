@@ -5,8 +5,10 @@ import { getUnitDetails } from '../data/curriculum.js';
 
 export function ExamView(container, params) {
   const chapterId = parseInt(params.id);
+  const unitDetails = getUnitDetails(chapterId);
+  const backRoute = unitDetails ? `#/phase/${unitDetails.phaseId}` : `#/curriculum`;
 
-  renderTopbar(`Mondaishuu — Bab ${chapterId}`, false, `#/chapter/${chapterId}`);
+  renderTopbar(`Mondaishuu — Bab ${chapterId}`, false, backRoute);
 
   renderLoader(container, `Memuat Ujian Bab ${chapterId}...`);
 
@@ -41,38 +43,35 @@ function _initExamView(container, params, chapter, chapterId) {
 
   if (!hasExam) {
     container.innerHTML = `
-      <div class="fade-in" style="max-width: 800px; margin: 0 auto; padding-bottom: 80px;">
+      <div class="exam-wrapper page-container-standard fade-in">
         <!-- Breadcrumb Navigation -->
-        <nav class="app-breadcrumb" aria-label="Breadcrumb">
-          <a href="#/curriculum">Kurikulum</a>
+        <nav class="phase-hero-nav" aria-label="Breadcrumb">
+          <a href="#/curriculum?track=${backTrack}" class="phase-nav-back">
+            <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i> Kurikulum
+          </a>
           ${unitDetails ? `
-            <span class="breadcrumb-separator">/</span>
-            <a href="#/phase/${unitDetails.phaseId}">${unitDetails.phaseTitle}</a>
+            <span class="phase-nav-sep">/</span>
+            <a href="#/phase/${unitDetails.phaseId}" class="phase-nav-back">${unitDetails.phaseTitle.includes(':') ? unitDetails.phaseTitle.split(':')[0].trim() : unitDetails.phaseTitle}</a>
           ` : ''}
-          <span class="breadcrumb-separator">/</span>
-          <a href="#/chapter/${chapterId}">Bab ${chapterId}</a>
-          <span class="breadcrumb-separator">/</span>
-          <span class="breadcrumb-current">Ujian Evaluasi</span>
+          <span class="phase-nav-sep">/</span>
+          <span class="phase-nav-level">Bab ${chapterId} &middot; Ujian Evaluasi</span>
         </nav>
         
-        <div style="background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 32px; text-align: center;">
-          <div style="margin-bottom: 16px;">
-            <span style="background: transparent; color: var(--text-main); border: 1px solid var(--text-main); padding: 4px 12px; border-radius: 99px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">Exam Mode</span>
-          </div>
-          <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--text-main); margin-bottom: 8px;">Ujian Akhir: Bab ${chapter.id}</h2>
-          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-            Modul ini mereplikasi <em>Mondaishuu</em> (Standard Workbook). Terdiri dari simulasi soal <em>Reading</em> (Dokkai), <em>Listening</em> (Choukai), dan Tata Bahasa dengan batas waktu.
+        <section class="hero-learning-card phase-hero-card">
+          <div class="dash-track-badge n5" style="align-self: flex-start; margin-bottom: 4px;">MONDAISHUU &middot; BAB ${chapter.id}</div>
+          <h1 class="hero-chapter-title" style="font-size: 1.35rem; margin: 0 0 4px 0;">Ujian Evaluasi Akhir</h1>
+          <p class="hero-chapter-desc" style="margin: 0;">
+            Modul ini mereplikasi <em>Mondaishuu</em> (Standard Workbook). Terdiri dari simulasi soal <em>Reading</em> (Dokkai), <em>Listening</em> (Choukai), dan Tata Bahasa dengan evaluasi berstandar.
           </p>
-        </div>
+        </section>
 
-        <div class="bento-card" style="padding: 40px; text-align: center; border: 1px dashed var(--border-accent);">
-          <i data-lucide="award" style="width:48px;height:48px;color:var(--text-faint);margin-bottom:16px;"></i>
-          <h3 style="font-size:1.2rem;color:var(--text-main);margin-bottom:8px;">Bank Soal Sedang Disusun</h3>
-          <p style="color:var(--text-muted);font-size:0.9rem;">
-            Data soal ujian (Mondaishuu) untuk bab ini sedang dalam proses ekstraksi dari referensi PDF. Siapkan diri Anda!
+        <div class="phase-card" style="padding: 36px 20px; text-align: center; border-style: dashed; align-items: center; justify-content: center;">
+          <i data-lucide="award" style="width:40px;height:40px;color:var(--text-muted);margin-bottom:12px;"></i>
+          <h3 style="font-size:1.1rem;font-weight:750;color:var(--text-main);margin-bottom:6px;">Bank Soal Sedang Disusun</h3>
+          <p style="color:var(--text-secondary);font-size:0.85rem;max-width:440px;margin:0 auto;line-height:1.5;">
+            Data soal ujian (Mondaishuu) untuk bab ini sedang dalam proses standardisasi referensi buku cetak.
           </p>
         </div>
-        
       </div>
     `;
     if (window.lucide) lucide.createIcons({ root: container });
@@ -81,7 +80,7 @@ function _initExamView(container, params, chapter, chapterId) {
 
   // State Management
   let currentStep = 0; // 0 = Landing, 1 = Part 1, 2 = Part 2, 3 = Part 3, 4 = Grading/Result
-  let userAnswers = {}; // Maps question ID to answer string ('は', 'T', OptionText, etc.)
+  let userAnswers = {}; // Maps question ID to answer string
 
   function cleanString(str) {
     if (!str) return '';
@@ -96,77 +95,93 @@ function _initExamView(container, params, chapter, chapterId) {
     ];
 
     return `
+      <!-- Breadcrumb Navigation -->
+      <nav class="phase-hero-nav" aria-label="Breadcrumb" style="margin-bottom: 2px;">
+        <a href="#/curriculum?track=${backTrack}" class="phase-nav-back">
+          <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i> Kurikulum
+        </a>
+        ${unitDetails ? `
+          <span class="phase-nav-sep">/</span>
+          <a href="#/phase/${unitDetails.phaseId}" class="phase-nav-back">${unitDetails.phaseTitle.includes(':') ? unitDetails.phaseTitle.split(':')[0].trim() : unitDetails.phaseTitle}</a>
+        ` : ''}
+        <span class="phase-nav-sep">/</span>
+        <span class="phase-nav-level">Bab ${chapter.id} &middot; Ujian</span>
+        <span class="phase-nav-sep">/</span>
+        <span class="phase-nav-level">Bagian ${activeStep}</span>
+      </nav>
+
       <!-- Steps Indicator -->
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; background: var(--bg-card); border: 1px solid var(--border); padding: 12px 20px; border-radius: var(--radius-md);">
-        <div style="display: flex; align-items: center; gap: 16px; width: 100%;">
-          ${steps.map(s => {
-            const isDone = s.num < activeStep;
-            const isActive = s.num === activeStep;
-            return `
-              <div style="display: flex; align-items: center; gap: 8px; flex: 1; justify-content: center; opacity: ${isActive || isDone ? '1' : '0.4'};">
-                <div style="width: 24px; height: 24px; border-radius: 50%; border: 1px solid ${isActive || isDone ? 'var(--text-main)' : 'var(--border)'}; background: ${isDone ? 'var(--text-main)' : 'transparent'}; color: ${isDone ? 'var(--bg-main)' : 'var(--text-main)'}; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 800; font-variant-numeric: tabular-nums;">
-                  ${isDone ? '<i data-lucide="check" style="width:12px;height:12px;color:var(--bg-main);"></i>' : s.num}
-                </div>
-                <span style="font-size: 0.85rem; font-weight: ${isActive ? '700' : '500'}; color: var(--text-main); white-space: nowrap;">
-                  ${s.name}
-                </span>
+      <div class="exam-step-track">
+        ${steps.map(s => {
+          const isDone = s.num < activeStep;
+          const isActive = s.num === activeStep;
+          return `
+            <div class="exam-step-item ${isActive ? 'is-active' : ''} ${isDone ? 'is-done' : ''}">
+              <div class="exam-step-badge">
+                ${isDone ? '<i data-lucide="check" style="width:11px;height:11px;"></i>' : s.num}
               </div>
-            `;
-          }).join('')}
-        </div>
+              <span>${s.name}</span>
+            </div>
+          `;
+        }).join('')}
       </div>
     `;
   }
 
   function renderLanding() {
     let html = `
-      <div class="exam-container page-container-standard fade-in" style="padding-bottom: 60px;">
-        <!-- Breadcrumb Navigation -->
-        <nav class="app-breadcrumb" aria-label="Breadcrumb">
-          <a href="#/curriculum">Kurikulum</a>
-          ${unitDetails ? `
-            <span class="breadcrumb-separator">/</span>
-            <a href="#/phase/${unitDetails.phaseId}">${unitDetails.phaseTitle}</a>
-          ` : ''}
-          <span class="breadcrumb-separator">/</span>
-          <a href="#/chapter/${chapter.id}">Bab ${chapter.id}</a>
-          <span class="breadcrumb-separator">/</span>
-          <span class="breadcrumb-current">Ujian Evaluasi</span>
-        </nav>
-
-        <!-- Header Info -->
-        <div style="background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 36px 24px; margin-bottom: 24px; text-align: center; box-shadow: var(--shadow-md);">
-          <div style="margin-bottom: 16px;">
-            <span style="background: transparent; color: var(--text-main); border: 1px solid var(--text-main); padding: 4px 12px; border-radius: 99px; font-size: var(--text-2xs); font-weight: 700; text-transform: uppercase; letter-spacing: var(--tracking-widest);">Mondaishuu • Bab ${chapter.id}</span>
-          </div>
-          <h2 style="font-size: var(--text-2xl); font-weight: 800; color: var(--text-main); margin-bottom: 12px; letter-spacing: var(--tracking-tight);">Ujian Akhir (Mondaishuu)</h2>
-          <p style="color: var(--text-secondary); font-size: var(--text-xs); line-height: var(--leading-relaxed); max-width: 540px; margin: 0 auto 32px;">
-            Uji pemahaman mendalam Anda terhadap tata bahasa, partikel, profil buku, dan pemahaman bacaan Bab ${chapter.id} secara komprehensif tanpa kompromi.
-          </p>
-          
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 32px; text-align: left;">
-            <div style="padding: 16px; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-md);">
-              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px;">Bagian 1</div>
-              <div style="font-weight: 700; color: var(--text-main); font-size: 0.95rem;">Isian Partikel</div>
-              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">5 Soal Isian</div>
-            </div>
-            <div style="padding: 16px; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-md);">
-              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px;">Bagian 2</div>
-              <div style="font-weight: 700; color: var(--text-main); font-size: 0.95rem;">Profil Karakter</div>
-              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">3 Soal Pilihan</div>
-            </div>
-            <div style="padding: 16px; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-md);">
-              <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px;">Bagian 3</div>
-              <div style="font-weight: 700; color: var(--text-main); font-size: 0.95rem;">Membaca (Dokkai)</div>
-              <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">3 Soal Benar/Salah</div>
-            </div>
-          </div>
-
-          <button id="btn-start-exam" style="width: 100%; max-width: 240px; background: var(--text-main); color: var(--bg-main); border: none; padding: 14px 36px; font-size: 1rem; font-weight: 800; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
-            Mulai Ujian
-          </button>
-        </div>
+      <div class="exam-wrapper page-container-standard fade-in">
         
+        <!-- Dashboard Standard Hero Card -->
+        <section class="hero-learning-card phase-hero-card">
+          <nav class="phase-hero-nav" aria-label="Breadcrumb">
+            <a href="#/curriculum?track=${backTrack}" class="phase-nav-back">
+              <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i> Kurikulum
+            </a>
+            ${unitDetails ? `
+              <span class="phase-nav-sep">/</span>
+              <a href="#/phase/${unitDetails.phaseId}" class="phase-nav-back">${unitDetails.phaseTitle.includes(':') ? unitDetails.phaseTitle.split(':')[0].trim() : unitDetails.phaseTitle}</a>
+            ` : ''}
+            <span class="phase-nav-sep">/</span>
+            <span class="phase-nav-level">Bab ${chapter.id} &middot; Ujian Evaluasi</span>
+          </nav>
+
+          <div class="hero-main-content">
+            <div class="dash-track-badge n5" style="align-self: flex-start; margin-bottom: 4px;">MONDAISHUU &middot; BAB ${chapter.id}</div>
+            <h1 class="hero-chapter-title" style="font-size: 1.35rem; margin: 0 0 4px 0;">Ujian Evaluasi Bab</h1>
+            <p class="hero-chapter-desc" style="margin: 0;">
+              Uji pemahaman mendalam terhadap tata bahasa, partikel, profil karakter, dan pemahaman bacaan Bab ${chapter.id} secara komprehensif.
+            </p>
+          </div>
+
+          <!-- Section Breakdown Cards (3 Columns) -->
+          <div class="exam-preview-grid">
+            <div class="exam-preview-item">
+              <span class="exam-preview-tag">Bagian 1</span>
+              <span class="exam-preview-title">Isian Partikel</span>
+              <span class="exam-preview-desc">5 Soal Isian Kalimat</span>
+            </div>
+            <div class="exam-preview-item">
+              <span class="exam-preview-tag">Bagian 2</span>
+              <span class="exam-preview-title">Profil Karakter</span>
+              <span class="exam-preview-desc">3 Soal Pilihan Ganda</span>
+            </div>
+            <div class="exam-preview-item">
+              <span class="exam-preview-tag">Bagian 3</span>
+              <span class="exam-preview-title">Membaca (Dokkai)</span>
+              <span class="exam-preview-desc">3 Soal Benar / Salah</span>
+            </div>
+          </div>
+
+          <!-- Action Button Dock -->
+          <div class="hero-actions-bar" style="margin-top: 4px; padding-top: 10px;">
+            <button id="btn-start-exam" class="btn btn-primary hero-cta-btn" style="width: 100%; justify-content: center;">
+              <i data-lucide="play" style="width: 14px; height: 14px; fill: currentColor;"></i>
+              Mulai Ujian Evaluasi
+            </button>
+          </div>
+        </section>
+
       </div>
     `;
     container.innerHTML = html;
@@ -181,53 +196,56 @@ function _initExamView(container, params, chapter, chapterId) {
   function renderPart1() {
     const part = chapter.exam.part1;
     let html = `
-      <div class="fade-in" style="max-width: 700px; margin: 0 auto; padding-bottom: 80px;">
+      <div class="exam-wrapper page-container-standard fade-in">
         
-        <!-- Progress Bar and Steps Indicator -->
+        <!-- Step Indicator -->
         ${renderProgressBar(1)}
 
-        <div style="background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 24px; box-shadow: var(--shadow-md);">
-          <div style="margin-bottom: 24px;">
-            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Bagian 1: Pengisian Partikel</span>
-            <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--text-main); margin-top: 4px;">Lengkapi Kalimat</h3>
-            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px; line-height: 1.5;">
+        <div class="exam-section-card">
+          <div>
+            <div class="phase-badge-group" style="margin-bottom: 6px;">
+              <span class="hero-pill-badge">Bagian 1</span>
+              <span class="phase-topic-tag">Pengisian Partikel</span>
+            </div>
+            <h2 style="font-size: 1.25rem; font-weight: 800; color: var(--text-main); margin: 0 0 4px 0;">Lengkapi Kalimat</h2>
+            <p style="color: var(--text-secondary); font-size: 13px; margin: 0; line-height: 1.5;">
               Ketikkan partikel penanda (misal: は, も, の) atau kata tanya yang tepat di dalam kolom input yang tersedia di setiap kalimat.
             </p>
           </div>
 
-          <div style="display: flex; flex-direction: column; gap: 24px; margin-bottom: 32px;">
+          <div style="display: flex; flex-direction: column; gap: 12px;">
             ${part.map((item, idx) => {
               const currentVal = userAnswers[item.id] || '';
-              // Replace '[ ]' with an interactive input box in sentence
               const parts = item.sentence.split(/\[\s*\]/);
               let sentenceHtml = '';
               if (parts.length === 2) {
                 sentenceHtml = `
-                  <span style="font-family: var(--font-jp); font-size: 1.25rem; font-weight: 700; color: var(--text-main);">
+                  <span style="font-family: var(--font-jp); font-size: 1.15rem; font-weight: 700; color: var(--text-main); line-height: 1.8;">
                     ${parts[0]}
-                    <input type="text" class="part1-input" data-id="${item.id}" value="${currentVal}" placeholder="?" autocomplete="off"
-                      style="width: 65px; text-align: center; padding: 4px 8px; font-size: 1.2rem; font-weight: 800; border: none; border-bottom: 2px solid var(--border-accent); background: var(--bg-elevated); color: var(--text-main); border-radius: var(--radius-xs); margin: 0 4px; transition: all 0.2s; outline: none;" />
+                    <input type="text" class="part1-input" data-id="${item.id}" value="${currentVal}" placeholder="?" autocomplete="off" />
                     ${parts[1]}
                   </span>
                 `;
               } else {
                 sentenceHtml = `
-                  <span style="font-family: var(--font-jp); font-size: 1.25rem; font-weight: 700; color: var(--text-main);">
+                  <span style="font-family: var(--font-jp); font-size: 1.15rem; font-weight: 700; color: var(--text-main); line-height: 1.8;">
                     ${item.sentence}
                   </span>
                 `;
               }
 
               return `
-                <div style="padding: 16px; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-md);">
-                  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                    <span style="width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--border-accent); font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">${idx + 1}</span>
-                    <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Mondaishuu 1</span>
+                <div class="phase-card" style="padding: 14px 16px; gap: 8px;">
+                  <div class="phase-card-top-bar" style="margin-bottom: 2px;">
+                    <span class="hero-pill-badge">Soal ${idx + 1}</span>
+                    <span class="phase-badge-status ${currentVal ? 'active' : ''}">
+                      ${currentVal ? 'Terisi' : 'Belum Diisi'}
+                    </span>
                   </div>
-                  <div style="margin-bottom: 8px; line-height: 1.8;">
+                  <div>
                     ${sentenceHtml}
                   </div>
-                  <div style="font-size: 0.85rem; color: var(--text-muted); font-style: italic; border-top: 1px dashed var(--border); padding-top: 8px; margin-top: 12px;">
+                  <div style="font-size: 12px; color: var(--text-muted); font-style: italic; border-top: 1px dashed var(--border); padding-top: 6px; margin-top: 4px;">
                     = "${item.translation}"
                   </div>
                 </div>
@@ -235,13 +253,13 @@ function _initExamView(container, params, chapter, chapterId) {
             }).join('')}
           </div>
 
-          <!-- Navigation buttons -->
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <button id="btn-prev-landing" style="background: transparent; color: var(--text-secondary); border: 1px solid var(--border); padding: 12px 24px; font-size: 0.9rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
+          <!-- Bottom Actions -->
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 4px;">
+            <button id="btn-prev-landing" class="btn btn-secondary" style="font-size: 13px;">
               Batal
             </button>
-            <button id="btn-goto-part2" style="background: var(--text-main); color: var(--bg-main); border: none; padding: 12px 28px; font-size: 0.9rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
-              Lanjut ke Bagian 2
+            <button id="btn-goto-part2" class="btn btn-primary" style="font-size: 13px;">
+              Lanjut ke Bagian 2 &rarr;
             </button>
           </div>
 
@@ -252,19 +270,15 @@ function _initExamView(container, params, chapter, chapterId) {
     container.innerHTML = html;
     if (window.lucide) lucide.createIcons({ root: container });
 
-    // Focus first input
     const inputs = container.querySelectorAll('.part1-input');
     if (inputs.length > 0) {
       inputs[0].focus();
     }
 
-    // Auto tab or enter hooks
     inputs.forEach((input, index) => {
       input.addEventListener('input', (e) => {
         const id = input.dataset.id;
         userAnswers[id] = e.target.value;
-        
-        // Auto-tab on particle matches if length is met
         if (e.target.value.length >= 3 && index < inputs.length - 1) {
           inputs[index + 1].focus();
         }
@@ -288,7 +302,6 @@ function _initExamView(container, params, chapter, chapterId) {
     });
 
     container.querySelector('#btn-goto-part2').addEventListener('click', () => {
-      // Save all current values
       inputs.forEach(input => {
         userAnswers[input.dataset.id] = input.value;
       });
@@ -300,44 +313,46 @@ function _initExamView(container, params, chapter, chapterId) {
   function renderPart2() {
     const part = chapter.exam.part2;
     let html = `
-      <div class="fade-in" style="max-width: 700px; margin: 0 auto; padding-bottom: 80px;">
+      <div class="exam-wrapper page-container-standard fade-in">
         
-        <!-- Progress Bar and Steps Indicator -->
+        <!-- Step Indicator -->
         ${renderProgressBar(2)}
 
-        <div style="background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 24px; box-shadow: var(--shadow-md);">
-          <div style="margin-bottom: 24px;">
-            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Bagian 2: Evaluasi Karakter</span>
-            <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--text-main); margin-top: 4px;">Pilihan Ganda Profil</h3>
-            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px; line-height: 1.5;">
+        <div class="exam-section-card">
+          <div>
+            <div class="phase-badge-group" style="margin-bottom: 6px;">
+              <span class="hero-pill-badge">Bagian 2</span>
+              <span class="phase-topic-tag">Evaluasi Karakter</span>
+            </div>
+            <h2 style="font-size: 1.25rem; font-weight: 800; color: var(--text-main); margin: 0 0 4px 0;">Pilihan Ganda Profil</h2>
+            <p style="color: var(--text-secondary); font-size: 13px; margin: 0; line-height: 1.5;">
               Pilihlah opsi tata bahasa yang paling tepat untuk melengkapi kalimat penjelas profil karakter sesuai dengan fakta buku teks Minna no Nihongo.
             </p>
           </div>
 
-          <div style="display: flex; flex-direction: column; gap: 32px; margin-bottom: 40px;">
+          <div style="display: flex; flex-direction: column; gap: 14px;">
             ${part.map((item, idx) => {
               const selectedAns = userAnswers[item.id] || '';
               return `
-                <div style="padding: 20px; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-md);">
-                  <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-                    <span style="width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--border-accent); font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">${idx + 1}</span>
-                    <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Profil Buku</span>
+                <div class="phase-card" style="padding: 14px 16px; gap: 10px;">
+                  <div class="phase-card-top-bar" style="margin-bottom: 2px;">
+                    <span class="hero-pill-badge">Soal ${idx + 1}</span>
+                    <span class="phase-badge-status ${selectedAns ? 'active' : ''}">
+                      ${selectedAns ? 'Terpilih' : 'Belum Memilih'}
+                    </span>
                   </div>
                   
-                  <div style="font-family: var(--font-jp); font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 20px; line-height: 1.6; white-space: pre-line;">
+                  <div style="font-family: var(--font-jp); font-size: 1.1rem; font-weight: 700; color: var(--text-main); line-height: 1.6; white-space: pre-line;">
                     ${item.question}
                   </div>
 
-                  <div style="display: flex; flex-direction: column; gap: 10px;">
-                    ${item.options.map((opt, oIdx) => {
+                  <div style="display: flex; flex-direction: column; gap: 8px;">
+                    ${item.options.map((opt) => {
                       const isSelected = selectedAns === opt.text;
                       return `
-                        <button class="part2-opt-btn" data-id="${item.id}" data-text="${opt.text}"
-                          style="width: 100%; padding: 14px 18px; text-align: left; font-size: 1rem; border-radius: var(--radius-md); border: 1px solid ${isSelected ? 'var(--text-main)' : 'var(--border)'}; background: ${isSelected ? 'var(--text-main)' : 'var(--bg-card)'}; color: ${isSelected ? 'var(--bg-main)' : 'var(--text-main)'}; font-weight: ${isSelected ? '700' : '500'}; font-family: var(--font-jp); cursor: pointer; transition: all 0.2s; outline: none; -webkit-tap-highlight-color: transparent;">
-                          <div style="display: flex; align-items: center; justify-content: space-between;">
-                            <span>${opt.text}</span>
-                            ${isSelected ? `<i data-lucide="check" style="width:16px;height:16px;"></i>` : ''}
-                          </div>
+                        <button class="exam-opt-btn ${isSelected ? 'is-selected' : ''}" data-id="${item.id}" data-text="${opt.text}">
+                          <span>${opt.text}</span>
+                          ${isSelected ? `<i data-lucide="check" style="width:14px;height:14px;"></i>` : ''}
                         </button>
                       `;
                     }).join('')}
@@ -347,13 +362,13 @@ function _initExamView(container, params, chapter, chapterId) {
             }).join('')}
           </div>
 
-          <!-- Navigation buttons -->
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <button id="btn-prev-part1" style="background: transparent; color: var(--text-secondary); border: 1px solid var(--border); padding: 12px 24px; font-size: 0.9rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
-              Kembali ke Bagian 1
+          <!-- Bottom Actions -->
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 4px;">
+            <button id="btn-prev-part1" class="btn btn-secondary" style="font-size: 13px;">
+              &larr; Kembali ke Bagian 1
             </button>
-            <button id="btn-goto-part3" style="background: var(--text-main); color: var(--bg-main); border: none; padding: 12px 28px; font-size: 0.9rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
-              Lanjut ke Bagian 3
+            <button id="btn-goto-part3" class="btn btn-primary" style="font-size: 13px;">
+              Lanjut ke Bagian 3 &rarr;
             </button>
           </div>
 
@@ -364,13 +379,11 @@ function _initExamView(container, params, chapter, chapterId) {
     container.innerHTML = html;
     if (window.lucide) lucide.createIcons({ root: container });
 
-    // Option clicks
-    container.querySelectorAll('.part2-opt-btn').forEach(btn => {
+    container.querySelectorAll('.exam-opt-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const id = btn.dataset.id;
         const text = btn.dataset.text;
         userAnswers[id] = text;
-        
         renderPart2();
       });
     });
@@ -389,52 +402,55 @@ function _initExamView(container, params, chapter, chapterId) {
   function renderPart3() {
     const part = chapter.exam.part3;
     let html = `
-      <div class="fade-in" style="max-width: 700px; margin: 0 auto; padding-bottom: 80px;">
+      <div class="exam-wrapper page-container-standard fade-in">
         
-        <!-- Progress Bar and Steps Indicator -->
+        <!-- Step Indicator -->
         ${renderProgressBar(3)}
 
-        <div style="background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 24px; box-shadow: var(--shadow-md);">
-          <div style="margin-bottom: 24px;">
-            <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Bagian 3: Pemahaman Bacaan</span>
-            <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--text-main); margin-top: 4px;">Membaca (Dokkai)</h3>
-            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px; line-height: 1.5;">
-              Bacalah paragraf bahasa Jepang di bawah ini dengan saksama. Kemudian, tentukan apakah setiap pernyataan di bawahnya BENAR (T) atau SALAH (F) berdasarkan teks tersebut.
+        <div class="exam-section-card">
+          <div>
+            <div class="phase-badge-group" style="margin-bottom: 6px;">
+              <span class="hero-pill-badge">Bagian 3</span>
+              <span class="phase-topic-tag">Pemahaman Bacaan</span>
+            </div>
+            <h2 style="font-size: 1.25rem; font-weight: 800; color: var(--text-main); margin: 0 0 4px 0;">Membaca (Dokkai)</h2>
+            <p style="color: var(--text-secondary); font-size: 13px; margin: 0; line-height: 1.5;">
+              Bacalah paragraf bahasa Jepang di bawah ini dengan saksama. Kemudian tentukan apakah setiap pernyataan di bawahnya BENAR (T) atau SALAH (F).
             </p>
           </div>
 
           <!-- Reading Passage Box -->
-          <div style="padding: 24px; background: var(--bg-elevated); border: 1px solid var(--border-accent); border-radius: var(--radius-md); font-family: var(--font-jp-serif) !important; font-size: 1.15rem; font-weight: 500; color: var(--text-main); line-height: 2; letter-spacing: 0.02em; white-space: pre-line; margin-bottom: 32px;">
+          <div class="exam-passage-box">
             ${part.text}
           </div>
 
-          <div style="display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px;">
+          <div style="display: flex; flex-direction: column; gap: 12px;">
             ${part.questions.map((item, idx) => {
               const selectedAns = userAnswers[item.id] || ''; // 'T' or 'F'
               const isTSelected = selectedAns === 'T';
               const isFSelected = selectedAns === 'F';
 
               return `
-                <div style="padding: 18px; background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-md);">
-                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
-                    <div style="display: flex; align-items: center; gap: 8px;">
-                      <span style="width: 22px; height: 22px; border-radius: 50%; border: 1px solid var(--border-accent); font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">${idx + 1}</span>
-                      <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Pernyataan ${idx + 1}</span>
-                    </div>
+                <div class="phase-card" style="padding: 14px 16px; gap: 10px;">
+                  <div class="phase-card-top-bar" style="margin-bottom: 2px;">
+                    <span class="hero-pill-badge">Pernyataan ${idx + 1}</span>
+                    <span class="phase-badge-status ${selectedAns ? 'active' : ''}">
+                      ${selectedAns ? (selectedAns === 'T' ? 'Memilih Benar' : 'Memilih Salah') : 'Belum Memilih'}
+                    </span>
                   </div>
 
-                  <div style="font-family: var(--font-jp); font-size: 1.25rem; font-weight: 700; color: var(--text-main); line-height: 1.6; margin-bottom: 16px;">
+                  <div style="font-family: var(--font-jp); font-size: 1.1rem; font-weight: 700; color: var(--text-main); line-height: 1.6;">
                     ${item.question}
                   </div>
 
                   <!-- Binary choices -->
-                  <div style="display: flex; gap: 12px;">
-                    <button class="part3-opt-btn" data-id="${item.id}" data-val="T"
-                      style="flex: 1; padding: 12px; font-size: 0.95rem; font-weight: 700; border-radius: var(--radius-sm); border: 1px solid ${isTSelected ? 'var(--text-main)' : 'var(--border)'}; background: ${isTSelected ? 'var(--text-main)' : 'var(--bg-card)'}; color: ${isTSelected ? 'var(--bg-main)' : 'var(--text-main)'}; cursor: pointer; transition: all 0.2s; outline: none; -webkit-tap-highlight-color: transparent;">
+                  <div class="exam-binary-group">
+                    <button class="exam-binary-btn ${isTSelected ? 'is-selected' : ''}" data-id="${item.id}" data-val="T">
+                      <i data-lucide="${isTSelected ? 'check-circle' : 'circle'}" style="width: 13px; height: 13px;"></i>
                       正しい (T / Benar)
                     </button>
-                    <button class="part3-opt-btn" data-id="${item.id}" data-val="F"
-                      style="flex: 1; padding: 12px; font-size: 0.95rem; font-weight: 700; border-radius: var(--radius-sm); border: 1px solid ${isFSelected ? 'var(--text-main)' : 'var(--border)'}; background: ${isFSelected ? 'var(--text-main)' : 'var(--bg-card)'}; color: ${isFSelected ? 'var(--bg-main)' : 'var(--text-main)'}; cursor: pointer; transition: all 0.2s; outline: none; -webkit-tap-highlight-color: transparent;">
+                    <button class="exam-binary-btn ${isFSelected ? 'is-selected' : ''}" data-id="${item.id}" data-val="F">
+                      <i data-lucide="${isFSelected ? 'x-circle' : 'circle'}" style="width: 13px; height: 13px;"></i>
                       正しくない (F / Salah)
                     </button>
                   </div>
@@ -443,12 +459,13 @@ function _initExamView(container, params, chapter, chapterId) {
             }).join('')}
           </div>
 
-          <!-- Navigation buttons -->
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <button id="btn-prev-part2" style="background: transparent; color: var(--text-secondary); border: 1px solid var(--border); padding: 12px 24px; font-size: 0.9rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
-              Kembali ke Bagian 2
+          <!-- Bottom Actions -->
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 4px;">
+            <button id="btn-prev-part2" class="btn btn-secondary" style="font-size: 13px;">
+              &larr; Kembali ke Bagian 2
             </button>
-            <button id="btn-submit-exam" style="background: var(--text-main); color: var(--bg-main); border: none; padding: 12px 32px; font-size: 0.95rem; font-weight: 800; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s; letter-spacing: 0.02em;">
+            <button id="btn-submit-exam" class="btn btn-primary" style="font-size: 13px; font-weight: 800;">
+              <i data-lucide="award" style="width: 14px; height: 14px;"></i>
               Serahkan Ujian
             </button>
           </div>
@@ -460,13 +477,11 @@ function _initExamView(container, params, chapter, chapterId) {
     container.innerHTML = html;
     if (window.lucide) lucide.createIcons({ root: container });
 
-    // Binary choice clicks
-    container.querySelectorAll('.part3-opt-btn').forEach(btn => {
+    container.querySelectorAll('.exam-binary-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const id = btn.dataset.id;
         const val = btn.dataset.val;
         userAnswers[id] = val;
-        
         renderPart3();
       });
     });
@@ -477,7 +492,6 @@ function _initExamView(container, params, chapter, chapterId) {
     });
 
     container.querySelector('#btn-submit-exam').addEventListener('click', () => {
-      // Check if all questions are filled to avoid empty submissions
       const part1Ids = chapter.exam.part1.map(q => q.id);
       const part2Ids = chapter.exam.part2.map(q => q.id);
       const part3Ids = chapter.exam.part3.questions.map(q => q.id);
@@ -504,7 +518,6 @@ function _initExamView(container, params, chapter, chapterId) {
     let scoreDetails = [];
     let correctCount = 0;
 
-    // Equivalents mapping for Chapter 1 particle entries to be forgiving and allow Romaji/alternative typing
     const equivalents = {
       "ex1-1": ["は", "wa", "ha"],
       "ex1-2": ["も", "mo"],
@@ -590,121 +603,115 @@ function _initExamView(container, params, chapter, chapterId) {
     saveChapterExamResult(chapter.id, finalScore, passed);
 
     let html = `
-      <div class="fade-in" style="max-width: 700px; margin: 0 auto; padding-bottom: 80px;">
+      <div class="exam-wrapper page-container-standard fade-in">
         <!-- Breadcrumb Navigation -->
-        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted);">
-          <a href="#/curriculum?track=${backTrack}" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; gap: 6px;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'">
-            <i data-lucide="arrow-left" style="width: 14px; height: 14px;"></i>
-            Kurikulum
+        <nav class="phase-hero-nav" aria-label="Breadcrumb">
+          <a href="#/curriculum?track=${backTrack}" class="phase-nav-back">
+            <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i> Kurikulum
           </a>
-          <span>/</span>
-          <a href="#/chapter/${chapter.id}" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'">Bab ${chapter.id}</a>
-          <span>/</span>
-          <span style="color: var(--text-main);">Ujian</span>
-        </div>
+          ${unitDetails ? `
+            <span class="phase-nav-sep">/</span>
+            <a href="#/phase/${unitDetails.phaseId}" class="phase-nav-back">${unitDetails.phaseTitle.includes(':') ? unitDetails.phaseTitle.split(':')[0].trim() : unitDetails.phaseTitle}</a>
+          ` : ''}
+          <span class="phase-nav-sep">/</span>
+          <span class="phase-nav-level">Bab ${chapter.id} &middot; Hasil Ujian</span>
+        </nav>
 
-        <!-- Score Card Banner -->
-        <div style="background: var(--bg-card); border: 2px solid ${passed ? 'var(--text-main)' : 'var(--border-accent)'}; border-radius: var(--radius-lg); padding: 40px; margin-bottom: 32px; text-align: center; box-shadow: var(--shadow-lg);">
+        <!-- Score Card Banner (Dashboard Trophy DNA) -->
+        <section class="hero-learning-card phase-hero-card" style="text-align: center; align-items: center;">
           
-          <div style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--text-main); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px;">
-            <i data-lucide="${passed ? 'award' : 'alert-circle'}" style="width: 40px; height: 40px; color: var(--text-main);"></i>
+          <div style="width: 56px; height: 56px; border-radius: 50%; background: ${passed ? 'rgba(22, 163, 74, 0.1)' : 'rgba(239, 68, 68, 0.1)'}; border: 1.5px solid ${passed ? 'var(--green)' : 'var(--red)'}; display: flex; align-items: center; justify-content: center; margin: 4px auto 8px;">
+            <i data-lucide="${passed ? 'award' : 'alert-circle'}" style="width: 28px; height: 28px; color: ${passed ? 'var(--green)' : 'var(--red)'};"></i>
           </div>
 
-          <h2 style="font-size: 2.2rem; font-weight: 900; color: var(--text-main); margin-bottom: 8px; letter-spacing: -0.04em;">Hasil Ujian</h2>
-          <div style="font-size: 4.8rem; font-weight: 900; line-height: 1; color: var(--text-main); letter-spacing: -0.05em; margin-bottom: 20px; font-variant-numeric: tabular-nums;">
+          <span class="hero-pill-badge" style="background: ${passed ? 'rgba(22, 163, 74, 0.12)' : 'rgba(239, 68, 68, 0.12)'}; color: ${passed ? 'var(--green)' : 'var(--red)'}; border-color: transparent;">
+            ${passed ? 'LULUS (PASSED &ge;80%)' : 'BELUM LULUS (TRY AGAIN)'}
+          </span>
+
+          <div style="font-size: 3.6rem; font-weight: 900; line-height: 1; color: var(--text-main); letter-spacing: -0.04em; margin: 8px 0; font-variant-numeric: tabular-nums;">
             ${finalScore}%
           </div>
 
-          <div style="margin-bottom: 24px;">
-            <span style="background: ${passed ? 'var(--text-main)' : 'transparent'}; color: ${passed ? 'var(--bg-main)' : 'var(--text-main)'}; border: 1px solid var(--text-main); padding: 6px 20px; border-radius: 99px; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em;">
-              ${passed ? 'LULUS (PASSED)' : 'BELUM LULUS (TRY AGAIN)'}
-            </span>
-          </div>
-
-          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; max-width: 480px; margin: 0 auto 12px;">
+          <p class="hero-chapter-desc" style="max-width: 480px; margin: 0 auto;">
             ${passed 
-              ? `Luar biasa! Anda menguasai tata bahasa dan Mondaishuu Bab ${chapter.id} dengan sangat akurat sesuai standar fisik buku cetak.` 
-              : `Skor kelulusan minimal adalah 80%. Silakan ulas kembali kesalahan Anda di bawah dan ulangi ujian untuk mengasah kemampuan.`}
+              ? `Luar biasa! Anda menguasai tata bahasa dan Mondaishuu Bab ${chapter.id} dengan sangat akurat.` 
+              : `Skor kelulusan minimal adalah 80%. Ulas kembali kunci jawaban di bawah dan ulangi ujian untuk mengasah kemampuan.`}
           </p>
 
-          <div style="display: flex; gap: 16px; justify-content: center; margin-top: 32px; flex-wrap: wrap;">
-            <div style="font-size: 0.9rem; color: var(--text-secondary); font-weight: 600; border-right: 1px solid var(--border); padding-right: 16px;">
-              Jawaban Benar: <span style="color: var(--text-main); font-weight: 800;">${correctCount} / ${totalQuestions}</span>
+          <!-- Progress bar -->
+          <div class="dash-track-progress" style="width: 100%; max-width: 400px; margin-top: 8px;">
+            <div class="dash-track-prog-meta">
+              <span>Akurasi Soal</span>
+              <span><strong>${correctCount}</strong>/${totalQuestions} Soal Benar</span>
             </div>
-            <div style="font-size: 0.9rem; color: var(--text-secondary); font-weight: 600;">
-              Status Ujian: <span style="color: var(--text-main); font-weight: 800;">${passed ? 'Sangat Baik' : 'Butuh Latihan'}</span>
+            <div class="dash-track-prog-bar">
+              <div class="dash-track-prog-fill" style="width: ${finalScore}%; background: ${passed ? 'var(--green)' : 'var(--red)'};"></div>
             </div>
           </div>
-        </div>
+
+          <!-- Bottom Action Buttons -->
+          <div class="hero-actions-bar" style="width: 100%; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 10px; padding-top: 10px;">
+            <button id="btn-retake-exam" class="btn btn-secondary" style="flex: 1; min-width: 140px; justify-content: center;">
+              <i data-lucide="rotate-ccw" style="width: 13px; height: 13px;"></i>
+              Ulangi Ujian
+            </button>
+            ${passed && chapter.id + 1 <= 50 ? `
+              <button id="btn-next-chapter-grad" class="btn btn-primary" style="flex: 1.5; min-width: 180px; justify-content: center;">
+                <i data-lucide="arrow-right" style="width: 13px; height: 13px;"></i>
+                Lanjut ke Bab ${chapter.id + 1}
+              </button>
+            ` : ''}
+            <button id="btn-back-curriculum-grad" class="btn btn-secondary" style="flex: 1; min-width: 140px; justify-content: center;">
+              Peta Kurikulum
+            </button>
+          </div>
+        </section>
 
         <!-- Detailed Review Section -->
-        <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-main); margin-bottom: 16px; letter-spacing: -0.01em;">Lembar Koreksi & Ulasan</h3>
+        <div class="phase-roadmap-header">
+          <div class="phase-roadmap-title-row">
+            <span class="phase-roadmap-section-title">Lembar Koreksi &amp; Ulasan</span>
+            <span class="phase-roadmap-section-meta">${correctCount}/${totalQuestions} Benar</span>
+          </div>
+        </div>
         
-        <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px;">
+        <div style="display: flex; flex-direction: column; gap: 10px;">
           ${scoreDetails.map((item, idx) => {
             return `
-              <div style="padding: 20px; background: var(--bg-card); border: 1px solid ${item.isCorrect ? 'var(--border)' : 'var(--border-bright)'}; border-left: 4px solid ${item.isCorrect ? 'var(--text-main)' : 'var(--text-muted)'}; border-radius: var(--radius-md);">
-                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
-                  <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">
-                    Bagian ${item.part} • Soal ${idx + 1}
+              <div class="phase-card ${item.isCorrect ? 'is-completed' : ''}" style="padding: 14px 16px; border-left: 3.5px solid ${item.isCorrect ? 'var(--green)' : 'var(--red)'};">
+                <div class="phase-card-top-bar" style="margin-bottom: 2px;">
+                  <span class="hero-pill-badge">Bagian ${item.part} &middot; Soal ${idx + 1}</span>
+                  <span class="phase-badge-status ${item.isCorrect ? 'done' : 'active'}" style="color: ${item.isCorrect ? 'var(--green)' : 'var(--red)'}; border-color: ${item.isCorrect ? 'rgba(22,163,74,0.2)' : 'rgba(239,68,68,0.2)'};">
+                    <i data-lucide="${item.isCorrect ? 'check' : 'x'}" style="width: 11px; height: 11px;"></i>
+                    ${item.isCorrect ? 'Benar' : 'Salah'}
                   </span>
-                  <div style="display: flex; align-items: center; gap: 6px;">
-                    <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-main);">
-                      ${item.isCorrect ? 'Benar' : 'Salah'}
-                    </span>
-                    <div style="width: 20px; height: 20px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center;">
-                      <i data-lucide="${item.isCorrect ? 'check' : 'x'}" style="width: 12px; height: 12px; color: var(--text-main);"></i>
-                    </div>
-                  </div>
                 </div>
 
-                <div style="font-family: var(--font-jp); font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 16px; line-height: 1.6; word-break: break-all;">
+                <div style="font-family: var(--font-jp); font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin: 2px 0 6px 0; line-height: 1.6; word-break: break-all;">
                   ${item.questionText}
                 </div>
 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; font-size: 0.85rem; border-top: 1px dashed var(--border); padding-top: 12px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 6px; font-size: 12px; border-top: 1px dashed var(--border); padding-top: 8px;">
                   <div>
-                    <div style="color: var(--text-muted); margin-bottom: 2px;">Jawaban Anda</div>
-                    <div style="font-weight: 700; color: var(--text-main); font-family: var(--font-jp); text-decoration: ${item.isCorrect ? 'none' : 'line-through'};">
+                    <div style="color: var(--text-muted); font-size: 10px; font-weight: 700; text-transform: uppercase; margin-bottom: 2px;">Jawaban Anda</div>
+                    <div style="font-weight: 700; color: ${item.isCorrect ? 'var(--text-main)' : 'var(--red)'}; font-family: var(--font-jp); text-decoration: ${item.isCorrect ? 'none' : 'line-through'};">
                       ${item.userAnswer}
                     </div>
                   </div>
                   <div>
-                    <div style="color: var(--text-muted); margin-bottom: 2px;">Kunci Jawaban</div>
-                    <div style="font-weight: 700; color: var(--text-main); font-family: var(--font-jp);">
+                    <div style="color: var(--text-muted); font-size: 10px; font-weight: 700; text-transform: uppercase; margin-bottom: 2px;">Kunci Jawaban</div>
+                    <div style="font-weight: 700; color: var(--green); font-family: var(--font-jp);">
                       ${item.correctAnswer}
                     </div>
                   </div>
                 </div>
 
-                <div style="font-size: 0.85rem; color: var(--text-secondary); background: var(--bg-elevated); padding: 10px 14px; border-radius: var(--radius-sm); border: 1px solid var(--border); line-height: 1.5;">
+                <div style="font-size: 12px; color: var(--text-secondary); background: var(--bg-elevated); padding: 8px 12px; border-radius: var(--radius-sm); border: 1px solid var(--border); line-height: 1.5;">
                   ${item.explanation}
                 </div>
               </div>
             `;
           }).join('')}
-        </div>
-
-        <!-- Footer Actions -->
-        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-          ${passed && chapter.id + 1 <= 50 ? `
-            <button id="btn-next-chapter-grad" style="flex: 2; min-width: 180px; background: var(--text-main); color: var(--bg-main); border: none; padding: 14px; font-size: 0.95rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
-              Lanjutkan ke Bab ${chapter.id + 1}
-            </button>
-            <button id="btn-retake-exam" style="flex: 1; min-width: 140px; background: transparent; color: var(--text-main); border: 1px solid var(--text-main); padding: 14px; font-size: 0.95rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
-              Ulangi Ujian
-            </button>
-          ` : `
-            <button id="btn-retake-exam" style="flex: 2; min-width: 180px; background: var(--text-main); color: var(--bg-main); border: none; padding: 14px; font-size: 0.95rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
-              Ulangi Ujian
-            </button>
-          `}
-          <button id="btn-back-chapter-grad" style="flex: 1; min-width: 140px; background: transparent; color: var(--text-main); border: 1px solid var(--text-main); padding: 14px; font-size: 0.95rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
-            Kembali ke Bab ${chapter.id}
-          </button>
-          <button id="btn-back-curriculum-grad" style="flex: 1; min-width: 140px; background: transparent; color: var(--text-main); border: 1px solid var(--text-main); padding: 14px; font-size: 0.95rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
-            Kembali ke Kurikulum
-          </button>
         </div>
 
       </div>
@@ -714,14 +721,9 @@ function _initExamView(container, params, chapter, chapterId) {
     if (window.lucide) lucide.createIcons({ root: container });
 
     container.querySelector('#btn-retake-exam').addEventListener('click', () => {
-      // Reset state
       userAnswers = {};
       currentStep = 0;
       renderStep();
-    });
-
-    container.querySelector('#btn-back-chapter-grad').addEventListener('click', () => {
-      window.location.hash = `#/chapter/${chapter.id}`;
     });
 
     container.querySelector('#btn-back-curriculum-grad').addEventListener('click', () => {
@@ -736,7 +738,12 @@ function _initExamView(container, params, chapter, chapterId) {
   }
 
   function renderStep() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const pageContent = document.querySelector('.page-content');
+    if (pageContent) pageContent.scrollTop = 0;
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    if (container) container.scrollIntoView({ behavior: 'auto', block: 'start' });
+
     if (currentStep === 0) {
       renderLanding();
     } else if (currentStep === 1) {

@@ -1502,12 +1502,26 @@ export function WritingView(container) {
     renderTopbar('Latihan Menulis', false, '#/');
 
     container.innerHTML = `
-      <div class="writing-container page-container-standard fade-in" style="padding-bottom: 60px;">
-        <div class="writing-selection-header">
-          <div class="label">Deliberate Writing</div>
-          <h2>Latihan Menulis</h2>
-          <p>Pilih paket karakter untuk melatih urutan goresan (<em>stroke order</em>) dan memperkuat ingatan motorik.</p>
-        </div>
+      <div class="writing-container page-container-standard fade-in" style="max-width: 780px; margin: 0 auto; padding-bottom: 48px; display: flex; flex-direction: column; gap: 14px;">
+        
+        <!-- Dashboard Standard Hero Card -->
+        <section class="hero-learning-card phase-hero-card">
+          <nav class="phase-hero-nav" aria-label="Breadcrumb">
+            <a href="#/" class="phase-nav-back">
+              <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i> Dashboard
+            </a>
+            <span class="phase-nav-sep">/</span>
+            <span class="phase-nav-level">Latihan Menulis</span>
+          </nav>
+
+          <div class="hero-main-content">
+            <div class="dash-track-badge n5" style="align-self: flex-start; margin-bottom: 4px;">DELIBERATE PRACTICE</div>
+            <h1 class="hero-chapter-title" style="font-size: 1.35rem; margin: 0 0 4px 0;">Latihan Menulis &amp; Stroke Order</h1>
+            <p class="hero-chapter-desc" style="margin: 0;">
+              Latih urutan goresan (<em>stroke order</em>) karakter Hiragana, Katakana, dan Kanji N5–N3 untuk memperkuat ingatan motorik.
+            </p>
+          </div>
+        </section>
 
         <!-- Sticky Script Tabs -->
         <div class="writing-tabs-sticky-wrapper">
@@ -1520,14 +1534,14 @@ export function WritingView(container) {
           </div>
         </div>
 
-        <div id="selection-grid-container" style="display: flex; flex-direction: column; gap: 16px;">
+        <div id="selection-grid-container" style="display: flex; flex-direction: column; gap: 14px;">
         </div>
       </div>
     `;
 
-    renderBackBtn(container, '#/', 'Dashboard');
     renderSelectionGrid();
     bindSelectionEvents();
+    if (window.lucide) lucide.createIcons({ root: container });
   };
 
   const renderSelectionGrid = () => {

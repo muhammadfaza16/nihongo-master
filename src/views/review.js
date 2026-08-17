@@ -1,13 +1,11 @@
-import { renderTopbar, renderBackBtn, renderLoader } from '../components/layout.js';
+import { renderTopbar, renderLoader } from '../components/layout.js';
 import { getDueItems, gradeReview } from '../srs.js';
 import { addXP } from '../store.js';
-// registry.js is dynamically imported only when this view mounts (lazy)
 
 export async function ReviewView(container) {
-  renderTopbar('SRS Review', false, '#/');
+  renderTopbar('SRS Flashcards', false, '#/');
   renderLoader(container, 'Memuat Sesi Review...');
 
-  // Lazy-load registry only when user visits Review view
   const { findItemById } = await import('../data/registry.js');
 
   const dueItems = getDueItems();
@@ -18,20 +16,43 @@ export async function ReviewView(container) {
   // Empty state rendering
   if (dueItems.length === 0) {
     container.innerHTML = `
-      <div style="max-width: 500px; margin: 80px auto; text-align: center; padding: 20px;" class="fade-in">
-        <div style="font-size: 5rem; margin-bottom: 24px; color: var(--accent-bright); display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 96px; border-radius: 50%; background: var(--accent-dim); border: 1px solid var(--border-accent);">
-          <i data-lucide="party-popper" style="width:48px;height:48px;"></i>
-        </div>
-        <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 12px;">Semua Selesai!</h2>
-        <p style="color: var(--text-secondary); line-height: var(--leading-relaxed); max-width: 380px; margin: 0 auto 32px;">
-          Tidak ada review yang tertunda saat ini. Semua kartu memori Anda dalam kondisi prima. Kembalilah besok atau pelajari materi baru!
-        </p>
-        <button class="btn btn-primary btn-lg" onclick="window.location.hash='#/curriculum'">
-          <i data-lucide="compass" style="width:18px;height:18px"></i> Peta Kurikulum
-        </button>
+      <div class="srs-container page-container-standard fade-in" style="max-width: 680px; margin: 0 auto; padding-bottom: 48px;">
+        
+        <section class="hero-learning-card phase-hero-card" style="text-align: center; align-items: center;">
+          <nav class="phase-hero-nav" aria-label="Breadcrumb">
+            <a href="#/" class="phase-nav-back">
+              <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i> Dashboard
+            </a>
+            <span class="phase-nav-sep">/</span>
+            <span class="phase-nav-level">SRS Flashcards</span>
+          </nav>
+
+          <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(22, 163, 74, 0.1); border: 1.5px solid var(--green); display: flex; align-items: center; justify-content: center; margin: 8px auto 12px;">
+            <i data-lucide="party-popper" style="width: 32px; height: 32px; color: var(--green);"></i>
+          </div>
+
+          <span class="hero-pill-badge" style="background: rgba(22, 163, 74, 0.12); color: var(--green); border-color: transparent;">
+            MEMORI PRIMA &middot; 0 KARTU TERTUNDA
+          </span>
+
+          <h1 class="hero-chapter-title" style="font-size: 1.4rem; margin: 6px 0 4px 0;">Semua Selesai!</h1>
+          <p class="hero-chapter-desc" style="max-width: 440px; margin: 0 auto 16px;">
+            Tidak ada antrean kartu yang harus diulang saat ini. Kembalilah besok saat memori mulai memudar atau antrekan kosakata baru dari bab pembelajaran.
+          </p>
+
+          <div class="hero-actions-bar" style="width: 100%; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 8px; padding-top: 10px;">
+            <a href="#/curriculum" class="btn btn-primary" style="flex: 1; min-width: 160px; justify-content: center; text-decoration: none;">
+              <i data-lucide="map" style="width: 14px; height: 14px;"></i>
+              Peta Kurikulum
+            </a>
+            <a href="#/" class="btn btn-secondary" style="flex: 1; min-width: 140px; justify-content: center; text-decoration: none;">
+              Dashboard
+            </a>
+          </div>
+        </section>
+
       </div>
     `;
-    renderBackBtn(container, '#/', 'Dashboard');
     if (window.lucide) lucide.createIcons({ root: container });
     return;
   }
@@ -42,17 +63,16 @@ export async function ReviewView(container) {
       const totalXP = dueItems.length * 5;
       addXP(totalXP);
 
-      // Generate HTML for reviewed items list
       const gradeLabels = ['Lupa Total', 'Hampir Ingat', 'Susah', 'Lumayan', 'Ingat', 'Mudah Sekali'];
       const itemsHtml = sessionHistory.map(item => {
         const gradeIdx = Math.min(Math.max(item.grade || 0, 0), 5);
         const badgeText = gradeLabels[gradeIdx];
 
         return `
-          <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); margin-bottom: 8px;">
+          <div class="phase-card" style="padding: 12px 14px; flex-direction: row; align-items: center; justify-content: space-between;">
             <div style="text-align: left;">
-              <div style="font-family: var(--font-jp); font-size: 1.15rem; font-weight: 700; color: var(--text-main);">${item.vocab}</div>
-              <div style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 2px;">${item.meaning}</div>
+              <div style="font-family: var(--font-jp); font-size: 1.05rem; font-weight: 700; color: var(--text-main);">${item.vocab}</div>
+              <div style="font-size: 12px; color: var(--text-secondary); margin-top: 1px;">${item.meaning}</div>
             </div>
             <span class="srs-result-badge grade-${gradeIdx}">${badgeText}</span>
           </div>
@@ -60,28 +80,51 @@ export async function ReviewView(container) {
       }).join('');
 
       container.innerHTML = `
-        <div style="max-width: 520px; margin: 40px auto; text-align: center; padding: 0 16px;" class="fade-in">
-          <div style="font-size: 5rem; margin-bottom: 24px; color: var(--accent-bright); display: inline-flex; align-items: center; justify-content: center; width: 96px; height: 96px; border-radius: 50%; background: var(--accent-dim); border: 1px solid var(--border-accent);">
-            <i data-lucide="trophy" style="width:48px;height:48px;"></i>
-          </div>
-          <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 8px;">Review Selesai!</h2>
-          <p style="color: var(--text-secondary); font-size: var(--text-md); margin-bottom: 24px;">
-            Kerja bagus! Kamu mendapatkan <span style="color: var(--accent-bright); font-weight: 700;">+${totalXP} XP</span>.
-          </p>
+        <div class="srs-container page-container-standard fade-in" style="max-width: 680px; margin: 0 auto; padding-bottom: 48px;">
+          
+          <section class="hero-learning-card phase-hero-card" style="text-align: center; align-items: center;">
+            <nav class="phase-hero-nav" aria-label="Breadcrumb">
+              <a href="#/" class="phase-nav-back">
+                <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i> Dashboard
+              </a>
+              <span class="phase-nav-sep">/</span>
+              <span class="phase-nav-level">Hasil Review</span>
+            </nav>
 
-          <div style="text-align: left; margin-bottom: 28px;">
-            <h3 style="font-size: var(--text-sm); font-weight: 700; text-transform: uppercase; letter-spacing: var(--tracking-wider); color: var(--text-muted); margin-bottom: 12px;">Ringkasan Sesi</h3>
-            <div style="max-height: 280px; overflow-y: auto; padding-right: 4px;" class="custom-scrollbar">
-              ${itemsHtml}
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(22, 163, 74, 0.1); border: 1.5px solid var(--green); display: flex; align-items: center; justify-content: center; margin: 4px auto 8px;">
+              <i data-lucide="trophy" style="width: 28px; height: 28px; color: var(--green);"></i>
+            </div>
+
+            <span class="hero-pill-badge" style="background: rgba(22, 163, 74, 0.12); color: var(--green); border-color: transparent;">
+              +${totalXP} XP DIPEROLEH
+            </span>
+
+            <h1 class="hero-chapter-title" style="font-size: 1.4rem; margin: 6px 0 4px 0;">Sesi Review Selesai!</h1>
+            <p class="hero-chapter-desc" style="max-width: 440px; margin: 0 auto;">
+              Luar biasa! Anda telah menuntaskan peninjauan ${dueItems.length} kartu memori hari ini.
+            </p>
+
+            <div class="hero-actions-bar" style="width: 100%; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 10px; padding-top: 10px;">
+              <button class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="window.location.hash='#/'">
+                Kembali ke Dashboard
+              </button>
+            </div>
+          </section>
+
+          <!-- Review Summary List -->
+          <div class="phase-roadmap-header" style="margin-top: 14px;">
+            <div class="phase-roadmap-title-row">
+              <span class="phase-roadmap-section-title">Ringkasan Sesi</span>
+              <span class="phase-roadmap-section-meta">${dueItems.length} Kartu Selesai</span>
             </div>
           </div>
 
-          <button class="btn btn-primary btn-lg" style="width: 100%;" onclick="window.location.hash='#/dashboard'">
-            Kembali ke Dashboard
-          </button>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            ${itemsHtml}
+          </div>
+
         </div>
       `;
-      renderBackBtn(container, '#/', 'Dashboard');
       if (window.lucide) lucide.createIcons({ root: container });
       return;
     }
@@ -94,46 +137,57 @@ export async function ReviewView(container) {
 
     isFlipped = false;
 
-    // Build the flashcard UI using the custom srs-container & flip-card CSS classes
     container.innerHTML = `
-      <div class="srs-container page-container-standard fade-in">
-        <!-- Progress Bar -->
-        <div style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 24px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-            <span>Review <strong>${currentIndex + 1}</strong> dari <strong>${dueItems.length}</strong></span>
-            <span style="color: var(--text-muted); font-size: 0.8rem;">Sisa ${dueItems.length - currentIndex}</span>
+      <div class="srs-container page-container-standard fade-in" style="max-width: 680px; margin: 0 auto; padding-bottom: 48px;">
+        
+        <!-- Breadcrumb Navigation -->
+        <nav class="phase-hero-nav" aria-label="Breadcrumb" style="margin-bottom: 8px;">
+          <a href="#/" class="phase-nav-back">
+            <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i> Dashboard
+          </a>
+          <span class="phase-nav-sep">/</span>
+          <span class="phase-nav-level">SRS Review</span>
+          <span class="phase-nav-sep">/</span>
+          <span class="phase-nav-level">Kartu ${currentIndex + 1} dari ${dueItems.length}</span>
+        </nav>
+
+        <!-- Progress Gauge -->
+        <div class="dash-track-progress" style="margin-bottom: 16px;">
+          <div class="dash-track-prog-meta">
+            <span>Kemajuan Sesi Review</span>
+            <span><strong>${currentIndex + 1}</strong> / ${dueItems.length} Kartu (${Math.round((currentIndex / dueItems.length) * 100)}%)</span>
           </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: ${(currentIndex / dueItems.length) * 100}%"></div>
+          <div class="dash-track-prog-bar">
+            <div class="dash-track-prog-fill" style="width: ${(currentIndex / dueItems.length) * 100}%;"></div>
           </div>
         </div>
 
         <!-- 3D Flip Card -->
-        <div class="flip-card" id="srs-card">
+        <div class="flip-card" id="srs-card" style="cursor: pointer;">
           <div class="flip-card-inner">
             <!-- Front of Card (Question) -->
-            <div class="flip-card-front">
-              <span style="position: absolute; top: 16px; left: 20px; font-size: var(--text-2xs); font-weight: 700; color: var(--text-muted); letter-spacing: var(--tracking-wider); text-transform: uppercase;">
+            <div class="flip-card-front" style="border-radius: var(--radius-lg);">
+              <span class="hero-pill-badge" style="position: absolute; top: 14px; left: 16px;">
                 ${item.type === 'vocab' ? 'Kosakata' : item.type === 'kanji' ? 'Kanji' : 'Tata Bahasa'}
               </span>
-              <div class="jp-large" style="font-family: var(--font-jp); font-size: ${display.length > 6 ? '2.5rem' : '4rem'}; font-weight: 700; color: var(--text-main); margin-bottom: 12px;">
+              <div class="jp-large" style="font-family: var(--font-jp); font-size: ${display.length > 6 ? '2.2rem' : '3.6rem'}; font-weight: 800; color: var(--text-main); margin-bottom: 12px; letter-spacing: 0.02em;">
                 ${display}
               </div>
-              <span style="font-size: var(--text-xs); color: var(--text-muted); display: flex; align-items: center; gap: 6px;">
-                <i data-lucide="eye" style="width: 14px; height: 14px;"></i> Klik kartu atau tombol untuk melihat jawaban
+              <span style="font-size: 12px; color: var(--text-muted); display: flex; align-items: center; gap: 5px;">
+                <i data-lucide="eye" style="width: 13px; height: 13px;"></i> Ketuk kartu untuk melihat jawaban
               </span>
             </div>
 
             <!-- Back of Card (Answer) -->
-            <div class="flip-card-back">
-              <span style="position: absolute; top: 16px; left: 20px; font-size: var(--text-2xs); font-weight: 700; color: var(--text-muted); letter-spacing: var(--tracking-wider); text-transform: uppercase;">
-                Arti / Pelafalan
+            <div class="flip-card-back" style="border-radius: var(--radius-lg);">
+              <span class="hero-pill-badge" style="position: absolute; top: 14px; left: 16px;">
+                Arti &amp; Pelafalan
               </span>
-              ${sub ? `<div style="font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 10px; font-family: var(--font-jp);">${sub}</div>` : ''}
-              <div style="font-size: 2.2rem; color: var(--text-main); font-weight: 800; line-height: 1.25; margin-bottom: 14px;">
+              ${sub ? `<div style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 8px; font-family: var(--font-jp);">${sub}</div>` : ''}
+              <div style="font-size: 1.8rem; color: var(--text-main); font-weight: 800; line-height: 1.25; margin-bottom: 12px;">
                 ${answer}
               </div>
-              <div style="font-size: 0.8rem; color: var(--text-muted); display: flex; gap: 12px; justify-content: center; background: var(--bg-hover); padding: 4px 10px; border-radius: var(--radius-sm); border: 1px solid var(--border);">
+              <div style="font-size: 11px; color: var(--text-muted); display: flex; gap: 10px; justify-content: center; background: var(--bg-elevated); padding: 4px 10px; border-radius: var(--radius-sm); border: 1px solid var(--border);">
                 <span>Repetisi: <strong>${item.repetitions}</strong></span>
                 <span>Ease Factor: <strong>${item.easeFactor.toFixed(1)}</strong></span>
               </div>
@@ -142,95 +196,73 @@ export async function ReviewView(container) {
         </div>
 
         <!-- Action Control Area -->
-        <div id="action-area" style="min-height: 80px; display: flex; align-items: center; justify-content: center;">
-          <button id="btn-show" class="btn btn-primary btn-lg" style="width: 100%; max-width: 320px;">
-            Tampilkan Jawaban <i data-lucide="arrow-right-circle" style="width: 18px; height: 18px"></i>
+        <div id="action-area" style="min-height: 72px; display: flex; align-items: center; justify-content: center; margin-top: 14px;">
+          <button id="btn-show" class="btn btn-primary" style="width: 100%; max-width: 320px; justify-content: center; font-size: 14px; padding: 12px 20px;">
+            <i data-lucide="eye" style="width: 15px; height: 15px;"></i>
+            Tampilkan Jawaban
           </button>
         </div>
       </div>
     `;
 
-    renderBackBtn(container, '#/', 'Dashboard');
     if (window.lucide) lucide.createIcons({ root: container });
 
-    const cardEl = document.getElementById('srs-card');
-    const showBtn = document.getElementById('btn-show');
+    const card = document.getElementById('srs-card');
+    const btnShow = document.getElementById('btn-show');
+    const actionArea = document.getElementById('action-area');
 
-    // Function to perform the flipping transition
-    const flip = () => {
+    const flipCard = () => {
       if (isFlipped) return;
       isFlipped = true;
-      cardEl.classList.add('flipped');
+      card.classList.add('flipped');
 
-      // Swap out the button to show the 4-grade options
-      const actionArea = document.getElementById('action-area');
       actionArea.innerHTML = `
-        <div style="display: flex; flex-direction: column; width: 100%; gap: 14px;">
-          <div style="text-align: center; font-size: var(--text-xs); color: var(--text-muted); font-weight: 600;">Seberapa baik kamu mengingat kartu ini?</div>
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 100%;">
-            <button class="btn btn-grade" data-q="0" style="background: var(--red-dim, #ffe5e5); border: 1px solid var(--border); color: var(--red, #ef4444); flex-direction: column; padding: 10px 4px; height: 60px;">
-              <span style="font-size: var(--text-xs); font-weight: 800;">Lupa Total</span>
-              <span style="font-size: var(--text-2xs); opacity: 0.6; margin-top: 2px;">Grade 0</span>
-            </button>
-            <button class="btn btn-grade" data-q="1" style="background: var(--orange-dim, #ffedd5); border: 1px solid var(--border); color: var(--orange, #f97316); flex-direction: column; padding: 10px 4px; height: 60px;">
-              <span style="font-size: var(--text-xs); font-weight: 800;">Hampir Ingat</span>
-              <span style="font-size: var(--text-2xs); opacity: 0.6; margin-top: 2px;">Grade 1</span>
-            </button>
-            <button class="btn btn-grade" data-q="2" style="background: var(--amber-dim, #fef3c7); border: 1px solid var(--border); color: var(--amber, #f59e0b); flex-direction: column; padding: 10px 4px; height: 60px;">
-              <span style="font-size: var(--text-xs); font-weight: 800;">Susah</span>
-              <span style="font-size: var(--text-2xs); opacity: 0.6; margin-top: 2px;">Grade 2</span>
-            </button>
-            <button class="btn btn-grade" data-q="3" style="background: var(--lime-dim, #ecfccb); border: 1px solid var(--border); color: var(--lime, #84cc16); flex-direction: column; padding: 10px 4px; height: 60px;">
-              <span style="font-size: var(--text-xs); font-weight: 800;">Lumayan</span>
-              <span style="font-size: var(--text-2xs); opacity: 0.6; margin-top: 2px;">Grade 3</span>
-            </button>
-            <button class="btn btn-grade" data-q="4" style="background: var(--green-dim, #dcfce7); border: 1px solid var(--border); color: var(--green, #22c55e); flex-direction: column; padding: 10px 4px; height: 60px;">
-              <span style="font-size: var(--text-xs); font-weight: 800;">Ingat</span>
-              <span style="font-size: var(--text-2xs); opacity: 0.6; margin-top: 2px;">Grade 4</span>
-            </button>
-            <button class="btn btn-grade" data-q="5" style="background: var(--bg-elevated); border: 1px solid var(--border); color: var(--blue, #3b82f6); flex-direction: column; padding: 10px 4px; height: 60px;">
-              <span style="font-size: var(--text-xs); font-weight: 800;">Mudah Sekali</span>
-              <span style="font-size: var(--text-2xs); opacity: 0.6; margin-top: 2px;">Grade 5</span>
-            </button>
-          </div>
+        <div class="srs-grade-buttons-grid" style="width: 100%; display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px;">
+          <button class="btn btn-grade" data-grade="0" style="padding: 8px 4px; font-size: 11px; font-weight: 700; flex-direction: column; gap: 2px;">
+            <span>0</span>
+            <span style="font-size: 9px; opacity: 0.8;">Lupa Total</span>
+          </button>
+          <button class="btn btn-grade" data-grade="1" style="padding: 8px 4px; font-size: 11px; font-weight: 700; flex-direction: column; gap: 2px;">
+            <span>1</span>
+            <span style="font-size: 9px; opacity: 0.8;">Hampir</span>
+          </button>
+          <button class="btn btn-grade" data-grade="2" style="padding: 8px 4px; font-size: 11px; font-weight: 700; flex-direction: column; gap: 2px;">
+            <span>2</span>
+            <span style="font-size: 9px; opacity: 0.8;">Susah</span>
+          </button>
+          <button class="btn btn-grade" data-grade="3" style="padding: 8px 4px; font-size: 11px; font-weight: 700; flex-direction: column; gap: 2px;">
+            <span>3</span>
+            <span style="font-size: 9px; opacity: 0.8;">Lumayan</span>
+          </button>
+          <button class="btn btn-grade" data-grade="4" style="padding: 8px 4px; font-size: 11px; font-weight: 700; flex-direction: column; gap: 2px;">
+            <span>4</span>
+            <span style="font-size: 9px; opacity: 0.8;">Ingat</span>
+          </button>
+          <button class="btn btn-grade" data-grade="5" style="padding: 8px 4px; font-size: 11px; font-weight: 700; flex-direction: column; gap: 2px;">
+            <span>5</span>
+            <span style="font-size: 9px; opacity: 0.8;">Mudah</span>
+          </button>
         </div>
       `;
 
-      // Set event listeners for the new 4-grade buttons
-      document.querySelectorAll('.btn-grade').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          // Make sure we read the grade value from the closest button element
-          const targetBtn = e.target.closest('.btn-grade');
-          const q = parseInt(targetBtn.dataset.q);
-
-          // Add to history for summary view
+      actionArea.querySelectorAll('.btn-grade').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const grade = parseInt(btn.dataset.grade);
+          gradeReview(item.id, grade);
           sessionHistory.push({
-            id: item.id,
             vocab: display,
             meaning: answer,
-            grade: q
+            grade: grade
           });
-
-          // Perform SM-2 update
-          gradeReview(item.id, q);
           currentIndex++;
-          
-          // Animate transition to next card
-          cardEl.style.opacity = '0';
-          cardEl.style.transform = 'scale(0.95)';
-          actionArea.style.opacity = '0';
-          
-          setTimeout(() => {
-            renderCard();
-          }, 200);
+          renderCard();
         });
       });
     };
 
-    cardEl.addEventListener('click', flip);
-    showBtn.addEventListener('click', flip);
+    card.addEventListener('click', flipCard);
+    btnShow?.addEventListener('click', flipCard);
   };
 
   renderCard();
 }
-

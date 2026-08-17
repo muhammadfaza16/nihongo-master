@@ -25,3 +25,6 @@ dist-ssr
 
 # Giant PDF reference files (exceeds GitHub 100MB limit)
 references/
+
+# Test screenshots
+screenshots_mobile/

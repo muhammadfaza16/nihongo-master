@@ -5,8 +5,10 @@ import { getUnitDetails } from '../data/curriculum.js';
 
 export function WorkbookView(container, params) {
   const chapterId = parseInt(params.id);
+  const unitDetails = getUnitDetails(chapterId);
+  const backRoute = unitDetails ? `#/phase/${unitDetails.phaseId}` : `#/curriculum`;
 
-  renderTopbar(`Kaite Oboeru — Bab ${chapterId}`, false, `#/chapter/${chapterId}`);
+  renderTopbar(`Kaite Oboeru — Bab ${chapterId}`, false, backRoute);
 
   renderLoader(container, `Memuat Workbook Bab ${chapterId}...`);
 
@@ -37,16 +39,16 @@ function _initWorkbookView(container, params, chapter, chapterId) {
     container.innerHTML = `
       <div class="fade-in" style="max-width: 800px; margin: 0 auto; padding-bottom: 80px;">
         <!-- Breadcrumb Navigation -->
-        <nav class="app-breadcrumb" aria-label="Breadcrumb">
-          <a href="#/curriculum">Kurikulum</a>
+        <nav class="phase-hero-nav" aria-label="Breadcrumb">
+          <a href="#/curriculum?track=${backTrack}" class="phase-nav-back">
+            <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i> Kurikulum
+          </a>
           ${unitDetails ? `
-            <span class="breadcrumb-separator">/</span>
-            <a href="#/phase/${unitDetails.phaseId}">${unitDetails.phaseTitle}</a>
+            <span class="phase-nav-sep">/</span>
+            <a href="#/phase/${unitDetails.phaseId}" class="phase-nav-back">${unitDetails.phaseTitle.includes(':') ? unitDetails.phaseTitle.split(':')[0].trim() : unitDetails.phaseTitle}</a>
           ` : ''}
-          <span class="breadcrumb-separator">/</span>
-          <a href="#/chapter/${chapterId}">Bab ${chapterId}</a>
-          <span class="breadcrumb-separator">/</span>
-          <span class="breadcrumb-current">Buku Kerja (Kaite Oboeru)</span>
+          <span class="phase-nav-sep">/</span>
+          <span class="phase-nav-level">Bab ${chapterId} &middot; Buku Kerja</span>
         </nav>
 
         <div style="background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 32px; text-align: center;">
@@ -141,118 +143,132 @@ function _initWorkbookView(container, params, chapter, chapterId) {
 
     if (viewMode === 'overview') {
       // ────────────────────────────────────────────────────────
-      // OVERVIEW VIEW MODE
+      // OVERVIEW VIEW MODE (Dashboard DNA)
       // ────────────────────────────────────────────────────────
       html += `
-        <!-- Breadcrumb Navigation -->
-        <nav class="app-breadcrumb" aria-label="Breadcrumb">
-          <a href="#/curriculum">Kurikulum</a>
-          ${unitDetails ? `
-            <span class="breadcrumb-separator">/</span>
-            <a href="#/phase/${unitDetails.phaseId}">${unitDetails.phaseTitle}</a>
-          ` : ''}
-          <span class="breadcrumb-separator">/</span>
-          <a href="#/chapter/${chapter.id}">Bab ${chapter.id}</a>
-          <span class="breadcrumb-separator">/</span>
-          <span class="breadcrumb-current">Buku Kerja (Kaite Oboeru)</span>
-        </nav>
+        <!-- Overview Hero Box (Phase / Dashboard Standard) -->
+        <section class="hero-learning-card phase-hero-card">
+          <nav class="phase-hero-nav" aria-label="Breadcrumb">
+            <a href="#/curriculum?track=${backTrack}" class="phase-nav-back">
+              <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i> Kurikulum
+            </a>
+            ${unitDetails ? `
+              <span class="phase-nav-sep">/</span>
+              <a href="#/phase/${unitDetails.phaseId}" class="phase-nav-back">${unitDetails.phaseTitle.includes(':') ? unitDetails.phaseTitle.split(':')[0].trim() : unitDetails.phaseTitle}</a>
+            ` : ''}
+            <span class="phase-nav-sep">/</span>
+            <span class="phase-nav-level">Bab ${chapter.id} &middot; Buku Kerja</span>
+          </nav>
 
-        <!-- Overview Hero Box -->
-        <div class="overview-hero">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap;">
-            <div>
-              <span class="overview-hero-tag">Kaite Oboeru</span>
-              <h2 style="font-size: var(--text-2xl); font-weight: 900; color: var(--text-main); margin-bottom: 8px; letter-spacing: var(--tracking-tight);">Latihan Menulis: Bab ${chapter.id}</h2>
-              <p style="color: var(--text-secondary); font-size: var(--text-xs); line-height: var(--leading-relaxed); max-width: 580px;">
-                Tulis ulang pola kalimat standard dari buku <em>Kaite Oboeru</em> berdasarkan petunjuk kata yang disediakan. Mode ini melatih struktur partikel dan kemampuan menulis kalimat bahasa Jepang Anda secara akurat.
-              </p>
-            </div>
-            
-            <button id="btn-start-practice" class="resume-btn" style="background: var(--text-main); color: var(--bg-main); border: none; padding: 12px 28px; font-size: 0.85rem; font-weight: 800; border-radius: var(--radius-md); text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
-              ${attemptedCount === 0 ? 'Mulai Latihan' : attemptedCount === totalQuestions ? 'Buka Kembali Latihan' : 'Lanjutkan Latihan'}
-            </button>
+          <div class="hero-main-content">
+            <div class="dash-track-badge n5" style="align-self: flex-start; margin-bottom: 4px;">KAITE OBOERU &middot; BAB ${chapter.id}</div>
+            <h1 class="hero-chapter-title" style="font-size: 1.35rem; margin: 0 0 4px 0;">Latihan Menulis &amp; Pola Kalimat</h1>
+            <p class="hero-chapter-desc" style="margin: 0;">
+              Tulis ulang pola kalimat standard dari buku <em>Kaite Oboeru</em> berdasarkan petunjuk kata yang disediakan.
+            </p>
           </div>
 
-          <!-- Progress and stats -->
-          <div class="overview-stats">
-            <div class="overview-stat-item">
-              <span class="overview-stat-val">${totalQuestions}</span>
-              <span class="overview-stat-lbl">Total Kalimat</span>
+          <!-- Clean Spacious Progress Bar -->
+          <div class="dash-track-progress" style="margin-top: 4px;">
+            <div class="dash-track-prog-meta">
+              <span>Kemajuan Latihan</span>
+              <span><strong>${correctCount}</strong>/${totalQuestions} Soal (${progressPercent}%)</span>
             </div>
-            <div class="overview-stat-item">
-              <span class="overview-stat-val">${correctCount} / ${totalQuestions}</span>
-              <span class="overview-stat-lbl">Jawaban Benar</span>
+            <div class="dash-track-prog-bar">
+              <div class="dash-track-prog-fill" style="width: ${progressPercent}%;"></div>
             </div>
-            <div class="overview-stat-item">
-              <span class="overview-stat-val">${progressPercent}%</span>
-              <span class="overview-stat-lbl">Progres Selesai</span>
-            </div>
+          </div>
+
+          <!-- Actions Bar -->
+          <div class="hero-actions-bar" style="margin-top: 2px; padding-top: 10px;">
+            <button id="btn-start-practice" class="btn btn-primary hero-cta-btn" style="width: 100%; justify-content: center;">
+              <i data-lucide="${attemptedCount === totalQuestions ? 'rotate-ccw' : 'play'}" style="width: 14px; height: 14px; fill: currentColor;"></i>
+              ${attemptedCount === 0 ? 'Mulai Latihan Menulis' : attemptedCount === totalQuestions ? 'Ulangi Latihan' : 'Lanjutkan Latihan Menulis'}
+            </button>
+          </div>
+        </section>
+
+        <!-- Gesture of Transition: Section Divider Header -->
+        <div class="phase-roadmap-header">
+          <div class="phase-roadmap-title-row">
+            <span class="phase-roadmap-section-title">Daftar Soal Latihan</span>
+            <span class="phase-roadmap-section-meta">${correctCount}/${totalQuestions} Selesai</span>
           </div>
         </div>
 
         <!-- Overview List -->
-        <div>
-          <div class="overview-list-title">
-            Daftar Latihan Menulis
-          </div>
-          <div class="overview-grid">
-            ${questionsState.map((q, idx) => {
-              let statusLabel = 'Belum Dikerjakan';
-              let statusClass = 'unattempted';
-              let statusIcon = 'circle';
-              
-              if (q.status === 'correct') {
-                statusLabel = 'Benar';
-                statusClass = 'correct';
-                statusIcon = 'check-circle';
-              } else if (q.status === 'incorrect') {
-                statusLabel = 'Perlu Diulang';
-                statusClass = 'incorrect';
-                statusIcon = 'x-circle';
-              }
+        <div class="phase-roadmap-list wb-overview-grid">
+          ${questionsState.map((q, idx) => {
+            let statusLabel = 'Belum Dikerjakan';
+            let statusClass = 'unattempted';
+            let statusIcon = 'circle';
+            
+            if (q.status === 'correct') {
+              statusLabel = 'Benar';
+              statusClass = 'done';
+              statusIcon = 'check';
+            } else if (q.status === 'incorrect') {
+              statusLabel = 'Perlu Diulang';
+              statusClass = 'active';
+              statusIcon = 'alert-circle';
+            }
 
-              return `
-                <div class="overview-card" data-index="${idx}">
-                  <div class="overview-card-info">
-                    <div class="overview-card-meta">
-                      <span class="overview-card-num">SOAL ${idx + 1}</span>
-                      <span class="overview-card-pattern"><i data-lucide="book-open" style="width: 12px; height: 12px; display: inline-block; vertical-align: middle; margin-right: 4px;"></i> ${q.pattern}</span>
-                    </div>
-                    <div class="overview-card-cue">${q.question}</div>
-                    <div class="overview-card-desc">${q.instruction}</div>
+            return `
+              <div class="phase-card overview-card ${statusClass === 'done' ? 'is-completed' : ''}" data-index="${idx}">
+                <div class="phase-card-top-bar">
+                  <div class="phase-badge-group">
+                    <span class="hero-pill-badge">Soal ${idx + 1}</span>
+                    <span class="phase-topic-tag">Pola: ${q.pattern}</span>
                   </div>
-                  
-                  <div class="status-badge ${statusClass}">
-                    <i data-lucide="${statusIcon}" style="width: 14px; height: 14px;"></i>
+                  <span class="phase-badge-status ${statusClass}">
+                    <i data-lucide="${statusIcon}" style="width: 11px; height: 11px;"></i>
                     ${statusLabel}
-                  </div>
+                  </span>
                 </div>
-              `;
-            }).join('')}
-          </div>
+                
+                <div class="phase-card-title-group">
+                  <h3 class="phase-card-title" style="font-family: var(--font-jp); font-size: 15px; letter-spacing: 0.02em;">${q.question}</h3>
+                  <p class="phase-card-focus-text">${q.instruction}</p>
+                </div>
+              </div>
+            `;
+          }).join('')}
         </div>
       `;
     } else {
       // ────────────────────────────────────────────────────────
-      // PRACTICE VIEW MODE (SPLIT LAYOUT)
+      // PRACTICE VIEW MODE (SPLIT LAYOUT WITH DASHBOARD STYLING)
       // ────────────────────────────────────────────────────────
       
-      // Calculate sidebar items progress fill
       const sidebarProgressPercent = Math.round((attemptedCount / totalQuestions) * 100);
       const activeItem = questionsState[currentIndex];
 
       html += `
+        <!-- Breadcrumb Navigation -->
+        <nav class="phase-hero-nav" aria-label="Breadcrumb">
+          <a href="#/curriculum?track=${backTrack}" class="phase-nav-back">
+            <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i> Kurikulum
+          </a>
+          ${unitDetails ? `
+            <span class="phase-nav-sep">/</span>
+            <a href="#/phase/${unitDetails.phaseId}" class="phase-nav-back">${unitDetails.phaseTitle.includes(':') ? unitDetails.phaseTitle.split(':')[0].trim() : unitDetails.phaseTitle}</a>
+          ` : ''}
+          <span class="phase-nav-sep">/</span>
+          <button id="btn-breadcrumb-overview" class="wb-ghost-nav-btn">Bab ${chapter.id} &middot; Buku Kerja</button>
+          <span class="phase-nav-sep">/</span>
+          <span class="phase-nav-level">${isCompletedScreen ? 'Hasil' : `Soal ${currentIndex + 1}`}</span>
+        </nav>
+
         <div class="workbook-split-layout">
           
-          <!-- LEFT COLUMN: SIDEBAR INDEX (Desktop) -->
+          <!-- LEFT COLUMN: SIDEBAR INDEX (Desktop Only) -->
           <div class="workbook-sidebar">
-            <span class="sidebar-title">Indeks Soal</span>
+            <div class="sidebar-header-row">
+              <span class="sidebar-title">Indeks Soal</span>
+              <span class="sidebar-meta-count">${correctCount}/${totalQuestions} Selesai</span>
+            </div>
             
             <div class="sidebar-progress-container">
-              <div style="display:flex; justify-content:space-between; font-size:0.75rem; font-weight:700; color:var(--text-secondary);">
-                <span>Progres Soal</span>
-                <span>${correctCount}/${totalQuestions} Selesai</span>
-              </div>
               <div class="sidebar-progress-bar">
                 <div class="sidebar-progress-fill" style="width: ${sidebarProgressPercent}%;"></div>
               </div>
@@ -264,47 +280,35 @@ function _initWorkbookView(container, params, chapter, chapterId) {
                 let statusIcon = 'circle';
                 let statusClass = 'unattempted';
                 if (q.status === 'correct') {
-                  statusIcon = 'check-circle';
+                  statusIcon = 'check';
                   statusClass = 'correct';
                 } else if (q.status === 'incorrect') {
-                  statusIcon = 'x-circle';
+                  statusIcon = 'alert-circle';
                   statusClass = 'incorrect';
                 }
 
                 return `
                   <button class="sidebar-item ${isActive ? 'active' : ''}" data-index="${idx}">
-                    <span class="sidebar-item-label" style="${isActive ? 'font-weight: 800;' : ''}">
+                    <span class="sidebar-item-label">
                       Soal ${idx + 1}: ${q.pattern}
                     </span>
                     <span class="sidebar-item-icon ${statusClass}">
-                      <i data-lucide="${statusIcon}" style="width:14px;height:14px;"></i>
+                      <i data-lucide="${statusIcon}" style="width:13px;height:13px;"></i>
                     </span>
                   </button>
                 `;
               }).join('')}
             </div>
             
-            <button id="btn-sidebar-back-overview" style="margin-top:auto; padding:10px; font-size:0.78rem; font-weight:700; color:var(--text-muted); background:transparent; border:1px solid var(--border); border-radius:var(--radius-md); cursor:pointer; text-align:center; transition: all 0.2s;" onmouseover="this.style.borderColor='var(--text-muted)'; this.style.color='var(--text-main)';" onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--text-muted)';">
-              <i data-lucide="list" style="width:13px;height:13px;display:inline-block;vertical-align:middle;margin-right:4px;"></i>
-              Kembali ke Ringkasan
+            <button id="btn-sidebar-back-overview" class="wb-sidebar-back-btn">
+              <i data-lucide="list" style="width:13px;height:13px;"></i>
+              Lihat Semua Soal
             </button>
           </div>
 
           <!-- RIGHT COLUMN: MAIN INTERACTIVE CARD -->
-          <div>
-            <!-- Breadcrumbs in Practice Mode -->
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); flex-wrap: wrap;">
-              <a href="#/curriculum?track=${backTrack}" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; gap: 6px;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'">
-                Kurikulum
-              </a>
-              <span>/</span>
-              <a href="#/chapter/${chapter.id}" style="color: var(--text-muted); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'">Bab ${chapter.id}</a>
-              <span>/</span>
-              <button id="btn-breadcrumb-overview" style="background:none; border:none; padding:0; font-size: inherit; font-weight:inherit; color: var(--text-muted); cursor:pointer; text-transform:uppercase; letter-spacing:inherit; transition: color 0.2s;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'">Workbook</button>
-              <span>/</span>
-              <span style="color: var(--text-main);">${isCompletedScreen ? 'Hasil Latihan' : `Soal ${currentIndex + 1}`}</span>
-            </div>
-
+          <div class="workbook-main-col">
+            
             <!-- Mobile Quick Timeline Chips -->
             <div class="mobile-chips-container">
               ${questionsState.map((q, idx) => {
@@ -316,8 +320,8 @@ function _initWorkbookView(container, params, chapter, chapterId) {
                   </div>
                 `;
               }).join('')}
-              <div class="mobile-chip ${isCompletedScreen ? 'active' : ''}" id="btn-mobile-chip-complete" style="width:auto; padding:0 12px; border-radius:18px;">
-                <i data-lucide="award" style="width:14px;height:14px;margin-right:4px;"></i>
+              <div class="mobile-chip ${isCompletedScreen ? 'active' : ''} result-chip" id="btn-mobile-chip-complete">
+                <i data-lucide="award" style="width:13px;height:13px;"></i>
                 Hasil
               </div>
             </div>
@@ -339,115 +343,107 @@ function _initWorkbookView(container, params, chapter, chapterId) {
     bindEvents(totalQuestions);
   }
 
-  // Helper to render active question card HTML
+  // Helper to render active question card HTML (Dashboard DNA)
   function renderQuestionHTML(item, index, total) {
     const isChecked = item.status !== 'unattempted';
     const isCorrect = item.status === 'correct';
     const revealAnswer = item.revealAnswer;
 
     return `
-      <!-- Question Info Row -->
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-        <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Latihan Menulis ${index + 1} dari ${total}</span>
-        <button id="btn-back-to-overview-link" style="background:none; border:none; padding:0; color:var(--text-muted); font-size:0.75rem; font-weight:700; text-transform:uppercase; cursor:pointer;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'">
-          <i data-lucide="list" style="width:12px;height:12px;display:inline-block;vertical-align:middle;margin-right:2px;"></i> Lihat Semua Soal
-        </button>
-      </div>
-
-      <!-- Question Card (Unified with Feedback State) -->
-      <div style="background: var(--bg-card); border: 1px solid ${isChecked ? (isCorrect ? 'var(--border-accent)' : 'rgba(248,113,113,0.4)') : 'var(--border)'}; border-radius: var(--radius-lg); padding: var(--space-5); margin-bottom: var(--space-5); transition: border-color 0.2s ease;">
+      <!-- Active Question Card -->
+      <div class="phase-card wb-practice-card ${isChecked ? (isCorrect ? 'is-completed' : 'is-active-focus') : ''}">
         
-        <!-- Instruction -->
-        <div style="font-size: var(--text-xs); color: var(--text-secondary); margin-bottom: var(--space-4); border-left: 2px solid var(--text-main); padding-left: var(--space-3); line-height: 1.5;">
-          ${item.instruction}
-        </div>
-
-        <!-- Pattern Tag -->
-        <div style="margin-bottom: var(--space-4);">
-          <span style="font-size: var(--text-3xs); font-weight: 700; font-family: monospace; background: var(--bg-elevated); border: 1px solid var(--border); padding: 4px 8px; border-radius: var(--radius-sm); color: var(--text-main);">
-            Pola: ${item.pattern}
-          </span>
-        </div>
-
-        <!-- The Cues -->
-        <div style="margin-bottom: var(--space-5); text-align: center; padding: var(--space-4); background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius-md);">
-          <div style="font-size: var(--text-3xs); color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.05em;">Petunjuk Kata</div>
-          <div style="font-size: var(--text-xl); font-weight: 800; color: var(--text-main); letter-spacing: -0.01em;">
-            ${item.question}
+        <!-- Question Top Bar -->
+        <div class="phase-card-top-bar">
+          <div class="phase-badge-group">
+            <span class="hero-pill-badge">Soal ${index + 1} dari ${total}</span>
+            <span class="phase-topic-tag">Pola: ${item.pattern}</span>
           </div>
+          <button id="btn-back-to-overview-link" class="wb-ghost-link">
+            <i data-lucide="list" style="width:12px;height:12px;"></i> Semua Soal
+          </button>
+        </div>
+
+        <!-- Instruction Subtitle -->
+        <div class="wb-instruction-box">
+          <i data-lucide="info" style="width:13px; height:13px; color:var(--accent); flex-shrink:0;"></i>
+          <span>${item.instruction}</span>
+        </div>
+
+        <!-- The Cues Box -->
+        <div class="wb-cue-box">
+          <div class="wb-cue-label">Petunjuk Kata</div>
+          <div class="wb-cue-text">${item.question}</div>
         </div>
 
         <!-- Input Area -->
-        <div style="margin-bottom: var(--space-4);">
-          <label for="wb-user-input" style="display: block; font-size: var(--text-xs); font-weight: 700; color: var(--text-main); margin-bottom: var(--space-2);">Ketikan Kalimat Lengkap Anda (Hiragana/Kanji):</label>
-          <input type="text" id="wb-user-input" placeholder="Ketik kalimat lengkap di sini..." autocomplete="off" 
-            style="width: 100%; padding: 12px 16px; font-size: var(--text-base); border-radius: var(--radius-md); border: 1px solid var(--border-accent); background: var(--bg-elevated); color: var(--text-main); font-family: inherit; transition: all 0.2s;"
-            value="${item.userAnswer || ''}"
-            ${isChecked ? 'disabled' : ''} />
+        <div class="wb-input-group">
+          <label for="wb-user-input" class="wb-input-label">Ketik kalimat lengkap (Hiragana / Kanji):</label>
+          <div class="wb-input-wrap">
+            <input type="text" id="wb-user-input" class="wb-text-input" placeholder="Ketik kalimat lengkap di sini..." autocomplete="off" 
+              value="${item.userAnswer || ''}"
+              ${isChecked ? 'disabled' : ''} />
+          </div>
         </div>
 
-        <!-- Inline Result Feedback (Unified inside card) -->
+        <!-- Inline Result Feedback -->
         ${isChecked ? `
-          <div class="fade-in" style="padding: var(--space-3) var(--space-4); background: var(--bg-elevated); border-radius: var(--radius-md); border-left: 3px solid ${isCorrect ? 'var(--green)' : 'var(--red)'}; margin-bottom: var(--space-4);">
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: ${(isCorrect || revealAnswer) ? '8px' : '0'};">
-              <i data-lucide="${isCorrect ? 'check-circle' : 'alert-circle'}" style="width: 16px; height: 16px; color: ${isCorrect ? 'var(--green)' : 'var(--red)'}; flex-shrink: 0;"></i>
-              <span style="font-size: var(--text-xs); font-weight: 700; color: var(--text-main);">
-                ${isCorrect ? 'Luar Biasa! Jawaban Anda Tepat.' : revealAnswer ? 'Kunci Jawaban Buku Cetak:' : 'Kurang Tepat. Ketikan Anda mengandung ketidakcocokan partikel atau ejaan.'}
+          <div class="wb-feedback-box ${isCorrect ? 'is-correct' : 'is-incorrect'} fade-in">
+            <div class="wb-feedback-header">
+              <i data-lucide="${isCorrect ? 'check-circle-2' : 'alert-circle'}" style="width: 15px; height: 15px; flex-shrink: 0;"></i>
+              <span class="wb-feedback-title">
+                ${isCorrect ? 'Luar Biasa! Jawaban Anda Tepat.' : revealAnswer ? 'Kunci Jawaban Buku Cetak:' : 'Kurang Tepat. Periksa kembali partikel atau ejaan kata.'}
               </span>
             </div>
             
             ${(isCorrect || revealAnswer) ? `
-              <div style="padding-top: var(--space-2); border-top: 1px dashed var(--border);">
-                <div style="font-size: var(--text-md); font-weight: 700; color: var(--text-main); font-family: var(--font-jp);">
-                  ${item.correct}
-                </div>
-                <div style="font-size: var(--text-3xs); font-family: monospace; color: var(--text-muted); margin-top: 2px;">
-                  ${item.romaji}
-                </div>
-                <div style="font-size: var(--text-xs); color: var(--text-secondary); margin-top: 4px;">
-                  = "${item.translation}"
-                </div>
+              <div class="wb-feedback-body">
+                <div class="wb-correct-jp">${item.correct}</div>
+                <div class="wb-correct-romaji">${item.romaji}</div>
+                <div class="wb-correct-trans">= "${item.translation}"</div>
               </div>
             ` : ''}
           </div>
         ` : ''}
 
-        <!-- Action Buttons -->
-        <div style="display: flex; gap: var(--space-3); justify-content: space-between; align-items:center; flex-wrap:wrap;">
+        <!-- Bottom Action Bar -->
+        <div class="wb-card-actions">
           
           <!-- Prev / Next Card shortcuts -->
-          <div style="display:flex; gap:8px;">
-            <button id="btn-prev-quest" class="filter-tab-btn" style="padding: 8px 12px;" ${index === 0 ? 'disabled style="opacity: 0.3; cursor: default;"' : ''}>
+          <div class="wb-nav-btns">
+            <button id="btn-prev-quest" class="wb-icon-nav-btn" ${index === 0 ? 'disabled' : ''} title="Soal Sebelumnya">
               <i data-lucide="chevron-left" style="width:16px;height:16px;"></i>
             </button>
-            <button id="btn-next-quest" class="filter-tab-btn" style="padding: 8px 12px;" ${index === total - 1 ? 'disabled style="opacity: 0.3; cursor: default;"' : ''}>
+            <button id="btn-next-quest" class="wb-icon-nav-btn" ${index === total - 1 ? 'disabled' : ''} title="Soal Selanjutnya">
               <i data-lucide="chevron-right" style="width:16px;height:16px;"></i>
             </button>
           </div>
 
-          <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+          <div class="wb-main-action-btns">
             ${!isChecked ? `
-              <button id="btn-check" class="btn btn-primary" style="padding: 10px 24px; font-size: var(--text-xs); font-weight: 700; border-radius: var(--radius-sm);">
+              <button id="btn-check" class="btn btn-primary wb-submit-btn">
+                <i data-lucide="check" style="width:14px;height:14px;"></i>
                 Periksa Jawaban
               </button>
             ` : `
               ${!isCorrect && !revealAnswer ? `
-                <button id="btn-reveal" class="btn btn-secondary" style="padding: 10px 16px; font-size: var(--text-xs); font-weight: 700; border-radius: var(--radius-sm);">
+                <button id="btn-reveal" class="hero-subaction-btn">
                   Lihat Kunci Jawaban
                 </button>
-                <button id="btn-retry" class="btn btn-secondary" style="padding: 10px 16px; font-size: var(--text-xs); font-weight: 700; border-radius: var(--radius-sm);">
-                  <i data-lucide="refresh-cw" style="width:13px;height:13px;margin-right:4px;"></i> Coba Lagi
+                <button id="btn-retry" class="hero-subaction-btn">
+                  <i data-lucide="rotate-ccw" style="width:12px;height:12px;"></i> Coba Lagi
                 </button>
               ` : ''}
               
               ${!isCorrect && revealAnswer ? `
-                <button id="btn-retry" class="btn btn-secondary" style="padding: 10px 16px; font-size: var(--text-xs); font-weight: 700; border-radius: var(--radius-sm);">
-                  <i data-lucide="refresh-cw" style="width:13px;height:13px;margin-right:4px;"></i> Ulangi Soal
+                <button id="btn-retry" class="hero-subaction-btn">
+                  <i data-lucide="rotate-ccw" style="width:12px;height:12px;"></i> Ulangi Soal
                 </button>
               ` : ''}
 
-              <button id="btn-next" class="btn btn-primary" style="padding: 10px 24px; font-size: var(--text-xs); font-weight: 700; border-radius: var(--radius-sm);">
+              <button id="btn-next" class="btn btn-primary wb-submit-btn">
                 ${index + 1 === total ? 'Selesaikan Latihan' : 'Soal Selanjutnya'}
+                <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
               </button>
             `}
           </div>
@@ -457,26 +453,25 @@ function _initWorkbookView(container, params, chapter, chapterId) {
     `;
   }
 
-  // Helper to render completion screen HTML
+  // Helper to render completion screen HTML (Dashboard Trophy Standard)
   function renderCompletionHTML(correctCount, totalQuestions) {
     const accuracy = Math.round((correctCount / totalQuestions) * 100) || 0;
     
-    // Check if we should reward XP (only first time completing in session, verified via persistent xpAwarded flag)
     let xpStatusHTML = '';
     if (!xpAwarded) {
       xpAwarded = true;
       saveProgress();
       addXP(30);
       xpStatusHTML = `
-        <div style="display:inline-flex; align-items:center; gap:6px; background:var(--accent-dim); border:1px solid var(--border-accent); padding:6px 16px; border-radius:99px; font-size:0.85rem; font-weight:800; color:var(--text-main); margin-top:16px;">
-          <i data-lucide="star" style="width:14px; height:14px; fill:currentColor;"></i>
-          +30 XP Diperoleh!
+        <div class="dash-stat-segment" style="background: rgba(79, 70, 229, 0.1); border: 1px solid rgba(79, 70, 229, 0.25); border-radius: 99px; padding: 6px 16px; margin: 0 auto; display: inline-flex; align-items: center; gap: 6px;">
+          <i data-lucide="star" style="width:14px; height:14px; fill:currentColor; color: #F59E0B;"></i>
+          <span style="font-size:12px; font-weight:800; color:var(--text-main);">+30 XP Diperoleh!</span>
         </div>
       `;
     } else {
       xpStatusHTML = `
-        <div style="display:inline-flex; align-items:center; gap:6px; background:var(--bg-elevated); border:1px solid var(--border); padding:6px 16px; border-radius:var(--radius-sm); font-size:0.85rem; font-weight:700; color:var(--text-muted); margin-top:16px;">
-          <i data-lucide="check" style="width:14px; height:14px;"></i>
+        <div class="phase-badge-status done" style="margin: 0 auto; display: inline-flex;">
+          <i data-lucide="check" style="width:12px; height:12px;"></i>
           Latihan Selesai
         </div>
       `;
@@ -485,59 +480,54 @@ function _initWorkbookView(container, params, chapter, chapterId) {
     const hasIncorrect = questionsState.some(q => q.status === 'incorrect');
 
     return `
-      <div class="fade-in" style="background: var(--bg-card); border: 1px solid var(--border-accent); border-radius: var(--radius-lg); padding: 48px 32px; text-align: center;">
-        <div style="width: 80px; height: 80px; border-radius: var(--radius-sm); border: 2px solid var(--text-main); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; background: var(--bg-elevated);">
-          <i data-lucide="award" style="width: 40px; height: 40px; color: var(--text-main);"></i>
+      <div class="hero-learning-card phase-hero-card fade-in" style="text-align: center; padding: 28px 20px; display: flex; flex-direction: column; gap: 16px; align-items: center;">
+        
+        <div style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #6366F1, #4F46E5); display: flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);">
+          <i data-lucide="award" style="width: 28px; height: 28px;"></i>
         </div>
         
-        <h2 style="font-size: 2rem; font-weight: 900; color: var(--text-main); margin-bottom: 8px; letter-spacing: -0.03em;">Latihan Menulis Selesai</h2>
-        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; max-width: 450px; margin: 0 auto 24px;">
-          Selamat! Anda telah mengulas latihan pola kalimat <em>Kaite Oboeru</em> untuk <strong>Bab ${chapter.id}</strong>.
-        </p>
+        <div style="max-width: 400px;">
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--text-main); margin: 0 0 6px 0; letter-spacing: -0.02em;">Latihan Menulis Selesai</h2>
+          <p style="color: var(--text-secondary); font-size: 12px; line-height: 1.5; margin: 0;">
+            Selamat! Anda telah merampungkan seluruh latihan pola kalimat <em>Kaite Oboeru</em> untuk <strong>Bab ${chapter.id}</strong>.
+          </p>
+        </div>
 
-        <!-- Stats grid -->
-        <div style="display:flex; justify-content:center; gap:24px; margin-bottom:24px; max-width:320px; margin-left:auto; margin-right:auto; border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:16px 0;">
-          <div style="flex:1;">
-            <div style="font-size:1.5rem; font-weight:900; color:var(--text-main);">${correctCount}/${totalQuestions}</div>
-            <div style="font-size:0.7rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Benar</div>
+        <!-- Stats Capsule -->
+        <div class="dash-stats-capsule" style="width: 100%; max-width: 320px; justify-content: space-around;">
+          <div class="dash-stat-segment">
+            <div class="dash-stat-text">
+              <span class="dash-stat-num">${correctCount}/${totalQuestions}</span>
+              <span class="dash-stat-name">Skor Benar</span>
+            </div>
           </div>
-          <div style="width:1px; background:var(--border);"></div>
-          <div style="flex:1;">
-            <div style="font-size:1.5rem; font-weight:900; color:var(--text-main);">${accuracy}%</div>
-            <div style="font-size:0.7rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Akurasi</div>
+          <div class="dash-stat-divider"></div>
+          <div class="dash-stat-segment">
+            <div class="dash-stat-text">
+              <span class="dash-stat-num">${accuracy}%</span>
+              <span class="dash-stat-name">Akurasi</span>
+            </div>
           </div>
         </div>
 
         ${xpStatusHTML}
 
         ${hasIncorrect ? `
-          <div style="margin: 24px auto 32px; max-width: 420px; padding: 14px 18px; border: 1px dashed var(--border); border-radius: var(--radius-md); background: var(--bg-elevated); font-size: 0.8rem; color: var(--text-secondary); line-height: 1.45; text-align: left;">
-            <i data-lucide="help-circle" style="width: 14px; height: 14px; display:inline-block; vertical-align:middle; margin-right:4px; color:var(--text-main);"></i>
-            <strong>Tip Belajar:</strong> Terdapat soal yang belum terjawab benar. Anda dapat meninjau dan mengulang kembali soal tersebut secara mandiri dengan mengklik tombol latihan bertanda silang merah di sidebar kiri!
+          <div style="padding: 10px 14px; border: 1px dashed var(--border); border-radius: var(--radius-md); background: var(--bg-elevated); font-size: 11.5px; color: var(--text-secondary); line-height: 1.45; text-align: left; max-width: 380px;">
+            <i data-lucide="info" style="width: 13px; height: 13px; display:inline-block; vertical-align:middle; margin-right:4px; color:var(--accent);"></i>
+            Terdapat beberapa soal yang belum tepat. Anda dapat mengulangi soal tersebut kapan saja dengan memilih nomor soal di menu atas.
           </div>
-        ` : `
-          <div style="margin: 24px auto 32px; max-width: 420px; padding: 14px 18px; border: 1px solid var(--border-accent); border-radius: var(--radius-md); background: var(--accent-dim); font-size: 0.8rem; color: var(--text-main); line-height: 1.45; text-align: center; font-weight:700;">
-            <i data-lucide="check" style="width: 14px; height: 14px; display:inline-block; vertical-align:middle; margin-right:4px;"></i>
-            Sempurna! Semua soal diselesaikan dengan benar.
-          </div>
-        `}
+        ` : ''}
 
-        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-          ${hasIncorrect ? `
-            <button id="btn-retry-failed" style="background: transparent; color: var(--text-main); border: 1px solid var(--text-main); padding: 12px 24px; font-size: 0.88rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
-              Ulangi Soal yang Salah
-            </button>
-          ` : ''}
-          <button id="btn-back-chapter" style="background: transparent; color: var(--text-main); border: 1px solid var(--text-main); padding: 12px 24px; font-size: 0.88rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
-            Kembali ke Bab ${chapter.id}
+        <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; width: 100%; max-width: 380px; margin-top: 8px;">
+          <button id="btn-restart-wb" class="hero-subaction-btn" style="flex: 1; justify-content: center; padding: 10px 14px;">
+            <i data-lucide="rotate-ccw" style="width: 13px; height: 13px;"></i> Ulangi Latihan
           </button>
-          <button id="btn-start-exam" style="background: var(--text-main); color: var(--bg-main); border: none; padding: 12px 24px; font-size: 0.88rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
-            Lanjutkan ke Ujian Bab
-          </button>
-          <button id="btn-back-curriculum" style="background: transparent; color: var(--text-main); border: 1px solid var(--text-main); padding: 12px 24px; font-size: 0.88rem; font-weight: 700; border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;">
-            Kembali ke Kurikulum
-          </button>
+          <a href="#/exam/${chapter.id}" class="btn btn-primary" style="flex: 1; justify-content: center; padding: 10px 14px; font-size: 11.5px; font-weight: 700; text-decoration: none; border-radius: var(--radius-sm); display: inline-flex; align-items: center; gap: 6px;">
+            <i data-lucide="award" style="width: 14px; height: 14px;"></i> Uji di Ujian
+          </a>
         </div>
+
       </div>
     `;
   }

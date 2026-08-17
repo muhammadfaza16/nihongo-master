@@ -5,7 +5,6 @@ import { getState } from '../store.js';
 
 export function MinnaView(container) {
   renderTopbar('Referensi Tata Bahasa', false, '#/');
-  renderBackBtn(container, '#/', 'Dashboard');
 
   let fullLessonsData = null;
 
@@ -49,53 +48,46 @@ export function MinnaView(container) {
 
   // Shell HTML
   let html = `
-    <div class="minna-container page-container-standard fade-in" style="padding-bottom: 60px;">
+    <div class="minna-container page-container-standard fade-in" style="max-width: 780px; margin: 0 auto; padding-bottom: 48px; display: flex; flex-direction: column; gap: 14px;">
       
-      <!-- Header Block — Reframed as Quick Lookup Reference -->
-      <div class="no-print" style="margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 16px;">
-        <div style="display: flex; flex-direction: column; gap: 6px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
-            <!-- FIX 4: Label eksplisit yang membedakan fungsi dari tab Tata Bahasa di Studi Bab -->
-            <div style="display: flex; align-items: center; gap: 7px;">
-              <i data-lucide="search" style="width:13px;height:13px;color:var(--accent);flex-shrink:0;"></i>
-              <span style="font-size: var(--text-3xs); font-weight: 700; color: var(--accent); letter-spacing: var(--tracking-wide); text-transform: uppercase;">Cari Cepat — Referensi Ringkas</span>
-            </div>
-            <button id="btn-print-doc" class="btn btn-secondary no-print" style="padding: 5px 12px; font-size: var(--text-3xs); border-radius: var(--radius-sm); margin-left: auto; flex-shrink: 0;">
-              <i data-lucide="printer" style="width:13px;height:13px;"></i> Cetak PDF
-            </button>
-          </div>
-          
-          <h2 style="font-size: var(--text-lg); font-weight: 700; color: var(--text-main); margin: 0; letter-spacing: var(--tracking-tight); line-height: 1.3;">
-            Referensi Tata Bahasa Minna no Nihongo
-          </h2>
-          
-          <p style="color: var(--text-secondary); font-size: var(--text-xs); line-height: 1.5; margin: 0; max-width: 680px;">
-            Rumus &amp; contoh kalimat ringkas per pola. Untuk penjelasan mendalam, buka tab <strong>Tata Bahasa</strong> di dalam <a href="#/chapter/1" style="color:var(--accent);text-decoration:none;">Studi Bab</a>.
+      <!-- Dashboard Standard Hero Card -->
+      <section class="hero-learning-card phase-hero-card">
+        <nav class="phase-hero-nav" aria-label="Breadcrumb">
+          <a href="#/" class="phase-nav-back">
+            <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i> Dashboard
+          </a>
+          <span class="phase-nav-sep">/</span>
+          <span class="phase-nav-level">Referensi Tata Bahasa</span>
+        </nav>
+
+        <div class="hero-main-content">
+          <div class="dash-track-badge n5" style="align-self: flex-start; margin-bottom: 4px;">REFERENSI LENGKAP &middot; 50 BAB</div>
+          <h1 class="hero-chapter-title" style="font-size: 1.35rem; margin: 0 0 4px 0;">Katalog Tata Bahasa Minna no Nihongo</h1>
+          <p class="hero-chapter-desc" style="margin: 0;">
+            Kompilasi rumus, pola kalimat, dan contoh penggunaan ringkas per bab untuk referensi cepat.
           </p>
         </div>
-      </div>
 
-      <!-- Search Bar (global, override segmen) -->
-      <div class="no-print" style="position: relative; margin-bottom: 14px;">
-        <input type="text" id="grammar-search" placeholder="Cari pola, rumus, atau arti... (lintas semua bab)" class="fill-input" style="padding-left: 38px; padding-right: 36px; height: 40px; border-radius: var(--radius-sm); font-size: var(--text-xs); width: 100%; background: var(--bg-card); border: 1px solid var(--border);">
-        <i data-lucide="search" style="position: absolute; left: 12px; top: 11px; width: 16px; height: 16px; color: var(--text-muted);"></i>
-        <button id="search-clear" style="position: absolute; right: 10px; top: 10px; background: transparent; border: none; color: var(--text-muted); cursor: pointer; display: none; padding: 2px;">
+        <div class="hero-actions-bar" style="margin-top: 4px; padding-top: 8px;">
+          <button id="btn-print-doc" class="btn btn-secondary no-print" style="font-size: 12px; padding: 6px 14px;">
+            <i data-lucide="printer" style="width: 13px; height: 13px;"></i> Cetak PDF Ringkas
+          </button>
+        </div>
+      </section>
+
+      <!-- Search Bar -->
+      <div class="no-print" style="position: relative;">
+        <input type="text" id="grammar-search" placeholder="Cari pola, rumus, atau arti... (lintas semua bab)" class="fill-input" style="padding-left: 38px; padding-right: 36px; height: 42px; border-radius: var(--radius-md); font-size: 13px; width: 100%; background: var(--bg-card); border: 1px solid var(--border);">
+        <i data-lucide="search" style="position: absolute; left: 12px; top: 13px; width: 16px; height: 16px; color: var(--text-muted);"></i>
+        <button id="search-clear" style="position: absolute; right: 10px; top: 12px; background: transparent; border: none; color: var(--text-muted); cursor: pointer; display: none; padding: 2px;">
           <i data-lucide="x" style="width: 16px; height: 16px;"></i>
         </button>
       </div>
 
-      <!-- FIX 3: Segmented Control N5 / N4 (filter accordion, tidak filter search) -->
-      <div class="no-print" id="segment-control-wrapper" style="display: flex; gap: 6px; margin-bottom: 14px;">
-        <button class="segment-btn ${_defaultSegment === 'n5' ? 'segment-btn-active' : ''}" data-segment="n5"
-          style="flex:1; padding: 7px 0; border-radius: var(--radius-sm); font-size: var(--text-xs); font-weight: 600; cursor: pointer;
-            border: 1px solid var(--border); transition: all 0.15s ease;
-            background: ${_defaultSegment === 'n5' ? 'var(--accent)' : 'var(--bg-elevated)'};
-            color: ${_defaultSegment === 'n5' ? '#fff' : 'var(--text-secondary)'};">N5 — Bab 0–25</button>
-        <button class="segment-btn ${_defaultSegment === 'n4' ? 'segment-btn-active' : ''}" data-segment="n4"
-          style="flex:1; padding: 7px 0; border-radius: var(--radius-sm); font-size: var(--text-xs); font-weight: 600; cursor: pointer;
-            border: 1px solid var(--border); transition: all 0.15s ease;
-            background: ${_defaultSegment === 'n4' ? 'var(--accent)' : 'var(--bg-elevated)'};
-            color: ${_defaultSegment === 'n4' ? '#fff' : 'var(--text-secondary)'};">N4 — Bab 26–50</button>
+      <!-- Segmented Control N5 / N4 -->
+      <div class="segmented-control no-print" id="segment-control-wrapper" style="width: 100%;">
+        <button class="segmented-btn segment-btn ${_defaultSegment === 'n5' ? 'active' : ''}" data-segment="n5">N5 — Bab 0–25</button>
+        <button class="segmented-btn segment-btn ${_defaultSegment === 'n4' ? 'active' : ''}" data-segment="n4">N4 — Bab 26–50</button>
       </div>
 
       <!-- Lessons List Container -->

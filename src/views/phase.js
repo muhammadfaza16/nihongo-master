@@ -116,15 +116,14 @@ export function PhaseView(container, params = {}) {
           ? 'is-in-progress' 
           : 'is-upcoming';
 
+    const chapterRoute = isChap && (unit.id === 0 || unit.id === '0') ? '#/chapter/0' : `#/chapter/${unit.id}`;
+
     unitsHtml += `
-      <div class="phase-card ${cardStateClass}">
+      <div class="phase-card ${cardStateClass}" data-chapter-route="${chapterRoute}" role="button" tabindex="0" aria-label="Buka Materi Bab ${numDisplay}">
         
-        <!-- Top Row: Bab Badge, Grammar Focus & Status -->
+        <!-- Top Row: Bab Badge & Status -->
         <div class="phase-card-top-bar">
-          <div class="phase-badge-group">
-            <span class="hero-pill-badge">Bab ${numDisplay}</span>
-            ${grammarFocus ? `<span class="phase-topic-tag">${grammarFocus}</span>` : ''}
-          </div>
+          <span class="hero-pill-badge">Bab ${numDisplay}</span>
           <span class="phase-badge-status ${isCompleted ? 'done' : isCurrentActive ? 'active' : completedActionsCount > 0 ? 'progress' : ''}">
             ${isCompleted 
               ? '<i data-lucide="check" style="width: 11px; height: 11px;"></i> Selesai' 
@@ -136,9 +135,10 @@ export function PhaseView(container, params = {}) {
           </span>
         </div>
 
-        <!-- Middle: Title -->
+        <!-- Middle: Title & Full-Width Grammar Focus Subtitle -->
         <div class="phase-card-title-group">
           <h3 class="phase-card-title">${cleanTitle}</h3>
+          ${grammarFocus ? `<p class="phase-card-focus-text">${grammarFocus}</p>` : ''}
         </div>
 
         <!-- Actions: 3-Module Dock with Dashboard Button DNA -->
@@ -222,6 +222,14 @@ export function PhaseView(container, params = {}) {
         </div>
       </section>
 
+      <!-- Gesture of Transition: Section Divider Header -->
+      <div class="phase-roadmap-header">
+        <div class="phase-roadmap-title-row">
+          <span class="phase-roadmap-section-title">Daftar Bab Pembelajaran</span>
+          <span class="phase-roadmap-section-meta">${completedUnitsCount}/${totalUnits} Selesai</span>
+        </div>
+      </div>
+
       <!-- Chapter Roadmap List -->
       <div class="phase-roadmap-list">
         ${unitsHtml}
@@ -231,6 +239,25 @@ export function PhaseView(container, params = {}) {
   `;
 
   if (window.lucide) lucide.createIcons({ root: container });
+
+  // Wire Parent Phase Card Click -> Navigate to Materi
+  container.querySelectorAll('.phase-card[data-chapter-route]').forEach(card => {
+    card.addEventListener('click', (e) => {
+      // If clicking inside child button or link, do nothing (child handles its own action)
+      if (e.target.closest('button') || e.target.closest('a')) return;
+      const route = card.dataset.chapterRoute;
+      if (route) window.location.hash = route;
+    });
+
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        if (e.target.closest('button') || e.target.closest('a')) return;
+        e.preventDefault();
+        const route = card.dataset.chapterRoute;
+        if (route) window.location.hash = route;
+      }
+    });
+  });
 
   // Wire Mission Buttons
   container.querySelectorAll('.phase-dock-btn').forEach(btn => {

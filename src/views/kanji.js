@@ -1783,30 +1783,35 @@ const KANJI_N3_LIBRARY = {
 // ── COMPONENT VIEW ──────────────────────────────────────────────────────────
 export function KanjiView(container) {
   renderTopbar('Kanji Hub', false, '#/');
-  renderBackBtn(container, '#/', 'Dashboard');
 
   let activeSubTab = 'theory'; // 'theory' | 'kamus'
   let activeLevel = 'N5'; // 'N5' | 'N4' | 'N3'
 
   const renderLayout = () => {
     container.innerHTML = `
-      <div class="kanji-hub-container page-container-standard fade-in" style="padding-bottom: 60px;">
+      <div class="kanji-hub-container page-container-standard fade-in" style="max-width: 780px; margin: 0 auto; padding-bottom: 48px; display: flex; flex-direction: column; gap: 14px;">
         
-        <!-- Header Section -->
-        <div style="margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 16px;">
-          <span style="font-size: var(--text-3xs); font-weight: 600; color: var(--text-muted); letter-spacing: var(--tracking-wide);">
-            Panduan Teori & Katalog 240+ Kanji
-          </span>
-          <h2 style="font-size: var(--text-lg); font-weight: 700; color: var(--text-main); margin: 2px 0 6px 0; letter-spacing: var(--tracking-tight);">
-            Kanji Hub & Reference
-          </h2>
-          <p style="color: var(--text-secondary); font-size: var(--text-xs); line-height: 1.5; margin: 0; max-width: 680px;">
-            Kuasai hukum dasar penulisan Kanji, pahami perbedaan cara baca Onyomi & Kunyomi, serta jelajahi katalog Kanji N5–N3.
-          </p>
-        </div>
+        <!-- Dashboard Standard Hero Card -->
+        <section class="hero-learning-card phase-hero-card">
+          <nav class="phase-hero-nav" aria-label="Breadcrumb">
+            <a href="#/" class="phase-nav-back">
+              <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i> Dashboard
+            </a>
+            <span class="phase-nav-sep">/</span>
+            <span class="phase-nav-level">Kanji Hub</span>
+          </nav>
+
+          <div class="hero-main-content">
+            <div class="dash-track-badge n5" style="align-self: flex-start; margin-bottom: 4px;">KANJI HUB &middot; N5&ndash;N3</div>
+            <h1 class="hero-chapter-title" style="font-size: 1.35rem; margin: 0 0 4px 0;">Panduan Teori &amp; Katalog 240+ Kanji</h1>
+            <p class="hero-chapter-desc" style="margin: 0;">
+              Kuasai hukum dasar penulisan Kanji, pahami perbedaan cara baca Onyomi &amp; Kunyomi, serta jelajahi katalog Kanji N5–N3.
+            </p>
+          </div>
+        </section>
 
         <!-- Mode Tabs (Segmented Control) -->
-        <div class="segmented-control" style="margin-bottom: var(--space-4); max-width: 340px; width: 100%;">
+        <div class="segmented-control" style="max-width: 320px; width: 100%;">
           <button class="segmented-btn sub-tab-btn ${activeSubTab === 'theory' ? 'active' : ''}" data-target="theory">Teori &amp; Aturan</button>
           <button class="segmented-btn sub-tab-btn ${activeSubTab === 'kamus' ? 'active' : ''}" data-target="kamus">Katalog Kanji</button>
         </div>
@@ -1821,6 +1826,7 @@ export function KanjiView(container) {
 
     renderContent();
     bindEvents();
+    if (window.lucide) lucide.createIcons({ root: container });
   };
 
   const renderContent = () => {

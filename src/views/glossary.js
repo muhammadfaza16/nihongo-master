@@ -147,7 +147,7 @@ const GLOSSARY_TERMS = [
   }
 ];
 
-import { renderTopbar, renderBackBtn } from '../components/layout.js';
+import { renderTopbar } from '../components/layout.js';
 
 export function GlossaryView(container) {
   renderTopbar('Glosarium Istilah', false, '#/');
@@ -155,46 +155,51 @@ export function GlossaryView(container) {
   let searchQuery = '';
 
   container.innerHTML = `
-    <div class="glossary-container page-container-standard fade-in" style="padding-bottom: 60px;">
-      <!-- Minimalist Header Block -->
-      <div style="margin-bottom: 18px; border-bottom: 1px solid var(--border); padding-bottom: 16px;">
-        <span style="font-size: var(--text-3xs); font-weight: 600; color: var(--text-muted); letter-spacing: var(--tracking-wide);">
-          Referensi & Glosarium Pemula
-        </span>
-        <h2 style="font-size: var(--text-lg); font-weight: 700; color: var(--text-main); margin: 2px 0 6px 0; letter-spacing: var(--tracking-tight);">
-          Glosarium Istilah Bahasa Jepang
-        </h2>
-        <p style="color: var(--text-secondary); font-size: var(--text-xs); line-height: 1.5; margin: 0; max-width: 680px;">
-          Panduan istilah dasar aksara, tata bahasa, dan sistem belajar untuk mempermudah pemahaman langkah awal Anda.
-        </p>
-      </div>
+    <div class="glossary-container page-container-standard fade-in" style="max-width: 780px; margin: 0 auto; padding-bottom: 48px; display: flex; flex-direction: column; gap: 14px;">
+      
+      <!-- Dashboard Standard Hero Card -->
+      <section class="hero-learning-card phase-hero-card">
+        <nav class="phase-hero-nav" aria-label="Breadcrumb">
+          <a href="#/" class="phase-nav-back">
+            <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i> Dashboard
+          </a>
+          <span class="phase-nav-sep">/</span>
+          <span class="phase-nav-level">Glosarium</span>
+        </nav>
+
+        <div class="hero-main-content">
+          <div class="dash-track-badge n5" style="align-self: flex-start; margin-bottom: 4px;">GLOSARIUM &middot; ISTILAH JEPANG</div>
+          <h1 class="hero-chapter-title" style="font-size: 1.35rem; margin: 0 0 4px 0;">Glosarium Istilah &amp; Terminologi</h1>
+          <p class="hero-chapter-desc" style="margin: 0;">
+            Panduan istilah dasar aksara, tata bahasa, dan sistem belajar untuk mempermudah pemahaman langkah awal Anda.
+          </p>
+        </div>
+      </section>
 
       <!-- SEARCH & FILTERS CONTROLS -->
-      <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 22px;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
         
         <!-- Search Bar -->
         <div style="position: relative; display: flex; align-items: center; width: 100%;">
-          <i data-lucide="search" style="position: absolute; left: 12px; width: 15px; height: 15px; color: var(--text-muted); pointer-events: none;"></i>
+          <i data-lucide="search" style="position: absolute; left: 12px; width: 16px; height: 16px; color: var(--text-muted); pointer-events: none;"></i>
           <input type="text" id="glossary-search-input" placeholder="Cari istilah, romaji, kanji, atau definisi..." 
-            style="width: 100%; padding: 8px 14px 8px 34px; background: var(--bg-input); border: 1px solid var(--border); border-radius: var(--radius-md); color: var(--text-main); font-size: var(--text-xs); outline: none; transition: all 0.15s ease;"
+            style="width: 100%; height: 42px; padding: 8px 14px 8px 38px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); color: var(--text-main); font-size: 13px; outline: none; transition: all 0.15s ease;"
           />
         </div>
 
         <!-- Segmented Kategori Tabs -->
-        <div style="display: flex; gap: 4px; background: var(--bg-elevated); padding: 4px; border-radius: var(--radius-md); border: 1px solid var(--border); overflow-x: auto; -webkit-overflow-scrolling: touch;">
-          <button class="filter-tab-btn glossary-tab-btn active" data-cat="all" style="flex: 1; min-width: 65px;">Semua</button>
-          <button class="filter-tab-btn glossary-tab-btn" data-cat="writing" style="flex: 1; min-width: 110px;">Aksara & Tulisan</button>
-          <button class="filter-tab-btn glossary-tab-btn" data-cat="grammar" style="flex: 1; min-width: 95px;">Tata Bahasa</button>
-          <button class="filter-tab-btn glossary-tab-btn" data-cat="learning" style="flex: 1; min-width: 100px;">Sistem Belajar</button>
+        <div class="segmented-control" style="width: 100%; overflow-x: auto;">
+          <button class="segmented-btn filter-tab-btn glossary-tab-btn active" data-cat="all">Semua</button>
+          <button class="segmented-btn filter-tab-btn glossary-tab-btn" data-cat="writing">Aksara &amp; Tulisan</button>
+          <button class="segmented-btn filter-tab-btn glossary-tab-btn" data-cat="grammar">Tata Bahasa</button>
+          <button class="segmented-btn filter-tab-btn glossary-tab-btn" data-cat="learning">Sistem Belajar</button>
         </div>
       </div>
 
       <!-- CARDS GRID CONTAINER -->
-      <div id="glossary-cards-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px;"></div>
+      <div id="glossary-cards-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px;"></div>
     </div>
   `;
-
-  renderBackBtn(container, '#/', 'Dashboard');
 
   const cardsContainer = container.querySelector('#glossary-cards-container');
   const searchInput = container.querySelector('#glossary-search-input');
@@ -240,7 +245,7 @@ export function GlossaryView(container) {
     } else {
       cardsContainer.style.display = 'grid';
       cardsContainer.innerHTML = filtered.map(item => `
-        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-4); display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-3); transition: border-color 0.15s ease;" class="glossary-term-card">
+        <div class="phase-card glossary-term-card" style="padding: 14px 16px; display: flex; flex-direction: column; justify-content: space-between; gap: 10px;">
           
           <div style="display: flex; flex-direction: column; gap: var(--space-2);">
             <!-- Top Section: Term Title and Category Badge -->

@@ -1,10 +1,9 @@
-import { renderTopbar, renderBackBtn } from '../components/layout.js';
+import { renderTopbar } from '../components/layout.js';
 import { CURRICULUM } from '../data/curriculum.js';
 import { isUnitCompleted } from '../store.js';
 
 export function CurriculumView(container) {
   renderTopbar('Peta Kurikulum', false, '#/');
-  renderBackBtn(container, '#/', 'Dashboard');
 
   // Compute overall progress
   let overallTotal = 0;
@@ -39,19 +38,18 @@ export function CurriculumView(container) {
     const levelNumber = idx + 1;
 
     timelineHtml += `
-      <section class="cur-section">
-        <div class="cur-section-header">
-          <div class="cur-section-title-row">
-            <h2 class="cur-section-title">Level ${levelNumber} · ${cleanTitle}</h2>
-            <span class="cur-section-stat">${levelCompleted}/${levelTotal} Bab</span>
-          </div>
-          ${level.desc ? `<p class="cur-section-desc">${level.desc}</p>` : ''}
+      <!-- Level Section Divider -->
+      <div class="phase-roadmap-header" style="margin-top: 18px;">
+        <div class="phase-roadmap-title-row">
+          <span class="phase-roadmap-section-title">Level ${levelNumber} &middot; ${cleanTitle}</span>
+          <span class="phase-roadmap-section-meta">${levelCompleted}/${levelTotal} Bab Selesai (${levelPercent}%)</span>
         </div>
+      </div>
 
-        <div class="cur-grid">
+      <div class="cur-grid">
     `;
 
-    level.phases.forEach((phase, phaseIdx) => {
+    level.phases.forEach((phase) => {
       const totalUnits = phase.units.length;
       let completedCount = 0;
       phase.units.forEach(u => {
@@ -70,59 +68,77 @@ export function CurriculumView(container) {
 
       // Clean phase title without redundant "Fase N:"
       const phaseTitle = phase.title.replace(/^Fase \d+:\s*/, '');
-
       const isSingleUnit = phase.units.length === 1;
       const targetUrl = isSingleUnit ? `#/chapter/${phase.units[0].id}` : `#/phase/${phase.phaseId}`;
-      const actionLabel = isSingleUnit ? 'Mulai belajar &rarr;' : 'Buka fase &rarr;';
+      const actionLabel = isSingleUnit ? 'Mulai Belajar' : 'Buka Fase';
 
       timelineHtml += `
-        <a href="${targetUrl}" class="cur-card ${isPhaseDone ? 'is-complete' : ''}">
-          <div class="cur-card-top">
-            <span class="cur-card-range">${rangeLabel}</span>
-            <span class="cur-card-count">${isPhaseDone ? '✓ Selesai' : `${completedCount}/${totalUnits} bab`}</span>
+        <a href="${targetUrl}" class="phase-card cur-card ${isPhaseDone ? 'is-completed' : ''}" style="text-decoration: none;">
+          <div class="phase-card-top-bar">
+            <span class="hero-pill-badge">${rangeLabel}</span>
+            <span class="phase-badge-status ${isPhaseDone ? 'done' : completedCount > 0 ? 'active' : ''}">
+              <i data-lucide="${isPhaseDone ? 'check' : completedCount > 0 ? 'play' : 'circle'}" style="width: 10px; height: 10px;"></i>
+              ${isPhaseDone ? 'Selesai' : completedCount > 0 ? `${completedCount}/${totalUnits} Bab` : 'Belum Mulai'}
+            </span>
           </div>
 
-          <div class="cur-card-body">
-            <h3 class="cur-card-title">${phaseTitle}</h3>
-            ${phase.desc ? `<p class="cur-card-desc">${phase.desc}</p>` : ''}
+          <div class="phase-card-title-group">
+            <h3 class="phase-card-title">${phaseTitle}</h3>
+            ${phase.desc ? `<p class="phase-card-focus-text">${phase.desc}</p>` : ''}
           </div>
 
-          <div class="cur-card-bottom">
-            <div class="cur-card-progress">
-              <div class="cur-card-progress-bar">
-                <div class="cur-card-progress-fill" style="width: ${percent}%;"></div>
-              </div>
+          <div style="display: flex; flex-direction: column; gap: 8px; margin-top: auto; padding-top: 6px; border-top: 1px dashed var(--border);">
+            <div class="dash-track-prog-bar" style="height: 4px;">
+              <div class="dash-track-prog-fill" style="width: ${percent}%;"></div>
             </div>
-            <span class="cur-card-action">${actionLabel}</span>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 11px; color: var(--text-muted); font-weight: 600;">${percent}% progres</span>
+              <span style="font-size: 11.5px; color: var(--accent); font-weight: 750; display: flex; align-items: center; gap: 3px;">
+                ${actionLabel} <i data-lucide="arrow-right" style="width: 11px; height: 11px;"></i>
+              </span>
+            </div>
           </div>
         </a>
       `;
     });
 
     timelineHtml += `
-        </div>
-      </section>
+      </div>
     `;
   });
 
   container.innerHTML = `
-    <div class="curriculum-container page-container-standard fade-in">
-      <header class="cur-page-header">
-        <div class="cur-page-header-text">
-          <h1 class="cur-page-title">Peta Kurikulum</h1>
-          <p class="cur-page-desc">Jalur belajar 51 bab dari fondasi aksara hingga tata bahasa Minna no Nihongo I & II.</p>
+    <div class="curriculum-container page-container-standard fade-in" style="padding-bottom: 48px;">
+      
+      <!-- Dashboard Standard Hero Card -->
+      <section class="hero-learning-card phase-hero-card">
+        <nav class="phase-hero-nav" aria-label="Breadcrumb">
+          <a href="#/" class="phase-nav-back">
+            <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i> Dashboard
+          </a>
+          <span class="phase-nav-sep">/</span>
+          <span class="phase-nav-level">Peta Kurikulum</span>
+        </nav>
+
+        <div class="hero-main-content">
+          <div class="dash-track-badge n5" style="align-self: flex-start; margin-bottom: 4px;">KURIKULUM &middot; 51 BAB LENGKAP</div>
+          <h1 class="hero-chapter-title" style="font-size: 1.35rem; margin: 0 0 4px 0;">Peta Kurikulum Pembelajaran</h1>
+          <p class="hero-chapter-desc" style="margin: 0;">
+            Jalur belajar terstruktur dari fondasi aksara Jepang (Pra-MNN) hingga penguasaan tata bahasa Minna no Nihongo I &amp; II (N5–N4).
+          </p>
         </div>
 
-        <div class="cur-global-tracker">
-          <div class="cur-global-meta">
-            <span class="cur-global-label">Kemajuan Belajar</span>
-            <span class="cur-global-val">${overallCompleted} / ${overallTotal} Bab (${overallPercent}%)</span>
+        <!-- Clean Spacious Progress Bar -->
+        <div class="dash-track-progress" style="margin-top: 4px;">
+          <div class="dash-track-prog-meta">
+            <span>Kemajuan Keseluruhan</span>
+            <span><strong>${overallCompleted}</strong>/${overallTotal} Bab Selesai (${overallPercent}%)</span>
           </div>
-          <div class="cur-global-bar">
-            <div class="cur-global-fill" style="width: ${overallPercent}%;"></div>
+          <div class="dash-track-prog-bar">
+            <div class="dash-track-prog-fill" style="width: ${overallPercent}%;"></div>
           </div>
         </div>
-      </header>
+      </section>
 
       <div class="cur-sections-wrap">
         ${timelineHtml}

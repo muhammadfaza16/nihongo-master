@@ -36,8 +36,10 @@ if (!window.playAudio) {
 export function ChapterView(container, params) {
   const parsed = parseInt(params.id);
   const chapterId = isNaN(parsed) ? 1 : parsed;
+  const unitDetails = getUnitDetails(chapterId);
+  const backRoute = unitDetails ? `#/phase/${unitDetails.phaseId}` : `#/curriculum`;
 
-  renderTopbar(`Bab ${chapterId}`, true);
+  renderTopbar(`Bab ${chapterId}`, true, backRoute);
 
   // Show loading skeleton while chapter data loads
   renderLoader(container, `Memuat Bab ${chapterId}...`);
@@ -248,17 +250,22 @@ function _initChapterView(container, chapterId, chapterData, params) {
     let html = `
       <div class="chapter-container page-container-standard fade-in" style="padding-bottom: 60px;">
         <!-- Breadcrumb Navigation -->
-      <div style="margin-bottom: 16px;">
-        <nav class="phase-breadcrumb" aria-label="Breadcrumb">
-          <a href="#/curriculum">← Kurikulum</a>
-          ${unitDetails && unitDetails.phaseId !== 'fase-aksara' && chapterId !== 0 ? `
-            <span class="phase-crumb-sep">/</span>
-            <a href="#/phase/${unitDetails.phaseId}">${unitDetails.phaseTitle.replace(/^Fase \d+:\s*/, '')}</a>
-          ` : ''}
-          <span class="phase-crumb-sep">/</span>
-          <span style="color: var(--text-main); font-weight: 600;">${chapterId === 0 ? 'Bab 0 (Fondasi Aksara)' : `Bab ${chapterId}`}</span>
-        </nav>
-      </div>
+        <div style="margin-bottom: 14px;">
+          <nav class="phase-hero-nav" aria-label="Breadcrumb">
+            <a href="#/curriculum?track=${backTrack}" class="phase-nav-back">
+              <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i> Kurikulum
+            </a>
+            ${unitDetails && unitDetails.phaseId !== 'fase-aksara' && chapterId !== 0 ? `
+              <span class="phase-nav-sep">/</span>
+              <a href="#/phase/${unitDetails.phaseId}" class="phase-nav-back">${unitDetails.phaseTitle.includes(':') ? unitDetails.phaseTitle.split(':')[0].trim() : unitDetails.phaseTitle}</a>
+            ` : chapterId === 0 ? `
+              <span class="phase-nav-sep">/</span>
+              <a href="#/phase/fase-aksara" class="phase-nav-back">Pra-MNN</a>
+            ` : ''}
+            <span class="phase-nav-sep">/</span>
+            <span class="phase-nav-level">${chapterId === 0 ? 'Bab 0 &middot; Fondasi Aksara' : `Bab ${chapterId} &middot; Materi`}</span>
+          </nav>
+        </div>
 
       <div style="margin-bottom: 22px;">
         <h1 style="font-size: 1.5rem; font-weight: 750; color: var(--text-main); margin-bottom: 6px; letter-spacing: -0.025em; line-height: 1.25;">${chapterData.title}</h1>
