@@ -188,11 +188,18 @@ function _initChapterView(container, chapterId, chapterData, params) {
       const renderGrid = (badge, title, desc, grid, cols = 5) => `
         <div class="kana-group-section">
           <div class="kana-group-head">
-            <span class="kana-group-badge">${badge}</span>
-            <span style="font-size: 13px; font-weight: 700; color: var(--text-main);">${title}</span>
-            ${desc ? `<span class="kana-group-desc">· ${desc}</span>` : ''}
+            <div class="kana-group-title-wrap">
+              <span class="kana-group-badge">${badge}</span>
+              <span class="kana-group-title">${title}</span>
+            </div>
+            ${desc ? `
+              <div class="kana-group-desc-wrap">
+                <span class="kana-group-dot"></span>
+                <span class="kana-group-desc">${desc}</span>
+              </div>
+            ` : ''}
           </div>
-          <div class="kana-grid ${cols === 3 ? 'kana-grid-3' : 'kana-grid-5'}">
+          <div class="kana-grid ${cols === 3 ? 'kana-grid-3' : cols === 4 ? 'kana-grid-4' : 'kana-grid-5'}">
             ${grid.flat().map(cell => {
               if (!cell) return `<div style="visibility: hidden;"></div>`;
               const [jp, rom] = cell.split(' ');
@@ -223,7 +230,7 @@ function _initChapterView(container, chapterId, chapterData, params) {
           <div class="kana-sections-container" style="margin-top: 18px;">
             ${renderGrid('Dasar', 'Gojuon · 46 Huruf', 'Vokal A-I-U-E-O & Konsonan Utama', activeGojuon, 5)}
             ${renderGrid('Turunan', 'Dakuon & Handakuon · 25 Huruf', 'Bunyi Ten-ten (゛) & Maru (゜)', activeDakuon, 5)}
-            ${renderGrid('Kombinasi', 'Yoon · 33 Bunyi', 'Kombinasi Konsonan + ya/yu/yo kecil', activeYoon, 3)}
+            ${renderGrid('Kombinasi', 'Yoon · 33 Bunyi', 'Kombinasi Konsonan + ya/yu/yo kecil', activeYoon, 4)}
           </div>
         </div>
       `;
@@ -842,7 +849,7 @@ function _initChapterView(container, chapterId, chapterData, params) {
     // Sticky Floating Action Button (Stack Icon in Bottom-Right)
     html += `
       <button class="chapter-fab-btn" id="chapter-fab-btn" aria-label="Daftar Bab" title="Buka Daftar 50 Bab Belajar">
-        <i data-lucide="layers" style="width: 19px; height: 19px;"></i>
+        <i data-lucide="layers" style="width: 15px; height: 15px;"></i>
       </button>
     `;
 

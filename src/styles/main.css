@@ -1398,13 +1398,15 @@ body {
   display: flex;
   flex-direction: column;
   gap: 28px;
-  max-width: 680px;
+  width: 100%;
+  max-width: 640px;
 }
 
 .kana-group-section {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  width: 100%;
 }
 
 .kana-group-head {
@@ -1414,26 +1416,52 @@ body {
   flex-wrap: wrap;
 }
 
+.kana-group-title-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .kana-group-badge {
   font-size: 10px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #FFFFFF;
-  background: #4F46E5;
-  padding: 2.5px 8px;
-  border-radius: 5px;
-  border: 1px solid #4F46E5;
+  background: var(--accent);
+  padding: 2px 7px;
+  border-radius: var(--radius-xs);
   display: inline-flex;
   align-items: center;
   line-height: 1.3;
 }
 
 [data-theme="dark"] .kana-group-badge {
-  background: #4F46E5;
+  background: var(--accent);
   color: #FFFFFF;
-  border: 1px solid #6366F1;
-  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.35);
+  box-shadow: 0 2px 8px rgba(124, 123, 240, 0.35);
+}
+
+.kana-group-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.kana-group-desc-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.kana-group-dot {
+  width: 3.5px;
+  height: 3.5px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  opacity: 0.5;
+  flex-shrink: 0;
 }
 
 .kana-group-desc {
@@ -1444,16 +1472,23 @@ body {
 .kana-grid {
   display: grid;
   gap: 8px;
+  width: 100%;
 }
 
 .kana-grid-5 {
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  max-width: 540px;
+  max-width: 100%;
+}
+
+/* Yoon: 4 dynamic columns on mobile, 6 columns on tablet/desktop */
+.kana-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 100%;
 }
 
 .kana-grid-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  max-width: 324px;
+  max-width: 100%;
 }
 
 @media (min-width: 600px) {
@@ -1462,19 +1497,25 @@ body {
   }
 }
 
-/* Kana Cell Card */
+@media (min-width: 640px) {
+  .kana-grid-4 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+/* Kana Cell Card — Fully Dynamic Sizing */
 .kana-cell {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 60px;
-  aspect-ratio: 1 / 1.08;
-  padding: 8px 4px;
+  min-height: clamp(54px, 12vw, 76px);
+  aspect-ratio: 1 / 1.05;
+  padding: clamp(6px, 1.4vw, 12px) 4px;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: clamp(8px, 1.8vw, 12px);
   text-align: center;
   cursor: pointer;
   transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1497,7 +1538,7 @@ body {
 
 .kana-char {
   font-family: var(--font-jp);
-  font-size: 22px;
+  font-size: clamp(18px, 4.2vw, 24px);
   font-weight: 700;
   color: var(--text-main);
   line-height: 1;
@@ -1505,10 +1546,10 @@ body {
 }
 
 .kana-rom {
-  font-size: 11px;
+  font-size: clamp(10px, 2.2vw, 11.5px);
   color: var(--text-muted);
   font-weight: 600;
-  margin-top: 5px;
+  margin-top: clamp(3px, 0.8vw, 6px);
   letter-spacing: 0.03em;
   font-family: var(--font-sans);
 }
@@ -1574,25 +1615,25 @@ body {
   align-items: center !important;
 }
 
-/* ── Floating Chapter Switcher Action Button (Signature Blue/Indigo Palette FAB) ── */
+/* ── Floating Chapter Switcher Action Button (Signature Blue Palette FAB — Compact) ── */
 .chapter-fab-btn {
   position: fixed;
-  bottom: max(20px, calc(14px + var(--safe-bottom)));
-  right: 20px;
-  width: 42px;
-  height: 42px;
-  border-radius: 9999px;
+  bottom: max(16px, calc(12px + var(--safe-bottom)));
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-pill);
   background: var(--accent);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #FFFFFF;
-  box-shadow: 0 6px 20px rgba(124, 123, 240, 0.4), 0 2px 6px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 14px rgba(124, 123, 240, 0.35), 0 1px 3px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 95;
   padding: 0;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -1600,28 +1641,28 @@ body {
   background: var(--accent-bright);
   border-color: rgba(255, 255, 255, 0.35);
   color: #FFFFFF;
-  transform: translateY(-2px) scale(1.06);
-  box-shadow: 0 10px 26px rgba(124, 123, 240, 0.55), 0 3px 8px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px) scale(1.06);
+  box-shadow: 0 6px 18px rgba(124, 123, 240, 0.45);
 }
 
 .chapter-fab-btn:active {
-  transform: scale(0.94);
+  transform: scale(0.92);
 }
 
-/* Light Theme: Vibrant Blue/Indigo Accent matching app buttons & primary tokens */
+/* Light Theme: Vibrant Solid Blue Accent matching app buttons */
 [data-theme="light"] .chapter-fab-btn {
   background: var(--accent);
   border: 1px solid rgba(79, 70, 229, 0.3);
   color: #FFFFFF;
-  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.35), 0 2px 6px rgba(79, 70, 229, 0.2);
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3), 0 1px 3px rgba(79, 70, 229, 0.15);
 }
 
 [data-theme="light"] .chapter-fab-btn:hover {
   background: var(--accent-bright);
   border-color: rgba(79, 70, 229, 0.45);
   color: #FFFFFF;
-  transform: translateY(-2px) scale(1.06);
-  box-shadow: 0 10px 26px rgba(79, 70, 229, 0.45), 0 3px 8px rgba(79, 70, 229, 0.25);
+  transform: translateY(-1px) scale(1.06);
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.38);
 }
 
 /* ── Chapter Picker Clean Modal ─────────────────────── */
@@ -1643,6 +1684,46 @@ body {
   justify-content: space-between;
   gap: 12px;
   padding-bottom: 2px;
+}
+
+.modal-close-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.modal-close-btn:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-bright);
+  color: var(--text-main);
+  transform: scale(1.06);
+}
+
+.modal-close-btn:active {
+  transform: scale(0.92);
+}
+
+[data-theme="light"] .modal-close-btn {
+  background: #F1F5F9;
+  border: 1px solid #E2E8F0;
+  color: #64748B;
+}
+
+[data-theme="light"] .modal-close-btn:hover {
+  background: #E2E8F0;
+  border-color: #CBD5E1;
+  color: #0F172A;
 }
 
 .ch-modal-title {
