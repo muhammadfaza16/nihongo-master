@@ -21,6 +21,7 @@ function initApp() {
   registerRoute('/phase/:id',         (container, params) => import('./views/phase.js').then(m => m.PhaseView(container, params)));
   registerRoute('/glossary',    (container, params) => import('./views/glossary.js').then(m => m.GlossaryView(container, params)));
   registerRoute('/workbook/:id',(container, params) => import('./views/workbook.js').then(m => m.WorkbookView(container, params)));
+  registerRoute('/exam',        (container, params) => import('./views/exam.js').then(m => m.ExamView(container, params)));
   registerRoute('/exam/:id',    (container, params) => import('./views/exam.js').then(m => m.ExamView(container, params)));
 
   // Render static layout

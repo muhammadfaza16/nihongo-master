@@ -1,26 +1,39 @@
 import { renderTopbar, showToast, renderLoader } from '../components/layout.js';
-import { loadChapter } from '../data/chapter_index.js';
-import { saveChapterExamResult } from '../store.js';
+import { loadChapter, MNN_INDEX } from '../data/chapter_index.js';
+import { saveChapterExamResult, isChapterExamPassed, getState } from '../store.js';
 import { getUnitDetails } from '../data/curriculum.js';
 
-export function ExamView(container, params) {
-  const chapterId = parseInt(params.id);
-  const unitDetails = getUnitDetails(chapterId);
-  const backRoute = unitDetails ? `#/phase/${unitDetails.phaseId}` : `#/curriculum`;
+export function ExamView(container, params = {}) {
+  const rawId = params && params.id ? String(params.id).trim() : '';
+  const parsedId = parseInt(rawId, 10);
+  const isNumericChapter = !isNaN(parsedId) && String(parsedId) === rawId;
 
-  renderTopbar(`Mondaishuu — Bab ${chapterId}`, false, backRoute);
+  if (isNumericChapter) {
+    const chapterId = parsedId;
+    const unitDetails = getUnitDetails(chapterId);
+    const backRoute = unitDetails ? `#/phase/${unitDetails.phaseId}` : `#/curriculum`;
 
-  renderLoader(container, `Memuat Ujian Bab ${chapterId}...`);
+    renderTopbar(`Mondaishuu — Bab ${chapterId}`, false, backRoute);
+    renderLoader(container, `Memuat Ujian Bab ${chapterId}...`);
 
-  loadChapter(chapterId).then(chapter => {
-    if (!chapter) {
-      container.innerHTML = `<div style="padding:40px;text-align:center;">Bab tidak ditemukan.</div>`;
-      return;
-    }
-    _initExamView(container, params, chapter, chapterId);
-  }).catch(err => {
-    container.innerHTML = `<div style="padding:40px;text-align:center;color:var(--red);">Gagal memuat ujian: ${err.message}</div>`;
-  });
+    loadChapter(chapterId).then(chapter => {
+      if (!chapter) {
+        container.innerHTML = `<div style="padding:40px;text-align:center;">Bab tidak ditemukan.</div>`;
+        return;
+      }
+      _initExamView(container, params, chapter, chapterId);
+    }).catch(err => {
+      container.innerHTML = `<div style="padding:40px;text-align:center;color:var(--red);">Gagal memuat ujian: ${err.message}</div>`;
+    });
+  } else {
+    // JLPT Level Hub (/exam/N5, /exam/N4, /exam/N3, or /exam)
+    let level = 'N5';
+    if (rawId.toUpperCase() === 'N4') level = 'N4';
+    if (rawId.toUpperCase() === 'N3') level = 'N3';
+
+    renderTopbar(`Simulasi Ujian — JLPT ${level}`);
+    _renderExamHub(container, level);
+  }
 }
 
 function _initExamView(container, params, chapter, chapterId) {
@@ -759,4 +772,153 @@ function _initExamView(container, params, chapter, chapterId) {
 
   // Initial Step Render
   renderStep();
+}
+
+/**
+ * Render the JLPT Level Hub for /exam/N5, /exam/N4, /exam/N3, or /exam
+ */
+function _renderExamHub(container, currentLevel = 'N5') {
+  const state = getState();
+  const allChapters = [...MNN_INDEX].sort((a, b) => a.id - b.id);
+
+  let targetChapters = [];
+  let levelTitle = 'JLPT N5 (Dasar)';
+  let levelDesc = 'Ujian evaluasi akhir materi Minna no Nihongo I (Bab 1–25). Menguji tata bahasa dasar, penguasaan partikel, kosakata esensial, dan pemahaman bacaan Dokkai.';
+
+  if (currentLevel === 'N4') {
+    targetChapters = allChapters.filter(ch => ch.id >= 26 && ch.id <= 50);
+    levelTitle = 'JLPT N4 (Menengah)';
+    levelDesc = 'Ujian evaluasi akhir materi Minna no Nihongo II (Bab 26–50). Menguji bentuk konjugasi kata kerja lanjutan, pola keigo, ungkapan kondisional, dan wacana bacaan menengah.';
+  } else if (currentLevel === 'N3') {
+    targetChapters = allChapters.filter(ch => ch.id >= 41 && ch.id <= 50);
+    levelTitle = 'JLPT N3 (Transisi Menengah Lanjut)';
+    levelDesc = 'Ujian evaluasi tata bahasa tingkat lanjut untuk persiapan transisi JLPT N3.';
+  } else {
+    // N5 default
+    targetChapters = allChapters.filter(ch => ch.id >= 1 && ch.id <= 25);
+  }
+
+  const passedCount = targetChapters.filter(ch => isChapterExamPassed(ch.id)).length;
+  const progressPercent = Math.round((passedCount / targetChapters.length) * 100) || 0;
+
+  // Find next unpassed chapter
+  let nextChapter = targetChapters.find(ch => !isChapterExamPassed(ch.id)) || targetChapters[0];
+
+  const html = `
+    <div class="exam-wrapper page-container-standard fade-in">
+      <!-- Breadcrumb Navigation -->
+      <nav class="phase-hero-nav" aria-label="Breadcrumb">
+        <a href="#/dashboard" class="phase-nav-back">
+          <i data-lucide="arrow-left" style="width: 13px; height: 13px;"></i> Dashboard
+        </a>
+        <span class="phase-nav-sep">/</span>
+        <span class="phase-nav-level">Simulasi Ujian JLPT</span>
+      </nav>
+
+      <!-- Sticky Segmented Level Tab Bar -->
+      <div class="chapter-tabs-sticky-wrap" style="position: sticky; top: -14px; z-index: 30; background: var(--bg-main); padding: 4px 0 12px 0;">
+        <div class="segmented-control" style="max-width: 440px;">
+          <button class="segmented-btn tab-btn ${currentLevel === 'N5' ? 'active' : ''}" data-level="N5">
+            JLPT N5
+          </button>
+          <button class="segmented-btn tab-btn ${currentLevel === 'N4' ? 'active' : ''}" data-level="N4">
+            JLPT N4
+          </button>
+          <button class="segmented-btn tab-btn ${currentLevel === 'N3' ? 'active' : ''}" data-level="N3">
+            JLPT N3
+          </button>
+        </div>
+      </div>
+
+      <!-- Hero Level Card -->
+      <section class="hero-learning-card phase-hero-card">
+        <div class="hero-learning-top">
+          <div class="hero-tag-group">
+            <span class="hero-pill-badge">LEVEL ${currentLevel}</span>
+            <span class="hero-pill-chapter">${passedCount} / ${targetChapters.length} Bab Selesai</span>
+          </div>
+        </div>
+
+        <div class="hero-main-content">
+          <h1 class="hero-chapter-title" style="font-size: 1.35rem; margin: 0 0 4px 0;">
+            ${levelTitle}
+          </h1>
+          <p class="hero-chapter-desc" style="margin: 0;">
+            ${levelDesc}
+          </p>
+        </div>
+
+        <!-- Progress Tracker -->
+        <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 4px;">
+          <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted); font-weight: 600;">
+            <span>Kelulusan Ujian Mondaishuu</span>
+            <span>${progressPercent}%</span>
+          </div>
+          <div class="cur-global-bar">
+            <div class="cur-global-fill" style="width: ${progressPercent}%;"></div>
+          </div>
+        </div>
+
+        <!-- Action Button Dock -->
+        <div class="hero-actions-bar" style="margin-top: 4px; padding-top: 10px;">
+          <a href="#/exam/${nextChapter.id}" class="btn btn-primary hero-cta-btn" style="width: 100%; justify-content: center; text-decoration: none;">
+            <i data-lucide="play" style="width: 14px; height: 14px; fill: currentColor;"></i>
+            Mulai Ujian Bab ${nextChapter.id}: ${nextChapter.title.includes(':') ? nextChapter.title.split(':')[1].trim() : nextChapter.title}
+          </a>
+        </div>
+      </section>
+
+      <!-- Section Title -->
+      <div class="dash-section-header" style="margin-top: 8px;">
+        <div class="dash-section-title">Daftar Ujian Bab (Mondaishuu ${currentLevel})</div>
+        <span style="font-size: 11px; font-weight: 600; color: var(--text-muted);">${targetChapters.length} Modul Ujian</span>
+      </div>
+
+      <!-- Chapter Exam Cards Grid -->
+      <div class="cur-grid" style="grid-template-columns: 1fr; gap: 10px;">
+        ${targetChapters.map(ch => {
+          const isPassed = isChapterExamPassed(ch.id);
+          const rawTitle = ch.title.includes(':') ? ch.title.split(':')[1].trim() : ch.title;
+          const rawDesc = ch.desc ? ch.desc.split('.')[0].trim() + '.' : 'Evaluasi pola tata bahasa dan membaca.';
+
+          return `
+            <div class="phase-card" style="padding: 16px; display: flex; flex-direction: column; gap: 10px;">
+              <div class="phase-card-top-bar" style="display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <span class="hero-pill-badge">Bab ${ch.id}</span>
+                  <span class="phase-topic-tag" style="font-size: 10.5px;">Mondaishuu</span>
+                </div>
+                <span class="phase-badge-status ${isPassed ? 'done' : ''}">
+                  ${isPassed ? '<i data-lucide="check-circle-2" style="width:11px;height:11px;"></i> Lulus (+50 XP)' : 'Belum Dikerjakan'}
+                </span>
+              </div>
+
+              <div>
+                <h3 style="font-size: 14px; font-weight: 700; color: var(--text-main); margin: 0 0 3px 0;">${rawTitle}</h3>
+                <p style="font-size: 11.5px; color: var(--text-secondary); margin: 0; line-height: 1.45;">${rawDesc}</p>
+              </div>
+
+              <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px dashed var(--border); padding-top: 8px; margin-top: 2px;">
+                <span style="font-size: 10.5px; color: var(--text-muted);">Format: Isian &middot; Pilihan Ganda &middot; Dokkai</span>
+                <a href="#/exam/${ch.id}" class="btn ${isPassed ? 'btn-secondary' : 'btn-primary'}" style="padding: 5px 12px; font-size: 11px; text-decoration: none;">
+                  ${isPassed ? 'Uji Ulang' : 'Mulai Ujian'} &rarr;
+                </a>
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    </div>
+  `;
+
+  container.innerHTML = html;
+  if (window.lucide) lucide.createIcons({ root: container });
+
+  // Bind Level Switcher
+  container.querySelectorAll('.segmented-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetLvl = btn.getAttribute('data-level');
+      window.location.hash = `#/exam/${targetLvl}`;
+    });
+  });
 }
