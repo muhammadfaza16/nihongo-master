@@ -482,7 +482,7 @@ function _initWorkbookView(container, params, chapter, chapterId) {
     return `
       <div class="hero-learning-card phase-hero-card fade-in" style="text-align: center; padding: 28px 20px; display: flex; flex-direction: column; gap: 16px; align-items: center;">
         
-        <div style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #6366F1, #4F46E5); display: flex; align-items: center; justify-content: center; color: #fff; box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);">
+        <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; color: #111111; border: 1px solid var(--accent); box-shadow: var(--shadow-sm);">
           <i data-lucide="award" style="width: 28px; height: 28px;"></i>
         </div>
         

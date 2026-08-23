@@ -141,13 +141,13 @@ export function DashboardView(container) {
     } else if (mins === 0) {
       colorStyle = 'background: var(--bg-elevated); border-color: var(--border);';
     } else if (mins < 15) {
-      colorStyle = 'background: rgba(124, 123, 240, 0.2); border-color: rgba(124, 123, 240, 0.35);';
+      colorStyle = 'background: var(--accent-dim); border-color: var(--border-accent);';
     } else if (mins < 30) {
-      colorStyle = 'background: rgba(124, 123, 240, 0.45); border-color: rgba(124, 123, 240, 0.6);';
+      colorStyle = 'background: rgba(255, 182, 80, 0.45); border-color: rgba(255, 182, 80, 0.6);';
     } else if (mins < 60) {
-      colorStyle = 'background: rgba(124, 123, 240, 0.75); border-color: rgba(124, 123, 240, 0.9);';
+      colorStyle = 'background: rgba(255, 182, 80, 0.75); border-color: rgba(255, 182, 80, 0.9);';
     } else {
-      colorStyle = 'background: #7C7BF0; border-color: #6366F1; box-shadow: 0 0 6px rgba(124,123,240,0.6);';
+      colorStyle = 'background: var(--accent); border-color: var(--accent); box-shadow: 0 0 6px var(--accent-glow);';
     }
 
     const dateFormatted = d.toLocaleDateString('id-ID', { weekday: 'short', month: 'short', day: 'numeric' });
@@ -340,10 +340,10 @@ export function DashboardView(container) {
             <span>Kurang</span>
             <div class="heatmap-legend-cells">
               <div class="heatmap-legend-box" style="background: var(--bg-elevated); border-color: var(--border);"></div>
-              <div class="heatmap-legend-box" style="background: rgba(124, 123, 240, 0.2); border-color: rgba(124, 123, 240, 0.35);"></div>
-              <div class="heatmap-legend-box" style="background: rgba(124, 123, 240, 0.45); border-color: rgba(124, 123, 240, 0.6);"></div>
-              <div class="heatmap-legend-box" style="background: rgba(124, 123, 240, 0.75); border-color: rgba(124, 123, 240, 0.9);"></div>
-              <div class="heatmap-legend-box" style="background: #7C7BF0; border-color: #6366F1;"></div>
+              <div class="heatmap-legend-box" style="background: var(--accent-dim); border-color: var(--border-accent);"></div>
+              <div class="heatmap-legend-box" style="background: rgba(255, 182, 80, 0.45); border-color: rgba(255, 182, 80, 0.6);"></div>
+              <div class="heatmap-legend-box" style="background: rgba(255, 182, 80, 0.75); border-color: rgba(255, 182, 80, 0.9);"></div>
+              <div class="heatmap-legend-box" style="background: var(--accent); border-color: var(--accent);"></div>
             </div>
             <span>Banyak</span>
           </div>
