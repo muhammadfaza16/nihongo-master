@@ -87,86 +87,40 @@ export function DashboardView(container) {
     jpGreeting = 'Konnichiwa (こんにちは)';
   }
 
-  // Build GitHub-style Activity Heatmap (52 weeks)
+  // 7-day current week tracker (Senin - Minggu)
   const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  const dayOfWeek = today.getDay(); // 0=Sun, 1=Mon, ..., 6=Sat
+  const mondayOffset = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
+  const monday = new Date(today);
+  monday.setDate(today.getDate() + mondayOffset);
+
+  const dayNames = ['Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab', 'Min'];
+  const weekDays = [];
   const activityLog = state.activityLog || {};
-  let activeDaysCount = 0;
 
-  // Go back exactly 52 weeks from today, then back to the nearest Sunday
-  const endDate = new Date(today);
-  const startDate = new Date(today);
-  startDate.setDate(startDate.getDate() - 364); // 52 weeks back
-  // Align start to Sunday (day 0)
-  const startDow = startDate.getDay(); // 0=Sun
-  startDate.setDate(startDate.getDate() - startDow);
-
-  // Build flat array of all days
-  const allDays = [];
-  for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
-    allDays.push(new Date(d));
-  }
-
-  // Track month label positions (which column each month starts)
-  const monthLabels = {}; // colIndex -> monthName
-  allDays.forEach((d, i) => {
-    const col = Math.floor(i / 7);
-    const isFirstOfMonth = d.getDate() === 1;
-    if (isFirstOfMonth && !Object.values(monthLabels).length || isFirstOfMonth) {
-      const monthName = d.toLocaleDateString('id-ID', { month: 'short' });
-      if (!monthLabels[col]) monthLabels[col] = monthName;
-    }
-  });
-
-  const totalCols = Math.ceil(allDays.length / 7);
-
-  // Build month header HTML
-  let monthHeaderHtml = '';
-  for (let col = 0; col < totalCols; col++) {
-    const label = monthLabels[col] || '';
-    monthHeaderHtml += `<div class="heatmap-month-label" style="grid-column: ${col + 1}">${label}</div>`;
-  }
-
-  // Build cells HTML
-  let heatmapCellsHtml = '';
-  allDays.forEach((d, i) => {
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(monday);
+    d.setDate(monday.getDate() + i);
     const dateStr = d.toISOString().split('T')[0];
-    const mins = activityLog[dateStr] || 0;
+    const isToday = d.toDateString() === today.toDateString();
     const isFuture = d > today;
-    if (mins > 0 && !isFuture) activeDaysCount++;
-
-    let colorStyle;
-    if (isFuture) {
-      colorStyle = 'background: transparent; border-color: transparent;';
-    } else if (mins === 0) {
-      colorStyle = 'background: var(--bg-elevated); border-color: var(--border);';
-    } else if (mins < 15) {
-      colorStyle = 'background: var(--accent-dim); border-color: var(--border-accent);';
-    } else if (mins < 30) {
-      colorStyle = 'background: rgba(255, 182, 80, 0.45); border-color: rgba(255, 182, 80, 0.6);';
-    } else if (mins < 60) {
-      colorStyle = 'background: rgba(255, 182, 80, 0.75); border-color: rgba(255, 182, 80, 0.9);';
-    } else {
-      colorStyle = 'background: var(--accent); border-color: var(--accent); box-shadow: 0 0 6px var(--accent-glow);';
-    }
-
-    const dateFormatted = d.toLocaleDateString('id-ID', { weekday: 'short', month: 'short', day: 'numeric' });
-    const tooltip = isFuture ? '' : `${dateFormatted}: ${mins > 0 ? `${mins} menit belajar` : 'Tidak ada aktivitas'}`;
-    heatmapCellsHtml += `<div class="heatmap-cell" title="${tooltip}" style="${colorStyle}"></div>`;
-  });
+    const mins = activityLog[dateStr] || 0;
+    const isDone = mins > 0;
+    weekDays.push({
+      name: dayNames[i],
+      date: d.getDate(),
+      isToday,
+      isFuture,
+      isDone,
+      mins
+    });
+  }
 
   // Calculate stats for Bento Grid
   const srsItems = state.srsItems || [];
   const totalVocab = srsItems.filter(i => i.type === 'vocab').length;
   const totalKanji = srsItems.filter(i => i.type === 'kanji').length;
   const masteredItems = srsItems.filter(i => i.repetitions >= 5).length;
-  
-  const qh = state.quizHistory || [];
-  let avgQuiz = 0;
-  if (qh.length > 0) {
-    const totalScore = qh.reduce((acc, q) => acc + (q.score / q.total), 0);
-    avgQuiz = Math.round((totalScore / qh.length) * 100);
-  }
   
   const studyHours = (totalMinutes / 60).toFixed(1);
 
@@ -329,48 +283,30 @@ export function DashboardView(container) {
         </div>
       </div>
 
-      <!-- Activity Heatmap Section -->
-      <div class="heatmap-section">
-        <div class="heatmap-header">
-          <div class="heatmap-title-block">
-            <span class="heatmap-title">Aktivitas Belajar</span>
-            <span class="heatmap-subtitle-tag">${activeDaysCount} Hari Aktif (Setahun Terakhir)</span>
-          </div>
-          <div class="heatmap-legend">
-            <span>Kurang</span>
-            <div class="heatmap-legend-cells">
-              <div class="heatmap-legend-box" style="background: var(--bg-elevated); border-color: var(--border);"></div>
-              <div class="heatmap-legend-box" style="background: var(--accent-dim); border-color: var(--border-accent);"></div>
-              <div class="heatmap-legend-box" style="background: rgba(255, 182, 80, 0.45); border-color: rgba(255, 182, 80, 0.6);"></div>
-              <div class="heatmap-legend-box" style="background: rgba(255, 182, 80, 0.75); border-color: rgba(255, 182, 80, 0.9);"></div>
-              <div class="heatmap-legend-box" style="background: var(--accent); border-color: var(--accent);"></div>
-            </div>
-            <span>Banyak</span>
-          </div>
+      <!-- Weekly Activity & Streak Strip -->
+      <div class="weekly-streak-strip" style="display: flex; gap: 12px; justify-content: space-between; align-items: center; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 16px 20px; flex-wrap: wrap;">
+        <div style="display: flex; flex-direction: column;">
+          <span style="font-size: 13.5px; font-weight: 750; color: var(--text-main);">Aktivitas Pekan Ini</span>
+          <span style="font-size: 11.5px; color: var(--text-muted); margin-top: 2px;">
+            ${streak > 0 ? `${streak} hari streak berturut-turut — pertahankan ritme!` : 'Belajar setiap hari untuk menjaga memori jangka panjang.'}
+          </span>
         </div>
-        
-        <div class="heatmap-wrapper">
-          <div class="heatmap-weekdays">
-            <span></span>
-            <span>Sen</span>
-            <span></span>
-            <span>Rab</span>
-            <span></span>
-            <span>Jum</span>
-            <span></span>
-          </div>
-          <div class="heatmap-grid-scroll">
-            <div class="heatmap-month-row">
-              ${monthHeaderHtml}
+        <div style="display: flex; gap: 8px; align-items: center;">
+          ${weekDays.map(w => `
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;" title="${w.name}: ${w.mins > 0 ? `${w.mins} menit` : w.isFuture ? 'Belum tiba' : 'Tidak ada aktivitas'}">
+              <span style="font-size: 10px; color: ${w.isToday ? 'var(--accent)' : 'var(--text-muted)'}; font-weight: ${w.isToday ? '800' : '600'};">${w.name}</span>
+              <div style="width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11.5px; font-weight: 750;
+                background: ${w.isDone ? 'var(--accent)' : w.isToday ? 'var(--bg-elevated)' : 'var(--bg-main)'};
+                color: ${w.isDone ? '#fff' : w.isToday ? 'var(--text-main)' : 'var(--text-muted)'};
+                border: 1px solid ${w.isDone ? 'var(--accent)' : w.isToday ? 'var(--border-accent)' : 'var(--border)'};">
+                ${w.isDone ? '<i data-lucide="check" style="width:14px;height:14px;"></i>' : w.date}
+              </div>
             </div>
-            <div class="heatmap-cells-container">
-              ${heatmapCellsHtml}
-            </div>
-          </div>
+          `).join('')}
         </div>
       </div>
 
-      <!-- Modern Statistics & Achievements Grid -->
+      <!-- Modern Statistics & Progress Grid -->
       <div>
         <div class="dash-section-header">
           <div class="dash-section-title">Statistik &amp; Pencapaian</div>
@@ -411,12 +347,12 @@ export function DashboardView(container) {
           
           <div class="dash-metric-card">
             <div class="dash-metric-head">
-              <span class="dash-metric-lbl">Akurasi Ujian</span>
+              <span class="dash-metric-lbl">Bab Tuntas</span>
               <i data-lucide="check-circle" class="dash-metric-ico" style="color: var(--green);"></i>
             </div>
             <div class="dash-metric-body">
-              <span class="dash-metric-val">${avgQuiz}%</span>
-              <span class="dash-metric-unit">skor</span>
+              <span class="dash-metric-val">${minna1Completed + minna2Completed}</span>
+              <span class="dash-metric-unit">/ 50 bab</span>
             </div>
           </div>
           

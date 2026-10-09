@@ -10,30 +10,8 @@ export function MinnaView(container) {
 
   async function getFullLessons() {
     if (fullLessonsData) return fullLessonsData;
-    const { MNN_DATA } = await import('../data/chapter_data.js');
-    fullLessonsData = MNN_DATA.map(ch => {
-      return {
-        id: ch.id,
-        title: ch.title,
-        intro: ch.desc,
-        points: (ch.grammar || []).map(g => {
-          const patternMatch = g.title.match(/^\d+\.\s*(.*)/);
-          const patternClean = patternMatch ? patternMatch[1] : g.title;
-          return {
-            pattern: patternClean,
-            formula: g.formula || '—',
-            explanation: g.desc,
-            points: g.points || [],
-            nuance: g.native_note || null,
-            examples: (ch.patterns || []).map(p => ({
-              jp: p.jp,
-              rom: p.rom,
-              id: p.en
-            }))
-          };
-        })
-      };
-    }).filter(l => l.points.length > 0);
+    const mod = await import('../data/grammar_data.json');
+    fullLessonsData = mod.default || mod;
     return fullLessonsData;
   }
 

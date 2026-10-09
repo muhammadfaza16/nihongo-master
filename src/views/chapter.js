@@ -1021,7 +1021,12 @@ function _initChapterView(container, chapterId, chapterData, params) {
       e.stopPropagation();
       const vocabList = chapterData.vocab || [];
       vocabList.forEach(v => {
-        addSRSItem(`vocab-${v.kana || v.kanji || v.rom}`, 'vocab');
+        addSRSItem(`vocab-${v.kana || v.kanji || v.rom}`, 'vocab', {
+          q: v.kanji || v.kana,
+          sub: v.kanji && v.kana ? v.kana : '',
+          ans: v.en,
+          chapterId: chapterId
+        });
       });
       showToast(`Berhasil menambahkan semua kosakata bab ini ke antrean SRS!`, 'success');
       renderContent();
@@ -1032,8 +1037,15 @@ function _initChapterView(container, chapterId, chapterData, params) {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
         const vocabId = btn.dataset.vocabId;
+        const vIdx = parseInt(btn.closest('.vocab-list-row')?.dataset.vocabIdx, 10);
+        const v = chapterData.vocab?.[vIdx];
         if (btn.classList.contains('add')) {
-          addSRSItem(vocabId, 'vocab');
+          addSRSItem(vocabId, 'vocab', v ? {
+            q: v.kanji || v.kana,
+            sub: v.kanji && v.kana ? v.kana : '',
+            ans: v.en,
+            chapterId: chapterId
+          } : {});
           showToast('Kosakata ditambahkan ke antrean SRS!', 'success');
         } else {
           removeSRSItem(vocabId);

@@ -1,14 +1,33 @@
 import { renderTopbar, renderLoader } from '../components/layout.js';
 import { getDueItems, gradeReview } from '../srs.js';
 import { addXP } from '../store.js';
+import { VOCAB_TO_CHAPTER, loadChapter } from '../data/chapter_index.js';
 
 export async function ReviewView(container) {
   renderTopbar('SRS Flashcards', false, '#/');
   renderLoader(container, 'Memuat Sesi Review...');
 
-  const { findItemById } = await import('../data/registry.js');
-
   const dueItems = getDueItems();
+
+  // Self-heal legacy items that lack embedded translations
+  for (const item of dueItems) {
+    if (!item.ans) {
+      const pureKey = item.id.replace(/^(vocab|kanji|grammar)-/, '');
+      const chNum = VOCAB_TO_CHAPTER[pureKey];
+      if (chNum !== undefined) {
+        try {
+          const chData = await loadChapter(chNum);
+          const found = (chData.vocab || []).find(v => v.kana === pureKey || v.kanji === pureKey || v.rom === pureKey);
+          if (found) {
+            item.q = found.kanji || found.kana;
+            item.sub = found.kanji && found.kana ? found.kana : '';
+            item.ans = found.en;
+          }
+        } catch {}
+      }
+    }
+  }
+
   let currentIndex = 0;
   let isFlipped = false;
   const sessionHistory = [];
@@ -130,10 +149,9 @@ export async function ReviewView(container) {
     }
 
     const item = dueItems[currentIndex];
-    const itemData = findItemById(item.id);
-    const display = itemData ? itemData.q : item.id.split('-')[1];
-    const sub = itemData && itemData.sub ? itemData.sub : '';
-    const answer = itemData ? itemData.ans : '';
+    const display = item.q || item.id.replace(/^(vocab|kanji|grammar)-/, '');
+    const sub = item.sub || '';
+    const answer = item.ans || display;
 
     isFlipped = false;
 

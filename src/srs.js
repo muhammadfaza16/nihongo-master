@@ -21,8 +21,9 @@ function _ensureSRSIdSet() {
  * Add an item to the SRS queue
  * @param {string} id - unique item ID (e.g. "vocab-taberu", "kanji-食")
  * @param {string} type - "vocab" | "kanji" | "grammar"
+ * @param {object} [meta] - { q, sub, ans, chapterId }
  */
-export function addSRSItem(id, type) {
+export function addSRSItem(id, type, meta = {}) {
   _ensureSRSIdSet();
   if (_srsIdSet.has(id)) return; // already exists
 
@@ -31,6 +32,10 @@ export function addSRSItem(id, type) {
   const item = {
     id,
     type,
+    q: meta.q || id.replace(/^(vocab|kanji|grammar)-/, ''),
+    sub: meta.sub || '',
+    ans: meta.ans || '',
+    chapterId: meta.chapterId || null,
     nextReview: new Date().toISOString(),
     interval: 1, // days
     easeFactor: 2.5,

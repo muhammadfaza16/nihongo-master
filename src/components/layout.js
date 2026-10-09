@@ -1,4 +1,6 @@
 import { MNN_INDEX } from '../data/chapter_index.js';
+import { isUnitCompleted } from '../store.js';
+import { getDueCount } from '../srs.js';
 
 const SUN_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>`;
 const MOON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`;
@@ -25,23 +27,24 @@ export function renderSidebar() {
   const sidebar = document.getElementById('sidebar');
   if (!sidebar) return;
 
-  // Conceptual Navigation Groups
-  const studyNav = [
-    { icon: 'layout-dashboard', label: 'Dashboard',      hash: '#/',           id: 'nav-dashboard' },
-    { icon: 'map',              label: 'Peta Kurikulum', hash: '#/curriculum', id: 'nav-curriculum', badge: '50 Bab' },
-    { icon: 'compass',          label: 'Panduan Belajar',hash: '#/guide',      id: 'nav-guide' },
+  const chapters = [...MNN_INDEX].sort((a, b) => a.id - b.id);
+  const nextChapter = chapters.find(ch => !isUnitCompleted(ch.id.toString()) && !isUnitCompleted(ch.id)) || chapters[1] || chapters[0];
+  const activeChapterHash = `#/chapter/${nextChapter.id}`;
+  const dueCount = getDueCount();
+
+  // Core Daily Loop Nav
+  const coreNav = [
+    { icon: 'layout-dashboard', label: 'Dashboard',      hash: '#/',                id: 'nav-dashboard' },
+    { icon: 'book-open',        label: 'Studi Bab',      hash: activeChapterHash,   id: 'nav-chapter', badge: `Bab ${nextChapter.id}` },
+    { icon: 'zap',              label: 'SRS Review',     hash: '#/review',          id: 'nav-review',  badge: dueCount > 0 ? `${dueCount}` : '' },
+    { icon: 'pen-tool',         label: 'Latihan Menulis',hash: '#/writing',         id: 'nav-writing' },
   ];
 
-  const practiceNav = [
-    { icon: 'zap',              label: 'SRS Flashcards', hash: '#/review',     id: 'nav-review' },
-    { icon: 'pen-tool',         label: 'Latihan Menulis',hash: '#/writing',    id: 'nav-writing' },
-    { icon: 'award',            label: 'Simulasi Ujian', hash: '#/exam/N5',    id: 'nav-exam', badge: 'JLPT' },
-  ];
-
-  const referenceNav = [
-    { icon: 'book-open',        label: 'Tata Bahasa',    hash: '#/minna',      id: 'nav-minna' },
-    { icon: 'languages',        label: 'Kanji Hub',      hash: '#/kanji',      id: 'nav-kanji' },
-    { icon: 'bookmark',         label: 'Glosarium',      hash: '#/glossary',   id: 'nav-glossary' },
+  // Pustaka & Referensi Nav
+  const libraryNav = [
+    { icon: 'map',              label: 'Peta Kurikulum', hash: '#/curriculum',      id: 'nav-curriculum', badge: '50 Bab' },
+    { icon: 'file-text',        label: 'Tata Bahasa',    hash: '#/minna',           id: 'nav-minna' },
+    { icon: 'languages',        label: 'Kamus Kanji',    hash: '#/kanji',           id: 'nav-kanji', badge: 'N5–N3' },
   ];
 
   const renderNavItem = (n) => `
@@ -74,36 +77,29 @@ export function renderSidebar() {
     </div>
 
     <div style="display: flex; flex-direction: column; gap: 14px; flex: 1; overflow-y: auto;">
-      <!-- Group: Pembelajaran -->
+      <!-- Group: Alur Belajar Harian -->
       <div>
-        <div class="nav-section-label">Pembelajaran</div>
+        <div class="nav-section-label">Alur Belajar Harian</div>
         <div class="nav-menu">
-          ${studyNav.map(renderNavItem).join('')}
+          ${coreNav.map(renderNavItem).join('')}
         </div>
       </div>
 
-      <!-- Group: Latihan & Keterampilan -->
+      <!-- Group: Pustaka & Roadmap -->
       <div>
-        <div class="nav-section-label">Latihan & Keterampilan</div>
+        <div class="nav-section-label">Pustaka &amp; Roadmap</div>
         <div class="nav-menu">
-          ${practiceNav.map(renderNavItem).join('')}
-        </div>
-      </div>
-
-      <!-- Group: Katalog & Referensi -->
-      <div>
-        <div class="nav-section-label">Katalog & Referensi</div>
-        <div class="nav-menu">
-          ${referenceNav.map(renderNavItem).join('')}
+          ${libraryNav.map(renderNavItem).join('')}
         </div>
       </div>
     </div>
 
     <!-- Sidebar Footer -->
     <div style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;">
-      <div style="display: flex; flex-direction: column;">
-        <span style="font-size: 11px; font-weight: 700; color: var(--text-main);">Minna no Nihongo</span>
-        <span style="font-size: 9px; color: var(--text-muted); font-weight: 600;">Edisi Belajar Lengkap</span>
+      <div style="display: flex; gap: 8px; align-items: center;">
+        <a href="#/guide" style="font-size: 11px; color: var(--text-muted); text-decoration: none;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'">Panduan</a>
+        <span style="color: var(--border); font-size: 10px;">•</span>
+        <a href="#/glossary" style="font-size: 11px; color: var(--text-muted); text-decoration: none;" onmouseover="this.style.color='var(--text-main)'" onmouseout="this.style.color='var(--text-muted)'">Glosarium</a>
       </div>
       <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Ganti tema" title="Ganti Tema (Gelap / Terang)" style="background: var(--bg-elevated); border: 1px solid var(--border); color: var(--text-main); width: 32px; height: 32px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.15s ease; flex-shrink: 0; padding: 0;">
         ${currentTheme === 'dark' ? SUN_SVG : MOON_SVG}
@@ -135,27 +131,20 @@ export function updateSidebarActive() {
   const hash = window.location.hash || '#/';
   document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
 
-  const map = {
-    '#/':           'nav-dashboard',
-    '#/dashboard':  'nav-dashboard',
-    '#/curriculum': 'nav-curriculum',
-    '#/guide':      'nav-guide',
-    '#/review':     'nav-review',
-    '#/writing':    'nav-writing',
-    '#/minna':      'nav-minna',
-    '#/kanji':      'nav-kanji',
-    '#/glossary':   'nav-glossary',
-    '#/exam/N5':    'nav-exam',
-    '#/exam/N4':    'nav-exam',
-    '#/exam/N3':    'nav-exam',
-  };
-
-  if (map[hash]) {
-    document.getElementById(map[hash])?.classList.add('active');
-  } else if (hash.startsWith('#/phase/') || hash.startsWith('#/chapter/') || hash.startsWith('#/workbook/')) {
+  if (hash === '#/' || hash === '#/dashboard') {
+    document.getElementById('nav-dashboard')?.classList.add('active');
+  } else if (hash.startsWith('#/chapter/')) {
+    document.getElementById('nav-chapter')?.classList.add('active');
+  } else if (hash.startsWith('#/review')) {
+    document.getElementById('nav-review')?.classList.add('active');
+  } else if (hash.startsWith('#/writing')) {
+    document.getElementById('nav-writing')?.classList.add('active');
+  } else if (hash.startsWith('#/curriculum') || hash.startsWith('#/phase/') || hash.startsWith('#/workbook/') || hash.startsWith('#/exam')) {
     document.getElementById('nav-curriculum')?.classList.add('active');
-  } else if (hash.startsWith('#/exam/')) {
-    document.getElementById('nav-exam')?.classList.add('active');
+  } else if (hash.startsWith('#/minna')) {
+    document.getElementById('nav-minna')?.classList.add('active');
+  } else if (hash.startsWith('#/kanji')) {
+    document.getElementById('nav-kanji')?.classList.add('active');
   }
 }
 
